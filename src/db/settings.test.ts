@@ -1,4 +1,3 @@
-import "fake-indexeddb/auto";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { createDb, type GeoDexDb } from "./db";
 import { ensureDeviceSettings, ensureSettings, setLocale, setThemePreference } from "./settings";

@@ -7,6 +7,7 @@
     "empty": "Ingenting å repetere ennå. Landdata og økter kommer i neste versjon."
   },
   "settings": {
+    "label": "Innstillinger",
     "theme": {
       "label": "Tema",
       "atlas": "Atlas",
