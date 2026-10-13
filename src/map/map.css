@@ -1,0 +1,96 @@
+/* Map styles. Colors come from the active theme (src/themes/themes.css). */
+.world-map .map-ocean {
+  fill: var(--map-ocean);
+}
+
+.world-map .map-land-other {
+  fill: var(--map-land);
+  opacity: 0.55;
+  stroke: var(--map-border);
+  stroke-width: 0.5px;
+  vector-effect: non-scaling-stroke;
+}
+
+.world-map .map-country {
+  fill: var(--map-land);
+  stroke: var(--map-border);
+  stroke-width: 0.6px;
+  vector-effect: non-scaling-stroke;
+  transition: fill 120ms;
+}
+
+.world-map .map-selectable {
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .world-map .map-selectable:hover {
+    fill: var(--muted);
+  }
+}
+
+.world-map .map-selected {
+  fill: var(--muted);
+  stroke: var(--foreground);
+  stroke-width: 1.5px;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+.world-map .map-target {
+  fill: var(--primary);
+  stroke: var(--foreground);
+  stroke-width: 1.5px;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+.world-map .map-chosen {
+  fill: none;
+  stroke: var(--foreground);
+  stroke-width: 2px;
+  stroke-dasharray: 6 4;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+.world-map .map-marker {
+  fill: var(--map-land);
+  stroke: var(--map-border);
+  stroke-width: 1.5px;
+}
+
+.world-map .map-marker-selected {
+  fill: var(--muted);
+  stroke: var(--foreground);
+}
+
+.world-map .map-marker-target {
+  fill: var(--primary);
+  stroke: var(--foreground);
+}
+
+.world-map .map-marker-chosen {
+  fill: none;
+  stroke: var(--foreground);
+  stroke-dasharray: 3 2;
+}
+
+.world-map .map-marker-hit {
+  fill: transparent;
+  cursor: pointer;
+}
+
+.world-map .map-label {
+  font-size: 12px;
+  font-weight: var(--weight-name);
+  fill: var(--foreground);
+  stroke: var(--background);
+  stroke-width: 3px;
+  paint-order: stroke;
+  pointer-events: none;
+}
+
+.world-map .map-label-chosen {
+  text-decoration: underline dashed;
+}
