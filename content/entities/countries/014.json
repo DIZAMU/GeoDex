@@ -1,0 +1,1923 @@
+{
+  "group": "014",
+  "entities": [
+    {
+      "entityId": "BDI",
+      "hooks": {
+        "en": [
+          {
+            "id": "BDI.en.1",
+            "type": "anchor",
+            "text": "Burundi sits just south of Rwanda, on the northeast shore of Lake Tanganyika."
+          },
+          {
+            "id": "BDI.en.2",
+            "type": "contrast",
+            "text": "Rwanda and Burundi are a stacked pair: Rwanda on top, Burundi below, and only Burundi reaches Lake Tanganyika."
+          },
+          {
+            "id": "BDI.en.3",
+            "type": "sound",
+            "text": "Bu-run-di: a bull runs downhill from Rwanda and splashes into Lake Tanganyika."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BDI.nb.1",
+            "type": "anchor",
+            "text": "Burundi ligger rett sør for Rwanda, ved nordøstenden av Tanganyikasjøen."
+          },
+          {
+            "id": "BDI.nb.2",
+            "type": "contrast",
+            "text": "Rwanda og Burundi er et par: Rwanda øverst, Burundi under, og bare Burundi når ned til Tanganyikasjøen."
+          },
+          {
+            "id": "BDI.nb.3",
+            "type": "sound",
+            "text": "Burundi: et bur rundt et lite land, klemt mellom Rwanda og Tanganyikasjøen."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "BDI.cap.en.1",
+            "type": "story",
+            "text": "Gitega replaced Bujumbura as capital, moving it from the lakeshore to the central highlands."
+          },
+          {
+            "id": "BDI.cap.en.2",
+            "type": "sound",
+            "text": "Gitega: 'get a ticket' to the middle of Burundi, away from the lake."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BDI.cap.nb.1",
+            "type": "story",
+            "text": "Gitega overtok som hovedstad etter Bujumbura, og flyttet makten fra sjøbredden til høylandet midt i landet."
+          },
+          {
+            "id": "BDI.cap.nb.2",
+            "type": "sound",
+            "text": "Gitega: «gi teig», sier bonden og gir bort en åkerlapp midt i Burundi."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A white diagonal cross splits red and green fields; a white disc in the middle holds three red stars edged in green.",
+        "nb": "Et hvitt diagonalkors deler røde og grønne felt; en hvit sirkel i midten har tre røde stjerner med grønn kant."
+      },
+      "facts": [
+        {
+          "id": "BDI.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Burundi is landlocked (it has no coastline) and borders Rwanda, Tanzania and the Democratic Republic of the Congo.",
+            "nb": "Burundi er en innlandsstat (uten kyst) og grenser til Rwanda, Tanzania og Kongo."
+          }
+        },
+        {
+          "id": "BDI.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Burundi has three official languages: Kirundi, French and English.",
+            "nb": "Burundi har tre offisielle språk: kirundi, fransk og engelsk."
+          }
+        },
+        {
+          "id": "BDI.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Bujumbura, the former capital, is still Burundi's largest city and its port on Lake Tanganyika.",
+            "nb": "Bujumbura, den tidligere hovedstaden, er fortsatt Burundis største by og havnen ved Tanganyikasjøen."
+          }
+        },
+        {
+          "id": "BDI.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "A small stone pyramid in southern Burundi marks one of the claimed sources of the Nile.",
+            "nb": "En liten steinpyramide sør i Burundi markerer en av kildene som regnes som Nilens utspring."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "COM",
+      "hooks": {
+        "en": [
+          {
+            "id": "COM.en.1",
+            "type": "anchor",
+            "text": "Comoros is an island state in the Mozambique Channel, between Mozambique and the northern tip of Madagascar."
+          },
+          {
+            "id": "COM.en.2",
+            "type": "etymology",
+            "text": "Comoros comes from the Arabic qamar, moon: these are the Moon Islands."
+          },
+          {
+            "id": "COM.en.3",
+            "type": "sound",
+            "text": "Comoros: a comma of islands, dropped between Mozambique and Madagascar."
+          }
+        ],
+        "nb": [
+          {
+            "id": "COM.nb.1",
+            "type": "anchor",
+            "text": "Komorene er en øystat i Mosambikkanalen, mellom Mosambik og nordspissen av Madagaskar."
+          },
+          {
+            "id": "COM.nb.2",
+            "type": "etymology",
+            "text": "Komorene kommer av arabisk qamar, måne: Måneøyene."
+          },
+          {
+            "id": "COM.nb.3",
+            "type": "sound",
+            "text": "Komorene: «kom, mor», roper barna fra båten på vei ut til øyene ved Madagaskar."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "COM.cap.en.1",
+            "type": "anchor",
+            "text": "Moroni is on Grande Comore, the largest island of Comoros, with the volcano Karthala behind it."
+          },
+          {
+            "id": "COM.cap.en.2",
+            "type": "sound",
+            "text": "Moroni: 'more, Ronnie', and Ronnie piles more vanilla onto the boat."
+          }
+        ],
+        "nb": [
+          {
+            "id": "COM.cap.nb.1",
+            "type": "anchor",
+            "text": "Moroni ligger på Grande Comore, den største øya, med vulkanen Karthala bak seg."
+          },
+          {
+            "id": "COM.cap.nb.2",
+            "type": "sound",
+            "text": "Moroni: mor ror ni turer ut fra havna på Grande Comore."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Four stripes and four stars, one per island Comoros claims, French-held Mayotte included; a white crescent sits on a green triangle.",
+        "nb": "Fire striper og fire stjerner, én per øy Komorene gjør krav på, også franske Mayotte; en hvit halvmåne på en grønn trekant."
+      },
+      "facts": [
+        {
+          "id": "COM.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Comoros has no land borders; it is an archipelago (a group of islands) in the Mozambique Channel.",
+            "nb": "Komorene har ingen landegrenser; landet er en øygruppe (flere øyer samlet) i Mosambikkanalen."
+          }
+        },
+        {
+          "id": "COM.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Comoros has three official languages: Comorian, Arabic and French.",
+            "nb": "Komorene har tre offisielle språk: komorisk, arabisk og fransk."
+          }
+        },
+        {
+          "id": "COM.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Comoros claims Mayotte, which voted to stay with France and is now a French overseas department.",
+            "nb": "Komorene gjør krav på Mayotte, som stemte for å bli hos Frankrike og nå er et fransk oversjøisk departement."
+          }
+        },
+        {
+          "id": "COM.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Comoros is a leading producer of ylang-ylang, a flower oil used in perfume.",
+            "nb": "Komorene er en av de store produsentene av ylang-ylang, en blomsterolje som brukes i parfyme."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "DJI",
+      "hooks": {
+        "en": [
+          {
+            "id": "DJI.en.1",
+            "type": "anchor",
+            "text": "Djibouti sits at the mouth of the Red Sea, facing Yemen across the Bab el-Mandeb strait."
+          },
+          {
+            "id": "DJI.en.2",
+            "type": "contrast",
+            "text": "Djibouti is the small one at the mouth of the Red Sea; Eritrea is the long coastal strip to its north."
+          },
+          {
+            "id": "DJI.en.3",
+            "type": "sound",
+            "text": "Djibouti: a jib sail flaps over a boat full of booty at the mouth of the Red Sea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "DJI.nb.1",
+            "type": "anchor",
+            "text": "Djibouti ligger ved innløpet til Rødehavet, rett over Bab el-Mandeb fra Jemen."
+          },
+          {
+            "id": "DJI.nb.2",
+            "type": "contrast",
+            "text": "Djibouti er den lille ved innløpet til Rødehavet; Eritrea er den lange kyststripen nord for det."
+          },
+          {
+            "id": "DJI.nb.3",
+            "type": "sound",
+            "text": "Djibouti: en sjøbu full av salt står ved inngangen til Rødehavet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "DJI.cap.en.1",
+            "type": "contrast",
+            "text": "The capital of Djibouti is Djibouti: the city and the country share one name."
+          },
+          {
+            "id": "DJI.cap.en.2",
+            "type": "anchor",
+            "text": "Djibouti city is a port on the Gulf of Tadjoura, and most of Ethiopia's trade passes through it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "DJI.cap.nb.1",
+            "type": "contrast",
+            "text": "Hovedstaden i Djibouti heter også Djibouti; byen og landet har samme navn."
+          },
+          {
+            "id": "DJI.cap.nb.2",
+            "type": "anchor",
+            "text": "Djibouti by er havnen ved Tadjourabukta, og det meste av Etiopias handel går gjennom den."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Light blue over green, with a white triangle at the hoist holding a red star.",
+        "nb": "Lyseblått over grønt, med en hvit trekant ved stangen og en rød stjerne i den."
+      },
+      "facts": [
+        {
+          "id": "DJI.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Djibouti borders Eritrea and Ethiopia, and has a coast on the Gulf of Aden.",
+            "nb": "Djibouti grenser til Eritrea og Etiopia, og har kyst mot Adenbukta."
+          }
+        },
+        {
+          "id": "DJI.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "French and Arabic are Djibouti's official languages.",
+            "nb": "Fransk og arabisk er de offisielle språkene i Djibouti."
+          }
+        },
+        {
+          "id": "DJI.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Several foreign powers, including France, the United States and China, keep military bases in Djibouti.",
+            "nb": "Flere stormakter, blant dem Frankrike, USA og Kina, har militærbaser i Djibouti."
+          }
+        },
+        {
+          "id": "DJI.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Lake Assal in Djibouti is the lowest point in Africa, far below sea level.",
+            "nb": "Assalsjøen i Djibouti er Afrikas laveste punkt, langt under havnivå."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "ERI",
+      "hooks": {
+        "en": [
+          {
+            "id": "ERI.en.1",
+            "type": "anchor",
+            "text": "Eritrea is the strip of Red Sea coast north of Ethiopia, between Sudan and Djibouti."
+          },
+          {
+            "id": "ERI.en.2",
+            "type": "etymology",
+            "text": "Eritrea comes from the Greek name for the Red Sea, Erythra Thalassa."
+          },
+          {
+            "id": "ERI.en.3",
+            "type": "sound",
+            "text": "Eritrea: 'a red tree' grows on the shore of the Red Sea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ERI.nb.1",
+            "type": "anchor",
+            "text": "Eritrea er kyststripen ved Rødehavet nord for Etiopia, mellom Sudan og Djibouti."
+          },
+          {
+            "id": "ERI.nb.2",
+            "type": "etymology",
+            "text": "Eritrea kommer av det greske navnet på Rødehavet, Erythra Thalassa."
+          },
+          {
+            "id": "ERI.nb.3",
+            "type": "sound",
+            "text": "Eritrea: en rød ert triller ned i Rødehavet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "ERI.cap.en.1",
+            "type": "anchor",
+            "text": "Asmara sits high on the plateau, inland from the Red Sea port of Massawa."
+          },
+          {
+            "id": "ERI.cap.en.2",
+            "type": "story",
+            "text": "Asmara's modernist buildings from the Italian era are a UNESCO World Heritage Site."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ERI.cap.nb.1",
+            "type": "anchor",
+            "text": "Asmara ligger høyt oppe på platået, innenfor havnebyen Massawa ved Rødehavet."
+          },
+          {
+            "id": "ERI.cap.nb.2",
+            "type": "story",
+            "text": "De modernistiske bygningene fra italiensk tid i Asmara står på UNESCOs verdensarvliste."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A red triangle from the hoist splits green and blue; a gold olive branch in a wreath sits in the red.",
+        "nb": "En rød trekant fra stangen deler grønt og blått; en gyllen olivengren i en krans står i det røde."
+      },
+      "facts": [
+        {
+          "id": "ERI.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Eritrea borders Sudan, Ethiopia and Djibouti, with a long Red Sea coast.",
+            "nb": "Eritrea grenser til Sudan, Etiopia og Djibouti, og har lang kyst mot Rødehavet."
+          }
+        },
+        {
+          "id": "ERI.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Tigrinya, Arabic and English are working languages of the state in Eritrea.",
+            "nb": "Tigrinja, arabisk og engelsk er statens arbeidsspråk i Eritrea."
+          }
+        },
+        {
+          "id": "ERI.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "When Eritrea became independent from Ethiopia, Ethiopia lost its coastline.",
+            "nb": "Da Eritrea ble selvstendig fra Etiopia, mistet Etiopia kysten sin."
+          }
+        },
+        {
+          "id": "ERI.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The nakfa, Eritrea's currency, is named after Nakfa, a town in the north of the country.",
+            "nb": "Nakfa, Eritreas valuta, har navn etter byen Nakfa nord i landet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "ETH",
+      "hooks": {
+        "en": [
+          {
+            "id": "ETH.en.1",
+            "type": "anchor",
+            "text": "Ethiopia is the landlocked (no coast) highland country behind Eritrea and Djibouti, in the Horn of Africa."
+          },
+          {
+            "id": "ETH.en.2",
+            "type": "contrast",
+            "text": "Ethiopia has the highlands and no coast; Eritrea, once part of it, holds the Red Sea shore."
+          },
+          {
+            "id": "ETH.en.3",
+            "type": "story",
+            "text": "Legend says an Ethiopian goatherd, Kaldi, found coffee when his goats danced after eating the berries."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ETH.nb.1",
+            "type": "anchor",
+            "text": "Etiopia er innlandsstaten (uten kyst) på høylandet bak Eritrea og Djibouti, på Afrikas Horn."
+          },
+          {
+            "id": "ETH.nb.2",
+            "type": "contrast",
+            "text": "Etiopia har høylandet og ingen kyst; Eritrea, som en gang hørte til, har Rødehavskysten."
+          },
+          {
+            "id": "ETH.nb.3",
+            "type": "sound",
+            "text": "Etiopia: «et utopia» for kaffedrikkere, for det er herfra kaffen kommer."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "ETH.cap.en.1",
+            "type": "etymology",
+            "text": "Addis Ababa means 'new flower' in Amharic."
+          },
+          {
+            "id": "ETH.cap.en.2",
+            "type": "anchor",
+            "text": "Addis Ababa hosts the headquarters of the African Union."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ETH.cap.nb.1",
+            "type": "etymology",
+            "text": "Addis Abeba betyr «ny blomst» på amharisk."
+          },
+          {
+            "id": "ETH.cap.nb.2",
+            "type": "anchor",
+            "text": "Addis Abeba er sete for Den afrikanske union."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green, yellow and red stripes with a blue disc and a yellow star; these colors inspired many other African flags.",
+        "nb": "Grønne, gule og røde striper med en blå sirkel og en gul stjerne; fargene ble forbilde for mange andre afrikanske flagg."
+      },
+      "facts": [
+        {
+          "id": "ETH.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Ethiopia is landlocked (no coast) and borders Eritrea, Djibouti, Somalia, Kenya, South Sudan and Sudan.",
+            "nb": "Etiopia er en innlandsstat (uten kyst) og grenser til Eritrea, Djibouti, Somalia, Kenya, Sør-Sudan og Sudan."
+          }
+        },
+        {
+          "id": "ETH.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Blue Nile starts at Lake Tana in the Ethiopian highlands.",
+            "nb": "Den blå Nil begynner i Tanasjøen på det etiopiske høylandet."
+          }
+        },
+        {
+          "id": "ETH.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Ethiopia kept its independence through the colonial era, apart from a short Italian occupation.",
+            "nb": "Etiopia beholdt selvstendigheten gjennom kolonitiden, bortsett fra en kort italiensk okkupasjon."
+          }
+        },
+        {
+          "id": "ETH.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Ethiopia keeps its own calendar, with thirteen months in the year.",
+            "nb": "Etiopia har sin egen kalender, med tretten måneder i året."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "KEN",
+      "hooks": {
+        "en": [
+          {
+            "id": "KEN.en.1",
+            "type": "anchor",
+            "text": "Kenya sits on the Indian Ocean between Somalia and Tanzania, and the equator runs straight through it."
+          },
+          {
+            "id": "KEN.en.2",
+            "type": "etymology",
+            "text": "Kenya is named after Mount Kenya, the highest mountain in the country."
+          },
+          {
+            "id": "KEN.en.3",
+            "type": "sound",
+            "text": "Kenya: 'Ken, ya see that peak?' Ken points at Mount Kenya, right by the equator."
+          }
+        ],
+        "nb": [
+          {
+            "id": "KEN.nb.1",
+            "type": "anchor",
+            "text": "Kenya ligger ved Indiahavet mellom Somalia og Tanzania, og ekvator går tvers gjennom landet."
+          },
+          {
+            "id": "KEN.nb.2",
+            "type": "etymology",
+            "text": "Kenya har navnet sitt fra fjellet Mount Kenya, det høyeste i landet."
+          },
+          {
+            "id": "KEN.nb.3",
+            "type": "sound",
+            "text": "Kenya: «kjenn, ja», sier guiden og lar deg kjenne på ekvatorlinjen."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "KEN.cap.en.1",
+            "type": "etymology",
+            "text": "Nairobi comes from a Maasai phrase meaning 'cool water'."
+          },
+          {
+            "id": "KEN.cap.en.2",
+            "type": "story",
+            "text": "Nairobi began as a depot on the railway from Mombasa to Uganda."
+          }
+        ],
+        "nb": [
+          {
+            "id": "KEN.cap.nb.1",
+            "type": "etymology",
+            "text": "Nairobi kommer av et massai-uttrykk for «kaldt vann»."
+          },
+          {
+            "id": "KEN.cap.nb.2",
+            "type": "story",
+            "text": "Nairobi begynte som et depot på jernbanen fra Mombasa mot Uganda."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Black, red and green stripes with white edges, and a Maasai shield with two crossed spears in the center.",
+        "nb": "Svarte, røde og grønne striper med hvite kanter, og et massai-skjold med to kryssede spyd i midten."
+      },
+      "facts": [
+        {
+          "id": "KEN.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Kenya borders Ethiopia, Somalia, South Sudan, Uganda and Tanzania, and has an Indian Ocean coast.",
+            "nb": "Kenya grenser til Etiopia, Somalia, Sør-Sudan, Uganda og Tanzania, og har kyst mot Indiahavet."
+          }
+        },
+        {
+          "id": "KEN.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Swahili and English are Kenya's official languages.",
+            "nb": "Swahili og engelsk er Kenyas offisielle språk."
+          }
+        },
+        {
+          "id": "KEN.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Great Rift Valley runs north to south through western Kenya.",
+            "nb": "Den store riftdalen går fra nord til sør gjennom det vestlige Kenya."
+          }
+        },
+        {
+          "id": "KEN.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Nairobi National Park lies inside the capital's limits, with giraffes grazing in sight of the skyline.",
+            "nb": "Nairobi nasjonalpark ligger innenfor bygrensen, og sjiraffer beiter med skyskraperne i bakgrunnen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "MDG",
+      "hooks": {
+        "en": [
+          {
+            "id": "MDG.en.1",
+            "type": "anchor",
+            "text": "Madagascar is the giant island off southeast Africa, across the Mozambique Channel from Mozambique."
+          },
+          {
+            "id": "MDG.en.2",
+            "type": "shape",
+            "text": "Madagascar is a long footprint stamped into the Indian Ocean beside Mozambique."
+          },
+          {
+            "id": "MDG.en.3",
+            "type": "story",
+            "text": "Madagascar split from the other landmasses so long ago that most of its wildlife, lemurs included, lives nowhere else."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MDG.nb.1",
+            "type": "anchor",
+            "text": "Madagaskar er den digre øya utenfor Sørøst-Afrika, over Mosambikkanalen fra Mosambik."
+          },
+          {
+            "id": "MDG.nb.2",
+            "type": "shape",
+            "text": "Madagaskar er et langt fotavtrykk i Indiahavet ved siden av Mosambik."
+          },
+          {
+            "id": "MDG.nb.3",
+            "type": "sound",
+            "text": "Madagaskar: en lemur spiser så mye mat at magen fylles med gass."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "MDG.cap.en.1",
+            "type": "etymology",
+            "text": "Antananarivo means 'city of the thousand', after the thousand soldiers said to have guarded it."
+          },
+          {
+            "id": "MDG.cap.en.2",
+            "type": "anchor",
+            "text": "Antananarivo sits in the central highlands, near the middle of the island and far from the coast."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MDG.cap.nb.1",
+            "type": "etymology",
+            "text": "Antananarivo betyr «de tusens by», etter tusen soldater som skal ha voktet den."
+          },
+          {
+            "id": "MDG.cap.nb.2",
+            "type": "anchor",
+            "text": "Antananarivo ligger på høylandet midt på øya, langt fra kysten."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A white vertical band at the hoist, with red over green horizontal bands to the right.",
+        "nb": "Et hvitt loddrett felt ved stangen, med rødt over grønt i vannrette felt til høyre."
+      },
+      "facts": [
+        {
+          "id": "MDG.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Madagascar has no land borders; it is an island in the Indian Ocean, off Mozambique.",
+            "nb": "Madagaskar har ingen landegrenser; det er en øy i Indiahavet, utenfor Mosambik."
+          }
+        },
+        {
+          "id": "MDG.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Malagasy and French are Madagascar's official languages.",
+            "nb": "Madagassisk og fransk er de offisielle språkene på Madagaskar."
+          }
+        },
+        {
+          "id": "MDG.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Wild lemurs live only on Madagascar and the nearby Comoro Islands.",
+            "nb": "Ville lemurer finnes bare på Madagaskar og de nærliggende Komorene."
+          }
+        },
+        {
+          "id": "MDG.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Malagasy is related to languages spoken on Borneo, not to those of mainland Africa.",
+            "nb": "Madagassisk er i slekt med språk på Borneo, ikke med språkene på det afrikanske fastlandet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "MOZ",
+      "hooks": {
+        "en": [
+          {
+            "id": "MOZ.en.1",
+            "type": "anchor",
+            "text": "Mozambique runs down Africa's southeast coast, facing Madagascar across the Mozambique Channel."
+          },
+          {
+            "id": "MOZ.en.2",
+            "type": "flag_decode",
+            "text": "Mozambique's flag is the one with a rifle, crossed with a hoe over an open book."
+          },
+          {
+            "id": "MOZ.en.3",
+            "type": "sound",
+            "text": "Mozambique: a mossy-beaked heron fishing all along the coast opposite Madagascar."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MOZ.nb.1",
+            "type": "anchor",
+            "text": "Mosambik strekker seg langs Afrikas sørøstkyst, med Madagaskar på andre siden av Mosambikkanalen."
+          },
+          {
+            "id": "MOZ.nb.2",
+            "type": "flag_decode",
+            "text": "Mosambiks flagg er det med gevær, krysset med en hakke over en åpen bok."
+          },
+          {
+            "id": "MOZ.nb.3",
+            "type": "sound",
+            "text": "Mosambik: en bikkje dekket av mose sover på stranda overfor Madagaskar."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "MOZ.cap.en.1",
+            "type": "anchor",
+            "text": "Maputo is in the far south, close to the borders with South Africa and Eswatini."
+          },
+          {
+            "id": "MOZ.cap.en.2",
+            "type": "story",
+            "text": "Maputo was called Lourenço Marques under Portuguese rule."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MOZ.cap.nb.1",
+            "type": "anchor",
+            "text": "Maputo ligger helt i sør, nær grensene til Sør-Afrika og Eswatini."
+          },
+          {
+            "id": "MOZ.cap.nb.2",
+            "type": "story",
+            "text": "Maputo het Lourenço Marques under portugisisk styre."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green, black and yellow bands with white edges; a red triangle holds a star, a book, a hoe and a rifle.",
+        "nb": "Grønt, svart og gult med hvite kanter; en rød trekant har en stjerne, en bok, en hakke og et gevær."
+      },
+      "facts": [
+        {
+          "id": "MOZ.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Mozambique borders Tanzania, Malawi, Zambia, Zimbabwe, South Africa and Eswatini, with a long Indian Ocean coast.",
+            "nb": "Mosambik grenser til Tanzania, Malawi, Zambia, Zimbabwe, Sør-Afrika og Eswatini, og har lang kyst mot Indiahavet."
+          }
+        },
+        {
+          "id": "MOZ.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Portuguese is Mozambique's official language.",
+            "nb": "Portugisisk er det offisielle språket i Mosambik."
+          }
+        },
+        {
+          "id": "MOZ.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Zambezi crosses Mozambique and reaches the Indian Ocean on its coast.",
+            "nb": "Zambezi krysser Mosambik og munner ut i Indiahavet på kysten der."
+          }
+        },
+        {
+          "id": "MOZ.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Mozambique joined the Commonwealth even though it was never a British colony.",
+            "nb": "Mosambik ble med i Samveldet selv om landet aldri var britisk koloni."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "MUS",
+      "hooks": {
+        "en": [
+          {
+            "id": "MUS.en.1",
+            "type": "anchor",
+            "text": "Mauritius is a small island in the Indian Ocean, east of Madagascar."
+          },
+          {
+            "id": "MUS.en.2",
+            "type": "story",
+            "text": "The dodo lived only on Mauritius and died out after sailors and their animals arrived."
+          },
+          {
+            "id": "MUS.en.3",
+            "type": "sound",
+            "text": "Mauritius: 'Maurice, wish us luck', says the dodo from its island east of Madagascar."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MUS.nb.1",
+            "type": "anchor",
+            "text": "Mauritius er en liten øy i Indiahavet, øst for Madagaskar."
+          },
+          {
+            "id": "MUS.nb.2",
+            "type": "story",
+            "text": "Dronten levde bare på Mauritius og døde ut etter at sjøfolk og dyrene deres kom."
+          },
+          {
+            "id": "MUS.nb.3",
+            "type": "sound",
+            "text": "Mauritius: Maurits rir på en dronte langs stranda øst for Madagaskar."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "MUS.cap.en.1",
+            "type": "etymology",
+            "text": "Port Louis is named after King Louis XV of France."
+          },
+          {
+            "id": "MUS.cap.en.2",
+            "type": "anchor",
+            "text": "Port Louis is the harbour on the northwest coast of Mauritius."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MUS.cap.nb.1",
+            "type": "etymology",
+            "text": "Port Louis er oppkalt etter den franske kongen Ludvig XV."
+          },
+          {
+            "id": "MUS.cap.nb.2",
+            "type": "anchor",
+            "text": "Port Louis er havnebyen på nordvestkysten av Mauritius."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Four equal horizontal stripes: red, blue, yellow, green.",
+        "nb": "Fire like brede vannrette striper: rød, blå, gul, grønn."
+      },
+      "facts": [
+        {
+          "id": "MUS.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Mauritius has no land borders; it is an island country in the Indian Ocean.",
+            "nb": "Mauritius har ingen landegrenser; det er en øystat i Indiahavet."
+          }
+        },
+        {
+          "id": "MUS.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "English and French are the official languages of Mauritius.",
+            "nb": "Engelsk og fransk er de offisielle språkene på Mauritius."
+          }
+        },
+        {
+          "id": "MUS.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Mauritius is named after Maurice of Nassau, a Dutch prince.",
+            "nb": "Mauritius har navn etter Maurits av Nassau, en nederlandsk prins."
+          }
+        },
+        {
+          "id": "MUS.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Most people in Mauritius have roots in India, and Hinduism is the largest religion.",
+            "nb": "De fleste på Mauritius har røtter i India, og hinduisme er den største religionen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "MWI",
+      "hooks": {
+        "en": [
+          {
+            "id": "MWI.en.1",
+            "type": "anchor",
+            "text": "Malawi is the long, narrow landlocked (no coast) country along the west shore of Lake Malawi."
+          },
+          {
+            "id": "MWI.en.2",
+            "type": "shape",
+            "text": "Malawi is a thin worm curling down beside its lake, its tail poking into Mozambique."
+          },
+          {
+            "id": "MWI.en.3",
+            "type": "contrast",
+            "text": "Malawi in the southeast has the long lake; Mali in West Africa has the Sahara."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MWI.nb.1",
+            "type": "anchor",
+            "text": "Malawi er den smale innlandsstaten (uten kyst) langs vestsiden av Malawisjøen."
+          },
+          {
+            "id": "MWI.nb.2",
+            "type": "shape",
+            "text": "Malawi er en tynn mark som kryper ned langs sjøen sin, med halen inn i Mosambik."
+          },
+          {
+            "id": "MWI.nb.3",
+            "type": "contrast",
+            "text": "Malawi i sørøst har den lange sjøen; Mali i Vest-Afrika har Sahara."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "MWI.cap.en.1",
+            "type": "sound",
+            "text": "Lilongwe: a lily a long way inland from Lake Malawi."
+          },
+          {
+            "id": "MWI.cap.en.2",
+            "type": "story",
+            "text": "Lilongwe replaced Zomba as capital, moving it from the south to the centre of the country."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MWI.cap.nb.1",
+            "type": "sound",
+            "text": "Lilongwe: en lilje på lang vei inn i landet fra Malawisjøen."
+          },
+          {
+            "id": "MWI.cap.nb.2",
+            "type": "story",
+            "text": "Lilongwe tok over etter Zomba som hovedstad, og flyttet den fra sør til midten av landet."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Black, red and green stripes, with a red rising sun on the black top stripe.",
+        "nb": "Svarte, røde og grønne striper, med en rød soloppgang på den svarte øverste stripen."
+      },
+      "facts": [
+        {
+          "id": "MWI.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Malawi is landlocked (no coast) and borders Tanzania, Zambia and Mozambique.",
+            "nb": "Malawi er en innlandsstat (uten kyst) og grenser til Tanzania, Zambia og Mosambik."
+          }
+        },
+        {
+          "id": "MWI.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "English and Chichewa are Malawi's official languages.",
+            "nb": "Engelsk og chichewa er Malawis offisielle språk."
+          }
+        },
+        {
+          "id": "MWI.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Malawi was called Nyasaland under British rule.",
+            "nb": "Malawi het Nyasaland under britisk styre."
+          }
+        },
+        {
+          "id": "MWI.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Lake Malawi holds more species of fish than any other lake in the world.",
+            "nb": "Malawisjøen har flere fiskearter enn noen annen innsjø i verden."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "RWA",
+      "hooks": {
+        "en": [
+          {
+            "id": "RWA.en.1",
+            "type": "anchor",
+            "text": "Rwanda sits north of Burundi, between Lake Kivu and Tanzania, just south of the equator."
+          },
+          {
+            "id": "RWA.en.2",
+            "type": "contrast",
+            "text": "Rwanda touches Lake Kivu but not Lake Tanganyika; Burundi, to its south, gets Tanganyika."
+          },
+          {
+            "id": "RWA.en.3",
+            "type": "sound",
+            "text": "Rwanda: a gorilla goes for a 'ru-wander' through the misty hills."
+          }
+        ],
+        "nb": [
+          {
+            "id": "RWA.nb.1",
+            "type": "anchor",
+            "text": "Rwanda ligger nord for Burundi, mellom Kivusjøen og Tanzania, like sør for ekvator."
+          },
+          {
+            "id": "RWA.nb.2",
+            "type": "contrast",
+            "text": "Rwanda grenser til Kivusjøen, men ikke Tanganyikasjøen; den får Burundi i sør."
+          },
+          {
+            "id": "RWA.nb.3",
+            "type": "sound",
+            "text": "Rwanda: en gorilla med ru pels vandrer over de grønne åsene."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "RWA.cap.en.1",
+            "type": "anchor",
+            "text": "Kigali sits in the middle of Rwanda, spread over several hills."
+          },
+          {
+            "id": "RWA.cap.en.2",
+            "type": "sound",
+            "text": "Kigali: a key in a galley, sailing over the hills to the middle of Rwanda."
+          }
+        ],
+        "nb": [
+          {
+            "id": "RWA.cap.nb.1",
+            "type": "anchor",
+            "text": "Kigali ligger midt i Rwanda, spredt over flere åser."
+          },
+          {
+            "id": "RWA.cap.nb.2",
+            "type": "sound",
+            "text": "Kigali: kikk utover alle åsene fra midt i Rwanda."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue, yellow and green bands, with a yellow sun in the upper right of the blue.",
+        "nb": "Blått, gult og grønt felt, med en gul sol øverst til høyre i det blå."
+      },
+      "facts": [
+        {
+          "id": "RWA.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Rwanda is landlocked (no coast) and borders Uganda, Tanzania, Burundi and the Democratic Republic of the Congo.",
+            "nb": "Rwanda er en innlandsstat (uten kyst) og grenser til Uganda, Tanzania, Burundi og Kongo."
+          }
+        },
+        {
+          "id": "RWA.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Rwanda has four official languages: Kinyarwanda, English, French and Swahili.",
+            "nb": "Rwanda har fire offisielle språk: kinyarwanda, engelsk, fransk og swahili."
+          }
+        },
+        {
+          "id": "RWA.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Mountain gorillas live in the Virunga volcanoes, on Rwanda's borders with Uganda and the Democratic Republic of the Congo.",
+            "nb": "Fjellgorillaer lever i Virunga-vulkanene, ved Rwandas grenser mot Uganda og Kongo."
+          }
+        },
+        {
+          "id": "RWA.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Rwanda has banned plastic bags across the whole country.",
+            "nb": "Rwanda har forbudt plastposer i hele landet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "SOM",
+      "hooks": {
+        "en": [
+          {
+            "id": "SOM.en.1",
+            "type": "anchor",
+            "text": "Somalia wraps around the Horn of Africa, with Ethiopia inland and Kenya to the southwest."
+          },
+          {
+            "id": "SOM.en.2",
+            "type": "shape",
+            "text": "Somalia is a giant number seven along the Horn of Africa, with Ethiopia tucked inside the angle."
+          },
+          {
+            "id": "SOM.en.3",
+            "type": "anchor",
+            "text": "Somalia has the longest mainland coastline in Africa, along the Gulf of Aden and the Indian Ocean."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SOM.nb.1",
+            "type": "anchor",
+            "text": "Somalia bøyer seg rundt Afrikas Horn, med Etiopia innenfor og Kenya i sørvest."
+          },
+          {
+            "id": "SOM.nb.2",
+            "type": "shape",
+            "text": "Somalia er et digert sjutall langs Afrikas Horn, med Etiopia inni vinkelen."
+          },
+          {
+            "id": "SOM.nb.3",
+            "type": "anchor",
+            "text": "Somalia har Afrikas lengste fastlandskyst, mot Adenbukta og Indiahavet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "SOM.cap.en.1",
+            "type": "anchor",
+            "text": "Mogadishu is on the Indian Ocean coast, in the south of Somalia."
+          },
+          {
+            "id": "SOM.cap.en.2",
+            "type": "sound",
+            "text": "Mogadishu: a mug of dish soap sliding along the Indian Ocean shore."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SOM.cap.nb.1",
+            "type": "anchor",
+            "text": "Mogadishu ligger ved Indiahavet, sør i Somalia."
+          },
+          {
+            "id": "SOM.cap.nb.2",
+            "type": "sound",
+            "text": "Mogadishu: moga-di-sju, sju måker på stranda ved Indiahavet."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A single white star on light blue; its points stand for the lands where Somalis live.",
+        "nb": "Én hvit stjerne på lyseblått; spissene står for områdene der somaliere bor."
+      },
+      "facts": [
+        {
+          "id": "SOM.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Somalia borders Ethiopia and Kenya, with coasts on the Gulf of Aden and the Indian Ocean.",
+            "nb": "Somalia grenser til Etiopia og Kenya, og har kyst mot Adenbukta og Indiahavet."
+          }
+        },
+        {
+          "id": "SOM.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Somali and Arabic are Somalia's official languages.",
+            "nb": "Somali og arabisk er Somalias offisielle språk."
+          }
+        },
+        {
+          "id": "SOM.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Somaliland, in the north, runs its own affairs but is not recognized as a state by most countries.",
+            "nb": "Somaliland i nord styrer seg selv, men er ikke anerkjent som stat av de fleste land."
+          }
+        },
+        {
+          "id": "SOM.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Somalia has more camels than any other country.",
+            "nb": "Somalia har flere kameler enn noe annet land."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "SSD",
+      "hooks": {
+        "en": [
+          {
+            "id": "SSD.en.1",
+            "type": "anchor",
+            "text": "South Sudan is the landlocked (no coast) country directly south of Sudan, with Uganda and Kenya below it."
+          },
+          {
+            "id": "SSD.en.2",
+            "type": "story",
+            "text": "South Sudan is the world's newest country, split off from Sudan after a referendum."
+          },
+          {
+            "id": "SSD.en.3",
+            "type": "sound",
+            "text": "South Sudan: a sudden south wind blows down the White Nile toward Juba."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SSD.nb.1",
+            "type": "anchor",
+            "text": "Sør-Sudan er innlandsstaten (uten kyst) rett sør for Sudan, med Uganda og Kenya under seg."
+          },
+          {
+            "id": "SSD.nb.2",
+            "type": "story",
+            "text": "Sør-Sudan er verdens nyeste land, skilt ut fra Sudan etter en folkeavstemning."
+          },
+          {
+            "id": "SSD.nb.3",
+            "type": "sound",
+            "text": "Sør-Sudan: sur sump og sudd langs Den hvite Nil, rett sør for Sudan."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "SSD.cap.en.1",
+            "type": "anchor",
+            "text": "Juba sits on the White Nile, in the far south near Uganda."
+          },
+          {
+            "id": "SSD.cap.en.2",
+            "type": "sound",
+            "text": "Juba: a tuba floats down the White Nile, blaring all the way to Juba."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SSD.cap.nb.1",
+            "type": "anchor",
+            "text": "Juba ligger ved Den hvite Nil, helt i sør, nær Uganda."
+          },
+          {
+            "id": "SSD.cap.nb.2",
+            "type": "sound",
+            "text": "Juba: en tuba flyter nedover Den hvite Nil og tuter i Juba."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Black, red and green bands edged in white, with a blue triangle at the hoist holding a yellow star.",
+        "nb": "Svart, rødt og grønt med hvite kanter, og en blå trekant ved stangen med en gul stjerne."
+      },
+      "facts": [
+        {
+          "id": "SSD.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "South Sudan is landlocked (no coast) and borders Sudan, Ethiopia, Kenya, Uganda, the Democratic Republic of the Congo and the Central African Republic.",
+            "nb": "Sør-Sudan er en innlandsstat (uten kyst) og grenser til Sudan, Etiopia, Kenya, Uganda, Kongo og Den sentralafrikanske republikk."
+          }
+        },
+        {
+          "id": "SSD.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "English is South Sudan's official language.",
+            "nb": "Engelsk er det offisielle språket i Sør-Sudan."
+          }
+        },
+        {
+          "id": "SSD.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Sudd, one of the largest wetlands in the world, spreads along the White Nile in South Sudan.",
+            "nb": "Sudd, et av verdens største våtmarksområder, brer seg langs Den hvite Nil i Sør-Sudan."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "SYC",
+      "hooks": {
+        "en": [
+          {
+            "id": "SYC.en.1",
+            "type": "anchor",
+            "text": "Seychelles is an island group in the Indian Ocean, northeast of Madagascar."
+          },
+          {
+            "id": "SYC.en.2",
+            "type": "etymology",
+            "text": "Seychelles is named after Jean Moreau de Séchelles, a French finance minister."
+          },
+          {
+            "id": "SYC.en.3",
+            "type": "sound",
+            "text": "Seychelles: she sells seashells on the Seychelles shore, far out in the Indian Ocean."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SYC.nb.1",
+            "type": "anchor",
+            "text": "Seychellene er en øygruppe (mange øyer samlet) i Indiahavet, nordøst for Madagaskar."
+          },
+          {
+            "id": "SYC.nb.2",
+            "type": "etymology",
+            "text": "Seychellene har navn etter Jean Moreau de Séchelles, en fransk finansminister."
+          },
+          {
+            "id": "SYC.nb.3",
+            "type": "sound",
+            "text": "Seychellene: sei og skjell på stranda, langt ute i Indiahavet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "SYC.cap.en.1",
+            "type": "anchor",
+            "text": "Victoria is on Mahé, the largest island of Seychelles."
+          },
+          {
+            "id": "SYC.cap.en.2",
+            "type": "contrast",
+            "text": "Victoria, the capital of Seychelles, is named after the British queen; it is nowhere near Lake Victoria."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SYC.cap.nb.1",
+            "type": "anchor",
+            "text": "Victoria ligger på Mahé, den største øya på Seychellene."
+          },
+          {
+            "id": "SYC.cap.nb.2",
+            "type": "contrast",
+            "text": "Victoria, hovedstaden på Seychellene, har navn etter den britiske dronningen og ligger langt fra Victoriasjøen."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Five rays fan out from the bottom left corner: blue, yellow, red, white and green.",
+        "nb": "Fem stråler vifter ut fra nederste venstre hjørne: blå, gul, rød, hvit og grønn."
+      },
+      "facts": [
+        {
+          "id": "SYC.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Seychelles has no land borders; it is an archipelago (a group of islands) in the Indian Ocean.",
+            "nb": "Seychellene har ingen landegrenser; landet er en øygruppe (flere øyer samlet) i Indiahavet."
+          }
+        },
+        {
+          "id": "SYC.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Seychellois Creole, English and French are the official languages of Seychelles.",
+            "nb": "Seychellisk kreol, engelsk og fransk er de offisielle språkene på Seychellene."
+          }
+        },
+        {
+          "id": "SYC.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The coco de mer palm, which has the largest seed of any plant, grows wild only in Seychelles.",
+            "nb": "Palmen coco de mer, som har det største frøet av alle planter, vokser vilt bare på Seychellene."
+          }
+        },
+        {
+          "id": "SYC.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Aldabra, an atoll in Seychelles, is home to a large population of giant tortoises.",
+            "nb": "Aldabra, en atoll på Seychellene, har en stor bestand av kjempeskilpadder."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "TZA",
+      "hooks": {
+        "en": [
+          {
+            "id": "TZA.en.1",
+            "type": "anchor",
+            "text": "Tanzania is on the Indian Ocean south of Kenya, with Kilimanjaro just inside its side of the border."
+          },
+          {
+            "id": "TZA.en.2",
+            "type": "etymology",
+            "text": "Tanzania joins the names Tanganyika and Zanzibar, which merged into one country."
+          },
+          {
+            "id": "TZA.en.3",
+            "type": "sound",
+            "text": "Tanzania: the tan you get lying on the beaches of Zanzibar."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TZA.nb.1",
+            "type": "anchor",
+            "text": "Tanzania ligger ved Indiahavet sør for Kenya, med Kilimanjaro rett innenfor grensen."
+          },
+          {
+            "id": "TZA.nb.2",
+            "type": "etymology",
+            "text": "Tanzania er satt sammen av Tanganyika og Zanzibar, som slo seg sammen til ett land."
+          },
+          {
+            "id": "TZA.nb.3",
+            "type": "sound",
+            "text": "Tanzania: tante Sania danser på stranda på Zanzibar."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "TZA.cap.en.1",
+            "type": "contrast",
+            "text": "Dodoma is the capital, but Dar es Salaam is the biggest city: a common trap."
+          },
+          {
+            "id": "TZA.cap.en.2",
+            "type": "sound",
+            "text": "Dodoma: a dodo in a dome, sitting in the dry middle of Tanzania."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TZA.cap.nb.1",
+            "type": "contrast",
+            "text": "Dodoma er hovedstaden, men Dar es Salaam er den største byen: en vanlig felle."
+          },
+          {
+            "id": "TZA.cap.nb.2",
+            "type": "anchor",
+            "text": "Dodoma ligger midt i Tanzania, langt inne i landet fra Dar es Salaam ved kysten."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A black diagonal band edged in yellow runs from bottom left to top right, between a green and a blue triangle.",
+        "nb": "Et svart diagonalt bånd med gule kanter går fra nede til venstre til oppe til høyre, mellom en grønn og en blå trekant."
+      },
+      "facts": [
+        {
+          "id": "TZA.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Tanzania borders Kenya, Uganda, Rwanda, Burundi, the Democratic Republic of the Congo, Zambia, Malawi and Mozambique.",
+            "nb": "Tanzania grenser til Kenya, Uganda, Rwanda, Burundi, Kongo, Zambia, Malawi og Mosambik."
+          }
+        },
+        {
+          "id": "TZA.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Swahili and English are the official languages of Tanzania.",
+            "nb": "Swahili og engelsk er de offisielle språkene i Tanzania."
+          }
+        },
+        {
+          "id": "TZA.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Kilimanjaro, in northern Tanzania, is the highest mountain in Africa.",
+            "nb": "Kilimanjaro, nord i Tanzania, er Afrikas høyeste fjell."
+          }
+        },
+        {
+          "id": "TZA.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Lake Victoria, Lake Tanganyika and Lake Malawi all touch Tanzania.",
+            "nb": "Victoriasjøen, Tanganyikasjøen og Malawisjøen grenser alle til Tanzania."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "UGA",
+      "hooks": {
+        "en": [
+          {
+            "id": "UGA.en.1",
+            "type": "anchor",
+            "text": "Uganda is landlocked (no coast), on the north shore of Lake Victoria, west of Kenya."
+          },
+          {
+            "id": "UGA.en.2",
+            "type": "story",
+            "text": "The Nile leaves Lake Victoria at Jinja in Uganda and heads north toward Egypt."
+          },
+          {
+            "id": "UGA.en.3",
+            "type": "sound",
+            "text": "Uganda: 'you, gander': a goose on Lake Victoria honks at you."
+          }
+        ],
+        "nb": [
+          {
+            "id": "UGA.nb.1",
+            "type": "anchor",
+            "text": "Uganda er en innlandsstat (uten kyst) ved nordbredden av Victoriasjøen, vest for Kenya."
+          },
+          {
+            "id": "UGA.nb.2",
+            "type": "story",
+            "text": "Nilen renner ut av Victoriasjøen ved Jinja i Uganda og setter kursen nordover mot Egypt."
+          },
+          {
+            "id": "UGA.nb.3",
+            "type": "sound",
+            "text": "Uganda: en ugle og en and padler sammen over Victoriasjøen."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "UGA.cap.en.1",
+            "type": "etymology",
+            "text": "Kampala comes from a Luganda phrase for a hill of impalas."
+          },
+          {
+            "id": "UGA.cap.en.2",
+            "type": "anchor",
+            "text": "Kampala lies close to the north shore of Lake Victoria."
+          }
+        ],
+        "nb": [
+          {
+            "id": "UGA.cap.nb.1",
+            "type": "etymology",
+            "text": "Kampala kommer av et luganda-uttrykk for «impalaenes ås»."
+          },
+          {
+            "id": "UGA.cap.nb.2",
+            "type": "anchor",
+            "text": "Kampala ligger like ved nordbredden av Victoriasjøen."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Six stripes, black, yellow and red repeated, with a grey crowned crane in a white disc.",
+        "nb": "Seks striper, svart, gult og rødt gjentatt, med en krontrane i en hvit sirkel."
+      },
+      "facts": [
+        {
+          "id": "UGA.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Uganda is landlocked (no coast) and borders Kenya, South Sudan, the Democratic Republic of the Congo, Rwanda and Tanzania.",
+            "nb": "Uganda er en innlandsstat (uten kyst) og grenser til Kenya, Sør-Sudan, Kongo, Rwanda og Tanzania."
+          }
+        },
+        {
+          "id": "UGA.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "English and Swahili are Uganda's official languages.",
+            "nb": "Engelsk og swahili er Ugandas offisielle språk."
+          }
+        },
+        {
+          "id": "UGA.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The grey crowned crane on Uganda's flag is the national bird.",
+            "nb": "Krontranen i Ugandas flagg er landets nasjonalfugl."
+          }
+        },
+        {
+          "id": "UGA.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Rwenzori Mountains on Uganda's western border carry glaciers close to the equator.",
+            "nb": "Rwenzori-fjellene ved Ugandas vestgrense har isbreer nesten på ekvator."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "ZMB",
+      "hooks": {
+        "en": [
+          {
+            "id": "ZMB.en.1",
+            "type": "anchor",
+            "text": "Zambia is landlocked (no coast), north of Zimbabwe across the Zambezi River."
+          },
+          {
+            "id": "ZMB.en.2",
+            "type": "etymology",
+            "text": "Zambia is named after the Zambezi River, which forms much of its southern border."
+          },
+          {
+            "id": "ZMB.en.3",
+            "type": "sound",
+            "text": "Zambia: a zebra named Zam bathes below Victoria Falls."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ZMB.nb.1",
+            "type": "anchor",
+            "text": "Zambia er en innlandsstat (uten kyst) nord for Zimbabwe, på andre siden av Zambezi."
+          },
+          {
+            "id": "ZMB.nb.2",
+            "type": "etymology",
+            "text": "Zambia har navn etter elva Zambezi, som danner mye av sørgrensen."
+          },
+          {
+            "id": "ZMB.nb.3",
+            "type": "sound",
+            "text": "Zambia: en sebra som heter Zam bader under Victoriafallene."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "ZMB.cap.en.1",
+            "type": "anchor",
+            "text": "Lusaka sits on a high plateau in the south of Zambia."
+          },
+          {
+            "id": "ZMB.cap.en.2",
+            "type": "sound",
+            "text": "Lusaka: 'lose a car' in Lusaka traffic, then find it again on the plateau."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ZMB.cap.nb.1",
+            "type": "anchor",
+            "text": "Lusaka ligger på et høyplatå i den sørlige delen av Zambia."
+          },
+          {
+            "id": "ZMB.cap.nb.2",
+            "type": "sound",
+            "text": "Lusaka: en lus med en kake vandrer over platået i Zambia."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green with an orange eagle above a block of red, black and orange stripes at the lower right.",
+        "nb": "Grønt med en oransje ørn over et felt med røde, svarte og oransje striper nede til høyre."
+      },
+      "facts": [
+        {
+          "id": "ZMB.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Zambia is landlocked (no coast) and borders Angola, the Democratic Republic of the Congo, Tanzania, Malawi, Mozambique, Zimbabwe and Namibia.",
+            "nb": "Zambia er en innlandsstat (uten kyst) og grenser til Angola, Kongo, Tanzania, Malawi, Mosambik, Zimbabwe og Namibia."
+          }
+        },
+        {
+          "id": "ZMB.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "English is Zambia's official language.",
+            "nb": "Engelsk er det offisielle språket i Zambia."
+          }
+        },
+        {
+          "id": "ZMB.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Victoria Falls lies on the Zambezi, on the border between Zambia and Zimbabwe.",
+            "nb": "Victoriafallene ligger i Zambezi, på grensen mellom Zambia og Zimbabwe."
+          }
+        },
+        {
+          "id": "ZMB.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Zambia was called Northern Rhodesia under British rule.",
+            "nb": "Zambia het Nord-Rhodesia under britisk styre."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "ZWE",
+      "hooks": {
+        "en": [
+          {
+            "id": "ZWE.en.1",
+            "type": "anchor",
+            "text": "Zimbabwe is landlocked (no coast), between Zambia to the north and South Africa to the south."
+          },
+          {
+            "id": "ZWE.en.2",
+            "type": "etymology",
+            "text": "Zimbabwe is named after Great Zimbabwe, a ruined stone city; the name is read as 'stone houses' in Shona."
+          },
+          {
+            "id": "ZWE.en.3",
+            "type": "flag_decode",
+            "text": "The bird on Zimbabwe's flag is the Zimbabwe Bird, a soapstone carving found at Great Zimbabwe."
+          },
+          {
+            "id": "ZWE.en.4",
+            "type": "sound",
+            "text": "Zimbabwe: Bob rafts the Zambezi along Zimbabwe's northern border, shouting 'zim, bob, way'."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ZWE.nb.1",
+            "type": "anchor",
+            "text": "Zimbabwe er en innlandsstat (uten kyst) mellom Zambia i nord og Sør-Afrika i sør."
+          },
+          {
+            "id": "ZWE.nb.2",
+            "type": "etymology",
+            "text": "Zimbabwe har navn etter Great Zimbabwe, en ruinby av stein; navnet tolkes som «steinhus» på shona."
+          },
+          {
+            "id": "ZWE.nb.3",
+            "type": "flag_decode",
+            "text": "Fuglen i Zimbabwes flagg er Zimbabwe-fuglen, en figur i kleberstein funnet i Great Zimbabwe."
+          },
+          {
+            "id": "ZWE.nb.4",
+            "type": "story",
+            "text": "Great Zimbabwe ble bygget av stein uten mørtel, og ga navnet sitt til hele landet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "ZWE.cap.en.1",
+            "type": "story",
+            "text": "Harare was called Salisbury until the early years of independence."
+          },
+          {
+            "id": "ZWE.cap.en.2",
+            "type": "sound",
+            "text": "Harare: a hare, a hare, racing across the high veld."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ZWE.cap.nb.1",
+            "type": "story",
+            "text": "Harare het Salisbury fram til de første årene etter selvstendigheten."
+          },
+          {
+            "id": "ZWE.cap.nb.2",
+            "type": "sound",
+            "text": "Harare: en hare, en hare, i full fart over høysletta i nordøst."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green, yellow, red and black stripes, with a white triangle holding a red star and the yellow Zimbabwe Bird.",
+        "nb": "Grønne, gule, røde og svarte striper, med en hvit trekant som har en rød stjerne og den gule Zimbabwe-fuglen."
+      },
+      "facts": [
+        {
+          "id": "ZWE.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Zimbabwe is landlocked (no coast) and borders Zambia, Mozambique, South Africa and Botswana.",
+            "nb": "Zimbabwe er en innlandsstat (uten kyst) og grenser til Zambia, Mosambik, Sør-Afrika og Botswana."
+          }
+        },
+        {
+          "id": "ZWE.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Zimbabwe uses its own Zimbabwe Gold (ZiG) alongside the United States dollar.",
+            "nb": "Zimbabwe bruker sin egen Zimbabwe Gold (ZiG) side om side med amerikanske dollar."
+          }
+        },
+        {
+          "id": "ZWE.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Lake Kariba, on the Zambezi between Zimbabwe and Zambia, is one of the largest artificial lakes in the world.",
+            "nb": "Karibasjøen, i Zambezi mellom Zimbabwe og Zambia, er en av verdens største kunstige innsjøer."
+          }
+        }
+      ]
+    }
+  ]
+}
