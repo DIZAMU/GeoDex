@@ -34,6 +34,8 @@ export type MapHighlight = {
   selected?: string | null;
   /** Countries that get a name label. */
   labels?: readonly string[];
+  /** Countries shaded as known (placement result, mastery views). */
+  filled?: ReadonlySet<string>;
 };
 
 export type WorldMapProps = {
@@ -48,9 +50,32 @@ export type WorldMapProps = {
   ariaLabel: string;
   /** Animate focus changes (the answer fly-to). Off for prompts. */
   animate?: boolean;
+  /** Share of the viewport left as margin around the focus. Larger shows more context. */
+  padding?: number;
 };
 
+/** bounds: the largest polygon only, so overseas parts and date-line wraps do not widen views. */
 type Shape = { id: string; d: string; centroid: [number, number]; area: number; bounds: Bounds };
+
+/** Bounds of the largest polygon of a feature. */
+function mainBounds(f: Feature<Geometry>, path: ReturnType<typeof geoPath>): Bounds {
+  if (f.geometry?.type !== "MultiPolygon") return path.bounds(f) as Bounds;
+  let best: Feature<Geometry> = f;
+  let bestArea = -1;
+  for (const coordinates of f.geometry.coordinates) {
+    const part: Feature<Geometry> = {
+      type: "Feature",
+      properties: null,
+      geometry: { type: "Polygon", coordinates },
+    };
+    const area = path.area(part);
+    if (area > bestArea) {
+      best = part;
+      bestArea = area;
+    }
+  }
+  return path.bounds(best) as Bounds;
+}
 
 const FLY_MS = 600;
 
@@ -127,6 +152,7 @@ export function WorldMap({
   labelFor,
   ariaLabel,
   animate = false,
+  padding = 0.12,
 }: WorldMapProps) {
   const { ref: containerRef, width, height } = useSize<HTMLDivElement>();
   const svgRef = useRef<SVGSVGElement>(null);
@@ -165,7 +191,7 @@ export function WorldMap({
         d: path(f) ?? "",
         centroid: centroid ?? (path.centroid(f) as [number, number]),
         area: path.area(f),
-        bounds: path.bounds(f) as Bounds,
+        bounds: mainBounds(f, path),
       });
     }
     // Countries drawn only as markers (no geometry), such as Tuvalu.
@@ -200,8 +226,8 @@ export function WorldMap({
     const behavior = zoom<SVGSVGElement, unknown>()
       .scaleExtent([1, MAX_ZOOM])
       .translateExtent([
-        [-width * 0.25, -height * 0.25],
-        [width * 1.25, height * 1.25],
+        [-width, -height],
+        [width * 2, height * 2],
       ])
       .on("zoom", (event: D3ZoomEvent<SVGSVGElement, unknown>) => {
         const { k, x, y } = event.transform;
@@ -224,10 +250,17 @@ export function WorldMap({
     if (!svg || !behavior || !geometry) return;
     let target: Transform = { k: 1, x: 0, y: 0 };
     const ids = focusKey === "" ? [] : focusKey.split(",");
+    // In views of several countries, very wide ones (Russia, Canada) are left out so a
+    // region view stays on the region; their nearby parts show anyway.
+    const wide = width * 0.35;
+    const shapes = ids
+      .map((id) => geometry.byId.get(id))
+      .filter((s): s is Shape => s !== undefined);
+    const narrow = shapes.filter((s) => s.bounds[1][0] - s.bounds[0][0] <= wide);
     const bounds = unionBounds(
-      ids.map((id) => geometry.byId.get(id)?.bounds).filter((b): b is Bounds => b !== undefined),
+      (shapes.length > 1 && narrow.length > 0 ? narrow : shapes).map((s) => s.bounds),
     );
-    if (bounds) target = fitTransform(bounds, width, height, 0.12);
+    if (bounds) target = fitTransform(bounds, width, height, padding);
     const next = zoomIdentity.translate(target.x, target.y).scale(target.k);
     const selection = select(svg);
     if (animate && !prefersReducedMotion()) {
@@ -235,7 +268,7 @@ export function WorldMap({
     } else {
       selection.interrupt().call(behavior.transform, next);
     }
-  }, [focusKey, geometry, width, height, animate]);
+  }, [focusKey, geometry, width, height, animate, padding]);
 
   const handleClick = useCallback(
     (event: React.MouseEvent<SVGSVGElement>) => {
@@ -252,7 +285,12 @@ export function WorldMap({
 
   const markers = geometry
     ? [...geometry.shapes, ...geometry.markerOnly].filter(
-        (s) => s.d === "" || screenArea(s.area, transform.k) < MARKER_AREA_PX,
+        (s) =>
+          (s.d === "" || screenArea(s.area, transform.k) < MARKER_AREA_PX) &&
+          (selectable.has(s.id) ||
+            s.id === highlight.target ||
+            s.id === highlight.chosen ||
+            s.id === highlight.selected),
       )
     : [];
   const labels = [
@@ -260,7 +298,10 @@ export function WorldMap({
   ];
 
   return (
-    <div ref={containerRef} className="relative h-full w-full overflow-hidden">
+    <div
+      ref={containerRef}
+      className="relative h-full w-full overflow-hidden bg-[var(--map-ocean)]"
+    >
       {/* biome-ignore lint/a11y/useKeyWithClickEvents: map picks have a keyboard alternative in the answer panel */}
       <svg
         ref={svgRef}
@@ -280,8 +321,17 @@ export function WorldMap({
                 sphere={geometry.sphere}
                 selectable={selectable}
               />
+              {[...(highlight.filled ?? [])].map((id) =>
+                geometry.byId.get(id)?.d ? (
+                  <path key={`fill-${id}`} d={geometry.byId.get(id)?.d} className="map-filled" />
+                ) : null,
+              )}
               {highlight.selected && geometry.byId.get(highlight.selected)?.d ? (
-                <path d={geometry.byId.get(highlight.selected)?.d} className="map-selected" />
+                <path
+                  d={geometry.byId.get(highlight.selected)?.d}
+                  className="map-selected"
+                  data-testid="map-selected"
+                />
               ) : null}
               {highlight.target && geometry.byId.get(highlight.target)?.d ? (
                 <path
