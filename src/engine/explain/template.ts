@@ -129,6 +129,8 @@ export function evalWhen(clauses: readonly WhenClause[], slots: Slots): boolean 
         return typeof actual === "number" && typeof value === "number" && actual >= value;
       case "<=":
         return typeof actual === "number" && typeof value === "number" && actual <= value;
+      default:
+        return false;
     }
   });
 }
