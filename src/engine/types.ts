@@ -1,0 +1,51 @@
+/** Engine-level types. Plain data, no React or Dexie. */
+
+export const COUNTRY_CARD_TYPES = [
+  "map_to_name",
+  "name_to_map",
+  "country_to_capital",
+  "capital_to_country",
+  "flag_to_name",
+  "name_to_flag",
+  "country_to_currency",
+  "country_to_language",
+] as const;
+export type CountryCardType = (typeof COUNTRY_CARD_TYPES)[number];
+export type CardType = CountryCardType | "contrast";
+
+/** `${entityId}:${cardType}`. Never changes once shipped. */
+export type CardId = string;
+
+/** 1 Again, 2 Hard, 3 Good, 4 Easy. */
+export type Rating = 1 | 2 | 3 | 4;
+
+/** How the answer was given. */
+export type AnswerMode = "mc" | "typed" | "map" | "pin" | "placement";
+
+/** The per-session input setting the learner chose. */
+export type InputSetting = "auto" | "mc" | "typing";
+
+/** The fields of a review event the engine reads. The stored event has more (see db). */
+export type ReviewEventCore = {
+  id: string;
+  cardId: CardId;
+  reviewedAt: number; // ms since epoch
+  rating: Rating;
+  mode: AnswerMode;
+  correct: boolean;
+  chosenAnswer: string | null;
+  responseMs: number;
+  /** False for drill and missed placement answers: they never touch scheduling. */
+  scheduled: boolean;
+};
+
+export function cardId(entityId: string, type: CardType): CardId {
+  return `${entityId}:${type}`;
+}
+
+export function parseCardId(id: CardId): { entityId: string; type: CardType } {
+  const index = id.lastIndexOf(":");
+  return { entityId: id.slice(0, index), type: id.slice(index + 1) as CardType };
+}
+
+export const DAY_MS = 86_400_000;
