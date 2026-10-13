@@ -1,13 +1,5 @@
 import { useLiveQuery } from "dexie-react-hooks";
-import {
-  createContext,
-  type ReactNode,
-  useContext,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { createContext, type ReactNode, useContext, useEffect, useMemo, useState } from "react";
 import { type ContentIndex, loadContent } from "@/data/content";
 import { useWorld } from "@/data/useWorld";
 import type { WorldData } from "@/data/world";
@@ -68,18 +60,29 @@ export function LearnerProvider({ children }: { children: ReactNode }) {
     [retention, params],
   );
 
-  // cardState is only a cache (CLAUDE.md invariant 2): if it is missing while events exist,
-  // rebuild it from the events instead of showing an empty learner.
-  const rebuilding = useRef(false);
+  // cardState is only a cache (CLAUDE.md invariant 2): if it is missing at load while events
+  // exist, rebuild it from the events instead of showing an empty learner. Checked once per
+  // load: later, the two live queries update one after the other, and a fresh first review
+  // would otherwise look like a missing cache for one render and remount the session.
+  const [cache, setCache] = useState<"unchecked" | "rebuilding" | "ok">("unchecked");
   useEffect(() => {
-    if (!stateRows || !events || rebuilding.current) return;
-    if (stateRows.length === 0 && events.some((e) => e.scheduled)) {
-      rebuilding.current = true;
-      void rebuildCardStates(db, scheduler).finally(() => {
-        rebuilding.current = false;
-      });
+    if (!stateRows || !events) return;
+    if (cache === "rebuilding") {
+      // Ready once the live query shows the rebuilt rows.
+      if (stateRows.length > 0) setCache("ok");
+      return;
     }
-  }, [stateRows, events, scheduler]);
+    if (cache !== "unchecked") return;
+    if (stateRows.length === 0 && events.some((e) => e.scheduled)) {
+      setCache("rebuilding");
+      void rebuildCardStates(db, scheduler).then(
+        (count) => count === 0 && setCache("ok"),
+        () => setCache("ok"),
+      );
+    } else {
+      setCache("ok");
+    }
+  }, [stateRows, events, scheduler, cache]);
 
   const learner = useMemo(
     () =>
@@ -90,11 +93,11 @@ export function LearnerProvider({ children }: { children: ReactNode }) {
       events &&
       votes &&
       content &&
-      // While a missing cache is rebuilt, show loading rather than an empty learner.
-      !(stateRows.length === 0 && events.some((e) => e.scheduled))
+      // Until the cache is known to be there, show loading rather than an empty learner.
+      cache === "ok"
         ? { world, settings, device, states, events, votes, content, scheduler }
         : null,
-    [world, settings, device, stateRows, events, votes, content, states, scheduler],
+    [world, settings, device, stateRows, events, votes, content, states, scheduler, cache],
   );
   return <LearnerContext.Provider value={learner}>{children}</LearnerContext.Provider>;
 }
