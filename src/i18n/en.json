@@ -4,7 +4,19 @@
   },
   "today": {
     "title": "Today",
-    "empty": "Nothing to review yet. Country data and sessions arrive in the next build."
+    "summary": "{{reviews}} and {{newCards}}, about {{minutes}} min",
+    "nothingLeft": "Nothing left today. New cards unlock as you review.",
+    "paused": "New cards are paused until the backlog fits your daily time.",
+    "start": "Start session",
+    "inputMode": "Answer with",
+    "nextRegion": "Next region: {{name}}",
+    "setupTitle": "Set up GeoDex",
+    "setupBody": "Choose your home country and take a short placement test. It finds what you already know.",
+    "setup": "Set up",
+    "reviews_one": "{{count}} review",
+    "reviews_other": "{{count}} reviews",
+    "newCards_one": "{{count}} new card",
+    "newCards_other": "{{count}} new cards"
   },
   "settings": {
     "label": "Settings",
@@ -19,6 +31,123 @@
       "label": "Language",
       "en": "English",
       "nb": "Norsk"
-    }
+    },
+    "title": "Settings",
+    "dailyMinutes": "Daily time",
+    "minutes": "{{count}} min",
+    "countdown": "Countdown",
+    "countdownOff": "Off",
+    "seconds": "{{count}} s",
+    "currencyLanguage": "Currency and language cards",
+    "on": "On",
+    "off": "Off",
+    "homeCountry": "Home country",
+    "rerunPlacement": "Rerun the placement test"
+  },
+  "nav": {
+    "today": "Today",
+    "settings": "Settings"
+  },
+  "common": {
+    "loading": "Loading"
+  },
+  "input": {
+    "auto": "Auto",
+    "mc": "Multiple choice",
+    "typing": "Typing"
+  },
+  "onboarding": {
+    "title": "Set up GeoDex",
+    "home": "Home country",
+    "homeHelp": "Learning starts with its region, and explanations compare with it.",
+    "search": "Search countries",
+    "noMatch": "No country matches. Check the spelling.",
+    "start": "Start the placement test"
+  },
+  "placement": {
+    "title": "Placement test",
+    "intro": "A short test of what you already know, region by region. Wrong answers are not held against you.",
+    "skip": "Skip this region",
+    "finish": "Finish now",
+    "answered": "{{count}} answered",
+    "region": "Region: {{name}}",
+    "resultTitle": "Placement result",
+    "countries": "Countries placed: {{count}}",
+    "capitals": "Capitals known: {{count}}",
+    "flags": "Flags known: {{count}}",
+    "startsWith": "Daily learning starts with {{region}}.",
+    "toToday": "Go to today"
+  },
+  "q": {
+    "map_to_name": "Which country is this?",
+    "name_to_map": "Find {{name}} on the map.",
+    "country_to_capital": "What is the capital of {{name}}?",
+    "capital_to_country": "{{capital}} is the capital of which country?",
+    "flag_to_name": "Which country has this flag?",
+    "name_to_flag": "Which is the flag of {{name}}?",
+    "country_to_currency": "Which currency is used in {{name}}?",
+    "country_to_language": "Which is an official language of {{name}}?"
+  },
+  "answer": {
+    "placeholder": "Type your answer",
+    "check": "Check",
+    "giveUp": "Show answer",
+    "hint": "Hint",
+    "hintStarts": "Starts with {{letter}}, {{count}} letters",
+    "mapHelp": "Click or tap the country.",
+    "label": "Your answer"
+  },
+  "feedback": {
+    "correct": "Correct",
+    "wrong": "Wrong",
+    "youPicked": "You picked {{name}}.",
+    "spelling": "Accepted. The spelling is {{name}}.",
+    "timeUp": "Time ran out.",
+    "gaveUp": "Answer shown.",
+    "capital": "Capital",
+    "capitals": "Capitals",
+    "currency": "Currency",
+    "languages": "Official languages",
+    "continue": "Continue",
+    "placeholder": "Explanations for each answer arrive in the next build."
+  },
+  "role": {
+    "primary": "capital",
+    "executive": "executive",
+    "legislative": "legislative",
+    "judicial": "judicial",
+    "constitutional": "constitutional",
+    "seat_of_government": "seat of government"
+  },
+  "intro": {
+    "label": "New country",
+    "continue": "Test me"
+  },
+  "session": {
+    "left": "{{count}} left",
+    "end": "End session",
+    "doneTitle": "Session done",
+    "reviewed_one": "{{count}} review",
+    "reviewed_other": "{{count}} reviews",
+    "backToToday": "Back to today",
+    "countdown": "{{count}} seconds left"
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts",
+    "choose": "Choose an answer",
+    "submit": "Check a typed answer",
+    "continue": "Continue",
+    "hint": "Show a hint",
+    "notHelpful": "Mark a memory hook not helpful",
+    "end": "End the session",
+    "help": "Show these shortcuts",
+    "close": "Close"
+  },
+  "map": {
+    "label": "World map"
+  },
+  "flag": {
+    "alt": "Flag",
+    "of": "Flag of {{name}}"
   }
 }
