@@ -1,0 +1,94 @@
+/*
+ * Theme tokens. The three themes share layout and type; only colors, radius, weights and
+ * the map easing differ. Contrast pairs are checked in contrast.test.ts.
+ */
+
+[data-theme="atlas"] {
+  color-scheme: dark;
+  --background: #0e2433; /* Abyss */
+  --foreground: #e7eef2; /* Ink */
+  --card: #18394c; /* Shelf */
+  --card-foreground: #e7eef2;
+  --popover: #18394c;
+  --popover-foreground: #e7eef2;
+  --primary: #f4b740; /* Buoy */
+  --primary-foreground: #0e2433;
+  --secondary: #18394c;
+  --secondary-foreground: #e7eef2;
+  --muted: #21475e;
+  --muted-foreground: #a3b8c6;
+  --accent: #21475e;
+  --accent-foreground: #e7eef2;
+  --destructive: #ff8a7a;
+  --border: #2b536b;
+  --input: #2b536b;
+  --ring: #f4b740;
+  --map-ocean: #0e2433;
+  --map-land: #1e4359;
+  --map-border: #7fa3b8;
+  --radius: 10px;
+  --weight-ui: 400;
+  --weight-name: 600;
+  --border-width: 1px;
+  --ease-map: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-theme="minimal"] {
+  color-scheme: light;
+  --background: #f6f8fa; /* Snow */
+  --foreground: #1e2a35; /* Slate */
+  --card: #e3e9ee; /* Mist */
+  --card-foreground: #1e2a35;
+  --popover: #ffffff;
+  --popover-foreground: #1e2a35;
+  --primary: #2b698e; /* Fjord, darkened from #2F6F95 to pass AA on Mist */
+  --primary-foreground: #ffffff;
+  --secondary: #e3e9ee;
+  --secondary-foreground: #1e2a35;
+  --muted: #d6dfe6;
+  --muted-foreground: #4a5866;
+  --accent: #d6dfe6;
+  --accent-foreground: #1e2a35;
+  --destructive: #b42318;
+  --border: #c5d0d9;
+  --input: #c5d0d9;
+  --ring: #2b698e;
+  --map-ocean: #e8f0f5;
+  --map-land: #ffffff;
+  --map-border: #728595;
+  --radius: 6px;
+  --weight-ui: 400;
+  --weight-name: 500;
+  --border-width: 1px;
+  --ease-map: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-theme="playful"] {
+  color-scheme: light;
+  --background: #eaf6ff; /* Sky */
+  --foreground: #22223b; /* Night */
+  --card: #ffffff; /* Cloud */
+  --card-foreground: #22223b;
+  --popover: #ffffff;
+  --popover-foreground: #22223b;
+  --primary: #6c4ab6; /* Grape */
+  --primary-foreground: #ffffff;
+  --secondary: #ffc93c; /* Sunflower: fills only, never text on light surfaces */
+  --secondary-foreground: #22223b;
+  --muted: #f1ecfb;
+  --muted-foreground: #4a4a6a;
+  --accent: #f1ecfb;
+  --accent-foreground: #22223b;
+  --destructive: #b42318;
+  --border: #c3d9ee;
+  --input: #c3d9ee;
+  --ring: #6c4ab6;
+  --map-ocean: #cfeaff;
+  --map-land: #ffffff;
+  --map-border: #5a80a6;
+  --radius: 16px;
+  --weight-ui: 600;
+  --weight-name: 700;
+  --border-width: 2px;
+  --ease-map: cubic-bezier(0.34, 1.56, 0.64, 1);
+}

@@ -2,6 +2,10 @@
 @import "tw-animate-css";
 @import "@fontsource-variable/schibsted-grotesk/wght.css";
 @import "@fontsource-variable/newsreader/opsz-italic.css";
+@import "../themes/themes.css";
+
+/* shadcn dark: variants apply to the one dark theme. */
+@custom-variant dark (&:where([data-theme="atlas"], [data-theme="atlas"] *));
 
 /* Variants used by shadcn components. Copied from shadcn/tailwind.css so the CLI is not a dependency. */
 @custom-variant data-horizontal {
@@ -59,6 +63,8 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --font-weight-ui: var(--weight-ui);
+  --font-weight-name: var(--weight-name);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -71,6 +77,7 @@
   }
   html {
     @apply font-sans;
+    font-weight: var(--weight-ui);
   }
   body {
     @apply bg-background text-foreground;
