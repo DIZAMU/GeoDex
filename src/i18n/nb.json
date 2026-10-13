@@ -1,0 +1,23 @@
+{
+  "app": {
+    "name": "GeoDex"
+  },
+  "today": {
+    "title": "I dag",
+    "empty": "Ingenting å repetere ennå. Landdata og økter kommer i neste versjon."
+  },
+  "settings": {
+    "theme": {
+      "label": "Tema",
+      "atlas": "Atlas",
+      "minimal": "Minimal",
+      "playful": "Leken",
+      "auto": "Automatisk"
+    },
+    "language": {
+      "label": "Språk",
+      "en": "English",
+      "nb": "Norsk"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "app": {
+    "name": "GeoDex"
+  },
+  "today": {
+    "title": "Today",
+    "empty": "Nothing to review yet. Country data and sessions arrive in the next build."
+  },
+  "settings": {
+    "theme": {
+      "label": "Theme",
+      "atlas": "Atlas",
+      "minimal": "Minimal",
+      "playful": "Playful",
+      "auto": "Auto"
+    },
+    "language": {
+      "label": "Language",
+      "en": "English",
+      "nb": "Norsk"
+    }
+  }
+}
