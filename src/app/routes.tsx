@@ -1,6 +1,7 @@
 import type { RouteObject } from "react-router";
 import { AtlasScreen } from "@/features/atlas/AtlasScreen";
 import { EntryScreen } from "@/features/atlas/EntryScreen";
+import { DrillScreen } from "@/features/drill/DrillScreen";
 import { OnboardingScreen } from "@/features/onboarding/OnboardingScreen";
 import { PlacementScreen } from "@/features/placement/PlacementScreen";
 import { SessionScreen } from "@/features/session/SessionScreen";
@@ -24,4 +25,5 @@ export const routes: RouteObject[] = [
   },
   { path: "/placement", element: <PlacementScreen /> },
   { path: "/session", element: <SessionScreen /> },
+  { path: "/drill", element: <DrillScreen /> },
 ];

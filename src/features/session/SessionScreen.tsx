@@ -1,7 +1,7 @@
 import { XIcon } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, useNavigate, useSearchParams } from "react-router";
+import { useNavigate, useSearchParams } from "react-router";
 import type { InputSetting } from "@/engine/types";
 import { isLocale } from "@/i18n/locales";
 import { type MapFocus, type MapHighlight, WorldMap } from "@/map/WorldMap";
@@ -10,6 +10,7 @@ import { useFocusOnMount } from "@/ui/focus";
 import { Loader } from "@/ui/loader";
 import { useStudyContext } from "../study/context";
 import { confusionScoresFor, scopedCountries } from "../study/plan";
+import { computeProgress } from "../study/progress";
 import { checkChoice, checkTyped, type StudyContext } from "../study/questions";
 import { type Learner, useLearner } from "../study/useLearner";
 import { ExplanationView } from "./ExplanationView";
@@ -23,10 +24,11 @@ import {
   TypedAnswer,
   useSessionKeys,
 } from "./parts";
+import { SessionSummary } from "./SessionSummary";
 import { ShortcutsDialog } from "./ShortcutsDialog";
 import { CountdownRing, ProgressBar, StudyLayout } from "./StudyLayout";
 import { useCountdown } from "./useCountdown";
-import { type SessionView, useDailySession } from "./useDailySession";
+import { type SessionKind, type SessionView, useDailySession } from "./useDailySession";
 
 const INPUTS: readonly InputSetting[] = ["auto", "mc", "typing"];
 
@@ -41,14 +43,26 @@ export function SessionScreen() {
   return <Session learner={learner} input={input} />;
 }
 
-function Session({ learner, input }: { learner: Learner; input: InputSetting }) {
+export function Session({
+  learner,
+  input,
+  kind,
+}: {
+  learner: Learner;
+  input: InputSetting;
+  kind?: SessionKind;
+}) {
   const { t, i18n } = useTranslation();
   const locale = isLocale(i18n.language) ? i18n.language : "en";
   const navigate = useNavigate();
   // Confusion scores are fixed for the session, like the queue.
   const [scores] = useState(() => confusionScoresFor(learner.world, learner.events, Date.now()));
   const ctx = useStudyContext(learner.world, locale, scores, learner.content);
-  const s = useDailySession(learner, ctx, input, locale);
+  const s = useDailySession(learner, ctx, input, locale, kind);
+  // Achievements held at the start, so the summary can show what this session added.
+  const [held] = useState(
+    () => new Set(computeProgress(learner, Date.now()).achievements.map((a) => a.id)),
+  );
   const [help, setHelp] = useState(false);
   const countdownSeconds = learner.settings.countdownSeconds;
   const view = s.view;
@@ -99,19 +113,13 @@ function Session({ learner, input }: { learner: Learner; input: InputSetting }) 
   if (!view || !s.ctx) return <Loader />;
   if (view.kind === "done") {
     return (
-      <main className="flex min-h-dvh items-center justify-center px-4 py-16">
-        <div className="surface stagger flex w-full max-w-md flex-col gap-5 p-8">
-          <h1 className="font-name text-3xl tracking-tight">{t("session.doneTitle")}</h1>
-          <p className="text-lg text-muted-foreground" data-testid="reviewed">
-            {t("session.reviewed", { count: view.reviewed })}
-          </p>
-          <Button asChild size="lg" className="self-start">
-            <Link to="/" viewTransition>
-              {t("session.backToToday")}
-            </Link>
-          </Button>
-        </div>
-      </main>
+      <SessionSummary
+        learner={learner}
+        reviewed={view.reviewed}
+        correct={view.correct}
+        held={held}
+        drill={kind?.kind === "drill"}
+      />
     );
   }
 
