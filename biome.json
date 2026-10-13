@@ -13,7 +13,8 @@
       "!**/pnpm-lock.yaml",
       "!**/data/countries.json",
       "!**/data/geo",
-      "!**/data/flags-meta.json"
+      "!**/data/flags-meta.json",
+      "!**/public/flags"
     ]
   },
   "formatter": {
