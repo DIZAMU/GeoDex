@@ -22,7 +22,8 @@
     "test:e2e": "playwright test",
     "lint:dashes": "node scripts/lint/no-dashes.ts",
     "data:fetch": "node --use-env-proxy scripts/data/fetch-wikidata.ts && node --use-env-proxy scripts/data/fetch-reference.ts",
-    "data:build": "node scripts/data/build-countries.ts && node scripts/data/build-flags.ts"
+    "data:build": "node scripts/data/build-countries.ts && node scripts/data/build-flags.ts",
+    "data:verify": "node scripts/data/verify.ts"
   },
   "dependencies": {
     "@fontsource-variable/newsreader": "5.3.0",
