@@ -31,7 +31,19 @@ Phase 2 and Phase 4. See `PLAN.md` sections 4 and 5.6.
 
 ## Data pipeline
 
-Phase 1. See `PLAN.md` section 5.1.
+```
+fetch (network, cached in data/raw)        build (offline, deterministic)
+  Wikidata SPARQL  ----------------\
+  Språkrådet state names ----------+---> build-countries.ts ---> data/countries.json
+  UN M49 table ---------------------+          ^                  data/geo/countries-50m.json
+  World Bank population -----------/           |                  data/*.md reports
+                                    data/curated/*.json
+  world-atlas, flag-icons (npm) ---------> build-flags.ts ------> public/flags, data/flags-meta.json
+```
+
+- Fetch and build are separate so the build runs offline and twice gives the same bytes (`pnpm data:verify`).
+- Curated files decide where Wikidata is noisy; every difference is written to a report for review.
+- Types for all generated data live in `src/data/types.ts`, shared by scripts and app.
 
 ## Explanation engine
 

@@ -1,0 +1,69 @@
+{
+  "_comment": "Display names and accepted alternatives. en: Wikidata label unless overridden here (UN short names where they differ from the Wikidata label). nb: Språkrådet's preferred form, or the Wikidata label when it is one of Språkrådet's accepted forms. Labels that are replaced, and Språkrådet's other accepted forms, become aliases automatically. Aliases here are additional names typed answers accept. Ambiguous names (\"Congo\", \"Korea\", \"Guinea\" variants) are deliberately absent.",
+  "en": {
+    "BHS": "Bahamas",
+    "CHN": "China",
+    "CIV": "Côte d'Ivoire",
+    "COG": "Republic of the Congo",
+    "CPV": "Cabo Verde",
+    "CZE": "Czechia",
+    "FSM": "Micronesia",
+    "GMB": "Gambia",
+    "STP": "São Tomé and Príncipe",
+    "TUR": "Türkiye"
+  },
+  "aliases": {
+    "ARE": { "en": ["UAE"], "nb": ["Emiratene"] },
+    "BIH": { "en": ["Bosnia"], "nb": ["Bosnia"] },
+    "BLR": { "en": ["Byelorussia"], "nb": ["Hviterussland"] },
+    "BRN": { "en": ["Brunei Darussalam"], "nb": [] },
+    "CAF": { "en": ["CAR"], "nb": ["Den sentralafrikanske republikk"] },
+    "CHN": { "en": ["People's Republic of China", "PRC"], "nb": ["Folkerepublikken Kina"] },
+    "CIV": { "en": ["Ivory Coast"], "nb": [] },
+    "COD": {
+      "en": ["DR Congo", "DRC", "Congo-Kinshasa"],
+      "nb": ["DR Kongo", "Kongo-Kinshasa", "Den demokratiske republikken Kongo"]
+    },
+    "COG": { "en": ["Congo-Brazzaville"], "nb": [] },
+    "CPV": { "en": ["Cape Verde"], "nb": [] },
+    "CZE": { "en": ["Czech Republic"], "nb": ["Den tsjekkiske republikk"] },
+    "FSM": { "en": ["Federated States of Micronesia"], "nb": ["Mikronesia"] },
+    "GBR": { "en": ["UK", "Great Britain", "Britain"], "nb": ["Det forente kongerike"] },
+    "KNA": { "en": ["St Kitts and Nevis", "St. Kitts and Nevis"], "nb": [] },
+    "LAO": { "en": ["Lao PDR"], "nb": [] },
+    "LCA": { "en": ["St Lucia", "St. Lucia"], "nb": [] },
+    "MKD": { "en": ["Macedonia"], "nb": ["Makedonia"] },
+    "MMR": { "en": ["Burma"], "nb": [] },
+    "NLD": { "en": ["Holland"], "nb": ["Holland"] },
+    "PRK": { "en": ["DPRK"], "nb": [] },
+    "PSE": { "en": ["State of Palestine"], "nb": [] },
+    "RUS": { "en": ["Russian Federation"], "nb": ["Den russiske føderasjon"] },
+    "SWZ": { "en": ["Swaziland"], "nb": ["Swaziland"] },
+    "TLS": { "en": ["East Timor"], "nb": ["Timor-Leste"] },
+    "TWN": { "en": ["Republic of China", "ROC"], "nb": ["Republikken Kina"] },
+    "USA": {
+      "en": ["USA", "United States of America", "America"],
+      "nb": ["De forente stater", "Amerika"]
+    },
+    "VAT": { "en": ["Holy See", "Vatican"], "nb": ["Vatikanet", "Den hellige stol"] },
+    "VCT": { "en": ["St Vincent and the Grenadines", "St. Vincent and the Grenadines"], "nb": [] },
+    "VNM": { "en": ["Viet Nam"], "nb": [] }
+  },
+  "capitalNamesNb": {
+    "Q1524": "Aten"
+  },
+  "capitalAliases": {
+    "Q1899": { "en": ["Kiev"], "nb": ["Kiev"] },
+    "Q956": { "en": ["Peking"], "nb": ["Peking"] },
+    "Q61": { "en": ["Washington, D.C.", "Washington DC"], "nb": ["Washington, D.C."] },
+    "Q1489": { "en": ["Ciudad de México"], "nb": ["Ciudad de México"] },
+    "Q2471": { "en": ["Sana'a", "Sanaa"], "nb": [] },
+    "Q3037": { "en": ["Katmandu"], "nb": [] },
+    "Q23430": { "en": ["Ulan Bator"], "nb": ["Ulan Bator"] },
+    "Q1520": { "en": ["Nur-Sultan"], "nb": ["Nur-Sultan"] },
+    "Q37400": { "en": ["Nay Pyi Taw", "Naypyitaw"], "nb": [] },
+    "Q23438": { "en": ["Ashkhabad"], "nb": [] },
+    "Q70": { "en": ["Berne"], "nb": [] },
+    "Q3926": { "en": ["Tshwane"], "nb": ["Tshwane"] }
+  }
+}

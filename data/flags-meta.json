@@ -1,0 +1,3323 @@
+{
+  "AFG": {
+    "file": "af.svg",
+    "colors": [
+      {
+        "color": "black",
+        "share": 0.33
+      },
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.28
+      }
+    ]
+  },
+  "AGO": {
+    "file": "ao.svg",
+    "colors": [
+      {
+        "color": "black",
+        "share": 0.47
+      },
+      {
+        "color": "red",
+        "share": 0.47
+      }
+    ]
+  },
+  "ALB": {
+    "file": "al.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.87
+      },
+      {
+        "color": "black",
+        "share": 0.12
+      }
+    ]
+  },
+  "AND": {
+    "file": "ad.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.32
+      },
+      {
+        "color": "red",
+        "share": 0.32
+      },
+      {
+        "color": "yellow",
+        "share": 0.32
+      }
+    ]
+  },
+  "ARE": {
+    "file": "ae.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.34
+      },
+      {
+        "color": "black",
+        "share": 0.22
+      },
+      {
+        "color": "green",
+        "share": 0.22
+      },
+      {
+        "color": "white",
+        "share": 0.22
+      }
+    ]
+  },
+  "ARG": {
+    "file": "ar.svg",
+    "colors": [
+      {
+        "color": "lightblue",
+        "share": 0.67
+      },
+      {
+        "color": "white",
+        "share": 0.31
+      }
+    ]
+  },
+  "ARM": {
+    "file": "am.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.33
+      },
+      {
+        "color": "orange",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      }
+    ]
+  },
+  "ATG": {
+    "file": "ag.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.5
+      },
+      {
+        "color": "black",
+        "share": 0.23
+      },
+      {
+        "color": "blue",
+        "share": 0.1
+      },
+      {
+        "color": "white",
+        "share": 0.07
+      },
+      {
+        "color": "yellow",
+        "share": 0.07
+      }
+    ]
+  },
+  "AUS": {
+    "file": "au.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.75
+      },
+      {
+        "color": "white",
+        "share": 0.12
+      },
+      {
+        "color": "red",
+        "share": 0.1
+      }
+    ]
+  },
+  "AUT": {
+    "file": "at.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.67
+      },
+      {
+        "color": "white",
+        "share": 0.33
+      }
+    ]
+  },
+  "AZE": {
+    "file": "az.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "lightblue",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.3
+      }
+    ]
+  },
+  "BDI": {
+    "file": "bi.svg",
+    "colors": [
+      {
+        "color": "white",
+        "share": 0.4
+      },
+      {
+        "color": "red",
+        "share": 0.36
+      },
+      {
+        "color": "green",
+        "share": 0.22
+      }
+    ]
+  },
+  "BEL": {
+    "file": "be.svg",
+    "colors": [
+      {
+        "color": "black",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "yellow",
+        "share": 0.33
+      }
+    ]
+  },
+  "BEN": {
+    "file": "bj.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.4
+      },
+      {
+        "color": "red",
+        "share": 0.3
+      },
+      {
+        "color": "yellow",
+        "share": 0.3
+      }
+    ]
+  },
+  "BFA": {
+    "file": "bf.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.45
+      },
+      {
+        "color": "green",
+        "share": 0.44
+      },
+      {
+        "color": "yellow",
+        "share": 0.11
+      }
+    ]
+  },
+  "BGD": {
+    "file": "bd.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.74
+      },
+      {
+        "color": "red",
+        "share": 0.26
+      }
+    ]
+  },
+  "BGR": {
+    "file": "bg.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "white",
+        "share": 0.33
+      }
+    ]
+  },
+  "BHR": {
+    "file": "bh.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.76
+      },
+      {
+        "color": "white",
+        "share": 0.23
+      }
+    ]
+  },
+  "BHS": {
+    "file": "bs.svg",
+    "colors": [
+      {
+        "color": "lightblue",
+        "share": 0.53
+      },
+      {
+        "color": "black",
+        "share": 0.3
+      },
+      {
+        "color": "yellow",
+        "share": 0.16
+      }
+    ]
+  },
+  "BIH": {
+    "file": "ba.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.56
+      },
+      {
+        "color": "yellow",
+        "share": 0.36
+      },
+      {
+        "color": "white",
+        "share": 0.05
+      }
+    ]
+  },
+  "BLR": {
+    "file": "by.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.64
+      },
+      {
+        "color": "green",
+        "share": 0.28
+      },
+      {
+        "color": "white",
+        "share": 0.06
+      }
+    ]
+  },
+  "BLZ": {
+    "file": "bz.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.48
+      },
+      {
+        "color": "white",
+        "share": 0.2
+      },
+      {
+        "color": "red",
+        "share": 0.13
+      },
+      {
+        "color": "green",
+        "share": 0.06
+      },
+      {
+        "color": "lightblue",
+        "share": 0.06
+      }
+    ]
+  },
+  "BOL": {
+    "file": "bo.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.34
+      },
+      {
+        "color": "red",
+        "share": 0.34
+      },
+      {
+        "color": "yellow",
+        "share": 0.29
+      }
+    ]
+  },
+  "BRA": {
+    "file": "br.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.62
+      },
+      {
+        "color": "yellow",
+        "share": 0.22
+      },
+      {
+        "color": "blue",
+        "share": 0.14
+      }
+    ]
+  },
+  "BRB": {
+    "file": "bb.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.67
+      },
+      {
+        "color": "yellow",
+        "share": 0.29
+      }
+    ]
+  },
+  "BRN": {
+    "file": "bn.svg",
+    "colors": [
+      {
+        "color": "yellow",
+        "share": 0.53
+      },
+      {
+        "color": "white",
+        "share": 0.2
+      },
+      {
+        "color": "black",
+        "share": 0.15
+      },
+      {
+        "color": "red",
+        "share": 0.07
+      }
+    ]
+  },
+  "BTN": {
+    "file": "bt.svg",
+    "colors": [
+      {
+        "color": "yellow",
+        "share": 0.44
+      },
+      {
+        "color": "orange",
+        "share": 0.4
+      },
+      {
+        "color": "white",
+        "share": 0.16
+      }
+    ]
+  },
+  "BWA": {
+    "file": "bw.svg",
+    "colors": [
+      {
+        "color": "lightblue",
+        "share": 0.68
+      },
+      {
+        "color": "black",
+        "share": 0.22
+      },
+      {
+        "color": "white",
+        "share": 0.1
+      }
+    ]
+  },
+  "CAF": {
+    "file": "cf.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.21
+      },
+      {
+        "color": "yellow",
+        "share": 0.21
+      },
+      {
+        "color": "blue",
+        "share": 0.19
+      },
+      {
+        "color": "white",
+        "share": 0.19
+      },
+      {
+        "color": "red",
+        "share": 0.18
+      }
+    ]
+  },
+  "CAN": {
+    "file": "ca.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.56
+      },
+      {
+        "color": "white",
+        "share": 0.42
+      }
+    ]
+  },
+  "CHE": {
+    "file": "ch.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.84
+      },
+      {
+        "color": "white",
+        "share": 0.14
+      }
+    ]
+  },
+  "CHL": {
+    "file": "cl.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.5
+      },
+      {
+        "color": "white",
+        "share": 0.33
+      },
+      {
+        "color": "blue",
+        "share": 0.17
+      }
+    ]
+  },
+  "CHN": {
+    "file": "cn.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.97
+      }
+    ]
+  },
+  "CIV": {
+    "file": "ci.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "orange",
+        "share": 0.33
+      },
+      {
+        "color": "white",
+        "share": 0.33
+      }
+    ]
+  },
+  "CMR": {
+    "file": "cm.svg",
+    "colors": [
+      {
+        "color": "yellow",
+        "share": 0.34
+      },
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.32
+      }
+    ]
+  },
+  "COD": {
+    "file": "cd.svg",
+    "colors": [
+      {
+        "color": "lightblue",
+        "share": 0.67
+      },
+      {
+        "color": "red",
+        "share": 0.2
+      },
+      {
+        "color": "yellow",
+        "share": 0.12
+      }
+    ]
+  },
+  "COG": {
+    "file": "cg.svg",
+    "colors": [
+      {
+        "color": "yellow",
+        "share": 0.37
+      },
+      {
+        "color": "green",
+        "share": 0.32
+      },
+      {
+        "color": "red",
+        "share": 0.32
+      }
+    ]
+  },
+  "COL": {
+    "file": "co.svg",
+    "colors": [
+      {
+        "color": "yellow",
+        "share": 0.5
+      },
+      {
+        "color": "blue",
+        "share": 0.24
+      },
+      {
+        "color": "red",
+        "share": 0.24
+      }
+    ]
+  },
+  "COM": {
+    "file": "km.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.24
+      },
+      {
+        "color": "yellow",
+        "share": 0.22
+      },
+      {
+        "color": "blue",
+        "share": 0.21
+      },
+      {
+        "color": "white",
+        "share": 0.17
+      },
+      {
+        "color": "red",
+        "share": 0.14
+      }
+    ]
+  },
+  "CPV": {
+    "file": "cv.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.72
+      },
+      {
+        "color": "white",
+        "share": 0.16
+      },
+      {
+        "color": "red",
+        "share": 0.07
+      }
+    ]
+  },
+  "CRI": {
+    "file": "cr.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.32
+      },
+      {
+        "color": "red",
+        "share": 0.32
+      },
+      {
+        "color": "white",
+        "share": 0.32
+      }
+    ]
+  },
+  "CUB": {
+    "file": "cu.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.43
+      },
+      {
+        "color": "red",
+        "share": 0.3
+      },
+      {
+        "color": "white",
+        "share": 0.26
+      }
+    ]
+  },
+  "CYP": {
+    "file": "cy.svg",
+    "colors": [
+      {
+        "color": "white",
+        "share": 0.88
+      },
+      {
+        "color": "orange",
+        "share": 0.09
+      }
+    ]
+  },
+  "CZE": {
+    "file": "cz.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.36
+      },
+      {
+        "color": "white",
+        "share": 0.36
+      },
+      {
+        "color": "blue",
+        "share": 0.28
+      }
+    ]
+  },
+  "DEU": {
+    "file": "de.svg",
+    "colors": [
+      {
+        "color": "black",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "yellow",
+        "share": 0.33
+      }
+    ]
+  },
+  "DJI": {
+    "file": "dj.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.36
+      },
+      {
+        "color": "lightblue",
+        "share": 0.36
+      },
+      {
+        "color": "white",
+        "share": 0.27
+      }
+    ]
+  },
+  "DMA": {
+    "file": "dm.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.55
+      },
+      {
+        "color": "red",
+        "share": 0.13
+      },
+      {
+        "color": "yellow",
+        "share": 0.1
+      },
+      {
+        "color": "white",
+        "share": 0.09
+      },
+      {
+        "color": "black",
+        "share": 0.08
+      }
+    ]
+  },
+  "DNK": {
+    "file": "dk.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.75
+      },
+      {
+        "color": "white",
+        "share": 0.22
+      }
+    ]
+  },
+  "DOM": {
+    "file": "do.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.34
+      },
+      {
+        "color": "red",
+        "share": 0.34
+      },
+      {
+        "color": "white",
+        "share": 0.3
+      }
+    ]
+  },
+  "DZA": {
+    "file": "dz.svg",
+    "colors": [
+      {
+        "color": "white",
+        "share": 0.48
+      },
+      {
+        "color": "green",
+        "share": 0.45
+      },
+      {
+        "color": "red",
+        "share": 0.06
+      }
+    ]
+  },
+  "ECU": {
+    "file": "ec.svg",
+    "colors": [
+      {
+        "color": "yellow",
+        "share": 0.43
+      },
+      {
+        "color": "red",
+        "share": 0.25
+      },
+      {
+        "color": "blue",
+        "share": 0.17
+      },
+      {
+        "color": "maroon",
+        "share": 0.07
+      }
+    ]
+  },
+  "EGY": {
+    "file": "eg.svg",
+    "colors": [
+      {
+        "color": "black",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "white",
+        "share": 0.31
+      }
+    ]
+  },
+  "ERI": {
+    "file": "er.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.39
+      },
+      {
+        "color": "white",
+        "share": 0.31
+      },
+      {
+        "color": "green",
+        "share": 0.25
+      }
+    ]
+  },
+  "ESP": {
+    "file": "es.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.5
+      },
+      {
+        "color": "yellow",
+        "share": 0.42
+      },
+      {
+        "color": "orange",
+        "share": 0.05
+      }
+    ]
+  },
+  "EST": {
+    "file": "ee.svg",
+    "colors": [
+      {
+        "color": "black",
+        "share": 0.33
+      },
+      {
+        "color": "lightblue",
+        "share": 0.33
+      },
+      {
+        "color": "white",
+        "share": 0.33
+      }
+    ]
+  },
+  "ETH": {
+    "file": "et.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.36
+      },
+      {
+        "color": "red",
+        "share": 0.31
+      },
+      {
+        "color": "yellow",
+        "share": 0.24
+      },
+      {
+        "color": "blue",
+        "share": 0.07
+      }
+    ]
+  },
+  "FIN": {
+    "file": "fi.svg",
+    "colors": [
+      {
+        "color": "white",
+        "share": 0.57
+      },
+      {
+        "color": "blue",
+        "share": 0.41
+      }
+    ]
+  },
+  "FJI": {
+    "file": "fj.svg",
+    "colors": [
+      {
+        "color": "lightblue",
+        "share": 0.68
+      },
+      {
+        "color": "red",
+        "share": 0.13
+      },
+      {
+        "color": "white",
+        "share": 0.11
+      },
+      {
+        "color": "blue",
+        "share": 0.05
+      }
+    ]
+  },
+  "FRA": {
+    "file": "fr.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "white",
+        "share": 0.33
+      }
+    ]
+  },
+  "FSM": {
+    "file": "fm.svg",
+    "colors": [
+      {
+        "color": "lightblue",
+        "share": 0.96
+      }
+    ]
+  },
+  "GAB": {
+    "file": "ga.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.33
+      },
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "yellow",
+        "share": 0.33
+      }
+    ]
+  },
+  "GBR": {
+    "file": "gb.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.42
+      },
+      {
+        "color": "white",
+        "share": 0.35
+      },
+      {
+        "color": "blue",
+        "share": 0.21
+      }
+    ]
+  },
+  "GEO": {
+    "file": "ge.svg",
+    "colors": [
+      {
+        "color": "white",
+        "share": 0.63
+      },
+      {
+        "color": "red",
+        "share": 0.36
+      }
+    ]
+  },
+  "GHA": {
+    "file": "gh.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "yellow",
+        "share": 0.3
+      }
+    ]
+  },
+  "GIN": {
+    "file": "gn.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "yellow",
+        "share": 0.33
+      }
+    ]
+  },
+  "GMB": {
+    "file": "gm.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.29
+      },
+      {
+        "color": "green",
+        "share": 0.28
+      },
+      {
+        "color": "red",
+        "share": 0.28
+      },
+      {
+        "color": "white",
+        "share": 0.13
+      }
+    ]
+  },
+  "GNB": {
+    "file": "gw.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "yellow",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.32
+      }
+    ]
+  },
+  "GNQ": {
+    "file": "gq.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.31
+      },
+      {
+        "color": "red",
+        "share": 0.3
+      },
+      {
+        "color": "white",
+        "share": 0.24
+      },
+      {
+        "color": "blue",
+        "share": 0.14
+      }
+    ]
+  },
+  "GRC": {
+    "file": "gr.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.56
+      },
+      {
+        "color": "white",
+        "share": 0.44
+      }
+    ]
+  },
+  "GRD": {
+    "file": "gd.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.41
+      },
+      {
+        "color": "yellow",
+        "share": 0.29
+      },
+      {
+        "color": "green",
+        "share": 0.26
+      }
+    ]
+  },
+  "GTM": {
+    "file": "gt.svg",
+    "colors": [
+      {
+        "color": "lightblue",
+        "share": 0.68
+      },
+      {
+        "color": "white",
+        "share": 0.3
+      }
+    ]
+  },
+  "GUY": {
+    "file": "gy.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.51
+      },
+      {
+        "color": "red",
+        "share": 0.18
+      },
+      {
+        "color": "yellow",
+        "share": 0.18
+      },
+      {
+        "color": "white",
+        "share": 0.07
+      }
+    ]
+  },
+  "HND": {
+    "file": "hn.svg",
+    "colors": [
+      {
+        "color": "lightblue",
+        "share": 0.68
+      },
+      {
+        "color": "white",
+        "share": 0.32
+      }
+    ]
+  },
+  "HRV": {
+    "file": "hr.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.34
+      },
+      {
+        "color": "blue",
+        "share": 0.33
+      },
+      {
+        "color": "white",
+        "share": 0.3
+      }
+    ]
+  },
+  "HTI": {
+    "file": "ht.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.47
+      },
+      {
+        "color": "red",
+        "share": 0.47
+      }
+    ]
+  },
+  "HUN": {
+    "file": "hu.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "white",
+        "share": 0.33
+      }
+    ]
+  },
+  "IDN": {
+    "file": "id.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.5
+      },
+      {
+        "color": "white",
+        "share": 0.5
+      }
+    ]
+  },
+  "IND": {
+    "file": "in.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "orange",
+        "share": 0.33
+      },
+      {
+        "color": "white",
+        "share": 0.3
+      }
+    ]
+  },
+  "IRL": {
+    "file": "ie.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "orange",
+        "share": 0.33
+      },
+      {
+        "color": "white",
+        "share": 0.33
+      }
+    ]
+  },
+  "IRN": {
+    "file": "ir.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.32
+      },
+      {
+        "color": "white",
+        "share": 0.32
+      },
+      {
+        "color": "green",
+        "share": 0.3
+      }
+    ]
+  },
+  "IRQ": {
+    "file": "iq.svg",
+    "colors": [
+      {
+        "color": "black",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "white",
+        "share": 0.3
+      }
+    ]
+  },
+  "ISL": {
+    "file": "is.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.65
+      },
+      {
+        "color": "red",
+        "share": 0.19
+      },
+      {
+        "color": "white",
+        "share": 0.17
+      }
+    ]
+  },
+  "ISR": {
+    "file": "il.svg",
+    "colors": [
+      {
+        "color": "white",
+        "share": 0.68
+      },
+      {
+        "color": "blue",
+        "share": 0.28
+      }
+    ]
+  },
+  "ITA": {
+    "file": "it.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "white",
+        "share": 0.33
+      }
+    ]
+  },
+  "JAM": {
+    "file": "jm.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "yellow",
+        "share": 0.33
+      },
+      {
+        "color": "black",
+        "share": 0.32
+      }
+    ]
+  },
+  "JOR": {
+    "file": "jo.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.37
+      },
+      {
+        "color": "black",
+        "share": 0.25
+      },
+      {
+        "color": "green",
+        "share": 0.25
+      },
+      {
+        "color": "white",
+        "share": 0.13
+      }
+    ]
+  },
+  "JPN": {
+    "file": "jp.svg",
+    "colors": [
+      {
+        "color": "white",
+        "share": 0.77
+      },
+      {
+        "color": "red",
+        "share": 0.23
+      }
+    ]
+  },
+  "KAZ": {
+    "file": "kz.svg",
+    "colors": [
+      {
+        "color": "lightblue",
+        "share": 0.88
+      },
+      {
+        "color": "yellow",
+        "share": 0.12
+      }
+    ]
+  },
+  "KEN": {
+    "file": "ke.svg",
+    "colors": [
+      {
+        "color": "black",
+        "share": 0.3
+      },
+      {
+        "color": "green",
+        "share": 0.29
+      },
+      {
+        "color": "red",
+        "share": 0.28
+      },
+      {
+        "color": "white",
+        "share": 0.09
+      }
+    ]
+  },
+  "KGZ": {
+    "file": "kg.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.87
+      },
+      {
+        "color": "yellow",
+        "share": 0.08
+      },
+      {
+        "color": "orange",
+        "share": 0.05
+      }
+    ]
+  },
+  "KHM": {
+    "file": "kh.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.49
+      },
+      {
+        "color": "red",
+        "share": 0.37
+      },
+      {
+        "color": "lightblue",
+        "share": 0.07
+      }
+    ]
+  },
+  "KIR": {
+    "file": "ki.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.46
+      },
+      {
+        "color": "blue",
+        "share": 0.21
+      },
+      {
+        "color": "white",
+        "share": 0.21
+      },
+      {
+        "color": "yellow",
+        "share": 0.08
+      }
+    ]
+  },
+  "KNA": {
+    "file": "kn.svg",
+    "colors": [
+      {
+        "color": "black",
+        "share": 0.32
+      },
+      {
+        "color": "red",
+        "share": 0.29
+      },
+      {
+        "color": "green",
+        "share": 0.27
+      },
+      {
+        "color": "yellow",
+        "share": 0.08
+      }
+    ]
+  },
+  "KOR": {
+    "file": "kr.svg",
+    "colors": [
+      {
+        "color": "white",
+        "share": 0.75
+      },
+      {
+        "color": "black",
+        "share": 0.07
+      },
+      {
+        "color": "blue",
+        "share": 0.07
+      },
+      {
+        "color": "red",
+        "share": 0.07
+      }
+    ]
+  },
+  "KWT": {
+    "file": "kw.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.27
+      },
+      {
+        "color": "red",
+        "share": 0.27
+      },
+      {
+        "color": "black",
+        "share": 0.25
+      },
+      {
+        "color": "white",
+        "share": 0.21
+      }
+    ]
+  },
+  "LAO": {
+    "file": "la.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.49
+      },
+      {
+        "color": "blue",
+        "share": 0.38
+      },
+      {
+        "color": "white",
+        "share": 0.11
+      }
+    ]
+  },
+  "LBN": {
+    "file": "lb.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.49
+      },
+      {
+        "color": "white",
+        "share": 0.39
+      },
+      {
+        "color": "green",
+        "share": 0.09
+      }
+    ]
+  },
+  "LBR": {
+    "file": "lr.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.42
+      },
+      {
+        "color": "white",
+        "share": 0.39
+      },
+      {
+        "color": "blue",
+        "share": 0.14
+      }
+    ]
+  },
+  "LBY": {
+    "file": "ly.svg",
+    "colors": [
+      {
+        "color": "black",
+        "share": 0.47
+      },
+      {
+        "color": "green",
+        "share": 0.26
+      },
+      {
+        "color": "red",
+        "share": 0.24
+      }
+    ]
+  },
+  "LCA": {
+    "file": "lc.svg",
+    "colors": [
+      {
+        "color": "lightblue",
+        "share": 0.79
+      },
+      {
+        "color": "yellow",
+        "share": 0.1
+      },
+      {
+        "color": "black",
+        "share": 0.05
+      },
+      {
+        "color": "white",
+        "share": 0.05
+      }
+    ]
+  },
+  "LIE": {
+    "file": "li.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.5
+      },
+      {
+        "color": "blue",
+        "share": 0.45
+      }
+    ]
+  },
+  "LKA": {
+    "file": "lk.svg",
+    "colors": [
+      {
+        "color": "maroon",
+        "share": 0.45
+      },
+      {
+        "color": "yellow",
+        "share": 0.28
+      },
+      {
+        "color": "orange",
+        "share": 0.16
+      },
+      {
+        "color": "green",
+        "share": 0.12
+      }
+    ]
+  },
+  "LSO": {
+    "file": "ls.svg",
+    "colors": [
+      {
+        "color": "white",
+        "share": 0.36
+      },
+      {
+        "color": "blue",
+        "share": 0.3
+      },
+      {
+        "color": "green",
+        "share": 0.3
+      }
+    ]
+  },
+  "LTU": {
+    "file": "lt.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "yellow",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.32
+      }
+    ]
+  },
+  "LUX": {
+    "file": "lu.svg",
+    "colors": [
+      {
+        "color": "lightblue",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "white",
+        "share": 0.33
+      }
+    ]
+  },
+  "LVA": {
+    "file": "lv.svg",
+    "colors": [
+      {
+        "color": "maroon",
+        "share": 0.8
+      },
+      {
+        "color": "white",
+        "share": 0.2
+      }
+    ]
+  },
+  "MAR": {
+    "file": "ma.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.98
+      }
+    ]
+  },
+  "MCO": {
+    "file": "mc.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.5
+      },
+      {
+        "color": "white",
+        "share": 0.5
+      }
+    ]
+  },
+  "MDA": {
+    "file": "md.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.35
+      },
+      {
+        "color": "blue",
+        "share": 0.32
+      },
+      {
+        "color": "yellow",
+        "share": 0.2
+      },
+      {
+        "color": "orange",
+        "share": 0.06
+      }
+    ]
+  },
+  "MDG": {
+    "file": "mg.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "white",
+        "share": 0.33
+      }
+    ]
+  },
+  "MDV": {
+    "file": "mv.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.68
+      },
+      {
+        "color": "green",
+        "share": 0.29
+      }
+    ]
+  },
+  "MEX": {
+    "file": "mx.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.34
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "white",
+        "share": 0.3
+      }
+    ]
+  },
+  "MHL": {
+    "file": "mh.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.67
+      },
+      {
+        "color": "white",
+        "share": 0.19
+      },
+      {
+        "color": "yellow",
+        "share": 0.1
+      }
+    ]
+  },
+  "MKD": {
+    "file": "mk.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.65
+      },
+      {
+        "color": "yellow",
+        "share": 0.33
+      }
+    ]
+  },
+  "MLI": {
+    "file": "ml.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "yellow",
+        "share": 0.33
+      }
+    ]
+  },
+  "MLT": {
+    "file": "mt.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.51
+      },
+      {
+        "color": "white",
+        "share": 0.46
+      }
+    ]
+  },
+  "MMR": {
+    "file": "mm.svg",
+    "colors": [
+      {
+        "color": "yellow",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.31
+      },
+      {
+        "color": "green",
+        "share": 0.25
+      },
+      {
+        "color": "white",
+        "share": 0.11
+      }
+    ]
+  },
+  "MNE": {
+    "file": "me.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.68
+      },
+      {
+        "color": "yellow",
+        "share": 0.19
+      },
+      {
+        "color": "orange",
+        "share": 0.11
+      }
+    ]
+  },
+  "MNG": {
+    "file": "mn.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.58
+      },
+      {
+        "color": "blue",
+        "share": 0.33
+      },
+      {
+        "color": "yellow",
+        "share": 0.08
+      }
+    ]
+  },
+  "MOZ": {
+    "file": "mz.svg",
+    "colors": [
+      {
+        "color": "yellow",
+        "share": 0.27
+      },
+      {
+        "color": "green",
+        "share": 0.26
+      },
+      {
+        "color": "red",
+        "share": 0.21
+      },
+      {
+        "color": "black",
+        "share": 0.19
+      }
+    ]
+  },
+  "MRT": {
+    "file": "mr.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.63
+      },
+      {
+        "color": "red",
+        "share": 0.29
+      },
+      {
+        "color": "yellow",
+        "share": 0.06
+      }
+    ]
+  },
+  "MUS": {
+    "file": "mu.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.24
+      },
+      {
+        "color": "green",
+        "share": 0.24
+      },
+      {
+        "color": "red",
+        "share": 0.24
+      },
+      {
+        "color": "yellow",
+        "share": 0.24
+      }
+    ]
+  },
+  "MWI": {
+    "file": "mw.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.38
+      },
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "black",
+        "share": 0.27
+      }
+    ]
+  },
+  "MYS": {
+    "file": "my.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.36
+      },
+      {
+        "color": "white",
+        "share": 0.33
+      },
+      {
+        "color": "blue",
+        "share": 0.24
+      }
+    ]
+  },
+  "NAM": {
+    "file": "na.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.35
+      },
+      {
+        "color": "green",
+        "share": 0.29
+      },
+      {
+        "color": "blue",
+        "share": 0.24
+      },
+      {
+        "color": "white",
+        "share": 0.08
+      }
+    ]
+  },
+  "NER": {
+    "file": "ne.svg",
+    "colors": [
+      {
+        "color": "orange",
+        "share": 0.38
+      },
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "white",
+        "share": 0.28
+      }
+    ]
+  },
+  "NGA": {
+    "file": "ng.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.67
+      },
+      {
+        "color": "white",
+        "share": 0.33
+      }
+    ]
+  },
+  "NIC": {
+    "file": "ni.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.67
+      },
+      {
+        "color": "white",
+        "share": 0.32
+      }
+    ]
+  },
+  "NLD": {
+    "file": "nl.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "white",
+        "share": 0.33
+      }
+    ]
+  },
+  "NOR": {
+    "file": "no.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.59
+      },
+      {
+        "color": "blue",
+        "share": 0.2
+      },
+      {
+        "color": "white",
+        "share": 0.16
+      }
+    ]
+  },
+  "NPL": {
+    "file": "np.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.6
+      },
+      {
+        "color": "blue",
+        "share": 0.15
+      },
+      {
+        "color": "white",
+        "share": 0.14
+      },
+      {
+        "color": "maroon",
+        "share": 0.07
+      }
+    ]
+  },
+  "NRU": {
+    "file": "nr.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.87
+      },
+      {
+        "color": "yellow",
+        "share": 0.07
+      }
+    ]
+  },
+  "NZL": {
+    "file": "nz.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.78
+      },
+      {
+        "color": "red",
+        "share": 0.11
+      },
+      {
+        "color": "white",
+        "share": 0.08
+      }
+    ]
+  },
+  "OMN": {
+    "file": "om.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.49
+      },
+      {
+        "color": "white",
+        "share": 0.25
+      },
+      {
+        "color": "green",
+        "share": 0.24
+      }
+    ]
+  },
+  "PAK": {
+    "file": "pk.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.74
+      },
+      {
+        "color": "white",
+        "share": 0.26
+      }
+    ]
+  },
+  "PAN": {
+    "file": "pa.svg",
+    "colors": [
+      {
+        "color": "white",
+        "share": 0.46
+      },
+      {
+        "color": "blue",
+        "share": 0.28
+      },
+      {
+        "color": "red",
+        "share": 0.24
+      }
+    ]
+  },
+  "PER": {
+    "file": "pe.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.67
+      },
+      {
+        "color": "white",
+        "share": 0.33
+      }
+    ]
+  },
+  "PHL": {
+    "file": "ph.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.34
+      },
+      {
+        "color": "red",
+        "share": 0.34
+      },
+      {
+        "color": "white",
+        "share": 0.27
+      },
+      {
+        "color": "yellow",
+        "share": 0.05
+      }
+    ]
+  },
+  "PLW": {
+    "file": "pw.svg",
+    "colors": [
+      {
+        "color": "lightblue",
+        "share": 0.81
+      },
+      {
+        "color": "yellow",
+        "share": 0.19
+      }
+    ]
+  },
+  "PNG": {
+    "file": "pg.svg",
+    "colors": [
+      {
+        "color": "black",
+        "share": 0.48
+      },
+      {
+        "color": "red",
+        "share": 0.43
+      },
+      {
+        "color": "yellow",
+        "share": 0.06
+      }
+    ]
+  },
+  "POL": {
+    "file": "pl.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.5
+      },
+      {
+        "color": "white",
+        "share": 0.5
+      }
+    ]
+  },
+  "PRK": {
+    "file": "kp.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.46
+      },
+      {
+        "color": "blue",
+        "share": 0.36
+      },
+      {
+        "color": "white",
+        "share": 0.18
+      }
+    ]
+  },
+  "PRT": {
+    "file": "pt.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.57
+      },
+      {
+        "color": "green",
+        "share": 0.35
+      }
+    ]
+  },
+  "PRY": {
+    "file": "py.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "white",
+        "share": 0.32
+      }
+    ]
+  },
+  "PSE": {
+    "file": "ps.svg",
+    "colors": [
+      {
+        "color": "black",
+        "share": 0.28
+      },
+      {
+        "color": "green",
+        "share": 0.28
+      },
+      {
+        "color": "red",
+        "share": 0.25
+      },
+      {
+        "color": "white",
+        "share": 0.19
+      }
+    ]
+  },
+  "QAT": {
+    "file": "qa.svg",
+    "colors": [
+      {
+        "color": "maroon",
+        "share": 0.67
+      },
+      {
+        "color": "white",
+        "share": 0.32
+      }
+    ]
+  },
+  "ROU": {
+    "file": "ro.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "yellow",
+        "share": 0.33
+      }
+    ]
+  },
+  "RUS": {
+    "file": "ru.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "white",
+        "share": 0.33
+      }
+    ]
+  },
+  "RWA": {
+    "file": "rw.svg",
+    "colors": [
+      {
+        "color": "lightblue",
+        "share": 0.48
+      },
+      {
+        "color": "yellow",
+        "share": 0.26
+      },
+      {
+        "color": "green",
+        "share": 0.25
+      }
+    ]
+  },
+  "SAU": {
+    "file": "sa.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.9
+      },
+      {
+        "color": "white",
+        "share": 0.06
+      }
+    ]
+  },
+  "SDN": {
+    "file": "sd.svg",
+    "colors": [
+      {
+        "color": "black",
+        "share": 0.28
+      },
+      {
+        "color": "red",
+        "share": 0.28
+      },
+      {
+        "color": "green",
+        "share": 0.25
+      },
+      {
+        "color": "white",
+        "share": 0.19
+      }
+    ]
+  },
+  "SEN": {
+    "file": "sn.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.37
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "yellow",
+        "share": 0.3
+      }
+    ]
+  },
+  "SGP": {
+    "file": "sg.svg",
+    "colors": [
+      {
+        "color": "white",
+        "share": 0.53
+      },
+      {
+        "color": "red",
+        "share": 0.46
+      }
+    ]
+  },
+  "SLB": {
+    "file": "sb.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.57
+      },
+      {
+        "color": "green",
+        "share": 0.28
+      },
+      {
+        "color": "yellow",
+        "share": 0.1
+      }
+    ]
+  },
+  "SLE": {
+    "file": "sl.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.33
+      },
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "white",
+        "share": 0.32
+      }
+    ]
+  },
+  "SLV": {
+    "file": "sv.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.67
+      },
+      {
+        "color": "white",
+        "share": 0.31
+      }
+    ]
+  },
+  "SMR": {
+    "file": "sm.svg",
+    "colors": [
+      {
+        "color": "lightblue",
+        "share": 0.46
+      },
+      {
+        "color": "white",
+        "share": 0.45
+      }
+    ]
+  },
+  "SOM": {
+    "file": "so.svg",
+    "colors": [
+      {
+        "color": "lightblue",
+        "share": 0.94
+      },
+      {
+        "color": "white",
+        "share": 0.06
+      }
+    ]
+  },
+  "SRB": {
+    "file": "rs.svg",
+    "colors": [
+      {
+        "color": "white",
+        "share": 0.36
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "blue",
+        "share": 0.24
+      }
+    ]
+  },
+  "SSD": {
+    "file": "ss.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.3
+      },
+      {
+        "color": "green",
+        "share": 0.25
+      },
+      {
+        "color": "black",
+        "share": 0.24
+      },
+      {
+        "color": "red",
+        "share": 0.13
+      },
+      {
+        "color": "white",
+        "share": 0.05
+      }
+    ]
+  },
+  "STP": {
+    "file": "st.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.51
+      },
+      {
+        "color": "yellow",
+        "share": 0.26
+      },
+      {
+        "color": "red",
+        "share": 0.18
+      }
+    ]
+  },
+  "SUR": {
+    "file": "sr.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.4
+      },
+      {
+        "color": "red",
+        "share": 0.37
+      },
+      {
+        "color": "white",
+        "share": 0.2
+      }
+    ]
+  },
+  "SVK": {
+    "file": "sk.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.39
+      },
+      {
+        "color": "white",
+        "share": 0.34
+      },
+      {
+        "color": "blue",
+        "share": 0.26
+      }
+    ]
+  },
+  "SVN": {
+    "file": "si.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.34
+      },
+      {
+        "color": "red",
+        "share": 0.34
+      },
+      {
+        "color": "white",
+        "share": 0.31
+      }
+    ]
+  },
+  "SWE": {
+    "file": "se.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.68
+      },
+      {
+        "color": "yellow",
+        "share": 0.32
+      }
+    ]
+  },
+  "SWZ": {
+    "file": "sz.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.37
+      },
+      {
+        "color": "red",
+        "share": 0.29
+      },
+      {
+        "color": "yellow",
+        "share": 0.12
+      },
+      {
+        "color": "black",
+        "share": 0.06
+      },
+      {
+        "color": "white",
+        "share": 0.06
+      },
+      {
+        "color": "maroon",
+        "share": 0.05
+      }
+    ]
+  },
+  "SYC": {
+    "file": "sc.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "green",
+        "share": 0.17
+      },
+      {
+        "color": "blue",
+        "share": 0.16
+      },
+      {
+        "color": "white",
+        "share": 0.16
+      },
+      {
+        "color": "yellow",
+        "share": 0.16
+      }
+    ]
+  },
+  "SYR": {
+    "file": "sy.svg",
+    "colors": [
+      {
+        "color": "black",
+        "share": 0.33
+      },
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "white",
+        "share": 0.28
+      },
+      {
+        "color": "red",
+        "share": 0.05
+      }
+    ]
+  },
+  "TCD": {
+    "file": "td.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.33
+      },
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "yellow",
+        "share": 0.33
+      }
+    ]
+  },
+  "TGO": {
+    "file": "tg.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.42
+      },
+      {
+        "color": "yellow",
+        "share": 0.31
+      },
+      {
+        "color": "red",
+        "share": 0.25
+      }
+    ]
+  },
+  "THA": {
+    "file": "th.svg",
+    "colors": [
+      {
+        "color": "maroon",
+        "share": 0.66
+      },
+      {
+        "color": "white",
+        "share": 0.31
+      }
+    ]
+  },
+  "TJK": {
+    "file": "tj.svg",
+    "colors": [
+      {
+        "color": "white",
+        "share": 0.41
+      },
+      {
+        "color": "green",
+        "share": 0.29
+      },
+      {
+        "color": "red",
+        "share": 0.29
+      }
+    ]
+  },
+  "TKM": {
+    "file": "tm.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.81
+      },
+      {
+        "color": "red",
+        "share": 0.07
+      },
+      {
+        "color": "maroon",
+        "share": 0.05
+      }
+    ]
+  },
+  "TLS": {
+    "file": "tl.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.63
+      },
+      {
+        "color": "black",
+        "share": 0.22
+      },
+      {
+        "color": "yellow",
+        "share": 0.11
+      }
+    ]
+  },
+  "TON": {
+    "file": "to.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.87
+      },
+      {
+        "color": "white",
+        "share": 0.13
+      }
+    ]
+  },
+  "TTO": {
+    "file": "tt.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.72
+      },
+      {
+        "color": "black",
+        "share": 0.18
+      },
+      {
+        "color": "white",
+        "share": 0.08
+      }
+    ]
+  },
+  "TUN": {
+    "file": "tn.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.89
+      },
+      {
+        "color": "white",
+        "share": 0.1
+      }
+    ]
+  },
+  "TUR": {
+    "file": "tr.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.93
+      },
+      {
+        "color": "white",
+        "share": 0.07
+      }
+    ]
+  },
+  "TUV": {
+    "file": "tv.svg",
+    "colors": [
+      {
+        "color": "lightblue",
+        "share": 0.72
+      },
+      {
+        "color": "red",
+        "share": 0.1
+      },
+      {
+        "color": "white",
+        "share": 0.08
+      },
+      {
+        "color": "blue",
+        "share": 0.05
+      }
+    ]
+  },
+  "TWN": {
+    "file": "tw.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.72
+      },
+      {
+        "color": "blue",
+        "share": 0.24
+      }
+    ]
+  },
+  "TZA": {
+    "file": "tz.svg",
+    "colors": [
+      {
+        "color": "black",
+        "share": 0.31
+      },
+      {
+        "color": "green",
+        "share": 0.28
+      },
+      {
+        "color": "lightblue",
+        "share": 0.28
+      },
+      {
+        "color": "yellow",
+        "share": 0.13
+      }
+    ]
+  },
+  "UGA": {
+    "file": "ug.svg",
+    "colors": [
+      {
+        "color": "yellow",
+        "share": 0.33
+      },
+      {
+        "color": "black",
+        "share": 0.31
+      },
+      {
+        "color": "red",
+        "share": 0.31
+      }
+    ]
+  },
+  "UKR": {
+    "file": "ua.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.5
+      },
+      {
+        "color": "yellow",
+        "share": 0.5
+      }
+    ]
+  },
+  "URY": {
+    "file": "uy.svg",
+    "colors": [
+      {
+        "color": "white",
+        "share": 0.59
+      },
+      {
+        "color": "blue",
+        "share": 0.35
+      }
+    ]
+  },
+  "USA": {
+    "file": "us.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.32
+      },
+      {
+        "color": "white",
+        "share": 0.32
+      },
+      {
+        "color": "blue",
+        "share": 0.3
+      }
+    ]
+  },
+  "UZB": {
+    "file": "uz.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.32
+      },
+      {
+        "color": "lightblue",
+        "share": 0.32
+      },
+      {
+        "color": "white",
+        "share": 0.32
+      }
+    ]
+  },
+  "VAT": {
+    "file": "va.svg",
+    "colors": [
+      {
+        "color": "yellow",
+        "share": 0.51
+      },
+      {
+        "color": "white",
+        "share": 0.45
+      }
+    ]
+  },
+  "VCT": {
+    "file": "vc.svg",
+    "colors": [
+      {
+        "color": "yellow",
+        "share": 0.47
+      },
+      {
+        "color": "green",
+        "share": 0.29
+      },
+      {
+        "color": "blue",
+        "share": 0.23
+      }
+    ]
+  },
+  "VEN": {
+    "file": "ve.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.33
+      },
+      {
+        "color": "yellow",
+        "share": 0.33
+      },
+      {
+        "color": "blue",
+        "share": 0.32
+      }
+    ]
+  },
+  "VNM": {
+    "file": "vn.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.91
+      },
+      {
+        "color": "yellow",
+        "share": 0.08
+      }
+    ]
+  },
+  "VUT": {
+    "file": "vu.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.31
+      },
+      {
+        "color": "red",
+        "share": 0.31
+      },
+      {
+        "color": "black",
+        "share": 0.24
+      },
+      {
+        "color": "yellow",
+        "share": 0.09
+      }
+    ]
+  },
+  "WSM": {
+    "file": "ws.svg",
+    "colors": [
+      {
+        "color": "red",
+        "share": 0.75
+      },
+      {
+        "color": "blue",
+        "share": 0.23
+      }
+    ]
+  },
+  "XKX": {
+    "file": "xk.svg",
+    "colors": [
+      {
+        "color": "blue",
+        "share": 0.88
+      },
+      {
+        "color": "yellow",
+        "share": 0.09
+      }
+    ]
+  },
+  "YEM": {
+    "file": "ye.svg",
+    "colors": [
+      {
+        "color": "white",
+        "share": 0.33
+      },
+      {
+        "color": "black",
+        "share": 0.32
+      },
+      {
+        "color": "red",
+        "share": 0.32
+      }
+    ]
+  },
+  "ZAF": {
+    "file": "za.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.33
+      },
+      {
+        "color": "blue",
+        "share": 0.2
+      },
+      {
+        "color": "red",
+        "share": 0.19
+      },
+      {
+        "color": "white",
+        "share": 0.11
+      },
+      {
+        "color": "black",
+        "share": 0.1
+      },
+      {
+        "color": "yellow",
+        "share": 0.05
+      }
+    ]
+  },
+  "ZMB": {
+    "file": "zm.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.71
+      },
+      {
+        "color": "orange",
+        "share": 0.11
+      },
+      {
+        "color": "black",
+        "share": 0.09
+      },
+      {
+        "color": "red",
+        "share": 0.09
+      }
+    ]
+  },
+  "ZWE": {
+    "file": "zw.svg",
+    "colors": [
+      {
+        "color": "green",
+        "share": 0.26
+      },
+      {
+        "color": "yellow",
+        "share": 0.21
+      },
+      {
+        "color": "white",
+        "share": 0.2
+      },
+      {
+        "color": "red",
+        "share": 0.19
+      },
+      {
+        "color": "black",
+        "share": 0.09
+      }
+    ]
+  }
+}

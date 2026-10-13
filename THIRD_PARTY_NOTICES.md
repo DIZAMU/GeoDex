@@ -56,14 +56,19 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
+## Data (shipped)
+
+| Source | Used for | License |
+|---|---|---|
+| Natural Earth 4.1.0, Admin 0 countries 1:50m, via world-atlas 2.0.2 | Country geometry (`data/geo/`) | Natural Earth: public domain. world-atlas: ISC, Copyright 2013-2019 Michael Bostock |
+| flag-icons 7.5.0 | Flag SVGs (`public/flags/`) | MIT, Copyright (c) 2013 Panayiotis Lipiridis |
+| Wikidata | Names, capitals, codes, area, borders cross-check | CC0 1.0 |
+| World Bank, World Development Indicators, SP.POP.TOTL | Population | CC BY 4.0, The World Bank |
+| UN Statistics Division, M49 standard | Subregions and continents | Free to use with attribution: United Nations Statistics Division |
+| Språkrådet, "Navn på stater" | Norwegian country names (cross-check and preferred forms) | Copyright Språkrådet. Their lists are distributed under CC BY 4.0 via Språkbanken; credit: Språkrådet |
+
 ## Data (added in later phases)
 
-These sources are planned and will be listed here with exact versions when they enter the repository:
-
-- Natural Earth: public domain.
-- world-atlas (TopoJSON build of Natural Earth): ISC.
-- flag-icons (lipis): MIT.
-- Wikidata: CC0.
 - Wikimedia Commons images (landmarks): per-image license, with author, license and URL stored and shown on each card. Only public domain, CC0, CC BY and CC BY-SA are accepted.
 - Historical border datasets: license to be verified before use (see `DECISIONS.md`).
 
