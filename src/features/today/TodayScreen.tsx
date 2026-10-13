@@ -1,28 +1,36 @@
-import { useMemo } from "react";
+import { ArrowRightIcon, MapPinIcon } from "lucide-react";
+import { useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router";
 import { db } from "@/db/db";
 import { setLastInputMode } from "@/db/settings";
-import type { InputSetting } from "@/engine/types";
+import { type InputSetting, parseCardId } from "@/engine/types";
 import { isLocale } from "@/i18n/locales";
+import { WorldMap } from "@/map/WorldMap";
 import { Button } from "@/ui/button";
+import { Stat } from "@/ui/stat";
 import { ToggleGroup, ToggleGroupItem } from "@/ui/toggle-group";
-import { planDay } from "../study/plan";
-import { useLearner } from "../study/useLearner";
+import { nameOf } from "../session/parts";
+import { planDay, scopedCountries } from "../study/plan";
+import { type Learner, useLearner } from "../study/useLearner";
 
 const INPUTS: readonly InputSetting[] = ["auto", "mc", "typing"];
 
 export function TodayScreen() {
+  const { t } = useTranslation();
+  const learner = useLearner();
+  if (!learner) return <p className="p-8 text-muted-foreground">{t("common.loading")}</p>;
+  return <Today learner={learner} />;
+}
+
+function Today({ learner }: { learner: Learner }) {
   const { t, i18n } = useTranslation();
   const locale = isLocale(i18n.language) ? i18n.language : "en";
-  const learner = useLearner();
   const navigate = useNavigate();
   const plan = useMemo(
-    () => (learner?.settings.homeCountry ? planDay({ ...learner, now: Date.now() }) : null),
+    () => (learner.settings.homeCountry ? planDay({ ...learner, now: Date.now() }) : null),
     [learner],
   );
-
-  if (!learner) return <p className="p-8 text-muted-foreground">{t("common.loading")}</p>;
 
   const needsSetup =
     !learner.settings.homeCountry || learner.settings.placementCompletedAt === null;
@@ -30,74 +38,185 @@ export function TodayScreen() {
   const region = plan?.nextSubregion
     ? learner.world.subregions.find((s) => s.id === plan.nextSubregion)?.names[locale]
     : null;
+  const number = new Intl.NumberFormat(locale);
+  const date = new Intl.DateTimeFormat(locale, {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  }).format(new Date());
 
   return (
-    <div className="mx-auto flex w-full max-w-3xl flex-col gap-10 px-4 py-10 md:px-10 md:py-16">
-      <section aria-labelledby="today-title" className="flex flex-col gap-4">
-        <h1 id="today-title" className="font-name text-3xl md:text-4xl">
-          {t("today.title")}
-        </h1>
+    <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-8 md:px-10 md:py-14 lg:min-h-[calc(100dvh-4rem)] lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:content-center lg:items-center lg:gap-14">
+      <section aria-labelledby="today-title" className="stagger flex flex-col gap-6">
+        <div className="flex flex-col gap-1">
+          <p className="text-sm text-muted-foreground first-letter:uppercase">{date}</p>
+          <h1 id="today-title" className="font-name text-4xl tracking-tight">
+            {t("today.title")}
+          </h1>
+        </div>
+
         {needsSetup ? (
           <>
             <p className="max-w-[60ch] text-lg text-muted-foreground">{t("today.setupBody")}</p>
-            <Button asChild className="self-start" data-testid="setup">
+            <Button asChild size="lg" className="group self-start" data-testid="setup">
               <Link to={learner.settings.homeCountry ? "/placement" : "/onboarding"}>
                 {t("today.setup")}
+                <ArrowRightIcon className="transition-transform duration-200 group-hover:translate-x-0.5" />
               </Link>
             </Button>
           </>
-        ) : plan ? (
+        ) : plan && plan.queue.length > 0 ? (
           <>
-            <p className="text-lg" data-testid="summary">
-              {plan.queue.length > 0
-                ? t("today.summary", {
-                    reviews: t("today.reviews", { count: plan.dueCount }),
-                    newCards: t("today.newCards", { count: plan.newCount }),
-                    minutes: Math.max(1, plan.budget.estimatedMinutes),
-                  })
-                : t("today.nothingLeft")}
-            </p>
+            <dl
+              className="grid grid-cols-3 gap-3"
+              data-testid="summary"
+              aria-label={t("today.summary", {
+                reviews: t("today.reviews", { count: plan.dueCount }),
+                newCards: t("today.newCards", { count: plan.newCount }),
+                minutes: Math.max(1, plan.budget.estimatedMinutes),
+              })}
+            >
+              <Stat label={t("today.statReviews")} value={number.format(plan.dueCount)} />
+              <Stat label={t("today.statNew")} value={number.format(plan.newCount)} />
+              <Stat
+                label={t("today.statMinutes")}
+                value={number.format(Math.max(1, plan.budget.estimatedMinutes))}
+              />
+            </dl>
             {plan.budget.paused ? (
               <p className="text-muted-foreground">{t("today.paused")}</p>
             ) : null}
-            {region ? (
-              <p className="text-muted-foreground">{t("today.nextRegion", { name: region })}</p>
-            ) : null}
+            {region ? <RegionChip text={t("today.nextRegion", { name: region })} /> : null}
+            <div className="flex flex-col gap-4 pt-2">
+              <fieldset className="flex flex-col gap-2">
+                <legend className="mb-2 text-sm text-muted-foreground">
+                  {t("today.inputMode")}
+                </legend>
+                <ToggleGroup
+                  type="single"
+                  variant="outline"
+                  spacing={0}
+                  value={input}
+                  onValueChange={(value) => {
+                    if (INPUTS.includes(value as InputSetting))
+                      void setLastInputMode(db, value as InputSetting);
+                  }}
+                >
+                  {INPUTS.map((mode) => (
+                    <ToggleGroupItem key={mode} value={mode} data-testid={`input-${mode}`}>
+                      {t(`input.${mode}`)}
+                    </ToggleGroupItem>
+                  ))}
+                </ToggleGroup>
+              </fieldset>
+              <Button
+                size="lg"
+                className="group h-14 self-stretch px-8 text-base sm:self-start"
+                data-testid="start"
+                onClick={() => navigate(`/session?input=${input}`)}
+              >
+                {t("today.start")}
+                <ArrowRightIcon className="transition-transform duration-200 group-hover:translate-x-0.5" />
+              </Button>
+            </div>
+          </>
+        ) : plan ? (
+          <>
+            <p className="max-w-[60ch] text-lg" data-testid="summary">
+              {t("today.nothingLeft")}
+            </p>
+            {region ? <RegionChip text={t("today.nextRegion", { name: region })} /> : null}
           </>
         ) : null}
       </section>
 
-      {!needsSetup && plan && plan.queue.length > 0 ? (
-        <section className="flex flex-col gap-4">
-          <fieldset className="flex flex-col gap-2">
-            <legend className="mb-2 text-sm text-muted-foreground">{t("today.inputMode")}</legend>
-            <ToggleGroup
-              type="single"
-              variant="outline"
-              spacing={0}
-              value={input}
-              onValueChange={(value) => {
-                if (INPUTS.includes(value as InputSetting))
-                  void setLastInputMode(db, value as InputSetting);
-              }}
-            >
-              {INPUTS.map((mode) => (
-                <ToggleGroupItem key={mode} value={mode} data-testid={`input-${mode}`}>
-                  {t(`input.${mode}`)}
-                </ToggleGroupItem>
-              ))}
-            </ToggleGroup>
-          </fieldset>
-          <Button
-            className="self-start"
-            size="lg"
-            data-testid="start"
-            onClick={() => navigate(`/session?input=${input}`)}
-          >
-            {t("today.start")}
-          </Button>
-        </section>
-      ) : null}
+      <MapCard learner={learner} nextSubregion={plan?.nextSubregion ?? null} locale={locale} />
     </div>
+  );
+}
+
+function RegionChip({ text }: { text: string }) {
+  return (
+    <p className="inline-flex items-center gap-2 self-start rounded-full border border-border bg-card/60 px-3 py-1.5 text-sm">
+      <MapPinIcon aria-hidden className="size-4 text-primary" />
+      {text}
+    </p>
+  );
+}
+
+/** Mastery map thumbnail (PLAN.md 8.3): countries started, and the region learning moves to. */
+function MapCard({
+  learner,
+  nextSubregion,
+  locale,
+}: {
+  learner: Learner;
+  nextSubregion: string | null;
+  locale: "en" | "nb";
+}) {
+  const { t } = useTranslation();
+  const countries = useMemo(
+    () => scopedCountries(learner.world, learner.settings),
+    [learner.world, learner.settings],
+  );
+  const started = useMemo(() => {
+    const ids = new Set<string>();
+    for (const state of learner.states.values()) {
+      if (state.phase !== "new") ids.add(parseCardId(state.cardId).entityId);
+    }
+    return ids;
+  }, [learner.states]);
+  const next = useMemo(
+    () =>
+      new Set(
+        countries
+          .filter((c) => c.subregion === nextSubregion && !started.has(c.id))
+          .map((c) => c.id),
+      ),
+    [countries, nextSubregion, started],
+  );
+  const labelFor = useCallback(
+    (id: string) => nameOf(learner.world, id, locale),
+    [learner.world, locale],
+  );
+  const count = countries.filter((c) => started.has(c.id)).length;
+
+  return (
+    <section className="surface enter flex flex-col overflow-hidden" aria-labelledby="map-title">
+      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 px-5 pt-4 pb-3">
+        <h2 id="map-title" className="font-name text-lg">
+          {t("today.mapTitle")}
+        </h2>
+        <p className="text-sm text-muted-foreground tabular-nums">
+          {t("today.mapStarted", { count, total: countries.length })}
+        </p>
+      </div>
+      <div className="aspect-[2/1] border-y border-border">
+        <WorldMap
+          countries={countries}
+          topology={learner.world.topology}
+          focus={{ kind: "world" }}
+          highlight={{ filled: started, tinted: next }}
+          labelFor={labelFor}
+          ariaLabel={t("map.label")}
+          interactive={false}
+        />
+      </div>
+      <ul className="flex flex-wrap gap-x-5 gap-y-1 px-5 py-3 text-sm text-muted-foreground">
+        <li className="flex items-center gap-2">
+          <span aria-hidden className="size-3 rounded-sm bg-primary/60" />
+          {t("today.legendStarted")}
+        </li>
+        {next.size > 0 ? (
+          <li className="flex items-center gap-2">
+            <span
+              aria-hidden
+              className="size-3 rounded-sm border border-primary/60 bg-primary/20"
+            />
+            {t("today.legendNext")}
+          </li>
+        ) : null}
+      </ul>
+    </section>
   );
 }

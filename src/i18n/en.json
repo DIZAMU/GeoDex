@@ -16,7 +16,14 @@
     "reviews_one": "{{count}} review",
     "reviews_other": "{{count}} reviews",
     "newCards_one": "{{count}} new card",
-    "newCards_other": "{{count}} new cards"
+    "newCards_other": "{{count}} new cards",
+    "statReviews": "Reviews",
+    "statNew": "New",
+    "statMinutes": "Minutes",
+    "mapTitle": "Your map",
+    "mapStarted": "{{count}} of {{total}} countries started",
+    "legendStarted": "Started",
+    "legendNext": "Next region"
   },
   "settings": {
     "label": "Settings",
@@ -42,7 +49,9 @@
     "on": "On",
     "off": "Off",
     "homeCountry": "Home country",
-    "rerunPlacement": "Rerun the placement test"
+    "rerunPlacement": "Rerun the placement test",
+    "groupLook": "Language and look",
+    "groupStudy": "Study"
   },
   "nav": {
     "today": "Today",
@@ -76,7 +85,10 @@
     "capitals": "Capitals known: {{count}}",
     "flags": "Flags known: {{count}}",
     "startsWith": "Daily learning starts with {{region}}.",
-    "toToday": "Go to today"
+    "toToday": "Go to today",
+    "statCountries": "Countries",
+    "statCapitals": "Capitals",
+    "statFlags": "Flags"
   },
   "q": {
     "map_to_name": "Which country is this?",
