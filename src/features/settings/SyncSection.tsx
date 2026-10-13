@@ -31,7 +31,12 @@ export function SyncSection() {
         await sync.sendCode(email);
         setSentTo(email.trim());
       } catch (e) {
-        setProblem(t("sync.sendError", { message: (e as Error).message }));
+        const message = (e as Error).message;
+        setProblem(
+          /signups? not allowed/i.test(message)
+            ? t("sync.noAccount")
+            : t("sync.sendError", { message }),
+        );
       }
     };
     const verify = async (event: FormEvent) => {

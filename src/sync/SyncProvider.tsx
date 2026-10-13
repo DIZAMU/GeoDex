@@ -15,10 +15,11 @@ import {
   useState,
 } from "react";
 import { db } from "@/db/db";
+import { supabaseUrl } from "./config";
 import { syncOnce } from "./sync";
 
-const URL = import.meta.env.VITE_SUPABASE_URL;
-const KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+const URL = supabaseUrl(import.meta.env.VITE_SUPABASE_URL);
+const KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY?.trim();
 export const SYNC_CONFIGURED = Boolean(URL && KEY);
 export const SYNC_INTERVAL_MS = 5 * 60_000;
 const SYNC_EVENT = "geodex:sync";
