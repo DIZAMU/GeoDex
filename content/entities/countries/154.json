@@ -1,0 +1,347 @@
+{
+  "group": "154",
+  "entities": [
+    {
+      "entityId": "DNK",
+      "hooks": {
+        "en": [
+          { "id": "DNK.en.1", "type": "anchor", "text": "Denmark is the peninsula pointing north from Germany toward Norway and Sweden." },
+          { "id": "DNK.en.2", "type": "shape", "text": "Denmark is a thumb, Jutland, with a handful of islands crumbled off its eastern side." },
+          { "id": "DNK.en.3", "type": "etymology", "text": "Denmark is usually read as 'the march of the Danes', a border land, with Germany as the border." }
+        ],
+        "nb": [
+          { "id": "DNK.nb.1", "type": "anchor", "text": "Danmark er halvøya som stikker nordover fra Tyskland mot Norge og Sverige." },
+          { "id": "DNK.nb.2", "type": "shape", "text": "Danmark er en tommel, Jylland, med en håndfull øyer drysset ut mot øst." },
+          { "id": "DNK.nb.3", "type": "etymology", "text": "Danmark tolkes ofte som «danenes mark», et grenseland, med Tyskland på andre siden av grensen." }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          { "id": "DNK.cap.en.1", "type": "etymology", "text": "Copenhagen comes from København, 'merchants' harbour'." },
+          { "id": "DNK.cap.en.2", "type": "anchor", "text": "Copenhagen sits on the east coast of Zealand, facing Sweden across the Øresund." }
+        ],
+        "nb": [
+          { "id": "DNK.cap.nb.1", "type": "etymology", "text": "København betyr «kjøpmennenes havn»." },
+          { "id": "DNK.cap.nb.2", "type": "sound", "text": "København: se for deg kjøpmenn som kjøper en hel havn ved Øresund." }
+        ]
+      },
+      "flagNote": {
+        "en": "The Dannebrog: a white Nordic cross on red, the model for the other Nordic cross flags.",
+        "nb": "Dannebrog: hvitt nordisk kors på rødt, forbildet for de andre nordiske korsflaggene."
+      },
+      "facts": [
+        { "id": "DNK.f1", "tier": 1, "verified": true, "text": { "en": "Denmark's only land border is with Germany, at the base of Jutland.", "nb": "Danmarks eneste landegrense er mot Tyskland, ved roten av Jylland." } },
+        { "id": "DNK.f2", "tier": 2, "verified": false, "text": { "en": "Greenland and the Faroe Islands are part of the Kingdom of Denmark, each with home rule.", "nb": "Grønland og Færøyene hører til Kongeriket Danmark, begge med selvstyre." } },
+        { "id": "DNK.f3", "tier": 3, "verified": false, "text": { "en": "Lego is Danish; the name joins the words 'leg godt', play well.", "nb": "Lego er dansk; navnet er satt sammen av «leg godt», lek godt." } }
+      ]
+    },
+    {
+      "entityId": "EST",
+      "hooks": {
+        "en": [
+          { "id": "EST.en.1", "type": "anchor", "text": "Estonia is the northernmost Baltic state, across the Gulf of Finland from Helsinki." },
+          { "id": "EST.en.2", "type": "shape", "text": "Estonia is a squarish block with two big islands, Saaremaa and Hiiumaa, broken off its west side." },
+          { "id": "EST.en.3", "type": "contrast", "text": "Estonian is a cousin of Finnish, not of Latvian or Lithuanian." }
+        ],
+        "nb": [
+          { "id": "EST.nb.1", "type": "anchor", "text": "Estland er det nordligste av de baltiske landene, rett over Finskebukta fra Helsingfors." },
+          { "id": "EST.nb.2", "type": "sound", "text": "Estland: «Øst-land», sier en sjømann fra Finland og peker sørover over bukta." },
+          { "id": "EST.nb.3", "type": "contrast", "text": "Estisk er i slekt med finsk, ikke med latvisk og litauisk." }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          { "id": "EST.cap.en.1", "type": "anchor", "text": "Tallinn faces Helsinki across the Gulf of Finland, a short ferry ride north." },
+          { "id": "EST.cap.en.2", "type": "sound", "text": "Tallinn: a tall inn on the Baltic, so tall you can see Finland from the top floor." }
+        ],
+        "nb": [
+          { "id": "EST.cap.nb.1", "type": "anchor", "text": "Tallinn ligger rett overfor Helsingfors, en kort fergetur over Finskebukta." },
+          { "id": "EST.cap.nb.2", "type": "sound", "text": "Tallinn: tollerne teller inn varene i den gamle hansabyen ved Østersjøen." }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue, black and white horizontal stripes, in that order from the top.",
+        "nb": "Blå, svart og hvit, vannrette striper i den rekkefølgen ovenfra."
+      },
+      "facts": [
+        { "id": "EST.f1", "tier": 1, "verified": true, "text": { "en": "Estonia borders Latvia to the south and Russia to the east.", "nb": "Estland grenser til Latvia i sør og Russland i øst." } },
+        { "id": "EST.f2", "tier": 2, "verified": false, "text": { "en": "Estonian is a Finnic language, closely related to Finnish.", "nb": "Estisk er et finsk-ugrisk språk, nært beslektet med finsk." } },
+        { "id": "EST.f3", "tier": 3, "verified": false, "text": { "en": "Skype was first built by engineers in Tallinn.", "nb": "Skype ble først utviklet av ingeniører i Tallinn." } }
+      ]
+    },
+    {
+      "entityId": "FIN",
+      "hooks": {
+        "en": [
+          { "id": "FIN.en.1", "type": "anchor", "text": "Finland sits between Sweden and Russia, with Norway along its far north." },
+          { "id": "FIN.en.2", "type": "shape", "text": "Finland's outline is called the Finnish Maiden; the northwest tip is her raised arm." },
+          { "id": "FIN.en.3", "type": "sound", "text": "Finland: picture a giant fish fin sticking up between Sweden and Russia." }
+        ],
+        "nb": [
+          { "id": "FIN.nb.1", "type": "anchor", "text": "Finland ligger mellom Sverige og Russland, med Norge langs nordgrensen." },
+          { "id": "FIN.nb.2", "type": "shape", "text": "Omrisset av Finland kalles Finlandsjomfruen; den nordvestlige tuppen er armen hennes." },
+          { "id": "FIN.nb.3", "type": "sound", "text": "Finland: se for deg en diger fiskefinne som stikker opp mellom Sverige og Russland." }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          { "id": "FIN.cap.en.1", "type": "anchor", "text": "Helsinki is on the south coast, across the Gulf of Finland from Tallinn." },
+          { "id": "FIN.cap.en.2", "type": "etymology", "text": "Helsinki also has a Swedish name, Helsingfors, because Swedish is official in Finland too." }
+        ],
+        "nb": [
+          { "id": "FIN.cap.nb.1", "type": "anchor", "text": "Helsingfors, på finsk Helsinki, ligger på sørkysten rett overfor Tallinn." },
+          { "id": "FIN.cap.nb.2", "type": "sound", "text": "Helsingfors: se for deg en foss som hilser på deg fra sørkysten av Finland." }
+        ]
+      },
+      "flagNote": {
+        "en": "A blue Nordic cross on white.",
+        "nb": "Blått nordisk kors på hvitt."
+      },
+      "facts": [
+        { "id": "FIN.f1", "tier": 1, "verified": true, "text": { "en": "Finland borders Sweden, Norway and Russia, and has a long Baltic coast.", "nb": "Finland grenser til Sverige, Norge og Russland, og har lang kyst mot Østersjøen." } },
+        { "id": "FIN.f2", "tier": 2, "verified": true, "text": { "en": "Finland has two official languages, Finnish and Swedish.", "nb": "Finland har to offisielle språk, finsk og svensk." } },
+        { "id": "FIN.f3", "tier": 3, "verified": false, "text": { "en": "The Åland Islands belong to Finland but are Swedish-speaking and demilitarized.", "nb": "Åland hører til Finland, men er svensktalende og demilitarisert." } }
+      ]
+    },
+    {
+      "entityId": "GBR",
+      "hooks": {
+        "en": [
+          { "id": "GBR.en.1", "type": "anchor", "text": "The United Kingdom is the island off northwest France, plus the northeast corner of Ireland's island." },
+          { "id": "GBR.en.2", "type": "contrast", "text": "Great Britain is the island; the United Kingdom adds Northern Ireland." },
+          { "id": "GBR.en.3", "type": "sound", "text": "United Kingdom: picture three kings squeezed onto one island, sharing a single umbrella." }
+        ],
+        "nb": [
+          { "id": "GBR.nb.1", "type": "anchor", "text": "Storbritannia er øyriket nordvest for Frankrike, med Nord-Irland på naboøya." },
+          { "id": "GBR.nb.2", "type": "contrast", "text": "Øya heter Storbritannia, men staten tar også med Nord-Irland på naboøya." },
+          { "id": "GBR.nb.3", "type": "sound", "text": "Storbritannia: en stor britt som tar opp hele øya vest for Nordsjøen." }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          { "id": "GBR.cap.en.1", "type": "anchor", "text": "London sits on the Thames in southeast England." },
+          { "id": "GBR.cap.en.2", "type": "story", "text": "London began as Londinium, a Roman town on the Thames." }
+        ],
+        "nb": [
+          { "id": "GBR.cap.nb.1", "type": "anchor", "text": "London ligger ved Themsen i Sørøst-England." },
+          { "id": "GBR.cap.nb.2", "type": "story", "text": "Romerne grunnla Londinium ved Themsen, og navnet ble til London." }
+        ]
+      },
+      "flagNote": {
+        "en": "The Union Jack layers the crosses of St George, St Andrew and St Patrick.",
+        "nb": "Union Jack legger korsene til St. Georg, St. Andreas og St. Patrick oppå hverandre."
+      },
+      "facts": [
+        { "id": "GBR.f1", "tier": 1, "verified": true, "text": { "en": "The United Kingdom's only land border is with Ireland, on the island of Ireland.", "nb": "Storbritannias eneste landegrense er mot Irland, på øya Irland." } },
+        { "id": "GBR.f2", "tier": 2, "verified": false, "text": { "en": "The UK joins four nations: England, Scotland, Wales and Northern Ireland.", "nb": "Storbritannia samler fire land: England, Skottland, Wales og Nord-Irland." } },
+        { "id": "GBR.f3", "tier": 3, "verified": false, "text": { "en": "Greenwich, in London, gives its name to the prime meridian.", "nb": "Greenwich i London har gitt navn til nullmeridianen." } }
+      ]
+    },
+    {
+      "entityId": "IRL",
+      "hooks": {
+        "en": [
+          { "id": "IRL.en.1", "type": "anchor", "text": "Ireland covers most of the island west of Great Britain; the northeast corner belongs to the UK." },
+          { "id": "IRL.en.2", "type": "shape", "text": "Ireland's outline is often read as a teddy bear with its back to Britain." },
+          { "id": "IRL.en.3", "type": "story", "text": "Mild, wet Atlantic weather keeps Ireland's grass growing almost all year." },
+          { "id": "IRL.en.4", "type": "flag_decode", "text": "Ireland's flag has green next to the pole; Côte d'Ivoire's has orange there." }
+        ],
+        "nb": [
+          { "id": "IRL.nb.1", "type": "anchor", "text": "Irland dekker det meste av øya vest for Storbritannia; nordøsthjørnet hører til britene." },
+          { "id": "IRL.nb.2", "type": "shape", "text": "Omrisset av Irland ser ut som en bamse som snur ryggen til Storbritannia." },
+          { "id": "IRL.nb.3", "type": "story", "text": "Mildt og vått atlanterhavsvær holder gresset i Irland grønt nesten hele året." },
+          { "id": "IRL.nb.4", "type": "flag_decode", "text": "Irlands flagg har grønt nærmest stangen; Elfenbenskysten har oransje der." }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          { "id": "IRL.cap.en.1", "type": "anchor", "text": "Dublin is on the east coast, facing Wales across the Irish Sea." },
+          { "id": "IRL.cap.en.2", "type": "etymology", "text": "Dublin comes from Irish 'dubh linn', black pool." }
+        ],
+        "nb": [
+          { "id": "IRL.cap.nb.1", "type": "anchor", "text": "Dublin ligger på østkysten, rett overfor Wales." },
+          { "id": "IRL.cap.nb.2", "type": "etymology", "text": "Dublin kommer av irsk «dubh linn», svart dam." }
+        ]
+      },
+      "flagNote": {
+        "en": "Green, white and orange vertical stripes, green next to the pole.",
+        "nb": "Grønn, hvit og oransje loddrette striper, grønt nærmest stangen."
+      },
+      "facts": [
+        { "id": "IRL.f1", "tier": 1, "verified": true, "text": { "en": "Ireland's only land border is with the United Kingdom, in the north of the island.", "nb": "Irlands eneste landegrense er mot Storbritannia, nord på øya." } },
+        { "id": "IRL.f2", "tier": 2, "verified": true, "text": { "en": "Irish and English are both official languages of Ireland.", "nb": "Irsk og engelsk er begge offisielle språk i Irland." } },
+        { "id": "IRL.f3", "tier": 3, "verified": false, "text": { "en": "Ireland has no native snakes.", "nb": "Irland har ingen stedegne slanger." } }
+      ]
+    },
+    {
+      "entityId": "ISL",
+      "hooks": {
+        "en": [
+          { "id": "ISL.en.1", "type": "anchor", "text": "Iceland is the island in the North Atlantic between Norway and Greenland." },
+          { "id": "ISL.en.2", "type": "contrast", "text": "Iceland is named for ice, yet its neighbor Greenland is the one covered in it." },
+          { "id": "ISL.en.3", "type": "story", "text": "Iceland sits on the Mid-Atlantic Ridge, so the island is slowly being pulled apart." }
+        ],
+        "nb": [
+          { "id": "ISL.nb.1", "type": "anchor", "text": "Island ligger i Nord-Atlanteren mellom Norge og Grønland." },
+          { "id": "ISL.nb.2", "type": "contrast", "text": "Island har navn etter is, men det er naboen Grønland som er dekket av den." },
+          { "id": "ISL.nb.3", "type": "story", "text": "Island ligger på Den midtatlantiske ryggen og blir sakte dratt fra hverandre." }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          { "id": "ISL.cap.en.1", "type": "etymology", "text": "Reykjavík means 'smoky bay', after the steam from hot springs." },
+          { "id": "ISL.cap.en.2", "type": "anchor", "text": "Reykjavík is on the southwest coast, the northernmost capital of a sovereign state." }
+        ],
+        "nb": [
+          { "id": "ISL.cap.nb.1", "type": "etymology", "text": "Reykjavík betyr «røykvika», etter dampen fra varme kilder." },
+          { "id": "ISL.cap.nb.2", "type": "anchor", "text": "Reykjavík ligger på sørvestkysten og er den nordligste hovedstaden i en selvstendig stat." }
+        ]
+      },
+      "flagNote": {
+        "en": "A red Nordic cross edged in white, on blue.",
+        "nb": "Rødt nordisk kors med hvit kant, på blått."
+      },
+      "facts": [
+        { "id": "ISL.f1", "tier": 1, "verified": true, "text": { "en": "Iceland has no land border with any country.", "nb": "Island har ingen landegrense mot noe land." } },
+        { "id": "ISL.f2", "tier": 2, "verified": false, "text": { "en": "Iceland's parliament, the Althing, is one of the oldest parliaments still meeting.", "nb": "Islands parlament, Alltinget, er et av de eldste parlamentene som fortsatt er i bruk." } },
+        { "id": "ISL.f3", "tier": 3, "verified": false, "text": { "en": "Iceland has no standing army.", "nb": "Island har ikke noe stående forsvar." } }
+      ]
+    },
+    {
+      "entityId": "LTU",
+      "hooks": {
+        "en": [
+          { "id": "LTU.en.1", "type": "anchor", "text": "Lithuania is the southernmost Baltic state, bordering Poland and Belarus." },
+          { "id": "LTU.en.2", "type": "contrast", "text": "Estonia, Latvia, Lithuania: alphabetical order is also north to south, so Lithuania is last." },
+          { "id": "LTU.en.3", "type": "sound", "text": "Lithuania: a lithe acrobat balancing on the Polish border, Latvia on her shoulders." }
+        ],
+        "nb": [
+          { "id": "LTU.nb.1", "type": "anchor", "text": "Litauen er det sørligste av de baltiske landene, med grense mot Polen og Belarus." },
+          { "id": "LTU.nb.2", "type": "contrast", "text": "Estland, Latvia, Litauen: alfabetisk rekkefølge er også nord til sør, så Litauen er nederst." },
+          { "id": "LTU.nb.3", "type": "sound", "text": "Litauen: en liten slepebåt som tauer Latvia sørover mot Polen." }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          { "id": "LTU.cap.en.1", "type": "anchor", "text": "Vilnius is in the southeast of Lithuania, close to the Belarus border." },
+          { "id": "LTU.cap.en.2", "type": "sound", "text": "Vilnius: a villain hiding in the baroque old town near Belarus." }
+        ],
+        "nb": [
+          { "id": "LTU.cap.nb.1", "type": "anchor", "text": "Vilnius ligger sørøst i Litauen, nær grensen mot Belarus." },
+          { "id": "LTU.cap.nb.2", "type": "sound", "text": "Vilnius: en villmann gjemmer seg i den barokke gamlebyen nær Belarus." }
+        ]
+      },
+      "flagNote": {
+        "en": "Yellow, green and red horizontal stripes, yellow on top.",
+        "nb": "Gul, grønn og rød, vannrette striper med gult øverst."
+      },
+      "facts": [
+        { "id": "LTU.f1", "tier": 1, "verified": true, "text": { "en": "Lithuania borders Latvia, Belarus, Poland and Kaliningrad, a part of Russia cut off from the rest of it.", "nb": "Litauen grenser til Latvia, Belarus, Polen og Kaliningrad, en del av Russland som er skilt fra resten av landet." } },
+        { "id": "LTU.f2", "tier": 2, "verified": false, "text": { "en": "Lithuanian and Latvian are the only living Baltic languages.", "nb": "Litauisk og latvisk er de eneste levende baltiske språkene." } },
+        { "id": "LTU.f3", "tier": 3, "verified": false, "text": { "en": "A monument north of Vilnius marks one calculation of the geographic center of Europe.", "nb": "Et monument nord for Vilnius markerer én beregning av Europas geografiske midtpunkt." } }
+      ]
+    },
+    {
+      "entityId": "LVA",
+      "hooks": {
+        "en": [
+          { "id": "LVA.en.1", "type": "anchor", "text": "Latvia is the middle Baltic state, between Estonia and Lithuania." },
+          { "id": "LVA.en.2", "type": "shape", "text": "Latvia is a fat crescent wrapped around the Gulf of Riga." },
+          { "id": "LVA.en.3", "type": "sound", "text": "Latvia: a lazy traveler takes the middle way, via Latvia, between the other two." }
+        ],
+        "nb": [
+          { "id": "LVA.nb.1", "type": "anchor", "text": "Latvia ligger i midten av de baltiske landene, mellom Estland og Litauen." },
+          { "id": "LVA.nb.2", "type": "shape", "text": "Latvia ligger som en tykk halvmåne rundt Rigabukta." },
+          { "id": "LVA.nb.3", "type": "sound", "text": "Latvia: en lat reisende tar midtveien, via Latvia, mellom de to andre." }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          { "id": "LVA.cap.en.1", "type": "anchor", "text": "Riga sits at the head of the Gulf of Riga, the bay that shares its name." },
+          { "id": "LVA.cap.en.2", "type": "sound", "text": "Riga: a ship's rigging tangled at the far end of the Gulf of Riga." }
+        ],
+        "nb": [
+          { "id": "LVA.cap.nb.1", "type": "anchor", "text": "Riga ligger innerst i Rigabukta, bukta som har samme navn." },
+          { "id": "LVA.cap.nb.2", "type": "sound", "text": "Riga: en skipsrigg som har satt seg fast innerst i Rigabukta." }
+        ]
+      },
+      "flagNote": {
+        "en": "Dark carmine red with a narrow white horizontal band through the middle.",
+        "nb": "Mørk karminrødt med en smal hvit vannrett stripe gjennom midten."
+      },
+      "facts": [
+        { "id": "LVA.f1", "tier": 1, "verified": true, "text": { "en": "Latvia borders Estonia, Lithuania, Belarus and Russia.", "nb": "Latvia grenser til Estland, Litauen, Belarus og Russland." } },
+        { "id": "LVA.f2", "tier": 2, "verified": false, "text": { "en": "Riga is the largest city in the Baltic states.", "nb": "Riga er den største byen i de baltiske landene." } },
+        { "id": "LVA.f3", "tier": 3, "verified": false, "text": { "en": "Latvia's red and white flag traces back to a medieval chronicle.", "nb": "Det rødhvite flagget til Latvia kan spores tilbake til en krønike fra middelalderen." } }
+      ]
+    },
+    {
+      "entityId": "NOR",
+      "hooks": {
+        "en": [
+          { "id": "NOR.en.1", "type": "anchor", "text": "Norway runs along the west side of Scandinavia, from the North Sea to Russia." },
+          { "id": "NOR.en.2", "type": "shape", "text": "Norway is a long spoon: the round bowl in the south, a thin handle reaching north." },
+          { "id": "NOR.en.3", "type": "story", "text": "Norway's fjords are valleys carved by glaciers and then flooded by the sea." }
+        ],
+        "nb": [
+          { "id": "NOR.nb.1", "type": "anchor", "text": "Norge strekker seg langs vestsiden av Skandinavia, fra Nordsjøen til Russland." },
+          { "id": "NOR.nb.2", "type": "shape", "text": "Norge er en lang skje: bollen i sør og et tynt skaft mot nord." },
+          { "id": "NOR.nb.3", "type": "story", "text": "Fjordene er daler som isbreer gravde ut, og som havet senere fylte." }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          { "id": "NOR.cap.en.1", "type": "anchor", "text": "Oslo sits at the head of the Oslofjord, in the southeast of Norway." },
+          { "id": "NOR.cap.en.2", "type": "story", "text": "Oslo was called Christiania for centuries before it took back its old name." }
+        ],
+        "nb": [
+          { "id": "NOR.cap.nb.1", "type": "anchor", "text": "Oslo ligger innerst i Oslofjorden, sørøst i Norge." },
+          { "id": "NOR.cap.nb.2", "type": "story", "text": "Oslo het Christiania i flere hundre år før byen tok tilbake det gamle navnet." }
+        ]
+      },
+      "flagNote": {
+        "en": "A blue Nordic cross edged in white, on red: the Danish cross with blue inside.",
+        "nb": "Blått nordisk kors med hvit kant, på rødt: det danske korset med blått inni."
+      },
+      "facts": [
+        { "id": "NOR.f1", "tier": 1, "verified": true, "text": { "en": "Norway borders Sweden, Finland and Russia.", "nb": "Norge grenser til Sverige, Finland og Russland." } },
+        { "id": "NOR.f2", "tier": 2, "verified": false, "text": { "en": "Svalbard, an archipelago (group of islands) in the Arctic Ocean, belongs to Norway.", "nb": "Svalbard, en øygruppe i Polhavet, hører til Norge." } },
+        { "id": "NOR.f3", "tier": 3, "verified": false, "text": { "en": "The Nobel Peace Prize is awarded in Oslo; the other Nobel Prizes are awarded in Stockholm.", "nb": "Nobels fredspris deles ut i Oslo; de andre nobelprisene deles ut i Stockholm." } }
+      ]
+    },
+    {
+      "entityId": "SWE",
+      "hooks": {
+        "en": [
+          { "id": "SWE.en.1", "type": "anchor", "text": "Sweden fills the east side of Scandinavia, between Norway and the Baltic Sea." },
+          { "id": "SWE.en.2", "type": "shape", "text": "Sweden hangs beside Norway like a long sword, its tip pointing at Denmark." },
+          { "id": "SWE.en.3", "type": "contrast", "text": "Sweden has the Baltic coast; Norway has the Atlantic fjords." }
+        ],
+        "nb": [
+          { "id": "SWE.nb.1", "type": "anchor", "text": "Sverige fyller østsiden av Skandinavia, mellom Norge og Østersjøen." },
+          { "id": "SWE.nb.2", "type": "sound", "text": "Sverige henger som et sverd langs Norge, med spissen mot Danmark." },
+          { "id": "SWE.nb.3", "type": "contrast", "text": "Sverige har kysten mot Østersjøen; Norge har fjordene mot Atlanterhavet." }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          { "id": "SWE.cap.en.1", "type": "anchor", "text": "Stockholm spreads over islands where Lake Mälaren meets the Baltic." },
+          { "id": "SWE.cap.en.2", "type": "sound", "text": "Stockholm: shoppers stock up, then island-hop home across the city's bridges." }
+        ],
+        "nb": [
+          { "id": "SWE.cap.nb.1", "type": "anchor", "text": "Stockholm ligger på øyer der Mälaren møter Østersjøen." },
+          { "id": "SWE.cap.nb.2", "type": "sound", "text": "Stockholm: en tømmerstokk på hver holme i byen." }
+        ]
+      },
+      "flagNote": {
+        "en": "A yellow Nordic cross on blue.",
+        "nb": "Gult nordisk kors på blått."
+      },
+      "facts": [
+        { "id": "SWE.f1", "tier": 1, "verified": true, "text": { "en": "Sweden borders Norway and Finland, and a bridge and tunnel link it to Denmark.", "nb": "Sverige grenser til Norge og Finland, og en bro og en tunnel knytter landet til Danmark." } },
+        { "id": "SWE.f2", "tier": 2, "verified": false, "text": { "en": "Swedish, Norwegian and Danish are close enough that speakers often understand each other.", "nb": "Svensk, norsk og dansk ligger så nær hverandre at de som snakker dem, ofte forstår hverandre." } },
+        { "id": "SWE.f3", "tier": 3, "verified": false, "text": { "en": "The Øresund link to Denmark starts as a bridge and dives into a tunnel halfway across.", "nb": "Øresundsforbindelsen til Danmark starter som bro og går over i tunnel midtveis." } }
+      ]
+    }
+  ]
+}
