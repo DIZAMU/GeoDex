@@ -166,5 +166,35 @@
   "flag": {
     "alt": "Flagg",
     "of": "Flagget til {{name}}"
+  },
+  "sync": {
+    "title": "Synkronisering",
+    "off": "Synkronisering er av i denne versjonen, så alt blir værende på denne enheten. Bruk eksport nedenfor for å ta vare på en kopi.",
+    "intro": "Logg inn for å ha samme fremgang på alle enhetene dine.",
+    "email": "E-post",
+    "sendCode": "Send kode",
+    "codeSent": "En innloggingskode er på vei til {{email}}. Skriv den inn her.",
+    "code": "Kode",
+    "signIn": "Logg inn",
+    "signedIn": "Logget inn som {{email}}",
+    "lastSynced": "Sist synkronisert {{time}}",
+    "never": "Ikke synkronisert ennå på denne enheten",
+    "pending_one": "{{count}} endring venter på synkronisering",
+    "pending_other": "{{count}} endringer venter på synkronisering",
+    "syncNow": "Synkroniser nå",
+    "syncing": "Synkroniserer",
+    "offline": "Frakoblet. Endringer synkroniseres når du er på nett igjen.",
+    "error": "Synkroniseringen feilet: {{message}}. Fremgangen din er trygg på denne enheten; prøv igjen.",
+    "signOut": "Logg ut",
+    "codeError": "Den koden virket ikke. Sjekk den, eller send en ny.",
+    "sendError": "Koden kunne ikke sendes: {{message}}"
+  },
+  "backup": {
+    "title": "Sikkerhetskopi",
+    "body": "Eksporter alle repetisjoner og innstillinger til en fil, eller importer en. Import legger til det som mangler og fjerner aldri noe.",
+    "export": "Eksporter data",
+    "import": "Importer data",
+    "imported": "Importerte {{reviews}} repetisjoner og {{votes}} stemmer på huskeregler.",
+    "importError": "Den filen er ikke en eksport fra GeoDex."
   }
 }
