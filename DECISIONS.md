@@ -159,3 +159,9 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 - **Hook ids:** `<ISO3>.<locale>.<n>` for hooks and `<ISO3>.cap.<locale>.<n>` for capital hooks; ids never change once shipped, because "Not helpful" votes and snippet ids refer to them.
 - **Flag notes** count as tier 1 facts on flag cards. `flag_decode` hooks are never shown on map cards.
 - **Snippets shown on the intro panel** are stored with that card's first review event, so they count as seen.
+
+## 030. Sync details
+
+- **`duration_ms` column:** the review event schema in PLAN.md 5.6 has no column for `durationMs` (DECISIONS.md 023), so the migration adds `duration_ms integer`. Without it, a synced device would lose the time-budget input for events from other devices.
+- **Fresh settings:** a new device writes default settings with `updatedAt: 0`, so on its first sync the settings from an existing device win by last write wins instead of being overwritten by defaults.
+- **Accounts:** the app asks for an email code with `shouldCreateUser: false`, so it can never create an account. The author creates the account in the Supabase dashboard, then disables sign-ups (README).
