@@ -48,6 +48,22 @@ for (const theme of THEMES) {
       await answerPrompt(page);
       await shot(page, `${theme}-${locale}-feedback`);
       await noHorizontalScroll(page);
+
+      await page.keyboard.press("Escape");
+      await expect(page.getByTestId("session-summary")).toBeVisible();
+      await shot(page, `${theme}-${locale}-summary`);
+
+      for (const [name, url, ready] of [
+        ["atlas", "/atlas", "atlas-regions"],
+        ["entry", "/atlas/NOR", "entry-cards"],
+        ["stats", "/stats", "stats-grid"],
+        ["drill-empty", "/drill?region=none", "drill-empty"],
+      ] as const) {
+        await page.goto(url);
+        await expect(page.getByTestId(ready)).toBeVisible();
+        await shot(page, `${theme}-${locale}-${name}`);
+        await noHorizontalScroll(page);
+      }
     });
   }
 }
