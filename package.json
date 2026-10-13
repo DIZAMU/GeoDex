@@ -11,19 +11,22 @@
   },
   "packageManager": "pnpm@10.28.0",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "node scripts/content/compile-templates.ts && vite",
+    "build": "node scripts/content/compile-templates.ts && tsc -b && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc -b",
+    "typecheck": "node scripts/content/compile-templates.ts && tsc -b",
     "lint": "biome check . && node scripts/lint/no-dashes.ts",
     "lint:fix": "biome check --write .",
-    "test": "vitest run",
+    "test": "node scripts/content/compile-templates.ts && vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "lint:dashes": "node scripts/lint/no-dashes.ts",
     "data:fetch": "node --use-env-proxy scripts/data/fetch-wikidata.ts && node --use-env-proxy scripts/data/fetch-reference.ts",
     "data:build": "node scripts/data/build-countries.ts && node scripts/data/build-flags.ts",
-    "data:verify": "node scripts/data/verify.ts"
+    "data:verify": "node scripts/data/verify.ts",
+    "content:compile": "node scripts/content/compile-templates.ts",
+    "content:lint": "node scripts/content/lint.ts",
+    "content:review": "node scripts/content/review.ts"
   },
   "dependencies": {
     "@fontsource-variable/newsreader": "5.3.0",
@@ -76,6 +79,7 @@
     "vite": "8.3.4",
     "vitest": "5.0.4",
     "world-atlas": "2.0.2",
-    "wrangler": "4.149.0"
+    "wrangler": "4.149.0",
+    "yaml": "2.8.1"
   }
 }
