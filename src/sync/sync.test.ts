@@ -140,7 +140,7 @@ describe("sync", () => {
     const server = memoryBackend();
     const [a, b] = [device(), device()];
     const row = (updatedAt: number, dailyMinutes: number) => ({
-      id: SETTINGS_ROW_ID,
+      id: SETTINGS_ROW_ID as typeof SETTINGS_ROW_ID,
       locale: "en" as const,
       ...DEFAULT_SETTINGS,
       dailyMinutes,
