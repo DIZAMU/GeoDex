@@ -1,16 +1,18 @@
 /**
  * SPARQL queries for country data. Each runs over the curated scope (VALUES ?item).
+ * Labels fall back to "mul" (Wikidata's language-neutral label) when "en" is missing.
  * Queries return statements with rank and qualifiers; selection happens in the build step.
  */
 export function countryQueries(values: string): Record<string, string> {
   return {
-    basics: `SELECT ?item ?iso3 ?iso2 ?num ?en ?nb ?enOfficial ?nbOfficial WHERE {
+    basics: `SELECT ?item ?iso3 ?iso2 ?num ?en ?nb ?mul ?enOfficial ?nbOfficial WHERE {
   VALUES ?item { ${values} }
   OPTIONAL { ?item wdt:P298 ?iso3 }
   OPTIONAL { ?item wdt:P297 ?iso2 }
   OPTIONAL { ?item wdt:P299 ?num }
   OPTIONAL { ?item rdfs:label ?en FILTER(LANG(?en) = "en") }
   OPTIONAL { ?item rdfs:label ?nb FILTER(LANG(?nb) = "nb") }
+  OPTIONAL { ?item rdfs:label ?mul FILTER(LANG(?mul) = "mul") }
   OPTIONAL { ?item wdt:P1448 ?enOfficial FILTER(LANG(?enOfficial) = "en") }
   OPTIONAL { ?item wdt:P1448 ?nbOfficial FILTER(LANG(?nbOfficial) = "nb") }
 }`,
@@ -18,13 +20,14 @@ export function countryQueries(values: string): Record<string, string> {
   VALUES ?item { ${values} }
   ?item skos:altLabel ?alt FILTER(LANG(?alt) = "en" || LANG(?alt) = "nb")
 }`,
-    capitals: `SELECT ?item ?cap ?rank ?start ?end ?en ?nb ?coord WHERE {
+    capitals: `SELECT ?item ?cap ?rank ?start ?end ?en ?nb ?mul ?coord WHERE {
   VALUES ?item { ${values} }
   ?item p:P36 ?st . ?st ps:P36 ?cap ; wikibase:rank ?rank .
   OPTIONAL { ?st pq:P580 ?start }
   OPTIONAL { ?st pq:P582 ?end }
   OPTIONAL { ?cap rdfs:label ?en FILTER(LANG(?en) = "en") }
   OPTIONAL { ?cap rdfs:label ?nb FILTER(LANG(?nb) = "nb") }
+  OPTIONAL { ?cap rdfs:label ?mul FILTER(LANG(?mul) = "mul") }
   OPTIONAL { ?cap wdt:P625 ?coord }
 }`,
     area: `SELECT ?item ?amount ?unit ?rank ?time WHERE {
@@ -68,9 +71,10 @@ export function countryQueries(values: string): Record<string, string> {
 
 /** Labels and aliases for a set of entities (capitals, languages, currencies). */
 export function labelQuery(values: string): string {
-  return `SELECT ?item ?en ?nb ?alt WHERE {
+  return `SELECT ?item ?en ?nb ?mul ?alt WHERE {
   VALUES ?item { ${values} }
   OPTIONAL { ?item rdfs:label ?en FILTER(LANG(?en) = "en") }
+  OPTIONAL { ?item rdfs:label ?mul FILTER(LANG(?mul) = "mul") }
   OPTIONAL { ?item rdfs:label ?nb FILTER(LANG(?nb) = "nb") }
   OPTIONAL { ?item skos:altLabel ?alt FILTER(LANG(?alt) = "en" || LANG(?alt) = "nb") }
 }`;
