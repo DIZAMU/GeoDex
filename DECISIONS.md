@@ -110,3 +110,33 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 - **Decision:** `assets/brand/` is the source of truth (svg, png, BRAND.md); web icons are in `public/`, replacing the placeholder favicon. Files are used exactly as delivered.
 - **Name:** the wordmark artwork reads "Geodex"; text in the app and docs uses "GeoDex", as the author asked earlier. The artwork is not redrawn.
 - **Deferred:** the PWA manifest icons from the handoff go in with vite-plugin-pwa in Phase 4. `og:image` uses the absolute workers.dev URL so link previews work. The GitHub social preview is uploaded by the author in repo settings and only shows once the repo is public.
+
+## 021. Placement with one probe right
+
+- **Context:** `PLAN.md` 6.4 covers both probes right and both wrong, not one of each.
+- **Decision:** one right probe tests the whole subregion like two right ones, since that is where knowledge is mixed. The subregion is reported as "partial".
+
+## 022. When grading judges speed
+
+- **Decision:** Easy needs 50 reviews in a mode (`PLAN.md` 6.2); Slow (Hard) needs 10, so the first answers are not judged against a median of two or three values.
+
+## 023. Review events are written on continue
+
+- **Context:** the time budget uses prompt-to-continue time, grading uses prompt-to-answer time.
+- **Decision:** the event is written when the learner continues, with both `responseMs` (prompt to answer) and a new `durationMs` (prompt to continue). Closing the app during feedback loses that one answer; the event stays a single immutable record.
+
+## 024. Contrast cards and hooks wait for content
+
+- **Decision:** confusions are logged from Phase 2 and curated look-alike pairs (`data/curated/confusion-pairs.json`) already shape distractors. Contrast cards are created and studied once their contrast text exists (Phase 3, `content/confusions.json`). The `N` (not helpful) shortcut is listed in the `?` overlay and starts working with hooks in Phase 3.
+
+## 025. Session details
+
+- **Intro panel:** shown once per country, before its first stage 1 card.
+- **Hint (`H`):** typed answers only; it shows the first letter and the letter count and grades the answer Hard.
+- **Map answers:** a click or tap submits immediately; there is no confirm step.
+- **Feedback zoom:** the map flies to the target with margin, or to the target and the wrong pick together; neighbors are labeled when visible.
+
+## 026. Bundle size
+
+- **Context:** the main chunk is about 710 kB minified (227 kB gzipped), mostly React DOM, React Router, Dexie, i18next and d3. World data loads as separate chunks.
+- **Decision:** accepted for Phase 2. Route-level code splitting and precaching come with the PWA work in Phase 4 and the performance pass in Phase 10.
