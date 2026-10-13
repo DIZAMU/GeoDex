@@ -1,0 +1,18 @@
+{
+  "_comment": "Commonly confused countries, seeded from PLAN.md 5.2. Used to prefer look-alikes as distractors from the first review. Contrast text for each pair is content and arrives with content/confusions.json in Phase 3. Not-the-capital pairs (cities) arrive with the cities module in Phase 6.",
+  "pairs": [
+    { "a": "SVK", "b": "SVN", "dimension": "name" },
+    { "a": "NER", "b": "NGA", "dimension": "name" },
+    { "a": "AUT", "b": "AUS", "dimension": "name" },
+    { "a": "GIN", "b": "GNB", "dimension": "name" },
+    { "a": "GIN", "b": "GNQ", "dimension": "name" },
+    { "a": "GIN", "b": "PNG", "dimension": "name" },
+    { "a": "GNB", "b": "GNQ", "dimension": "name" },
+    { "a": "COG", "b": "COD", "dimension": "name" },
+    { "a": "DMA", "b": "DOM", "dimension": "name" },
+    { "a": "TCD", "b": "ROU", "dimension": "flag" },
+    { "a": "IDN", "b": "MCO", "dimension": "flag" },
+    { "a": "IRL", "b": "CIV", "dimension": "flag" },
+    { "a": "SVK", "b": "SVN", "dimension": "capital" }
+  ]
+}

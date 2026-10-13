@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Geodex">
+  <title>Geodex</title>
+  <rect width="100" height="100" fill="#0E2433"/>
+  <path d="M50 28A10 22 0 0 0 50 72" fill="none" stroke="#304350" stroke-width="2.5" stroke-linecap="round"/>
+  <path fill="#E7EEF2" d="M77.713 34A32 32 0 1 0 82 50A4 4 0 0 0 78 46H57A4 4 0 0 0 57 54H71.166A2 2 0 0 1 73.09 56.545A24 24 0 1 1 70.785 38A4 4 0 0 0 77.713 34Z"/>
+  <circle cx="57" cy="50" r="6.5" fill="#F4B740"/>
+</svg>

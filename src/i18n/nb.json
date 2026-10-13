@@ -4,7 +4,19 @@
   },
   "today": {
     "title": "I dag",
-    "empty": "Ingenting å repetere ennå. Landdata og økter kommer i neste versjon."
+    "summary": "{{reviews}} og {{newCards}}, omtrent {{minutes}} min",
+    "nothingLeft": "Ingenting igjen i dag. Nye kort låses opp når du repeterer.",
+    "paused": "Nye kort er satt på pause til etterslepet får plass i dagens tid.",
+    "start": "Start økten",
+    "inputMode": "Svar med",
+    "nextRegion": "Neste region: {{name}}",
+    "setupTitle": "Sett opp GeoDex",
+    "setupBody": "Velg hjemland og ta en kort plasseringstest. Den finner ut hva du allerede kan.",
+    "setup": "Sett opp",
+    "reviews_one": "{{count}} repetisjon",
+    "reviews_other": "{{count}} repetisjoner",
+    "newCards_one": "{{count}} nytt kort",
+    "newCards_other": "{{count}} nye kort"
   },
   "settings": {
     "label": "Innstillinger",
@@ -19,6 +31,123 @@
       "label": "Språk",
       "en": "English",
       "nb": "Norsk"
-    }
+    },
+    "title": "Innstillinger",
+    "dailyMinutes": "Tid per dag",
+    "minutes": "{{count}} min",
+    "countdown": "Nedtelling",
+    "countdownOff": "Av",
+    "seconds": "{{count}} s",
+    "currencyLanguage": "Kort for valuta og språk",
+    "on": "På",
+    "off": "Av",
+    "homeCountry": "Hjemland",
+    "rerunPlacement": "Ta plasseringstesten på nytt"
+  },
+  "nav": {
+    "today": "I dag",
+    "settings": "Innstillinger"
+  },
+  "common": {
+    "loading": "Laster"
+  },
+  "input": {
+    "auto": "Auto",
+    "mc": "Flervalg",
+    "typing": "Skriving"
+  },
+  "onboarding": {
+    "title": "Sett opp GeoDex",
+    "home": "Hjemland",
+    "homeHelp": "Læringen starter med regionen, og forklaringer sammenligner med landet.",
+    "search": "Søk etter land",
+    "noMatch": "Ingen land passer. Sjekk stavemåten.",
+    "start": "Start plasseringstesten"
+  },
+  "placement": {
+    "title": "Plasseringstest",
+    "intro": "En kort test av det du allerede kan, region for region. Feil svar teller ikke mot deg.",
+    "skip": "Hopp over regionen",
+    "finish": "Avslutt nå",
+    "answered": "{{count}} besvart",
+    "region": "Region: {{name}}",
+    "resultTitle": "Resultat av plasseringstesten",
+    "countries": "Land plassert: {{count}}",
+    "capitals": "Hovedsteder du kan: {{count}}",
+    "flags": "Flagg du kan: {{count}}",
+    "startsWith": "Den daglige læringen starter med {{region}}.",
+    "toToday": "Gå til i dag"
+  },
+  "q": {
+    "map_to_name": "Hvilket land er dette?",
+    "name_to_map": "Finn {{name}} på kartet.",
+    "country_to_capital": "Hva er hovedstaden {{inName}}?",
+    "capital_to_country": "{{capital}} er hovedstaden i hvilket land?",
+    "flag_to_name": "Hvilket land har dette flagget?",
+    "name_to_flag": "Hvilket flagg tilhører {{name}}?",
+    "country_to_currency": "Hvilken valuta brukes {{inName}}?",
+    "country_to_language": "Hvilket språk er offisielt språk {{inName}}?"
+  },
+  "answer": {
+    "placeholder": "Skriv svaret",
+    "check": "Sjekk",
+    "giveUp": "Vis svaret",
+    "hint": "Hint",
+    "hintStarts": "Begynner med {{letter}}, {{count}} bokstaver",
+    "mapHelp": "Klikk eller trykk på landet.",
+    "label": "Ditt svar"
+  },
+  "feedback": {
+    "correct": "Riktig",
+    "wrong": "Feil",
+    "youPicked": "Du valgte {{name}}.",
+    "spelling": "Godtatt. Det staves {{name}}.",
+    "timeUp": "Tiden gikk ut.",
+    "gaveUp": "Svaret er vist.",
+    "capital": "Hovedstad",
+    "capitals": "Hovedsteder",
+    "currency": "Valuta",
+    "languages": "Offisielle språk",
+    "continue": "Fortsett",
+    "placeholder": "Forklaringer til hvert svar kommer i neste versjon."
+  },
+  "role": {
+    "primary": "hovedstad",
+    "executive": "utøvende",
+    "legislative": "lovgivende",
+    "judicial": "dømmende",
+    "constitutional": "konstitusjonell",
+    "seat_of_government": "regjeringssete"
+  },
+  "intro": {
+    "label": "Nytt land",
+    "continue": "Test meg"
+  },
+  "session": {
+    "left": "{{count}} igjen",
+    "end": "Avslutt økten",
+    "doneTitle": "Økten er ferdig",
+    "reviewed_one": "{{count}} repetisjon",
+    "reviewed_other": "{{count}} repetisjoner",
+    "backToToday": "Tilbake til i dag",
+    "countdown": "{{count}} sekunder igjen"
+  },
+  "shortcuts": {
+    "title": "Tastatursnarveier",
+    "choose": "Velg et svar",
+    "submit": "Sjekk et skrevet svar",
+    "continue": "Fortsett",
+    "hint": "Vis et hint",
+    "notHelpful": "Merk et minnetriks som lite nyttig",
+    "end": "Avslutt økten",
+    "help": "Vis disse snarveiene",
+    "close": "Lukk"
+  },
+  "map": {
+    "label": "Verdenskart"
+  },
+  "flag": {
+    "alt": "Flagg",
+    "of": "Flagget til {{name}}"
   }
 }

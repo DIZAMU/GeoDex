@@ -3,11 +3,26 @@
 @import "@fontsource-variable/schibsted-grotesk/wght.css";
 @import "@fontsource-variable/newsreader/opsz-italic.css";
 @import "../themes/themes.css";
+@import "../map/map.css";
 
 /* shadcn dark: variants apply to the one dark theme. */
 @custom-variant dark (&:where([data-theme="atlas"], [data-theme="atlas"] *));
 
 /* Variants used by shadcn components. Copied from shadcn/tailwind.css so the CLI is not a dependency. */
+@custom-variant data-open {
+  &:where([data-state="open"]),
+  &:where([data-open]:not([data-open="false"])) {
+    @slot;
+  }
+}
+
+@custom-variant data-closed {
+  &:where([data-state="closed"]),
+  &:where([data-closed]:not([data-closed="false"])) {
+    @slot;
+  }
+}
+
 @custom-variant data-horizontal {
   &:where([data-orientation="horizontal"]) {
     @slot;

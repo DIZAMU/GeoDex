@@ -92,3 +92,14 @@
   --border-width: 2px;
   --ease-map: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+
+/* Brand artwork: the Abyss disc on light themes, the Ink disc on Atlas. */
+.brand-on-dark {
+  display: none;
+}
+[data-theme="atlas"] .brand-on-light {
+  display: none;
+}
+[data-theme="atlas"] .brand-on-dark {
+  display: block;
+}
