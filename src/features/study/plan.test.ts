@@ -81,3 +81,27 @@ describe("planDay", () => {
     expect(withKosovo.queue.some((q) => q.entityId === "XKX")).toBe(true);
   });
 });
+
+describe("contrast cards in the plan", () => {
+  const miss = (id: string, at: number): PlanEvent => ({
+    ...ev("SVN:map_to_name", at, id),
+    rating: 1,
+    correct: false,
+    chosenAnswer: "SVK",
+  });
+  const events = [miss("m1", now - 86_400_000), miss("m2", now - 3_600_000)];
+  const states = replayAll(scheduler, events);
+  const content = {
+    confusion: (a: string, b: string) => ([a, b].sort().join("|") === "SVK|SVN" ? {} : undefined),
+  };
+
+  it("adds a contrast card after two confusions when contrast text exists", () => {
+    const plan = planDay({ world, settings, states, events, scheduler, now, content });
+    expect(plan.queue.map((q) => q.cardId)).toContain("SVK|SVN:contrast");
+  });
+
+  it("adds none without contrast text", () => {
+    const plan = planDay({ world, settings, states, events, scheduler, now });
+    expect(plan.queue.some((q) => q.cardId.endsWith(":contrast"))).toBe(false);
+  });
+});

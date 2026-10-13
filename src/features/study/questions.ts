@@ -15,6 +15,7 @@ import { createRng, shuffle } from "@/engine/random";
 import type { CardState } from "@/engine/scheduler";
 import {
   type AnswerMode,
+  type CardType,
   type CountryCardType,
   type InputSetting,
   parseCardId,
@@ -35,14 +36,15 @@ export type AnswerFormat =
   | { kind: "choice"; options: Option[] }
   | { kind: "flags"; options: Option[] }
   | { kind: "typed" }
-  | { kind: "map"; view: MapView };
+  | { kind: "map"; view: MapView; selectable?: string[] };
 
 export type AnswerKind = "country" | "capital" | "currency" | "language";
 
 export type Question = {
   cardId: string;
+  /** The country asked about. For a contrast card, the one of the pair this review asks for. */
   entityId: string;
-  type: CountryCardType;
+  type: CardType;
   prompt: Prompt;
   answer: AnswerFormat;
   answerKind: AnswerKind;
@@ -59,6 +61,8 @@ export type StudyContext = {
   confusionsFor: (countryId: string) => string[];
   /** Curated look-alikes per country for a dimension. */
   curatedFor: (countryId: string, dimension: "name" | "flag" | "capital") => string[];
+  /** How a contrast pair is told apart, when contrast text exists for it. */
+  contrastKind: (a: string, b: string) => "flag" | "place" | null;
   indexes: Indexes;
 };
 
@@ -145,6 +149,7 @@ export function buildQuestion(
   seed: string,
 ): Question {
   const { entityId, type } = parseCardId(cardId);
+  if (type === "contrast") return contrastQuestion(ctx, cardId, entityId, seed);
   const country = ctx.world.byId.get(entityId);
   const facts = ctx.facts.get(entityId);
   if (!country || !facts) throw new Error(`Unknown country ${entityId}`);
@@ -303,6 +308,47 @@ export function buildQuestion(
     answerKind,
     correctIds,
     mode: "mc",
+  };
+}
+
+/**
+ * A contrast card ("Which of these is X?"): the two look-alikes side by side, as flags for a
+ * flag pair, otherwise as the two shapes on the map. The seed picks which one is asked.
+ */
+function contrastQuestion(ctx: StudyContext, cardId: string, pair: string, seed: string): Question {
+  const [a, b] = pair.split("|");
+  const first = a ? ctx.world.byId.get(a) : undefined;
+  const second = b ? ctx.world.byId.get(b) : undefined;
+  if (!first || !second) throw new Error(`Unknown contrast pair ${pair}`);
+  const rng = createRng(seed);
+  const target = rng() < 0.5 ? first : second;
+  const ids = shuffle([first.id, second.id], rng);
+  const base = {
+    cardId,
+    entityId: target.id,
+    type: "contrast" as const,
+    prompt: { kind: "name" as const, countryId: target.id },
+    answerKind: "country" as const,
+    correctIds: [target.id],
+  };
+  if (ctx.contrastKind(first.id, second.id) === "flag") {
+    return {
+      ...base,
+      answer: {
+        kind: "flags",
+        options: ids.map((id) => ({
+          id,
+          label: ctx.world.byId.get(id)?.names[ctx.locale] ?? id,
+          flag: ctx.world.byId.get(id)?.iso2 ?? "",
+        })),
+      },
+      mode: "mc",
+    };
+  }
+  return {
+    ...base,
+    answer: { kind: "map", view: { kind: "countries", ids }, selectable: ids },
+    mode: "map",
   };
 }
 

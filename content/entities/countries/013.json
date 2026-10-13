@@ -1,0 +1,800 @@
+{
+  "group": "013",
+  "entities": [
+    {
+      "entityId": "BLZ",
+      "hooks": {
+        "en": [
+          {
+            "id": "BLZ.en.1",
+            "type": "anchor",
+            "text": "Belize sits on the Caribbean side of the Yucatán, south of Mexico and east of Guatemala."
+          },
+          {
+            "id": "BLZ.en.2",
+            "type": "contrast",
+            "text": "Belize is the English-speaking country of Central America; its neighbors speak Spanish."
+          },
+          {
+            "id": "BLZ.en.3",
+            "type": "story",
+            "text": "Belize was called British Honduras until it took the name of its main river."
+          },
+          {
+            "id": "BLZ.en.4",
+            "type": "sound",
+            "text": "Belize: a bee in a breeze, buzzing over the Caribbean reef."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BLZ.nb.1",
+            "type": "anchor",
+            "text": "Belize ligger på karibsiden av Yucatán, sør for Mexico og øst for Guatemala."
+          },
+          {
+            "id": "BLZ.nb.2",
+            "type": "contrast",
+            "text": "Belize er det engelsktalende landet i Mellom-Amerika; naboene snakker spansk."
+          },
+          {
+            "id": "BLZ.nb.3",
+            "type": "story",
+            "text": "Belize het Britisk Honduras fram til landet tok navnet etter sin viktigste elv."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "BLZ.cap.en.1",
+            "type": "story",
+            "text": "Belmopan was built inland as a new capital after a hurricane flooded Belize City on the coast."
+          },
+          {
+            "id": "BLZ.cap.en.2",
+            "type": "sound",
+            "text": "Belmopan: a bell, a mop and a pan, all carried inland away from the storm surge."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BLZ.cap.nb.1",
+            "type": "story",
+            "text": "Belmopan ble bygget inne i landet som ny hovedstad etter at en orkan oversvømte Belize City ved kysten."
+          },
+          {
+            "id": "BLZ.cap.nb.2",
+            "type": "anchor",
+            "text": "Belmopan ligger inne i landet, mens den største byen, Belize City, ligger ved kysten."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Royal blue with thin red stripes at top and bottom, and a white disc holding the coat of arms.",
+        "nb": "Kongeblått med smale røde striper øverst og nederst, og en hvit sirkel med riksvåpenet."
+      },
+      "facts": [
+        {
+          "id": "BLZ.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Belize borders Mexico to the north and Guatemala to the west and south, and has a Caribbean coast.",
+            "nb": "Belize grenser til Mexico i nord og Guatemala i vest og sør, og har kyst mot Karibhavet."
+          }
+        },
+        {
+          "id": "BLZ.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "English is the official language of Belize.",
+            "nb": "Engelsk er det offisielle språket i Belize."
+          }
+        },
+        {
+          "id": "BLZ.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Great Blue Hole, a round sinkhole in the sea, lies off the coast of Belize.",
+            "nb": "Great Blue Hole, et rundt synkehull i havet, ligger utenfor kysten av Belize."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "CRI",
+      "hooks": {
+        "en": [
+          {
+            "id": "CRI.en.1",
+            "type": "etymology",
+            "text": "Costa Rica is Spanish for 'rich coast'."
+          },
+          {
+            "id": "CRI.en.2",
+            "type": "anchor",
+            "text": "Costa Rica sits between Nicaragua to the north and Panama to the south, with coasts on both oceans."
+          },
+          {
+            "id": "CRI.en.3",
+            "type": "story",
+            "text": "Costa Rica scrapped its army, and the old army headquarters became the national museum."
+          }
+        ],
+        "nb": [
+          { "id": "CRI.nb.1", "type": "etymology", "text": "Costa Rica er spansk for «rik kyst»." },
+          {
+            "id": "CRI.nb.2",
+            "type": "anchor",
+            "text": "Costa Rica ligger mellom Nicaragua i nord og Panama i sør, med kyst mot både Karibhavet og Stillehavet."
+          },
+          {
+            "id": "CRI.nb.3",
+            "type": "story",
+            "text": "Costa Rica la ned hæren, og det gamle hovedkvarteret ble nasjonalmuseum."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "CRI.cap.en.1",
+            "type": "anchor",
+            "text": "San José sits in the Central Valley, in the highlands between the two coasts."
+          },
+          {
+            "id": "CRI.cap.en.2",
+            "type": "etymology",
+            "text": "San José is named for Saint Joseph."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CRI.cap.nb.1",
+            "type": "anchor",
+            "text": "San José ligger i høylandet midt i landet, mellom de to kystene."
+          },
+          {
+            "id": "CRI.cap.nb.2",
+            "type": "etymology",
+            "text": "San José har navn etter den hellige Josef."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue, white, red, white, blue stripes with a double-width red band; Thailand's has red outside and blue in the middle.",
+        "nb": "Blå, hvit, rød, hvit og blå striper med dobbelt bredt rødt felt; Thailands har rødt ytterst og blått i midten."
+      },
+      "facts": [
+        {
+          "id": "CRI.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Costa Rica borders Nicaragua and Panama, with coasts on the Caribbean and the Pacific.",
+            "nb": "Costa Rica grenser til Nicaragua og Panama, med kyst mot Karibhavet og Stillehavet."
+          }
+        },
+        {
+          "id": "CRI.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The colón, Costa Rica's currency, is named after Christopher Columbus, Cristóbal Colón in Spanish.",
+            "nb": "Colón, valutaen i Costa Rica, har navn etter Christofer Columbus, på spansk Cristóbal Colón."
+          }
+        },
+        {
+          "id": "CRI.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Costa Rica has no standing army.",
+            "nb": "Costa Rica har ingen stående hær."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "GTM",
+      "hooks": {
+        "en": [
+          {
+            "id": "GTM.en.1",
+            "type": "anchor",
+            "text": "Guatemala sits directly south of Mexico, with Belize to the east and Honduras and El Salvador to the southeast."
+          },
+          {
+            "id": "GTM.en.2",
+            "type": "story",
+            "text": "Tikal, a great Maya city, stands in the rainforest of northern Guatemala."
+          },
+          {
+            "id": "GTM.en.3",
+            "type": "sound",
+            "text": "Guatemala: a guava on a mat, offered to a Maya king."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GTM.nb.1",
+            "type": "anchor",
+            "text": "Guatemala ligger rett sør for Mexico, med Belize i øst og Honduras og El Salvador i sørøst."
+          },
+          {
+            "id": "GTM.nb.2",
+            "type": "story",
+            "text": "Mayabyen Tikal ligger i regnskogen nord i Guatemala."
+          },
+          {
+            "id": "GTM.nb.3",
+            "type": "sound",
+            "text": "Guatemala: en gutt maler en vulkan på veggen."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "GTM.cap.en.1",
+            "type": "contrast",
+            "text": "Guatemala City shares its name with the country, like Mexico City and Panama City."
+          },
+          {
+            "id": "GTM.cap.en.2",
+            "type": "story",
+            "text": "Guatemala City became capital after earthquakes wrecked the old capital, Antigua Guatemala."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GTM.cap.nb.1",
+            "type": "contrast",
+            "text": "Guatemala by har samme navn som landet, akkurat som Mexico by og Panama by."
+          },
+          {
+            "id": "GTM.cap.nb.2",
+            "type": "story",
+            "text": "Guatemala by ble hovedstad etter at jordskjelv ødela den gamle hovedstaden Antigua Guatemala."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Light blue, white and light blue vertical stripes, with the coat of arms and a quetzal bird in the center.",
+        "nb": "Lyseblå, hvit og lyseblå loddrette striper, med riksvåpenet og en quetzalfugl i midten."
+      },
+      "facts": [
+        {
+          "id": "GTM.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Guatemala borders Mexico, Belize, Honduras and El Salvador.",
+            "nb": "Guatemala grenser til Mexico, Belize, Honduras og El Salvador."
+          }
+        },
+        {
+          "id": "GTM.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The quetzal, Guatemala's currency, is named after a bird that also appears on the flag.",
+            "nb": "Quetzal, Guatemalas valuta, har navn etter en fugl som også er med på flagget."
+          }
+        },
+        {
+          "id": "GTM.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Many Mayan languages are still spoken in Guatemala alongside Spanish.",
+            "nb": "Mange mayaspråk snakkes fortsatt i Guatemala ved siden av spansk."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "HND",
+      "hooks": {
+        "en": [
+          {
+            "id": "HND.en.1",
+            "type": "anchor",
+            "text": "Honduras sits between Guatemala, El Salvador and Nicaragua, with a long Caribbean coast and a small Pacific opening."
+          },
+          {
+            "id": "HND.en.2",
+            "type": "etymology",
+            "text": "Honduras is Spanish for 'depths', said to come from the deep water off its coast."
+          },
+          {
+            "id": "HND.en.3",
+            "type": "sound",
+            "text": "Honduras: a hound in a hard hat, diving into the depths off the Caribbean coast."
+          }
+        ],
+        "nb": [
+          {
+            "id": "HND.nb.1",
+            "type": "anchor",
+            "text": "Honduras ligger mellom Guatemala, El Salvador og Nicaragua, med lang karibkyst og en smal åpning mot Stillehavet."
+          },
+          {
+            "id": "HND.nb.2",
+            "type": "etymology",
+            "text": "Honduras betyr «dyp» på spansk, etter sigende fra det dype vannet utenfor kysten."
+          },
+          {
+            "id": "HND.nb.3",
+            "type": "sound",
+            "text": "Honduras: en hund durer av gårde langs karibkysten."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "HND.cap.en.1",
+            "type": "anchor",
+            "text": "Tegucigalpa sits in the mountains of the interior, far from both coasts."
+          },
+          {
+            "id": "HND.cap.en.2",
+            "type": "sound",
+            "text": "Tegucigalpa: tea, a goose and a gallop through the hills."
+          }
+        ],
+        "nb": [
+          {
+            "id": "HND.cap.nb.1",
+            "type": "anchor",
+            "text": "Tegucigalpa ligger i fjellene inne i landet, langt fra begge kystene."
+          },
+          {
+            "id": "HND.cap.nb.2",
+            "type": "sound",
+            "text": "Tegucigalpa: «Te, gutter?» spør verten, og så galopperer de opp i fjellene."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue, white and blue horizontal stripes with five blue stars in the white band.",
+        "nb": "Blå, hvit og blå vannrette striper med fem blå stjerner i det hvite feltet."
+      },
+      "facts": [
+        {
+          "id": "HND.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Honduras borders Guatemala, El Salvador and Nicaragua.",
+            "nb": "Honduras grenser til Guatemala, El Salvador og Nicaragua."
+          }
+        },
+        {
+          "id": "HND.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The lempira, Honduras's currency, is named after Lempira, an Indigenous leader who fought the Spanish.",
+            "nb": "Lempira, valutaen i Honduras, har navn etter Lempira, en urfolksleder som kjempet mot spanjolene."
+          }
+        },
+        {
+          "id": "HND.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Maya site of Copán, in western Honduras, has a long stairway carved with glyphs.",
+            "nb": "Mayabyen Copán vest i Honduras har en lang trapp full av hieroglyfer."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "MEX",
+      "hooks": {
+        "en": [
+          {
+            "id": "MEX.en.1",
+            "type": "anchor",
+            "text": "Mexico sits directly south of the United States, with Guatemala and Belize on its southeast."
+          },
+          {
+            "id": "MEX.en.2",
+            "type": "shape",
+            "text": "Mexico is a horn curving southeast from the US, with Baja California dangling off its west."
+          },
+          {
+            "id": "MEX.en.3",
+            "type": "etymology",
+            "text": "Mexico is named after the Mexica, the people better known as the Aztecs."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MEX.nb.1",
+            "type": "anchor",
+            "text": "Mexico ligger rett sør for USA, med Guatemala og Belize i sørøst."
+          },
+          {
+            "id": "MEX.nb.2",
+            "type": "shape",
+            "text": "Mexico er et overflødighetshorn som bøyer seg sørøstover fra USA, med Baja California hengende i vest."
+          },
+          {
+            "id": "MEX.nb.3",
+            "type": "etymology",
+            "text": "Mexico har navn etter mexicaene, folket vi kjenner som aztekere."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "MEX.cap.en.1",
+            "type": "story",
+            "text": "Mexico City stands on the old lakebed where the Aztecs built Tenochtitlan."
+          },
+          {
+            "id": "MEX.cap.en.2",
+            "type": "anchor",
+            "text": "Mexico City sits on a high plateau in the south of the country, far from either coast."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MEX.cap.nb.1",
+            "type": "story",
+            "text": "Mexico by står på den gamle sjøbunnen der aztekerne bygde Tenochtitlan."
+          },
+          {
+            "id": "MEX.cap.nb.2",
+            "type": "anchor",
+            "text": "Mexico by ligger på en høyslette sør i landet, langt fra begge kystene."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green, white and red vertical stripes with an eagle eating a snake on a cactus; Italy's has no emblem.",
+        "nb": "Grønn, hvit og rød loddrette striper med en ørn som spiser en slange på en kaktus; Italias har ikke emblem."
+      },
+      "facts": [
+        {
+          "id": "MEX.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Mexico borders the United States, Guatemala and Belize.",
+            "nb": "Mexico grenser til USA, Guatemala og Belize."
+          }
+        },
+        {
+          "id": "MEX.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Mexico has more native Spanish speakers than any other country.",
+            "nb": "Mexico har flere med spansk som morsmål enn noe annet land."
+          }
+        },
+        {
+          "id": "MEX.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Maize was first domesticated in what is now southern Mexico.",
+            "nb": "Mais ble først dyrket fram i det som i dag er det sørlige Mexico."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "NIC",
+      "hooks": {
+        "en": [
+          {
+            "id": "NIC.en.1",
+            "type": "anchor",
+            "text": "Nicaragua is the large country between Honduras to the north and Costa Rica to the south."
+          },
+          {
+            "id": "NIC.en.2",
+            "type": "story",
+            "text": "Lake Nicaragua has freshwater sharks that swim up the San Juan River from the Caribbean."
+          },
+          {
+            "id": "NIC.en.3",
+            "type": "etymology",
+            "text": "Nicaragua is usually traced to Nicarao, a chief, plus Spanish 'agua', water, for its lakes."
+          }
+        ],
+        "nb": [
+          {
+            "id": "NIC.nb.1",
+            "type": "anchor",
+            "text": "Nicaragua er det store landet mellom Honduras i nord og Costa Rica i sør."
+          },
+          {
+            "id": "NIC.nb.2",
+            "type": "story",
+            "text": "Nicaraguasjøen har haier i ferskvann, som svømmer opp elva San Juan fra Karibhavet."
+          },
+          {
+            "id": "NIC.nb.3",
+            "type": "etymology",
+            "text": "Nicaragua føres ofte tilbake til høvdingen Nicarao, pluss spansk «agua», vann, for innsjøene."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "NIC.cap.en.1",
+            "type": "anchor",
+            "text": "Managua lies on the south shore of Lake Managua, in the Pacific lowlands."
+          },
+          {
+            "id": "NIC.cap.en.2",
+            "type": "sound",
+            "text": "Managua: a man gulping agua, water, on the shore of a big lake."
+          }
+        ],
+        "nb": [
+          {
+            "id": "NIC.cap.nb.1",
+            "type": "anchor",
+            "text": "Managua ligger ved sørbredden av Managuasjøen, i lavlandet mot Stillehavet."
+          },
+          {
+            "id": "NIC.cap.nb.2",
+            "type": "sound",
+            "text": "Managua: en mann tørster etter «agua», vann, ved bredden av sjøen."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue, white, blue stripes; the central triangle is ringed by a circle of gold lettering, not a wreath.",
+        "nb": "Blå, hvit og blå striper; trekanten i midten er omgitt av en ring med gull tekst, ikke en krans."
+      },
+      "facts": [
+        {
+          "id": "NIC.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Nicaragua borders Honduras and Costa Rica, with coasts on the Caribbean and the Pacific.",
+            "nb": "Nicaragua grenser til Honduras og Costa Rica, med kyst mot Karibhavet og Stillehavet."
+          }
+        },
+        {
+          "id": "NIC.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The córdoba, Nicaragua's currency, is named after Francisco Hernández de Córdoba, who founded its first Spanish towns.",
+            "nb": "Córdoba, valutaen i Nicaragua, har navn etter Francisco Hernández de Córdoba, som grunnla de første spanske byene der."
+          }
+        },
+        {
+          "id": "NIC.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Nicaragua is the largest country on the isthmus between Mexico and Colombia.",
+            "nb": "Nicaragua er det største landet på eidet mellom Mexico og Colombia."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "PAN",
+      "hooks": {
+        "en": [
+          {
+            "id": "PAN.en.1",
+            "type": "anchor",
+            "text": "Panama is the land bridge between Costa Rica and Colombia, joining Central and South America."
+          },
+          {
+            "id": "PAN.en.2",
+            "type": "shape",
+            "text": "Panama is a sideways S, an isthmus (narrow land bridge) lying almost east to west."
+          },
+          {
+            "id": "PAN.en.3",
+            "type": "story",
+            "text": "The Panama Canal cuts through it, so ships pass between the oceans without rounding South America."
+          }
+        ],
+        "nb": [
+          {
+            "id": "PAN.nb.1",
+            "type": "anchor",
+            "text": "Panama er landbroen mellom Costa Rica og Colombia, som binder sammen Mellom- og Sør-Amerika."
+          },
+          {
+            "id": "PAN.nb.2",
+            "type": "shape",
+            "text": "Panama er en liggende S, et eid (smal landbro) som strekker seg nesten øst-vest."
+          },
+          {
+            "id": "PAN.nb.3",
+            "type": "story",
+            "text": "Panamakanalen skjærer gjennom landet, så skip slipper å seile rundt Sør-Amerika."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "PAN.cap.en.1",
+            "type": "contrast",
+            "text": "Panama City carries the country's name and sits at the Pacific end of the canal."
+          },
+          {
+            "id": "PAN.cap.en.2",
+            "type": "story",
+            "text": "Panama City moved to its current site after the pirate Henry Morgan sacked the old town."
+          }
+        ],
+        "nb": [
+          {
+            "id": "PAN.cap.nb.1",
+            "type": "contrast",
+            "text": "Panama by har samme navn som landet og ligger ved kanalens stillehavsende."
+          },
+          {
+            "id": "PAN.cap.nb.2",
+            "type": "story",
+            "text": "Panama by ble flyttet etter at piraten Henry Morgan plyndret den gamle byen."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Four quarters: white with a blue star, red, blue, and white with a red star.",
+        "nb": "Fire felt: hvitt med blå stjerne, rødt, blått, og hvitt med rød stjerne."
+      },
+      "facts": [
+        {
+          "id": "PAN.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Panama borders Costa Rica and Colombia, with coasts on the Caribbean and the Pacific.",
+            "nb": "Panama grenser til Costa Rica og Colombia, med kyst mot Karibhavet og Stillehavet."
+          }
+        },
+        {
+          "id": "PAN.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Panama uses both its own balboa and the United States dollar.",
+            "nb": "Panama bruker både sin egen balboa og amerikansk dollar."
+          }
+        },
+        {
+          "id": "PAN.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Because the isthmus bends, the canal's Pacific end lies east of its Atlantic end.",
+            "nb": "Fordi eidet bøyer seg, ligger kanalens stillehavsende øst for atlanterhavsenden."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "SLV",
+      "hooks": {
+        "en": [
+          {
+            "id": "SLV.en.1",
+            "type": "anchor",
+            "text": "El Salvador is the small country on the Pacific, between Guatemala and Honduras."
+          },
+          {
+            "id": "SLV.en.2",
+            "type": "contrast",
+            "text": "El Salvador is the only Central American country with no Caribbean coast."
+          },
+          {
+            "id": "SLV.en.3",
+            "type": "etymology",
+            "text": "El Salvador is Spanish for 'the Savior'."
+          },
+          {
+            "id": "SLV.en.4",
+            "type": "sound",
+            "text": "El Salvador: a lifeguard saving surfers on a Pacific beach, the only coast the country has."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SLV.nb.1",
+            "type": "anchor",
+            "text": "El Salvador er det lille landet ved Stillehavet mellom Guatemala og Honduras."
+          },
+          {
+            "id": "SLV.nb.2",
+            "type": "contrast",
+            "text": "El Salvador er det eneste landet i Mellom-Amerika uten kyst mot Karibhavet."
+          },
+          {
+            "id": "SLV.nb.3",
+            "type": "etymology",
+            "text": "El Salvador er spansk for «Frelseren»."
+          },
+          {
+            "id": "SLV.nb.4",
+            "type": "sound",
+            "text": "El Salvador: en salve smøres på solbrente surfere på stillehavsstranda."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "SLV.cap.en.1",
+            "type": "contrast",
+            "text": "San Salvador, the capital, is the country's name with 'San' in front."
+          },
+          {
+            "id": "SLV.cap.en.2",
+            "type": "anchor",
+            "text": "San Salvador lies inland at the foot of the San Salvador volcano."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SLV.cap.nb.1",
+            "type": "contrast",
+            "text": "Hovedstaden San Salvador er landets navn med «San» foran."
+          },
+          {
+            "id": "SLV.cap.nb.2",
+            "type": "anchor",
+            "text": "San Salvador ligger inne i landet ved foten av vulkanen San Salvador."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue, white, blue stripes; the central triangle is framed by a laurel wreath, unlike Nicaragua's.",
+        "nb": "Blå, hvit og blå striper; trekanten i midten er omgitt av en laurbærkrans, ulikt Nicaraguas."
+      },
+      "facts": [
+        {
+          "id": "SLV.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "El Salvador borders Guatemala and Honduras, and its only coast is on the Pacific.",
+            "nb": "El Salvador grenser til Guatemala og Honduras, og har bare kyst mot Stillehavet."
+          }
+        },
+        {
+          "id": "SLV.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "El Salvador uses the United States dollar as its currency.",
+            "nb": "El Salvador bruker amerikansk dollar som sin valuta."
+          }
+        },
+        {
+          "id": "SLV.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "El Salvador was the first country to make bitcoin legal tender.",
+            "nb": "El Salvador var det første landet som gjorde bitcoin til lovlig betalingsmiddel."
+          }
+        }
+      ]
+    }
+  ]
+}

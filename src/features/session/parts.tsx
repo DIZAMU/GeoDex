@@ -63,6 +63,8 @@ export function PromptText({
         return t("q.country_to_currency", { name, inName });
       case "country_to_language":
         return t("q.country_to_language", { name, inName });
+      case "contrast":
+        return t("q.contrast", { name });
     }
   })();
   return (
@@ -272,6 +274,7 @@ export function useSessionKeys(handlers: {
   choose?: (index: number) => void;
   proceed?: () => void;
   hint?: () => void;
+  notHelpful?: () => void;
   end?: () => void;
   help?: () => void;
 }) {
@@ -297,6 +300,8 @@ export function useSessionKeys(handlers: {
         h.choose(Number(event.key) - 1);
       } else if (event.key.toLowerCase() === "h" && h.hint) {
         h.hint();
+      } else if (event.key.toLowerCase() === "n" && h.notHelpful) {
+        h.notHelpful();
       }
     };
     window.addEventListener("keydown", onKey);

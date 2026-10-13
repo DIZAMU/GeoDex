@@ -6,11 +6,13 @@ import type { InputSetting } from "@/engine/types";
 import { isLocale } from "@/i18n/locales";
 import { type MapFocus, type MapHighlight, WorldMap } from "@/map/WorldMap";
 import { Button } from "@/ui/button";
+import { useFocusOnMount } from "@/ui/focus";
 import { Loader } from "@/ui/loader";
 import { useStudyContext } from "../study/context";
 import { confusionScoresFor, scopedCountries } from "../study/plan";
 import { checkChoice, checkTyped, type StudyContext } from "../study/questions";
 import { type Learner, useLearner } from "../study/useLearner";
+import { ExplanationView } from "./ExplanationView";
 import {
   ChoiceAnswer,
   CountryCard,
@@ -45,7 +47,7 @@ function Session({ learner, input }: { learner: Learner; input: InputSetting }) 
   const navigate = useNavigate();
   // Confusion scores are fixed for the session, like the queue.
   const [scores] = useState(() => confusionScoresFor(learner.world, learner.events, Date.now()));
-  const ctx = useStudyContext(learner.world, locale, scores);
+  const ctx = useStudyContext(learner.world, locale, scores, learner.content);
   const s = useDailySession(learner, ctx, input, locale);
   const [help, setHelp] = useState(false);
   const countdownSeconds = learner.settings.countdownSeconds;
@@ -75,6 +77,7 @@ function Session({ learner, input }: { learner: Learner; input: InputSetting }) 
           ? s.startPrompt
           : undefined,
     hint: view?.kind === "prompt" && view.question.answer.kind === "typed" ? s.showHint : undefined,
+    notHelpful: view?.kind === "feedback" ? () => void s.notHelpful() : undefined,
     end: () => void s.end(),
     help: () => setHelp(true),
   });
@@ -114,7 +117,11 @@ function Session({ learner, input }: { learner: Learner; input: InputSetting }) 
 
   const { focus, highlight, animate, padding } = mapState(view, learner);
   const mapSelectable =
-    view.kind === "prompt" && view.question.answer.kind === "map" ? selectable : undefined;
+    view.kind === "prompt" && view.question.answer.kind === "map"
+      ? view.question.answer.selectable
+        ? new Set(view.question.answer.selectable)
+        : selectable
+      : undefined;
 
   return (
     <>
@@ -181,7 +188,8 @@ function Panel({
   locale: "en" | "nb";
 }) {
   const { t } = useTranslation();
-  const country = learner.world.byId.get(view.item.entityId);
+  const focusOnMount = useFocusOnMount<HTMLButtonElement>();
+  const country = learner.world.byId.get(view.question.entityId);
   if (!country) return null;
 
   if (view.kind === "intro") {
@@ -189,7 +197,8 @@ function Panel({
       <div className="flex flex-col gap-6" data-testid="intro">
         <p className="text-sm text-muted-foreground">{t("intro.label")}</p>
         <CountryCard country={country} locale={locale} />
-        <Button size="lg" className="self-start" onClick={s.startPrompt} autoFocus>
+        <ExplanationView explanation={view.explanation} />
+        <Button size="lg" className="self-start" onClick={s.startPrompt} ref={focusOnMount}>
           {t("intro.continue")}
         </Button>
       </div>
@@ -264,11 +273,18 @@ function Panel({
           ?.names[locale] ??
         null)
       : null);
+  // Wrong picks of a country or capital are described by the moment template instead.
+  const pickedPlace =
+    !!o.chosenId &&
+    (learner.world.byId.has(o.chosenId) ||
+      learner.world.countries.some((c) => c.capitals.some((cap) => cap.id === o.chosenId)));
   return (
     <div className="flex flex-col gap-5" data-testid="feedback">
       <StatusLine correct={o.correct} />
       {o.timedOut ? <p>{t("feedback.timeUp")}</p> : o.gaveUp ? <p>{t("feedback.gaveUp")}</p> : null}
-      {!o.correct && chosenLabel ? <p>{t("feedback.youPicked", { name: chosenLabel })}</p> : null}
+      {!o.correct && chosenLabel && !pickedPlace ? (
+        <p>{t("feedback.youPicked", { name: chosenLabel })}</p>
+      ) : null}
       {o.correct && o.typo && o.matched ? (
         <p>{t("feedback.spelling", { name: o.matched })}</p>
       ) : null}
@@ -285,12 +301,16 @@ function Panel({
           {country.officialLanguages.map((l) => l.names[locale]).join(", ")}
         </p>
       ) : null}
-      <p className="text-sm text-muted-foreground">{t("feedback.placeholder")}</p>
+      <ExplanationView
+        explanation={view.explanation}
+        hidden={view.hidden}
+        onNotHelpful={(id) => void s.notHelpful(id)}
+      />
       <Button
         size="lg"
         className="self-start"
         onClick={() => void s.proceed()}
-        autoFocus
+        ref={focusOnMount}
         data-testid="continue"
       >
         {t("feedback.continue")}
@@ -303,7 +323,7 @@ function mapState(
   view: Exclude<SessionView, { kind: "done" }>,
   learner: Learner,
 ): { focus: MapFocus; highlight: MapHighlight; animate: boolean; padding?: number } {
-  const id = view.item.entityId;
+  const id = view.question.entityId;
   const country = learner.world.byId.get(id);
   const neighbors = country?.neighbors.slice(0, 6) ?? [];
   if (view.kind === "intro") {

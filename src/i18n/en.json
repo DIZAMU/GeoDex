@@ -98,7 +98,8 @@
     "flag_to_name": "Which country has this flag?",
     "name_to_flag": "Which is the flag of {{name}}?",
     "country_to_currency": "Which currency is used in {{name}}?",
-    "country_to_language": "Which is an official language of {{name}}?"
+    "country_to_language": "Which is an official language of {{name}}?",
+    "contrast": "Which of these is {{name}}?"
   },
   "answer": {
     "placeholder": "Type your answer",
@@ -121,7 +122,11 @@
     "currency": "Currency",
     "languages": "Official languages",
     "continue": "Continue",
-    "placeholder": "Explanations for each answer arrive in the next build."
+    "hookLabel": "Memory hook",
+    "notHelpful": "Not helpful",
+    "hookHidden": "Hidden for this card.",
+    "contrastLabel": "Tell them apart",
+    "deeperLabel": "Deeper cut"
   },
   "role": {
     "primary": "capital",

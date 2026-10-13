@@ -16,6 +16,8 @@ test("placement test, then a 10-card session", async ({ page }) => {
       await noHorizontalScroll(page);
       await answerPrompt(page);
     } else {
+      // Every answer shows moment content (PLAN.md Phase 3 acceptance).
+      await expect(page.getByTestId("explanation")).toBeVisible();
       await page.keyboard.press("Enter");
       answered++;
       // Continue moves on; wait until the feedback panel is gone or replaced.
@@ -43,4 +45,26 @@ test("placement test, then a 10-card session", async ({ page }) => {
       }),
   );
   expect(reviews).toBe(16);
+
+  // Every scheduled session review recorded the snippets it showed.
+  const withSnippets = await page.evaluate(
+    () =>
+      new Promise<number>((resolve, reject) => {
+        const open = indexedDB.open("geodex");
+        open.onerror = () => reject(open.error);
+        open.onsuccess = () => {
+          const request = open.result
+            .transaction("reviewEvents")
+            .objectStore("reviewEvents")
+            .getAll();
+          request.onsuccess = () =>
+            resolve(
+              (request.result as { mode: string; snippetIds: string[] }[]).filter(
+                (e) => e.mode !== "placement" && e.snippetIds.length > 0,
+              ).length,
+            );
+        };
+      }),
+  );
+  expect(withSnippets).toBe(10);
 });

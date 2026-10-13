@@ -1,0 +1,906 @@
+{
+  "group": "017",
+  "entities": [
+    {
+      "entityId": "AGO",
+      "hooks": {
+        "en": [
+          {
+            "id": "AGO.en.1",
+            "type": "anchor",
+            "text": "Angola is on the Atlantic south of the Congo River, with Namibia to the south and Zambia to the east."
+          },
+          {
+            "id": "AGO.en.2",
+            "type": "etymology",
+            "text": "Angola takes its name from ngola, the title of the kings of Ndongo."
+          },
+          {
+            "id": "AGO.en.3",
+            "type": "story",
+            "text": "Angola has a piece cut off: Cabinda, an exclave (a part separated from the rest), north of the Congo River's mouth."
+          }
+        ],
+        "nb": [
+          {
+            "id": "AGO.nb.1",
+            "type": "anchor",
+            "text": "Angola ligger ved Atlanterhavet sør for Kongoelva, med Namibia i sør og Zambia i øst."
+          },
+          {
+            "id": "AGO.nb.2",
+            "type": "etymology",
+            "text": "Angola har navnet fra ngola, tittelen til kongene i riket Ndongo."
+          },
+          {
+            "id": "AGO.nb.3",
+            "type": "sound",
+            "text": "Angola: en fisker kaster angelen ut i Atlanterhavet fra stranda i Luanda."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "AGO.cap.en.1",
+            "type": "anchor",
+            "text": "Luanda sits on the Atlantic coast in the north of Angola."
+          },
+          {
+            "id": "AGO.cap.en.2",
+            "type": "sound",
+            "text": "Luanda: Lou and her panda stroll along the bay of Angola's capital."
+          }
+        ],
+        "nb": [
+          {
+            "id": "AGO.cap.nb.1",
+            "type": "anchor",
+            "text": "Luanda ligger ved Atlanterhavet nord i Angola."
+          },
+          {
+            "id": "AGO.cap.nb.2",
+            "type": "sound",
+            "text": "Luanda: en lue og en and spaserer langs bukta i Angolas hovedstad."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red over black with a yellow half cogwheel, machete and star in the middle.",
+        "nb": "Rødt over svart med et gult halvt tannhjul, en machete og en stjerne i midten."
+      },
+      "facts": [
+        {
+          "id": "AGO.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Angola borders the Republic of the Congo, the Democratic Republic of the Congo, Zambia and Namibia, and has an Atlantic coast.",
+            "nb": "Angola grenser til Kongo-Brazzaville, Kongo, Zambia og Namibia, og har kyst mot Atlanterhavet."
+          }
+        },
+        {
+          "id": "AGO.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Portuguese is the official language of Angola.",
+            "nb": "Portugisisk er offisielt språk i Angola."
+          }
+        },
+        {
+          "id": "AGO.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Angola's currency, the kwanza, is named after the Kwanza River.",
+            "nb": "Angolas valuta, kwanza, er oppkalt etter elva Kwanza."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "CAF",
+      "hooks": {
+        "en": [
+          {
+            "id": "CAF.en.1",
+            "type": "anchor",
+            "text": "The Central African Republic is landlocked (no coast), between Chad to the north and the two Congos to the south."
+          },
+          {
+            "id": "CAF.en.2",
+            "type": "etymology",
+            "text": "The Central African Republic is named for where it sits: close to the middle of the continent."
+          },
+          {
+            "id": "CAF.en.3",
+            "type": "story",
+            "text": "Throw a dart at the middle of a map of Africa, and it lands in the Central African Republic."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CAF.nb.1",
+            "type": "anchor",
+            "text": "Den sentralafrikanske republikk er en innlandsstat (uten kyst) mellom Tsjad i nord og de to Kongo-landene i sør."
+          },
+          {
+            "id": "CAF.nb.2",
+            "type": "etymology",
+            "text": "Den sentralafrikanske republikk har navnet etter plasseringen, nær midten av kontinentet."
+          },
+          {
+            "id": "CAF.nb.3",
+            "type": "story",
+            "text": "Kast en pil midt på et kart over Afrika, og den treffer Den sentralafrikanske republikk."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "CAF.cap.en.1",
+            "type": "anchor",
+            "text": "Bangui sits on the Ubangi River, facing the Democratic Republic of the Congo on the other bank."
+          },
+          {
+            "id": "CAF.cap.en.2",
+            "type": "sound",
+            "text": "Bangui: bang, a drum on the bank of the Ubangi wakes the whole capital."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CAF.cap.nb.1",
+            "type": "anchor",
+            "text": "Bangui ligger ved elva Ubangi, med Kongo på andre siden."
+          },
+          {
+            "id": "CAF.cap.nb.2",
+            "type": "sound",
+            "text": "Bangui: et smell av trommer, bang, på bredden av Ubangi vekker hele hovedstaden."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue, white, green and yellow stripes crossed by a vertical red band, with a yellow star top left.",
+        "nb": "Blå, hvit, grønn og gul stripe krysset av et loddrett rødt felt, med en gul stjerne øverst til venstre."
+      },
+      "facts": [
+        {
+          "id": "CAF.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "The Central African Republic is landlocked, with no coast, and borders Chad, Sudan, South Sudan, both Congos and Cameroon.",
+            "nb": "Den sentralafrikanske republikk er en innlandsstat uten kyst og grenser til Tsjad, Sudan, Sør-Sudan, begge Kongo-landene og Kamerun."
+          }
+        },
+        {
+          "id": "CAF.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "French and Sango are the official languages of the Central African Republic.",
+            "nb": "Fransk og sango er offisielle språk i Den sentralafrikanske republikk."
+          }
+        },
+        {
+          "id": "CAF.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Dzanga-Sangha in the southwest is known for forest elephants gathering in a large forest clearing.",
+            "nb": "Dzanga-Sangha sørvest i landet er kjent for skogelefanter som samles i en stor lysning i skogen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "CMR",
+      "hooks": {
+        "en": [
+          {
+            "id": "CMR.en.1",
+            "type": "anchor",
+            "text": "Cameroon sits at the hinge of Africa, where the west coast turns south, between Nigeria and Gabon."
+          },
+          {
+            "id": "CMR.en.2",
+            "type": "etymology",
+            "text": "Cameroon comes from Portuguese 'Rio dos Camarões', river of prawns."
+          },
+          {
+            "id": "CMR.en.3",
+            "type": "sound",
+            "text": "Cameroon: a camera crew films giant prawns crawling up the river."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CMR.nb.1",
+            "type": "anchor",
+            "text": "Kamerun ligger i Afrikas hengsel, der vestkysten svinger sørover, mellom Nigeria og Gabon."
+          },
+          {
+            "id": "CMR.nb.2",
+            "type": "etymology",
+            "text": "Kamerun kommer av portugisisk «Rio dos Camarões», rekeelva."
+          },
+          {
+            "id": "CMR.nb.3",
+            "type": "sound",
+            "text": "Kamerun: kameler løper rundt og rundt Kamerunfjellet ved kysten."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "CMR.cap.en.1",
+            "type": "contrast",
+            "text": "Yaoundé is the capital; Douala is the bigger port city on the coast."
+          },
+          {
+            "id": "CMR.cap.en.2",
+            "type": "anchor",
+            "text": "Yaoundé sits inland, on hills in the south of Cameroon."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CMR.cap.nb.1",
+            "type": "contrast",
+            "text": "Yaoundé er hovedstaden; Douala er den store havnebyen ved kysten."
+          },
+          {
+            "id": "CMR.cap.nb.2",
+            "type": "anchor",
+            "text": "Yaoundé ligger inne i landet, på åser sør i Kamerun."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green, red and yellow vertical bands with a yellow star in the red.",
+        "nb": "Grønt, rødt og gult i loddrette felt med en gul stjerne i det røde."
+      },
+      "facts": [
+        {
+          "id": "CMR.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Cameroon borders Nigeria, Chad, the Central African Republic, the Republic of the Congo, Gabon and Equatorial Guinea, and has a coast.",
+            "nb": "Kamerun grenser til Nigeria, Tsjad, Den sentralafrikanske republikk, Kongo-Brazzaville, Gabon og Ekvatorial-Guinea, og har kyst."
+          }
+        },
+        {
+          "id": "CMR.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "French and English are both official languages of Cameroon.",
+            "nb": "Fransk og engelsk er begge offisielle språk i Kamerun."
+          }
+        },
+        {
+          "id": "CMR.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Mount Cameroon, near the coast, is an active volcano.",
+            "nb": "Kamerunfjellet, nær kysten, er en aktiv vulkan."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "COD",
+      "hooks": {
+        "en": [
+          {
+            "id": "COD.en.1",
+            "type": "anchor",
+            "text": "The Democratic Republic of the Congo is the huge country in the middle of Africa, with only a sliver of Atlantic coast."
+          },
+          {
+            "id": "COD.en.2",
+            "type": "contrast",
+            "text": "The Democratic Republic of the Congo is the big one, capital Kinshasa; the Republic of the Congo is the smaller one."
+          },
+          {
+            "id": "COD.en.3",
+            "type": "sound",
+            "text": "Congo: a conga line dances along the river from Kinshasa to the sea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "COD.nb.1",
+            "type": "anchor",
+            "text": "Kongo er det store landet midt i Afrika, med bare en liten flik kyst mot Atlanterhavet."
+          },
+          {
+            "id": "COD.nb.2",
+            "type": "contrast",
+            "text": "Kongo, med hovedstad Kinshasa, er det store; Kongo-Brazzaville er det mindre, med hovedstaden i navnet."
+          },
+          {
+            "id": "COD.nb.3",
+            "type": "sound",
+            "text": "Kongo: en konge padler nedover Kongoelva helt ut til havet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "COD.cap.en.1",
+            "type": "anchor",
+            "text": "Kinshasa sits on the Congo River, directly across from Brazzaville."
+          },
+          {
+            "id": "COD.cap.en.2",
+            "type": "story",
+            "text": "Kinshasa was called Léopoldville under Belgian rule."
+          }
+        ],
+        "nb": [
+          {
+            "id": "COD.cap.nb.1",
+            "type": "anchor",
+            "text": "Kinshasa ligger ved Kongoelva, rett overfor Brazzaville."
+          },
+          {
+            "id": "COD.cap.nb.2",
+            "type": "sound",
+            "text": "Kinshasa: en kinosal ved elva, der hele hovedstaden ser film."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Sky blue with a red diagonal edged in yellow and a yellow star top left.",
+        "nb": "Himmelblått med en rød diagonal kantet med gult og en gul stjerne øverst til venstre."
+      },
+      "facts": [
+        {
+          "id": "COD.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "The Democratic Republic of the Congo borders Angola, Zambia, Tanzania, Burundi, Rwanda, Uganda, South Sudan, the Central African Republic and the Republic of the Congo.",
+            "nb": "Kongo grenser til Angola, Zambia, Tanzania, Burundi, Rwanda, Uganda, Sør-Sudan, Den sentralafrikanske republikk og Kongo-Brazzaville."
+          }
+        },
+        {
+          "id": "COD.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "The Democratic Republic of the Congo has a short Atlantic coast at the mouth of the Congo River.",
+            "nb": "Kongo har en kort kyst mot Atlanterhavet ved munningen av Kongoelva."
+          }
+        },
+        {
+          "id": "COD.f3",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "French is the official language of the Democratic Republic of the Congo.",
+            "nb": "Fransk er offisielt språk i Kongo."
+          }
+        },
+        {
+          "id": "COD.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Congo River is the deepest river in the world.",
+            "nb": "Kongoelva er verdens dypeste elv."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "COG",
+      "hooks": {
+        "en": [
+          {
+            "id": "COG.en.1",
+            "type": "anchor",
+            "text": "The Republic of the Congo lies west of the Congo River, between Gabon and the Democratic Republic of the Congo."
+          },
+          {
+            "id": "COG.en.2",
+            "type": "contrast",
+            "text": "The Republic of the Congo is the smaller Congo, often called Congo-Brazzaville after its capital."
+          },
+          {
+            "id": "COG.en.3",
+            "type": "sound",
+            "text": "Congo-Brazzaville: a brass band plays on the north bank of the Congo, answering Kinshasa across the water."
+          }
+        ],
+        "nb": [
+          {
+            "id": "COG.nb.1",
+            "type": "anchor",
+            "text": "Kongo-Brazzaville ligger vest for Kongoelva, mellom Gabon og Kongo."
+          },
+          {
+            "id": "COG.nb.2",
+            "type": "contrast",
+            "text": "Kongo-Brazzaville er det minste av de to Kongo-landene, og navnet bærer hovedstaden."
+          },
+          {
+            "id": "COG.nb.3",
+            "type": "sound",
+            "text": "Kongo-Brazzaville: et brassband spiller på nordbredden av Kongoelva og svarer Kinshasa over vannet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "COG.cap.en.1",
+            "type": "etymology",
+            "text": "Brazzaville is named after Pierre Savorgnan de Brazza, the explorer who claimed the area for France."
+          },
+          {
+            "id": "COG.cap.en.2",
+            "type": "anchor",
+            "text": "Brazzaville faces Kinshasa across the Congo River."
+          }
+        ],
+        "nb": [
+          {
+            "id": "COG.cap.nb.1",
+            "type": "etymology",
+            "text": "Brazzaville er oppkalt etter oppdageren Pierre Savorgnan de Brazza, som tok området for Frankrike."
+          },
+          {
+            "id": "COG.cap.nb.2",
+            "type": "anchor",
+            "text": "Brazzaville ligger rett overfor Kinshasa, på andre siden av Kongoelva."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A yellow diagonal band dividing green at the hoist from red at the fly.",
+        "nb": "En gul diagonal stripe som skiller grønt ved stangen fra rødt ytterst."
+      },
+      "facts": [
+        {
+          "id": "COG.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "The Republic of the Congo borders Gabon, Cameroon, the Central African Republic, the Democratic Republic of the Congo and Angola, and has an Atlantic coast.",
+            "nb": "Kongo-Brazzaville grenser til Gabon, Kamerun, Den sentralafrikanske republikk, Kongo og Angola, og har kyst mot Atlanterhavet."
+          }
+        },
+        {
+          "id": "COG.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "French is the official language of the Republic of the Congo.",
+            "nb": "Fransk er offisielt språk i Kongo-Brazzaville."
+          }
+        },
+        {
+          "id": "COG.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Brazzaville and Kinshasa are the closest pair of national capitals in the world, apart from Rome and Vatican City.",
+            "nb": "Brazzaville og Kinshasa er verdens nærmeste par av hovedsteder, bortsett fra Roma og Vatikanstaten."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "GAB",
+      "hooks": {
+        "en": [
+          {
+            "id": "GAB.en.1",
+            "type": "anchor",
+            "text": "Gabon sits on the Atlantic on the equator, between Equatorial Guinea and the Republic of the Congo."
+          },
+          {
+            "id": "GAB.en.2",
+            "type": "etymology",
+            "text": "Gabon comes from Portuguese 'gabão', a hooded cloak, said to describe the estuary at Libreville."
+          },
+          {
+            "id": "GAB.en.3",
+            "type": "sound",
+            "text": "Gabon: a gabby baboon chatters all day in the rainforest on the equator."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GAB.nb.1",
+            "type": "anchor",
+            "text": "Gabon ligger ved Atlanterhavet rett på ekvator, mellom Ekvatorial-Guinea og Kongo-Brazzaville."
+          },
+          {
+            "id": "GAB.nb.2",
+            "type": "etymology",
+            "text": "Gabon kommer av portugisisk «gabão», en kappe med hette, visstnok etter formen på elvemunningen ved Libreville."
+          },
+          {
+            "id": "GAB.nb.3",
+            "type": "sound",
+            "text": "Gabon: en gaupe gaper og gjesper i regnskogen på ekvator."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "GAB.cap.en.1",
+            "type": "etymology",
+            "text": "Libreville is French for 'free town', founded by people freed from a slave ship."
+          },
+          {
+            "id": "GAB.cap.en.2",
+            "type": "contrast",
+            "text": "Libreville and Freetown share a meaning; Libreville is the French one, in Gabon."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GAB.cap.nb.1",
+            "type": "etymology",
+            "text": "Libreville betyr «fri by» på fransk og ble grunnlagt av folk som ble befridd fra et slaveskip."
+          },
+          {
+            "id": "GAB.cap.nb.2",
+            "type": "contrast",
+            "text": "Libreville og Freetown betyr det samme; Libreville er den franske, i Gabon."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green, yellow and blue horizontal stripes, top to bottom.",
+        "nb": "Grønn, gul og blå, vannrette striper ovenfra og ned."
+      },
+      "facts": [
+        {
+          "id": "GAB.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Gabon borders Equatorial Guinea, Cameroon and the Republic of the Congo, and has an Atlantic coast.",
+            "nb": "Gabon grenser til Ekvatorial-Guinea, Kamerun og Kongo-Brazzaville, og har kyst mot Atlanterhavet."
+          }
+        },
+        {
+          "id": "GAB.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "French is the official language of Gabon.",
+            "nb": "Fransk er offisielt språk i Gabon."
+          }
+        },
+        {
+          "id": "GAB.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Uranium deposits at Oklo in Gabon hold the only known natural nuclear reactors, where fission ran on its own long ago.",
+            "nb": "Uranforekomstene ved Oklo i Gabon har de eneste kjente naturlige kjernereaktorene, der fisjon foregikk av seg selv for lenge siden."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "GNQ",
+      "hooks": {
+        "en": [
+          {
+            "id": "GNQ.en.1",
+            "type": "anchor",
+            "text": "Equatorial Guinea is a mainland block between Cameroon and Gabon, plus the island of Bioko offshore."
+          },
+          {
+            "id": "GNQ.en.2",
+            "type": "contrast",
+            "text": "Equatorial Guinea is in Middle Africa and speaks Spanish; Guinea and Guinea-Bissau are far to the west."
+          },
+          {
+            "id": "GNQ.en.3",
+            "type": "sound",
+            "text": "Equatorial Guinea: a guinea pig rides the ferry between Bioko island and the mainland."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GNQ.nb.1",
+            "type": "anchor",
+            "text": "Ekvatorial-Guinea er en blokk på fastlandet mellom Kamerun og Gabon, pluss øya Bioko utenfor kysten."
+          },
+          {
+            "id": "GNQ.nb.2",
+            "type": "contrast",
+            "text": "Ekvatorial-Guinea ligger i Sentral-Afrika og har spansk som språk; Guinea og Guinea-Bissau ligger langt mot vest."
+          },
+          {
+            "id": "GNQ.nb.3",
+            "type": "story",
+            "text": "Ekvatorial-Guinea: en ferje pendler mellom øya Bioko og fastlandet med hele regjeringen om bord."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "GNQ.cap.en.1",
+            "type": "etymology",
+            "text": "Ciudad de la Paz is Spanish for 'City of Peace', a new capital built inland on the mainland."
+          },
+          {
+            "id": "GNQ.cap.en.2",
+            "type": "story",
+            "text": "The capital moved from Malabo, on Bioko island, to Ciudad de la Paz on the mainland."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GNQ.cap.nb.1",
+            "type": "etymology",
+            "text": "Ciudad de la Paz betyr «fredens by» på spansk, en ny hovedstad bygget inne på fastlandet."
+          },
+          {
+            "id": "GNQ.cap.nb.2",
+            "type": "story",
+            "text": "Hovedstaden flyttet fra Malabo på øya Bioko til Ciudad de la Paz på fastlandet."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green, white and red stripes, a blue triangle at the hoist, and a silk-cotton tree emblem in the middle.",
+        "nb": "Grønn, hvit og rød stripe, en blå trekant ved stangen og et kapoktre som emblem i midten."
+      },
+      "facts": [
+        {
+          "id": "GNQ.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Equatorial Guinea borders Cameroon and Gabon, and also has islands in the Gulf of Guinea.",
+            "nb": "Ekvatorial-Guinea grenser til Kamerun og Gabon, og har også øyer i Guineabukta."
+          }
+        },
+        {
+          "id": "GNQ.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Spanish, French and Portuguese are all official languages of Equatorial Guinea.",
+            "nb": "Spansk, fransk og portugisisk er alle offisielle språk i Ekvatorial-Guinea."
+          }
+        },
+        {
+          "id": "GNQ.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Equatorial Guinea is the only country in Africa with Spanish as an official language.",
+            "nb": "Ekvatorial-Guinea er det eneste landet i Afrika med spansk som offisielt språk."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "STP",
+      "hooks": {
+        "en": [
+          {
+            "id": "STP.en.1",
+            "type": "anchor",
+            "text": "São Tomé and Príncipe is a pair of islands in the Gulf of Guinea, off the coast of Gabon."
+          },
+          {
+            "id": "STP.en.2",
+            "type": "etymology",
+            "text": "São Tomé is named after Saint Thomas; Portuguese sailors are said to have arrived on his feast day."
+          },
+          {
+            "id": "STP.en.3",
+            "type": "sound",
+            "text": "São Tomé and Príncipe: a prince and a man called Tom share two islands in the Gulf of Guinea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "STP.nb.1",
+            "type": "anchor",
+            "text": "São Tomé og Príncipe er to øyer i Guineabukta, utenfor kysten av Gabon."
+          },
+          {
+            "id": "STP.nb.2",
+            "type": "etymology",
+            "text": "São Tomé er oppkalt etter apostelen Tomas; portugisiske sjøfolk skal ha kommet dit på hans festdag."
+          },
+          {
+            "id": "STP.nb.3",
+            "type": "sound",
+            "text": "São Tomé og Príncipe: en prins og en tom flaske skyller i land på to øyer i Guineabukta."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "STP.cap.en.1",
+            "type": "contrast",
+            "text": "The capital, São Tomé, is on the bigger island of the same name; Príncipe is the smaller island."
+          },
+          {
+            "id": "STP.cap.en.2",
+            "type": "anchor",
+            "text": "São Tomé city sits on the northeast coast of its island."
+          }
+        ],
+        "nb": [
+          {
+            "id": "STP.cap.nb.1",
+            "type": "contrast",
+            "text": "Hovedstaden São Tomé ligger på den største øya med samme navn; Príncipe er den minste øya."
+          },
+          {
+            "id": "STP.cap.nb.2",
+            "type": "anchor",
+            "text": "Byen São Tomé ligger på nordøstkysten av øya."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green, yellow and green stripes, a red triangle at the hoist and two black stars in the yellow.",
+        "nb": "Grønn, gul og grønn stripe, en rød trekant ved stangen og to svarte stjerner i det gule."
+      },
+      "facts": [
+        {
+          "id": "STP.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "São Tomé and Príncipe has no land borders; it is an island country in the Gulf of Guinea.",
+            "nb": "São Tomé og Príncipe har ingen landegrenser; det er en øystat i Guineabukta."
+          }
+        },
+        {
+          "id": "STP.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Portuguese is the official language of São Tomé and Príncipe.",
+            "nb": "Portugisisk er offisielt språk på São Tomé og Príncipe."
+          }
+        },
+        {
+          "id": "STP.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The equator passes through Ilhéu das Rolas, a small island just south of São Tomé.",
+            "nb": "Ekvator går gjennom Ilhéu das Rolas, en liten øy like sør for São Tomé."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "TCD",
+      "hooks": {
+        "en": [
+          {
+            "id": "TCD.en.1",
+            "type": "anchor",
+            "text": "Chad is landlocked (no coast), south of Libya and east of Niger, in the middle of the Sahel."
+          },
+          {
+            "id": "TCD.en.2",
+            "type": "etymology",
+            "text": "Chad is named after Lake Chad, on its western border."
+          },
+          {
+            "id": "TCD.en.3",
+            "type": "contrast",
+            "text": "Chad's flag is nearly identical to Romania's; Chad's blue is the darker shade."
+          },
+          {
+            "id": "TCD.en.4",
+            "type": "sound",
+            "text": "Chad: a man named Chad wades into Lake Chad while the lake shrinks around his knees."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TCD.nb.1",
+            "type": "anchor",
+            "text": "Tsjad er en innlandsstat (uten kyst) sør for Libya og øst for Niger."
+          },
+          {
+            "id": "TCD.nb.2",
+            "type": "etymology",
+            "text": "Tsjad har navnet fra Tsjadsjøen ved grensen i vest."
+          },
+          {
+            "id": "TCD.nb.3",
+            "type": "contrast",
+            "text": "Tsjads flagg er nesten likt Romanias; Tsjads blå er den mørkeste."
+          },
+          {
+            "id": "TCD.nb.4",
+            "type": "sound",
+            "text": "Tsjad: «tsjo», nyser kamelen som står og drikker i Tsjadsjøen."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "TCD.cap.en.1",
+            "type": "anchor",
+            "text": "N'Djamena sits on the Chari River, right at the border with Cameroon."
+          },
+          {
+            "id": "TCD.cap.en.2",
+            "type": "story",
+            "text": "N'Djamena was called Fort-Lamy under French rule."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TCD.cap.nb.1",
+            "type": "anchor",
+            "text": "N'Djamena ligger ved elva Chari, helt inntil grensa mot Kamerun."
+          },
+          {
+            "id": "TCD.cap.nb.2",
+            "type": "story",
+            "text": "N'Djamena het Fort-Lamy under fransk styre."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue, yellow and red vertical bands, almost identical to Romania's.",
+        "nb": "Blått, gult og rødt i loddrette felt, nesten identisk med Romanias flagg."
+      },
+      "facts": [
+        {
+          "id": "TCD.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Chad is landlocked, with no coast, and borders Libya, Sudan, the Central African Republic, Cameroon, Nigeria and Niger.",
+            "nb": "Tsjad er en innlandsstat uten kyst og grenser til Libya, Sudan, Den sentralafrikanske republikk, Kamerun, Nigeria og Niger."
+          }
+        },
+        {
+          "id": "TCD.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "French and Arabic are the official languages of Chad.",
+            "nb": "Fransk og arabisk er de offisielle språkene i Tsjad."
+          }
+        },
+        {
+          "id": "TCD.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Lake Chad has shrunk to a fraction of the size it had in the middle of the last century.",
+            "nb": "Tsjadsjøen har krympet til en brøkdel av størrelsen den hadde midt i forrige århundre."
+          }
+        }
+      ]
+    }
+  ]
+}
