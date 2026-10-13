@@ -1,0 +1,1092 @@
+{
+  "group": "035",
+  "entities": [
+    {
+      "entityId": "BRN",
+      "hooks": {
+        "en": [
+          {
+            "id": "BRN.en.1",
+            "type": "anchor",
+            "text": "Brunei is a small coastal country on the north side of Borneo, wrapped on land by Malaysia."
+          },
+          {
+            "id": "BRN.en.2",
+            "type": "contrast",
+            "text": "Brunei is split in two by a strip of Malaysian land; Malaysia itself is split by the sea."
+          },
+          {
+            "id": "BRN.en.3",
+            "type": "sound",
+            "text": "Brunei: a brew bubbling on Borneo's north coast, with Malaysia holding the pot on every land side."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BRN.nb.1",
+            "type": "anchor",
+            "text": "Brunei er et lite kystland på nordsiden av Borneo, omsluttet av Malaysia på landsiden."
+          },
+          {
+            "id": "BRN.nb.2",
+            "type": "contrast",
+            "text": "Brunei er delt i to av en stripe malaysisk land; Malaysia selv er delt av havet."
+          },
+          {
+            "id": "BRN.nb.3",
+            "type": "sound",
+            "text": "Brunei: «bru? nei.» De to delene av landet lå lenge uten bru imellom, med Malaysia i midten."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "BRN.cap.en.1",
+            "type": "anchor",
+            "text": "Bandar Seri Begawan sits on the Brunei River, with a stilt village, Kampong Ayer, built over the water."
+          },
+          {
+            "id": "BRN.cap.en.2",
+            "type": "etymology",
+            "text": "Bandar means 'port' or 'town' in Malay, so the capital's name opens with 'port'."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BRN.cap.nb.1",
+            "type": "anchor",
+            "text": "Bandar Seri Begawan ligger ved Brunei-elva, med en landsby på påler, Kampong Ayer, ute på vannet."
+          },
+          {
+            "id": "BRN.cap.nb.2",
+            "type": "etymology",
+            "text": "Bandar betyr «havn» eller «by» på malayisk, så hovedstadens navn begynner med «havn»."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Yellow, crossed by black and white diagonal bands, with the red national crest in the center.",
+        "nb": "Gult, med svarte og hvite skrå striper og det røde riksvåpenet i midten."
+      },
+      "facts": [
+        {
+          "id": "BRN.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Brunei's only land neighbor is Malaysia, and its coast faces the South China Sea.",
+            "nb": "Bruneis eneste naboland er Malaysia, og kysten vender mot Sørkinahavet."
+          }
+        },
+        {
+          "id": "BRN.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Brunei is ruled by a sultan and is one of the few absolute monarchies left.",
+            "nb": "Brunei styres av en sultan og er et av de få gjenværende eneveldige monarkiene."
+          }
+        },
+        {
+          "id": "BRN.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Brunei dollar is exchangeable at par with the Singapore dollar, and both are accepted in each country.",
+            "nb": "Bruneisk dollar kan veksles én mot én med singaporsk dollar, og begge godtas i begge land."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "IDN",
+      "hooks": {
+        "en": [
+          {
+            "id": "IDN.en.1",
+            "type": "anchor",
+            "text": "Indonesia is the island chain between mainland Southeast Asia and Australia, from Sumatra to New Guinea."
+          },
+          {
+            "id": "IDN.en.2",
+            "type": "etymology",
+            "text": "Indonesia means 'Indian islands', from the Greek 'nesos', island."
+          },
+          {
+            "id": "IDN.en.3",
+            "type": "story",
+            "text": "Jakarta is crowded and sinking, so Indonesia is building a new capital, Nusantara, on Borneo."
+          }
+        ],
+        "nb": [
+          {
+            "id": "IDN.nb.1",
+            "type": "anchor",
+            "text": "Indonesia er øyriket mellom fastlandet i Sørøst-Asia og Australia, fra Sumatra til Ny-Guinea."
+          },
+          {
+            "id": "IDN.nb.2",
+            "type": "etymology",
+            "text": "Indonesia betyr «de indiske øyene», fra gresk «nesos», øy."
+          },
+          {
+            "id": "IDN.nb.3",
+            "type": "story",
+            "text": "Jakarta er overfylt og synker, så Indonesia bygger en ny hovedstad, Nusantara, på Borneo."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "IDN.cap.en.1",
+            "type": "anchor",
+            "text": "Jakarta sits on the northwest coast of Java, the most populous island in the world."
+          },
+          {
+            "id": "IDN.cap.en.2",
+            "type": "sound",
+            "text": "Jakarta: a jackal racing a go-kart along the north coast of Java."
+          }
+        ],
+        "nb": [
+          {
+            "id": "IDN.cap.nb.1",
+            "type": "anchor",
+            "text": "Jakarta ligger på nordvestkysten av Java, verdens mest folkerike øy."
+          },
+          {
+            "id": "IDN.cap.nb.2",
+            "type": "sound",
+            "text": "Jakarta: «ja, kart»: du sier ja til kartet og finner byen på nordkysten av Java."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red over white. Monaco's flag is almost identical but squarer; Poland's is the reverse, white over red.",
+        "nb": "Rødt over hvitt. Monacos flagg er nesten likt, men mer kvadratisk; Polens er omvendt, hvitt over rødt."
+      },
+      "facts": [
+        {
+          "id": "IDN.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Indonesia shares land borders with Malaysia on Borneo, Papua New Guinea on New Guinea and Timor-Leste on Timor.",
+            "nb": "Indonesia har landegrense mot Malaysia på Borneo, Papua Ny-Guinea på Ny-Guinea og Øst-Timor på Timor."
+          }
+        },
+        {
+          "id": "IDN.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The rupiah's name comes from the Sanskrit word for silver, like the Indian rupee.",
+            "nb": "Navnet rupiah kommer fra sanskritordet for sølv, akkurat som den indiske rupien."
+          }
+        },
+        {
+          "id": "IDN.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Komodo dragons, the largest living lizards, live in the wild only in Indonesia.",
+            "nb": "Komodovaraner, verdens største nålevende øgler, lever vilt bare i Indonesia."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "KHM",
+      "hooks": {
+        "en": [
+          {
+            "id": "KHM.en.1",
+            "type": "anchor",
+            "text": "Cambodia sits between Thailand, Laos and Vietnam, with a short coast on the Gulf of Thailand."
+          },
+          {
+            "id": "KHM.en.2",
+            "type": "flag_decode",
+            "text": "Cambodia's flag shows Angkor Wat, the temple complex in the northwest of the country."
+          },
+          {
+            "id": "KHM.en.3",
+            "type": "sound",
+            "text": "Cambodia: a camper van stuck in the Mekong mud, with Thailand, Laos and Vietnam all pushing."
+          }
+        ],
+        "nb": [
+          {
+            "id": "KHM.nb.1",
+            "type": "anchor",
+            "text": "Kambodsja ligger mellom Thailand, Laos og Vietnam, med en kort kyst mot Thailandbukta."
+          },
+          {
+            "id": "KHM.nb.2",
+            "type": "flag_decode",
+            "text": "Kambodsjas flagg viser Angkor Wat, tempelanlegget nordvest i landet."
+          },
+          {
+            "id": "KHM.nb.3",
+            "type": "sound",
+            "text": "Kambodsja: en kam til salgs i en bod ved Mekong, midt mellom Thailand og Vietnam."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "KHM.cap.en.1",
+            "type": "anchor",
+            "text": "Phnom Penh sits where the Tonle Sap River meets the Mekong."
+          },
+          {
+            "id": "KHM.cap.en.2",
+            "type": "story",
+            "text": "Phnom Penh means 'Penh's hill', after a woman who, by legend, built a shrine on a hill there."
+          }
+        ],
+        "nb": [
+          {
+            "id": "KHM.cap.nb.1",
+            "type": "anchor",
+            "text": "Phnom Penh ligger der elva Tonle Sap møter Mekong."
+          },
+          {
+            "id": "KHM.cap.nb.2",
+            "type": "story",
+            "text": "Phnom Penh betyr «Penhs høyde», etter en kvinne som ifølge legenden bygde et tempel på en høyde der."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue, red, blue bands with a white Angkor Wat on the wide red center, one of very few flags showing a building.",
+        "nb": "Blå, rød, blå felt med et hvitt Angkor Wat på det brede røde midtfeltet, et av svært få flagg med en bygning."
+      },
+      "facts": [
+        {
+          "id": "KHM.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Cambodia borders Thailand, Laos and Vietnam, and has a coast on the Gulf of Thailand.",
+            "nb": "Kambodsja grenser til Thailand, Laos og Vietnam, og har kyst mot Thailandbukta."
+          }
+        },
+        {
+          "id": "KHM.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "In the wet season the Tonle Sap River reverses direction and fills the Tonle Sap lake from the Mekong.",
+            "nb": "I regntiden snur elva Tonle Sap og fyller innsjøen Tonle Sap med vann fra Mekong."
+          }
+        },
+        {
+          "id": "KHM.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The riel is used alongside the US dollar, and many prices in Cambodia are given in dollars.",
+            "nb": "Riel brukes side om side med amerikanske dollar, og mange priser i Kambodsja oppgis i dollar."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "LAO",
+      "hooks": {
+        "en": [
+          {
+            "id": "LAO.en.1",
+            "type": "anchor",
+            "text": "Laos sits between Thailand and Vietnam, with China to the north and Cambodia to the south."
+          },
+          {
+            "id": "LAO.en.2",
+            "type": "contrast",
+            "text": "Laos is the only landlocked country in Southeast Asia: it has no coastline."
+          },
+          {
+            "id": "LAO.en.3",
+            "type": "sound",
+            "text": "Laos: a lazy louse drifting down the Mekong on a banana leaf, waving at Thailand."
+          }
+        ],
+        "nb": [
+          {
+            "id": "LAO.nb.1",
+            "type": "anchor",
+            "text": "Laos ligger mellom Thailand og Vietnam, med Kina i nord og Kambodsja i sør."
+          },
+          {
+            "id": "LAO.nb.2",
+            "type": "contrast",
+            "text": "Laos er Sørøst-Asias eneste innlandsstat: landet har ingen kyst."
+          },
+          {
+            "id": "LAO.nb.3",
+            "type": "sound",
+            "text": "Laos: en laks som svømmer opp Mekong, langt fra havet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "LAO.cap.en.1",
+            "type": "anchor",
+            "text": "Vientiane sits on the Mekong, looking straight across the river at Thailand."
+          },
+          {
+            "id": "LAO.cap.en.2",
+            "type": "sound",
+            "text": "Vientiane: 'vine, tea, ant': an ant climbing a tea vine on the bank of the Mekong."
+          }
+        ],
+        "nb": [
+          {
+            "id": "LAO.cap.nb.1",
+            "type": "anchor",
+            "text": "Vientiane ligger ved Mekong, rett overfor Thailand på den andre bredden."
+          },
+          {
+            "id": "LAO.cap.nb.2",
+            "type": "sound",
+            "text": "Vientiane: vinden tar teltet ditt fra elvebredden og blåser det over Mekong til Thailand."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, blue, red bands with a white disc on the blue, often read as the full moon over the Mekong.",
+        "nb": "Rød, blå, rød felt med en hvit sirkel på det blå, ofte tolket som fullmånen over Mekong."
+      },
+      "facts": [
+        {
+          "id": "LAO.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Laos is landlocked, with no coast, and borders China, Myanmar, Thailand, Cambodia and Vietnam.",
+            "nb": "Laos er en innlandsstat, uten kyst, og grenser til Kina, Myanmar, Thailand, Kambodsja og Vietnam."
+          }
+        },
+        {
+          "id": "LAO.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Much of the border between Laos and Thailand follows the Mekong.",
+            "nb": "Store deler av grensen mellom Laos og Thailand følger Mekong."
+          }
+        },
+        {
+          "id": "LAO.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Plain of Jars in northern Laos is scattered with large stone jars whose purpose is still debated.",
+            "nb": "Krukkesletta nord i Laos er full av store steinkrukker, og ingen vet sikkert hva de ble brukt til."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "MMR",
+      "hooks": {
+        "en": [
+          {
+            "id": "MMR.en.1",
+            "type": "anchor",
+            "text": "Myanmar sits between India and Bangladesh to the west and Thailand and Laos to the east, with China to the north."
+          },
+          {
+            "id": "MMR.en.2",
+            "type": "contrast",
+            "text": "Myanmar and Burma are the same country; Burma is the older English name."
+          },
+          {
+            "id": "MMR.en.3",
+            "type": "sound",
+            "text": "Myanmar: a cat going 'meow-mar' at the Bay of Bengal, demanding fish."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MMR.nb.1",
+            "type": "anchor",
+            "text": "Myanmar ligger mellom India og Bangladesh i vest og Thailand og Laos i øst, med Kina i nord."
+          },
+          {
+            "id": "MMR.nb.2",
+            "type": "contrast",
+            "text": "Myanmar og Burma er samme land; Burma er det eldre navnet."
+          },
+          {
+            "id": "MMR.nb.3",
+            "type": "sound",
+            "text": "Myanmar: en katt som mjauer «mjau-mar» mot Bengalbukta og vil ha fisk."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "MMR.cap.en.1",
+            "type": "story",
+            "text": "Myanmar moved its government from Yangon to Naypyidaw, a capital built from scratch inland."
+          },
+          {
+            "id": "MMR.cap.en.2",
+            "type": "contrast",
+            "text": "Yangon is Myanmar's largest city, but Naypyidaw is the capital."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MMR.cap.nb.1",
+            "type": "story",
+            "text": "Myanmar flyttet regjeringen fra Yangon til Nay Pyi Taw, en hovedstad bygd fra bunnen av inne i landet."
+          },
+          {
+            "id": "MMR.cap.nb.2",
+            "type": "contrast",
+            "text": "Yangon er Myanmars største by, men Nay Pyi Taw er hovedstaden."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Yellow, green and red horizontal bands with a large white star across all three.",
+        "nb": "Gul, grønn og rød vannrette felt med en stor hvit stjerne over alle tre."
+      },
+      "facts": [
+        {
+          "id": "MMR.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Myanmar borders Bangladesh, India, China, Laos and Thailand, and has a long coast on the Bay of Bengal and the Andaman Sea.",
+            "nb": "Myanmar grenser til Bangladesh, India, Kina, Laos og Thailand, og har lang kyst mot Bengalbukta og Andamanhavet."
+          }
+        },
+        {
+          "id": "MMR.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Irrawaddy River runs through Myanmar from north to south.",
+            "nb": "Elva Irrawaddy renner gjennom Myanmar fra nord til sør."
+          }
+        },
+        {
+          "id": "MMR.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The kyat was a unit of weight before it became the name of Myanmar's currency.",
+            "nb": "Kyat var en vektenhet før det ble navnet på Myanmars valuta."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "MYS",
+      "hooks": {
+        "en": [
+          {
+            "id": "MYS.en.1",
+            "type": "anchor",
+            "text": "Malaysia comes in two parts: the Malay Peninsula south of Thailand, and the north of Borneo."
+          },
+          {
+            "id": "MYS.en.2",
+            "type": "contrast",
+            "text": "Malaysia has a foot on the mainland; its neighbor Indonesia is made up only of islands."
+          },
+          {
+            "id": "MYS.en.3",
+            "type": "sound",
+            "text": "Malaysia: a mail ship shuttling letters between the peninsula and Borneo, one half writing to the other."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MYS.nb.1",
+            "type": "anchor",
+            "text": "Malaysia er delt i to: Malakkahalvøya sør for Thailand, og nordsiden av Borneo."
+          },
+          {
+            "id": "MYS.nb.2",
+            "type": "contrast",
+            "text": "Malaysia har en fot på fastlandet; nabolandet Indonesia består bare av øyer."
+          },
+          {
+            "id": "MYS.nb.3",
+            "type": "sound",
+            "text": "Malaysia: en maler som maler hele halvøya og halve Borneo i samme farge."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "MYS.cap.en.1",
+            "type": "anchor",
+            "text": "Kuala Lumpur is the capital and seat of parliament; ministries and the prime minister's office moved to Putrajaya."
+          },
+          {
+            "id": "MYS.cap.en.2",
+            "type": "etymology",
+            "text": "Kuala Lumpur means 'muddy confluence', the spot where two rivers meet."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MYS.cap.nb.1",
+            "type": "anchor",
+            "text": "Kuala Lumpur er hovedstad og sete for nasjonalforsamlingen; departementene og statsministeren flyttet til Putrajaya."
+          },
+          {
+            "id": "MYS.cap.nb.2",
+            "type": "etymology",
+            "text": "Kuala Lumpur betyr «gjørmete elvemøte», stedet der to elver renner sammen."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red and white stripes with a blue canton holding a yellow crescent and star, echoing the US flag.",
+        "nb": "Røde og hvite striper med et blått felt øverst til venstre med gul halvmåne og stjerne, likt USAs flagg i oppbygning."
+      },
+      "facts": [
+        {
+          "id": "MYS.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Malaysia borders Thailand on the mainland, and Indonesia and Brunei on Borneo.",
+            "nb": "Malaysia grenser til Thailand på fastlandet, og til Indonesia og Brunei på Borneo."
+          }
+        },
+        {
+          "id": "MYS.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Petronas Towers in Kuala Lumpur were the tallest buildings in the world for several years.",
+            "nb": "Petronas-tårnene i Kuala Lumpur var verdens høyeste bygninger i flere år."
+          }
+        },
+        {
+          "id": "MYS.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Malaysia's king is elected in turn from among the hereditary rulers of its Malay states.",
+            "nb": "Malaysias konge velges på omgang blant de arvelige herskerne i landets malayiske delstater."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "PHL",
+      "hooks": {
+        "en": [
+          {
+            "id": "PHL.en.1",
+            "type": "anchor",
+            "text": "The Philippines is an archipelago, a group of islands, east of Vietnam across the South China Sea."
+          },
+          {
+            "id": "PHL.en.2",
+            "type": "etymology",
+            "text": "The Philippines is named after King Philip II of Spain."
+          },
+          {
+            "id": "PHL.en.3",
+            "type": "sound",
+            "text": "Philippines: Philip filling a basket with pineapples, hopping from island to island."
+          }
+        ],
+        "nb": [
+          {
+            "id": "PHL.nb.1",
+            "type": "anchor",
+            "text": "Filippinene er en øygruppe, en samling øyer, øst for Vietnam på andre siden av Sørkinahavet."
+          },
+          {
+            "id": "PHL.nb.2",
+            "type": "etymology",
+            "text": "Filippinene er oppkalt etter den spanske kongen Filip II."
+          },
+          {
+            "id": "PHL.nb.3",
+            "type": "sound",
+            "text": "Filippinene: Filip med en pinne i hver hånd, som hopper fra øy til øy."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "PHL.cap.en.1",
+            "type": "anchor",
+            "text": "Manila sits on Manila Bay, on the west side of Luzon, the largest island."
+          },
+          {
+            "id": "PHL.cap.en.2",
+            "type": "sound",
+            "text": "Manila: a vanilla ice cream melting in the sun on Manila Bay."
+          }
+        ],
+        "nb": [
+          {
+            "id": "PHL.cap.nb.1",
+            "type": "anchor",
+            "text": "Manila ligger ved Manilabukta, på vestsiden av Luzon, den største øya."
+          },
+          {
+            "id": "PHL.cap.nb.2",
+            "type": "sound",
+            "text": "Manila: vaniljeis som smelter i sola ved Manilabukta."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue over red with a white triangle at the hoist; in wartime the flag is flown red side up.",
+        "nb": "Blått over rødt med en hvit trekant ved stangen; i krigstid heises flagget med det røde øverst."
+      },
+      "facts": [
+        {
+          "id": "PHL.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "The Philippines has no land borders; the country is made up entirely of islands.",
+            "nb": "Filippinene har ingen landegrenser; landet består bare av øyer."
+          }
+        },
+        {
+          "id": "PHL.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Filipino and English are both official languages of the Philippines.",
+            "nb": "Filippinsk og engelsk er begge offisielle språk på Filippinene."
+          }
+        },
+        {
+          "id": "PHL.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Philippine eagle, one of the largest eagles in the world, is the national bird.",
+            "nb": "Filippinørnen, en av verdens største ørner, er landets nasjonalfugl."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "SGP",
+      "hooks": {
+        "en": [
+          {
+            "id": "SGP.en.1",
+            "type": "anchor",
+            "text": "Singapore is an island city-state just off the southern tip of the Malay Peninsula, south of Malaysia."
+          },
+          {
+            "id": "SGP.en.2",
+            "type": "etymology",
+            "text": "Singapore comes from the Sanskrit 'Singapura', lion city."
+          },
+          {
+            "id": "SGP.en.3",
+            "type": "sound",
+            "text": "Singapore: a lion singing in the pouring rain at the tip of the Malay Peninsula."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SGP.nb.1",
+            "type": "anchor",
+            "text": "Singapore er en bystat på en øy rett sør for Malaysia, ved sørspissen av Malakkahalvøya."
+          },
+          {
+            "id": "SGP.nb.2",
+            "type": "etymology",
+            "text": "Singapore kommer fra sanskrit «Singapura», løvebyen."
+          },
+          {
+            "id": "SGP.nb.3",
+            "type": "sound",
+            "text": "Singapore: en løve som ligger og soler seg på en singelstrand ved sørspissen av Malakkahalvøya."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "SGP.cap.en.1",
+            "type": "contrast",
+            "text": "Singapore is a city-state: the city and the country are the same place, so the capital is Singapore."
+          },
+          {
+            "id": "SGP.cap.en.2",
+            "type": "anchor",
+            "text": "Singapore faces Indonesia's Riau Islands across the Singapore Strait to the south."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SGP.cap.nb.1",
+            "type": "contrast",
+            "text": "Singapore er en bystat: byen og landet er det samme, så hovedstaden heter Singapore."
+          },
+          {
+            "id": "SGP.cap.nb.2",
+            "type": "anchor",
+            "text": "Singapore har Indonesias Riau-øyer rett i sør, på andre siden av Singaporestredet."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red over white, with a white crescent and five white stars in the top left.",
+        "nb": "Rødt over hvitt, med en hvit halvmåne og fem hvite stjerner øverst til venstre."
+      },
+      "facts": [
+        {
+          "id": "SGP.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Singapore has no land border; it is an island country.",
+            "nb": "Singapore har ingen landegrense; det er et øyland."
+          }
+        },
+        {
+          "id": "SGP.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Singapore's official languages are English, Malay, Mandarin Chinese and Tamil.",
+            "nb": "Singapores offisielle språk er engelsk, malayisk, mandarin og tamil."
+          }
+        },
+        {
+          "id": "SGP.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Chewing gum sales are restricted in Singapore; pharmacies may sell it only for health reasons.",
+            "nb": "Salg av tyggegummi er begrenset i Singapore; apotek kan bare selge det av helsegrunner."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "THA",
+      "hooks": {
+        "en": [
+          {
+            "id": "THA.en.1",
+            "type": "anchor",
+            "text": "Thailand sits between Myanmar to the west and Laos and Cambodia to the east, with a long tail south to Malaysia."
+          },
+          {
+            "id": "THA.en.2",
+            "type": "shape",
+            "text": "Thailand is an elephant's head, with the long southern peninsula as its trunk."
+          },
+          {
+            "id": "THA.en.3",
+            "type": "etymology",
+            "text": "Thailand was called Siam before it took its current name, 'land of the Thai'."
+          }
+        ],
+        "nb": [
+          {
+            "id": "THA.nb.1",
+            "type": "anchor",
+            "text": "Thailand ligger mellom Myanmar i vest og Laos og Kambodsja i øst, med en lang hale sørover mot Malaysia."
+          },
+          {
+            "id": "THA.nb.2",
+            "type": "shape",
+            "text": "Thailand er et elefanthode, med den lange halvøya i sør som snabel."
+          },
+          {
+            "id": "THA.nb.3",
+            "type": "etymology",
+            "text": "Thailand het Siam før landet tok navnet «thaienes land»."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "THA.cap.en.1",
+            "type": "anchor",
+            "text": "Bangkok sits on the Chao Phraya River, close to the Gulf of Thailand."
+          },
+          {
+            "id": "THA.cap.en.2",
+            "type": "story",
+            "text": "Bangkok's full ceremonial name is among the longest place names in the world; Thais call the city Krung Thep."
+          }
+        ],
+        "nb": [
+          {
+            "id": "THA.cap.nb.1",
+            "type": "anchor",
+            "text": "Bangkok ligger ved elva Chao Phraya, nær Thailandbukta."
+          },
+          {
+            "id": "THA.cap.nb.2",
+            "type": "story",
+            "text": "Bangkoks fulle seremonielle navn er blant verdens lengste stedsnavn; thaiene kaller byen Krung Thep."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, white, blue, white, red horizontal stripes; the blue band in the middle is twice as wide.",
+        "nb": "Røde, hvite, blå, hvite og røde vannrette striper; det blå feltet i midten er dobbelt så bredt."
+      },
+      "facts": [
+        {
+          "id": "THA.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Thailand borders Myanmar, Laos, Cambodia and Malaysia, with coasts on the Gulf of Thailand and the Andaman Sea.",
+            "nb": "Thailand grenser til Myanmar, Laos, Kambodsja og Malaysia, og har kyst mot Thailandbukta og Andamanhavet."
+          }
+        },
+        {
+          "id": "THA.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Thailand is the only country in Southeast Asia never colonized by a European power.",
+            "nb": "Thailand er det eneste landet i Sørøst-Asia som aldri ble kolonisert av en europeisk makt."
+          }
+        },
+        {
+          "id": "THA.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The baht was first a unit of weight, used for silver and gold.",
+            "nb": "Baht var først en vektenhet, brukt for sølv og gull."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "TLS",
+      "hooks": {
+        "en": [
+          {
+            "id": "TLS.en.1",
+            "type": "anchor",
+            "text": "Timor-Leste is the eastern half of the island of Timor, north of Australia, sharing the island with Indonesia."
+          },
+          {
+            "id": "TLS.en.2",
+            "type": "etymology",
+            "text": "Timor-Leste means 'East East': 'timur' is Malay for east and 'leste' is Portuguese for east."
+          },
+          {
+            "id": "TLS.en.3",
+            "type": "sound",
+            "text": "Timor-Leste: a timid mole digging east, toward the sunrise end of the island."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TLS.nb.1",
+            "type": "anchor",
+            "text": "Øst-Timor er den østlige halvdelen av øya Timor, nord for Australia, og deler øya med Indonesia."
+          },
+          {
+            "id": "TLS.nb.2",
+            "type": "etymology",
+            "text": "Timor kommer av malayisk «timur», øst, så Øst-Timor betyr egentlig «Øst-Øst»."
+          },
+          {
+            "id": "TLS.nb.3",
+            "type": "sound",
+            "text": "Øst-Timor: en tigermor, «ti-mor», mor til ti unger, sover på østspissen av øya."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "TLS.cap.en.1",
+            "type": "anchor",
+            "text": "Dili sits on the north coast of Timor, facing the open sea toward the islands to the north."
+          },
+          {
+            "id": "TLS.cap.en.2",
+            "type": "sound",
+            "text": "Dili: a fisherman dilly-dallying on Timor's north coast, in no hurry to sail."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TLS.cap.nb.1",
+            "type": "anchor",
+            "text": "Dili ligger på nordkysten av Timor, med havet og andre øyer i nord."
+          },
+          {
+            "id": "TLS.cap.nb.2",
+            "type": "sound",
+            "text": "Dili: en dillbukett som vokser på stranda på nordkysten av Øst-Timor."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red with a black triangle over a yellow one at the hoist, and a white star on the black.",
+        "nb": "Rødt med en svart trekant over en gul ved stangen, og en hvit stjerne på det svarte."
+      },
+      "facts": [
+        {
+          "id": "TLS.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Timor-Leste's only land neighbor is Indonesia, which holds the western half of Timor.",
+            "nb": "Øst-Timors eneste naboland er Indonesia, som har den vestlige halvdelen av Timor."
+          }
+        },
+        {
+          "id": "TLS.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Tetum and Portuguese are the official languages of Timor-Leste.",
+            "nb": "Tetum og portugisisk er de offisielle språkene i Øst-Timor."
+          }
+        },
+        {
+          "id": "TLS.f3",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Timor-Leste uses the US dollar as its currency.",
+            "nb": "Øst-Timor bruker amerikanske dollar som valuta."
+          }
+        },
+        {
+          "id": "TLS.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Timor-Leste also includes Oecusse, an exclave, a piece cut off from the rest, on the Indonesian side of the island.",
+            "nb": "Øst-Timor har også Oecusse, en eksklave, en bit som ligger avskåret fra resten, på indonesisk side av øya."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "VNM",
+      "hooks": {
+        "en": [
+          {
+            "id": "VNM.en.1",
+            "type": "anchor",
+            "text": "Vietnam runs down the east side of mainland Southeast Asia, from China in the north to the Mekong delta in the south."
+          },
+          {
+            "id": "VNM.en.2",
+            "type": "shape",
+            "text": "Vietnam is a long S, with Hanoi near the top and Ho Chi Minh City near the bottom."
+          },
+          {
+            "id": "VNM.en.3",
+            "type": "etymology",
+            "text": "Vietnam joins 'Viet', the people, with 'Nam', south."
+          }
+        ],
+        "nb": [
+          {
+            "id": "VNM.nb.1",
+            "type": "anchor",
+            "text": "Vietnam strekker seg langs østsiden av fastlandet i Sørøst-Asia, fra Kina i nord til Mekongdeltaet i sør."
+          },
+          {
+            "id": "VNM.nb.2",
+            "type": "shape",
+            "text": "Vietnam er en lang S, med Hanoi nær toppen og Ho Chi Minh-byen nær bunnen."
+          },
+          {
+            "id": "VNM.nb.3",
+            "type": "etymology",
+            "text": "Vietnam består av «Viet», folket, og «Nam», som betyr sør."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "VNM.cap.en.1",
+            "type": "anchor",
+            "text": "Hanoi sits on the Red River in the north of Vietnam, not far from China."
+          },
+          {
+            "id": "VNM.cap.en.2",
+            "type": "etymology",
+            "text": "Hanoi means 'inside the river', after its place in a bend of the Red River."
+          }
+        ],
+        "nb": [
+          {
+            "id": "VNM.cap.nb.1",
+            "type": "anchor",
+            "text": "Hanoi ligger ved Den røde elv nord i Vietnam, ikke langt fra Kina."
+          },
+          {
+            "id": "VNM.cap.nb.2",
+            "type": "etymology",
+            "text": "Hanoi betyr «innenfor elva», etter beliggenheten i en sving av Den røde elv."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red with a single large yellow star in the center.",
+        "nb": "Rødt med én stor gul stjerne i midten."
+      },
+      "facts": [
+        {
+          "id": "VNM.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Vietnam borders China, Laos and Cambodia, and has a long coast on the South China Sea.",
+            "nb": "Vietnam grenser til Kina, Laos og Kambodsja, og har lang kyst mot Sørkinahavet."
+          }
+        },
+        {
+          "id": "VNM.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Ho Chi Minh City, the largest city, was called Saigon until it was renamed after the Vietnam War.",
+            "nb": "Ho Chi Minh-byen, den største byen, het Saigon til den fikk nytt navn etter Vietnamkrigen."
+          }
+        },
+        {
+          "id": "VNM.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The đồng takes its name from the Vietnamese word for copper or bronze.",
+            "nb": "Dong har navnet sitt fra det vietnamesiske ordet for kobber eller bronse."
+          }
+        }
+      ]
+    }
+  ]
+}
