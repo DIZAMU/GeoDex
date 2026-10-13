@@ -45,7 +45,7 @@ export function readRules(voicePath = "content/VOICE.md"): Rules {
   return parse(block[1]) as Rules;
 }
 
-const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 /** Problems with one piece of learner-facing text. */
 export function textProblems(
@@ -67,7 +67,7 @@ export function textProblems(
     if (lower.includes(phrase)) problems.push(`banned phrase "${phrase}"`);
   }
   for (const word of rules.banned_words[locale] ?? []) {
-    if (new RegExp(`(^|[^\\p{L}])${escape(word)}($|[^\\p{L}])`, "iu").test(text))
+    if (new RegExp(`(^|[^\\p{L}])${escapeRegExp(word)}($|[^\\p{L}])`, "iu").test(text))
       problems.push(`banned word "${word}"`);
   }
   if (locale === "nb" && text.includes('"')) problems.push("straight quotes in Norwegian, use « »");
