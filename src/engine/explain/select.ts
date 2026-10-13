@@ -167,9 +167,11 @@ function pickTemplate(input: SelectInput, recent: ReadonlySet<string>, rng: Rng)
       t.moment === input.moment && t.cardTypes.includes(input.cardType) && eligible(t, input.slots),
   );
   if (pool.length === 0) return null;
+  // Templates that use what is known about this answer (the wrong pick, home, conditions)
+  // are more useful than the generic ones, so they are picked more often.
   const t = weightedPick(
     fresh(pool, (x) => snippetId.template(x.id), recent),
-    () => 1,
+    (x) => 1 + 3 * x.requires.length + x.when.length,
     rng,
   );
   const text = render(t.body, input.slots);

@@ -228,3 +228,27 @@ describe("hook effectiveness", () => {
     expect(hookWeight(stats, "story")).toBe(0.5);
   });
 });
+
+describe("template weighting", () => {
+  it("usually names the wrong pick when there is one", () => {
+    const slots = buildSlots({
+      locale: "en",
+      target: get("SVN"),
+      chosen: get("SVK"),
+      home: get("NOR"),
+      countryById: (id) => byId.get(id),
+      subregionName: (id) => id,
+      stability: () => 0,
+      timesSeen: 0,
+      lastHookType: null,
+    });
+    let named = 0;
+    for (let reps = 0; reps < 20; reps++) {
+      const e = selectExplanation(
+        input({ moment: "wrong", cardId: "SVN:map_to_name", reps, slots }),
+      );
+      if (e.blocks.some((b) => b.kind === "template" && b.text.includes("Slovakia"))) named++;
+    }
+    expect(named).toBeGreaterThanOrEqual(14);
+  });
+});
