@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import type { ContentIndex } from "@/data/content";
 import type { WorldData } from "@/data/world";
 import { confusionsFor } from "@/engine/confusions";
 import type { Locale } from "@/i18n/locales";
@@ -9,6 +10,7 @@ export function useStudyContext(
   world: WorldData | null,
   locale: Locale,
   scores: Map<string, number>,
+  content?: ContentIndex | null,
 ): StudyContext | null {
   const base = useMemo(
     () =>
@@ -32,6 +34,11 @@ export function useStudyContext(
         world.confusionPairs
           .filter((p) => p.dimension === dimension && (p.a === id || p.b === id))
           .map((p) => (p.a === id ? p.b : p.a)),
+      contrastKind: (a: string, b: string) => {
+        const c = content?.confusion(a, b);
+        if (!c) return null;
+        return c.dimension === "flag" ? ("flag" as const) : ("place" as const);
+      },
     };
-  }, [world, base, locale, scores]);
+  }, [world, base, locale, scores, content]);
 }

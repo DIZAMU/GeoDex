@@ -6,7 +6,13 @@
 import type { FSRS } from "ts-fsrs";
 import type { ContentIndex } from "@/data/content";
 import type { WorldData } from "@/data/world";
-import { type Explanation, hookStats, momentFor, selectExplanation } from "@/engine/explain/select";
+import {
+  type Explanation,
+  hookStats,
+  momentFor,
+  selectExplanation,
+  snippetId,
+} from "@/engine/explain/select";
 import { buildSlots } from "@/engine/explain/slots";
 import type { HookType, Locale, Moment } from "@/engine/explain/types";
 import { applyReview, type CardPhase, type CardState } from "@/engine/scheduler";
@@ -54,6 +60,19 @@ export function explain(input: {
 }): Explanation {
   const { world, content, history, locale } = input;
   const { entityId, type } = parseCardId(input.cardId);
+  if (type === "contrast") {
+    // A contrast card's whole lesson is the contrast text for its pair.
+    const [a = "", b = ""] = entityId.split("|");
+    const c = content.confusion(a, b);
+    const id = c ? `${c.a}|${c.b}` : "";
+    return c
+      ? {
+          moment: input.moment,
+          blocks: [{ kind: "contrast", id, text: c.contrast[locale] }],
+          snippetIds: [snippetId.contrast(id)],
+        }
+      : { moment: input.moment, blocks: [], snippetIds: [] };
+  }
   const target = world.byId.get(entityId);
   const chosen = chosenCountryId(world, input.chosenId ?? null);
   const cardEvents = history.events

@@ -26,6 +26,7 @@ const ctx: StudyContext = {
   locale: "en",
   facts: countryFacts(world, world.excludeAsDistractor),
   confusionsFor: () => [],
+  contrastKind: (a, b) => ([a, b].sort().join("|") === "ROU|TCD" ? "flag" : "place"),
   curatedFor: (id, dimension) =>
     world.confusionPairs
       .filter((p) => p.dimension === dimension && (p.a === id || p.b === id))
@@ -135,5 +136,31 @@ describe("checking answers", () => {
     const n = buildQuestion(ctx, "NGA:flag_to_name", state(30), "auto", "x");
     expect(checkTyped(n, ctx.indexes, "Niger")).toMatchObject({ correct: false, chosenId: "NER" });
     expect(checkChoice(n, "NGA").correct).toBe(true);
+  });
+});
+
+describe("contrast cards", () => {
+  it("asks for one of the pair, as two map shapes or two flags", () => {
+    const place = buildQuestion(ctx, "SVK|SVN:contrast", undefined, "auto", "s1");
+    expect(["SVK", "SVN"]).toContain(place.entityId);
+    expect(place.correctIds).toEqual([place.entityId]);
+    expect(place.answer).toMatchObject({ kind: "map" });
+    if (place.answer.kind !== "map") throw new Error("map");
+    expect([...(place.answer.selectable ?? [])].sort()).toEqual(["SVK", "SVN"]);
+
+    const flags = buildQuestion(ctx, "ROU|TCD:contrast", undefined, "auto", "s1");
+    expect(flags.answer.kind).toBe("flags");
+    if (flags.answer.kind !== "flags") throw new Error("flags");
+    expect(flags.answer.options.map((o) => o.id).sort()).toEqual(["ROU", "TCD"]);
+  });
+
+  it("asks for both countries across reviews", () => {
+    const asked = new Set(
+      Array.from(
+        { length: 12 },
+        (_, i) => buildQuestion(ctx, "SVK|SVN:contrast", undefined, "auto", `seed${i}`).entityId,
+      ),
+    );
+    expect([...asked].sort()).toEqual(["SVK", "SVN"]);
   });
 });

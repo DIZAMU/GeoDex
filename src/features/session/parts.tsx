@@ -63,6 +63,8 @@ export function PromptText({
         return t("q.country_to_currency", { name, inName });
       case "country_to_language":
         return t("q.country_to_language", { name, inName });
+      case "contrast":
+        return t("q.contrast", { name });
     }
   })();
   return (
