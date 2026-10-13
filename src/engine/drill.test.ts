@@ -26,7 +26,7 @@ const studied = (cardId: string): [string, CardState] => [
 ];
 
 describe("drill", () => {
-  it("drills the studied cards of a region, never the same country twice in a row", () => {
+  it("drills a region's studied cards and its location cards, never one country twice in a row", () => {
     const states = new Map([
       studied("NOR:map_to_name"),
       studied("NOR:flag_to_name"),
@@ -40,14 +40,32 @@ describe("drill", () => {
       seed: "x",
     });
     expect(q.map((i) => i.cardId).sort()).toEqual([
+      "FIN:map_to_name",
+      "FIN:name_to_map",
       "NOR:flag_to_name",
       "NOR:map_to_name",
+      "NOR:name_to_map",
       "SWE:map_to_name",
+      "SWE:name_to_map",
     ]);
     for (let i = 1; i < q.length; i++) expect(q[i]?.entityId).not.toBe(q[i - 1]?.entityId);
   });
 
-  it("falls back to location cards for a region not started yet, and caps the size", () => {
+  it("keeps studied cards first when the size cap cuts the queue", () => {
+    const states = new Map([studied("NOR:flag_to_name"), studied("FIN:flag_to_name")]);
+    const q = drillQueue({
+      target: { kind: "region", subregion: "154" },
+      countries,
+      states,
+      seed: "z",
+      size: 3,
+    });
+    expect(q.map((i) => i.cardId)).toEqual(
+      expect.arrayContaining(["NOR:flag_to_name", "FIN:flag_to_name"]),
+    );
+  });
+
+  it("drills location cards for a region not started yet, and caps the size", () => {
     const q = drillQueue({
       target: { kind: "region", subregion: "154" },
       countries,
