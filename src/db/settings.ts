@@ -59,7 +59,8 @@ export function ensureSettings(db: GeoDexDb, defaultLocale: Locale): Promise<Set
       id: SETTINGS_ROW_ID,
       locale: defaultLocale,
       ...DEFAULT_SETTINGS,
-      updatedAt: Date.now(),
+      // Never edited: on first sync, settings from another device win over these defaults.
+      updatedAt: 0,
     };
     await db.settings.add(row);
     return row;
