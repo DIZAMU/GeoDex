@@ -1,0 +1,897 @@
+{
+  "group": "155",
+  "entities": [
+    {
+      "entityId": "AUT",
+      "hooks": {
+        "en": [
+          {
+            "id": "AUT.en.1",
+            "type": "anchor",
+            "text": "Austria is landlocked, with no coast, running east along the Alps from Switzerland to Hungary and Slovakia."
+          },
+          {
+            "id": "AUT.en.2",
+            "type": "etymology",
+            "text": "Austria is the Latin form of Österreich, 'the eastern realm'."
+          },
+          {
+            "id": "AUT.en.3",
+            "type": "sound",
+            "text": "Austria: an ostrich sprints east along the Alps all the way to Vienna."
+          }
+        ],
+        "nb": [
+          {
+            "id": "AUT.nb.1",
+            "type": "anchor",
+            "text": "Østerrike er en innlandsstat, et land uten kyst, langs Alpene fra Sveits i vest til Ungarn og Slovakia i øst."
+          },
+          {
+            "id": "AUT.nb.2",
+            "type": "etymology",
+            "text": "Østerrike betyr «riket i øst», akkurat som tyske Österreich."
+          },
+          {
+            "id": "AUT.nb.3",
+            "type": "sound",
+            "text": "Østerrike: en østers som ble rik, bor i et palass i Wien."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "AUT.cap.en.1",
+            "type": "anchor",
+            "text": "Vienna sits on the Danube at the far eastern end of Austria, close to Slovakia."
+          },
+          {
+            "id": "AUT.cap.en.2",
+            "type": "etymology",
+            "text": "Vienna is Wien in German, the source of the name of the wiener sausage."
+          }
+        ],
+        "nb": [
+          {
+            "id": "AUT.cap.nb.1",
+            "type": "anchor",
+            "text": "Wien ligger ved Donau helt øst i Østerrike, nær Slovakia."
+          },
+          {
+            "id": "AUT.cap.nb.2",
+            "type": "etymology",
+            "text": "Wien har gitt navn til både wienerpølsa og wienerbrødet."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, white, red in horizontal stripes. Latvia's looks similar but uses a darker red and a thinner white band.",
+        "nb": "Rødt, hvitt, rødt i vannrette striper. Latvias ligner, men har mørkere rødt og smalere hvitt felt."
+      },
+      "facts": [
+        {
+          "id": "AUT.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Austria borders Germany, Czechia, Slovakia, Hungary, Slovenia, Italy, Switzerland and Liechtenstein.",
+            "nb": "Østerrike grenser til Tyskland, Tsjekkia, Slovakia, Ungarn, Slovenia, Italia, Sveits og Liechtenstein."
+          }
+        },
+        {
+          "id": "AUT.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "German is the official language of Austria.",
+            "nb": "Tysk er det offisielle språket i Østerrike."
+          }
+        },
+        {
+          "id": "AUT.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Schönbrunn Zoo in Vienna is the oldest zoo in the world still in operation.",
+            "nb": "Dyrehagen i Schönbrunn i Wien er den eldste dyrehagen i verden som fortsatt er i drift."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "BEL",
+      "hooks": {
+        "en": [
+          {
+            "id": "BEL.en.1",
+            "type": "anchor",
+            "text": "Belgium sits between France, the Netherlands, Germany and Luxembourg, with a short North Sea coast."
+          },
+          {
+            "id": "BEL.en.2",
+            "type": "contrast",
+            "text": "Belgium is split into Dutch-speaking Flanders in the north and French-speaking Wallonia in the south."
+          },
+          {
+            "id": "BEL.en.3",
+            "type": "sound",
+            "text": "Belgium: a bell made of chewing gum rings out over Brussels."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BEL.nb.1",
+            "type": "anchor",
+            "text": "Belgia ligger mellom Frankrike, Nederland, Tyskland og Luxembourg, med en kort kyst mot Nordsjøen."
+          },
+          {
+            "id": "BEL.nb.2",
+            "type": "contrast",
+            "text": "Belgia er delt i nederlandsktalende Flandern i nord og fransktalende Wallonia i sør."
+          },
+          {
+            "id": "BEL.nb.3",
+            "type": "sound",
+            "text": "Belgia: en sprukken ertebelg drysser sjokoladeknapper over Brussel."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "BEL.cap.en.1",
+            "type": "anchor",
+            "text": "Brussels is also the main seat of the institutions of the European Union."
+          },
+          {
+            "id": "BEL.cap.en.2",
+            "type": "contrast",
+            "text": "Brussels lies inside Flanders, but most people there speak French."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BEL.cap.nb.1",
+            "type": "anchor",
+            "text": "Brussel er også hovedsetet for institusjonene i EU."
+          },
+          {
+            "id": "BEL.cap.nb.2",
+            "type": "contrast",
+            "text": "Brussel ligger inne i Flandern, men de fleste der snakker fransk."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Black, yellow and red vertical stripes, black at the hoist. Germany has the same colors lying flat.",
+        "nb": "Svarte, gule og røde loddrette striper, svart ved stangen. Tyskland har de samme fargene liggende."
+      },
+      "facts": [
+        {
+          "id": "BEL.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Belgium borders France, Luxembourg, Germany and the Netherlands, and has a North Sea coast.",
+            "nb": "Belgia grenser til Frankrike, Luxembourg, Tyskland og Nederland, og har kyst mot Nordsjøen."
+          }
+        },
+        {
+          "id": "BEL.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Dutch, French and German are all official languages of Belgium.",
+            "nb": "Nederlandsk, fransk og tysk er alle offisielle språk i Belgia."
+          }
+        },
+        {
+          "id": "BEL.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Baarle-Hertog is a Belgian municipality made up of enclaves, pockets of land surrounded by the Netherlands.",
+            "nb": "Baarle-Hertog er en belgisk kommune som består av enklaver, små områder omgitt av Nederland."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "CHE",
+      "hooks": {
+        "en": [
+          {
+            "id": "CHE.en.1",
+            "type": "anchor",
+            "text": "Switzerland is landlocked, with no coast, in the Alps between France, Germany, Austria and Italy."
+          },
+          {
+            "id": "CHE.en.2",
+            "type": "flag_decode",
+            "text": "The Red Cross emblem is the Swiss flag with its colors swapped, in honour of Switzerland."
+          },
+          {
+            "id": "CHE.en.3",
+            "type": "sound",
+            "text": "Switzerland: a railway switch flicks a train into a tunnel under the Alps."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CHE.nb.1",
+            "type": "anchor",
+            "text": "Sveits er en innlandsstat, et land uten kyst, i Alpene mellom Frankrike, Tyskland, Østerrike og Italia."
+          },
+          {
+            "id": "CHE.nb.2",
+            "type": "flag_decode",
+            "text": "Røde kors-emblemet er sveitserflagget med fargene byttet om, til ære for Sveits."
+          },
+          {
+            "id": "CHE.nb.3",
+            "type": "sound",
+            "text": "Sveits: du sveiser sammen en jernbanebro høyt oppe i Alpene."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "CHE.cap.en.1",
+            "type": "contrast",
+            "text": "Bern, not Zurich or Geneva, is the seat of the Swiss government."
+          },
+          {
+            "id": "CHE.cap.en.2",
+            "type": "story",
+            "text": "By legend Bern is named after a bear, and the city still keeps bears in a park by the Aare."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CHE.cap.nb.1",
+            "type": "contrast",
+            "text": "Bern, ikke Zürich eller Genève, er regjeringssetet i Sveits."
+          },
+          {
+            "id": "CHE.cap.nb.2",
+            "type": "story",
+            "text": "Ifølge sagnet har Bern navn etter en bjørn, og byen holder fortsatt bjørner i en park ved Aare."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A white cross on a red square. Like Vatican City's, the flag is square.",
+        "nb": "Et hvitt kors på et rødt kvadrat. Som Vatikanstatens er flagget kvadratisk."
+      },
+      "facts": [
+        {
+          "id": "CHE.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Switzerland borders France, Germany, Austria, Liechtenstein and Italy.",
+            "nb": "Sveits grenser til Frankrike, Tyskland, Østerrike, Liechtenstein og Italia."
+          }
+        },
+        {
+          "id": "CHE.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "German, French, Italian and Romansh are all official languages of Switzerland.",
+            "nb": "Tysk, fransk, italiensk og retoromansk er alle offisielle språk i Sveits."
+          }
+        },
+        {
+          "id": "CHE.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The code CH for Switzerland stands for Confoederatio Helvetica, Latin for the Swiss Confederation.",
+            "nb": "Landkoden CH for Sveits står for Confoederatio Helvetica, latin for Det sveitsiske edsforbund."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "DEU",
+      "hooks": {
+        "en": [
+          {
+            "id": "DEU.en.1",
+            "type": "anchor",
+            "text": "Germany sits in the middle of Europe, between France and Poland, with coasts on the North Sea and the Baltic."
+          },
+          {
+            "id": "DEU.en.2",
+            "type": "etymology",
+            "text": "Germany is Deutschland to Germans, Allemagne to the French and Niemcy to Poles."
+          },
+          {
+            "id": "DEU.en.3",
+            "type": "sound",
+            "text": "Germany: a German shepherd stands guard on the bank of the Rhine."
+          }
+        ],
+        "nb": [
+          {
+            "id": "DEU.nb.1",
+            "type": "anchor",
+            "text": "Tyskland ligger midt i Europa, mellom Frankrike og Polen, med kyst mot Nordsjøen og Østersjøen."
+          },
+          {
+            "id": "DEU.nb.2",
+            "type": "etymology",
+            "text": "Tysk og tyske Deutsch kommer fra det samme gamle ordet for «folket»."
+          },
+          {
+            "id": "DEU.nb.3",
+            "type": "sound",
+            "text": "Tyskland: «Tyss», sier alle langs Rhinen, så hele landet blir stille."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "DEU.cap.en.1",
+            "type": "anchor",
+            "text": "Berlin sits in the northeast of Germany, closer to Poland than to any other border."
+          },
+          {
+            "id": "DEU.cap.en.2",
+            "type": "story",
+            "text": "Berlin was divided by a wall during the Cold War and is now the capital of a reunited Germany."
+          }
+        ],
+        "nb": [
+          {
+            "id": "DEU.cap.nb.1",
+            "type": "anchor",
+            "text": "Berlin ligger nordøst i Tyskland, nærmere Polen enn noen annen grense."
+          },
+          {
+            "id": "DEU.cap.nb.2",
+            "type": "story",
+            "text": "Berlin var delt av en mur under den kalde krigen og er nå hovedstad i et samlet Tyskland."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Black, red and gold horizontal stripes. Belgium uses the same colors standing upright.",
+        "nb": "Svarte, røde og gule vannrette striper. Belgia har de samme fargene stående."
+      },
+      "facts": [
+        {
+          "id": "DEU.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Germany borders Denmark, Poland, Czechia, Austria, Switzerland, France, Luxembourg, Belgium and the Netherlands.",
+            "nb": "Tyskland grenser til Danmark, Polen, Tsjekkia, Østerrike, Sveits, Frankrike, Luxembourg, Belgia og Nederland."
+          }
+        },
+        {
+          "id": "DEU.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Rhine flows north through western Germany and reaches the North Sea through the Netherlands.",
+            "nb": "Rhinen renner nordover gjennom det vestlige Tyskland og når Nordsjøen gjennom Nederland."
+          }
+        },
+        {
+          "id": "DEU.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Germany got the North Sea island of Heligoland from Britain in a treaty that also dealt with Zanzibar.",
+            "nb": "Tyskland fikk øya Helgoland i Nordsjøen fra Storbritannia i en avtale som også gjaldt Zanzibar."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "FRA",
+      "hooks": {
+        "en": [
+          {
+            "id": "FRA.en.1",
+            "type": "shape",
+            "text": "France is nicknamed the Hexagon for its roughly six-sided outline."
+          },
+          {
+            "id": "FRA.en.2",
+            "type": "anchor",
+            "text": "France sits between the Atlantic and the Mediterranean, with Spain to the south and Germany to the east."
+          },
+          {
+            "id": "FRA.en.3",
+            "type": "contrast",
+            "text": "French Guiana in South America is part of France, so France also borders Brazil and Suriname."
+          }
+        ],
+        "nb": [
+          {
+            "id": "FRA.nb.1",
+            "type": "shape",
+            "text": "Frankrike kalles «sekskanten», l'Hexagone, etter den omtrent sekskantede formen."
+          },
+          {
+            "id": "FRA.nb.2",
+            "type": "anchor",
+            "text": "Frankrike ligger mellom Atlanterhavet og Middelhavet, med Spania i sør og Tyskland i øst."
+          },
+          {
+            "id": "FRA.nb.3",
+            "type": "sound",
+            "text": "Frankrike: en frank og rik mann kjøper Eiffeltårnet kontant."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "FRA.cap.en.1",
+            "type": "anchor",
+            "text": "Paris sits on the Seine in the north of France."
+          },
+          {
+            "id": "FRA.cap.en.2",
+            "type": "etymology",
+            "text": "Paris is named after the Parisii, a Gaulish tribe that lived on the Seine."
+          }
+        ],
+        "nb": [
+          {
+            "id": "FRA.cap.nb.1",
+            "type": "anchor",
+            "text": "Paris ligger ved Seinen nord i Frankrike."
+          },
+          {
+            "id": "FRA.cap.nb.2",
+            "type": "etymology",
+            "text": "Paris har navn etter parisierne, en gallisk stamme ved Seinen."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue, white and red vertical stripes, blue at the hoist. The Netherlands has red, white and blue lying flat.",
+        "nb": "Blå, hvite og røde loddrette striper, blått ved stangen. Nederland har rødt, hvitt og blått liggende."
+      },
+      "facts": [
+        {
+          "id": "FRA.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "In Europe, France borders Belgium, Luxembourg, Germany, Switzerland, Italy, Monaco, Spain and Andorra.",
+            "nb": "I Europa grenser Frankrike til Belgia, Luxembourg, Tyskland, Sveits, Italia, Monaco, Spania og Andorra."
+          }
+        },
+        {
+          "id": "FRA.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Through French Guiana, France has land borders with Brazil and Suriname in South America.",
+            "nb": "Gjennom Fransk Guyana har Frankrike landegrense mot Brasil og Surinam i Sør-Amerika."
+          }
+        },
+        {
+          "id": "FRA.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Thanks to its overseas territories, France spans more time zones than any other country.",
+            "nb": "Takket være områdene utenfor Europa strekker Frankrike seg over flere tidssoner enn noe annet land."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "LIE",
+      "hooks": {
+        "en": [
+          {
+            "id": "LIE.en.1",
+            "type": "anchor",
+            "text": "Liechtenstein is a narrow Alpine strip between Switzerland and Austria, along the Rhine."
+          },
+          {
+            "id": "LIE.en.2",
+            "type": "contrast",
+            "text": "Liechtenstein is doubly landlocked: it has no coast, and neither do any of its neighbors."
+          },
+          {
+            "id": "LIE.en.3",
+            "type": "sound",
+            "text": "Liechtenstein: a light shines from a stone above the Rhine valley."
+          }
+        ],
+        "nb": [
+          {
+            "id": "LIE.nb.1",
+            "type": "anchor",
+            "text": "Liechtenstein er en smal alpestripe mellom Sveits og Østerrike, langs Rhinen."
+          },
+          {
+            "id": "LIE.nb.2",
+            "type": "contrast",
+            "text": "Liechtenstein er dobbelt innestengt: landet har ingen kyst, og det har ingen av nabolandene heller."
+          },
+          {
+            "id": "LIE.nb.3",
+            "type": "sound",
+            "text": "Liechtenstein: lik en stein ligger landet klemt mellom Sveits og Østerrike."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "LIE.cap.en.1",
+            "type": "anchor",
+            "text": "Vaduz sits on the Rhine, facing Switzerland across the river."
+          },
+          {
+            "id": "LIE.cap.en.2",
+            "type": "story",
+            "text": "Vaduz Castle, high above the capital, is the home of the Prince of Liechtenstein."
+          }
+        ],
+        "nb": [
+          {
+            "id": "LIE.cap.nb.1",
+            "type": "anchor",
+            "text": "Vaduz ligger ved Rhinen, med Sveits på andre siden av elva."
+          },
+          {
+            "id": "LIE.cap.nb.2",
+            "type": "story",
+            "text": "Slottet høyt over Vaduz er hjemmet til fyrsten av Liechtenstein."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue over red with a gold crown near the hoist, added after the flag turned out to match Haiti's.",
+        "nb": "Blått over rødt med en gullkrone nær stangen, lagt til etter at flagget viste seg å være likt Haitis."
+      },
+      "facts": [
+        {
+          "id": "LIE.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Liechtenstein is landlocked and borders only Switzerland and Austria.",
+            "nb": "Liechtenstein er en innlandsstat og grenser bare til Sveits og Østerrike."
+          }
+        },
+        {
+          "id": "LIE.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Liechtenstein uses the Swiss franc as its currency.",
+            "nb": "Liechtenstein bruker sveitserfranc som valuta."
+          }
+        },
+        {
+          "id": "LIE.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Liechtenstein and Uzbekistan are the only doubly landlocked countries in the world.",
+            "nb": "Liechtenstein og Usbekistan er de eneste dobbelt innestengte landene i verden."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "LUX",
+      "hooks": {
+        "en": [
+          {
+            "id": "LUX.en.1",
+            "type": "anchor",
+            "text": "Luxembourg is landlocked, with no coast, wedged between Belgium, France and Germany."
+          },
+          {
+            "id": "LUX.en.2",
+            "type": "etymology",
+            "text": "Luxembourg comes from Lucilinburhuc, 'little castle'."
+          },
+          {
+            "id": "LUX.en.3",
+            "type": "sound",
+            "text": "Luxembourg: a luxury burger served on a plate between Belgium, France and Germany."
+          }
+        ],
+        "nb": [
+          {
+            "id": "LUX.nb.1",
+            "type": "anchor",
+            "text": "Luxembourg er en innlandsstat, et land uten kyst, klemt mellom Belgia, Frankrike og Tyskland."
+          },
+          {
+            "id": "LUX.nb.2",
+            "type": "etymology",
+            "text": "Luxembourg kommer av Lucilinburhuc, «den lille borgen»."
+          },
+          {
+            "id": "LUX.nb.3",
+            "type": "sound",
+            "text": "Luxembourg: en luksusborg med lukket port mellom Belgia, Frankrike og Tyskland."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "LUX.cap.en.1",
+            "type": "anchor",
+            "text": "Luxembourg City shares the country's name and sits above a gorge cut by the Alzette river."
+          },
+          {
+            "id": "LUX.cap.en.2",
+            "type": "story",
+            "text": "Luxembourg City is home to the Court of Justice of the European Union."
+          }
+        ],
+        "nb": [
+          {
+            "id": "LUX.cap.nb.1",
+            "type": "anchor",
+            "text": "Luxembourg by har samme navn som landet og ligger over en kløft gravd ut av elva Alzette."
+          },
+          {
+            "id": "LUX.cap.nb.2",
+            "type": "story",
+            "text": "EU-domstolen holder til i Luxembourg by."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, white and light blue horizontal stripes; the Netherlands has a darker blue.",
+        "nb": "Røde, hvite og lyseblå vannrette striper; Nederland har mørkere blått."
+      },
+      "facts": [
+        {
+          "id": "LUX.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Luxembourg borders Belgium, Germany and France.",
+            "nb": "Luxembourg grenser til Belgia, Tyskland og Frankrike."
+          }
+        },
+        {
+          "id": "LUX.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Luxembourgish, French and German are all official languages of Luxembourg.",
+            "nb": "Luxembourgsk, fransk og tysk er alle offisielle språk i Luxembourg."
+          }
+        },
+        {
+          "id": "LUX.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Luxembourg is the last grand duchy in the world, with a Grand Duke as head of state.",
+            "nb": "Luxembourg er verdens siste storhertugdømme, med en storhertug som statsoverhode."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "MCO",
+      "hooks": {
+        "en": [
+          {
+            "id": "MCO.en.1",
+            "type": "anchor",
+            "text": "Monaco is a sliver of coast on the French Riviera, close to the Italian border."
+          },
+          {
+            "id": "MCO.en.2",
+            "type": "contrast",
+            "text": "Monaco has a coast; San Marino and Liechtenstein, the other tiny states, do not."
+          },
+          {
+            "id": "MCO.en.3",
+            "type": "sound",
+            "text": "Monaco: a monocle drops into the harbour as a race car speeds past."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MCO.nb.1",
+            "type": "anchor",
+            "text": "Monaco er en smal kyststripe på den franske rivieraen, nær grensen til Italia."
+          },
+          {
+            "id": "MCO.nb.2",
+            "type": "contrast",
+            "text": "Monaco har kyst; de andre ministatene San Marino og Liechtenstein har ingen."
+          },
+          {
+            "id": "MCO.nb.3",
+            "type": "sound",
+            "text": "Monaco: monarken drikker kakao på kaia mens racerbilene suser forbi."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "MCO.cap.en.1",
+            "type": "anchor",
+            "text": "Monaco is a city-state, so its capital is usually given as Monaco itself."
+          },
+          {
+            "id": "MCO.cap.en.2",
+            "type": "story",
+            "text": "Monaco-Ville is the old town on the Rock, where the Prince's Palace stands."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MCO.cap.nb.1",
+            "type": "anchor",
+            "text": "Monaco er en bystat, og hovedstaden oppgis vanligvis som Monaco selv."
+          },
+          {
+            "id": "MCO.cap.nb.2",
+            "type": "story",
+            "text": "Monaco-Ville er gamlebyen på klippen, der fyrstens palass ligger."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red over white, like Indonesia's but with different proportions. Poland's is white over red.",
+        "nb": "Rødt over hvitt, som Indonesias, men med andre proporsjoner. Polens er hvitt over rødt."
+      },
+      "facts": [
+        {
+          "id": "MCO.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "France is the only country that borders Monaco, and Monaco faces the Mediterranean.",
+            "nb": "Frankrike er det eneste landet som grenser til Monaco, og Monaco vender mot Middelhavet."
+          }
+        },
+        {
+          "id": "MCO.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Monaco Grand Prix is raced on the city's ordinary streets.",
+            "nb": "Grand Prix-løpet i Monaco kjøres i byens vanlige gater."
+          }
+        },
+        {
+          "id": "MCO.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Monaco is smaller in area than Central Park in New York.",
+            "nb": "Monaco har mindre areal enn Central Park i New York."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "NLD",
+      "hooks": {
+        "en": [
+          {
+            "id": "NLD.en.1",
+            "type": "etymology",
+            "text": "Netherlands means 'low lands', and much of the country lies below sea level."
+          },
+          {
+            "id": "NLD.en.2",
+            "type": "anchor",
+            "text": "The Netherlands sits on the North Sea between Belgium and Germany."
+          },
+          {
+            "id": "NLD.en.3",
+            "type": "sound",
+            "text": "Netherlands: a nether world where cows graze below the sea, kept dry by dikes."
+          }
+        ],
+        "nb": [
+          {
+            "id": "NLD.nb.1",
+            "type": "etymology",
+            "text": "Nederland betyr «de lave landene», og mye av landet ligger under havnivå."
+          },
+          {
+            "id": "NLD.nb.2",
+            "type": "anchor",
+            "text": "Nederland ligger ved Nordsjøen mellom Belgia og Tyskland."
+          },
+          {
+            "id": "NLD.nb.3",
+            "type": "sound",
+            "text": "Nederland: alt går nedover, helt ned under havet, bak dikene."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "NLD.cap.en.1",
+            "type": "contrast",
+            "text": "Amsterdam is the capital under the constitution; The Hague is the seat of government and parliament."
+          },
+          {
+            "id": "NLD.cap.en.2",
+            "type": "etymology",
+            "text": "Amsterdam is named after a dam on the river Amstel."
+          },
+          {
+            "id": "NLD.cap.en.3",
+            "type": "anchor",
+            "text": "The Hague sits on the North Sea coast, home to the government, the parliament and the king's office."
+          }
+        ],
+        "nb": [
+          {
+            "id": "NLD.cap.nb.1",
+            "type": "contrast",
+            "text": "Amsterdam er hovedstaden ifølge grunnloven; Haag er sete for regjeringen og nasjonalforsamlingen."
+          },
+          {
+            "id": "NLD.cap.nb.2",
+            "type": "etymology",
+            "text": "Amsterdam har navn etter en demning på elva Amstel."
+          },
+          {
+            "id": "NLD.cap.nb.3",
+            "type": "anchor",
+            "text": "Haag ligger ved Nordsjøen og huser regjeringen, nasjonalforsamlingen og kongens kontor."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, white and blue horizontal stripes. Luxembourg's blue is lighter.",
+        "nb": "Røde, hvite og blå vannrette striper. Luxembourgs blå er lysere."
+      },
+      "facts": [
+        {
+          "id": "NLD.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "The Netherlands borders Belgium and Germany and has a long North Sea coast.",
+            "nb": "Nederland grenser til Belgia og Tyskland og har lang kyst mot Nordsjøen."
+          }
+        },
+        {
+          "id": "NLD.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Much of the Netherlands is polder, land won back from the sea or lakes and protected by dikes.",
+            "nb": "Mye av Nederland er polder, land vunnet fra havet eller innsjøer og beskyttet av diker."
+          }
+        },
+        {
+          "id": "NLD.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Aruba and Curaçao in the Caribbean are part of the Kingdom of the Netherlands.",
+            "nb": "Aruba og Curaçao i Karibia er en del av Kongeriket Nederland."
+          }
+        }
+      ]
+    }
+  ]
+}
