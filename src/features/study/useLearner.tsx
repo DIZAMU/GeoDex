@@ -1,5 +1,5 @@
 import { useLiveQuery } from "dexie-react-hooks";
-import { useMemo } from "react";
+import { createContext, type ReactNode, useContext, useMemo } from "react";
 import { useWorld } from "@/data/useWorld";
 import type { WorldData } from "@/data/world";
 import {
@@ -23,8 +23,14 @@ export type Learner = {
   scheduler: ReturnType<typeof schedulerFor>;
 };
 
-/** Everything the study screens need, live from IndexedDB. Null while loading. */
-export function useLearner(): Learner | null {
+const LearnerContext = createContext<Learner | null>(null);
+
+/**
+ * Loads everything the study screens need once, live from IndexedDB, above the router.
+ * Screens then render with data on the first frame of every navigation, so moving between
+ * them never shows a loading state.
+ */
+export function LearnerProvider({ children }: { children: ReactNode }) {
   const world = useWorld();
   const settings = useLiveQuery(() => db.settings.get(SETTINGS_ROW_ID), []);
   const device = useLiveQuery(() => db.deviceSettings.get(DEVICE_ROW_ID), []);
@@ -39,6 +45,17 @@ export function useLearner(): Learner | null {
     [retention, params],
   );
 
-  if (!world || !settings || !device || !stateRows || !events) return null;
-  return { world, settings, device, states, events, scheduler };
+  const learner = useMemo(
+    () =>
+      world && settings && device && stateRows && events
+        ? { world, settings, device, states, events, scheduler }
+        : null,
+    [world, settings, device, stateRows, events, states, scheduler],
+  );
+  return <LearnerContext.Provider value={learner}>{children}</LearnerContext.Provider>;
+}
+
+/** The learner from the nearest LearnerProvider. Null while it loads. */
+export function useLearner(): Learner | null {
+  return useContext(LearnerContext);
 }

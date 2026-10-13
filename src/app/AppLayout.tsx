@@ -9,6 +9,7 @@ function NavItem({ to, label }: { to: string; label: string }) {
     <NavLink
       to={to}
       end
+      viewTransition
       className={({ isActive }) =>
         cn(
           "flex min-h-11 items-center rounded-lg px-4 text-muted-foreground transition-colors duration-200 hover:bg-muted hover:text-foreground",
@@ -27,10 +28,10 @@ export function AppLayout() {
   const { t } = useTranslation();
   return (
     <div className="min-h-dvh">
-      <header className="sticky top-0 z-20 border-b border-border/60 bg-background/70 backdrop-blur-xl">
+      <header className="sticky top-0 z-20 [view-transition-name:site-header] border-b border-border/60 bg-background/70 backdrop-blur-xl">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-2 md:px-10">
           {/* The wordmark is artwork, never live text (assets/brand/BRAND.md). */}
-          <Link to="/" className="flex h-11 items-center rounded-lg">
+          <Link to="/" viewTransition className="flex h-11 items-center rounded-lg">
             <img src={lockup} alt={t("app.name")} className="brand-on-light h-7 w-auto" />
             <img src={lockupOnDark} alt={t("app.name")} className="brand-on-dark h-7 w-auto" />
           </Link>

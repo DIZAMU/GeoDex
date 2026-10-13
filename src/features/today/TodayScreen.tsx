@@ -8,6 +8,7 @@ import { type InputSetting, parseCardId } from "@/engine/types";
 import { isLocale } from "@/i18n/locales";
 import { WorldMap } from "@/map/WorldMap";
 import { Button } from "@/ui/button";
+import { Loader } from "@/ui/loader";
 import { Stat } from "@/ui/stat";
 import { ToggleGroup, ToggleGroupItem } from "@/ui/toggle-group";
 import { nameOf } from "../session/parts";
@@ -17,9 +18,8 @@ import { type Learner, useLearner } from "../study/useLearner";
 const INPUTS: readonly InputSetting[] = ["auto", "mc", "typing"];
 
 export function TodayScreen() {
-  const { t } = useTranslation();
   const learner = useLearner();
-  if (!learner) return <p className="p-8 text-muted-foreground">{t("common.loading")}</p>;
+  if (!learner) return <Loader />;
   return <Today learner={learner} />;
 }
 
@@ -59,7 +59,7 @@ function Today({ learner }: { learner: Learner }) {
           <>
             <p className="max-w-[60ch] text-lg text-muted-foreground">{t("today.setupBody")}</p>
             <Button asChild size="lg" className="group self-start" data-testid="setup">
-              <Link to={learner.settings.homeCountry ? "/placement" : "/onboarding"}>
+              <Link to={learner.settings.homeCountry ? "/placement" : "/onboarding"} viewTransition>
                 {t("today.setup")}
                 <ArrowRightIcon className="transition-transform duration-200 group-hover:translate-x-0.5" />
               </Link>
@@ -113,7 +113,7 @@ function Today({ learner }: { learner: Learner }) {
                 size="lg"
                 className="group h-14 self-stretch px-8 text-base sm:self-start"
                 data-testid="start"
-                onClick={() => navigate(`/session?input=${input}`)}
+                onClick={() => navigate(`/session?input=${input}`, { viewTransition: true })}
               >
                 {t("today.start")}
                 <ArrowRightIcon className="transition-transform duration-200 group-hover:translate-x-0.5" />
