@@ -1,0 +1,1484 @@
+{
+  "group": "039",
+  "entities": [
+    {
+      "entityId": "ALB",
+      "hooks": {
+        "en": [
+          {
+            "id": "ALB.en.1",
+            "type": "anchor",
+            "text": "Albania sits on the Adriatic and Ionian coasts, north of Greece and across a narrow strait from the heel of Italy."
+          },
+          {
+            "id": "ALB.en.2",
+            "type": "sound",
+            "text": "Albania: an albatross lands on the Adriatic beach just north of Greece."
+          },
+          {
+            "id": "ALB.en.3",
+            "type": "contrast",
+            "text": "Albania has a coast; its neighbors North Macedonia and Kosovo are landlocked, with no coast at all."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ALB.nb.1",
+            "type": "anchor",
+            "text": "Albania ligger ved Adriaterhavet og Det joniske hav, nord for Hellas og like over sundet fra hælen på Italia."
+          },
+          {
+            "id": "ALB.nb.2",
+            "type": "sound",
+            "text": "Albania: alle bananene på Balkan skylles i land på stranda i Albania."
+          },
+          {
+            "id": "ALB.nb.3",
+            "type": "contrast",
+            "text": "Albania har kyst, mens nabolandene Nord-Makedonia og Kosovo er innlandsstater, land uten kyst."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "ALB.cap.en.1",
+            "type": "anchor",
+            "text": "Tirana lies inland in central Albania, between the mountains and the Adriatic coast."
+          },
+          {
+            "id": "ALB.cap.en.2",
+            "type": "sound",
+            "text": "Tirana: picture a tiara balanced on a banana in the middle of Albania."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ALB.cap.nb.1",
+            "type": "anchor",
+            "text": "Tirana ligger i innlandet midt i Albania, mellom fjellene og Adriaterhavet."
+          },
+          {
+            "id": "ALB.cap.nb.2",
+            "type": "sound",
+            "text": "Tirana: ti traner lander på torget i hovedstaden i Albania."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A black double-headed eagle on red, the emblem linked to the medieval leader Skanderbeg.",
+        "nb": "En svart dobbeltørn på rødt, emblemet som knyttes til middelalderhelten Skanderbeg."
+      },
+      "facts": [
+        {
+          "id": "ALB.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Albania borders Greece, North Macedonia, Kosovo and Montenegro, and has a long coast on the sea to its west.",
+            "nb": "Albania grenser til Hellas, Nord-Makedonia, Kosovo og Montenegro, og har lang kyst mot havet i vest."
+          }
+        },
+        {
+          "id": "ALB.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Albanian lek is named after Alexander the Great, called Leka in Albanian.",
+            "nb": "Den albanske leken har navn etter Aleksander den store, som heter Leka på albansk."
+          }
+        },
+        {
+          "id": "ALB.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Concrete bunkers built under the communist regime still dot the Albanian countryside.",
+            "nb": "Betongbunkere bygget under kommuniststyret står fortsatt spredt rundt i Albania."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "AND",
+      "hooks": {
+        "en": [
+          {
+            "id": "AND.en.1",
+            "type": "anchor",
+            "text": "Andorra is a small mountain state in the eastern Pyrenees, with France to the north and Spain to the south."
+          },
+          {
+            "id": "AND.en.2",
+            "type": "sound",
+            "text": "Andorra: a stone door, 'an door', in a Pyrenees pass, with France on one side and Spain on the other."
+          },
+          {
+            "id": "AND.en.3",
+            "type": "contrast",
+            "text": "Andorra is landlocked, with no coast; Monaco, the other tiny state next to France, sits on the sea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "AND.nb.1",
+            "type": "anchor",
+            "text": "Andorra er en liten fjellstat i de østlige Pyreneene, med Frankrike i nord og Spania i sør."
+          },
+          {
+            "id": "AND.nb.2",
+            "type": "sound",
+            "text": "Andorra: «Ann, dra opp i fjellet», og Ann havner i et pass mellom Frankrike og Spania."
+          },
+          {
+            "id": "AND.nb.3",
+            "type": "contrast",
+            "text": "Andorra er en innlandsstat, et land uten kyst; Monaco, den andre ministaten ved Frankrike, ligger ved havet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "AND.cap.en.1",
+            "type": "etymology",
+            "text": "Andorra la Vella means 'Andorra the old' in Catalan."
+          },
+          {
+            "id": "AND.cap.en.2",
+            "type": "anchor",
+            "text": "Andorra la Vella sits in a Pyrenees valley, higher up than any other capital in Europe."
+          }
+        ],
+        "nb": [
+          {
+            "id": "AND.cap.nb.1",
+            "type": "etymology",
+            "text": "Andorra la Vella betyr «gamle Andorra» på katalansk."
+          },
+          {
+            "id": "AND.cap.nb.2",
+            "type": "anchor",
+            "text": "Andorra la Vella ligger i en dal i Pyreneene, høyere enn noen annen hovedstad i Europa."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue, yellow and red vertical stripes with a coat of arms in the middle; without the arms it would look like Romania's.",
+        "nb": "Blå, gule og røde loddrette striper med riksvåpen i midten; uten våpenet ville det ligne Romanias flagg."
+      },
+      "facts": [
+        {
+          "id": "AND.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Andorra is landlocked, with no coast, and borders only France and Spain.",
+            "nb": "Andorra er en innlandsstat uten kyst og grenser bare til Frankrike og Spania."
+          }
+        },
+        {
+          "id": "AND.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Catalan is the only official language of Andorra.",
+            "nb": "Katalansk er det eneste offisielle språket i Andorra."
+          }
+        },
+        {
+          "id": "AND.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Andorra has two co-princes as heads of state: the President of France and the Bishop of Urgell in Spain.",
+            "nb": "Andorra har to fyrster som statsoverhoder: Frankrikes president og biskopen av Urgell i Spania."
+          }
+        },
+        {
+          "id": "AND.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Andorra uses the euro without being a member of the European Union.",
+            "nb": "Andorra bruker euro uten å være medlem av EU."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "BIH",
+      "hooks": {
+        "en": [
+          {
+            "id": "BIH.en.1",
+            "type": "anchor",
+            "text": "Bosnia and Herzegovina is wrapped by Croatia on the north and west, with Serbia and Montenegro to the east."
+          },
+          {
+            "id": "BIH.en.2",
+            "type": "shape",
+            "text": "Bosnia and Herzegovina is a rough heart cupped inside Croatia's crescent."
+          },
+          {
+            "id": "BIH.en.3",
+            "type": "etymology",
+            "text": "Bosnia is named after the Bosna river; Herzegovina comes from herceg, duke, so 'the duke's land'."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BIH.nb.1",
+            "type": "anchor",
+            "text": "Bosnia-Hercegovina er omsluttet av Kroatia i nord og vest, med Serbia og Montenegro i øst."
+          },
+          {
+            "id": "BIH.nb.2",
+            "type": "shape",
+            "text": "Bosnia-Hercegovina er et skjevt hjerte som ligger inne i halvmånen Kroatia."
+          },
+          {
+            "id": "BIH.nb.3",
+            "type": "etymology",
+            "text": "Bosnia har navn etter elva Bosna; Hercegovina kommer av herceg, hertug, altså «hertugens land»."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "BIH.cap.en.1",
+            "type": "anchor",
+            "text": "Sarajevo sits in a valley on the Miljacka river, ringed by mountains."
+          },
+          {
+            "id": "BIH.cap.en.2",
+            "type": "story",
+            "text": "Archduke Franz Ferdinand was shot in Sarajevo, the event that set off the First World War."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BIH.cap.nb.1",
+            "type": "anchor",
+            "text": "Sarajevo ligger i en dal ved elva Miljacka, omgitt av fjell."
+          },
+          {
+            "id": "BIH.cap.nb.2",
+            "type": "story",
+            "text": "Erkehertug Franz Ferdinand ble skutt i Sarajevo, hendelsen som utløste første verdenskrig."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A yellow triangle on blue beside a diagonal row of white stars; the triangle is said to echo the country's shape.",
+        "nb": "En gul trekant på blått ved siden av en skrå rekke hvite stjerner; trekanten skal minne om landets form."
+      },
+      "facts": [
+        {
+          "id": "BIH.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Bosnia and Herzegovina borders Croatia, Serbia and Montenegro.",
+            "nb": "Bosnia-Hercegovina grenser til Kroatia, Serbia og Montenegro."
+          }
+        },
+        {
+          "id": "BIH.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Bosnian, Croatian and Serbian are all official languages of Bosnia and Herzegovina.",
+            "nb": "Bosnisk, kroatisk og serbisk er alle offisielle språk i Bosnia-Hercegovina."
+          }
+        },
+        {
+          "id": "BIH.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Bosnia and Herzegovina touches the Adriatic only at Neum, a short strip that splits the Croatian coast in two.",
+            "nb": "Bosnia-Hercegovina når Adriaterhavet bare ved Neum, en kort stripe som deler kysten av Kroatia i to."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "ESP",
+      "hooks": {
+        "en": [
+          {
+            "id": "ESP.en.1",
+            "type": "anchor",
+            "text": "Spain fills most of the Iberian Peninsula, with Portugal on its west side and France across the Pyrenees."
+          },
+          {
+            "id": "ESP.en.2",
+            "type": "shape",
+            "text": "Spain is a stretched bull's hide, with Portugal trimmed off its western edge."
+          },
+          {
+            "id": "ESP.en.3",
+            "type": "contrast",
+            "text": "Spain borders Portugal, France and Andorra; Portugal borders only Spain."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ESP.nb.1",
+            "type": "anchor",
+            "text": "Spania dekker det meste av Den iberiske halvøy, med Portugal i vest og Frankrike på andre siden av Pyreneene."
+          },
+          {
+            "id": "ESP.nb.2",
+            "type": "shape",
+            "text": "Spania er en utspent oksehud, med Portugal skåret av vestkanten."
+          },
+          {
+            "id": "ESP.nb.3",
+            "type": "sound",
+            "text": "Spania: et spann fullt av appelsiner, båret fra Valencia til Madrid."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "ESP.cap.en.1",
+            "type": "anchor",
+            "text": "Madrid sits near the geographic center of Spain, on the high Meseta plateau."
+          },
+          {
+            "id": "ESP.cap.en.2",
+            "type": "story",
+            "text": "King Philip the Second moved the royal court to Madrid, then a modest town in the middle of Spain."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ESP.cap.nb.1",
+            "type": "anchor",
+            "text": "Madrid ligger nær midtpunktet av Spania, på høysletta Meseta."
+          },
+          {
+            "id": "ESP.cap.nb.2",
+            "type": "story",
+            "text": "Kongen red inn midt i Spania og flyttet hele hoffet til Madrid, den gang en liten by."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, a yellow band twice as wide, then red, with the coat of arms toward the hoist.",
+        "nb": "Rødt, et dobbelt så bredt gult felt, så rødt, med riksvåpenet nær stangen."
+      },
+      "facts": [
+        {
+          "id": "ESP.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Spain borders Portugal, France and Andorra, and has coasts on both the Atlantic and the Mediterranean.",
+            "nb": "Spania grenser til Portugal, Frankrike og Andorra, og har kyst mot både Atlanterhavet og Middelhavet."
+          }
+        },
+        {
+          "id": "ESP.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Canary Islands, off the coast of northwest Africa, are part of Spain.",
+            "nb": "Kanariøyene, utenfor kysten av Nordvest-Afrika, hører til Spania."
+          }
+        },
+        {
+          "id": "ESP.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Spanish national anthem, the Marcha Real, has no official words.",
+            "nb": "Den spanske nasjonalsangen, Marcha Real, har ingen offisiell tekst."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "GRC",
+      "hooks": {
+        "en": [
+          {
+            "id": "GRC.en.1",
+            "type": "anchor",
+            "text": "Greece is the southern tip of the Balkans, with Albania, North Macedonia and Bulgaria to the north and Türkiye to the east."
+          },
+          {
+            "id": "GRC.en.2",
+            "type": "shape",
+            "text": "Greece is a hand reaching into the Mediterranean; the Peloponnese is its spread fingers."
+          },
+          {
+            "id": "GRC.en.3",
+            "type": "etymology",
+            "text": "Greeks call their country Hellas, the same name Norwegian uses."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GRC.nb.1",
+            "type": "anchor",
+            "text": "Hellas er sørspissen av Balkan, med Albania, Nord-Makedonia og Bulgaria i nord og Tyrkia i øst."
+          },
+          {
+            "id": "GRC.nb.2",
+            "type": "shape",
+            "text": "Peloponnes er en hånd med spredte fingre som stikker ned i Middelhavet fra Hellas."
+          },
+          {
+            "id": "GRC.nb.3",
+            "type": "sound",
+            "text": "Hellas: et helt lass med øyer, tømt ut i Egeerhavet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "GRC.cap.en.1",
+            "type": "etymology",
+            "text": "Athens is named for the goddess Athena, whose temple, the Parthenon, crowns the Acropolis."
+          },
+          {
+            "id": "GRC.cap.en.2",
+            "type": "anchor",
+            "text": "Athens sits on the Attica peninsula, next to the port of Piraeus."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GRC.cap.nb.1",
+            "type": "etymology",
+            "text": "Aten er oppkalt etter gudinnen Athena, og hennes tempel Parthenon står på Akropolis."
+          },
+          {
+            "id": "GRC.cap.nb.2",
+            "type": "anchor",
+            "text": "Aten ligger på halvøya Attika, like ved havnebyen Pireus."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue and white horizontal stripes with a white cross on a blue square in the upper corner.",
+        "nb": "Blå og hvite vannrette striper med et hvitt kors på blått felt i øvre hjørne."
+      },
+      "facts": [
+        {
+          "id": "GRC.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Greece borders Albania, North Macedonia, Bulgaria and Türkiye.",
+            "nb": "Hellas grenser til Albania, Nord-Makedonia, Bulgaria og Tyrkia."
+          }
+        },
+        {
+          "id": "GRC.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Mount Olympus, home of the gods in Greek myth, is the highest mountain in Greece.",
+            "nb": "Olympos, gudenes bolig i greske myter, er det høyeste fjellet i Hellas."
+          }
+        },
+        {
+          "id": "GRC.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Mount Athos in northern Greece is a self-governing community of monasteries that bars women from entering.",
+            "nb": "Athos nord i Hellas er et selvstyrt klosterområde der kvinner ikke får komme inn."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "HRV",
+      "hooks": {
+        "en": [
+          {
+            "id": "HRV.en.1",
+            "type": "anchor",
+            "text": "Croatia runs down the east coast of the Adriatic, from Slovenia to Montenegro."
+          },
+          {
+            "id": "HRV.en.2",
+            "type": "shape",
+            "text": "Croatia is a boomerang bent around Bosnia and Herzegovina."
+          },
+          {
+            "id": "HRV.en.3",
+            "type": "etymology",
+            "text": "The Dalmatian dog is named after Dalmatia, the southern coast of Croatia."
+          }
+        ],
+        "nb": [
+          {
+            "id": "HRV.nb.1",
+            "type": "anchor",
+            "text": "Kroatia strekker seg langs østkysten av Adriaterhavet, fra Slovenia til Montenegro."
+          },
+          {
+            "id": "HRV.nb.2",
+            "type": "shape",
+            "text": "Kroatia er en bumerang som er bøyd rundt Bosnia-Hercegovina."
+          },
+          {
+            "id": "HRV.nb.3",
+            "type": "sound",
+            "text": "Kroatia: kråka sitter på bymuren i Dubrovnik og knyter slips."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "HRV.cap.en.1",
+            "type": "anchor",
+            "text": "Zagreb is inland in the north of Croatia, near Slovenia and far from the coast."
+          },
+          {
+            "id": "HRV.cap.en.2",
+            "type": "sound",
+            "text": "Zagreb: zigzag up from the coast and grab the capital in the inland north."
+          }
+        ],
+        "nb": [
+          {
+            "id": "HRV.cap.nb.1",
+            "type": "anchor",
+            "text": "Zagreb ligger i innlandet nord i Kroatia, nær Slovenia og langt fra kysten."
+          },
+          {
+            "id": "HRV.cap.nb.2",
+            "type": "sound",
+            "text": "Zagreb: med sag og greip i hånda går du fra kysten opp til hovedstaden i nord."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, white and blue stripes with a red and white checkerboard shield in the middle.",
+        "nb": "Rødt, hvitt og blått med et rødt og hvitt sjakkbrettskjold i midten."
+      },
+      "facts": [
+        {
+          "id": "HRV.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Croatia borders Slovenia, Hungary, Serbia, Bosnia and Herzegovina and Montenegro.",
+            "nb": "Kroatia grenser til Slovenia, Ungarn, Serbia, Bosnia-Hercegovina og Montenegro."
+          }
+        },
+        {
+          "id": "HRV.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The French word cravate, a necktie, comes from the knotted scarves of Croat soldiers.",
+            "nb": "Det franske ordet cravate, slips, kommer av de knyttede halstørklærne til kroatiske soldater."
+          }
+        },
+        {
+          "id": "HRV.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Pelješac Bridge lets traffic reach Dubrovnik without crossing the Bosnian strip at Neum.",
+            "nb": "Pelješac-brua lar trafikken nå Dubrovnik uten å krysse den bosniske stripen ved Neum."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "ITA",
+      "hooks": {
+        "en": [
+          {
+            "id": "ITA.en.1",
+            "type": "shape",
+            "text": "Italy is a high-heeled boot stepping into the Mediterranean, about to kick Sicily."
+          },
+          {
+            "id": "ITA.en.2",
+            "type": "anchor",
+            "text": "Italy hangs south from the Alps, with France, Switzerland, Austria and Slovenia along its northern edge."
+          },
+          {
+            "id": "ITA.en.3",
+            "type": "anchor",
+            "text": "Italy surrounds two tiny countries: San Marino and Vatican City."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ITA.nb.1",
+            "type": "shape",
+            "text": "Italia er en støvel med høy hæl, klar til å sparke Sicilia ut i Middelhavet."
+          },
+          {
+            "id": "ITA.nb.2",
+            "type": "anchor",
+            "text": "Italia henger sørover fra Alpene, med Frankrike, Sveits, Østerrike og Slovenia i nord."
+          },
+          {
+            "id": "ITA.nb.3",
+            "type": "anchor",
+            "text": "To bittesmå land ligger inne i Italia: San Marino og Vatikanstaten."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "ITA.cap.en.1",
+            "type": "anchor",
+            "text": "Rome sits on the Tiber, roughly halfway down the west side of the boot."
+          },
+          {
+            "id": "ITA.cap.en.2",
+            "type": "story",
+            "text": "In Rome's founding legend, the twins Romulus and Remus were raised by a she-wolf."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ITA.cap.nb.1",
+            "type": "anchor",
+            "text": "Roma ligger ved Tiberen, omtrent midt på vestsiden av støvelen."
+          },
+          {
+            "id": "ITA.cap.nb.2",
+            "type": "story",
+            "text": "Ifølge sagnet ble tvillingene Romulus og Remus, Romas grunnleggere, fostret av en ulvinne."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green, white and red vertical stripes, green at the hoist. Mexico uses the same colors and adds an eagle.",
+        "nb": "Grønne, hvite og røde loddrette striper, grønt ved stangen. Mexico har de samme fargene og en ørn i tillegg."
+      },
+      "facts": [
+        {
+          "id": "ITA.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Italy borders France, Switzerland, Austria and Slovenia, and surrounds San Marino and Vatican City.",
+            "nb": "Italia grenser til Frankrike, Sveits, Østerrike og Slovenia, og omslutter San Marino og Vatikanstaten."
+          }
+        },
+        {
+          "id": "ITA.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Po is the longest river in Italy, flowing east across the north into the Adriatic.",
+            "nb": "Po er den lengste elva i Italia og renner østover gjennom nord til Adriaterhavet."
+          }
+        },
+        {
+          "id": "ITA.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Campione d'Italia is an Italian enclave, a piece of land wholly surrounded by another country, inside Switzerland.",
+            "nb": "Campione d'Italia er en italiensk enklave, et område helt omgitt av et annet land, inne i Sveits."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "MKD",
+      "hooks": {
+        "en": [
+          {
+            "id": "MKD.en.1",
+            "type": "anchor",
+            "text": "North Macedonia is landlocked, with no coast, sitting directly north of Greece."
+          },
+          {
+            "id": "MKD.en.2",
+            "type": "story",
+            "text": "North Macedonia added 'North' to its name to settle a long dispute with Greece over the name Macedonia."
+          },
+          {
+            "id": "MKD.en.3",
+            "type": "sound",
+            "text": "North Macedonia: a macadamia nut rolls north out of Greece and stops in the mountains."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MKD.nb.1",
+            "type": "anchor",
+            "text": "Nord-Makedonia er en innlandsstat, et land uten kyst, rett nord for Hellas."
+          },
+          {
+            "id": "MKD.nb.2",
+            "type": "story",
+            "text": "Nord-Makedonia la til «Nord» i navnet for å løse en lang navnestrid med Hellas."
+          },
+          {
+            "id": "MKD.nb.3",
+            "type": "sound",
+            "text": "Nord-Makedonia: en makk danser nordover fra Hellas og over grensen."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "MKD.cap.en.1",
+            "type": "anchor",
+            "text": "Skopje sits on the Vardar river in the north of the country, close to Kosovo."
+          },
+          {
+            "id": "MKD.cap.en.2",
+            "type": "story",
+            "text": "Mother Teresa was born in Skopje, and the city has a memorial house for her."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MKD.cap.nb.1",
+            "type": "anchor",
+            "text": "Skopje ligger ved elva Vardar nord i landet, nær Kosovo."
+          },
+          {
+            "id": "MKD.cap.nb.2",
+            "type": "story",
+            "text": "Mor Teresa ble født i Skopje, og byen har et minnehus for henne."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A yellow sun with eight widening rays on a red field.",
+        "nb": "En gul sol med åtte stråler som vider seg ut, på rødt felt."
+      },
+      "facts": [
+        {
+          "id": "MKD.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "North Macedonia borders Serbia, Kosovo, Bulgaria, Greece and Albania.",
+            "nb": "Nord-Makedonia grenser til Serbia, Kosovo, Bulgaria, Hellas og Albania."
+          }
+        },
+        {
+          "id": "MKD.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Macedonian and Albanian are both official languages of North Macedonia.",
+            "nb": "Makedonsk og albansk er begge offisielle språk i Nord-Makedonia."
+          }
+        },
+        {
+          "id": "MKD.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Lake Ohrid, shared with Albania, is one of the oldest lakes in Europe.",
+            "nb": "Ohridsjøen, som Nord-Makedonia deler med Albania, er en av de eldste innsjøene i Europa."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "MLT",
+      "hooks": {
+        "en": [
+          {
+            "id": "MLT.en.1",
+            "type": "anchor",
+            "text": "Malta is an archipelago, a group of islands, south of Sicily in the middle of the Mediterranean."
+          },
+          {
+            "id": "MLT.en.2",
+            "type": "sound",
+            "text": "Malta: a sack of malt shipped to the island south of Sicily."
+          },
+          {
+            "id": "MLT.en.3",
+            "type": "story",
+            "text": "Malta was a British naval base until independence, and English is still an official language there."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MLT.nb.1",
+            "type": "anchor",
+            "text": "Malta er en øygruppe, en samling øyer, sør for Sicilia midt i Middelhavet."
+          },
+          {
+            "id": "MLT.nb.2",
+            "type": "sound",
+            "text": "Malta: malt til ølbryggingen fraktes med båt til øya sør for Sicilia."
+          },
+          {
+            "id": "MLT.nb.3",
+            "type": "story",
+            "text": "Malta var britisk marinebase fram til selvstendigheten, og engelsk er fortsatt offisielt språk der."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "MLT.cap.en.1",
+            "type": "story",
+            "text": "Valletta is named after Jean de Valette, Grand Master of the Knights who held Malta against an Ottoman siege."
+          },
+          {
+            "id": "MLT.cap.en.2",
+            "type": "sound",
+            "text": "Valletta: a valet parks your boat in the Grand Harbour."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MLT.cap.nb.1",
+            "type": "story",
+            "text": "Valletta er oppkalt etter Jean de Valette, stormesteren som forsvarte Malta mot en osmansk beleiring."
+          },
+          {
+            "id": "MLT.cap.nb.2",
+            "type": "sound",
+            "text": "Valletta: en valp lett som en fjær hopper i land i havna."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "White and red halves with the George Cross, a British award, in the upper corner of the white half.",
+        "nb": "Hvit og rød halvdel med Georgskorset, en britisk utmerkelse, i øvre hjørne av den hvite halvdelen."
+      },
+      "facts": [
+        {
+          "id": "MLT.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Malta has no land borders; the Mediterranean surrounds it.",
+            "nb": "Malta har ingen landegrenser; Middelhavet omgir landet."
+          }
+        },
+        {
+          "id": "MLT.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Maltese and English are both official languages of Malta.",
+            "nb": "Maltesisk og engelsk er begge offisielle språk på Malta."
+          }
+        },
+        {
+          "id": "MLT.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Maltese is the only official EU language that descends from Arabic, and it is written in the Latin alphabet.",
+            "nb": "Maltesisk er det eneste offisielle EU-språket som stammer fra arabisk, og det skrives med latinske bokstaver."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "MNE",
+      "hooks": {
+        "en": [
+          {
+            "id": "MNE.en.1",
+            "type": "etymology",
+            "text": "Montenegro means 'black mountain', after the dark peaks above its coast."
+          },
+          {
+            "id": "MNE.en.2",
+            "type": "anchor",
+            "text": "Montenegro sits on the Adriatic between Croatia and Albania."
+          },
+          {
+            "id": "MNE.en.3",
+            "type": "sound",
+            "text": "Montenegro: a monster made of black rock rises out of the Adriatic."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MNE.nb.1",
+            "type": "etymology",
+            "text": "Montenegro betyr «det svarte fjellet», på serbisk Crna Gora."
+          },
+          {
+            "id": "MNE.nb.2",
+            "type": "anchor",
+            "text": "Montenegro ligger ved Adriaterhavet mellom Kroatia og Albania."
+          },
+          {
+            "id": "MNE.nb.3",
+            "type": "sound",
+            "text": "Montenegro: en montør klatrer opp på et svart fjell ved Adriaterhavet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "MNE.cap.en.1",
+            "type": "etymology",
+            "text": "Podgorica means 'below the small hill', after the hill Gorica."
+          },
+          {
+            "id": "MNE.cap.en.2",
+            "type": "contrast",
+            "text": "Podgorica is the capital, but Cetinje keeps the title of old royal capital."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MNE.cap.nb.1",
+            "type": "etymology",
+            "text": "Podgorica betyr «under den lille åsen», etter åsen Gorica."
+          },
+          {
+            "id": "MNE.cap.nb.2",
+            "type": "contrast",
+            "text": "Podgorica er hovedstaden, men Cetinje har tittelen gammel kongelig hovedstad."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A red field with a gold border and a golden double-headed eagle in the middle.",
+        "nb": "Rødt felt med gullkant og en tohodet gullørn i midten."
+      },
+      "facts": [
+        {
+          "id": "MNE.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Montenegro borders Croatia, Bosnia and Herzegovina, Serbia, Kosovo and Albania.",
+            "nb": "Montenegro grenser til Kroatia, Bosnia-Hercegovina, Serbia, Kosovo og Albania."
+          }
+        },
+        {
+          "id": "MNE.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Montenegro uses the euro even though it is not a member of the European Union.",
+            "nb": "Montenegro bruker euro selv om landet ikke er medlem av EU."
+          }
+        },
+        {
+          "id": "MNE.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Bay of Kotor looks like a fjord, but it is a drowned river canyon.",
+            "nb": "Kotorbukta ser ut som en fjord, men er en druknet elvekløft."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "PRT",
+      "hooks": {
+        "en": [
+          {
+            "id": "PRT.en.1",
+            "type": "anchor",
+            "text": "Portugal is the western strip of the Iberian Peninsula, with Spain as its only neighbor."
+          },
+          {
+            "id": "PRT.en.2",
+            "type": "etymology",
+            "text": "Portugal takes its name from Portus Cale, the Roman port near today's Porto."
+          },
+          {
+            "id": "PRT.en.3",
+            "type": "shape",
+            "text": "Portugal is a narrow upright rectangle glued to the Atlantic side of Spain."
+          }
+        ],
+        "nb": [
+          {
+            "id": "PRT.nb.1",
+            "type": "anchor",
+            "text": "Portugal er den vestlige stripen av Den iberiske halvøy, med Spania som eneste nabo."
+          },
+          {
+            "id": "PRT.nb.2",
+            "type": "etymology",
+            "text": "Portugal har navn etter Portus Cale, romernes havn ved dagens Porto."
+          },
+          {
+            "id": "PRT.nb.3",
+            "type": "sound",
+            "text": "Portugal: en gal hane står i porten og galer ut mot Atlanterhavet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "PRT.cap.en.1",
+            "type": "anchor",
+            "text": "Lisbon sits where the Tagus river meets the Atlantic."
+          },
+          {
+            "id": "PRT.cap.en.2",
+            "type": "story",
+            "text": "An earthquake and tsunami destroyed much of Lisbon, and the Baixa district was rebuilt on a grid."
+          }
+        ],
+        "nb": [
+          {
+            "id": "PRT.cap.nb.1",
+            "type": "anchor",
+            "text": "Lisboa ligger der elva Tejo møter Atlanterhavet."
+          },
+          {
+            "id": "PRT.cap.nb.2",
+            "type": "story",
+            "text": "Et jordskjelv og en flodbølge ødela store deler av Lisboa, og bydelen Baixa ble bygd opp igjen i rutenett."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green and red, split unevenly, with an armillary sphere and shield on the dividing line.",
+        "nb": "Grønt og rødt, ujevnt delt, med en armillarsfære og et skjold på skillelinjen."
+      },
+      "facts": [
+        {
+          "id": "PRT.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Spain is the only country that borders Portugal; the rest of Portugal faces the Atlantic.",
+            "nb": "Spania er det eneste landet som grenser til Portugal; resten av Portugal vender mot Atlanterhavet."
+          }
+        },
+        {
+          "id": "PRT.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Azores and Madeira, island groups in the Atlantic, are part of Portugal.",
+            "nb": "Asorene og Madeira, øygrupper i Atlanterhavet, hører til Portugal."
+          }
+        },
+        {
+          "id": "PRT.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Cabo da Roca in Portugal is the westernmost point of mainland Europe.",
+            "nb": "Cabo da Roca i Portugal er det vestligste punktet på fastlands-Europa."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "SMR",
+      "hooks": {
+        "en": [
+          {
+            "id": "SMR.en.1",
+            "type": "anchor",
+            "text": "San Marino is an enclave, a country wholly surrounded by another, inside northeastern Italy."
+          },
+          {
+            "id": "SMR.en.2",
+            "type": "story",
+            "text": "San Marino traces itself to a stonemason named Marinus and calls itself the oldest surviving republic."
+          },
+          {
+            "id": "SMR.en.3",
+            "type": "sound",
+            "text": "San Marino: no sandy marina here, just a mountain with three towers in the middle of Italy."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SMR.nb.1",
+            "type": "anchor",
+            "text": "San Marino er en enklave, et land helt omgitt av et annet, inne i det nordøstlige Italia."
+          },
+          {
+            "id": "SMR.nb.2",
+            "type": "story",
+            "text": "Ifølge tradisjonen ble San Marino grunnlagt av steinhoggeren Marinus, og staten kaller seg verdens eldste republikk."
+          },
+          {
+            "id": "SMR.nb.3",
+            "type": "sound",
+            "text": "San Marino: ingen marina her, bare et fjell med tre tårn midt inne i Italia."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "SMR.cap.en.1",
+            "type": "anchor",
+            "text": "The capital, also called San Marino, sits on top of Monte Titano."
+          },
+          {
+            "id": "SMR.cap.en.2",
+            "type": "etymology",
+            "text": "San Marino, both country and capital, is named after Saint Marinus."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SMR.cap.nb.1",
+            "type": "anchor",
+            "text": "Hovedstaden, også kalt San Marino, ligger på toppen av fjellet Monte Titano."
+          },
+          {
+            "id": "SMR.cap.nb.2",
+            "type": "etymology",
+            "text": "Både landet og hovedstaden San Marino har navn etter helgenen Marinus."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "White over light blue, with a coat of arms showing three towers on three peaks.",
+        "nb": "Hvitt over lyseblått, med et våpen som viser tre tårn på tre fjelltopper."
+      },
+      "facts": [
+        {
+          "id": "SMR.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "San Marino is landlocked, with no coast, and Italy surrounds it on every side.",
+            "nb": "San Marino er en innlandsstat uten kyst, og Italia omgir landet på alle kanter."
+          }
+        },
+        {
+          "id": "SMR.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Italian is the official language of San Marino.",
+            "nb": "Italiensk er det offisielle språket i San Marino."
+          }
+        },
+        {
+          "id": "SMR.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Only San Marino, Vatican City and Lesotho are countries wholly surrounded by a single other country.",
+            "nb": "Bare San Marino, Vatikanstaten og Lesotho er land som er helt omgitt av ett annet land."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "SRB",
+      "hooks": {
+        "en": [
+          {
+            "id": "SRB.en.1",
+            "type": "anchor",
+            "text": "Serbia is landlocked, with no coast, in the middle of the Balkans, north of North Macedonia."
+          },
+          {
+            "id": "SRB.en.2",
+            "type": "contrast",
+            "text": "Serbia has no coast; Montenegro, which split from it, kept the Adriatic shore."
+          },
+          {
+            "id": "SRB.en.3",
+            "type": "sound",
+            "text": "Serbia: a giant server pours the Danube onto a tray in the middle of the Balkans."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SRB.nb.1",
+            "type": "anchor",
+            "text": "Serbia er en innlandsstat, et land uten kyst, midt på Balkan, nord for Nord-Makedonia."
+          },
+          {
+            "id": "SRB.nb.2",
+            "type": "contrast",
+            "text": "Serbia har ingen kyst; Montenegro, som skilte lag med Serbia, fikk kysten mot Adriaterhavet."
+          },
+          {
+            "id": "SRB.nb.3",
+            "type": "sound",
+            "text": "Serbia: «Ser bia?», spør birøkteren og peker på bikubene ved Donau."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "SRB.cap.en.1",
+            "type": "anchor",
+            "text": "Belgrade sits where the Sava flows into the Danube."
+          },
+          {
+            "id": "SRB.cap.en.2",
+            "type": "etymology",
+            "text": "Belgrade, Beograd in Serbian, means 'white city'."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SRB.cap.nb.1",
+            "type": "anchor",
+            "text": "Beograd ligger der Sava renner ut i Donau."
+          },
+          {
+            "id": "SRB.cap.nb.2",
+            "type": "etymology",
+            "text": "Beograd betyr «den hvite byen», med beo for hvit og grad for by."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, blue and white stripes from the top, with the coat of arms toward the hoist. Russia's has the same colors in reverse.",
+        "nb": "Røde, blå og hvite striper ovenfra, med riksvåpenet nær stangen. Russlands flagg har de samme fargene i motsatt rekkefølge."
+      },
+      "facts": [
+        {
+          "id": "SRB.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Serbia borders Hungary, Romania, Bulgaria, North Macedonia, Kosovo, Montenegro, Bosnia and Herzegovina and Croatia.",
+            "nb": "Serbia grenser til Ungarn, Romania, Bulgaria, Nord-Makedonia, Kosovo, Montenegro, Bosnia-Hercegovina og Kroatia."
+          }
+        },
+        {
+          "id": "SRB.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Serbian constitution makes Cyrillic the official script, though the Latin alphabet is widely used too.",
+            "nb": "Den serbiske grunnloven gjør det kyrilliske alfabetet offisielt, men det latinske brukes også mye."
+          }
+        },
+        {
+          "id": "SRB.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The airport in Belgrade is named after the inventor Nikola Tesla.",
+            "nb": "Flyplassen i Beograd har navn etter oppfinneren Nikola Tesla."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "SVN",
+      "hooks": {
+        "en": [
+          {
+            "id": "SVN.en.1",
+            "type": "contrast",
+            "text": "Slovenia has a short Adriatic coast and borders Italy; Slovakia has neither."
+          },
+          {
+            "id": "SVN.en.2",
+            "type": "anchor",
+            "text": "Slovenia sits at the top of the Adriatic, between Italy, Austria, Hungary and Croatia."
+          },
+          {
+            "id": "SVN.en.3",
+            "type": "sound",
+            "text": "Slovenia: a sloth on skis glides slowly down the Julian Alps toward the sea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SVN.nb.1",
+            "type": "contrast",
+            "text": "Slovenia har en kort kyst mot Adriaterhavet og grenser til Italia; Slovakia har ingen av delene."
+          },
+          {
+            "id": "SVN.nb.2",
+            "type": "anchor",
+            "text": "Slovenia ligger innerst i Adriaterhavet, mellom Italia, Østerrike, Ungarn og Kroatia."
+          },
+          {
+            "id": "SVN.nb.3",
+            "type": "sound",
+            "text": "Slovenia: sløve venner ligger og slapper av ved Bledsjøen."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "SVN.cap.en.1",
+            "type": "anchor",
+            "text": "Ljubljana sits in the middle of Slovenia, on the Ljubljanica river."
+          },
+          {
+            "id": "SVN.cap.en.2",
+            "type": "story",
+            "text": "The dragon is the symbol of Ljubljana, and four dragons guard its Dragon Bridge."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SVN.cap.nb.1",
+            "type": "anchor",
+            "text": "Ljubljana ligger midt i Slovenia, ved elva Ljubljanica."
+          },
+          {
+            "id": "SVN.cap.nb.2",
+            "type": "story",
+            "text": "Dragen er bysymbolet i Ljubljana, og fire drager vokter Dragebroen."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "White, blue and red stripes with a shield showing the three peaks of Triglav. Slovakia's shield shows a double cross.",
+        "nb": "Hvite, blå og røde striper med et skjold som viser de tre toppene på Triglav. Slovakias skjold har et dobbeltkors."
+      },
+      "facts": [
+        {
+          "id": "SVN.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Slovenia borders Italy, Austria, Hungary and Croatia, and has a short coast on the Adriatic.",
+            "nb": "Slovenia grenser til Italia, Østerrike, Ungarn og Kroatia, og har en kort kyst mot Adriaterhavet."
+          }
+        },
+        {
+          "id": "SVN.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Triglav, the highest mountain in Slovenia, appears on the national flag.",
+            "nb": "Triglav, det høyeste fjellet i Slovenia, er avbildet på flagget."
+          }
+        },
+        {
+          "id": "SVN.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Lipizzaner horses are named after Lipica, a village in Slovenia where the breed was developed.",
+            "nb": "Lipizzanerhester har navn etter Lipica, en landsby i Slovenia der rasen ble utviklet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "VAT",
+      "hooks": {
+        "en": [
+          {
+            "id": "VAT.en.1",
+            "type": "anchor",
+            "text": "Vatican City is an enclave, a state wholly surrounded by another, inside the city of Rome."
+          },
+          {
+            "id": "VAT.en.2",
+            "type": "contrast",
+            "text": "Vatican City is the smallest country in the world by area; Monaco comes next."
+          },
+          {
+            "id": "VAT.en.3",
+            "type": "story",
+            "text": "The Pope lives in Vatican City, guarded by the Swiss Guard in striped uniforms."
+          }
+        ],
+        "nb": [
+          {
+            "id": "VAT.nb.1",
+            "type": "anchor",
+            "text": "Vatikanstaten er en enklave, en stat helt omgitt av en annen, midt inne i Roma."
+          },
+          {
+            "id": "VAT.nb.2",
+            "type": "contrast",
+            "text": "Vatikanstaten er verdens minste land i areal; Monaco er nummer to."
+          },
+          {
+            "id": "VAT.nb.3",
+            "type": "sound",
+            "text": "Vatikanstaten: «Hva tikker?», spør paven, og det er klokka i Peterskirken."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "VAT.cap.en.1",
+            "type": "anchor",
+            "text": "Vatican City is a city-state: the country and its capital are the same place."
+          },
+          {
+            "id": "VAT.cap.en.2",
+            "type": "story",
+            "text": "St Peter's Basilica in Vatican City stands over what tradition holds is the tomb of the apostle Peter."
+          }
+        ],
+        "nb": [
+          {
+            "id": "VAT.cap.nb.1",
+            "type": "anchor",
+            "text": "Vatikanstaten er en bystat: landet og hovedstaden er samme sted."
+          },
+          {
+            "id": "VAT.cap.nb.2",
+            "type": "story",
+            "text": "Peterskirken i Vatikanstaten står over det som etter tradisjonen er graven til apostelen Peter."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Square, yellow and white halves, with crossed keys and the papal tiara on the white half.",
+        "nb": "Kvadratisk, gul og hvit halvdel, med korslagte nøkler og pavekronen på den hvite halvdelen."
+      },
+      "facts": [
+        {
+          "id": "VAT.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Vatican City is landlocked and wholly surrounded by Italy, inside Rome.",
+            "nb": "Vatikanstaten er en innlandsstat og er helt omgitt av Italia, inne i Roma."
+          }
+        },
+        {
+          "id": "VAT.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Italian and Latin are official languages of Vatican City.",
+            "nb": "Italiensk og latin er offisielle språk i Vatikanstaten."
+          }
+        },
+        {
+          "id": "VAT.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Members of the Swiss Guard, the Pope's soldiers, must be Swiss citizens.",
+            "nb": "Medlemmene av Sveitsergarden, pavens soldater, må være sveitsiske statsborgere."
+          }
+        }
+      ]
+    }
+  ]
+}
