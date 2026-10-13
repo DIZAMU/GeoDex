@@ -1,0 +1,505 @@
+{
+  "group": "057",
+  "entities": [
+    {
+      "entityId": "FSM",
+      "hooks": {
+        "en": [
+          {
+            "id": "FSM.en.1",
+            "type": "anchor",
+            "text": "Micronesia stretches across the western Pacific, east of the Philippines and north of New Guinea."
+          },
+          {
+            "id": "FSM.en.2",
+            "type": "contrast",
+            "text": "Micronesia is both a region and a country; the country is the Federated States, east of Palau."
+          },
+          {
+            "id": "FSM.en.3",
+            "type": "etymology",
+            "text": "Micronesia means 'small islands', from Greek."
+          },
+          {
+            "id": "FSM.en.4",
+            "type": "sound",
+            "text": "Micronesia: you need a microscope to spot its islands on a map of the Pacific."
+          }
+        ],
+        "nb": [
+          {
+            "id": "FSM.nb.1",
+            "type": "anchor",
+            "text": "Mikronesiaføderasjonen ligger i det vestlige Stillehavet, øst for Filippinene og nord for Ny-Guinea."
+          },
+          {
+            "id": "FSM.nb.2",
+            "type": "contrast",
+            "text": "Mikronesia er både en region og et land; landet heter Mikronesiaføderasjonen og ligger øst for Palau."
+          },
+          {
+            "id": "FSM.nb.3",
+            "type": "etymology",
+            "text": "Mikronesia betyr «små øyer», fra gresk."
+          },
+          {
+            "id": "FSM.nb.4",
+            "type": "sound",
+            "text": "Mikronesiaføderasjonen: du trenger mikroskop for å finne øyene på kartet over Stillehavet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "FSM.cap.en.1",
+            "type": "anchor",
+            "text": "Palikir is on the island of Pohnpei, inland from Kolonia, the old capital."
+          },
+          {
+            "id": "FSM.cap.en.2",
+            "type": "sound",
+            "text": "Palikir: your pal Kir, waving from the rain forest on Pohnpei."
+          }
+        ],
+        "nb": [
+          {
+            "id": "FSM.cap.nb.1",
+            "type": "anchor",
+            "text": "Palikir ligger på øya Pohnpei, inne i landet fra Kolonia, den gamle hovedstaden."
+          },
+          {
+            "id": "FSM.cap.nb.2",
+            "type": "sound",
+            "text": "Palikir: en pall med kirsebær som står og blir våt i regnskogen på Pohnpei."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Light blue with four white stars set in a diamond, one for each state.",
+        "nb": "Lyseblått med fire hvite stjerner i en rombe, én for hver delstat."
+      },
+      "facts": [
+        {
+          "id": "FSM.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "The Federated States of Micronesia has no land borders; it is spread over many islands.",
+            "nb": "Mikronesiaføderasjonen har ingen landegrenser; landet er spredt over mange øyer."
+          }
+        },
+        {
+          "id": "FSM.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "The Federated States of Micronesia uses the US dollar.",
+            "nb": "Mikronesiaføderasjonen bruker amerikanske dollar."
+          }
+        },
+        {
+          "id": "FSM.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Yap, one of the states, is known for rai stones: large stone discs used as money.",
+            "nb": "Yap, en av delstatene, er kjent for raisteiner: store steinskiver brukt som penger."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "KIR",
+      "hooks": {
+        "en": [
+          {
+            "id": "KIR.en.1",
+            "type": "anchor",
+            "text": "Kiribati straddles the equator in the central Pacific, spread over island groups far apart from each other."
+          },
+          {
+            "id": "KIR.en.2",
+            "type": "etymology",
+            "text": "Kiribati is the local spelling of 'Gilberts', and is pronounced roughly 'Kiribas'."
+          },
+          {
+            "id": "KIR.en.3",
+            "type": "story",
+            "text": "Kiribati moved the International Date Line so the whole country shares one date."
+          }
+        ],
+        "nb": [
+          {
+            "id": "KIR.nb.1",
+            "type": "anchor",
+            "text": "Kiribati ligger på begge sider av ekvator midt i Stillehavet, spredt over øygrupper, samlinger av øyer, langt fra hverandre."
+          },
+          {
+            "id": "KIR.nb.2",
+            "type": "etymology",
+            "text": "Kiribati er den lokale skrivemåten for «Gilberts», og uttales omtrent «Kiribas»."
+          },
+          {
+            "id": "KIR.nb.3",
+            "type": "story",
+            "text": "Kiribati flyttet datogrensen slik at hele landet har samme dato."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "KIR.cap.en.1",
+            "type": "anchor",
+            "text": "South Tarawa is the string of islets on the south side of Tarawa, an atoll: a ring of coral around a lagoon."
+          },
+          {
+            "id": "KIR.cap.en.2",
+            "type": "sound",
+            "text": "Tarawa: 'tear a wave': a surfer tearing along the reef around the lagoon of Tarawa."
+          }
+        ],
+        "nb": [
+          {
+            "id": "KIR.cap.nb.1",
+            "type": "anchor",
+            "text": "South Tarawa er rekken av småøyer på sørsiden av Tarawa, en atoll: en ring av korall rundt en lagune."
+          },
+          {
+            "id": "KIR.cap.nb.2",
+            "type": "sound",
+            "text": "Tarawa: en vase full av tare fra lagunen, en «tare-wa», på bordet i South Tarawa."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A gold frigatebird flies over a rising sun, above wavy blue and white stripes.",
+        "nb": "En gul fregattfugl flyr over en oppgående sol, over bølgete blå og hvite striper."
+      },
+      "facts": [
+        {
+          "id": "KIR.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Kiribati has no land borders; it is made up of atolls and islands.",
+            "nb": "Kiribati har ingen landegrenser; landet består av atoller og øyer."
+          }
+        },
+        {
+          "id": "KIR.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "English and Gilbertese are the official languages of Kiribati.",
+            "nb": "Engelsk og kiribatisk er de offisielle språkene på Kiribati."
+          }
+        },
+        {
+          "id": "KIR.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Kiribati has territory in the northern, southern, eastern and western hemispheres at once.",
+            "nb": "Kiribati har landområder på den nordlige, sørlige, østlige og vestlige halvkule samtidig."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "MHL",
+      "hooks": {
+        "en": [
+          {
+            "id": "MHL.en.1",
+            "type": "anchor",
+            "text": "The Marshall Islands lie in the central Pacific, north of Kiribati and east of the Federated States of Micronesia."
+          },
+          {
+            "id": "MHL.en.2",
+            "type": "etymology",
+            "text": "The Marshall Islands are named after John Marshall, a British captain who sailed past them."
+          },
+          {
+            "id": "MHL.en.3",
+            "type": "story",
+            "text": "Bikini Atoll, a ring-shaped coral island in the Marshall Islands, gave its name to the swimsuit."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MHL.nb.1",
+            "type": "anchor",
+            "text": "Marshalløyene ligger i det sentrale Stillehavet, nord for Kiribati og øst for Mikronesiaføderasjonen."
+          },
+          {
+            "id": "MHL.nb.2",
+            "type": "etymology",
+            "text": "Marshalløyene er oppkalt etter John Marshall, en britisk kaptein som seilte forbi."
+          },
+          {
+            "id": "MHL.nb.3",
+            "type": "story",
+            "text": "Bikiniatollen, en ringformet koralløy på Marshalløyene, ga navn til badedrakten."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "MHL.cap.en.1",
+            "type": "anchor",
+            "text": "Majuro is an atoll, a ring of coral islets around a lagoon, in the southeast of the Marshall Islands."
+          },
+          {
+            "id": "MHL.cap.en.2",
+            "type": "sound",
+            "text": "Majuro: a major in full uniform marching round and round a coral lagoon."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MHL.cap.nb.1",
+            "type": "anchor",
+            "text": "Majuro er en atoll, en ring av korallholmer rundt en lagune, sørøst på Marshalløyene."
+          },
+          {
+            "id": "MHL.cap.nb.2",
+            "type": "sound",
+            "text": "Majuro: en major i uniform som marsjerer rundt og rundt lagunen."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue with orange and white diagonal rays widening toward the top right, and a white star with long and short points.",
+        "nb": "Blått med oransje og hvite skrå stråler som vider seg ut mot øvre høyre hjørne, og en hvit stjerne med lange og korte tagger."
+      },
+      "facts": [
+        {
+          "id": "MHL.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "The Marshall Islands have no land borders; the country is made up of atolls and islands.",
+            "nb": "Marshalløyene har ingen landegrenser; landet består av atoller og øyer."
+          }
+        },
+        {
+          "id": "MHL.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Marshallese and English are the official languages of the Marshall Islands.",
+            "nb": "Marshallesisk og engelsk er de offisielle språkene på Marshalløyene."
+          }
+        },
+        {
+          "id": "MHL.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The United States tested nuclear weapons at Bikini and Enewetak atolls in the Marshall Islands.",
+            "nb": "USA prøvesprengte atomvåpen på atollene Bikini og Enewetak på Marshalløyene."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "NRU",
+      "hooks": {
+        "en": [
+          {
+            "id": "NRU.en.1",
+            "type": "anchor",
+            "text": "Nauru is a single small island in the central Pacific, just south of the equator."
+          },
+          {
+            "id": "NRU.en.2",
+            "type": "contrast",
+            "text": "Nauru is a single island; Kiribati, its neighbor to the east, is scattered across many."
+          },
+          {
+            "id": "NRU.en.3",
+            "type": "story",
+            "text": "Nauru grew rich from phosphate mining, which stripped most of the island's interior."
+          }
+        ],
+        "nb": [
+          {
+            "id": "NRU.nb.1",
+            "type": "anchor",
+            "text": "Naoero er én liten øy i Stillehavet, rett sør for ekvator."
+          },
+          {
+            "id": "NRU.nb.2",
+            "type": "contrast",
+            "text": "Naoero er én eneste øy; nabolandet Kiribati i øst er spredt over mange."
+          },
+          {
+            "id": "NRU.nb.3",
+            "type": "story",
+            "text": "Naoero ble rikt på fosfatgruver, som har gravd ut det meste av det indre av øya."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "NRU.cap.en.1",
+            "type": "anchor",
+            "text": "Yaren District, on the south coast, holds Nauru's parliament and government offices."
+          },
+          {
+            "id": "NRU.cap.en.2",
+            "type": "sound",
+            "text": "Yaren: a ball of yarn unrolled once around the whole island, starting from the south coast."
+          }
+        ],
+        "nb": [
+          {
+            "id": "NRU.cap.nb.1",
+            "type": "anchor",
+            "text": "Yaren, på sørkysten, har nasjonalforsamlingen og regjeringskontorene til Naoero."
+          },
+          {
+            "id": "NRU.cap.nb.2",
+            "type": "sound",
+            "text": "Yaren: «ja, ren»: øya er så liten at du blir ren av å gå rundt den i en regnskur."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Dark blue with a thin yellow line, the equator, and a white twelve-pointed star just below it: Nauru.",
+        "nb": "Mørkeblått med en smal gul linje, ekvator, og en hvit tolvoddet stjerne rett under: Naoero."
+      },
+      "facts": [
+        {
+          "id": "NRU.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Nauru has no land borders; it is a single island.",
+            "nb": "Naoero har ingen landegrenser; landet er én enkelt øy."
+          }
+        },
+        {
+          "id": "NRU.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Nauru uses the Australian dollar.",
+            "nb": "Naoero bruker australske dollar."
+          }
+        },
+        {
+          "id": "NRU.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Nauru is among the smallest countries in the world, both by area and by population.",
+            "nb": "Naoero er blant verdens minste land, både i areal og folketall."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "PLW",
+      "hooks": {
+        "en": [
+          {
+            "id": "PLW.en.1",
+            "type": "anchor",
+            "text": "Palau is the westernmost island group in Micronesia, east of the Philippines."
+          },
+          {
+            "id": "PLW.en.2",
+            "type": "story",
+            "text": "Palau moved its capital from Koror, the largest town, to Ngerulmud on the bigger island of Babeldaob."
+          },
+          {
+            "id": "PLW.en.3",
+            "type": "sound",
+            "text": "Palau: 'pal, ow': your pal stepping on coral in a clear lagoon east of the Philippines."
+          }
+        ],
+        "nb": [
+          {
+            "id": "PLW.nb.1",
+            "type": "anchor",
+            "text": "Palau er den vestligste øygruppen, samlingen av øyer, i Mikronesia, øst for Filippinene."
+          },
+          {
+            "id": "PLW.nb.2",
+            "type": "story",
+            "text": "Palau flyttet hovedstaden fra Koror, den største byen, til Ngerulmud på den større øya Babeldaob."
+          },
+          {
+            "id": "PLW.nb.3",
+            "type": "sound",
+            "text": "Palau: en palme som sier «au» når en kokosnøtt faller ned i hodet på den."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "PLW.cap.en.1",
+            "type": "anchor",
+            "text": "Ngerulmud sits on Babeldaob, Palau's largest island, just north of Koror."
+          },
+          {
+            "id": "PLW.cap.en.2",
+            "type": "sound",
+            "text": "Ngerulmud: lawmakers nagging about rules in the mud of Babeldaob."
+          }
+        ],
+        "nb": [
+          {
+            "id": "PLW.cap.nb.1",
+            "type": "anchor",
+            "text": "Ngerulmud ligger på Babeldaob, Palaus største øy, like nord for Koror."
+          },
+          {
+            "id": "PLW.cap.nb.2",
+            "type": "sound",
+            "text": "Ngerulmud: «mud» som i mudder: regjeringen holder til i mudderet på Babeldaob."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Light blue with a yellow disc set slightly toward the hoist: the full moon.",
+        "nb": "Lyseblått med en gul sirkel litt forskjøvet mot stangen: fullmånen."
+      },
+      "facts": [
+        {
+          "id": "PLW.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Palau has no land borders and uses the US dollar.",
+            "nb": "Palau har ingen landegrenser og bruker amerikanske dollar."
+          }
+        },
+        {
+          "id": "PLW.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Palauan and English are the official languages of Palau.",
+            "nb": "Palauisk og engelsk er de offisielle språkene på Palau."
+          }
+        },
+        {
+          "id": "PLW.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Palau created one of the first shark sanctuaries, banning commercial shark fishing in its waters.",
+            "nb": "Palau opprettet et av de første haireservatene og forbød kommersielt haifiske i sine farvann."
+          }
+        }
+      ]
+    }
+  ]
+}
