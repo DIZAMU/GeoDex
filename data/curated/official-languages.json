@@ -1,0 +1,741 @@
+{
+  "_comment": "Official languages at national level, de jure or de facto, curated. Wikidata P37 is the starting point (it mixes in regional and sign languages). Regional-only and sign languages are excluded. Each list is complete for the languages in names. excludeAsDistractor lists languages with ambiguous or recently changed status, or wide regional use, that country_to_language must never offer as a wrong answer for that country.",
+  "countries": {
+    "AFG": ["ps", "prs"],
+    "AGO": ["pt"],
+    "ALB": ["sq"],
+    "AND": ["ca"],
+    "ARE": ["ar"],
+    "ARG": ["es"],
+    "ARM": ["hy"],
+    "ATG": ["en"],
+    "AUS": ["en"],
+    "AUT": ["de"],
+    "AZE": ["az"],
+    "BDI": ["rn", "fr", "en"],
+    "BEL": ["nl", "fr", "de"],
+    "BEN": ["fr"],
+    "BFA": ["mos", "dyu", "ff"],
+    "BGD": ["bn"],
+    "BGR": ["bg"],
+    "BHR": ["ar"],
+    "BHS": ["en"],
+    "BIH": ["bs", "hr", "sr"],
+    "BLR": ["be", "ru"],
+    "BLZ": ["en"],
+    "BOL": ["es", "qu", "ay", "gn"],
+    "BRA": ["pt"],
+    "BRB": ["en"],
+    "BRN": ["ms"],
+    "BTN": ["dz"],
+    "BWA": ["en"],
+    "CAF": ["fr", "sg"],
+    "CAN": ["en", "fr"],
+    "CHE": ["de", "fr", "it", "rm"],
+    "CHL": ["es"],
+    "CHN": ["zh"],
+    "CIV": ["fr"],
+    "CMR": ["fr", "en"],
+    "COD": ["fr"],
+    "COG": ["fr"],
+    "COL": ["es"],
+    "COM": ["swb", "ar", "fr"],
+    "CPV": ["pt"],
+    "CRI": ["es"],
+    "CUB": ["es"],
+    "CYP": ["el", "tr"],
+    "CZE": ["cs"],
+    "DEU": ["de"],
+    "DJI": ["fr", "ar"],
+    "DMA": ["en"],
+    "DNK": ["da"],
+    "DOM": ["es"],
+    "DZA": ["ar", "ber"],
+    "ECU": ["es"],
+    "EGY": ["ar"],
+    "ERI": ["ti", "ar", "en"],
+    "ESP": ["es"],
+    "EST": ["et"],
+    "ETH": ["am", "om", "ti", "so", "aa"],
+    "FIN": ["fi", "sv"],
+    "FJI": ["en", "fj", "hif"],
+    "FRA": ["fr"],
+    "FSM": ["en"],
+    "GAB": ["fr"],
+    "GBR": ["en"],
+    "GEO": ["ka"],
+    "GHA": ["en"],
+    "GIN": ["fr"],
+    "GMB": ["en"],
+    "GNB": ["pt"],
+    "GNQ": ["es", "fr", "pt"],
+    "GRC": ["el"],
+    "GRD": ["en"],
+    "GTM": ["es"],
+    "GUY": ["en"],
+    "HND": ["es"],
+    "HRV": ["hr"],
+    "HTI": ["fr", "ht"],
+    "HUN": ["hu"],
+    "IDN": ["id"],
+    "IND": ["hi", "en"],
+    "IRL": ["ga", "en"],
+    "IRN": ["fa"],
+    "IRQ": ["ar", "ku"],
+    "ISL": ["is"],
+    "ISR": ["he"],
+    "ITA": ["it"],
+    "JAM": ["en"],
+    "JOR": ["ar"],
+    "JPN": ["ja"],
+    "KAZ": ["kk", "ru"],
+    "KEN": ["sw", "en"],
+    "KGZ": ["ky", "ru"],
+    "KHM": ["km"],
+    "KIR": ["en", "gil"],
+    "KNA": ["en"],
+    "KOR": ["ko"],
+    "KWT": ["ar"],
+    "LAO": ["lo"],
+    "LBN": ["ar"],
+    "LBR": ["en"],
+    "LBY": ["ar"],
+    "LCA": ["en"],
+    "LIE": ["de"],
+    "LKA": ["si", "ta"],
+    "LSO": ["st", "en"],
+    "LTU": ["lt"],
+    "LUX": ["lb", "fr", "de"],
+    "LVA": ["lv"],
+    "MAR": ["ar", "ber"],
+    "MCO": ["fr"],
+    "MDA": ["ro"],
+    "MDG": ["mg", "fr"],
+    "MDV": ["dv"],
+    "MEX": ["es"],
+    "MHL": ["mh", "en"],
+    "MKD": ["mk", "sq"],
+    "MLI": ["bm", "ff"],
+    "MLT": ["mt", "en"],
+    "MMR": ["my"],
+    "MNE": ["cnr"],
+    "MNG": ["mn"],
+    "MOZ": ["pt"],
+    "MRT": ["ar"],
+    "MUS": ["en", "fr"],
+    "MWI": ["en", "ny"],
+    "MYS": ["ms"],
+    "NAM": ["en"],
+    "NER": ["ha"],
+    "NGA": ["en"],
+    "NIC": ["es"],
+    "NLD": ["nl"],
+    "NOR": ["no", "smi"],
+    "NPL": ["ne"],
+    "NRU": ["na", "en"],
+    "NZL": ["en", "mi"],
+    "OMN": ["ar"],
+    "PAK": ["ur", "en"],
+    "PAN": ["es"],
+    "PER": ["es", "qu", "ay"],
+    "PHL": ["fil", "en"],
+    "PLW": ["pau", "en"],
+    "PNG": ["en", "tpi", "ho"],
+    "POL": ["pl"],
+    "PRK": ["ko"],
+    "PRT": ["pt"],
+    "PRY": ["es", "gn"],
+    "PSE": ["ar"],
+    "QAT": ["ar"],
+    "ROU": ["ro"],
+    "RUS": ["ru"],
+    "RWA": ["rw", "en", "fr", "sw"],
+    "SAU": ["ar"],
+    "SDN": ["ar", "en"],
+    "SEN": ["fr"],
+    "SGP": ["en", "ms", "zh", "ta"],
+    "SLB": ["en"],
+    "SLE": ["en"],
+    "SLV": ["es"],
+    "SMR": ["it"],
+    "SOM": ["so", "ar"],
+    "SRB": ["sr"],
+    "SSD": ["en"],
+    "STP": ["pt"],
+    "SUR": ["nl"],
+    "SVK": ["sk"],
+    "SVN": ["sl"],
+    "SWE": ["sv"],
+    "SWZ": ["ss", "en"],
+    "SYC": ["crs", "en", "fr"],
+    "SYR": ["ar"],
+    "TCD": ["fr", "ar"],
+    "TGO": ["fr"],
+    "THA": ["th"],
+    "TJK": ["tg"],
+    "TKM": ["tk"],
+    "TLS": ["tet", "pt"],
+    "TON": ["to", "en"],
+    "TTO": ["en"],
+    "TUN": ["ar"],
+    "TUR": ["tr"],
+    "TUV": ["tvl", "en"],
+    "TWN": ["zh"],
+    "TZA": ["sw", "en"],
+    "UGA": ["en", "sw"],
+    "UKR": ["uk"],
+    "URY": ["es"],
+    "USA": ["en"],
+    "UZB": ["uz"],
+    "VAT": ["it", "la"],
+    "VCT": ["en"],
+    "VEN": ["es"],
+    "VNM": ["vi"],
+    "VUT": ["bi", "en", "fr"],
+    "WSM": ["sm", "en"],
+    "XKX": ["sq", "sr"],
+    "YEM": ["ar"],
+    "ZAF": ["af", "en", "nr", "nso", "st", "ss", "ts", "tn", "ve", "xh", "zu"],
+    "ZMB": ["en"],
+    "ZWE": ["en", "sn", "nd", "ny", "st", "tn", "ts", "ve", "xh"]
+  },
+  "excludeAsDistractor": {
+    "AFG": ["uz", "tk"],
+    "ARM": ["ru"],
+    "AZE": ["ru"],
+    "BDI": ["sw"],
+    "BFA": ["fr"],
+    "BWA": ["tn"],
+    "CYP": ["en"],
+    "DZA": ["fr"],
+    "ECU": ["qu"],
+    "ESP": ["ca"],
+    "EST": ["ru"],
+    "GBR": ["ga"],
+    "GEO": ["ru"],
+    "IND": ["ur", "ta", "bn", "ne"],
+    "ISR": ["ar"],
+    "KGZ": ["uz"],
+    "LBN": ["fr"],
+    "LTU": ["ru", "pl"],
+    "LVA": ["ru"],
+    "MAR": ["fr"],
+    "MDA": ["ru", "uk"],
+    "MLI": ["fr", "ar"],
+    "MLT": ["it"],
+    "MNE": ["sr", "bs", "hr", "sq"],
+    "MRT": ["fr"],
+    "MUS": ["hi"],
+    "NAM": ["af", "de"],
+    "NER": ["fr"],
+    "PAK": [],
+    "PHL": ["es", "ar"],
+    "PLW": ["ja"],
+    "POL": ["be"],
+    "RUS": ["uk", "az"],
+    "SSD": ["ar"],
+    "SVN": ["it", "hu"],
+    "SWE": ["fi", "smi"],
+    "TJK": ["ru"],
+    "TKM": ["ru"],
+    "TUN": ["fr"],
+    "UKR": ["ru"],
+    "USA": ["es"],
+    "UZB": ["ru", "tg"],
+    "ZMB": ["ny"]
+  },
+  "names": {
+    "aa": {
+      "en": "Afar",
+      "nb": "afar"
+    },
+    "af": {
+      "en": "Afrikaans",
+      "nb": "afrikaans"
+    },
+    "am": {
+      "en": "Amharic",
+      "nb": "amharisk"
+    },
+    "ar": {
+      "en": "Arabic",
+      "nb": "arabisk"
+    },
+    "ay": {
+      "en": "Aymara",
+      "nb": "aymara"
+    },
+    "az": {
+      "en": "Azerbaijani",
+      "nb": "aserbajdsjansk"
+    },
+    "be": {
+      "en": "Belarusian",
+      "nb": "belarusisk"
+    },
+    "ber": {
+      "en": "Tamazight (Berber)",
+      "nb": "tamazight (berbisk)"
+    },
+    "bg": {
+      "en": "Bulgarian",
+      "nb": "bulgarsk"
+    },
+    "bi": {
+      "en": "Bislama",
+      "nb": "bislama"
+    },
+    "bm": {
+      "en": "Bambara",
+      "nb": "bambara"
+    },
+    "bn": {
+      "en": "Bengali",
+      "nb": "bengali"
+    },
+    "bs": {
+      "en": "Bosnian",
+      "nb": "bosnisk"
+    },
+    "ca": {
+      "en": "Catalan",
+      "nb": "katalansk"
+    },
+    "cnr": {
+      "en": "Montenegrin",
+      "nb": "montenegrinsk"
+    },
+    "crs": {
+      "en": "Seychellois Creole",
+      "nb": "seychellisk kreol"
+    },
+    "cs": {
+      "en": "Czech",
+      "nb": "tsjekkisk"
+    },
+    "da": {
+      "en": "Danish",
+      "nb": "dansk"
+    },
+    "de": {
+      "en": "German",
+      "nb": "tysk"
+    },
+    "dv": {
+      "en": "Dhivehi",
+      "nb": "dhivehi"
+    },
+    "dyu": {
+      "en": "Dioula",
+      "nb": "dioula"
+    },
+    "dz": {
+      "en": "Dzongkha",
+      "nb": "dzongkha"
+    },
+    "el": {
+      "en": "Greek",
+      "nb": "gresk"
+    },
+    "en": {
+      "en": "English",
+      "nb": "engelsk"
+    },
+    "es": {
+      "en": "Spanish",
+      "nb": "spansk"
+    },
+    "et": {
+      "en": "Estonian",
+      "nb": "estisk"
+    },
+    "fa": {
+      "en": "Persian",
+      "nb": "persisk"
+    },
+    "ff": {
+      "en": "Fula",
+      "nb": "fulfulde"
+    },
+    "fi": {
+      "en": "Finnish",
+      "nb": "finsk"
+    },
+    "fil": {
+      "en": "Filipino",
+      "nb": "filipino"
+    },
+    "fj": {
+      "en": "Fijian",
+      "nb": "fijiansk"
+    },
+    "fr": {
+      "en": "French",
+      "nb": "fransk"
+    },
+    "ga": {
+      "en": "Irish",
+      "nb": "irsk"
+    },
+    "gil": {
+      "en": "Gilbertese",
+      "nb": "kiribatisk"
+    },
+    "gn": {
+      "en": "Guaraní",
+      "nb": "guaraní"
+    },
+    "ha": {
+      "en": "Hausa",
+      "nb": "hausa"
+    },
+    "he": {
+      "en": "Hebrew",
+      "nb": "hebraisk"
+    },
+    "hi": {
+      "en": "Hindi",
+      "nb": "hindi"
+    },
+    "hif": {
+      "en": "Fiji Hindi",
+      "nb": "fijihindi"
+    },
+    "ho": {
+      "en": "Hiri Motu",
+      "nb": "hiri motu"
+    },
+    "hr": {
+      "en": "Croatian",
+      "nb": "kroatisk"
+    },
+    "ht": {
+      "en": "Haitian Creole",
+      "nb": "haitisk kreol"
+    },
+    "hu": {
+      "en": "Hungarian",
+      "nb": "ungarsk"
+    },
+    "hy": {
+      "en": "Armenian",
+      "nb": "armensk"
+    },
+    "id": {
+      "en": "Indonesian",
+      "nb": "indonesisk"
+    },
+    "is": {
+      "en": "Icelandic",
+      "nb": "islandsk"
+    },
+    "it": {
+      "en": "Italian",
+      "nb": "italiensk"
+    },
+    "ja": {
+      "en": "Japanese",
+      "nb": "japansk"
+    },
+    "ka": {
+      "en": "Georgian",
+      "nb": "georgisk"
+    },
+    "kk": {
+      "en": "Kazakh",
+      "nb": "kasakhisk"
+    },
+    "km": {
+      "en": "Khmer",
+      "nb": "khmer"
+    },
+    "ko": {
+      "en": "Korean",
+      "nb": "koreansk"
+    },
+    "ku": {
+      "en": "Kurdish",
+      "nb": "kurdisk"
+    },
+    "ky": {
+      "en": "Kyrgyz",
+      "nb": "kirgisisk"
+    },
+    "la": {
+      "en": "Latin",
+      "nb": "latin"
+    },
+    "lb": {
+      "en": "Luxembourgish",
+      "nb": "luxembourgsk"
+    },
+    "lo": {
+      "en": "Lao",
+      "nb": "laotisk"
+    },
+    "lt": {
+      "en": "Lithuanian",
+      "nb": "litauisk"
+    },
+    "lv": {
+      "en": "Latvian",
+      "nb": "latvisk"
+    },
+    "mg": {
+      "en": "Malagasy",
+      "nb": "gassisk"
+    },
+    "mh": {
+      "en": "Marshallese",
+      "nb": "marshallesisk"
+    },
+    "mi": {
+      "en": "Māori",
+      "nb": "maori"
+    },
+    "mk": {
+      "en": "Macedonian",
+      "nb": "makedonsk"
+    },
+    "mn": {
+      "en": "Mongolian",
+      "nb": "mongolsk"
+    },
+    "mos": {
+      "en": "Mooré",
+      "nb": "mòoré"
+    },
+    "ms": {
+      "en": "Malay",
+      "nb": "malayisk"
+    },
+    "mt": {
+      "en": "Maltese",
+      "nb": "maltesisk"
+    },
+    "my": {
+      "en": "Burmese",
+      "nb": "burmesisk"
+    },
+    "na": {
+      "en": "Nauruan",
+      "nb": "naurisk"
+    },
+    "nd": {
+      "en": "Northern Ndebele",
+      "nb": "nordndebele"
+    },
+    "ne": {
+      "en": "Nepali",
+      "nb": "nepali"
+    },
+    "nl": {
+      "en": "Dutch",
+      "nb": "nederlandsk"
+    },
+    "no": {
+      "en": "Norwegian",
+      "nb": "norsk"
+    },
+    "nr": {
+      "en": "Southern Ndebele",
+      "nb": "sørndebele"
+    },
+    "nso": {
+      "en": "Northern Sotho",
+      "nb": "nordsotho"
+    },
+    "ny": {
+      "en": "Chichewa",
+      "nb": "chichewa"
+    },
+    "om": {
+      "en": "Oromo",
+      "nb": "oromo"
+    },
+    "pau": {
+      "en": "Palauan",
+      "nb": "palauisk"
+    },
+    "pl": {
+      "en": "Polish",
+      "nb": "polsk"
+    },
+    "prs": {
+      "en": "Dari",
+      "nb": "dari"
+    },
+    "ps": {
+      "en": "Pashto",
+      "nb": "pashto"
+    },
+    "pt": {
+      "en": "Portuguese",
+      "nb": "portugisisk"
+    },
+    "qu": {
+      "en": "Quechua",
+      "nb": "quechua"
+    },
+    "rm": {
+      "en": "Romansh",
+      "nb": "retoromansk"
+    },
+    "rn": {
+      "en": "Kirundi",
+      "nb": "kirundi"
+    },
+    "ro": {
+      "en": "Romanian",
+      "nb": "rumensk"
+    },
+    "ru": {
+      "en": "Russian",
+      "nb": "russisk"
+    },
+    "rw": {
+      "en": "Kinyarwanda",
+      "nb": "kinyarwanda"
+    },
+    "sg": {
+      "en": "Sango",
+      "nb": "sango"
+    },
+    "si": {
+      "en": "Sinhala",
+      "nb": "singalesisk"
+    },
+    "sk": {
+      "en": "Slovak",
+      "nb": "slovakisk"
+    },
+    "sl": {
+      "en": "Slovene",
+      "nb": "slovensk"
+    },
+    "sm": {
+      "en": "Samoan",
+      "nb": "samoansk"
+    },
+    "smi": {
+      "en": "Sámi",
+      "nb": "samisk"
+    },
+    "sn": {
+      "en": "Shona",
+      "nb": "shona"
+    },
+    "so": {
+      "en": "Somali",
+      "nb": "somali"
+    },
+    "sq": {
+      "en": "Albanian",
+      "nb": "albansk"
+    },
+    "sr": {
+      "en": "Serbian",
+      "nb": "serbisk"
+    },
+    "ss": {
+      "en": "Swazi",
+      "nb": "swati"
+    },
+    "st": {
+      "en": "Sesotho",
+      "nb": "sesotho"
+    },
+    "sv": {
+      "en": "Swedish",
+      "nb": "svensk"
+    },
+    "sw": {
+      "en": "Swahili",
+      "nb": "swahili"
+    },
+    "swb": {
+      "en": "Comorian",
+      "nb": "komorisk"
+    },
+    "ta": {
+      "en": "Tamil",
+      "nb": "tamil"
+    },
+    "tet": {
+      "en": "Tetum",
+      "nb": "tetum"
+    },
+    "tg": {
+      "en": "Tajik",
+      "nb": "tadsjikisk"
+    },
+    "th": {
+      "en": "Thai",
+      "nb": "thai"
+    },
+    "ti": {
+      "en": "Tigrinya",
+      "nb": "tigrinja"
+    },
+    "tk": {
+      "en": "Turkmen",
+      "nb": "turkmensk"
+    },
+    "tn": {
+      "en": "Tswana",
+      "nb": "setswana"
+    },
+    "to": {
+      "en": "Tongan",
+      "nb": "tongansk"
+    },
+    "tpi": {
+      "en": "Tok Pisin",
+      "nb": "tok pisin"
+    },
+    "tr": {
+      "en": "Turkish",
+      "nb": "tyrkisk"
+    },
+    "ts": {
+      "en": "Tsonga",
+      "nb": "tsonga"
+    },
+    "tvl": {
+      "en": "Tuvaluan",
+      "nb": "tuvalsk"
+    },
+    "uk": {
+      "en": "Ukrainian",
+      "nb": "ukrainsk"
+    },
+    "ur": {
+      "en": "Urdu",
+      "nb": "urdu"
+    },
+    "uz": {
+      "en": "Uzbek",
+      "nb": "usbekisk"
+    },
+    "ve": {
+      "en": "Venda",
+      "nb": "venda"
+    },
+    "vi": {
+      "en": "Vietnamese",
+      "nb": "vietnamesisk"
+    },
+    "xh": {
+      "en": "Xhosa",
+      "nb": "xhosa"
+    },
+    "zh": {
+      "en": "Chinese (Mandarin)",
+      "nb": "kinesisk (mandarin)"
+    },
+    "zu": {
+      "en": "Zulu",
+      "nb": "zulu"
+    }
+  }
+}
