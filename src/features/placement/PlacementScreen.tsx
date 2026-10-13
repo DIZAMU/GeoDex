@@ -1,3 +1,4 @@
+import { MapPinIcon } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
@@ -16,6 +17,7 @@ import { subregionOrder } from "@/engine/session";
 import { isLocale } from "@/i18n/locales";
 import { type MapFocus, type MapHighlight, WorldMap } from "@/map/WorldMap";
 import { Button } from "@/ui/button";
+import { Stat } from "@/ui/stat";
 import {
   ChoiceAnswer,
   CountryCard,
@@ -236,16 +238,21 @@ function Placement({ learner }: { learner: Learner }) {
             highlight={highlight}
             labelFor={labelFor}
             ariaLabel={t("map.label")}
-            animate={!!feedback}
+            animate
             padding={feedback && !chosenId ? 0.32 : 0.12}
           />
         }
         panel={
-          <div className="flex flex-col gap-3 lg:gap-6" data-testid="placement">
+          <div
+            key={`${question.cardId}:${feedback ? "feedback" : "prompt"}`}
+            className="enter flex flex-col gap-3 lg:gap-6"
+            data-testid="placement"
+          >
             {state.asked === 0 && !feedback ? (
               <p className="text-sm text-muted-foreground lg:text-base">{t("placement.intro")}</p>
             ) : null}
-            <p className="hidden text-sm text-muted-foreground lg:block">
+            <p className="hidden items-center gap-2 self-start rounded-full border border-border bg-background/40 px-3 py-1 text-sm text-muted-foreground lg:inline-flex">
+              <MapPinIcon aria-hidden className="size-4 text-primary" />
               {t("placement.region", { name: region })}
             </p>
             {feedback && country ? (
@@ -253,6 +260,7 @@ function Placement({ learner }: { learner: Learner }) {
                 <StatusLine correct={feedback.correct} />
                 <CountryCard country={country} locale={locale} />
                 <Button
+                  size="lg"
                   className="self-start"
                   onClick={() => void proceed()}
                   autoFocus
@@ -302,9 +310,10 @@ function Result({
   const region = plan.nextSubregion
     ? source.world.subregions.find((s) => s.id === plan.nextSubregion)?.names[locale]
     : null;
+  const number = new Intl.NumberFormat(locale);
   return (
     <div className="flex h-dvh flex-col lg:flex-row">
-      <div className="h-[55%] min-h-0 border-b border-border lg:h-auto lg:flex-[2] lg:border-r lg:border-b-0">
+      <div className="h-[55%] min-h-0 lg:h-auto lg:flex-[2]">
         <WorldMap
           countries={countries}
           topology={source.world.topology}
@@ -315,19 +324,31 @@ function Result({
         />
       </div>
       <section
-        className="flex flex-col gap-4 bg-card p-6 lg:flex-1 lg:p-10"
+        className="stagger flex flex-col gap-5 overflow-y-auto border-t border-border bg-card/95 p-6 lg:flex-1 lg:justify-center lg:border-t-0 lg:border-l lg:p-10"
         data-testid="placement-result"
       >
-        <h1 className="font-name text-2xl">{t("placement.resultTitle")}</h1>
-        <ul className="flex flex-col gap-1 text-lg">
-          <li>{t("placement.countries", { count: tally.countries.size })}</li>
-          <li>{t("placement.capitals", { count: tally.capitals })}</li>
-          <li>{t("placement.flags", { count: tally.flags })}</li>
-        </ul>
+        <h1 className="font-name text-3xl tracking-tight">{t("placement.resultTitle")}</h1>
+        <dl className="grid grid-cols-3 gap-3">
+          <Stat
+            label={t("placement.statCountries")}
+            value={number.format(tally.countries.size)}
+            className="bg-background/40"
+          />
+          <Stat
+            label={t("placement.statCapitals")}
+            value={number.format(tally.capitals)}
+            className="bg-background/40"
+          />
+          <Stat
+            label={t("placement.statFlags")}
+            value={number.format(tally.flags)}
+            className="bg-background/40"
+          />
+        </dl>
         {region ? (
           <p className="text-muted-foreground">{t("placement.startsWith", { region })}</p>
         ) : null}
-        <Button asChild className="self-start" data-testid="to-today">
+        <Button asChild size="lg" className="self-start" data-testid="to-today">
           <Link to="/">{t("placement.toToday")}</Link>
         </Button>
       </section>
