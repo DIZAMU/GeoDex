@@ -85,7 +85,7 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 
 ## 016. Geometry details
 
-- **Small states:** Tuvalu has no shape in the 50m set and is drawn as a marker at its capital. Natural Earth 10m would add it but at 6 times the file size.
+- **Small states:** Tuvalu has no shape in the 50m set and is drawn as a marker at its capital. Natural Earth 10m would add it, but the 10m file is about 5 times larger (3.7 MB vs 0.76 MB).
 - **Centroid and bbox** come from each country's largest polygon, so French Guiana does not pull France's centroid into the Atlantic. Neighbors use the full shape, so France borders Brazil and Suriname.
 - **Kosovo** has no ISO numeric code and is matched by name. "Ashmore and Cartier Is." reuses Australia's code and is excluded.
 - **Neighbors** come from shared borders in the geometry. Wikidata P47 includes sea borders and is a cross-check only (`data/neighbor-mismatches.md`).
