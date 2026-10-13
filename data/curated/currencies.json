@@ -1,0 +1,776 @@
+{
+  "_comment": "Currencies in circulation per country (ISO 4217), and their names. Source of truth; Wikidata P38 is the starting point and differences are reported at build time. The asOf date of a build is the Wikidata fetch date.",
+  "countries": {
+    "AFG": ["AFN"],
+    "AGO": ["AOA"],
+    "ALB": ["ALL"],
+    "AND": ["EUR"],
+    "ARE": ["AED"],
+    "ARG": ["ARS"],
+    "ARM": ["AMD"],
+    "ATG": ["XCD"],
+    "AUS": ["AUD"],
+    "AUT": ["EUR"],
+    "AZE": ["AZN"],
+    "BDI": ["BIF"],
+    "BEL": ["EUR"],
+    "BEN": ["XOF"],
+    "BFA": ["XOF"],
+    "BGD": ["BDT"],
+    "BGR": ["EUR"],
+    "BHR": ["BHD"],
+    "BHS": ["BSD"],
+    "BIH": ["BAM"],
+    "BLR": ["BYN"],
+    "BLZ": ["BZD"],
+    "BOL": ["BOB"],
+    "BRA": ["BRL"],
+    "BRB": ["BBD"],
+    "BRN": ["BND"],
+    "BTN": ["BTN", "INR"],
+    "BWA": ["BWP"],
+    "CAF": ["XAF"],
+    "CAN": ["CAD"],
+    "CHE": ["CHF"],
+    "CHL": ["CLP"],
+    "CHN": ["CNY"],
+    "CIV": ["XOF"],
+    "CMR": ["XAF"],
+    "COD": ["CDF"],
+    "COG": ["XAF"],
+    "COL": ["COP"],
+    "COM": ["KMF"],
+    "CPV": ["CVE"],
+    "CRI": ["CRC"],
+    "CUB": ["CUP"],
+    "CYP": ["EUR"],
+    "CZE": ["CZK"],
+    "DEU": ["EUR"],
+    "DJI": ["DJF"],
+    "DMA": ["XCD"],
+    "DNK": ["DKK"],
+    "DOM": ["DOP"],
+    "DZA": ["DZD"],
+    "ECU": ["USD"],
+    "EGY": ["EGP"],
+    "ERI": ["ERN"],
+    "ESP": ["EUR"],
+    "EST": ["EUR"],
+    "ETH": ["ETB"],
+    "FIN": ["EUR"],
+    "FJI": ["FJD"],
+    "FRA": ["EUR"],
+    "FSM": ["USD"],
+    "GAB": ["XAF"],
+    "GBR": ["GBP"],
+    "GEO": ["GEL"],
+    "GHA": ["GHS"],
+    "GIN": ["GNF"],
+    "GMB": ["GMD"],
+    "GNB": ["XOF"],
+    "GNQ": ["XAF"],
+    "GRC": ["EUR"],
+    "GRD": ["XCD"],
+    "GTM": ["GTQ"],
+    "GUY": ["GYD"],
+    "HND": ["HNL"],
+    "HRV": ["EUR"],
+    "HTI": ["HTG"],
+    "HUN": ["HUF"],
+    "IDN": ["IDR"],
+    "IND": ["INR"],
+    "IRL": ["EUR"],
+    "IRN": ["IRR"],
+    "IRQ": ["IQD"],
+    "ISL": ["ISK"],
+    "ISR": ["ILS"],
+    "ITA": ["EUR"],
+    "JAM": ["JMD"],
+    "JOR": ["JOD"],
+    "JPN": ["JPY"],
+    "KAZ": ["KZT"],
+    "KEN": ["KES"],
+    "KGZ": ["KGS"],
+    "KHM": ["KHR"],
+    "KIR": ["AUD"],
+    "KNA": ["XCD"],
+    "KOR": ["KRW"],
+    "KWT": ["KWD"],
+    "LAO": ["LAK"],
+    "LBN": ["LBP"],
+    "LBR": ["LRD", "USD"],
+    "LBY": ["LYD"],
+    "LCA": ["XCD"],
+    "LIE": ["CHF"],
+    "LKA": ["LKR"],
+    "LSO": ["LSL", "ZAR"],
+    "LTU": ["EUR"],
+    "LUX": ["EUR"],
+    "LVA": ["EUR"],
+    "MAR": ["MAD"],
+    "MCO": ["EUR"],
+    "MDA": ["MDL"],
+    "MDG": ["MGA"],
+    "MDV": ["MVR"],
+    "MEX": ["MXN"],
+    "MHL": ["USD"],
+    "MKD": ["MKD"],
+    "MLI": ["XOF"],
+    "MLT": ["EUR"],
+    "MMR": ["MMK"],
+    "MNE": ["EUR"],
+    "MNG": ["MNT"],
+    "MOZ": ["MZN"],
+    "MRT": ["MRU"],
+    "MUS": ["MUR"],
+    "MWI": ["MWK"],
+    "MYS": ["MYR"],
+    "NAM": ["NAD", "ZAR"],
+    "NER": ["XOF"],
+    "NGA": ["NGN"],
+    "NIC": ["NIO"],
+    "NLD": ["EUR"],
+    "NOR": ["NOK"],
+    "NPL": ["NPR"],
+    "NRU": ["AUD"],
+    "NZL": ["NZD"],
+    "OMN": ["OMR"],
+    "PAK": ["PKR"],
+    "PAN": ["PAB", "USD"],
+    "PER": ["PEN"],
+    "PHL": ["PHP"],
+    "PLW": ["USD"],
+    "PNG": ["PGK"],
+    "POL": ["PLN"],
+    "PRK": ["KPW"],
+    "PRT": ["EUR"],
+    "PRY": ["PYG"],
+    "PSE": ["ILS", "JOD"],
+    "QAT": ["QAR"],
+    "ROU": ["RON"],
+    "RUS": ["RUB"],
+    "RWA": ["RWF"],
+    "SAU": ["SAR"],
+    "SDN": ["SDG"],
+    "SEN": ["XOF"],
+    "SGP": ["SGD"],
+    "SLB": ["SBD"],
+    "SLE": ["SLE"],
+    "SLV": ["USD"],
+    "SMR": ["EUR"],
+    "SOM": ["SOS"],
+    "SRB": ["RSD"],
+    "SSD": ["SSP"],
+    "STP": ["STN"],
+    "SUR": ["SRD"],
+    "SVK": ["EUR"],
+    "SVN": ["EUR"],
+    "SWE": ["SEK"],
+    "SWZ": ["SZL", "ZAR"],
+    "SYC": ["SCR"],
+    "SYR": ["SYP"],
+    "TCD": ["XAF"],
+    "TGO": ["XOF"],
+    "THA": ["THB"],
+    "TJK": ["TJS"],
+    "TKM": ["TMT"],
+    "TLS": ["USD"],
+    "TON": ["TOP"],
+    "TTO": ["TTD"],
+    "TUN": ["TND"],
+    "TUR": ["TRY"],
+    "TUV": ["AUD"],
+    "TWN": ["TWD"],
+    "TZA": ["TZS"],
+    "UGA": ["UGX"],
+    "UKR": ["UAH"],
+    "URY": ["UYU"],
+    "USA": ["USD"],
+    "UZB": ["UZS"],
+    "VAT": ["EUR"],
+    "VCT": ["XCD"],
+    "VEN": ["VES"],
+    "VNM": ["VND"],
+    "VUT": ["VUV"],
+    "WSM": ["WST"],
+    "XKX": ["EUR"],
+    "YEM": ["YER"],
+    "ZAF": ["ZAR"],
+    "ZMB": ["ZMW"],
+    "ZWE": ["ZWG", "USD"]
+  },
+  "names": {
+    "AED": {
+      "en": "United Arab Emirates dirham",
+      "nb": "emiratarabisk dirham"
+    },
+    "AFN": {
+      "en": "Afghan afghani",
+      "nb": "afghansk afghani"
+    },
+    "ALL": {
+      "en": "Albanian lek",
+      "nb": "albansk lek"
+    },
+    "AMD": {
+      "en": "Armenian dram",
+      "nb": "armensk dram"
+    },
+    "AOA": {
+      "en": "Angolan kwanza",
+      "nb": "angolansk kwanza"
+    },
+    "ARS": {
+      "en": "Argentine peso",
+      "nb": "argentinsk peso"
+    },
+    "AUD": {
+      "en": "Australian dollar",
+      "nb": "australsk dollar"
+    },
+    "AZN": {
+      "en": "Azerbaijani manat",
+      "nb": "aserbajdsjansk manat"
+    },
+    "BAM": {
+      "en": "Bosnia and Herzegovina convertible mark",
+      "nb": "bosnisk konvertibel mark"
+    },
+    "BBD": {
+      "en": "Barbadian dollar",
+      "nb": "barbadisk dollar"
+    },
+    "BDT": {
+      "en": "Bangladeshi taka",
+      "nb": "bangladeshisk taka"
+    },
+    "BHD": {
+      "en": "Bahraini dinar",
+      "nb": "bahrainsk dinar"
+    },
+    "BIF": {
+      "en": "Burundian franc",
+      "nb": "burundisk franc"
+    },
+    "BND": {
+      "en": "Brunei dollar",
+      "nb": "bruneisk dollar"
+    },
+    "BOB": {
+      "en": "Bolivian boliviano",
+      "nb": "boliviansk boliviano"
+    },
+    "BRL": {
+      "en": "Brazilian real",
+      "nb": "brasiliansk real"
+    },
+    "BSD": {
+      "en": "Bahamian dollar",
+      "nb": "bahamansk dollar"
+    },
+    "BTN": {
+      "en": "Bhutanese ngultrum",
+      "nb": "bhutansk ngultrum"
+    },
+    "BWP": {
+      "en": "Botswana pula",
+      "nb": "botswansk pula"
+    },
+    "BYN": {
+      "en": "Belarusian ruble",
+      "nb": "belarusisk rubel"
+    },
+    "BZD": {
+      "en": "Belize dollar",
+      "nb": "belizisk dollar"
+    },
+    "CAD": {
+      "en": "Canadian dollar",
+      "nb": "canadisk dollar"
+    },
+    "CDF": {
+      "en": "Congolese franc",
+      "nb": "kongolesisk franc"
+    },
+    "CHF": {
+      "en": "Swiss franc",
+      "nb": "sveitserfranc"
+    },
+    "CLP": {
+      "en": "Chilean peso",
+      "nb": "chilensk peso"
+    },
+    "CNY": {
+      "en": "Chinese yuan",
+      "nb": "kinesisk yuan"
+    },
+    "COP": {
+      "en": "Colombian peso",
+      "nb": "kolombiansk peso"
+    },
+    "CRC": {
+      "en": "Costa Rican colón",
+      "nb": "kostarikansk colón"
+    },
+    "CUP": {
+      "en": "Cuban peso",
+      "nb": "kubansk peso"
+    },
+    "CVE": {
+      "en": "Cape Verdean escudo",
+      "nb": "kappverdisk escudo"
+    },
+    "CZK": {
+      "en": "Czech koruna",
+      "nb": "tsjekkisk koruna"
+    },
+    "DJF": {
+      "en": "Djiboutian franc",
+      "nb": "djiboutisk franc"
+    },
+    "DKK": {
+      "en": "Danish krone",
+      "nb": "dansk krone"
+    },
+    "DOP": {
+      "en": "Dominican peso",
+      "nb": "dominikansk peso"
+    },
+    "DZD": {
+      "en": "Algerian dinar",
+      "nb": "algerisk dinar"
+    },
+    "EGP": {
+      "en": "Egyptian pound",
+      "nb": "egyptisk pund"
+    },
+    "ERN": {
+      "en": "Eritrean nakfa",
+      "nb": "eritreisk nakfa"
+    },
+    "ETB": {
+      "en": "Ethiopian birr",
+      "nb": "etiopisk birr"
+    },
+    "EUR": {
+      "en": "euro",
+      "nb": "euro"
+    },
+    "FJD": {
+      "en": "Fijian dollar",
+      "nb": "fijiansk dollar"
+    },
+    "GBP": {
+      "en": "pound sterling",
+      "nb": "britisk pund"
+    },
+    "GEL": {
+      "en": "Georgian lari",
+      "nb": "georgisk lari"
+    },
+    "GHS": {
+      "en": "Ghanaian cedi",
+      "nb": "ghanesisk cedi"
+    },
+    "GMD": {
+      "en": "Gambian dalasi",
+      "nb": "gambisk dalasi"
+    },
+    "GNF": {
+      "en": "Guinean franc",
+      "nb": "guineansk franc"
+    },
+    "GTQ": {
+      "en": "Guatemalan quetzal",
+      "nb": "guatemalansk quetzal"
+    },
+    "GYD": {
+      "en": "Guyanese dollar",
+      "nb": "guyansk dollar"
+    },
+    "HNL": {
+      "en": "Honduran lempira",
+      "nb": "honduransk lempira"
+    },
+    "HTG": {
+      "en": "Haitian gourde",
+      "nb": "haitisk gourde"
+    },
+    "HUF": {
+      "en": "Hungarian forint",
+      "nb": "ungarsk forint"
+    },
+    "IDR": {
+      "en": "Indonesian rupiah",
+      "nb": "indonesisk rupiah"
+    },
+    "ILS": {
+      "en": "Israeli new shekel",
+      "nb": "ny israelsk shekel"
+    },
+    "INR": {
+      "en": "Indian rupee",
+      "nb": "indisk rupi"
+    },
+    "IQD": {
+      "en": "Iraqi dinar",
+      "nb": "irakisk dinar"
+    },
+    "IRR": {
+      "en": "Iranian rial",
+      "nb": "iransk rial"
+    },
+    "ISK": {
+      "en": "Icelandic króna",
+      "nb": "islandsk krone"
+    },
+    "JMD": {
+      "en": "Jamaican dollar",
+      "nb": "jamaikansk dollar"
+    },
+    "JOD": {
+      "en": "Jordanian dinar",
+      "nb": "jordansk dinar"
+    },
+    "JPY": {
+      "en": "Japanese yen",
+      "nb": "japansk yen"
+    },
+    "KES": {
+      "en": "Kenyan shilling",
+      "nb": "kenyansk shilling"
+    },
+    "KGS": {
+      "en": "Kyrgyz som",
+      "nb": "kirgisisk som"
+    },
+    "KHR": {
+      "en": "Cambodian riel",
+      "nb": "kambodsjansk riel"
+    },
+    "KMF": {
+      "en": "Comorian franc",
+      "nb": "komorisk franc"
+    },
+    "KPW": {
+      "en": "North Korean won",
+      "nb": "nordkoreansk won"
+    },
+    "KRW": {
+      "en": "South Korean won",
+      "nb": "sørkoreansk won"
+    },
+    "KWD": {
+      "en": "Kuwaiti dinar",
+      "nb": "kuwaitisk dinar"
+    },
+    "KZT": {
+      "en": "Kazakhstani tenge",
+      "nb": "kasakhstansk tenge"
+    },
+    "LAK": {
+      "en": "Lao kip",
+      "nb": "laotisk kip"
+    },
+    "LBP": {
+      "en": "Lebanese pound",
+      "nb": "libanesisk pund"
+    },
+    "LKR": {
+      "en": "Sri Lankan rupee",
+      "nb": "srilankisk rupi"
+    },
+    "LRD": {
+      "en": "Liberian dollar",
+      "nb": "liberisk dollar"
+    },
+    "LSL": {
+      "en": "Lesotho loti",
+      "nb": "lesothisk loti"
+    },
+    "LYD": {
+      "en": "Libyan dinar",
+      "nb": "libysk dinar"
+    },
+    "MAD": {
+      "en": "Moroccan dirham",
+      "nb": "marokkansk dirham"
+    },
+    "MDL": {
+      "en": "Moldovan leu",
+      "nb": "moldovsk leu"
+    },
+    "MGA": {
+      "en": "Malagasy ariary",
+      "nb": "madagassisk ariary"
+    },
+    "MKD": {
+      "en": "Macedonian denar",
+      "nb": "nordmakedonsk denar"
+    },
+    "MMK": {
+      "en": "Myanmar kyat",
+      "nb": "myanmarsk kyat"
+    },
+    "MNT": {
+      "en": "Mongolian tögrög",
+      "nb": "mongolsk tugrik"
+    },
+    "MRU": {
+      "en": "Mauritanian ouguiya",
+      "nb": "mauritansk ouguiya"
+    },
+    "MUR": {
+      "en": "Mauritian rupee",
+      "nb": "mauritisk rupi"
+    },
+    "MVR": {
+      "en": "Maldivian rufiyaa",
+      "nb": "maldivisk rufiyaa"
+    },
+    "MWK": {
+      "en": "Malawian kwacha",
+      "nb": "malawisk kwacha"
+    },
+    "MXN": {
+      "en": "Mexican peso",
+      "nb": "meksikansk peso"
+    },
+    "MYR": {
+      "en": "Malaysian ringgit",
+      "nb": "malaysisk ringgit"
+    },
+    "MZN": {
+      "en": "Mozambican metical",
+      "nb": "mosambikisk metical"
+    },
+    "NAD": {
+      "en": "Namibian dollar",
+      "nb": "namibisk dollar"
+    },
+    "NGN": {
+      "en": "Nigerian naira",
+      "nb": "nigeriansk naira"
+    },
+    "NIO": {
+      "en": "Nicaraguan córdoba",
+      "nb": "nikaraguansk córdoba"
+    },
+    "NOK": {
+      "en": "Norwegian krone",
+      "nb": "norsk krone"
+    },
+    "NPR": {
+      "en": "Nepalese rupee",
+      "nb": "nepalsk rupi"
+    },
+    "NZD": {
+      "en": "New Zealand dollar",
+      "nb": "newzealandsk dollar"
+    },
+    "OMR": {
+      "en": "Omani rial",
+      "nb": "omansk rial"
+    },
+    "PAB": {
+      "en": "Panamanian balboa",
+      "nb": "panamansk balboa"
+    },
+    "PEN": {
+      "en": "Peruvian sol",
+      "nb": "peruansk sol"
+    },
+    "PGK": {
+      "en": "Papua New Guinean kina",
+      "nb": "papuansk kina"
+    },
+    "PHP": {
+      "en": "Philippine peso",
+      "nb": "filippinsk peso"
+    },
+    "PKR": {
+      "en": "Pakistani rupee",
+      "nb": "pakistansk rupi"
+    },
+    "PLN": {
+      "en": "Polish złoty",
+      "nb": "polsk złoty"
+    },
+    "PYG": {
+      "en": "Paraguayan guaraní",
+      "nb": "paraguayansk guaraní"
+    },
+    "QAR": {
+      "en": "Qatari riyal",
+      "nb": "qatarsk rial"
+    },
+    "RON": {
+      "en": "Romanian leu",
+      "nb": "rumensk leu"
+    },
+    "RSD": {
+      "en": "Serbian dinar",
+      "nb": "serbisk dinar"
+    },
+    "RUB": {
+      "en": "Russian ruble",
+      "nb": "russisk rubel"
+    },
+    "RWF": {
+      "en": "Rwandan franc",
+      "nb": "rwandisk franc"
+    },
+    "SAR": {
+      "en": "Saudi riyal",
+      "nb": "saudiarabisk rial"
+    },
+    "SBD": {
+      "en": "Solomon Islands dollar",
+      "nb": "salomonsk dollar"
+    },
+    "SCR": {
+      "en": "Seychellois rupee",
+      "nb": "seychellisk rupi"
+    },
+    "SDG": {
+      "en": "Sudanese pound",
+      "nb": "sudansk pund"
+    },
+    "SEK": {
+      "en": "Swedish krona",
+      "nb": "svensk krone"
+    },
+    "SGD": {
+      "en": "Singapore dollar",
+      "nb": "singaporsk dollar"
+    },
+    "SLE": {
+      "en": "Sierra Leonean leone",
+      "nb": "sierraleonsk leone"
+    },
+    "SOS": {
+      "en": "Somali shilling",
+      "nb": "somalsk shilling"
+    },
+    "SRD": {
+      "en": "Surinamese dollar",
+      "nb": "surinamsk dollar"
+    },
+    "SSP": {
+      "en": "South Sudanese pound",
+      "nb": "sørsudansk pund"
+    },
+    "STN": {
+      "en": "São Tomé and Príncipe dobra",
+      "nb": "saotomesisk dobra"
+    },
+    "SYP": {
+      "en": "Syrian pound",
+      "nb": "syrisk pund"
+    },
+    "SZL": {
+      "en": "Swazi lilangeni",
+      "nb": "swazilandsk lilangeni"
+    },
+    "THB": {
+      "en": "Thai baht",
+      "nb": "thailandsk baht"
+    },
+    "TJS": {
+      "en": "Tajikistani somoni",
+      "nb": "tadsjikisk somoni"
+    },
+    "TMT": {
+      "en": "Turkmen manat",
+      "nb": "turkmensk manat"
+    },
+    "TND": {
+      "en": "Tunisian dinar",
+      "nb": "tunisisk dinar"
+    },
+    "TOP": {
+      "en": "Tongan paʻanga",
+      "nb": "tongansk paʻanga"
+    },
+    "TRY": {
+      "en": "Turkish lira",
+      "nb": "tyrkisk lira"
+    },
+    "TTD": {
+      "en": "Trinidad and Tobago dollar",
+      "nb": "trinidadisk dollar"
+    },
+    "TWD": {
+      "en": "New Taiwan dollar",
+      "nb": "taiwansk dollar"
+    },
+    "TZS": {
+      "en": "Tanzanian shilling",
+      "nb": "tanzaniansk shilling"
+    },
+    "UAH": {
+      "en": "Ukrainian hryvnia",
+      "nb": "ukrainsk hryvnja"
+    },
+    "UGX": {
+      "en": "Ugandan shilling",
+      "nb": "ugandisk shilling"
+    },
+    "USD": {
+      "en": "United States dollar",
+      "nb": "amerikansk dollar"
+    },
+    "UYU": {
+      "en": "Uruguayan peso",
+      "nb": "uruguayansk peso"
+    },
+    "UZS": {
+      "en": "Uzbek som",
+      "nb": "usbekisk sum"
+    },
+    "VES": {
+      "en": "Venezuelan bolívar",
+      "nb": "venezuelansk bolívar"
+    },
+    "VND": {
+      "en": "Vietnamese đồng",
+      "nb": "vietnamesisk dong"
+    },
+    "VUV": {
+      "en": "Vanuatu vatu",
+      "nb": "vanuatisk vatu"
+    },
+    "WST": {
+      "en": "Samoan tālā",
+      "nb": "samoansk tala"
+    },
+    "XAF": {
+      "en": "Central African CFA franc",
+      "nb": "sentralafrikansk CFA-franc"
+    },
+    "XCD": {
+      "en": "Eastern Caribbean dollar",
+      "nb": "østkaribisk dollar"
+    },
+    "XOF": {
+      "en": "West African CFA franc",
+      "nb": "vestafrikansk CFA-franc"
+    },
+    "YER": {
+      "en": "Yemeni rial",
+      "nb": "jemenittisk rial"
+    },
+    "ZAR": {
+      "en": "South African rand",
+      "nb": "sørafrikansk rand"
+    },
+    "ZMW": {
+      "en": "Zambian kwacha",
+      "nb": "zambisk kwacha"
+    },
+    "ZWG": {
+      "en": "Zimbabwe Gold (ZiG)",
+      "nb": "Zimbabwe Gold (ZiG)"
+    }
+  }
+}

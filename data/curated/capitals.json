@@ -1,0 +1,46 @@
+{
+  "_comment": "Countries with more than one capital, or where Wikidata's capital statements need a decision. Replaces Wikidata P36 for the listed countries. The capital with role primary answers capital_to_country; typed country_to_capital accepts every listed capital.",
+  "countries": {
+    "BEN": [
+      { "qid": "Q3799", "roles": ["primary", "constitutional"] },
+      { "qid": "Q43595", "roles": ["seat_of_government"] }
+    ],
+    "BOL": [
+      { "qid": "Q2907", "roles": ["primary", "constitutional", "judicial"] },
+      { "qid": "Q1491", "roles": ["seat_of_government"] }
+    ],
+    "CIV": [
+      { "qid": "Q3768", "roles": ["primary", "constitutional"] },
+      { "qid": "Q1515", "roles": ["seat_of_government"] }
+    ],
+    "LKA": [
+      { "qid": "Q41963", "roles": ["primary", "legislative"] },
+      { "qid": "Q35381", "roles": ["executive"] }
+    ],
+    "MYS": [
+      { "qid": "Q1865", "roles": ["primary", "legislative"] },
+      { "qid": "Q182378", "roles": ["seat_of_government"] }
+    ],
+    "NLD": [
+      { "qid": "Q727", "roles": ["primary", "constitutional"] },
+      { "qid": "Q36600", "roles": ["seat_of_government"] }
+    ],
+    "PSE": [
+      { "qid": "Q212938", "roles": ["primary", "constitutional"] },
+      { "qid": "Q158119", "roles": ["seat_of_government"] }
+    ],
+    "SWZ": [
+      { "qid": "Q3904", "roles": ["primary", "executive"] },
+      { "qid": "Q101418", "roles": ["legislative"] }
+    ],
+    "YEM": [
+      { "qid": "Q2471", "roles": ["primary", "constitutional"] },
+      { "qid": "Q131694", "roles": ["seat_of_government"] }
+    ],
+    "ZAF": [
+      { "qid": "Q3926", "roles": ["primary", "executive"] },
+      { "qid": "Q5465", "roles": ["legislative"] },
+      { "qid": "Q37701", "roles": ["judicial"] }
+    ]
+  }
+}
