@@ -187,7 +187,8 @@
     "error": "Synkroniseringen feilet: {{message}}. Fremgangen din er trygg på denne enheten; prøv igjen.",
     "signOut": "Logg ut",
     "codeError": "Den lenken eller koden virket ikke. Kopier hele lenken fra den nyeste e-posten, eller send en ny.",
-    "sendError": "Koden kunne ikke sendes: {{message}}"
+    "sendError": "Koden kunne ikke sendes: {{message}}",
+    "noAccount": "Ingen GeoDex-konto bruker den e-postadressen. Sjekk adressen; kontoer opprettes i Supabase, ikke i appen."
   },
   "backup": {
     "title": "Sikkerhetskopi",
