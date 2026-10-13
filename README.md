@@ -43,13 +43,14 @@ pnpm data:verify         # build twice and check the output is byte-identical
 
 ## Deployment
 
-Cloudflare Pages, connected to this repository in the Cloudflare dashboard:
+A Cloudflare Worker serves the built app as static assets (free tier, no server code). `wrangler.jsonc` points it at `dist/` with single-page-app routing. In the Cloudflare dashboard, under the Worker's Settings, Build:
 
+- Production branch: `main`
 - Build command: `pnpm build`
-- Output directory: `dist`
-- Environment variable: `NODE_VERSION=24`
+- Deploy command: `npx wrangler deploy`
+- Build variables: `NODE_VERSION=24`, `PNPM_VERSION=10.28.0`
 
-No config file is needed. Pages serves `index.html` for unknown paths when the build has no `404.html`, which client-side routing relies on.
+Check the config locally with `pnpm build && pnpm exec wrangler deploy --dry-run`.
 
 ## License
 

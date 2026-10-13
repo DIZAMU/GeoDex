@@ -97,3 +97,9 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 ## 018. Norwegian prepositions
 
 - **Decision:** `data/curated/prep-nb.json` lists the countries that take "på", mostly island states. Choices the author should confirm are listed under `uncertain` (Bahrain, Kiribati, Nauru, Palau, Singapore, Øst-Timor, Tuvalu, Vanuatu).
+
+## 019. Cloudflare Workers static assets instead of Pages
+
+- **Context:** connecting the repository in the Cloudflare dashboard created a Worker, not a Pages project; Cloudflare now routes new Git-connected sites to Workers. `geodex.pages.dev` also belongs to an unrelated site.
+- **Options:** (a) delete the Worker and create a Pages project, (b) keep the Worker and serve `dist/` as static assets.
+- **Decision:** (b). Free tier, same build. `wrangler.jsonc` is committed so the deploy is defined by the repository, not dashboard state; `wrangler` is a pinned dev dependency so the build uses a known version. `pnpm-workspace.yaml` allows the install scripts of `esbuild` and `workerd`, which wrangler needs.
