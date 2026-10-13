@@ -1,0 +1,1326 @@
+{
+  "group": "029",
+  "entities": [
+    {
+      "entityId": "ATG",
+      "hooks": {
+        "en": [
+          {
+            "id": "ATG.en.1",
+            "type": "anchor",
+            "text": "Antigua and Barbuda lies in the Lesser Antilles, east of Saint Kitts and Nevis and north of Guadeloupe."
+          },
+          {
+            "id": "ATG.en.2",
+            "type": "contrast",
+            "text": "Antigua and Barbuda has two main islands; the capital and most people are on Antigua."
+          },
+          {
+            "id": "ATG.en.3",
+            "type": "etymology",
+            "text": "Columbus named Antigua after a church image in Seville, Santa María la Antigua."
+          },
+          {
+            "id": "ATG.en.4",
+            "type": "sound",
+            "text": "Antigua: an antique teapot on the beach, while a barber from Barbuda trims the palms."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ATG.nb.1",
+            "type": "anchor",
+            "text": "Antigua og Barbuda ligger i De små Antiller, øst for Saint Kitts og Nevis og nord for Guadeloupe."
+          },
+          {
+            "id": "ATG.nb.2",
+            "type": "contrast",
+            "text": "Antigua og Barbuda har to hovedøyer; hovedstaden og de fleste innbyggerne er på Antigua."
+          },
+          {
+            "id": "ATG.nb.3",
+            "type": "sound",
+            "text": "Antigua: en antikk tekanne på stranda, og en barberer fra Barbuda som klipper palmene."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "ATG.cap.en.1",
+            "type": "anchor",
+            "text": "St. John's is on the northwest coast of Antigua, the larger island."
+          },
+          {
+            "id": "ATG.cap.en.2",
+            "type": "contrast",
+            "text": "St. John's is Antigua's capital; the St. John's in Canada is on Newfoundland."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ATG.cap.nb.1",
+            "type": "anchor",
+            "text": "Saint John's ligger på nordvestkysten av Antigua, den største øya."
+          },
+          {
+            "id": "ATG.cap.nb.2",
+            "type": "contrast",
+            "text": "Saint John's er hovedstaden på Antigua og Barbuda; byen med samme navn i Canada ligger på Newfoundland."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red with a V of black, blue and white, and a golden sun rising out of the black.",
+        "nb": "Rød bunn med en V av svart, blått og hvitt, og en gyllen sol som stiger opp av det svarte."
+      },
+      "facts": [
+        {
+          "id": "ATG.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Antigua and Barbuda has no land borders; the country is made up of islands.",
+            "nb": "Antigua og Barbuda har ingen landegrenser; landet består av øyer."
+          }
+        },
+        {
+          "id": "ATG.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Antigua and Barbuda uses the Eastern Caribbean dollar, shared with several neighboring island states.",
+            "nb": "Antigua og Barbuda bruker østkaribisk dollar, som deles med flere naboøystater."
+          }
+        },
+        {
+          "id": "ATG.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Columbus named Antigua after Santa María la Antigua, a church image in Seville.",
+            "nb": "Columbus kalte Antigua opp etter Santa María la Antigua, et kirkebilde i Sevilla."
+          }
+        },
+        {
+          "id": "ATG.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Codrington Lagoon on Barbuda holds one of the largest frigatebird colonies in the world.",
+            "nb": "Codrington-lagunen på Barbuda har en av verdens største kolonier av fregattfugler."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "BHS",
+      "hooks": {
+        "en": [
+          {
+            "id": "BHS.en.1",
+            "type": "anchor",
+            "text": "The Bahamas is an archipelago (a chain of islands) running southeast from off Florida toward Cuba."
+          },
+          {
+            "id": "BHS.en.2",
+            "type": "etymology",
+            "text": "Bahamas is often traced to Spanish 'baja mar', shallow sea, which fits the banks around it."
+          },
+          {
+            "id": "BHS.en.3",
+            "type": "story",
+            "text": "Columbus made his first landfall in the Americas in the Bahamas."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BHS.nb.1",
+            "type": "anchor",
+            "text": "Bahamas er en øygruppe (en samling øyer) som strekker seg sørøstover fra Florida mot Cuba."
+          },
+          {
+            "id": "BHS.nb.2",
+            "type": "etymology",
+            "text": "Bahamas føres ofte tilbake til spansk «baja mar», grunt hav, som passer med bankene rundt øyene."
+          },
+          {
+            "id": "BHS.nb.3",
+            "type": "story",
+            "text": "Columbus gikk i land i Amerika for første gang på Bahamas."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "BHS.cap.en.1",
+            "type": "anchor",
+            "text": "Nassau is on New Providence, a small island, not on the largest island, Andros."
+          },
+          {
+            "id": "BHS.cap.en.2",
+            "type": "story",
+            "text": "Nassau was once a pirate base, and Blackbeard operated from it for a time."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BHS.cap.nb.1",
+            "type": "anchor",
+            "text": "Nassau ligger på New Providence, en liten øy, ikke på den største øya, Andros."
+          },
+          {
+            "id": "BHS.cap.nb.2",
+            "type": "story",
+            "text": "Nassau var en gang en piratbase, og Svartskjegg holdt til der en tid."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Aquamarine, gold and aquamarine horizontal stripes, with a black triangle at the pole.",
+        "nb": "Akvamarin, gull og akvamarin vannrette striper, med en svart trekant ved stangen."
+      },
+      "facts": [
+        {
+          "id": "BHS.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "The Bahamas has no land borders; it is made up entirely of islands and cays (small, low islands).",
+            "nb": "Bahamas har ingen landegrenser; landet består bare av øyer og «cays» (små, lave øyer)."
+          }
+        },
+        {
+          "id": "BHS.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Bahamian dollar is pegged at par with the US dollar.",
+            "nb": "Bahamansk dollar er knyttet til amerikansk dollar i fast kurs, til pari."
+          }
+        },
+        {
+          "id": "BHS.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Swimming pigs on Big Major Cay in the Exumas are a tourist attraction in the Bahamas.",
+            "nb": "Svømmende griser ved Big Major Cay i Exuma er en turistattraksjon på Bahamas."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "BRB",
+      "hooks": {
+        "en": [
+          {
+            "id": "BRB.en.1",
+            "type": "anchor",
+            "text": "Barbados is the easternmost of the Caribbean islands, out in the Atlantic east of Saint Vincent."
+          },
+          {
+            "id": "BRB.en.2",
+            "type": "etymology",
+            "text": "Barbados comes from Portuguese 'os barbados', the bearded ones, often linked to bearded fig trees."
+          },
+          {
+            "id": "BRB.en.3",
+            "type": "sound",
+            "text": "Barbados: a bearded barber shaving the fig trees on the beach."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BRB.nb.1",
+            "type": "anchor",
+            "text": "Barbados er den østligste av de karibiske øyene, ute i Atlanterhavet øst for Saint Vincent."
+          },
+          {
+            "id": "BRB.nb.2",
+            "type": "etymology",
+            "text": "Barbados kommer av portugisisk «os barbados», de skjeggete, ofte knyttet til skjeggete fikentrær."
+          },
+          {
+            "id": "BRB.nb.3",
+            "type": "sound",
+            "text": "Barbados: en barberer med skjegg står og barberer fikentrærne på stranda."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "BRB.cap.en.1",
+            "type": "anchor",
+            "text": "Bridgetown is on the southwest coast of Barbados, on Carlisle Bay."
+          },
+          {
+            "id": "BRB.cap.en.2",
+            "type": "etymology",
+            "text": "Bridgetown is named after a bridge the early settlers found across the river there."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BRB.cap.nb.1",
+            "type": "anchor",
+            "text": "Bridgetown ligger på sørvestkysten av Barbados, ved Carlisle Bay."
+          },
+          {
+            "id": "BRB.cap.nb.2",
+            "type": "etymology",
+            "text": "Bridgetown, «brobyen», har navn etter en bro nybyggerne fant over elva der."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue, gold and blue vertical bands, with a black trident head in the middle.",
+        "nb": "Blå, gull og blå loddrette felt, med et svart treforkhode i midten."
+      },
+      "facts": [
+        {
+          "id": "BRB.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Barbados has no land borders; it is a single island.",
+            "nb": "Barbados har ingen landegrenser; landet er én øy."
+          }
+        },
+        {
+          "id": "BRB.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Barbados became a republic in the twenty-first century, replacing the British monarch as head of state.",
+            "nb": "Barbados ble republikk i det tjueførste århundret og erstattet den britiske monarken som statsoverhode."
+          }
+        },
+        {
+          "id": "BRB.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The grapefruit first appeared on Barbados, as a natural cross of pomelo and sweet orange.",
+            "nb": "Grapefrukt oppsto først på Barbados, som en naturlig krysning av pomelo og appelsin."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "CUB",
+      "hooks": {
+        "en": [
+          {
+            "id": "CUB.en.1",
+            "type": "anchor",
+            "text": "Cuba is the largest Caribbean island, stretched out just south of Florida."
+          },
+          {
+            "id": "CUB.en.2",
+            "type": "shape",
+            "text": "Cuba is a long crocodile lying in the Caribbean, snout pointing west toward Mexico."
+          },
+          {
+            "id": "CUB.en.3",
+            "type": "contrast",
+            "text": "Cuba is the big, long island; Jamaica is the smaller one just to its south."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CUB.nb.1",
+            "type": "anchor",
+            "text": "Cuba er den største øya i Karibia, strukket ut rett sør for Florida."
+          },
+          {
+            "id": "CUB.nb.2",
+            "type": "shape",
+            "text": "Cuba er en lang krokodille som ligger i Karibhavet med snuten mot Mexico i vest."
+          },
+          {
+            "id": "CUB.nb.3",
+            "type": "contrast",
+            "text": "Cuba er den store, lange øya; Jamaica er den mindre rett sør for den."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "CUB.cap.en.1",
+            "type": "anchor",
+            "text": "Havana is on the north coast, facing Florida across the Straits of Florida."
+          },
+          {
+            "id": "CUB.cap.en.2",
+            "type": "sound",
+            "text": "Havana: 'have a banana' on the seawall facing Florida."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CUB.cap.nb.1",
+            "type": "anchor",
+            "text": "Havanna ligger på nordkysten, rett overfor Florida."
+          },
+          {
+            "id": "CUB.cap.nb.2",
+            "type": "sound",
+            "text": "Havanna: tenk «havna», byens store havn på nordkysten."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue and white stripes, a red triangle at the pole and one white star; Puerto Rico's swaps red and blue.",
+        "nb": "Blå og hvite striper, en rød trekant ved stangen og én hvit stjerne; Puerto Ricos bytter om rødt og blått."
+      },
+      "facts": [
+        {
+          "id": "CUB.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Cuba shares no land border with any country.",
+            "nb": "Cuba har ingen landegrense mot noe land."
+          }
+        },
+        {
+          "id": "CUB.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Spanish is the official language of Cuba.",
+            "nb": "Spansk er det offisielle språket på Cuba."
+          }
+        },
+        {
+          "id": "CUB.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The United States leases Guantánamo Bay, on Cuba's southeast coast, as a naval base.",
+            "nb": "USA leier Guantánamobukta på sørøstkysten av Cuba som marinebase."
+          }
+        },
+        {
+          "id": "CUB.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The bee hummingbird, the smallest bird in the world, lives only in Cuba.",
+            "nb": "Bikolibrien, verdens minste fugl, finnes bare på Cuba."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "DMA",
+      "hooks": {
+        "en": [
+          {
+            "id": "DMA.en.1",
+            "type": "contrast",
+            "text": "Dominica is one island in the Lesser Antilles; the Dominican Republic is half of Hispaniola."
+          },
+          {
+            "id": "DMA.en.2",
+            "type": "etymology",
+            "text": "Dominica is Latin for Sunday, the day Columbus sighted it."
+          },
+          {
+            "id": "DMA.en.3",
+            "type": "anchor",
+            "text": "Dominica lies between the French islands of Guadeloupe and Martinique."
+          },
+          {
+            "id": "DMA.en.4",
+            "type": "story",
+            "text": "Dominica's Boiling Lake is a flooded volcanic vent that steams and bubbles."
+          }
+        ],
+        "nb": [
+          {
+            "id": "DMA.nb.1",
+            "type": "contrast",
+            "text": "Dominica er én øy i De små Antiller; Den dominikanske republikk er halve Hispaniola."
+          },
+          {
+            "id": "DMA.nb.2",
+            "type": "etymology",
+            "text": "Dominica er latin for søndag, dagen Columbus fikk øye på øya."
+          },
+          {
+            "id": "DMA.nb.3",
+            "type": "anchor",
+            "text": "Dominica ligger mellom de franske øyene Guadeloupe og Martinique."
+          },
+          {
+            "id": "DMA.nb.4",
+            "type": "story",
+            "text": "Boiling Lake på Dominica er en oversvømt vulkansk åpning som damper og bobler."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "DMA.cap.en.1",
+            "type": "anchor",
+            "text": "Roseau is on the southwest coast of Dominica, at the mouth of the Roseau River."
+          },
+          {
+            "id": "DMA.cap.en.2",
+            "type": "etymology",
+            "text": "Roseau is French for reed, after the reeds that grew by the river."
+          }
+        ],
+        "nb": [
+          {
+            "id": "DMA.cap.nb.1",
+            "type": "anchor",
+            "text": "Roseau ligger på sørvestkysten av Dominica, ved munningen av elva Roseau."
+          },
+          {
+            "id": "DMA.cap.nb.2",
+            "type": "etymology",
+            "text": "Roseau er fransk for siv, etter sivet som vokste langs elva."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green, with a cross of yellow, black and white stripes and a red disc holding a purple parrot.",
+        "nb": "Grønt, med et kors av gule, svarte og hvite striper og en rød sirkel med en lilla papegøye."
+      },
+      "facts": [
+        {
+          "id": "DMA.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Dominica is a single island with no land borders.",
+            "nb": "Dominica er én øy uten landegrenser."
+          }
+        },
+        {
+          "id": "DMA.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "English is the official language of Dominica.",
+            "nb": "Engelsk er det offisielle språket på Dominica."
+          }
+        },
+        {
+          "id": "DMA.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Dominica's flag is one of very few national flags that use purple.",
+            "nb": "Dominicas flagg er et av svært få nasjonalflagg med lilla."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "DOM",
+      "hooks": {
+        "en": [
+          {
+            "id": "DOM.en.1",
+            "type": "anchor",
+            "text": "The Dominican Republic is the larger, eastern part of Hispaniola; Haiti is the western part."
+          },
+          {
+            "id": "DOM.en.2",
+            "type": "contrast",
+            "text": "The Dominican Republic speaks Spanish; Haiti, on the same island, speaks French and Haitian Creole."
+          },
+          {
+            "id": "DOM.en.3",
+            "type": "sound",
+            "text": "Dominican Republic: domino tiles lined up along the eastern half of Hispaniola."
+          }
+        ],
+        "nb": [
+          {
+            "id": "DOM.nb.1",
+            "type": "anchor",
+            "text": "Den dominikanske republikk er den største, østlige delen av Hispaniola; Haiti er den vestlige."
+          },
+          {
+            "id": "DOM.nb.2",
+            "type": "contrast",
+            "text": "Den dominikanske republikk snakker spansk; Haiti på samme øy snakker fransk og haitisk kreol."
+          },
+          {
+            "id": "DOM.nb.3",
+            "type": "sound",
+            "text": "Den dominikanske republikk: dominobrikker stilt opp på rad langs østsiden av Hispaniola."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "DOM.cap.en.1",
+            "type": "story",
+            "text": "Santo Domingo is often called the oldest European-founded city in the Americas that is still inhabited."
+          },
+          {
+            "id": "DOM.cap.en.2",
+            "type": "etymology",
+            "text": "Santo Domingo is named after Saint Dominic, who also gave the country its name."
+          }
+        ],
+        "nb": [
+          {
+            "id": "DOM.cap.nb.1",
+            "type": "story",
+            "text": "Santo Domingo regnes ofte som den eldste europeisk grunnlagte byen i Amerika som fortsatt er bebodd."
+          },
+          {
+            "id": "DOM.cap.nb.2",
+            "type": "etymology",
+            "text": "Santo Domingo har navn etter den hellige Dominikus, som også ga landet navnet."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A white cross splits blue and red quarters, with the coat of arms at the center.",
+        "nb": "Et hvitt kors deler blå og røde felt, med riksvåpenet i midten."
+      },
+      "facts": [
+        {
+          "id": "DOM.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "The Dominican Republic's only land border is with Haiti, on the island of Hispaniola.",
+            "nb": "Den dominikanske republikks eneste landegrense er mot Haiti, på øya Hispaniola."
+          }
+        },
+        {
+          "id": "DOM.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Spanish is the official language of the Dominican Republic.",
+            "nb": "Spansk er det offisielle språket i Den dominikanske republikk."
+          }
+        },
+        {
+          "id": "DOM.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Pico Duarte in the Dominican Republic is the highest mountain in the Caribbean.",
+            "nb": "Pico Duarte i Den dominikanske republikk er det høyeste fjellet i Karibia."
+          }
+        },
+        {
+          "id": "DOM.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Dominican Republic's flag is the only national flag that shows a Bible.",
+            "nb": "Flagget til Den dominikanske republikk er det eneste nasjonalflagget som viser en bibel."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "GRD",
+      "hooks": {
+        "en": [
+          {
+            "id": "GRD.en.1",
+            "type": "anchor",
+            "text": "Grenada lies just north of Trinidad and Tobago, south of Saint Vincent and the Grenadines."
+          },
+          {
+            "id": "GRD.en.2",
+            "type": "contrast",
+            "text": "Grenada is the Caribbean island country; Granada is the city in Spain with the Alhambra."
+          },
+          {
+            "id": "GRD.en.3",
+            "type": "story",
+            "text": "Grenada is called the Spice Isle, and a nutmeg sits on its flag."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GRD.nb.1",
+            "type": "anchor",
+            "text": "Grenada ligger like nord for Trinidad og Tobago, sør for Saint Vincent og Grenadinene."
+          },
+          {
+            "id": "GRD.nb.2",
+            "type": "contrast",
+            "text": "Grenada er øylandet i Karibia; Granada er byen i Spania med Alhambra."
+          },
+          {
+            "id": "GRD.nb.3",
+            "type": "story",
+            "text": "Grenada kalles krydderøya, og en muskatnøtt er med på flagget."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "GRD.cap.en.1",
+            "type": "anchor",
+            "text": "St. George's sits on a horseshoe harbour on Grenada's southwest coast."
+          },
+          {
+            "id": "GRD.cap.en.2",
+            "type": "sound",
+            "text": "St. George's: a dragon-slaying saint guarding a horseshoe harbour full of nutmeg."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GRD.cap.nb.1",
+            "type": "anchor",
+            "text": "St. George's ligger ved en hesteskoformet havn på sørvestkysten av Grenada."
+          },
+          {
+            "id": "GRD.cap.nb.2",
+            "type": "sound",
+            "text": "St. George's: Sankt Georg rir rundt en hesteskoformet havn full av muskatnøtter."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A red border with six yellow stars around gold and green triangles, and a nutmeg at the hoist side.",
+        "nb": "Rød kant med seks gule stjerner rundt gule og grønne trekanter, og en muskatnøtt nær stangen."
+      },
+      "facts": [
+        {
+          "id": "GRD.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Grenada has no land borders; it is made up of Grenada island and several smaller islands.",
+            "nb": "Grenada har ingen landegrenser; landet består av øya Grenada og flere mindre øyer."
+          }
+        },
+        {
+          "id": "GRD.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Grenada uses the Eastern Caribbean dollar.",
+            "nb": "Grenada bruker østkaribisk dollar."
+          }
+        },
+        {
+          "id": "GRD.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Grenada is one of the world's largest exporters of nutmeg.",
+            "nb": "Grenada er en av verdens største eksportører av muskatnøtt."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "HTI",
+      "hooks": {
+        "en": [
+          {
+            "id": "HTI.en.1",
+            "type": "anchor",
+            "text": "Haiti is the western third of Hispaniola, with the Dominican Republic to its east."
+          },
+          {
+            "id": "HTI.en.2",
+            "type": "story",
+            "text": "Haiti was the first Caribbean nation to win independence, through a revolt of enslaved people against France."
+          },
+          {
+            "id": "HTI.en.3",
+            "type": "etymology",
+            "text": "Haiti comes from the Taíno name for the island, often read as 'land of high mountains'."
+          }
+        ],
+        "nb": [
+          {
+            "id": "HTI.nb.1",
+            "type": "anchor",
+            "text": "Haiti er den vestlige tredjedelen av Hispaniola, med Den dominikanske republikk i øst."
+          },
+          {
+            "id": "HTI.nb.2",
+            "type": "story",
+            "text": "Haiti ble det første selvstendige landet i Karibia, etter et opprør av slavebundne mot Frankrike."
+          },
+          {
+            "id": "HTI.nb.3",
+            "type": "etymology",
+            "text": "Haiti kommer av taínoenes navn på øya, ofte tolket som «land med høye fjell»."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "HTI.cap.en.1",
+            "type": "anchor",
+            "text": "Port-au-Prince sits at the head of the Gulf of Gonâve, on Haiti's west coast."
+          },
+          {
+            "id": "HTI.cap.en.2",
+            "type": "etymology",
+            "text": "Port-au-Prince is French for 'port of the prince', after a ship called Le Prince."
+          }
+        ],
+        "nb": [
+          {
+            "id": "HTI.cap.nb.1",
+            "type": "anchor",
+            "text": "Port-au-Prince ligger innerst i Gonâve-bukta på vestkysten av Haiti."
+          },
+          {
+            "id": "HTI.cap.nb.2",
+            "type": "etymology",
+            "text": "Port-au-Prince er fransk for «prinsens havn», etter et skip som het Le Prince."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue over red horizontal bands, with the coat of arms on a white panel in the center.",
+        "nb": "Blått over rødt i vannrette felt, med riksvåpenet på et hvitt felt i midten."
+      },
+      "facts": [
+        {
+          "id": "HTI.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Haiti's only land border is with the Dominican Republic, on the island of Hispaniola.",
+            "nb": "Haitis eneste landegrense er mot Den dominikanske republikk, på øya Hispaniola."
+          }
+        },
+        {
+          "id": "HTI.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "French and Haitian Creole are both official languages of Haiti.",
+            "nb": "Fransk og haitisk kreol er begge offisielle språk på Haiti."
+          }
+        },
+        {
+          "id": "HTI.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Citadelle Laferrière, a mountaintop fortress in northern Haiti, is one of the largest fortresses in the Americas.",
+            "nb": "Citadelle Laferrière, en festning på en fjelltopp nord på Haiti, er en av de største festningene i Amerika."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "JAM",
+      "hooks": {
+        "en": [
+          {
+            "id": "JAM.en.1",
+            "type": "anchor",
+            "text": "Jamaica lies south of Cuba and west of Hispaniola."
+          },
+          {
+            "id": "JAM.en.2",
+            "type": "etymology",
+            "text": "Jamaica comes from the Taíno name Xaymaca, usually read as 'land of wood and water'."
+          },
+          {
+            "id": "JAM.en.3",
+            "type": "sound",
+            "text": "Jamaica: a jar of jam bobbing in the sea south of Cuba."
+          }
+        ],
+        "nb": [
+          {
+            "id": "JAM.nb.1",
+            "type": "anchor",
+            "text": "Jamaica ligger sør for Cuba og vest for Hispaniola."
+          },
+          {
+            "id": "JAM.nb.2",
+            "type": "etymology",
+            "text": "Jamaica kommer av taíno-navnet Xaymaca, som tolkes som «landet med skog og vann»."
+          },
+          {
+            "id": "JAM.nb.3",
+            "type": "sound",
+            "text": "Jamaica: en jam med et reggaeband på stranda sør for Cuba."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "JAM.cap.en.1",
+            "type": "anchor",
+            "text": "Kingston is on the southeast coast of Jamaica, behind a long sandbar called the Palisadoes."
+          },
+          {
+            "id": "JAM.cap.en.2",
+            "type": "contrast",
+            "text": "Kingston is Jamaica's capital; Kingstown, with a W, is the capital of Saint Vincent and the Grenadines."
+          }
+        ],
+        "nb": [
+          {
+            "id": "JAM.cap.nb.1",
+            "type": "anchor",
+            "text": "Kingston ligger på sørøstkysten av Jamaica, bak en lang sandtange som heter Palisadoes."
+          },
+          {
+            "id": "JAM.cap.nb.2",
+            "type": "contrast",
+            "text": "Kingston er hovedstaden på Jamaica; Kingstown, med w, er hovedstaden på Saint Vincent og Grenadinene."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A gold diagonal cross, with green triangles at top and bottom and black ones at the sides.",
+        "nb": "Et gult skråkors, med grønne trekanter øverst og nederst og svarte på sidene."
+      },
+      "facts": [
+        {
+          "id": "JAM.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Jamaica has no land borders; it is a single island south of Cuba.",
+            "nb": "Jamaica har ingen landegrenser; landet er én øy sør for Cuba."
+          }
+        },
+        {
+          "id": "JAM.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "English is the official language of Jamaica.",
+            "nb": "Engelsk er det offisielle språket på Jamaica."
+          }
+        },
+        {
+          "id": "JAM.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Jamaica's flag is the only national flag with none of red, white or blue.",
+            "nb": "Jamaicas flagg er det eneste nasjonalflagget uten rødt, hvitt eller blått."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "KNA",
+      "hooks": {
+        "en": [
+          {
+            "id": "KNA.en.1",
+            "type": "anchor",
+            "text": "Saint Kitts and Nevis is a pair of islands in the northern Lesser Antilles, west of Antigua."
+          },
+          {
+            "id": "KNA.en.2",
+            "type": "etymology",
+            "text": "Saint Kitts is short for Saint Christopher, the patron saint of travelers."
+          },
+          {
+            "id": "KNA.en.3",
+            "type": "sound",
+            "text": "Saint Kitts and Nevis: a saint with kittens on one island, his nephew on the other."
+          }
+        ],
+        "nb": [
+          {
+            "id": "KNA.nb.1",
+            "type": "anchor",
+            "text": "Saint Kitts og Nevis er et øypar nord i De små Antiller, vest for Antigua."
+          },
+          {
+            "id": "KNA.nb.2",
+            "type": "etymology",
+            "text": "Saint Kitts er kortform for Saint Christopher, skytshelgenen for reisende."
+          },
+          {
+            "id": "KNA.nb.3",
+            "type": "sound",
+            "text": "Saint Kitts og Nevis: en helgen kitter et vindu på den ene øya, mens nevøen hans bor på den andre."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "KNA.cap.en.1",
+            "type": "anchor",
+            "text": "Basseterre is on the south coast of Saint Kitts, the larger island."
+          },
+          {
+            "id": "KNA.cap.en.2",
+            "type": "etymology",
+            "text": "Basseterre is French for 'low land'; Guadeloupe has a Basse-Terre too."
+          }
+        ],
+        "nb": [
+          {
+            "id": "KNA.cap.nb.1",
+            "type": "anchor",
+            "text": "Basseterre ligger på sørkysten av Saint Kitts, den største øya."
+          },
+          {
+            "id": "KNA.cap.nb.2",
+            "type": "etymology",
+            "text": "Basseterre er fransk for «lavt land», og Guadeloupe har også et Basse-Terre."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A black diagonal band edged in yellow, with two white stars, between green and red triangles.",
+        "nb": "Et svart skrått bånd med gul kant og to hvite stjerner, mellom en grønn og en rød trekant."
+      },
+      "facts": [
+        {
+          "id": "KNA.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Saint Kitts and Nevis has no land borders; it is made up of two islands.",
+            "nb": "Saint Kitts og Nevis har ingen landegrenser; landet består av to øyer."
+          }
+        },
+        {
+          "id": "KNA.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Saint Kitts and Nevis uses the Eastern Caribbean dollar.",
+            "nb": "Saint Kitts og Nevis bruker østkaribisk dollar."
+          }
+        },
+        {
+          "id": "KNA.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Alexander Hamilton, one of the founding fathers of the United States, was born on Nevis.",
+            "nb": "Alexander Hamilton, en av grunnleggerne av USA, ble født på Nevis."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "LCA",
+      "hooks": {
+        "en": [
+          {
+            "id": "LCA.en.1",
+            "type": "anchor",
+            "text": "Saint Lucia lies between Martinique to the north and Saint Vincent to the south."
+          },
+          {
+            "id": "LCA.en.2",
+            "type": "story",
+            "text": "The Pitons, two steep volcanic spikes, rise straight from the sea on Saint Lucia's west coast."
+          },
+          {
+            "id": "LCA.en.3",
+            "type": "etymology",
+            "text": "Saint Lucia is named after Saint Lucy of Syracuse."
+          }
+        ],
+        "nb": [
+          {
+            "id": "LCA.nb.1",
+            "type": "anchor",
+            "text": "Saint Lucia ligger mellom Martinique i nord og Saint Vincent i sør."
+          },
+          {
+            "id": "LCA.nb.2",
+            "type": "story",
+            "text": "Pitons, to bratte vulkantopper, stiger rett opp av havet på vestkysten av Saint Lucia."
+          },
+          {
+            "id": "LCA.nb.3",
+            "type": "etymology",
+            "text": "Saint Lucia har navn etter den hellige Lucia fra Syracusa, den samme som feires med luciatog."
+          },
+          {
+            "id": "LCA.nb.4",
+            "type": "sound",
+            "text": "Saint Lucia: et luciatog i hvite kjoler med lys går langs stranda i Karibia."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "LCA.cap.en.1",
+            "type": "anchor",
+            "text": "Castries sits on a deep harbour on the northwest coast of Saint Lucia."
+          },
+          {
+            "id": "LCA.cap.en.2",
+            "type": "sound",
+            "text": "Castries: a castle full of fries on the harbour."
+          }
+        ],
+        "nb": [
+          {
+            "id": "LCA.cap.nb.1",
+            "type": "anchor",
+            "text": "Castries ligger ved en dyp havn på nordvestkysten av Saint Lucia."
+          },
+          {
+            "id": "LCA.cap.nb.2",
+            "type": "sound",
+            "text": "Castries: et kastell fullt av ris ved havna."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Light blue, with a black and white triangle in front of a gold one, like the Pitons rising from the sea.",
+        "nb": "Lyseblått, med en svart og hvit trekant foran en gul, som Pitons som stiger opp av havet."
+      },
+      "facts": [
+        {
+          "id": "LCA.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Saint Lucia has no land borders; it is a single island.",
+            "nb": "Saint Lucia har ingen landegrenser; landet er én øy."
+          }
+        },
+        {
+          "id": "LCA.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "English is the official language of Saint Lucia.",
+            "nb": "Engelsk er det offisielle språket på Saint Lucia."
+          }
+        },
+        {
+          "id": "LCA.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Nobel laureates Derek Walcott, in literature, and Arthur Lewis, in economics, both came from Saint Lucia.",
+            "nb": "Nobelprisvinnerne Derek Walcott, i litteratur, og Arthur Lewis, i økonomi, kom begge fra Saint Lucia."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "TTO",
+      "hooks": {
+        "en": [
+          {
+            "id": "TTO.en.1",
+            "type": "anchor",
+            "text": "Trinidad and Tobago lies just off the coast of Venezuela, at the southern end of the Caribbean."
+          },
+          {
+            "id": "TTO.en.2",
+            "type": "etymology",
+            "text": "Trinidad is Spanish for Trinity; Columbus is said to have named it after three peaks he saw."
+          },
+          {
+            "id": "TTO.en.3",
+            "type": "story",
+            "text": "The steelpan, a drum made from an oil barrel, was invented in Trinidad."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TTO.nb.1",
+            "type": "anchor",
+            "text": "Trinidad og Tobago ligger like utenfor kysten av Venezuela, sørligst i Karibia."
+          },
+          {
+            "id": "TTO.nb.2",
+            "type": "etymology",
+            "text": "Trinidad er spansk for treenigheten; Columbus skal ha kalt øya opp etter tre topper han så."
+          },
+          {
+            "id": "TTO.nb.3",
+            "type": "story",
+            "text": "Steelpanen, en tromme laget av en oljetønne, ble funnet opp på Trinidad."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "TTO.cap.en.1",
+            "type": "anchor",
+            "text": "Port of Spain is on the northwest coast of Trinidad, facing the Gulf of Paria and Venezuela."
+          },
+          {
+            "id": "TTO.cap.en.2",
+            "type": "story",
+            "text": "Port of Spain kept its Spanish name although the islands later became British."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TTO.cap.nb.1",
+            "type": "anchor",
+            "text": "Port of Spain ligger på nordvestkysten av Trinidad, mot Pariabukta og Venezuela."
+          },
+          {
+            "id": "TTO.cap.nb.2",
+            "type": "story",
+            "text": "Port of Spain, «Spanias havn», beholdt navnet selv om øyene senere ble britiske."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, with a black diagonal band edged in white running from the top at the pole to the bottom of the fly.",
+        "nb": "Rødt, med et svart skrått bånd med hvit kant fra toppen ved stangen ned mot den ytre kanten."
+      },
+      "facts": [
+        {
+          "id": "TTO.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Trinidad and Tobago has no land borders; Venezuela lies a short distance across the sea.",
+            "nb": "Trinidad og Tobago har ingen landegrenser; Venezuela ligger et kort stykke over havet."
+          }
+        },
+        {
+          "id": "TTO.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "English is the official language of Trinidad and Tobago.",
+            "nb": "Engelsk er det offisielle språket på Trinidad og Tobago."
+          }
+        },
+        {
+          "id": "TTO.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Pitch Lake in southern Trinidad is the largest natural deposit of asphalt in the world.",
+            "nb": "Pitch Lake sør på Trinidad er verdens største naturlige forekomst av asfalt."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "VCT",
+      "hooks": {
+        "en": [
+          {
+            "id": "VCT.en.1",
+            "type": "anchor",
+            "text": "Saint Vincent and the Grenadines lies between Saint Lucia to the north and Grenada to the south."
+          },
+          {
+            "id": "VCT.en.2",
+            "type": "contrast",
+            "text": "The Grenadines are a chain of small islands split between Saint Vincent in the north and Grenada in the south."
+          },
+          {
+            "id": "VCT.en.3",
+            "type": "story",
+            "text": "La Soufrière, an active volcano, fills the northern end of Saint Vincent."
+          }
+        ],
+        "nb": [
+          {
+            "id": "VCT.nb.1",
+            "type": "anchor",
+            "text": "Saint Vincent og Grenadinene ligger mellom Saint Lucia i nord og Grenada i sør."
+          },
+          {
+            "id": "VCT.nb.2",
+            "type": "contrast",
+            "text": "Grenadinene er en kjede små øyer, delt mellom Saint Vincent i nord og Grenada i sør."
+          },
+          {
+            "id": "VCT.nb.3",
+            "type": "story",
+            "text": "Vulkanen La Soufrière, som fortsatt er aktiv, fyller nordenden av Saint Vincent."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "VCT.cap.en.1",
+            "type": "anchor",
+            "text": "Kingstown is on the southwest coast of Saint Vincent, the main island."
+          },
+          {
+            "id": "VCT.cap.en.2",
+            "type": "contrast",
+            "text": "Kingstown has a W; Kingston, Jamaica's capital, does not."
+          }
+        ],
+        "nb": [
+          {
+            "id": "VCT.cap.nb.1",
+            "type": "anchor",
+            "text": "Kingstown ligger på sørvestkysten av Saint Vincent, hovedøya."
+          },
+          {
+            "id": "VCT.cap.nb.2",
+            "type": "contrast",
+            "text": "Kingstown har w i navnet; Kingston, hovedstaden på Jamaica, har det ikke."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue, gold and green vertical bands, with three green diamonds on the gold.",
+        "nb": "Blå, gul og grønn loddrette felt, med tre grønne ruter på det gule."
+      },
+      "facts": [
+        {
+          "id": "VCT.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Saint Vincent and the Grenadines has no land borders; it is Saint Vincent plus the northern Grenadines.",
+            "nb": "Saint Vincent og Grenadinene har ingen landegrenser; landet er Saint Vincent pluss de nordlige Grenadinene."
+          }
+        },
+        {
+          "id": "VCT.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Saint Vincent and the Grenadines uses the Eastern Caribbean dollar.",
+            "nb": "Saint Vincent og Grenadinene bruker østkaribisk dollar."
+          }
+        },
+        {
+          "id": "VCT.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The diamonds on the flag are set in a V, for Vincent.",
+            "nb": "Rutene på flagget står i en V, for Vincent."
+          }
+        }
+      ]
+    }
+  ]
+}
