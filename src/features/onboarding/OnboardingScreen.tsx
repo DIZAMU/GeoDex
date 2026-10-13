@@ -6,6 +6,7 @@ import { updateSettings } from "@/db/settings";
 import { LanguageSwitcher } from "@/i18n/LanguageSwitcher";
 import { isLocale } from "@/i18n/locales";
 import { Button } from "@/ui/button";
+import { Loader } from "@/ui/loader";
 import { scopedCountries } from "../study/plan";
 import { useLearner } from "../study/useLearner";
 import { CountryPicker, guessHomeCountry } from "./CountryPicker";
@@ -26,7 +27,7 @@ export function OnboardingScreen() {
     }
   }, [learner, home]);
 
-  if (!learner) return <p className="p-8 text-muted-foreground">{t("common.loading")}</p>;
+  if (!learner) return <Loader />;
   const countries = scopedCountries(learner.world, learner.settings);
 
   return (
@@ -49,7 +50,7 @@ export function OnboardingScreen() {
           if (!home) return;
           await updateSettings(db, { homeCountry: home });
           await db.placementProgress.clear();
-          navigate("/placement");
+          navigate("/placement", { viewTransition: true });
         }}
       >
         {t("onboarding.start")}

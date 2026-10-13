@@ -7,6 +7,7 @@ import { LanguageSwitcher } from "@/i18n/LanguageSwitcher";
 import { isLocale } from "@/i18n/locales";
 import { ThemeSwitcher } from "@/themes/ThemeSwitcher";
 import { Button } from "@/ui/button";
+import { Loader } from "@/ui/loader";
 import { ToggleGroup, ToggleGroupItem } from "@/ui/toggle-group";
 import { CountryPicker } from "../onboarding/CountryPicker";
 import { scopedCountries } from "../study/plan";
@@ -72,7 +73,7 @@ export function SettingsScreen() {
   const locale = isLocale(i18n.language) ? i18n.language : "en";
   const learner = useLearner();
   const navigate = useNavigate();
-  if (!learner) return <p className="p-8 text-muted-foreground">{t("common.loading")}</p>;
+  if (!learner) return <Loader />;
   const s = learner.settings;
   const set = (patch: Partial<SettingsRow>) => void updateSettings(db, patch);
 
@@ -119,7 +120,7 @@ export function SettingsScreen() {
           className="self-start"
           onClick={async () => {
             await db.placementProgress.clear();
-            navigate("/placement");
+            navigate("/placement", { viewTransition: true });
           }}
         >
           {t("settings.rerunPlacement")}

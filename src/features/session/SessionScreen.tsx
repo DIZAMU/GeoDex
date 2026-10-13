@@ -6,6 +6,7 @@ import type { InputSetting } from "@/engine/types";
 import { isLocale } from "@/i18n/locales";
 import { type MapFocus, type MapHighlight, WorldMap } from "@/map/WorldMap";
 import { Button } from "@/ui/button";
+import { Loader } from "@/ui/loader";
 import { useStudyContext } from "../study/context";
 import { confusionScoresFor, scopedCountries } from "../study/plan";
 import { checkChoice, checkTyped, type StudyContext } from "../study/questions";
@@ -34,8 +35,7 @@ export function SessionScreen() {
   const input = INPUTS.includes(requested as InputSetting)
     ? (requested as InputSetting)
     : (learner?.device.lastInputMode ?? "auto");
-  const { t } = useTranslation();
-  if (!learner) return <p className="p-8 text-muted-foreground">{t("common.loading")}</p>;
+  if (!learner) return <Loader />;
   return <Session learner={learner} input={input} />;
 }
 
@@ -90,10 +90,10 @@ function Session({ learner, input }: { learner: Learner; input: InputSetting }) 
   );
 
   useEffect(() => {
-    if (view?.kind === "done" && view.reviewed === 0) navigate("/");
+    if (view?.kind === "done" && view.reviewed === 0) navigate("/", { viewTransition: true });
   }, [view, navigate]);
 
-  if (!view || !s.ctx) return <p className="p-8 text-muted-foreground">{t("common.loading")}</p>;
+  if (!view || !s.ctx) return <Loader />;
   if (view.kind === "done") {
     return (
       <main className="flex min-h-dvh items-center justify-center px-4 py-16">
@@ -103,7 +103,9 @@ function Session({ learner, input }: { learner: Learner; input: InputSetting }) 
             {t("session.reviewed", { count: view.reviewed })}
           </p>
           <Button asChild size="lg" className="self-start">
-            <Link to="/">{t("session.backToToday")}</Link>
+            <Link to="/" viewTransition>
+              {t("session.backToToday")}
+            </Link>
           </Button>
         </div>
       </main>
