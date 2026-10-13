@@ -1,0 +1,1622 @@
+{
+  "group": "011",
+  "entities": [
+    {
+      "entityId": "BEN",
+      "hooks": {
+        "en": [
+          {
+            "id": "BEN.en.1",
+            "type": "anchor",
+            "text": "Benin is the narrow strip between Togo and Nigeria, reaching north from the Atlantic to Niger."
+          },
+          {
+            "id": "BEN.en.2",
+            "type": "etymology",
+            "text": "Benin took its name from the Bight of Benin, the bay it faces; the old Kingdom of Benin lay in today's Nigeria."
+          },
+          {
+            "id": "BEN.en.3",
+            "type": "sound",
+            "text": "Benin: a dog buries a bean in the sand, wedged between Togo and Nigeria."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BEN.nb.1",
+            "type": "anchor",
+            "text": "Benin er den smale stripa mellom Togo og Nigeria, fra Atlanterhavet opp til Niger."
+          },
+          {
+            "id": "BEN.nb.2",
+            "type": "etymology",
+            "text": "Benin har navnet fra Beninbukta, havbukta landet vender mot; det gamle kongeriket Benin lå i dagens Nigeria."
+          },
+          {
+            "id": "BEN.nb.3",
+            "type": "sound",
+            "text": "Benin: en hund graver et bein inn i sanden mellom Togo og Nigeria."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "BEN.cap.en.1",
+            "type": "etymology",
+            "text": "Porto-Novo, Portuguese for 'new port', is the official capital; the government sits in Cotonou."
+          },
+          {
+            "id": "BEN.cap.en.2",
+            "type": "anchor",
+            "text": "Cotonou, the seat of government, lies on the coast just west of Porto-Novo, the official capital."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BEN.cap.nb.1",
+            "type": "etymology",
+            "text": "Porto-Novo betyr «ny havn» på portugisisk og er den offisielle hovedstaden; regjeringen sitter i Cotonou."
+          },
+          {
+            "id": "BEN.cap.nb.2",
+            "type": "sound",
+            "text": "Porto-Novo: du betaler porto for et brev til hovedstaden, men regjeringen har flyttet til Cotonou."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A green vertical band at the hoist, with yellow over red on the right.",
+        "nb": "Grønt loddrett felt ved stangen, gult over rødt til høyre."
+      },
+      "facts": [
+        {
+          "id": "BEN.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Benin borders Togo, Burkina Faso, Niger and Nigeria, and has a short Atlantic coast.",
+            "nb": "Benin grenser til Togo, Burkina Faso, Niger og Nigeria, og har en kort kyst mot Atlanterhavet."
+          }
+        },
+        {
+          "id": "BEN.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Benin was called Dahomey, after a kingdom in its south, before it took the name Benin.",
+            "nb": "Benin het Dahomey, etter et kongerike i sør, før landet tok navnet Benin."
+          }
+        },
+        {
+          "id": "BEN.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Benin has a national public holiday for Vodun, the religion at the root of Haitian Vodou.",
+            "nb": "Benin har en nasjonal fridag for vodun, religionen som haitisk vodou springer ut av."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "BFA",
+      "hooks": {
+        "en": [
+          {
+            "id": "BFA.en.1",
+            "type": "anchor",
+            "text": "Burkina Faso is landlocked (no coast), sitting on top of Côte d'Ivoire, Ghana, Togo and Benin."
+          },
+          {
+            "id": "BFA.en.2",
+            "type": "etymology",
+            "text": "Burkina Faso roughly means 'land of upright people', joining a Mooré word and a Dioula word."
+          },
+          {
+            "id": "BFA.en.3",
+            "type": "sound",
+            "text": "Burkina Faso: a burger served in a vase, as far from any sea as a West African meal can get."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BFA.nb.1",
+            "type": "anchor",
+            "text": "Burkina Faso er en innlandsstat (uten kyst) som ligger oppå Elfenbenskysten, Ghana, Togo og Benin."
+          },
+          {
+            "id": "BFA.nb.2",
+            "type": "etymology",
+            "text": "Burkina Faso betyr omtrent «de rettskafne menneskers land», satt sammen av et ord fra mooré og et fra dioula."
+          },
+          {
+            "id": "BFA.nb.3",
+            "type": "sound",
+            "text": "Burkina Faso: en bukk og en fasan deler en kanne vann, langt fra havet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "BFA.cap.en.1",
+            "type": "sound",
+            "text": "Ouagadougou sounds like 'waga-doo-goo': a baby babbling in the middle of Burkina Faso."
+          },
+          {
+            "id": "BFA.cap.en.2",
+            "type": "story",
+            "text": "Ouagadougou hosts FESPACO, the film festival that puts the capital on every African cinema calendar."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BFA.cap.nb.1",
+            "type": "sound",
+            "text": "Ouagadougou: «vagga-du-gu», en baby som babler midt i Burkina Faso."
+          },
+          {
+            "id": "BFA.cap.nb.2",
+            "type": "anchor",
+            "text": "Ouagadougou ligger midt i Burkina Faso og er vertsby for filmfestivalen FESPACO."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red over green with a yellow five-pointed star in the center.",
+        "nb": "Rødt over grønt med en gul femtakket stjerne i midten."
+      },
+      "facts": [
+        {
+          "id": "BFA.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Burkina Faso is landlocked, with no coast, and borders Mali, Niger, Benin, Togo, Ghana and Côte d'Ivoire.",
+            "nb": "Burkina Faso er en innlandsstat uten kyst og grenser til Mali, Niger, Benin, Togo, Ghana og Elfenbenskysten."
+          }
+        },
+        {
+          "id": "BFA.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The country was named Upper Volta, after the Volta rivers, before it became Burkina Faso.",
+            "nb": "Landet het Øvre Volta, etter Volta-elvene, før det fikk navnet Burkina Faso."
+          }
+        },
+        {
+          "id": "BFA.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "President Thomas Sankara gave the country the name Burkina Faso.",
+            "nb": "Det var president Thomas Sankara som ga landet navnet Burkina Faso."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "CIV",
+      "hooks": {
+        "en": [
+          {
+            "id": "CIV.en.1",
+            "type": "etymology",
+            "text": "Côte d'Ivoire is French for Ivory Coast, the name traders gave this stretch of shore."
+          },
+          {
+            "id": "CIV.en.2",
+            "type": "anchor",
+            "text": "Côte d'Ivoire sits on the Gulf of Guinea between Liberia and Ghana."
+          },
+          {
+            "id": "CIV.en.3",
+            "type": "contrast",
+            "text": "Côte d'Ivoire's flag is Ireland's reversed: orange at the hoist, green at the fly."
+          },
+          {
+            "id": "CIV.en.4",
+            "type": "sound",
+            "text": "Côte d'Ivoire: an ivory coat hangs on a palm tree on the beach between Liberia and Ghana."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CIV.nb.1",
+            "type": "etymology",
+            "text": "Elfenbenskysten er en oversettelse av det franske Côte d'Ivoire, kysten der handelsmenn kjøpte elfenben."
+          },
+          {
+            "id": "CIV.nb.2",
+            "type": "anchor",
+            "text": "Elfenbenskysten ligger ved Guineabukta mellom Liberia og Ghana."
+          },
+          {
+            "id": "CIV.nb.3",
+            "type": "contrast",
+            "text": "Elfenbenskystens flagg er Irlands snudd: oransje ved stangen, grønt ytterst."
+          },
+          {
+            "id": "CIV.nb.4",
+            "type": "sound",
+            "text": "Elfenbenskysten: et dyr med elleve ben vandrer langs kysten mellom Liberia og Ghana."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "CIV.cap.en.1",
+            "type": "story",
+            "text": "Yamoussoukro became the official capital because President Houphouët-Boigny was born there."
+          },
+          {
+            "id": "CIV.cap.en.2",
+            "type": "anchor",
+            "text": "Abidjan, the seat of government and the biggest city, sits on a lagoon on the coast."
+          },
+          {
+            "id": "CIV.cap.en.3",
+            "type": "sound",
+            "text": "Yamoussoukro: a mouse carries a yam and a sugar cube inland to the official capital."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CIV.cap.nb.1",
+            "type": "story",
+            "text": "Yamoussoukro ble offisiell hovedstad fordi president Houphouët-Boigny var født der."
+          },
+          {
+            "id": "CIV.cap.nb.2",
+            "type": "anchor",
+            "text": "Abidjan, regjeringssetet og den største byen, ligger ved en lagune på kysten."
+          },
+          {
+            "id": "CIV.cap.nb.3",
+            "type": "sound",
+            "text": "Yamoussoukro: en mus med sukker på snuten styrer den offisielle hovedstaden."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Orange, white and green vertical bands, orange at the hoist; Ireland has the same colors in reverse.",
+        "nb": "Oransje, hvitt og grønt i loddrette felt, oransje ved stangen; Irland har de samme fargene motsatt vei."
+      },
+      "facts": [
+        {
+          "id": "CIV.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Côte d'Ivoire borders Liberia, Guinea, Mali, Burkina Faso and Ghana, and has a coast on the Gulf of Guinea.",
+            "nb": "Elfenbenskysten grenser til Liberia, Guinea, Mali, Burkina Faso og Ghana, og har kyst mot Guineabukta."
+          }
+        },
+        {
+          "id": "CIV.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The country asks to be called Côte d'Ivoire in every language, not a translation such as Ivory Coast.",
+            "nb": "Landet ber om å bli kalt Côte d'Ivoire på alle språk, ikke en oversettelse som Elfenbenskysten."
+          }
+        },
+        {
+          "id": "CIV.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Côte d'Ivoire is the world's largest producer of cocoa beans.",
+            "nb": "Elfenbenskysten er verdens største produsent av kakaobønner."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "CPV",
+      "hooks": {
+        "en": [
+          {
+            "id": "CPV.en.1",
+            "type": "anchor",
+            "text": "Cabo Verde is an archipelago (a group of islands) in the Atlantic, west of Senegal."
+          },
+          {
+            "id": "CPV.en.2",
+            "type": "etymology",
+            "text": "Cabo Verde is Portuguese for 'green cape', after Cap-Vert, the headland at Dakar on the mainland."
+          },
+          {
+            "id": "CPV.en.3",
+            "type": "sound",
+            "text": "Cabo Verde: a cab drives off the green cape at Dakar and keeps going out into the Atlantic."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CPV.nb.1",
+            "type": "anchor",
+            "text": "Kapp Verde er en øygruppe (mange øyer samlet) i Atlanterhavet, vest for Senegal."
+          },
+          {
+            "id": "CPV.nb.2",
+            "type": "etymology",
+            "text": "Kapp Verde betyr «det grønne kappet», etter neset Cap-Vert ved Dakar på fastlandet."
+          },
+          {
+            "id": "CPV.nb.3",
+            "type": "sound",
+            "text": "Kapp Verde: to båter kappseiler fra Dakar og ut til øyene i Atlanterhavet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "CPV.cap.en.1",
+            "type": "etymology",
+            "text": "Praia is Portuguese for 'beach', and the capital sits on the island of Santiago."
+          },
+          {
+            "id": "CPV.cap.en.2",
+            "type": "sound",
+            "text": "Praia: you pray for a beach, and the capital is named for one."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CPV.cap.nb.1",
+            "type": "etymology",
+            "text": "Praia betyr «strand» på portugisisk; hovedstaden ligger på øya Santiago."
+          },
+          {
+            "id": "CPV.cap.nb.2",
+            "type": "sound",
+            "text": "Praia: du prater i vei på stranda i hovedstaden på Kapp Verde."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue with white and red stripes below the middle and a ring of yellow stars, one for each main island.",
+        "nb": "Blått med hvite og røde striper under midten og en ring av gule stjerner, én for hver hovedøy."
+      },
+      "facts": [
+        {
+          "id": "CPV.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Cabo Verde has no land borders; it is an island country off the coast of West Africa.",
+            "nb": "Kapp Verde har ingen landegrenser; det er en øystat utenfor kysten av Vest-Afrika."
+          }
+        },
+        {
+          "id": "CPV.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Portuguese is the official language of Cabo Verde.",
+            "nb": "Portugisisk er offisielt språk på Kapp Verde."
+          }
+        },
+        {
+          "id": "CPV.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Cesária Évora, the singer known as the barefoot diva, came from Cabo Verde.",
+            "nb": "Cesária Évora, sangeren kalt «den barbeinte divaen», kom fra Kapp Verde."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "GHA",
+      "hooks": {
+        "en": [
+          {
+            "id": "GHA.en.1",
+            "type": "anchor",
+            "text": "Ghana sits on the Gulf of Guinea between Côte d'Ivoire and Togo, with Burkina Faso to the north."
+          },
+          {
+            "id": "GHA.en.2",
+            "type": "etymology",
+            "text": "Ghana took its name from an old empire that lay far to the northwest, in today's Mali and Mauritania."
+          },
+          {
+            "id": "GHA.en.3",
+            "type": "story",
+            "text": "Ghana used to be called the Gold Coast: picture its beach glittering with gold dust between Côte d'Ivoire and Togo."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GHA.nb.1",
+            "type": "anchor",
+            "text": "Ghana ligger ved Guineabukta mellom Elfenbenskysten og Togo, med Burkina Faso i nord."
+          },
+          {
+            "id": "GHA.nb.2",
+            "type": "etymology",
+            "text": "Ghana har navnet fra et gammelt rike som lå langt mot nordvest, i dagens Mali og Mauritania."
+          },
+          {
+            "id": "GHA.nb.3",
+            "type": "sound",
+            "text": "Ghana: en gammel hane galer over gullstranda mellom Elfenbenskysten og Togo."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "GHA.cap.en.1",
+            "type": "anchor",
+            "text": "Accra sits on the Atlantic coast in the southeast of Ghana."
+          },
+          {
+            "id": "GHA.cap.en.2",
+            "type": "sound",
+            "text": "Accra: a crow croaks 'a-craa' over the beach in Ghana's capital."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GHA.cap.nb.1",
+            "type": "anchor",
+            "text": "Accra ligger ved Atlanterhavet sørøst i Ghana."
+          },
+          {
+            "id": "GHA.cap.nb.2",
+            "type": "sound",
+            "text": "Accra: en kråke skriker «a-kraa» over stranda i Ghanas hovedstad."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, yellow and green stripes with a black star in the middle of the yellow.",
+        "nb": "Rød, gul og grønn stripe med en svart stjerne midt i det gule."
+      },
+      "facts": [
+        {
+          "id": "GHA.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Ghana borders Côte d'Ivoire, Burkina Faso and Togo, and has a coast on the Gulf of Guinea.",
+            "nb": "Ghana grenser til Elfenbenskysten, Burkina Faso og Togo, og har kyst mot Guineabukta."
+          }
+        },
+        {
+          "id": "GHA.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The cedi, Ghana's currency, takes its name from the Akan word for the cowrie shell, once used as money.",
+            "nb": "Valutaen cedi har navnet fra akan-ordet for kauriskjell, som en gang ble brukt som penger."
+          }
+        },
+        {
+          "id": "GHA.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Lake Volta, behind the Akosombo Dam, is the largest artificial lake in the world by surface area.",
+            "nb": "Voltasjøen, bak Akosombo-demningen, er verdens største kunstige innsjø målt i areal."
+          }
+        },
+        {
+          "id": "GHA.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The prime meridian and the equator cross in the Gulf of Guinea, south of Ghana.",
+            "nb": "Nullmeridianen og ekvator krysser hverandre i Guineabukta, sør for Ghana."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "GIN",
+      "hooks": {
+        "en": [
+          {
+            "id": "GIN.en.1",
+            "type": "anchor",
+            "text": "Guinea curves around the north of Sierra Leone, with Guinea-Bissau to the northwest and Mali to the east."
+          },
+          {
+            "id": "GIN.en.2",
+            "type": "contrast",
+            "text": "Guinea is the large one. Guinea-Bissau is its small northwest neighbor; Equatorial Guinea lies far off in Middle Africa."
+          },
+          {
+            "id": "GIN.en.3",
+            "type": "shape",
+            "text": "Guinea is a boomerang bent around Sierra Leone."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GIN.nb.1",
+            "type": "anchor",
+            "text": "Guinea bøyer seg rundt nordsiden av Sierra Leone, med Guinea-Bissau i nordvest og Mali i øst."
+          },
+          {
+            "id": "GIN.nb.2",
+            "type": "contrast",
+            "text": "Guinea er den store. Guinea-Bissau er den lille naboen i nordvest; Ekvatorial-Guinea ligger langt unna i Sentral-Afrika."
+          },
+          {
+            "id": "GIN.nb.3",
+            "type": "shape",
+            "text": "Guinea er en bumerang som bøyer seg rundt Sierra Leone."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "GIN.cap.en.1",
+            "type": "anchor",
+            "text": "Conakry sits on a narrow peninsula jutting into the Atlantic."
+          },
+          {
+            "id": "GIN.cap.en.2",
+            "type": "sound",
+            "text": "Conakry: an ice cream cone cries as it melts on the Guinea coast."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GIN.cap.nb.1",
+            "type": "anchor",
+            "text": "Conakry ligger på en smal halvøy som stikker ut i Atlanterhavet."
+          },
+          {
+            "id": "GIN.cap.nb.2",
+            "type": "sound",
+            "text": "Conakry: krabber kryr rundt kona som soler seg på halvøya i Guinea."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, yellow and green vertical bands: Mali's colors in reverse order.",
+        "nb": "Rødt, gult og grønt i loddrette felt: Malis farger i motsatt rekkefølge."
+      },
+      "facts": [
+        {
+          "id": "GIN.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Guinea borders Guinea-Bissau, Senegal, Mali, Côte d'Ivoire, Liberia and Sierra Leone, and has an Atlantic coast.",
+            "nb": "Guinea grenser til Guinea-Bissau, Senegal, Mali, Elfenbenskysten, Liberia og Sierra Leone, og har kyst mot Atlanterhavet."
+          }
+        },
+        {
+          "id": "GIN.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Niger River rises in the highlands of Guinea.",
+            "nb": "Nigerelva har sine kilder i høylandet i Guinea."
+          }
+        },
+        {
+          "id": "GIN.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Guinea holds some of the largest bauxite reserves in the world, the ore used to make aluminium.",
+            "nb": "Guinea har noen av verdens største forekomster av bauksitt, malmen aluminium lages av."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "GMB",
+      "hooks": {
+        "en": [
+          {
+            "id": "GMB.en.1",
+            "type": "anchor",
+            "text": "Gambia is a thin strip along the Gambia River, surrounded by Senegal except for its Atlantic coast."
+          },
+          {
+            "id": "GMB.en.2",
+            "type": "shape",
+            "text": "Gambia is a finger poking into Senegal from the sea."
+          },
+          {
+            "id": "GMB.en.3",
+            "type": "etymology",
+            "text": "Gambia takes its name from the Gambia River, which it follows inland."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GMB.nb.1",
+            "type": "anchor",
+            "text": "Gambia er en tynn stripe langs Gambiaelva, omgitt av Senegal bortsett fra kysten mot Atlanterhavet."
+          },
+          {
+            "id": "GMB.nb.2",
+            "type": "shape",
+            "text": "Gambia er en finger som stikker inn i Senegal fra havet."
+          },
+          {
+            "id": "GMB.nb.3",
+            "type": "sound",
+            "text": "Gambia: en gammel bie surrer oppover elva, med Senegal på begge sider."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "GMB.cap.en.1",
+            "type": "anchor",
+            "text": "Banjul sits on an island at the mouth of the Gambia River."
+          },
+          {
+            "id": "GMB.cap.en.2",
+            "type": "sound",
+            "text": "Banjul: a banjo played at Yule on the riverbank where the Gambia meets the sea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GMB.cap.nb.1",
+            "type": "anchor",
+            "text": "Banjul ligger på en øy ved munningen av Gambiaelva."
+          },
+          {
+            "id": "GMB.cap.nb.2",
+            "type": "sound",
+            "text": "Banjul: et band spiller julesanger ved elvemunningen i Gambia."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, blue and green stripes, with thin white lines edging the blue middle stripe.",
+        "nb": "Rød, blå og grønn stripe, med tynne hvite linjer langs den blå midtstripa."
+      },
+      "facts": [
+        {
+          "id": "GMB.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Gambia's only land neighbor is Senegal, which surrounds it on every side but the coast.",
+            "nb": "Gambias eneste naboland er Senegal, som omgir landet på alle kanter unntatt kysten."
+          }
+        },
+        {
+          "id": "GMB.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Gambia is the smallest country on the African mainland.",
+            "nb": "Gambia er det minste landet på det afrikanske fastlandet."
+          }
+        },
+        {
+          "id": "GMB.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Senegal and Gambia were once joined in a confederation called Senegambia.",
+            "nb": "Senegal og Gambia var en gang forent i et statsforbund kalt Senegambia."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "GNB",
+      "hooks": {
+        "en": [
+          {
+            "id": "GNB.en.1",
+            "type": "anchor",
+            "text": "Guinea-Bissau sits between Senegal to the north and Guinea to the south and east."
+          },
+          {
+            "id": "GNB.en.2",
+            "type": "contrast",
+            "text": "Guinea-Bissau carries its capital in its name to set itself apart from Guinea next door."
+          },
+          {
+            "id": "GNB.en.3",
+            "type": "sound",
+            "text": "Guinea-Bissau: a bison wades between the islands off the coast."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GNB.nb.1",
+            "type": "anchor",
+            "text": "Guinea-Bissau ligger mellom Senegal i nord og Guinea i sør og øst."
+          },
+          {
+            "id": "GNB.nb.2",
+            "type": "contrast",
+            "text": "Guinea-Bissau har hovedstaden i navnet for å skille seg fra nabolandet Guinea."
+          },
+          {
+            "id": "GNB.nb.3",
+            "type": "sound",
+            "text": "Guinea-Bissau: en mor synger «bissevov» til barnet i en båt mellom øyene utenfor kysten."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "GNB.cap.en.1",
+            "type": "anchor",
+            "text": "Bissau sits on the estuary of the Geba River."
+          },
+          {
+            "id": "GNB.cap.en.2",
+            "type": "etymology",
+            "text": "Bissau is the second half of the country's name, so the capital answers itself."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GNB.cap.nb.1",
+            "type": "anchor",
+            "text": "Bissau ligger ved elvemunningen til Geba."
+          },
+          {
+            "id": "GNB.cap.nb.2",
+            "type": "etymology",
+            "text": "Bissau er andre halvdel av landets navn, så hovedstaden svarer seg selv."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A red vertical band with a black star at the hoist, and yellow over green on the right.",
+        "nb": "Rødt loddrett felt med en svart stjerne ved stangen, og gult over grønt til høyre."
+      },
+      "facts": [
+        {
+          "id": "GNB.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Guinea-Bissau borders Senegal and Guinea, and has an Atlantic coast.",
+            "nb": "Guinea-Bissau grenser til Senegal og Guinea, og har kyst mot Atlanterhavet."
+          }
+        },
+        {
+          "id": "GNB.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Portuguese is the official language of Guinea-Bissau.",
+            "nb": "Portugisisk er offisielt språk i Guinea-Bissau."
+          }
+        },
+        {
+          "id": "GNB.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Bijagós Islands, an archipelago (a group of islands) off the coast, belong to Guinea-Bissau.",
+            "nb": "Bijagós-øyene, en øygruppe (mange øyer samlet) utenfor kysten, hører til Guinea-Bissau."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "LBR",
+      "hooks": {
+        "en": [
+          {
+            "id": "LBR.en.1",
+            "type": "anchor",
+            "text": "Liberia sits on the Atlantic between Sierra Leone and Côte d'Ivoire, with Guinea behind it."
+          },
+          {
+            "id": "LBR.en.2",
+            "type": "etymology",
+            "text": "Liberia comes from Latin liber, free; it was founded as a settlement for free and freed African Americans."
+          },
+          {
+            "id": "LBR.en.3",
+            "type": "sound",
+            "text": "Liberia: a library on the beach between Sierra Leone and Côte d'Ivoire, its books curling in the sea air."
+          }
+        ],
+        "nb": [
+          {
+            "id": "LBR.nb.1",
+            "type": "anchor",
+            "text": "Liberia ligger ved Atlanterhavet mellom Sierra Leone og Elfenbenskysten, med Guinea bak."
+          },
+          {
+            "id": "LBR.nb.2",
+            "type": "etymology",
+            "text": "Liberia kommer av latin liber, fri; landet ble grunnlagt for frie og frigitte afroamerikanere."
+          },
+          {
+            "id": "LBR.nb.3",
+            "type": "sound",
+            "text": "Liberia: en li full av bær ved kysten mellom Sierra Leone og Elfenbenskysten."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "LBR.cap.en.1",
+            "type": "etymology",
+            "text": "Monrovia is named after James Monroe, US president when the colony was founded."
+          },
+          {
+            "id": "LBR.cap.en.2",
+            "type": "anchor",
+            "text": "Monrovia sits on a cape on the Atlantic coast, near the mouth of the Saint Paul River."
+          }
+        ],
+        "nb": [
+          {
+            "id": "LBR.cap.nb.1",
+            "type": "etymology",
+            "text": "Monrovia er oppkalt etter James Monroe, USAs president da kolonien ble grunnlagt."
+          },
+          {
+            "id": "LBR.cap.nb.2",
+            "type": "anchor",
+            "text": "Monrovia ligger på et nes ved Atlanterhavet, nær munningen av elva Saint Paul."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red and white stripes with a white star on a blue square, modeled on the US flag.",
+        "nb": "Røde og hvite striper med en hvit stjerne i et blått felt, etter mønster av USAs flagg."
+      },
+      "facts": [
+        {
+          "id": "LBR.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Liberia borders Sierra Leone, Guinea and Côte d'Ivoire, and has an Atlantic coast.",
+            "nb": "Liberia grenser til Sierra Leone, Guinea og Elfenbenskysten, og har kyst mot Atlanterhavet."
+          }
+        },
+        {
+          "id": "LBR.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Liberia uses both the Liberian dollar and the US dollar.",
+            "nb": "Liberia bruker både liberisk dollar og amerikansk dollar."
+          }
+        },
+        {
+          "id": "LBR.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Ellen Johnson Sirleaf of Liberia was the first woman elected head of state in Africa.",
+            "nb": "Ellen Johnson Sirleaf fra Liberia var den første kvinnen som ble valgt til statsoverhode i Afrika."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "MLI",
+      "hooks": {
+        "en": [
+          {
+            "id": "MLI.en.1",
+            "type": "anchor",
+            "text": "Mali is landlocked (no coast), south of Algeria, with Senegal and Mauritania to its west."
+          },
+          {
+            "id": "MLI.en.2",
+            "type": "shape",
+            "text": "Mali is a bow tie: a big northern wing in the Sahara and a southern wing, pinched together in the middle."
+          },
+          {
+            "id": "MLI.en.3",
+            "type": "story",
+            "text": "Timbuktu, the old byword for the end of the world, is a real city in Mali on the edge of the Sahara."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MLI.nb.1",
+            "type": "anchor",
+            "text": "Mali er en innlandsstat (uten kyst) sør for Algerie, med Senegal og Mauritania i vest."
+          },
+          {
+            "id": "MLI.nb.2",
+            "type": "shape",
+            "text": "Mali er en sløyfe: en stor nordlig vinge i Sahara og en sørlig vinge, knepet sammen på midten."
+          },
+          {
+            "id": "MLI.nb.3",
+            "type": "sound",
+            "text": "Mali: en maler maler hele Sahara gul, fra Algerie og sørover."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "MLI.cap.en.1",
+            "type": "anchor",
+            "text": "Bamako sits on the Niger River in the southwest of Mali."
+          },
+          {
+            "id": "MLI.cap.en.2",
+            "type": "sound",
+            "text": "Bamako: bam, a macaw lands on a boat on the Niger."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MLI.cap.nb.1",
+            "type": "anchor",
+            "text": "Bamako ligger ved Nigerelva sørvest i Mali."
+          },
+          {
+            "id": "MLI.cap.nb.2",
+            "type": "sound",
+            "text": "Bamako: en bamse drikker kakao ved Nigerelva."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green, yellow and red vertical bands, green at the hoist; Guinea uses the same colors the other way round.",
+        "nb": "Grønt, gult og rødt i loddrette felt, grønt ved stangen; Guinea har de samme fargene andre veien."
+      },
+      "facts": [
+        {
+          "id": "MLI.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Mali is landlocked, with no coast, and borders Algeria, Niger, Burkina Faso, Côte d'Ivoire, Guinea, Senegal and Mauritania.",
+            "nb": "Mali er en innlandsstat uten kyst og grenser til Algerie, Niger, Burkina Faso, Elfenbenskysten, Guinea, Senegal og Mauritania."
+          }
+        },
+        {
+          "id": "MLI.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Niger River makes a wide bend through Mali and forms an inland delta there.",
+            "nb": "Nigerelva slår en stor bue gjennom Mali og danner et innlandsdelta der."
+          }
+        },
+        {
+          "id": "MLI.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Great Mosque of Djenné in Mali is the largest mud-brick building in the world.",
+            "nb": "Den store moskeen i Djenné i Mali er verdens største bygning av soltørket leire."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "MRT",
+      "hooks": {
+        "en": [
+          {
+            "id": "MRT.en.1",
+            "type": "anchor",
+            "text": "Mauritania sits on the Atlantic north of Senegal, mostly Sahara, with Mali to the east."
+          },
+          {
+            "id": "MRT.en.2",
+            "type": "contrast",
+            "text": "Mauritania is the desert country in West Africa; Mauritius is the small island in the Indian Ocean."
+          },
+          {
+            "id": "MRT.en.3",
+            "type": "story",
+            "text": "The Eye of the Sahara, a giant ring of rock that astronauts use as a landmark, lies in Mauritania's desert."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MRT.nb.1",
+            "type": "anchor",
+            "text": "Mauritania ligger ved Atlanterhavet nord for Senegal, for det meste i Sahara, med Mali i øst."
+          },
+          {
+            "id": "MRT.nb.2",
+            "type": "contrast",
+            "text": "Mauritania er ørkenlandet i Vest-Afrika; Mauritius er den lille øya i Indiahavet."
+          },
+          {
+            "id": "MRT.nb.3",
+            "type": "sound",
+            "text": "Mauritania: en maur går og går over sanden langs kysten nord for Senegal."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "MRT.cap.en.1",
+            "type": "story",
+            "text": "Nouakchott was built as the capital around independence, on the coast near a small village."
+          },
+          {
+            "id": "MRT.cap.en.2",
+            "type": "anchor",
+            "text": "Nouakchott sits on the Atlantic coast, roughly halfway down Mauritania's shore."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MRT.cap.nb.1",
+            "type": "story",
+            "text": "Nouakchott ble bygget som hovedstad rundt selvstendigheten, ved kysten nær en liten landsby."
+          },
+          {
+            "id": "MRT.cap.nb.2",
+            "type": "sound",
+            "text": "Nouakchott: «nå kjøtt», roper en sulten kamel på stranda i hovedstaden."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green with a yellow crescent and star, and red bands along the top and bottom.",
+        "nb": "Grønt med gul halvmåne og stjerne, og røde striper øverst og nederst."
+      },
+      "facts": [
+        {
+          "id": "MRT.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Mauritania borders Senegal along the Senegal River and has a long Atlantic coast.",
+            "nb": "Mauritania grenser til Senegal langs Senegalelva og har lang kyst mot Atlanterhavet."
+          }
+        },
+        {
+          "id": "MRT.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Arabic is the official language of Mauritania.",
+            "nb": "Arabisk er offisielt språk i Mauritania."
+          }
+        },
+        {
+          "id": "MRT.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "One of the longest trains in the world carries iron ore from Zouérat to the coast at Nouadhibou.",
+            "nb": "Et av verdens lengste tog frakter jernmalm fra Zouérat til kysten ved Nouadhibou."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "NER",
+      "hooks": {
+        "en": [
+          {
+            "id": "NER.en.1",
+            "type": "anchor",
+            "text": "Niger is landlocked (no coast), a large Saharan country north of Nigeria and east of Mali."
+          },
+          {
+            "id": "NER.en.2",
+            "type": "contrast",
+            "text": "Niger is the landlocked one, to the north; Nigeria is the one with the coast and more letters."
+          },
+          {
+            "id": "NER.en.3",
+            "type": "etymology",
+            "text": "Niger is named after the Niger River, which crosses its southwest corner past Niamey."
+          },
+          {
+            "id": "NER.en.4",
+            "type": "story",
+            "text": "Niger: the Sahara fills the north, so most people live in a thin band along the south, near Nigeria."
+          }
+        ],
+        "nb": [
+          {
+            "id": "NER.nb.1",
+            "type": "anchor",
+            "text": "Niger er en innlandsstat (uten kyst), et stort Sahara-land nord for Nigeria og øst for Mali."
+          },
+          {
+            "id": "NER.nb.2",
+            "type": "contrast",
+            "text": "Niger er den uten kyst, i nord; Nigeria har kysten og det lengre navnet."
+          },
+          {
+            "id": "NER.nb.3",
+            "type": "etymology",
+            "text": "Niger har navnet fra Nigerelva, som renner gjennom sørvest i landet forbi Niamey."
+          },
+          {
+            "id": "NER.nb.4",
+            "type": "story",
+            "text": "Niger: Sahara dekker nord, så de fleste bor i et smalt belte i sør, mot Nigeria."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "NER.cap.en.1",
+            "type": "anchor",
+            "text": "Niamey sits on the Niger River in the far southwest of Niger."
+          },
+          {
+            "id": "NER.cap.en.2",
+            "type": "sound",
+            "text": "Niamey: a giant kneels by the Niger, knee in the river, to drink."
+          }
+        ],
+        "nb": [
+          {
+            "id": "NER.cap.nb.1",
+            "type": "anchor",
+            "text": "Niamey ligger ved Nigerelva helt sørvest i Niger."
+          },
+          {
+            "id": "NER.cap.nb.2",
+            "type": "sound",
+            "text": "Niamey: ni geiter mæker i kor på bredden av Nigerelva."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Orange, white and green stripes with an orange disc in the middle; India's flag is similar but has a wheel.",
+        "nb": "Oransje, hvit og grønn stripe med en oransje sirkel i midten; Indias flagg ligner, men har et hjul."
+      },
+      "facts": [
+        {
+          "id": "NER.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Niger is landlocked, with no coast, and borders Algeria, Libya, Chad, Nigeria, Benin, Burkina Faso and Mali.",
+            "nb": "Niger er en innlandsstat uten kyst og grenser til Algerie, Libya, Tsjad, Nigeria, Benin, Burkina Faso og Mali."
+          }
+        },
+        {
+          "id": "NER.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Niger is one of the world's main producers of uranium.",
+            "nb": "Niger er en av verdens viktigste produsenter av uran."
+          }
+        },
+        {
+          "id": "NER.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Tree of Ténéré in Niger's desert was called the most isolated tree on Earth, until a truck knocked it down.",
+            "nb": "Ténéré-treet i ørkenen i Niger ble kalt verdens mest isolerte tre, helt til en lastebil kjørte det ned."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "NGA",
+      "hooks": {
+        "en": [
+          {
+            "id": "NGA.en.1",
+            "type": "anchor",
+            "text": "Nigeria is on the Gulf of Guinea between Benin and Cameroon, with Niger to the north."
+          },
+          {
+            "id": "NGA.en.2",
+            "type": "contrast",
+            "text": "Nigeria has the coast and the giant cities; Niger, its neighbor to the north, has no coast."
+          },
+          {
+            "id": "NGA.en.3",
+            "type": "etymology",
+            "text": "Nigeria is named after the Niger River, which flows through it to a wide delta on the coast."
+          },
+          {
+            "id": "NGA.en.4",
+            "type": "story",
+            "text": "Nigeria: the Niger and the Benue meet in the middle like a Y, then run to the sea as one river."
+          }
+        ],
+        "nb": [
+          {
+            "id": "NGA.nb.1",
+            "type": "anchor",
+            "text": "Nigeria ligger ved Guineabukta mellom Benin og Kamerun, med Niger i nord."
+          },
+          {
+            "id": "NGA.nb.2",
+            "type": "contrast",
+            "text": "Nigeria har kysten og storbyene; Niger, naboen i nord, er en innlandsstat (uten kyst)."
+          },
+          {
+            "id": "NGA.nb.3",
+            "type": "etymology",
+            "text": "Nigeria har navnet fra Nigerelva, som renner gjennom landet til et bredt delta på kysten."
+          },
+          {
+            "id": "NGA.nb.4",
+            "type": "story",
+            "text": "Nigeria: Niger og Benue møtes som en Y midt i landet og renner sammen ut mot havet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "NGA.cap.en.1",
+            "type": "story",
+            "text": "Abuja was built in the middle of the country to replace Lagos as capital, on neutral ground between regions."
+          },
+          {
+            "id": "NGA.cap.en.2",
+            "type": "contrast",
+            "text": "Lagos is the giant port city on the coast; the capital is Abuja, far inland."
+          }
+        ],
+        "nb": [
+          {
+            "id": "NGA.cap.nb.1",
+            "type": "story",
+            "text": "Abuja ble bygget midt i landet for å erstatte Lagos som hovedstad, på nøytral grunn mellom regionene."
+          },
+          {
+            "id": "NGA.cap.nb.2",
+            "type": "sound",
+            "text": "Abuja: «å, bu ja», sukker en flyttekasse som endelig får bo midt i Nigeria."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green, white and green vertical bands, with no emblem.",
+        "nb": "Grønt, hvitt og grønt i loddrette felt, uten emblem."
+      },
+      "facts": [
+        {
+          "id": "NGA.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Nigeria borders Benin, Niger, Chad and Cameroon, and has a coast on the Gulf of Guinea.",
+            "nb": "Nigeria grenser til Benin, Niger, Tsjad og Kamerun, og har kyst mot Guineabukta."
+          }
+        },
+        {
+          "id": "NGA.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Niger and Benue rivers meet at Lokoja in central Nigeria.",
+            "nb": "Nigerelva og Benue møtes ved Lokoja midt i Nigeria."
+          }
+        },
+        {
+          "id": "NGA.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Nigeria is the most populous country in Africa.",
+            "nb": "Nigeria er Afrikas mest folkerike land."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "SEN",
+      "hooks": {
+        "en": [
+          {
+            "id": "SEN.en.1",
+            "type": "anchor",
+            "text": "Senegal is the westernmost bulge of Africa, wrapped around Gambia, with Mauritania to the north."
+          },
+          {
+            "id": "SEN.en.2",
+            "type": "etymology",
+            "text": "Senegal takes its name from the Senegal River, which forms its northern border with Mauritania."
+          },
+          {
+            "id": "SEN.en.3",
+            "type": "shape",
+            "text": "Senegal is a mouth biting down on Gambia, the thin strip of land along its river."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SEN.nb.1",
+            "type": "anchor",
+            "text": "Senegal er utbuktningen lengst vest i Afrika, rundt Gambia, med Mauritania i nord."
+          },
+          {
+            "id": "SEN.nb.2",
+            "type": "etymology",
+            "text": "Senegal har navnet fra Senegalelva, som danner grensen mot Mauritania i nord."
+          },
+          {
+            "id": "SEN.nb.3",
+            "type": "sound",
+            "text": "Senegal: en seng står på stranda i Dakar, og måkene rundt den er helt gale."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "SEN.cap.en.1",
+            "type": "anchor",
+            "text": "Dakar sits on the Cap-Vert peninsula, the westernmost point of mainland Africa."
+          },
+          {
+            "id": "SEN.cap.en.2",
+            "type": "story",
+            "text": "The Dakar Rally used to finish here: picture rally cars racing out of the desert into the capital."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SEN.cap.nb.1",
+            "type": "anchor",
+            "text": "Dakar ligger på halvøya Cap-Vert, det vestligste punktet på det afrikanske fastlandet."
+          },
+          {
+            "id": "SEN.cap.nb.2",
+            "type": "story",
+            "text": "Dakar-rallyet endte her i mange år: se for deg rallybiler som raser ut av ørkenen og inn i hovedstaden."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green, yellow and red vertical bands with a green star in the yellow; Mali has the same bands without the star.",
+        "nb": "Grønt, gult og rødt i loddrette felt med en grønn stjerne i det gule; Mali har de samme feltene uten stjerne."
+      },
+      "facts": [
+        {
+          "id": "SEN.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Senegal borders Mauritania, Mali, Guinea and Guinea-Bissau, almost surrounds Gambia, and has an Atlantic coast.",
+            "nb": "Senegal grenser til Mauritania, Mali, Guinea og Guinea-Bissau, omgir nesten hele Gambia, og har kyst mot Atlanterhavet."
+          }
+        },
+        {
+          "id": "SEN.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Gorée, an island off Dakar, is a memorial to the Atlantic slave trade.",
+            "nb": "Gorée, en øy utenfor Dakar, er et minnested for den atlantiske slavehandelen."
+          }
+        },
+        {
+          "id": "SEN.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Lac Rose near Dakar can turn pink because of algae that thrive in its salty water.",
+            "nb": "Lac Rose ved Dakar kan bli rosa på grunn av alger som trives i det salte vannet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "SLE",
+      "hooks": {
+        "en": [
+          {
+            "id": "SLE.en.1",
+            "type": "anchor",
+            "text": "Sierra Leone sits on the Atlantic between Guinea and Liberia."
+          },
+          {
+            "id": "SLE.en.2",
+            "type": "etymology",
+            "text": "Sierra Leone means 'lion mountains', a name Portuguese sailors gave the hills behind the coast."
+          },
+          {
+            "id": "SLE.en.3",
+            "type": "story",
+            "text": "Sierra Leone: lions roar from the hills above the harbor as Portuguese ships sail past."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SLE.nb.1",
+            "type": "anchor",
+            "text": "Sierra Leone ligger ved Atlanterhavet mellom Guinea og Liberia."
+          },
+          {
+            "id": "SLE.nb.2",
+            "type": "etymology",
+            "text": "Sierra Leone betyr «løvefjellene», et navn portugisiske sjøfolk ga åsene bak kysten."
+          },
+          {
+            "id": "SLE.nb.3",
+            "type": "story",
+            "text": "Sierra Leone: løver brøler fra åsene over havna mens portugisiske skip seiler forbi."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "SLE.cap.en.1",
+            "type": "etymology",
+            "text": "Freetown was founded as a settlement for freed and formerly enslaved people, and the name says so."
+          },
+          {
+            "id": "SLE.cap.en.2",
+            "type": "anchor",
+            "text": "Freetown sits on a peninsula beside one of the largest natural harbors in the world."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SLE.cap.nb.1",
+            "type": "etymology",
+            "text": "Freetown ble grunnlagt som bosetning for frigitte slaver, og navnet betyr «fri by»."
+          },
+          {
+            "id": "SLE.cap.nb.2",
+            "type": "anchor",
+            "text": "Freetown ligger på en halvøy ved en av verdens største naturlige havner."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green, white and blue horizontal stripes, top to bottom.",
+        "nb": "Grønn, hvit og blå, vannrette striper ovenfra og ned."
+      },
+      "facts": [
+        {
+          "id": "SLE.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Sierra Leone borders Guinea and Liberia, and has an Atlantic coast.",
+            "nb": "Sierra Leone grenser til Guinea og Liberia, og har kyst mot Atlanterhavet."
+          }
+        },
+        {
+          "id": "SLE.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "English is the official language of Sierra Leone.",
+            "nb": "Engelsk er offisielt språk i Sierra Leone."
+          }
+        },
+        {
+          "id": "SLE.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Sierra Leone's currency, the leone, takes its name from the country.",
+            "nb": "Valutaen i Sierra Leone, leone, har navnet sitt fra landet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "TGO",
+      "hooks": {
+        "en": [
+          {
+            "id": "TGO.en.1",
+            "type": "anchor",
+            "text": "Togo is the narrow strip between Ghana and Benin, with Burkina Faso at its top."
+          },
+          {
+            "id": "TGO.en.2",
+            "type": "contrast",
+            "text": "Togo and Benin are twin strips side by side; Togo is the western one, next to Ghana."
+          },
+          {
+            "id": "TGO.en.3",
+            "type": "sound",
+            "text": "Togo: order a meal 'to go' and walk it up the narrow strip from the coast to Burkina Faso."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TGO.nb.1",
+            "type": "anchor",
+            "text": "Togo er den smale stripa mellom Ghana og Benin, med Burkina Faso øverst."
+          },
+          {
+            "id": "TGO.nb.2",
+            "type": "contrast",
+            "text": "Togo og Benin er to smale striper side om side; Togo er den vestlige, inntil Ghana."
+          },
+          {
+            "id": "TGO.nb.3",
+            "type": "sound",
+            "text": "Togo: et tog kjører rett nordover gjennom den smale stripa, fra kysten til Burkina Faso."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "TGO.cap.en.1",
+            "type": "anchor",
+            "text": "Lomé sits on the coast right at the border with Ghana."
+          },
+          {
+            "id": "TGO.cap.en.2",
+            "type": "sound",
+            "text": "Lomé: low tide in May on the beach of Togo's capital."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TGO.cap.nb.1",
+            "type": "anchor",
+            "text": "Lomé ligger på kysten helt inntil grensa mot Ghana."
+          },
+          {
+            "id": "TGO.cap.nb.2",
+            "type": "sound",
+            "text": "Lomé: hele stranda lo med da toget kom fram til kysten."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green and yellow stripes with a white star on a red square in the corner.",
+        "nb": "Grønne og gule striper med en hvit stjerne på et rødt felt i hjørnet."
+      },
+      "facts": [
+        {
+          "id": "TGO.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Togo borders Ghana, Burkina Faso and Benin, and has a short coast on the Gulf of Guinea.",
+            "nb": "Togo grenser til Ghana, Burkina Faso og Benin, og har en kort kyst mot Guineabukta."
+          }
+        },
+        {
+          "id": "TGO.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "French is the official language of Togo.",
+            "nb": "Fransk er offisielt språk i Togo."
+          }
+        },
+        {
+          "id": "TGO.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Koutammakou in northern Togo, known for its tower-like mud houses, is a UNESCO World Heritage Site.",
+            "nb": "Koutammakou nord i Togo, kjent for sine tårnlignende leirhus, står på UNESCOs verdensarvliste."
+          }
+        }
+      ]
+    }
+  ]
+}
