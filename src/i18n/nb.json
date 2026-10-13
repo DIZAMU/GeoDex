@@ -173,8 +173,8 @@
     "intro": "Logg inn for å ha samme fremgang på alle enhetene dine.",
     "email": "E-post",
     "sendCode": "Send kode",
-    "codeSent": "En innloggingskode er på vei til {{email}}. Skriv den inn her.",
-    "code": "Kode",
+    "codeSent": "En e-post med innlogging er på vei til {{email}}. Lim inn innloggingslenken fra den her, eller skriv koden hvis den har en.",
+    "code": "Innloggingslenke eller kode",
     "signIn": "Logg inn",
     "signedIn": "Logget inn som {{email}}",
     "lastSynced": "Sist synkronisert {{time}}",
@@ -186,8 +186,9 @@
     "offline": "Frakoblet. Endringer synkroniseres når du er på nett igjen.",
     "error": "Synkroniseringen feilet: {{message}}. Fremgangen din er trygg på denne enheten; prøv igjen.",
     "signOut": "Logg ut",
-    "codeError": "Den koden virket ikke. Sjekk den, eller send en ny.",
-    "sendError": "Koden kunne ikke sendes: {{message}}"
+    "codeError": "Den lenken eller koden virket ikke. Kopier hele lenken fra den nyeste e-posten, eller send en ny.",
+    "sendError": "Koden kunne ikke sendes: {{message}}",
+    "noAccount": "Ingen GeoDex-konto bruker den e-postadressen. Sjekk adressen; kontoer opprettes i Supabase, ikke i appen."
   },
   "backup": {
     "title": "Sikkerhetskopi",

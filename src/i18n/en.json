@@ -173,8 +173,8 @@
     "intro": "Sign in to keep your progress the same on all your devices.",
     "email": "Email",
     "sendCode": "Send code",
-    "codeSent": "A sign-in code is on its way to {{email}}. Type it here.",
-    "code": "Code",
+    "codeSent": "A sign-in email is on its way to {{email}}. Paste the sign-in link from it here, or type the code if it has one.",
+    "code": "Sign-in link or code",
     "signIn": "Sign in",
     "signedIn": "Signed in as {{email}}",
     "lastSynced": "Last synced {{time}}",
@@ -186,8 +186,9 @@
     "offline": "Offline. Changes sync when you reconnect.",
     "error": "Sync failed: {{message}}. Your progress is safe on this device; try again.",
     "signOut": "Sign out",
-    "codeError": "That code did not work. Check it, or send a new one.",
-    "sendError": "The code could not be sent: {{message}}"
+    "codeError": "That link or code did not work. Copy the whole link from the newest email, or send a new one.",
+    "sendError": "The code could not be sent: {{message}}",
+    "noAccount": "No GeoDex account uses that email. Check the address; accounts are created in Supabase, not in the app."
   },
   "backup": {
     "title": "Backup",

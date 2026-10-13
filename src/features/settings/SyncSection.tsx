@@ -31,7 +31,12 @@ export function SyncSection() {
         await sync.sendCode(email);
         setSentTo(email.trim());
       } catch (e) {
-        setProblem(t("sync.sendError", { message: (e as Error).message }));
+        const message = (e as Error).message;
+        setProblem(
+          /signups? not allowed/i.test(message)
+            ? t("sync.noAccount")
+            : t("sync.sendError", { message }),
+        );
       }
     };
     const verify = async (event: FormEvent) => {
@@ -71,8 +76,9 @@ export function SyncSection() {
               </label>
               <Input
                 id="sync-code"
-                inputMode="numeric"
                 autoComplete="one-time-code"
+                autoCapitalize="off"
+                spellCheck={false}
                 required
                 placeholder={t("sync.code")}
                 value={code}
