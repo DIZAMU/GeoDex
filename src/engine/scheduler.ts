@@ -88,15 +88,36 @@ export function newCardState(cardId: CardId, now: number): CardState {
   return toState(cardId, createEmptyCard(new Date(now)));
 }
 
+const longTerm = new WeakMap<FSRS, FSRS>();
+
+/**
+ * The same scheduler without short-term learning steps. A correct placement answer goes
+ * straight to review with a first interval of a few days (PLAN.md 6.4), instead of the
+ * 10 minute learning step that would bring it back on the same day.
+ */
+function longTermOf(scheduler: FSRS): FSRS {
+  let derived = longTerm.get(scheduler);
+  if (!derived) {
+    derived = fsrs({ ...scheduler.parameters, enable_short_term: false });
+    longTerm.set(scheduler, derived);
+  }
+  return derived;
+}
+
 /** Applies one review. Unscheduled events (drill, missed placement) leave the state unchanged. */
 export function applyReview(
   scheduler: FSRS,
   state: CardState | null,
-  event: Pick<ReviewEventCore, "cardId" | "reviewedAt" | "rating" | "scheduled">,
+  event: Pick<ReviewEventCore, "cardId" | "reviewedAt" | "rating" | "scheduled" | "mode">,
 ): CardState | null {
   if (!event.scheduled) return state;
   const current = state ?? newCardState(event.cardId, event.reviewedAt);
-  const result = scheduler.next(toCard(current), new Date(event.reviewedAt), event.rating as Grade);
+  const seeding = event.mode === "placement" && current.phase === "new";
+  const result = (seeding ? longTermOf(scheduler) : scheduler).next(
+    toCard(current),
+    new Date(event.reviewedAt),
+    event.rating as Grade,
+  );
   return toState(event.cardId, result.card);
 }
 

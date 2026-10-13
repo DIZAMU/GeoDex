@@ -77,4 +77,17 @@ describe("replay", () => {
     const loose = replay(createScheduler({ requestRetention: 0.8 }), "R:map_to_name", events);
     expect(strict?.scheduledDays ?? 0).toBeLessThan(loose?.scheduledDays ?? 0);
   });
+
+  it("seeds a correct placement answer in review, due in days rather than minutes", () => {
+    const placed = { ...event("P:map_to_name", T0, 3), mode: "placement" as const };
+    const state = applyReview(scheduler, null, placed);
+    expect(state?.phase).toBe("review");
+    expect((state?.due ?? 0) - T0).toBeGreaterThanOrEqual(2 * DAY_MS);
+    expect((state?.due ?? 0) - T0).toBeLessThanOrEqual(5 * DAY_MS);
+    // Later reviews of that card use the normal scheduler.
+    const next = applyReview(scheduler, state, event("P:map_to_name", state?.due ?? T0, 1));
+    expect(next?.phase).toBe("relearning");
+    // A daily-session answer on a new card still starts with the short learning step.
+    expect(applyReview(scheduler, null, event("Q:map_to_name", T0, 3))?.phase).toBe("learning");
+  });
 });

@@ -46,7 +46,7 @@ export function CountryPicker({
         data-testid="country-search"
       />
       <ul
-        className="max-h-72 overflow-y-auto rounded-lg border border-border"
+        className="max-h-72 overflow-y-auto rounded-lg border border-border bg-background/40"
         aria-label={t("onboarding.home")}
       >
         {shown.map((c) => (

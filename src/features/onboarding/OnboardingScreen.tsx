@@ -30,15 +30,18 @@ export function OnboardingScreen() {
   const countries = scopedCountries(learner.world, learner.settings);
 
   return (
-    <div className="mx-auto flex w-full max-w-xl flex-col gap-8 px-4 py-10">
-      <h1 className="font-name text-3xl">{t("onboarding.title")}</h1>
-      <LanguageSwitcher />
-      <section className="flex flex-col gap-3">
+    <div className="stagger mx-auto flex w-full max-w-xl flex-col gap-6 px-4 py-8 md:py-14">
+      <h1 className="font-name text-4xl tracking-tight">{t("onboarding.title")}</h1>
+      <div className="surface p-5 md:p-7">
+        <LanguageSwitcher />
+      </div>
+      <section className="surface flex flex-col gap-3 p-5 md:p-7">
         <h2 className="font-name text-xl">{t("onboarding.home")}</h2>
         <p className="text-muted-foreground">{t("onboarding.homeHelp")}</p>
         <CountryPicker countries={countries} value={home} onChange={setHome} locale={locale} />
       </section>
       <Button
+        size="lg"
         className="self-start"
         disabled={!home}
         data-testid="start-placement"

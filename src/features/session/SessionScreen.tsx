@@ -1,3 +1,4 @@
+import { XIcon } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate, useSearchParams } from "react-router";
@@ -20,7 +21,7 @@ import {
   useSessionKeys,
 } from "./parts";
 import { ShortcutsDialog } from "./ShortcutsDialog";
-import { ProgressBar, StudyLayout } from "./StudyLayout";
+import { CountdownRing, ProgressBar, StudyLayout } from "./StudyLayout";
 import { useCountdown } from "./useCountdown";
 import { type SessionView, useDailySession } from "./useDailySession";
 
@@ -95,14 +96,16 @@ function Session({ learner, input }: { learner: Learner; input: InputSetting }) 
   if (!view || !s.ctx) return <p className="p-8 text-muted-foreground">{t("common.loading")}</p>;
   if (view.kind === "done") {
     return (
-      <main className="mx-auto flex max-w-xl flex-col gap-6 px-4 py-16">
-        <h1 className="font-name text-3xl">{t("session.doneTitle")}</h1>
-        <p className="text-lg text-muted-foreground" data-testid="reviewed">
-          {t("session.reviewed", { count: view.reviewed })}
-        </p>
-        <Button asChild className="self-start">
-          <Link to="/">{t("session.backToToday")}</Link>
-        </Button>
+      <main className="flex min-h-dvh items-center justify-center px-4 py-16">
+        <div className="surface stagger flex w-full max-w-md flex-col gap-5 p-8">
+          <h1 className="font-name text-3xl tracking-tight">{t("session.doneTitle")}</h1>
+          <p className="text-lg text-muted-foreground" data-testid="reviewed">
+            {t("session.reviewed", { count: view.reviewed })}
+          </p>
+          <Button asChild size="lg" className="self-start">
+            <Link to="/">{t("session.backToToday")}</Link>
+          </Button>
+        </div>
       </main>
     );
   }
@@ -124,11 +127,14 @@ function Session({ learner, input }: { learner: Learner; input: InputSetting }) 
               />
             </div>
             {timeLeft !== null ? (
-              <span className="tabular-nums text-sm" aria-live="polite" data-testid="countdown">
-                {t("session.countdown", { count: timeLeft })}
-              </span>
+              <CountdownRing
+                left={timeLeft}
+                total={countdownSeconds}
+                label={t("session.countdown", { count: timeLeft })}
+              />
             ) : null}
             <Button variant="ghost" onClick={() => void s.end()}>
+              <XIcon aria-hidden />
               {t("session.end")}
             </Button>
           </div>
@@ -147,7 +153,12 @@ function Session({ learner, input }: { learner: Learner; input: InputSetting }) 
             padding={padding}
           />
         }
-        panel={<Panel view={view} ctx={s.ctx} session={s} learner={learner} locale={locale} />}
+        panel={
+          // Each new step rises in; the key restarts the entrance.
+          <div key={`${view.kind}:${view.item.cardId}`} className="enter">
+            <Panel view={view} ctx={s.ctx} session={s} learner={learner} locale={locale} />
+          </div>
+        }
       />
       <ShortcutsDialog open={help} onOpenChange={setHelp} />
     </>
@@ -176,7 +187,7 @@ function Panel({
       <div className="flex flex-col gap-6" data-testid="intro">
         <p className="text-sm text-muted-foreground">{t("intro.label")}</p>
         <CountryCard country={country} locale={locale} />
-        <Button className="self-start" onClick={s.startPrompt} autoFocus>
+        <Button size="lg" className="self-start" onClick={s.startPrompt} autoFocus>
           {t("intro.continue")}
         </Button>
       </div>
@@ -222,7 +233,7 @@ function Panel({
           <div className="flex flex-col gap-3">
             <p className="text-muted-foreground">{t("answer.mapHelp")}</p>
             <Button
-              variant="ghost"
+              variant="outline"
               data-testid="give-up"
               className="self-start"
               onClick={() =>
@@ -274,6 +285,7 @@ function Panel({
       ) : null}
       <p className="text-sm text-muted-foreground">{t("feedback.placeholder")}</p>
       <Button
+        size="lg"
         className="self-start"
         onClick={() => void s.proceed()}
         autoFocus
@@ -306,7 +318,7 @@ function mapState(
       return {
         focus: v.kind === "world" ? { kind: "world" } : { kind: "countries", ids: v.ids },
         highlight: { selected: id },
-        animate: false,
+        animate: true,
       };
     }
     if (q.answer.kind === "map") {
@@ -314,10 +326,10 @@ function mapState(
       return {
         focus: v.kind === "world" ? { kind: "world" } : { kind: "countries", ids: v.ids },
         highlight: {},
-        animate: false,
+        animate: true,
       };
     }
-    return { focus: { kind: "world" }, highlight: {}, animate: false };
+    return { focus: { kind: "world" }, highlight: {}, animate: true };
   }
   const chosen =
     !view.outcome.correct && view.outcome.chosenId && learner.world.byId.has(view.outcome.chosenId)
