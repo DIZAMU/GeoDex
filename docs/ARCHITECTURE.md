@@ -37,7 +37,21 @@ Pure modules in `src/engine/` (no React or Dexie, enforced by a test): matching,
 
 ## Sync
 
-Phase 4. See `PLAN.md` section 5.6.
+```
+device A (IndexedDB)                     Supabase (Postgres, RLS)                device B
+  reviewEvents synced=0 --push 500/batch--> review_events (id unique, server_seq) <--push--
+                         <--pull seq > lastPullSeq-500, dedupe by id-- ------pull-------->
+  settings (updatedAt) <------------- last write wins on user_settings ------------------>
+```
+
+- `src/sync/sync.ts` is the engine; `src/sync/backend.ts` defines the server it talks to, with an in-memory server for tests; `src/sync/supabase.ts` is the real one, loaded only when the `VITE_SUPABASE_*` variables are set.
+- Pushes are idempotent (insert, ignore duplicate ids). Pulls go by server sequence, never by client time, starting 500 back so rows that became visible late are still seen.
+- After new events arrive, the card state cache is rebuilt from all events; replay is deterministic, so devices converge (tested with two devices in random offline interleavings).
+- Sign-in uses an emailed code; the app never creates accounts.
+
+## Offline
+
+`vite-plugin-pwa` precaches the app shell, all data and content chunks, the map geometry, flags and fonts, so the app works offline after the first load and installs to the home screen.
 
 ## Data pipeline
 
