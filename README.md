@@ -9,7 +9,7 @@
 
 Spaced-repetition geography trainer. Local-first PWA, English and Norwegian.
 
-> Status: Phase 3 (explanation engine and country content). Sync and offline install arrive in Phase 4. See `PLAN.md`.
+> Status: Phase 4 (sync and offline install). See `PLAN.md`.
 
 ## Features (planned)
 
@@ -50,6 +50,26 @@ pnpm data:verify         # build twice and check the output is byte-identical
 
 `data/curated/` holds the decisions Wikidata cannot make (capital roles, names, currencies, official languages). Each build writes review reports: `data/name-mismatches.md`, `data/neighbor-mismatches.md`, `data/build-report.md`. Borders follow Natural Earth's de facto view.
 
+## Sync (optional)
+
+Without Supabase settings the app is local-only and fully works. To sync between devices, set up a free Supabase project once:
+
+1. Create a project at supabase.com, in an EU region.
+2. In the SQL editor, run `supabase/migrations/0001_init.sql`. It creates the event tables (insert and read only, never update or delete) and the settings table, all with row-level security.
+3. Under Authentication, Users, add your own user with your email address. The app never creates accounts.
+4. Under Authentication, Sign In / Providers, turn off **Allow new users to sign up**. The publishable key ships in the app by design; row-level security protects your data, and disabled sign-ups stop anyone else from creating an account on your project.
+5. Under Authentication, Emails, edit the **Magic Link** template so it contains the code, for example `Your GeoDex code: {{ .Token }}`. The app signs in with a typed code, not a link, because home-screen apps on iOS keep their storage separate from Safari.
+6. Under Project Settings, API, copy the project URL and the publishable key. Put them in `.env.local` for development and in the Cloudflare Worker's build variables, never in the repo:
+
+```
+VITE_SUPABASE_URL=https://<project>.supabase.co
+VITE_SUPABASE_PUBLISHABLE_KEY=<publishable key>
+```
+
+Then sign in under Settings, Sync, on each device. Sync runs when the app opens, when a session ends, when the tab is hidden, every five minutes, and when the connection returns. Free projects pause after a week without use; the app keeps working locally and syncs again once the project is restored.
+
+Settings, Backup exports everything to a JSON file and imports one, with or without Supabase.
+
 ## Deployment
 
 A Cloudflare Worker serves the built app as static assets (free tier, no server code). `wrangler.jsonc` points it at `dist/` with single-page-app routing. In the Cloudflare dashboard, under the Worker's Settings, Build:
@@ -57,7 +77,7 @@ A Cloudflare Worker serves the built app as static assets (free tier, no server 
 - Production branch: `main`
 - Build command: `pnpm build`
 - Deploy command: `npx wrangler deploy`
-- Build variables: `NODE_VERSION=24`, `PNPM_VERSION=10.28.0`
+- Build variables: `NODE_VERSION=24`, `PNPM_VERSION=10.28.0`, and the two `VITE_SUPABASE_*` values if sync is set up
 
 Check the config locally with `pnpm build && pnpm exec wrangler deploy --dry-run`.
 
