@@ -3,7 +3,7 @@
  * unless --refresh is passed. Run with: pnpm data:fetch [--refresh]
  */
 import { readFileSync } from "node:fs";
-import { fetchText, hasRaw, readRaw, writeRaw } from "./raw-cache.ts";
+import { fetchText, hasRaw, readRaw, writeRaw } from "./lib/raw.ts";
 import { countryQueries, labelQuery } from "./wikidata-queries.ts";
 
 const ENDPOINT = "https://query.wikidata.org/sparql";
