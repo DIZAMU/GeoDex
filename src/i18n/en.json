@@ -55,7 +55,9 @@
   },
   "nav": {
     "today": "Today",
-    "settings": "Settings"
+    "settings": "Settings",
+    "atlas": "Atlas",
+    "stats": "Stats"
   },
   "common": {
     "loading": "Loading"
@@ -197,5 +199,122 @@
     "import": "Import data",
     "imported": "Imported {{reviews}} reviews and {{votes}} hook votes.",
     "importError": "That file is not a GeoDex export."
+  },
+  "continent": {
+    "africa": "Africa",
+    "asia": "Asia",
+    "europe": "Europe",
+    "north_america": "North America",
+    "south_america": "South America",
+    "oceania": "Oceania"
+  },
+  "skill": {
+    "location": "Location",
+    "capitals": "Capitals",
+    "flags": "Flags",
+    "currency_language": "Currency and language"
+  },
+  "level": {
+    "0": "Not started",
+    "1": "Learning",
+    "2": "Holds under a week",
+    "3": "Holds under three weeks",
+    "4": "Mastered"
+  },
+  "cardType": {
+    "map_to_name": "Map to name",
+    "name_to_map": "Name to map",
+    "country_to_capital": "Country to capital",
+    "capital_to_country": "Capital to country",
+    "flag_to_name": "Flag to name",
+    "name_to_flag": "Name to flag",
+    "country_to_currency": "Country to currency",
+    "country_to_language": "Country to language",
+    "contrast": "Tell apart"
+  },
+  "hookType": {
+    "anchor": "Anchor",
+    "shape": "Shape",
+    "etymology": "Name origin",
+    "sound": "Sound-alike",
+    "story": "Story",
+    "flag_decode": "Flag meaning",
+    "contrast": "Contrast"
+  },
+  "atlas": {
+    "title": "Atlas",
+    "show": "Show",
+    "regions": "Regions",
+    "mastered": "{{n}} of {{total}} mastered",
+    "badge": "Badge earned",
+    "drill": "Drill this region",
+    "legend": "Mastery"
+  },
+  "entry": {
+    "back": "Atlas",
+    "cards": "Cards",
+    "due": "Due {{date}}",
+    "holds": "holds about {{days}} days",
+    "neighbors": "Neighbors",
+    "none": "None",
+    "facts": "Facts you have seen",
+    "noFacts": "None yet. Facts appear as you review.",
+    "history": "Review history",
+    "noHistory": "Not reviewed yet.",
+    "correct": "Correct",
+    "wrong": "Wrong",
+    "drill": "Drill {{region}}"
+  },
+  "stats": {
+    "title": "Stats",
+    "grid": "Skills by continent",
+    "gridHelp": "Share of cards mastered (21+ days).",
+    "retention": "Retention, last 30 days",
+    "retentionValue": "{{correct}} of {{total}} reviews correct",
+    "target": "target {{value}}",
+    "noRetention": "No reviews of known cards in the last 30 days.",
+    "forecast": "Due in the next 30 days",
+    "confusions": "Top confusions",
+    "noConfusions": "No confusions yet.",
+    "leeches": "Leeches",
+    "noLeeches": "No card has lapsed six times.",
+    "hooks": "Hooks that work for you",
+    "hookRate": "{{value}} remembered next time",
+    "noHooks": "Not enough reviews after hooks yet.",
+    "recognition": "Recognition only",
+    "recognitionBody": "Of the {{of}} countries you recognize on the map, you cannot yet place {{n}} from the name.",
+    "noRecognition": "Nothing yet: this fills in once map cards hold for a week.",
+    "activity": "Last 365 days",
+    "achievements": "Achievements",
+    "noAchievements": "None yet.",
+    "drill": "Drill"
+  },
+  "streak": {
+    "days_one": "{{count}}-day streak",
+    "days_other": "{{count}}-day streak",
+    "none": "No streak yet",
+    "longest": "Longest {{count}}",
+    "freezes_one": "{{count}} freeze in reserve",
+    "freezes_other": "{{count}} freezes in reserve"
+  },
+  "achievement": {
+    "region": "{{skill}}: {{name}}",
+    "continent": "{{skill}}: all of {{name}}",
+    "world": "{{skill}}: the whole world",
+    "untangled": "Untangled: {{a}} and {{b}}",
+    "streak": "{{count}}-day streak"
+  },
+  "summary": {
+    "retention": "Correct: {{value}}",
+    "tomorrow_one": "{{count}} card due tomorrow",
+    "tomorrow_other": "{{count}} cards due tomorrow",
+    "newAchievements": "New achievements"
+  },
+  "drill": {
+    "title": "Drill",
+    "note": "Practice only: drill answers do not change your schedule or your streak.",
+    "region": "Drill: {{name}}",
+    "pair": "Drill: {{a}} and {{b}}",
+    "empty": "Nothing to drill here yet."
   }
 }
