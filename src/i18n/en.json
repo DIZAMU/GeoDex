@@ -121,7 +121,11 @@
     "currency": "Currency",
     "languages": "Official languages",
     "continue": "Continue",
-    "placeholder": "Explanations for each answer arrive in the next build."
+    "hookLabel": "Memory hook",
+    "notHelpful": "Not helpful",
+    "hookHidden": "Hidden for this card.",
+    "contrastLabel": "Tell them apart",
+    "deeperLabel": "Deeper cut"
   },
   "role": {
     "primary": "capital",

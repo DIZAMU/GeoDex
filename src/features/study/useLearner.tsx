@@ -1,11 +1,13 @@
 import { useLiveQuery } from "dexie-react-hooks";
-import { createContext, type ReactNode, useContext, useMemo } from "react";
+import { createContext, type ReactNode, useContext, useEffect, useMemo, useState } from "react";
+import { type ContentIndex, loadContent } from "@/data/content";
 import { useWorld } from "@/data/useWorld";
 import type { WorldData } from "@/data/world";
 import {
   DEVICE_ROW_ID,
   type DeviceSettingsRow,
   db,
+  type HookVoteEvent,
   type ReviewEvent,
   SETTINGS_ROW_ID,
   type SettingsRow,
@@ -20,6 +22,8 @@ export type Learner = {
   device: DeviceSettingsRow;
   states: Map<CardId, CardState>;
   events: ReviewEvent[];
+  votes: HookVoteEvent[];
+  content: ContentIndex;
   scheduler: ReturnType<typeof schedulerFor>;
 };
 
@@ -36,6 +40,17 @@ export function LearnerProvider({ children }: { children: ReactNode }) {
   const device = useLiveQuery(() => db.deviceSettings.get(DEVICE_ROW_ID), []);
   const stateRows = useLiveQuery(() => db.cardState.toArray(), []);
   const events = useLiveQuery(() => db.reviewEvents.toArray(), []);
+  const votes = useLiveQuery(() => db.hookVoteEvents.toArray(), []);
+  const [content, setContent] = useState<ContentIndex | null>(null);
+  useEffect(() => {
+    let active = true;
+    void loadContent().then((loaded) => {
+      if (active) setContent(loaded);
+    });
+    return () => {
+      active = false;
+    };
+  }, []);
 
   const states = useMemo(() => new Map((stateRows ?? []).map((s) => [s.cardId, s])), [stateRows]);
   const retention = settings?.requestRetention;
@@ -47,10 +62,10 @@ export function LearnerProvider({ children }: { children: ReactNode }) {
 
   const learner = useMemo(
     () =>
-      world && settings && device && stateRows && events
-        ? { world, settings, device, states, events, scheduler }
+      world && settings && device && stateRows && events && votes && content
+        ? { world, settings, device, states, events, votes, content, scheduler }
         : null,
-    [world, settings, device, stateRows, events, states, scheduler],
+    [world, settings, device, stateRows, events, votes, content, states, scheduler],
   );
   return <LearnerContext.Provider value={learner}>{children}</LearnerContext.Provider>;
 }

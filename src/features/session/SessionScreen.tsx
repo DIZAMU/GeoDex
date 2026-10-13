@@ -11,6 +11,7 @@ import { useStudyContext } from "../study/context";
 import { confusionScoresFor, scopedCountries } from "../study/plan";
 import { checkChoice, checkTyped, type StudyContext } from "../study/questions";
 import { type Learner, useLearner } from "../study/useLearner";
+import { ExplanationView } from "./ExplanationView";
 import {
   ChoiceAnswer,
   CountryCard,
@@ -75,6 +76,7 @@ function Session({ learner, input }: { learner: Learner; input: InputSetting }) 
           ? s.startPrompt
           : undefined,
     hint: view?.kind === "prompt" && view.question.answer.kind === "typed" ? s.showHint : undefined,
+    notHelpful: view?.kind === "feedback" ? () => void s.notHelpful() : undefined,
     end: () => void s.end(),
     help: () => setHelp(true),
   });
@@ -189,6 +191,7 @@ function Panel({
       <div className="flex flex-col gap-6" data-testid="intro">
         <p className="text-sm text-muted-foreground">{t("intro.label")}</p>
         <CountryCard country={country} locale={locale} />
+        <ExplanationView explanation={view.explanation} />
         <Button size="lg" className="self-start" onClick={s.startPrompt} autoFocus>
           {t("intro.continue")}
         </Button>
@@ -264,11 +267,18 @@ function Panel({
           ?.names[locale] ??
         null)
       : null);
+  // Wrong picks of a country or capital are described by the moment template instead.
+  const pickedPlace =
+    !!o.chosenId &&
+    (learner.world.byId.has(o.chosenId) ||
+      learner.world.countries.some((c) => c.capitals.some((cap) => cap.id === o.chosenId)));
   return (
     <div className="flex flex-col gap-5" data-testid="feedback">
       <StatusLine correct={o.correct} />
       {o.timedOut ? <p>{t("feedback.timeUp")}</p> : o.gaveUp ? <p>{t("feedback.gaveUp")}</p> : null}
-      {!o.correct && chosenLabel ? <p>{t("feedback.youPicked", { name: chosenLabel })}</p> : null}
+      {!o.correct && chosenLabel && !pickedPlace ? (
+        <p>{t("feedback.youPicked", { name: chosenLabel })}</p>
+      ) : null}
       {o.correct && o.typo && o.matched ? (
         <p>{t("feedback.spelling", { name: o.matched })}</p>
       ) : null}
@@ -285,7 +295,11 @@ function Panel({
           {country.officialLanguages.map((l) => l.names[locale]).join(", ")}
         </p>
       ) : null}
-      <p className="text-sm text-muted-foreground">{t("feedback.placeholder")}</p>
+      <ExplanationView
+        explanation={view.explanation}
+        hidden={view.hidden}
+        onNotHelpful={(id) => void s.notHelpful(id)}
+      />
       <Button
         size="lg"
         className="self-start"

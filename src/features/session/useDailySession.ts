@@ -6,6 +6,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { db, type ReviewEvent } from "@/db/db";
 import { recordReview } from "@/db/reviews";
+import type { Explanation } from "@/engine/explain/select";
 import { grade } from "@/engine/grading";
 import type { CardState } from "@/engine/scheduler";
 import {
@@ -18,6 +19,7 @@ import {
 } from "@/engine/session";
 import type { InputSetting, Rating } from "@/engine/types";
 import type { Locale } from "@/i18n/locales";
+import { answerMoment, explain } from "../study/explain";
 import { modeStats, planDay } from "../study/plan";
 import {
   buildQuestion,
@@ -30,9 +32,18 @@ import type { Learner } from "../study/useLearner";
 export type Outcome = CheckResult & { gaveUp: boolean; timedOut: boolean; usedHint: boolean };
 
 export type SessionView =
-  | { kind: "intro"; item: QueueItem; question: Question }
+  | { kind: "intro"; item: QueueItem; question: Question; explanation: Explanation }
   | { kind: "prompt"; item: QueueItem; question: Question; hint: boolean }
-  | { kind: "feedback"; item: QueueItem; question: Question; outcome: Outcome; rating: Rating }
+  | {
+      kind: "feedback";
+      item: QueueItem;
+      question: Question;
+      outcome: Outcome;
+      rating: Rating;
+      explanation: Explanation;
+      /** Hooks voted "Not helpful" while this feedback was on screen. */
+      hidden: string[];
+    }
   | { kind: "done"; reviewed: number };
 
 export function useDailySession(
@@ -50,6 +61,23 @@ export function useDailySession(
   const session = useRef<SessionState>(startSession(start.plan.queue));
   const states = useRef(new Map(learner.states));
   const introduced = useRef(new Set<string>());
+  /** Snippets shown on an intro panel, recorded with that card's first review. */
+  const introSnippets = useRef(new Map<string, string[]>());
+  const explainFor = useCallback(
+    (cardId: string, moment: Parameters<typeof explain>[0]["moment"], chosenId: string | null) =>
+      explain({
+        world: learner.world,
+        content: learner.content,
+        history: { events: learner.events, votes: learner.votes, states: states.current },
+        locale,
+        homeCountry: learner.settings.homeCountry,
+        cardId,
+        moment,
+        chosenId,
+        reps: states.current.get(cardId)?.reps ?? 0,
+      }),
+    [learner, locale],
+  );
   const shownAt = useRef(0);
   const answeredAt = useRef(0);
   const [view, setView] = useState<SessionView | null>(null);
@@ -83,12 +111,14 @@ export function useDailySession(
     const firstTime = next.item.isNew && !states.current.has(next.item.cardId);
     if (firstTime && !introduced.current.has(next.item.entityId) && q.type === "map_to_name") {
       introduced.current.add(next.item.entityId);
-      setView({ kind: "intro", item: next.item, question: q });
+      const explanation = explainFor(next.item.cardId, "introduce", null);
+      introSnippets.current.set(next.item.cardId, explanation.snippetIds);
+      setView({ kind: "intro", item: next.item, question: q, explanation });
       return;
     }
     shownAt.current = performance.now();
     setView({ kind: "prompt", item: next.item, question: q, hint: false });
-  }, [question]);
+  }, [question, explainFor]);
 
   useEffect(() => {
     if (view === null && ctx) advance();
@@ -127,9 +157,30 @@ export function useDailySession(
         medianMs: stats?.median ?? null,
         reviewsInMode: stats?.count ?? 0,
       });
-      setView({ kind: "feedback", item: view.item, question: view.question, outcome, rating });
+      const moment = answerMoment({
+        scheduler: learner.scheduler,
+        before: states.current.get(view.item.cardId),
+        cardId: view.item.cardId,
+        correct: result.correct,
+        rating,
+        now: Date.now(),
+      });
+      const explanation = explainFor(
+        view.item.cardId,
+        moment,
+        result.correct ? null : result.chosenId,
+      );
+      setView({
+        kind: "feedback",
+        item: view.item,
+        question: view.question,
+        outcome,
+        rating,
+        explanation,
+        hidden: [],
+      });
     },
-    [view, inputSetting, start.stats],
+    [view, inputSetting, start.stats, learner.scheduler, explainFor],
   );
 
   const writing = useRef(false);
@@ -148,13 +199,17 @@ export function useDailySession(
       chosenAnswer: view.outcome.correct ? null : view.outcome.chosenId,
       responseMs: Math.round(answeredAt.current - shownAt.current),
       durationMs: Math.round(now - shownAt.current),
-      snippetIds: [],
+      snippetIds: [
+        ...(introSnippets.current.get(view.item.cardId) ?? []),
+        ...view.explanation.snippetIds,
+      ],
       scheduled: true,
       locale,
       deviceId: learner.device.deviceId,
       synced: 0,
     };
     try {
+      introSnippets.current.delete(view.item.cardId);
       const next = await recordReview(db, learner.scheduler, event);
       if (next) states.current.set(next.cardId, next);
       session.current = afterAnswer(session.current, view.item, next, Date.now());
@@ -164,6 +219,27 @@ export function useDailySession(
       writing.current = false;
     }
   }, [view, inputSetting, locale, learner.device.deviceId, learner.scheduler]);
+
+  /** "Not helpful" (PLAN.md 6.8): hides the hook for this card for good. Append-only. */
+  const notHelpful = useCallback(
+    async (hookId?: string) => {
+      if (view?.kind !== "feedback") return;
+      const id =
+        hookId ??
+        view.explanation.blocks.find((b) => b.kind === "hook" && !view.hidden.includes(b.id))?.id;
+      if (!id || view.hidden.includes(id)) return;
+      setView({ ...view, hidden: [...view.hidden, id] });
+      await db.hookVoteEvents.add({
+        id: crypto.randomUUID(),
+        cardId: view.item.cardId,
+        hookId: id,
+        createdAt: Date.now(),
+        deviceId: learner.device.deviceId,
+        synced: 0,
+      });
+    },
+    [view, learner.device.deviceId],
+  );
 
   const proceed = useCallback(async () => {
     if (view?.kind !== "feedback") return;
@@ -186,6 +262,7 @@ export function useDailySession(
     startPrompt,
     showHint,
     answer,
+    notHelpful,
     proceed,
     end,
   };
