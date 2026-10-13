@@ -56,6 +56,31 @@
   pointer-events: none;
 }
 
+/* Mastery shading (Atlas): a sequential ramp per theme, level 0 is an unseen silhouette. */
+.world-map .map-level {
+  stroke: var(--map-border);
+  stroke-width: 0.5px;
+  stroke-opacity: 0.6;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+.world-map .map-level-0 {
+  fill: var(--mastery-0);
+  stroke-opacity: 0.25;
+}
+.world-map .map-level-1 {
+  fill: var(--mastery-1);
+}
+.world-map .map-level-2 {
+  fill: var(--mastery-2);
+}
+.world-map .map-level-3 {
+  fill: var(--mastery-3);
+}
+.world-map .map-level-4 {
+  fill: var(--mastery-4);
+}
+
 /* The country a prompt asks about: strong, but not the accent reserved for answers. */
 .world-map .map-selected {
   fill: var(--foreground);

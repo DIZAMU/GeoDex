@@ -2,6 +2,9 @@
  * Runs a daily session: intro for new countries, prompt, grading, feedback, continue.
  * The review event is written when the learner continues, so it can record both the
  * response time (prompt to answer) and the total time (prompt to continue).
+ *
+ * A drill runs the same loop on a given queue and logs `scheduled: false` events, so it
+ * never changes card state, the schedule or the streak (PLAN.md 6.12).
  */
 import { useCallback, useEffect, useRef, useState } from "react";
 import { db, type ReviewEvent } from "@/db/db";
@@ -45,21 +48,26 @@ export type SessionView =
       /** Hooks voted "Not helpful" while this feedback was on screen. */
       hidden: string[];
     }
-  | { kind: "done"; reviewed: number };
+  | { kind: "done"; reviewed: number; correct: number };
+
+/** A daily session follows today's plan; a drill works through a fixed queue. */
+export type SessionKind = { kind: "daily" } | { kind: "drill"; queue: QueueItem[] };
 
 export function useDailySession(
   learner: Learner,
   ctx: StudyContext | null,
   inputSetting: InputSetting,
   locale: Locale,
+  kind: SessionKind = { kind: "daily" },
 ) {
   // Snapshot at start: the queue stays stable while the learner works through it.
   const [start] = useState(() => ({
-    plan: planDay({ ...learner, now: Date.now() }),
+    queue: kind.kind === "drill" ? kind.queue : planDay({ ...learner, now: Date.now() }).queue,
     stats: modeStats(learner.events),
   }));
+  const scheduled = kind.kind === "daily";
 
-  const session = useRef<SessionState>(startSession(start.plan.queue));
+  const session = useRef<SessionState>(startSession(start.queue));
   const states = useRef(new Map(learner.states));
   const introduced = useRef(new Set<string>());
   /** Snippets shown on an intro panel, recorded with that card's first review. */
@@ -82,8 +90,9 @@ export function useDailySession(
   const shownAt = useRef(0);
   const answeredAt = useRef(0);
   const [view, setView] = useState<SessionView | null>(null);
-  const [total] = useState(start.plan.queue.length);
+  const [total] = useState(start.queue.length);
   const [reviewed, setReviewed] = useState(0);
+  const correct = useRef(0);
 
   const question = useCallback(
     (item: QueueItem): Question | null => {
@@ -103,14 +112,14 @@ export function useDailySession(
   const advance = useCallback(() => {
     const next = nextItem(session.current, Date.now());
     if (!next) {
-      setView({ kind: "done", reviewed: session.current.answered });
+      setView({ kind: "done", reviewed: session.current.answered, correct: correct.current });
       requestSync();
       return;
     }
     session.current = next.state;
     const q = question(next.item);
     if (!q) return;
-    const firstTime = next.item.isNew && !states.current.has(next.item.cardId);
+    const firstTime = scheduled && next.item.isNew && !states.current.has(next.item.cardId);
     if (firstTime && !introduced.current.has(next.item.entityId) && q.type === "map_to_name") {
       introduced.current.add(next.item.entityId);
       const explanation = explainFor(next.item.cardId, "introduce", null);
@@ -120,7 +129,7 @@ export function useDailySession(
     }
     shownAt.current = performance.now();
     setView({ kind: "prompt", item: next.item, question: q, hint: false });
-  }, [question, explainFor]);
+  }, [question, explainFor, scheduled]);
 
   useEffect(() => {
     if (view === null && ctx) advance();
@@ -205,7 +214,7 @@ export function useDailySession(
         ...(introSnippets.current.get(view.item.cardId) ?? []),
         ...view.explanation.snippetIds,
       ],
-      scheduled: true,
+      scheduled,
       locale,
       deviceId: learner.device.deviceId,
       synced: 0,
@@ -214,13 +223,20 @@ export function useDailySession(
       introSnippets.current.delete(view.item.cardId);
       const next = await recordReview(db, learner.scheduler, event);
       if (next) states.current.set(next.cardId, next);
-      session.current = afterAnswer(session.current, view.item, next, Date.now());
+      // Drill answers leave the card as it was; never requeue on its unchanged state.
+      session.current = afterAnswer(
+        session.current,
+        view.item,
+        scheduled ? next : null,
+        Date.now(),
+      );
+      if (event.correct) correct.current++;
       setReviewed((n) => n + 1);
       return next;
     } finally {
       writing.current = false;
     }
-  }, [view, inputSetting, locale, learner.device.deviceId, learner.scheduler]);
+  }, [view, inputSetting, locale, learner.device.deviceId, learner.scheduler, scheduled]);
 
   /** "Not helpful" (PLAN.md 6.8): hides the hook for this card for good. Append-only. */
   const notHelpful = useCallback(
@@ -251,7 +267,7 @@ export function useDailySession(
 
   const end = useCallback(async () => {
     if (view?.kind === "feedback") await commit();
-    setView({ kind: "done", reviewed: session.current.answered });
+    setView({ kind: "done", reviewed: session.current.answered, correct: correct.current });
     requestSync();
   }, [view, commit]);
 

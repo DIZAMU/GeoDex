@@ -38,6 +38,8 @@ export type MapHighlight = {
   filled?: ReadonlySet<string>;
   /** Countries tinted lightly, such as the next region to learn. */
   tinted?: ReadonlySet<string>;
+  /** Mastery level 0 (unseen) to 4 (mastered) per country, drawn with the theme's ramp. */
+  levels?: ReadonlyMap<string, number>;
 };
 
 export type WorldMapProps = {
@@ -333,6 +335,16 @@ export function WorldMap({
                 graticule={geometry.graticule}
                 selectable={selectable}
               />
+              {[...(highlight.levels ?? [])].map(([id, level]) =>
+                geometry.byId.get(id)?.d ? (
+                  <path
+                    key={`level-${id}`}
+                    d={geometry.byId.get(id)?.d}
+                    className={`map-level map-level-${level}`}
+                    data-level={level}
+                  />
+                ) : null,
+              )}
               {[...(highlight.tinted ?? [])].map((id) =>
                 geometry.byId.get(id)?.d ? (
                   <path key={`tint-${id}`} d={geometry.byId.get(id)?.d} className="map-tinted" />

@@ -63,3 +63,14 @@ describe.each(THEMES)("%s theme", (theme) => {
     expect(contrast(t[fg] ?? "", t[bg] ?? "")).toBeGreaterThanOrEqual(3);
   });
 });
+
+// Mastery ramps are sequential: luminance moves one way from level 0 to 4, never red to green.
+describe.each(THEMES)("%s mastery ramp", (theme) => {
+  const t = tokens(theme);
+  it("is monotonic in luminance", () => {
+    const l = [0, 1, 2, 3, 4].map((i) => luminance(t[`mastery-${i}`] ?? "#000000"));
+    const up = l.every((v, i) => i === 0 || v > (l[i - 1] ?? 0));
+    const down = l.every((v, i) => i === 0 || v < (l[i - 1] ?? 1));
+    expect(up || down).toBe(true);
+  });
+});

@@ -37,6 +37,11 @@
   --elevation-hover: inset 0 1px 0 rgb(255 255 255 / 0.07), 0 22px 44px -18px rgb(0 0 0 / 0.75);
   --map-shade: rgb(4 14 22 / 0.55);
   --map-graticule: rgb(127 163 184 / 0.12);
+  --mastery-0: #1e4359;
+  --mastery-1: #2b5e6e;
+  --mastery-2: #2f7a78;
+  --mastery-3: #3a977d;
+  --mastery-4: #5fb98a;
 }
 
 [data-theme="minimal"] {
@@ -73,6 +78,11 @@
   --elevation-hover: 0 1px 2px rgb(16 24 40 / 0.06), 0 14px 32px -14px rgb(16 24 40 / 0.24);
   --map-shade: rgb(114 133 149 / 0.16);
   --map-graticule: rgb(114 133 149 / 0.16);
+  --mastery-0: #e6ecf1;
+  --mastery-1: #b9cddc;
+  --mastery-2: #7fa6c2;
+  --mastery-3: #4a7ea6;
+  --mastery-4: #1f5680;
 }
 
 [data-theme="playful"] {
@@ -109,6 +119,11 @@
   --elevation-hover: 0 2px 0 rgb(34 34 59 / 0.06), 0 20px 38px -16px rgb(108 74 182 / 0.55);
   --map-shade: rgb(90 128 166 / 0.18);
   --map-graticule: rgb(90 128 166 / 0.18);
+  --mastery-0: #ece8f6; /* not started: a neutral tint, viridis begins at level 1 */
+  --mastery-1: #b5de2b;
+  --mastery-2: #35b779;
+  --mastery-3: #26828e;
+  --mastery-4: #3e4989;
 }
 
 /* Brand artwork: the Abyss disc on light themes, the Ink disc on Atlas. */

@@ -9,7 +9,7 @@
 
 Spaced-repetition geography trainer. Local-first PWA, English and Norwegian.
 
-> Status: Phase 4 (sync and offline install). See `PLAN.md`.
+> Status: Phase 5 (progress, atlas, stats). See `PLAN.md`.
 
 ## Features (planned)
 
@@ -17,6 +17,7 @@ Spaced-repetition geography trainer. Local-first PWA, English and Norwegian.
 - FSRS scheduling with automatic grading from correctness and response time.
 - Map-based recall on an Equal Earth projection, so sizes are not distorted the way Mercator distorts them.
 - Explanations chosen per answer from static, reviewed content: hooks, facts and comparisons with your home country.
+- Progress derived from your review history: a mastery atlas per skill, country pages, stats, streaks with freezes, achievements, and drills that never touch your schedule.
 - Works offline. Optional sync between laptop and phone through Supabase.
 - Full English and Norwegian (Bokmål) interface and content.
 - Three themes: Atlas (dark), Minimal (light), Playful.
