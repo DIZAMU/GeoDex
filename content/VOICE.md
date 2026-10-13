@@ -1,4 +1,4 @@
-# VOICE.md: how Geodex talks
+# VOICE.md: how GeoDex talks
 
 Applies to hooks, facts, flag notes, contrast text, templates, and streak, stats and summary copy, in both English and Norwegian. Read it in full before writing any batch.
 

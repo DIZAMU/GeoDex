@@ -2,7 +2,7 @@
 
 Execute these steps in order, in the current directory. Show each command before running it. If a step fails or a check does not pass, stop, report what failed and the exact fix, and wait for the author.
 
-Target: private GitHub repo `DIZAMU/Geodex`, created empty. No README, license, .gitignore or template from GitHub.
+Target: private GitHub repo `DIZAMU/GeoDex`, created empty. No README, license, .gitignore or template from GitHub.
 
 ## 1. Check the starting folder
 
@@ -76,15 +76,15 @@ git commit -m "docs: add build plan, Claude Code rules, voice guide and setup"
 
 Do not pass `--add-readme`, `--license`, `--gitignore` or `--template`.
 ```
-gh repo create Geodex --private --source=. --remote=origin --push \
+gh repo create GeoDex --private --source=. --remote=origin --push \
   --description "Spaced-repetition geography trainer. Local-first PWA, English and Norwegian."
 ```
-If a repo named `Geodex` already exists on the account, stop. Do not overwrite or reuse it.
+If a repo named `GeoDex` already exists on the account, stop. Do not overwrite or reuse it.
 
 ## 8. Repo settings
 
 ```
-gh repo edit DIZAMU/Geodex \
+gh repo edit DIZAMU/GeoDex \
   --enable-issues=true \
   --enable-wiki=false \
   --enable-projects=false \
@@ -100,18 +100,18 @@ gh repo edit DIZAMU/Geodex \
 ## 9. Verify
 
 ```
-gh repo view DIZAMU/Geodex --json name,visibility,defaultBranchRef,hasIssuesEnabled,hasWikiEnabled,repositoryTopics
+gh repo view DIZAMU/GeoDex --json name,visibility,defaultBranchRef,hasIssuesEnabled,hasWikiEnabled,repositoryTopics
 git log --oneline
 git remote -v
 ```
 All of these must hold:
-- Name is `Geodex`.
+- Name is `GeoDex`.
 - Visibility is `PRIVATE`.
 - Default branch is `main`.
 - Wiki is disabled.
 - 7 topics are set.
 - There is exactly 1 commit.
-- `origin` points to `DIZAMU/Geodex`.
+- `origin` points to `DIZAMU/GeoDex`.
 
 Report the results as a short checklist.
 
