@@ -33,7 +33,7 @@ Local-first single-page app. IndexedDB (Dexie) is the source of truth on each de
 
 ## Learning engine
 
-Pure modules in `src/engine/` (no React or Dexie, enforced by a test): matching, grading, scheduler, cards, budget, distractors, confusions, session, placement, day boundaries, seeded randomness.
+Pure modules in `src/engine/` (no React or Dexie, enforced by a test): matching, grading, scheduler, cards, budget, distractors, confusions, session, placement, day boundaries, seeded randomness, and the explanation engine in `src/engine/explain/`.
 
 ## Sync
 
@@ -57,4 +57,19 @@ fetch (network, cached in data/raw)        build (offline, deterministic)
 
 ## Explanation engine
 
-Phase 3. See `PLAN.md` section 7.
+```
+content/templates/<locale>/<moment>.md --compile-templates.ts--> src/generated/templates.json
+content/entities/countries/<subregion>.json (hooks, capital hooks, flag notes, facts)
+content/confusions.json (contrast text per look-alike pair)
+                     |
+answer -> moment (correct, correct_hard, wrong, lapse, leech, mastered; introduce on the intro panel)
+       -> slots (target, chosen, home, user; locale-aware numbers, compass, neighbors)
+       -> selection: eligible templates, recent views dropped, hooks weighted by what works
+          for this learner, unseen facts first, seeded by card id and review count
+       -> blocks (template, contrast, hook, fact), at most 60 words; snippet ids on the event
+```
+
+- `src/engine/explain/`: template syntax and the `when` grammar (hand-written, no eval), slots, selection and hook effectiveness. Pure and tested; its files use `.ts` imports so the content scripts run them under Node.
+- `scripts/content/`: the template compiler (runs before `dev`, `build`, `typecheck` and `test`), the linter that enforces the YAML rules in `content/VOICE.md` in both locales, and the generator for `content/REVIEW.md`.
+- "Not helpful" writes an append-only `hookVoteEvents` row; it hides that hook for that card and counts as a failure for its hook type.
+- Contrast cards (`A|B:contrast`) appear after two confusions in 90 days when contrast text exists for the pair.

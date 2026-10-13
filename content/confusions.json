@@ -1,0 +1,274 @@
+{
+  "confusions": [
+    {
+      "a": "SVK",
+      "b": "SVN",
+      "dimension": "name",
+      "contrast": {
+        "en": "Slovenia touches the Adriatic and Italy. Slovakia has no coast and sits further northeast, bordering Poland.",
+        "nb": "Slovenia har kyst mot Adriaterhavet og grenser til Italia. Slovakia har ingen kyst, ligger lenger nordøst og grenser til Polen."
+      }
+    },
+    {
+      "a": "NER",
+      "b": "NGA",
+      "dimension": "name",
+      "contrast": {
+        "en": "Nigeria has the coast and the longer name. Niger has no coast and lies directly north of Nigeria.",
+        "nb": "Nigeria har kysten og det lengste navnet. Niger har ingen kyst og ligger rett nord for Nigeria."
+      }
+    },
+    {
+      "a": "AUT",
+      "b": "AUS",
+      "dimension": "name",
+      "contrast": {
+        "en": "Austria is in the Alps, in central Europe. Australia is the continent-sized country between the Indian and Pacific oceans.",
+        "nb": "Østerrike ligger i Alpene i Sentral-Europa. Australia er landet på størrelse med et kontinent, mellom Indiahavet og Stillehavet."
+      }
+    },
+    {
+      "a": "GIN",
+      "b": "GNB",
+      "dimension": "name",
+      "contrast": {
+        "en": "Guinea-Bissau is the small coastal country northwest of Guinea, with Portuguese as its official language. Guinea is larger and uses French.",
+        "nb": "Guinea-Bissau er det lille kystlandet nordvest for Guinea, med portugisisk som offisielt språk. Guinea er større og bruker fransk."
+      }
+    },
+    {
+      "a": "GIN",
+      "b": "GNQ",
+      "dimension": "name",
+      "contrast": {
+        "en": "Guinea is in West Africa, on the Atlantic. Equatorial Guinea is in Central Africa, between Cameroon and Gabon.",
+        "nb": "Guinea ligger i Vest-Afrika, ved Atlanterhavet. Ekvatorial-Guinea ligger i Sentral-Afrika, mellom Kamerun og Gabon."
+      }
+    },
+    {
+      "a": "GIN",
+      "b": "PNG",
+      "dimension": "name",
+      "contrast": {
+        "en": "Guinea is in West Africa. Papua New Guinea is in Oceania and shares the island of New Guinea with Indonesia.",
+        "nb": "Guinea ligger i Vest-Afrika. Papua Ny-Guinea ligger i Oseania og deler øya Ny-Guinea med Indonesia."
+      }
+    },
+    {
+      "a": "GNB",
+      "b": "GNQ",
+      "dimension": "name",
+      "contrast": {
+        "en": "Guinea-Bissau is in West Africa and uses Portuguese. Equatorial Guinea is in Central Africa and has Spanish as an official language.",
+        "nb": "Guinea-Bissau ligger i Vest-Afrika og bruker portugisisk. Ekvatorial-Guinea ligger i Sentral-Afrika og har spansk som offisielt språk."
+      }
+    },
+    {
+      "a": "COD",
+      "b": "COG",
+      "dimension": "name",
+      "contrast": {
+        "en": "The Democratic Republic of the Congo is the huge one, capital Kinshasa. The Republic of the Congo is smaller, to its west, capital Brazzaville.",
+        "nb": "Kongo (Den demokratiske republikken) er det store landet, med hovedstad Kinshasa. Kongo-Brazzaville er mindre og ligger vest for det."
+      }
+    },
+    {
+      "a": "DMA",
+      "b": "DOM",
+      "dimension": "name",
+      "contrast": {
+        "en": "Dominica is a small island in the eastern Caribbean. The Dominican Republic shares the island of Hispaniola with Haiti.",
+        "nb": "Dominica er en liten øy i det østlige Karibia. Den dominikanske republikk deler øya Hispaniola med Haiti."
+      }
+    },
+    {
+      "a": "ROU",
+      "b": "TCD",
+      "dimension": "flag",
+      "contrast": {
+        "en": "Chad and Romania both fly blue, yellow and red stripes. Chad's blue is darker.",
+        "nb": "Tsjad og Romania har begge blå, gule og røde striper. Tsjads blå er mørkere."
+      }
+    },
+    {
+      "a": "IDN",
+      "b": "MCO",
+      "dimension": "flag",
+      "contrast": {
+        "en": "Indonesia and Monaco both fly red over white. Indonesia's flag is longer; Monaco's is closer to a square.",
+        "nb": "Indonesia og Monaco har begge rødt over hvitt. Indonesias flagg er lengre, Monacos er nærmere et kvadrat."
+      }
+    },
+    {
+      "a": "CIV",
+      "b": "IRL",
+      "dimension": "flag",
+      "contrast": {
+        "en": "Ireland and Côte d'Ivoire are mirror images. Ireland has green next to the pole; Côte d'Ivoire has orange there.",
+        "nb": "Irland og Elfenbenskysten er speilbilder. Irland har grønt nærmest stangen, Elfenbenskysten har oransje der."
+      }
+    },
+    {
+      "a": "Q1780",
+      "b": "Q437",
+      "dimension": "capital",
+      "contrast": {
+        "en": "Bratislava is the capital of Slovakia, on the Danube beside Austria. Ljubljana is the capital of Slovenia.",
+        "nb": "Bratislava er hovedstaden i Slovakia, ved Donau inntil Østerrike. Ljubljana er hovedstaden i Slovenia."
+      }
+    },
+    {
+      "a": "Q3130",
+      "b": "Q3114",
+      "dimension": "not_capital",
+      "contrast": {
+        "en": "Australia's capital is Canberra, built as a compromise. Sydney is the largest city.",
+        "nb": "Australias hovedstad er Canberra, bygget som et kompromiss. Sydney er den største byen."
+      }
+    },
+    {
+      "a": "Q406",
+      "b": "Q3640",
+      "dimension": "not_capital",
+      "contrast": {
+        "en": "Türkiye's capital is Ankara, in the interior. Istanbul is the largest city.",
+        "nb": "Tyrkias hovedstad er Ankara, inne i landet. Istanbul er den største byen."
+      }
+    },
+    {
+      "a": "Q172",
+      "b": "Q1930",
+      "dimension": "not_capital",
+      "contrast": {
+        "en": "Canada's capital is Ottawa. Toronto is the largest city.",
+        "nb": "Canadas hovedstad er Ottawa. Toronto er den største byen."
+      }
+    },
+    {
+      "a": "Q8678",
+      "b": "Q2844",
+      "dimension": "not_capital",
+      "contrast": {
+        "en": "Brasília replaced Rio de Janeiro as the capital of Brazil.",
+        "nb": "Brasília tok over etter Rio de Janeiro som Brasils hovedstad."
+      }
+    },
+    {
+      "a": "Q72",
+      "b": "Q70",
+      "dimension": "not_capital",
+      "contrast": {
+        "en": "Switzerland's seat of government is Bern. Zurich is the largest city.",
+        "nb": "Sveits har regjeringssete i Bern. Zürich er den største byen."
+      }
+    },
+    {
+      "a": "Q60",
+      "b": "Q61",
+      "dimension": "not_capital",
+      "contrast": {
+        "en": "The capital of the United States is Washington, D.C. New York City is the largest city.",
+        "nb": "Hovedstaden i USA er Washington D.C. New York er den største byen."
+      }
+    },
+    {
+      "a": "Q8673",
+      "b": "Q3787",
+      "dimension": "not_capital",
+      "contrast": {
+        "en": "Abuja replaced Lagos as the capital of Nigeria. Lagos is still the largest city.",
+        "nb": "Abuja tok over etter Lagos som Nigerias hovedstad. Lagos er fortsatt den største byen."
+      }
+    },
+    {
+      "a": "Q35493",
+      "b": "Q1520",
+      "dimension": "not_capital",
+      "contrast": {
+        "en": "Astana replaced Almaty as the capital of Kazakhstan. Almaty is still the largest city.",
+        "nb": "Astana tok over etter Almaty som Kasakhstans hovedstad. Almaty er fortsatt den største byen."
+      }
+    },
+    {
+      "a": "Q8660",
+      "b": "Q1362",
+      "dimension": "not_capital",
+      "contrast": {
+        "en": "Islamabad was built to replace Karachi as the capital of Pakistan. Karachi is the largest city.",
+        "nb": "Islamabad ble bygget for å erstatte Karachi som Pakistans hovedstad. Karachi er den største byen."
+      }
+    },
+    {
+      "a": "Q37100",
+      "b": "Q23661",
+      "dimension": "not_capital",
+      "contrast": {
+        "en": "New Zealand's capital is Wellington, at the south tip of the North Island. Auckland is the largest city.",
+        "nb": "New Zealands hovedstad er Wellington, på sørspissen av Nordøya. Auckland er den største byen."
+      }
+    },
+    {
+      "a": "Q7903",
+      "b": "Q3551",
+      "dimension": "not_capital",
+      "contrast": {
+        "en": "Morocco's capital is Rabat. Casablanca, further down the Atlantic coast, is the largest city.",
+        "nb": "Marokkos hovedstad er Rabat. Casablanca, lenger sør langs atlanterhavskysten, er den største byen."
+      }
+    },
+    {
+      "a": "Q612",
+      "b": "Q1519",
+      "dimension": "not_capital",
+      "contrast": {
+        "en": "The capital of the United Arab Emirates is Abu Dhabi. Dubai is the most populous city.",
+        "nb": "Hovedstaden i De forente arabiske emirater er Abu Dhabi. Dubai er byen med flest innbyggere."
+      }
+    },
+    {
+      "a": "Q1854",
+      "b": "Q1858",
+      "dimension": "not_capital",
+      "contrast": {
+        "en": "Vietnam's capital is Hanoi, in the north. Ho Chi Minh City, in the south, is the largest city.",
+        "nb": "Vietnams hovedstad er Hanoi, i nord. Ho Chi Minh-byen, i sør, er den største byen."
+      }
+    },
+    {
+      "a": "Q1156",
+      "b": "Q987",
+      "dimension": "not_capital",
+      "contrast": {
+        "en": "India's capital is New Delhi, in the north. Mumbai is the financial center on the west coast.",
+        "nb": "Indias hovedstad er New Delhi, i nord. Mumbai er finanssenteret på vestkysten."
+      }
+    },
+    {
+      "a": "Q37995",
+      "b": "Q37400",
+      "dimension": "not_capital",
+      "contrast": {
+        "en": "Naypyidaw replaced Yangon as the capital of Myanmar. Yangon is still the largest city.",
+        "nb": "Nay Pyi Taw tok over etter Yangon som Myanmars hovedstad. Yangon er fortsatt den største byen."
+      }
+    },
+    {
+      "a": "Q1960",
+      "b": "Q3866",
+      "dimension": "not_capital",
+      "contrast": {
+        "en": "Tanzania's official capital is Dodoma, inland. Dar es Salaam is the largest city and the main port.",
+        "nb": "Tanzanias offisielle hovedstad er Dodoma, inne i landet. Dar-es-Salaam er den største byen og hovedhavnen."
+      }
+    },
+    {
+      "a": "Q1515",
+      "b": "Q3768",
+      "dimension": "not_capital",
+      "contrast": {
+        "en": "Côte d'Ivoire's official capital is Yamoussoukro. Abidjan, the largest city, still holds most government offices.",
+        "nb": "Elfenbenskystens offisielle hovedstad er Yamoussoukro. Abidjan, den største byen, har fortsatt de fleste departementene."
+      }
+    }
+  ]
+}

@@ -1,0 +1,397 @@
+{
+  "group": "054",
+  "entities": [
+    {
+      "entityId": "FJI",
+      "hooks": {
+        "en": [
+          {
+            "id": "FJI.en.1",
+            "type": "anchor",
+            "text": "Fiji is an island country in the South Pacific, north of New Zealand and east of Vanuatu."
+          },
+          {
+            "id": "FJI.en.2",
+            "type": "contrast",
+            "text": "Fiji counts as Melanesia; Samoa and Tonga, further east, are Polynesia."
+          },
+          {
+            "id": "FJI.en.3",
+            "type": "sound",
+            "text": "Fiji: a fizzy drink bubbling around two big islands in the South Pacific."
+          }
+        ],
+        "nb": [
+          {
+            "id": "FJI.nb.1",
+            "type": "anchor",
+            "text": "Fiji er et øyland i Sør-Stillehavet, nord for New Zealand og øst for Vanuatu."
+          },
+          {
+            "id": "FJI.nb.2",
+            "type": "contrast",
+            "text": "Fiji regnes til Melanesia; Samoa og Tonga lenger øst regnes til Polynesia."
+          },
+          {
+            "id": "FJI.nb.3",
+            "type": "sound",
+            "text": "Fiji: en fiolinist som spiller for fiskene på en strand i Sør-Stillehavet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "FJI.cap.en.1",
+            "type": "anchor",
+            "text": "Suva sits on the southeast coast of Viti Levu, Fiji's largest island."
+          },
+          {
+            "id": "FJI.cap.en.2",
+            "type": "sound",
+            "text": "Suva: a pot of 'Suva soup' simmering in the rain on Viti Levu's south coast."
+          }
+        ],
+        "nb": [
+          {
+            "id": "FJI.cap.nb.1",
+            "type": "anchor",
+            "text": "Suva ligger på sørøstkysten av Viti Levu, Fijis største øy."
+          },
+          {
+            "id": "FJI.cap.nb.2",
+            "type": "sound",
+            "text": "Suva: ei su, ei purke, som vasser i regnet på sørkysten av Viti Levu."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Light blue with the Union Jack top left and Fiji's shield on the right.",
+        "nb": "Lyseblått med Union Jack øverst til venstre og Fijis våpenskjold til høyre."
+      },
+      "facts": [
+        {
+          "id": "FJI.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Fiji has no land borders; it is made up of islands in the South Pacific.",
+            "nb": "Fiji har ingen landegrenser; landet består av øyer i Sør-Stillehavet."
+          }
+        },
+        {
+          "id": "FJI.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "English, Fijian and Fiji Hindi are the official languages of Fiji.",
+            "nb": "Engelsk, fijiansk og fijihindi er de offisielle språkene på Fiji."
+          }
+        },
+        {
+          "id": "FJI.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The antimeridian, the line of longitude opposite Greenwich, crosses Fiji.",
+            "nb": "Antimeridianen, lengdegraden rett overfor Greenwich, går over Fiji."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "PNG",
+      "hooks": {
+        "en": [
+          {
+            "id": "PNG.en.1",
+            "type": "anchor",
+            "text": "Papua New Guinea is the eastern half of New Guinea, north of Australia, sharing the island with Indonesia."
+          },
+          {
+            "id": "PNG.en.2",
+            "type": "contrast",
+            "text": "Papua New Guinea is in the Pacific; Guinea and Guinea-Bissau are in West Africa."
+          },
+          {
+            "id": "PNG.en.3",
+            "type": "story",
+            "text": "A Spanish sailor named the island New Guinea because its people reminded him of people in Guinea in Africa."
+          }
+        ],
+        "nb": [
+          {
+            "id": "PNG.nb.1",
+            "type": "anchor",
+            "text": "Papua Ny-Guinea er den østlige halvdelen av Ny-Guinea, nord for Australia, og deler øya med Indonesia."
+          },
+          {
+            "id": "PNG.nb.2",
+            "type": "contrast",
+            "text": "Papua Ny-Guinea ligger i Stillehavet; Guinea og Guinea-Bissau ligger i Vest-Afrika."
+          },
+          {
+            "id": "PNG.nb.3",
+            "type": "story",
+            "text": "En spansk sjøfarer kalte øya Ny-Guinea fordi folket minnet ham om folk i Guinea i Afrika."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "PNG.cap.en.1",
+            "type": "anchor",
+            "text": "Port Moresby sits on the south coast, facing Australia across the sea."
+          },
+          {
+            "id": "PNG.cap.en.2",
+            "type": "story",
+            "text": "Port Moresby was named by the British explorer John Moresby, after his father."
+          }
+        ],
+        "nb": [
+          {
+            "id": "PNG.cap.nb.1",
+            "type": "anchor",
+            "text": "Port Moresby ligger på sørkysten, med Australia på andre siden av havet."
+          },
+          {
+            "id": "PNG.cap.nb.2",
+            "type": "story",
+            "text": "Port Moresby fikk navnet av den britiske oppdageren John Moresby, etter faren hans."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Split diagonally: red with a yellow bird of paradise, and black with the white Southern Cross.",
+        "nb": "Delt på skrå: rødt med en gul paradisfugl, og svart med det hvite Sørkorset."
+      },
+      "facts": [
+        {
+          "id": "PNG.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Papua New Guinea's only land border is with Indonesia, across the island of New Guinea.",
+            "nb": "Papua Ny-Guineas eneste landegrense er mot Indonesia, tvers over øya Ny-Guinea."
+          }
+        },
+        {
+          "id": "PNG.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "English, Tok Pisin and Hiri Motu are the official languages of Papua New Guinea.",
+            "nb": "Engelsk, tok pisin og hiri motu er de offisielle språkene i Papua Ny-Guinea."
+          }
+        },
+        {
+          "id": "PNG.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Papua New Guinea has more living languages than any other country.",
+            "nb": "Papua Ny-Guinea har flere levende språk enn noe annet land."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "SLB",
+      "hooks": {
+        "en": [
+          {
+            "id": "SLB.en.1",
+            "type": "anchor",
+            "text": "The Solomon Islands lie east of Papua New Guinea, a double row of islands in the southwest Pacific."
+          },
+          {
+            "id": "SLB.en.2",
+            "type": "story",
+            "text": "A Spanish explorer named the islands after King Solomon, hoping they held his legendary gold."
+          },
+          {
+            "id": "SLB.en.3",
+            "type": "contrast",
+            "text": "The Solomon Islands are a country, but Bougainville, at the northwest end of the chain, belongs to Papua New Guinea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SLB.nb.1",
+            "type": "anchor",
+            "text": "Salomonøyene ligger øst for Papua Ny-Guinea, to rekker med øyer i det sørvestlige Stillehavet."
+          },
+          {
+            "id": "SLB.nb.2",
+            "type": "story",
+            "text": "En spansk oppdager kalte øyene opp etter kong Salomo, i håp om å finne gullet hans der."
+          },
+          {
+            "id": "SLB.nb.3",
+            "type": "contrast",
+            "text": "Salomonøyene er en egen stat, men Bougainville, nordvest i øykjeden, hører til Papua Ny-Guinea."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "SLB.cap.en.1",
+            "type": "anchor",
+            "text": "Honiara is on the north coast of Guadalcanal, the largest island."
+          },
+          {
+            "id": "SLB.cap.en.2",
+            "type": "sound",
+            "text": "Honiara: honey in the air, with bees humming over Guadalcanal."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SLB.cap.nb.1",
+            "type": "anchor",
+            "text": "Honiara ligger på nordkysten av Guadalcanal, den største øya."
+          },
+          {
+            "id": "SLB.cap.nb.2",
+            "type": "sound",
+            "text": "Honiara: en ara, en papegøye, som slikker honning på Guadalcanal."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A thin yellow diagonal splits blue from green, with five white stars in the blue.",
+        "nb": "En smal gul skrå stripe skiller blått fra grønt, med fem hvite stjerner i det blå."
+      },
+      "facts": [
+        {
+          "id": "SLB.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "The Solomon Islands have no land borders; every border is at sea.",
+            "nb": "Salomonøyene har ingen landegrenser; alle grensene går til havs."
+          }
+        },
+        {
+          "id": "SLB.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "English is the only official language of the Solomon Islands.",
+            "nb": "Engelsk er det eneste offisielle språket på Salomonøyene."
+          }
+        },
+        {
+          "id": "SLB.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Guadalcanal was the scene of a major Second World War campaign between the United States and Japan.",
+            "nb": "Guadalcanal var åsted for et stort felttog mellom USA og Japan under andre verdenskrig."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "VUT",
+      "hooks": {
+        "en": [
+          {
+            "id": "VUT.en.1",
+            "type": "anchor",
+            "text": "Vanuatu is a Y-shaped chain of islands between the Solomon Islands and New Caledonia."
+          },
+          {
+            "id": "VUT.en.2",
+            "type": "story",
+            "text": "Britain and France ruled Vanuatu jointly, which is why both English and French are official there."
+          },
+          {
+            "id": "VUT.en.3",
+            "type": "sound",
+            "text": "Vanuatu: a van covered in tattoos, driving from island to island on the ferry."
+          }
+        ],
+        "nb": [
+          {
+            "id": "VUT.nb.1",
+            "type": "anchor",
+            "text": "Vanuatu er en Y-formet kjede av øyer mellom Salomonøyene og Ny-Caledonia."
+          },
+          {
+            "id": "VUT.nb.2",
+            "type": "story",
+            "text": "Storbritannia og Frankrike styrte Vanuatu i fellesskap, derfor er både engelsk og fransk offisielle språk."
+          },
+          {
+            "id": "VUT.nb.3",
+            "type": "sound",
+            "text": "Vanuatu: en vannkanne med tatoveringer som vanner øy etter øy."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "VUT.cap.en.1",
+            "type": "anchor",
+            "text": "Port Vila is on Efate, an island in the middle of the chain."
+          },
+          {
+            "id": "VUT.cap.en.2",
+            "type": "sound",
+            "text": "Port Vila: a villa by the port, the capital's front door on Efate."
+          }
+        ],
+        "nb": [
+          {
+            "id": "VUT.cap.nb.1",
+            "type": "anchor",
+            "text": "Port Vila ligger på Efate, en øy midt i øykjeden."
+          },
+          {
+            "id": "VUT.cap.nb.2",
+            "type": "sound",
+            "text": "Port Vila: en villa ved porten til havna på Efate."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red over green, split by a yellow Y edged in black, with a curled boar's tusk in the black triangle.",
+        "nb": "Rødt over grønt, delt av en gul Y med svart kant, og en krum villsvintann i den svarte trekanten."
+      },
+      "facts": [
+        {
+          "id": "VUT.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Vanuatu has no land borders; it is a chain of islands.",
+            "nb": "Vanuatu har ingen landegrenser; landet er en kjede av øyer."
+          }
+        },
+        {
+          "id": "VUT.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Bislama, English and French are all official languages of Vanuatu.",
+            "nb": "Bislama, engelsk og fransk er alle offisielle språk på Vanuatu."
+          }
+        },
+        {
+          "id": "VUT.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Bislama, Vanuatu's national language, is a creole based largely on English.",
+            "nb": "Bislama, Vanuatus nasjonalspråk, er et kreolspråk som i stor grad bygger på engelsk."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "group": "053",
+  "entities": [
+    {
+      "entityId": "AUS",
+      "hooks": {
+        "en": [
+          {
+            "id": "AUS.en.1",
+            "type": "anchor",
+            "text": "Australia is the island continent between the Indian and Pacific Oceans, south of Indonesia."
+          },
+          {
+            "id": "AUS.en.2",
+            "type": "etymology",
+            "text": "Australia comes from the Latin 'australis', southern."
+          },
+          {
+            "id": "AUS.en.3",
+            "type": "sound",
+            "text": "Australia: an ostrich in a sun hat strolling 'down under', bumping into a kangaroo."
+          }
+        ],
+        "nb": [
+          {
+            "id": "AUS.nb.1",
+            "type": "anchor",
+            "text": "Australia er øykontinentet mellom Det indiske hav og Stillehavet, sør for Indonesia."
+          },
+          {
+            "id": "AUS.nb.2",
+            "type": "etymology",
+            "text": "Australia kommer av latin «australis», sørlig."
+          },
+          {
+            "id": "AUS.nb.3",
+            "type": "sound",
+            "text": "Australia: en østers med solhatt som ligger og steker seg på en strand langt i sør."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "AUS.cap.en.1",
+            "type": "story",
+            "text": "Canberra was built as a compromise because neither Sydney nor Melbourne would accept the other as capital."
+          },
+          {
+            "id": "AUS.cap.en.2",
+            "type": "contrast",
+            "text": "Sydney is the largest city, but the capital is Canberra, inland between Sydney and Melbourne."
+          }
+        ],
+        "nb": [
+          {
+            "id": "AUS.cap.nb.1",
+            "type": "story",
+            "text": "Canberra ble bygd som et kompromiss, fordi Sydney og Melbourne ikke godtok hverandre som hovedstad."
+          },
+          {
+            "id": "AUS.cap.nb.2",
+            "type": "contrast",
+            "text": "Sydney er størst, men hovedstaden er Canberra, inne i landet mellom Sydney og Melbourne."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue with the Union Jack top left, a large seven-pointed star below it, and the white Southern Cross on the right.",
+        "nb": "Blått med Union Jack øverst til venstre, en stor sjuoddet stjerne under, og det hvite Sørkorset til høyre."
+      },
+      "facts": [
+        {
+          "id": "AUS.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Australia has no land borders; all its neighbors lie across the sea.",
+            "nb": "Australia har ingen landegrenser; alle nabolandene ligger på andre siden av havet."
+          }
+        },
+        {
+          "id": "AUS.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Great Barrier Reef runs along the coast of Queensland in the northeast.",
+            "nb": "Great Barrier Reef ligger langs kysten av Queensland i nordøst."
+          }
+        },
+        {
+          "id": "AUS.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "From east to west, Australia is wider than the Moon.",
+            "nb": "Fra øst til vest er Australia bredere enn Månen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "NZL",
+      "hooks": {
+        "en": [
+          {
+            "id": "NZL.en.1",
+            "type": "anchor",
+            "text": "New Zealand lies southeast of Australia across the Tasman Sea, with the North Island and South Island as its main islands."
+          },
+          {
+            "id": "NZL.en.2",
+            "type": "contrast",
+            "text": "New Zealand's flag has red stars edged in white; Australia's stars are all white."
+          },
+          {
+            "id": "NZL.en.3",
+            "type": "etymology",
+            "text": "New Zealand is named after Zeeland, a province of the Netherlands."
+          },
+          {
+            "id": "NZL.en.4",
+            "type": "sound",
+            "text": "New Zealand: a new seal on land, flopping from the South Island up to the North Island."
+          }
+        ],
+        "nb": [
+          {
+            "id": "NZL.nb.1",
+            "type": "anchor",
+            "text": "New Zealand ligger sørøst for Australia over Tasmanhavet, med Nordøya og Sørøya som hovedøyer."
+          },
+          {
+            "id": "NZL.nb.2",
+            "type": "contrast",
+            "text": "New Zealands flagg har røde stjerner med hvit kant; Australias stjerner er hvite."
+          },
+          {
+            "id": "NZL.nb.3",
+            "type": "etymology",
+            "text": "New Zealand er oppkalt etter Zeeland, en provins i Nederland."
+          },
+          {
+            "id": "NZL.nb.4",
+            "type": "sound",
+            "text": "New Zealand: en sel i land, «sel-land», som tar nyttårsbad mellom Nordøya og Sørøya."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "NZL.cap.en.1",
+            "type": "anchor",
+            "text": "Wellington sits at the southern tip of the North Island, across Cook Strait from the South Island."
+          },
+          {
+            "id": "NZL.cap.en.2",
+            "type": "sound",
+            "text": "Wellington: a giant wellington boot standing in the wind at the bottom of the North Island."
+          }
+        ],
+        "nb": [
+          {
+            "id": "NZL.cap.nb.1",
+            "type": "anchor",
+            "text": "Wellington ligger på sørspissen av Nordøya, ved Cookstredet mot Sørøya."
+          },
+          {
+            "id": "NZL.cap.nb.2",
+            "type": "sound",
+            "text": "Wellington: en biff Wellington servert på sørspissen av Nordøya."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue with the Union Jack top left and four red stars edged in white, the Southern Cross.",
+        "nb": "Blått med Union Jack øverst til venstre og fire røde stjerner med hvit kant, Sørkorset."
+      },
+      "facts": [
+        {
+          "id": "NZL.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "New Zealand has no land borders; Australia lies across the Tasman Sea.",
+            "nb": "New Zealand har ingen landegrenser; Australia ligger på andre siden av Tasmanhavet."
+          }
+        },
+        {
+          "id": "NZL.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "English and Māori are both official languages of New Zealand.",
+            "nb": "Engelsk og maori er begge offisielle språk i New Zealand."
+          }
+        },
+        {
+          "id": "NZL.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "New Zealand was among the first countries where women could vote in national elections.",
+            "nb": "New Zealand var blant de første landene der kvinner fikk stemme ved nasjonale valg."
+          }
+        }
+      ]
+    }
+  ]
+}

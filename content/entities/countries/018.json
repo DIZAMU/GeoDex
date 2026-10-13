@@ -1,0 +1,550 @@
+{
+  "group": "018",
+  "entities": [
+    {
+      "entityId": "BWA",
+      "hooks": {
+        "en": [
+          {
+            "id": "BWA.en.1",
+            "type": "anchor",
+            "text": "Botswana is landlocked (no coast), north of South Africa, with Namibia to the west and Zimbabwe to the east."
+          },
+          {
+            "id": "BWA.en.2",
+            "type": "story",
+            "text": "The Okavango River flows into Botswana and never reaches the sea; it fans out and evaporates at the edge of the Kalahari."
+          },
+          {
+            "id": "BWA.en.3",
+            "type": "sound",
+            "text": "Botswana: a boat swan paddling through the Okavango Delta."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BWA.nb.1",
+            "type": "anchor",
+            "text": "Botswana er en innlandsstat (uten kyst) nord for Sør-Afrika, med Namibia i vest og Zimbabwe i øst."
+          },
+          {
+            "id": "BWA.nb.2",
+            "type": "story",
+            "text": "Okavango-elva renner inn i Botswana og når aldri havet; den sprer seg ut og fordamper i kanten av Kalahari."
+          },
+          {
+            "id": "BWA.nb.3",
+            "type": "sound",
+            "text": "Botswana: en svane i båt padler gjennom Okavangodeltaet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "BWA.cap.en.1",
+            "type": "etymology",
+            "text": "Gaborone is named after Gaborone, a chief of the Tlokwa people."
+          },
+          {
+            "id": "BWA.cap.en.2",
+            "type": "anchor",
+            "text": "Gaborone sits in the far southeast, right by the South African border."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BWA.cap.nb.1",
+            "type": "etymology",
+            "text": "Gaborone har navn etter Gaborone, en høvding for tlokwa-folket."
+          },
+          {
+            "id": "BWA.cap.nb.2",
+            "type": "anchor",
+            "text": "Gaborone ligger helt i sørøst, like ved grensen til Sør-Afrika."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Light blue with a black band edged in white across the middle.",
+        "nb": "Lyseblått med et svart bånd med hvite kanter tvers over midten."
+      },
+      "facts": [
+        {
+          "id": "BWA.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Botswana is landlocked (no coast) and borders Namibia, South Africa and Zimbabwe.",
+            "nb": "Botswana er en innlandsstat (uten kyst) og grenser til Namibia, Sør-Afrika og Zimbabwe."
+          }
+        },
+        {
+          "id": "BWA.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "English is Botswana's official language.",
+            "nb": "Engelsk er det offisielle språket i Botswana."
+          }
+        },
+        {
+          "id": "BWA.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The pula, Botswana's currency, means 'rain' in Setswana.",
+            "nb": "Pula, Botswanas valuta, betyr «regn» på setswana."
+          }
+        },
+        {
+          "id": "BWA.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Kalahari Desert covers most of Botswana.",
+            "nb": "Kalahari-ørkenen dekker det meste av Botswana."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "LSO",
+      "hooks": {
+        "en": [
+          {
+            "id": "LSO.en.1",
+            "type": "anchor",
+            "text": "Lesotho is an enclave (a country surrounded by a single other country), lying entirely inside South Africa."
+          },
+          {
+            "id": "LSO.en.2",
+            "type": "shape",
+            "text": "Lesotho is the hole in South Africa's doughnut, a round mountain kingdom in its east."
+          },
+          {
+            "id": "LSO.en.3",
+            "type": "contrast",
+            "text": "Lesotho and Eswatini are both small kingdoms tucked into South Africa; only Eswatini also touches Mozambique."
+          }
+        ],
+        "nb": [
+          {
+            "id": "LSO.nb.1",
+            "type": "anchor",
+            "text": "Lesotho er en enklave (et land helt omgitt av ett annet land) inne i Sør-Afrika."
+          },
+          {
+            "id": "LSO.nb.2",
+            "type": "shape",
+            "text": "Lesotho er hullet i Sør-Afrikas smultring, et rundt fjellrike i øst."
+          },
+          {
+            "id": "LSO.nb.3",
+            "type": "contrast",
+            "text": "Lesotho og Eswatini er begge små kongedømmer inntil Sør-Afrika; bare Eswatini grenser også til Mosambik."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "LSO.cap.en.1",
+            "type": "anchor",
+            "text": "Maseru sits on the western border, across the Caledon River from South Africa."
+          },
+          {
+            "id": "LSO.cap.en.2",
+            "type": "etymology",
+            "text": "Maseru means 'red sandstones' in Sesotho."
+          }
+        ],
+        "nb": [
+          {
+            "id": "LSO.cap.nb.1",
+            "type": "anchor",
+            "text": "Maseru ligger ved vestgrensen, over Caledon-elva fra Sør-Afrika."
+          },
+          {
+            "id": "LSO.cap.nb.2",
+            "type": "etymology",
+            "text": "Maseru betyr «røde sandsteiner» på sesotho."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue, white and green horizontal bands, with a black Basotho hat in the white center.",
+        "nb": "Blått, hvitt og grønt i vannrette felt, med en svart basotho-hatt midt i det hvite."
+      },
+      "facts": [
+        {
+          "id": "LSO.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Lesotho is an enclave (a country surrounded by one other): its only neighbor is South Africa.",
+            "nb": "Lesotho er en enklave (omgitt av ett annet land): eneste nabo er Sør-Afrika."
+          }
+        },
+        {
+          "id": "LSO.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Lesotho uses its own loti alongside the South African rand.",
+            "nb": "Lesotho bruker sin egen loti side om side med sørafrikanske rand."
+          }
+        },
+        {
+          "id": "LSO.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Lesotho sells water to South Africa through the Lesotho Highlands Water Project.",
+            "nb": "Lesotho selger vann til Sør-Afrika gjennom et stort vannprosjekt i høylandet."
+          }
+        },
+        {
+          "id": "LSO.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Lesotho's lowest point is higher than the lowest point of any other country.",
+            "nb": "Det laveste punktet i Lesotho ligger høyere enn det laveste punktet i noe annet land."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "NAM",
+      "hooks": {
+        "en": [
+          {
+            "id": "NAM.en.1",
+            "type": "anchor",
+            "text": "Namibia is on the Atlantic coast north of South Africa, with Angola to its north."
+          },
+          {
+            "id": "NAM.en.2",
+            "type": "shape",
+            "text": "The Caprivi Strip is Namibia's long finger, pointing east between Angola and Botswana."
+          },
+          {
+            "id": "NAM.en.3",
+            "type": "etymology",
+            "text": "Namibia is named after the Namib Desert along its coast."
+          }
+        ],
+        "nb": [
+          {
+            "id": "NAM.nb.1",
+            "type": "anchor",
+            "text": "Namibia ligger ved Atlanterhavet nord for Sør-Afrika, med Angola i nord."
+          },
+          {
+            "id": "NAM.nb.2",
+            "type": "shape",
+            "text": "Caprivistripen er Namibias lange finger, som peker østover mellom Angola og Botswana."
+          },
+          {
+            "id": "NAM.nb.3",
+            "type": "etymology",
+            "text": "Namibia har navn etter Namibørkenen langs kysten."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "NAM.cap.en.1",
+            "type": "sound",
+            "text": "Windhoek sounds like 'wind hook': picture wind snagging on the high plateau around Namibia's capital."
+          },
+          {
+            "id": "NAM.cap.en.2",
+            "type": "anchor",
+            "text": "Windhoek sits on the central plateau, inland from the Namib Desert."
+          }
+        ],
+        "nb": [
+          {
+            "id": "NAM.cap.nb.1",
+            "type": "sound",
+            "text": "Windhoek: tenk «vind-krok», vinden som hekter seg fast på høylandet rundt hovedstaden."
+          },
+          {
+            "id": "NAM.cap.nb.2",
+            "type": "anchor",
+            "text": "Windhoek ligger på høylandet midt i landet, innenfor Namibørkenen."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A red diagonal band edged in white runs up to the right; blue above with a yellow sun, green below.",
+        "nb": "Et rødt diagonalt bånd med hvite kanter går opp mot høyre; blått over med en gul sol, grønt under."
+      },
+      "facts": [
+        {
+          "id": "NAM.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Namibia borders Angola, Zambia, Botswana and South Africa, with a long Atlantic coast.",
+            "nb": "Namibia grenser til Angola, Zambia, Botswana og Sør-Afrika, og har lang kyst mot Atlanterhavet."
+          }
+        },
+        {
+          "id": "NAM.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Namibia uses its own Namibian dollar alongside the South African rand.",
+            "nb": "Namibia bruker sin egen namibiske dollar side om side med sørafrikanske rand."
+          }
+        },
+        {
+          "id": "NAM.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Namib is often called the oldest desert in the world.",
+            "nb": "Namib kalles ofte verdens eldste ørken."
+          }
+        },
+        {
+          "id": "NAM.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Skeleton Coast in northern Namibia is named for the whale bones and shipwrecks along its shore.",
+            "nb": "Skjelettkysten nord i Namibia har navn etter hvalbein og skipsvrak langs stranda."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "SWZ",
+      "hooks": {
+        "en": [
+          {
+            "id": "SWZ.en.1",
+            "type": "anchor",
+            "text": "Eswatini is the small landlocked (no coast) kingdom between South Africa and Mozambique."
+          },
+          {
+            "id": "SWZ.en.2",
+            "type": "etymology",
+            "text": "Eswatini means 'land of the Swazi'; the country was called Swaziland until recently."
+          },
+          {
+            "id": "SWZ.en.3",
+            "type": "sound",
+            "text": "Eswatini: a teeny kingdom squeezed between South Africa and Mozambique."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SWZ.nb.1",
+            "type": "anchor",
+            "text": "Eswatini er det lille kongedømmet uten kyst (en innlandsstat) mellom Sør-Afrika og Mosambik."
+          },
+          {
+            "id": "SWZ.nb.2",
+            "type": "etymology",
+            "text": "Eswatini betyr «swazienes land»; landet het Swaziland fram til nylig."
+          },
+          {
+            "id": "SWZ.nb.3",
+            "type": "sound",
+            "text": "Eswatini: et ess, vått av regn, ligger på bordet mellom Sør-Afrika og Mosambik."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "SWZ.cap.en.1",
+            "type": "anchor",
+            "text": "Mbabane is the executive capital of Eswatini, where the government sits."
+          },
+          {
+            "id": "SWZ.cap.en.2",
+            "type": "anchor",
+            "text": "Lobamba is the legislative capital, with parliament and the royal village, a short drive from Mbabane."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SWZ.cap.nb.1",
+            "type": "anchor",
+            "text": "Mbabane er den utøvende hovedstaden i Eswatini, der regjeringen sitter."
+          },
+          {
+            "id": "SWZ.cap.nb.2",
+            "type": "anchor",
+            "text": "Lobamba er den lovgivende hovedstaden, med parlamentet og kongelandsbyen, like ved Mbabane."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A black and white shield and two spears lie across a wide crimson band, with blue stripes above and below.",
+        "nb": "Et svart og hvitt skjold og to spyd ligger over et bredt mørkerødt felt, med blå striper over og under."
+      },
+      "facts": [
+        {
+          "id": "SWZ.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Eswatini is landlocked (no coast) and borders South Africa and Mozambique.",
+            "nb": "Eswatini er en innlandsstat (uten kyst) og grenser til Sør-Afrika og Mosambik."
+          }
+        },
+        {
+          "id": "SWZ.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Eswatini uses its own lilangeni alongside the South African rand.",
+            "nb": "Eswatini bruker sin egen lilangeni side om side med sørafrikanske rand."
+          }
+        },
+        {
+          "id": "SWZ.f3",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Swazi and English are the official languages of Eswatini.",
+            "nb": "Swazi og engelsk er de offisielle språkene i Eswatini."
+          }
+        },
+        {
+          "id": "SWZ.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Eswatini is one of the last absolute monarchies in the world.",
+            "nb": "Eswatini er et av de siste eneveldige monarkiene i verden."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "ZAF",
+      "hooks": {
+        "en": [
+          {
+            "id": "ZAF.en.1",
+            "type": "anchor",
+            "text": "South Africa is the southern tip of the continent, with coasts on both the Atlantic and the Indian Ocean."
+          },
+          {
+            "id": "ZAF.en.2",
+            "type": "contrast",
+            "text": "South Africa has three capitals: Pretoria, Cape Town and Bloemfontein. Johannesburg, the biggest city, is none of them."
+          },
+          {
+            "id": "ZAF.en.3",
+            "type": "story",
+            "text": "Nelson Mandela spent years imprisoned on Robben Island off Cape Town, and later became South Africa's president."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ZAF.nb.1",
+            "type": "anchor",
+            "text": "Sør-Afrika er sørspissen av kontinentet, med kyst mot både Atlanterhavet og Indiahavet."
+          },
+          {
+            "id": "ZAF.nb.2",
+            "type": "contrast",
+            "text": "Sør-Afrika har tre hovedsteder: Pretoria, Cape Town og Bloemfontein. Johannesburg, den største byen, er ingen av dem."
+          },
+          {
+            "id": "ZAF.nb.3",
+            "type": "story",
+            "text": "Nelson Mandela satt i mange år fengslet på Robben Island utenfor Cape Town, og ble senere Sør-Afrikas president."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "ZAF.cap.en.1",
+            "type": "anchor",
+            "text": "Pretoria is the executive capital, where the president and cabinet work."
+          },
+          {
+            "id": "ZAF.cap.en.2",
+            "type": "anchor",
+            "text": "Cape Town is the legislative capital: parliament meets there, below Table Mountain."
+          },
+          {
+            "id": "ZAF.cap.en.3",
+            "type": "etymology",
+            "text": "Bloemfontein, 'flower fountain', is the judicial capital, home of the Supreme Court of Appeal."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ZAF.cap.nb.1",
+            "type": "anchor",
+            "text": "Pretoria er den utøvende hovedstaden, der presidenten og regjeringen arbeider."
+          },
+          {
+            "id": "ZAF.cap.nb.2",
+            "type": "anchor",
+            "text": "Cape Town er den lovgivende hovedstaden: parlamentet møtes der, under Taffelberget."
+          },
+          {
+            "id": "ZAF.cap.nb.3",
+            "type": "etymology",
+            "text": "Bloemfontein, «blomsterkilden», er den dømmende hovedstaden, med ankedomstolen."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A green Y on its side, edged in white and gold, splits red, blue and a black triangle at the hoist.",
+        "nb": "En grønn liggende Y med hvite og gule kanter deler rødt, blått og en svart trekant ved stangen."
+      },
+      "facts": [
+        {
+          "id": "ZAF.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "South Africa borders Namibia, Botswana, Zimbabwe, Mozambique and Eswatini, and surrounds Lesotho completely.",
+            "nb": "Sør-Afrika grenser til Namibia, Botswana, Zimbabwe, Mosambik og Eswatini, og omslutter Lesotho helt."
+          }
+        },
+        {
+          "id": "ZAF.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Afrikaans, English and Zulu are among South Africa's official languages.",
+            "nb": "Afrikaans, engelsk og zulu er blant de offisielle språkene i Sør-Afrika."
+          }
+        },
+        {
+          "id": "ZAF.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The rand is named after the Witwatersrand, the ridge near Johannesburg where gold was found.",
+            "nb": "Rand har navn etter Witwatersrand, høydedraget ved Johannesburg der det ble funnet gull."
+          }
+        },
+        {
+          "id": "ZAF.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Africa's southernmost point is Cape Agulhas, not the Cape of Good Hope.",
+            "nb": "Afrikas sørligste punkt er Kapp Agulhas, ikke Kapp det gode håp."
+          }
+        }
+      ]
+    }
+  ]
+}

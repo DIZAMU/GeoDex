@@ -1,0 +1,985 @@
+{
+  "group": "151",
+  "entities": [
+    {
+      "entityId": "BGR",
+      "hooks": {
+        "en": [
+          {
+            "id": "BGR.en.1",
+            "type": "anchor",
+            "text": "Bulgaria sits on the west coast of the Black Sea, south of Romania across the Danube."
+          },
+          {
+            "id": "BGR.en.2",
+            "type": "contrast",
+            "text": "Bulgaria has a Black Sea coast; North Macedonia, its western neighbor, has no coast at all."
+          },
+          {
+            "id": "BGR.en.3",
+            "type": "sound",
+            "text": "Bulgaria: a bull with a bulging belly wades into the Black Sea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BGR.nb.1",
+            "type": "anchor",
+            "text": "Bulgaria ligger på vestkysten av Svartehavet, sør for Romania på andre siden av Donau."
+          },
+          {
+            "id": "BGR.nb.2",
+            "type": "contrast",
+            "text": "Bulgaria har kyst mot Svartehavet; nabolandet Nord-Makedonia i vest har ingen kyst."
+          },
+          {
+            "id": "BGR.nb.3",
+            "type": "sound",
+            "text": "Bulgaria: en stor bulk i bilen etter en tur langs Svartehavet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "BGR.cap.en.1",
+            "type": "anchor",
+            "text": "Sofia is in the west of Bulgaria, close to Serbia and far from the Black Sea."
+          },
+          {
+            "id": "BGR.cap.en.2",
+            "type": "etymology",
+            "text": "Sofia takes its name from the old Saint Sofia church; sofia is Greek for wisdom."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BGR.cap.nb.1",
+            "type": "anchor",
+            "text": "Sofia ligger vest i Bulgaria, nær Serbia og langt fra Svartehavet."
+          },
+          {
+            "id": "BGR.cap.nb.2",
+            "type": "etymology",
+            "text": "Sofia har navn etter den gamle Sofiakirken; sofia er gresk for visdom."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "White, green and red horizontal stripes from the top. Hungary uses red, white and green.",
+        "nb": "Hvite, grønne og røde vannrette striper ovenfra. Ungarn har rødt, hvitt og grønt."
+      },
+      "facts": [
+        {
+          "id": "BGR.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Bulgaria borders Romania, Serbia, North Macedonia, Greece and Türkiye, and has a Black Sea coast.",
+            "nb": "Bulgaria grenser til Romania, Serbia, Nord-Makedonia, Hellas og Tyrkia, og har kyst mot Svartehavet."
+          }
+        },
+        {
+          "id": "BGR.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Cyrillic alphabet took shape in the medieval Bulgarian state, and Bulgarian is still written in it.",
+            "nb": "Det kyrilliske alfabetet ble utformet i middelalderens bulgarske rike, og bulgarsk skrives fortsatt med det."
+          }
+        },
+        {
+          "id": "BGR.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "In traditional Bulgarian body language, a nod means no and a shake of the head means yes.",
+            "nb": "I tradisjonelt bulgarsk kroppsspråk betyr et nikk nei og en hoderisting ja."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "BLR",
+      "hooks": {
+        "en": [
+          {
+            "id": "BLR.en.1",
+            "type": "anchor",
+            "text": "Belarus is landlocked, with no coast, between Poland and Russia and north of Ukraine."
+          },
+          {
+            "id": "BLR.en.2",
+            "type": "etymology",
+            "text": "Belarus means 'White Rus'; why white is still debated."
+          },
+          {
+            "id": "BLR.en.3",
+            "type": "sound",
+            "text": "Belarus: a bell rings out over the flat forests between Poland and Russia."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BLR.nb.1",
+            "type": "anchor",
+            "text": "Belarus er en innlandsstat, et land uten kyst, mellom Polen og Russland, nord for Ukraina."
+          },
+          {
+            "id": "BLR.nb.2",
+            "type": "etymology",
+            "text": "Belarus betyr «Det hvite Russland», og Hviterussland er et eldre norsk navn på landet."
+          },
+          {
+            "id": "BLR.nb.3",
+            "type": "sound",
+            "text": "Belarus: en bil ruser motoren over sletta mellom Polen og Russland."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "BLR.cap.en.1",
+            "type": "anchor",
+            "text": "Minsk sits in the middle of Belarus on the Svislach river."
+          },
+          {
+            "id": "BLR.cap.en.2",
+            "type": "sound",
+            "text": "Minsk: a mink in a fur hat strolls down the broad avenues of the capital of Belarus."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BLR.cap.nb.1",
+            "type": "anchor",
+            "text": "Minsk ligger midt i Belarus ved elva Svislatsj."
+          },
+          {
+            "id": "BLR.cap.nb.2",
+            "type": "sound",
+            "text": "Minsk: en mink går på skøyter over isen midt i Belarus."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red over green, with a red and white ornamental pattern running down the hoist side.",
+        "nb": "Rødt over grønt, med et rødt og hvitt ornamentmønster langs stangsiden."
+      },
+      "facts": [
+        {
+          "id": "BLR.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Belarus borders Poland, Lithuania, Latvia, Russia and Ukraine.",
+            "nb": "Belarus grenser til Polen, Litauen, Latvia, Russland og Ukraina."
+          }
+        },
+        {
+          "id": "BLR.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Belarusian and Russian are both official languages of Belarus.",
+            "nb": "Belarusisk og russisk er begge offisielle språk i Belarus."
+          }
+        },
+        {
+          "id": "BLR.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Białowieża Forest, which Belarus shares with Poland, is home to wild European bison.",
+            "nb": "Białowieża-skogen, som Belarus deler med Polen, har ville europeiske bisoner."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "CZE",
+      "hooks": {
+        "en": [
+          {
+            "id": "CZE.en.1",
+            "type": "anchor",
+            "text": "Czechia is landlocked, with no coast, between Germany, Poland, Slovakia and Austria."
+          },
+          {
+            "id": "CZE.en.2",
+            "type": "contrast",
+            "text": "Czechia is the western half of former Czechoslovakia; Slovakia is the eastern half."
+          },
+          {
+            "id": "CZE.en.3",
+            "type": "sound",
+            "text": "Czechia: 'check, please', and a waiter in Prague brings the bill."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CZE.nb.1",
+            "type": "anchor",
+            "text": "Tsjekkia er en innlandsstat, et land uten kyst, mellom Tyskland, Polen, Slovakia og Østerrike."
+          },
+          {
+            "id": "CZE.nb.2",
+            "type": "contrast",
+            "text": "Tsjekkia og Slovakia var ett land; Tsjekkia er den vestlige delen."
+          },
+          {
+            "id": "CZE.nb.3",
+            "type": "sound",
+            "text": "Tsjekkia: du sjekker inn på hotellet i Praha og får nøkkel til et slott."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "CZE.cap.en.1",
+            "type": "anchor",
+            "text": "Prague sits on the Vltava river in the heart of Bohemia."
+          },
+          {
+            "id": "CZE.cap.en.2",
+            "type": "story",
+            "text": "Charles Bridge crosses the Vltava in Prague, lined with statues of saints."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CZE.cap.nb.1",
+            "type": "anchor",
+            "text": "Praha ligger ved elva Vltava midt i Böhmen."
+          },
+          {
+            "id": "CZE.cap.nb.2",
+            "type": "story",
+            "text": "Karlsbroen over Vltava i Praha er kantet med helgenstatuer."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A blue triangle at the hoist with white over red, the same flag Czechoslovakia used.",
+        "nb": "En blå trekant ved stangen med hvitt over rødt, det samme flagget som Tsjekkoslovakia brukte."
+      },
+      "facts": [
+        {
+          "id": "CZE.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Czechia borders Germany, Poland, Slovakia and Austria.",
+            "nb": "Tsjekkia grenser til Tyskland, Polen, Slovakia og Østerrike."
+          }
+        },
+        {
+          "id": "CZE.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Czechoslovakia split peacefully into Czechia and Slovakia, a split known as the Velvet Divorce.",
+            "nb": "Tsjekkoslovakia ble fredelig delt i Tsjekkia og Slovakia, en deling kjent som fløyelsskilsmissen."
+          }
+        },
+        {
+          "id": "CZE.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The word robot comes from a Czech play by Karel Čapek, from robota, forced labour.",
+            "nb": "Ordet robot kommer fra et tsjekkisk skuespill av Karel Čapek, av robota, tvangsarbeid."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "HUN",
+      "hooks": {
+        "en": [
+          {
+            "id": "HUN.en.1",
+            "type": "anchor",
+            "text": "Hungary is landlocked, with no coast, in the Carpathian Basin, with the Danube running north to south through it."
+          },
+          {
+            "id": "HUN.en.2",
+            "type": "contrast",
+            "text": "Hungarian is neither Slavic nor Germanic; it is a distant relative of Finnish and Estonian."
+          },
+          {
+            "id": "HUN.en.3",
+            "type": "sound",
+            "text": "Hungary: a hungry giant drinks half of Lake Balaton in one gulp."
+          }
+        ],
+        "nb": [
+          {
+            "id": "HUN.nb.1",
+            "type": "anchor",
+            "text": "Ungarn er en innlandsstat, et land uten kyst, i Karpaterbekkenet, med Donau rennende fra nord til sør."
+          },
+          {
+            "id": "HUN.nb.2",
+            "type": "contrast",
+            "text": "Ungarsk er verken slavisk eller germansk, men i fjern slekt med finsk og estisk."
+          },
+          {
+            "id": "HUN.nb.3",
+            "type": "sound",
+            "text": "Ungarn: ungen med garnnøstet strikker en lue ved Balaton."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "HUN.cap.en.1",
+            "type": "story",
+            "text": "Budapest was formed by joining Buda and Pest, on opposite banks of the Danube."
+          },
+          {
+            "id": "HUN.cap.en.2",
+            "type": "contrast",
+            "text": "Buda is the hilly west bank of Budapest; Pest is the flat east bank."
+          }
+        ],
+        "nb": [
+          {
+            "id": "HUN.cap.nb.1",
+            "type": "story",
+            "text": "Budapest ble til da Buda og Pest, på hver sin side av Donau, ble slått sammen."
+          },
+          {
+            "id": "HUN.cap.nb.2",
+            "type": "contrast",
+            "text": "Buda er den kuperte vestbredden av Budapest; Pest er den flate østbredden."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, white and green horizontal stripes from the top. Bulgaria uses white, green and red.",
+        "nb": "Røde, hvite og grønne vannrette striper ovenfra. Bulgaria har hvitt, grønt og rødt."
+      },
+      "facts": [
+        {
+          "id": "HUN.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Hungary borders Austria, Slovakia, Ukraine, Romania, Serbia, Croatia and Slovenia.",
+            "nb": "Ungarn grenser til Østerrike, Slovakia, Ukraina, Romania, Serbia, Kroatia og Slovenia."
+          }
+        },
+        {
+          "id": "HUN.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Lake Balaton in western Hungary is the largest lake in Central Europe.",
+            "nb": "Balaton vest i Ungarn er den største innsjøen i Sentral-Europa."
+          }
+        },
+        {
+          "id": "HUN.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Rubik's Cube was invented by the Hungarian architect Ernő Rubik.",
+            "nb": "Rubiks kube ble oppfunnet av den ungarske arkitekten Ernő Rubik."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "MDA",
+      "hooks": {
+        "en": [
+          {
+            "id": "MDA.en.1",
+            "type": "anchor",
+            "text": "Moldova is landlocked, with no coast, squeezed between Romania and Ukraine."
+          },
+          {
+            "id": "MDA.en.2",
+            "type": "contrast",
+            "text": "Moldova and Romania share a language, Romanian; Moldova is the smaller country, to the east."
+          },
+          {
+            "id": "MDA.en.3",
+            "type": "sound",
+            "text": "Moldova: a mole digs a wine cellar under the hills between Romania and Ukraine."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MDA.nb.1",
+            "type": "anchor",
+            "text": "Moldova er en innlandsstat, et land uten kyst, klemt mellom Romania og Ukraina."
+          },
+          {
+            "id": "MDA.nb.2",
+            "type": "contrast",
+            "text": "Moldova og Romania har samme språk, rumensk; Moldova er det minste av dem, i øst."
+          },
+          {
+            "id": "MDA.nb.3",
+            "type": "sound",
+            "text": "Moldova: en muldvarp graver seg en vinkjeller mellom Romania og Ukraina."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "MDA.cap.en.1",
+            "type": "anchor",
+            "text": "Chișinău sits on the Bîc river in the middle of Moldova."
+          },
+          {
+            "id": "MDA.cap.en.2",
+            "type": "sound",
+            "text": "Chișinău, said roughly 'kish-in-ow': a kiss in now, in the middle of Moldova."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MDA.cap.nb.1",
+            "type": "anchor",
+            "text": "Chișinău ligger ved elva Bîc midt i Moldova."
+          },
+          {
+            "id": "MDA.cap.nb.2",
+            "type": "sound",
+            "text": "Chișinău uttales omtrent «kisjinau»: en kiste i et naust midt i Moldova."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue, yellow and red vertical stripes with an eagle holding a shield; Romania's has the same stripes and no emblem.",
+        "nb": "Blå, gule og røde loddrette striper med en ørn som holder et skjold; Romanias har de samme stripene uten emblem."
+      },
+      "facts": [
+        {
+          "id": "MDA.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Moldova borders only Romania and Ukraine.",
+            "nb": "Moldova grenser bare til Romania og Ukraina."
+          }
+        },
+        {
+          "id": "MDA.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Romanian is the official language of Moldova.",
+            "nb": "Rumensk er det offisielle språket i Moldova."
+          }
+        },
+        {
+          "id": "MDA.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Transnistria, a strip east of the Dniester river, is outside the control of the Moldovan government.",
+            "nb": "Transnistria, en stripe øst for elva Dnestr, er utenfor kontrollen til myndighetene i Moldova."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "POL",
+      "hooks": {
+        "en": [
+          {
+            "id": "POL.en.1",
+            "type": "anchor",
+            "text": "Poland stretches from the Baltic Sea in the north to the Carpathians, between Germany and Belarus."
+          },
+          {
+            "id": "POL.en.2",
+            "type": "etymology",
+            "text": "Poland is named after the Polans, a tribe whose name comes from pole, open field."
+          },
+          {
+            "id": "POL.en.3",
+            "type": "sound",
+            "text": "Poland: a tall pole planted in a flat field on the Baltic shore."
+          }
+        ],
+        "nb": [
+          {
+            "id": "POL.nb.1",
+            "type": "anchor",
+            "text": "Polen strekker seg fra Østersjøen i nord til Karpatene, mellom Tyskland og Belarus."
+          },
+          {
+            "id": "POL.nb.2",
+            "type": "etymology",
+            "text": "Polen har navn etter polanerne, en stamme med navn etter pole, åpen mark."
+          },
+          {
+            "id": "POL.nb.3",
+            "type": "sound",
+            "text": "Polen: en isbjørn fra Nordpolen går seg vill og havner på stranda ved Østersjøen."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "POL.cap.en.1",
+            "type": "anchor",
+            "text": "Warsaw sits on the Vistula in the middle of Poland."
+          },
+          {
+            "id": "POL.cap.en.2",
+            "type": "story",
+            "text": "The Old Town of Warsaw was almost wholly destroyed in the Second World War and rebuilt from old paintings."
+          }
+        ],
+        "nb": [
+          {
+            "id": "POL.cap.nb.1",
+            "type": "anchor",
+            "text": "Warszawa ligger ved Wisła midt i Polen."
+          },
+          {
+            "id": "POL.cap.nb.2",
+            "type": "story",
+            "text": "Gamlebyen i Warszawa ble nesten helt ødelagt under andre verdenskrig og bygd opp igjen etter gamle malerier."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "White over red. Indonesia and Monaco have red over white, the reverse.",
+        "nb": "Hvitt over rødt. Indonesia og Monaco har rødt over hvitt, omvendt."
+      },
+      "facts": [
+        {
+          "id": "POL.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Poland borders Germany, Czechia, Slovakia, Ukraine, Belarus, Lithuania and Russia, and has a Baltic coast.",
+            "nb": "Polen grenser til Tyskland, Tsjekkia, Slovakia, Ukraina, Belarus, Litauen og Russland, og har kyst mot Østersjøen."
+          }
+        },
+        {
+          "id": "POL.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Vistula is the longest river in Poland, flowing from the Carpathians to the Baltic.",
+            "nb": "Wisła er den lengste elva i Polen og renner fra Karpatene til Østersjøen."
+          }
+        },
+        {
+          "id": "POL.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Marie Curie named the element polonium after Poland, her home country.",
+            "nb": "Marie Curie oppkalte grunnstoffet polonium etter Polen, hjemlandet sitt."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "ROU",
+      "hooks": {
+        "en": [
+          {
+            "id": "ROU.en.1",
+            "type": "anchor",
+            "text": "Romania sits on the Black Sea, wrapped around the arc of the Carpathians, with Moldova and Ukraine to the north."
+          },
+          {
+            "id": "ROU.en.2",
+            "type": "etymology",
+            "text": "Romania means 'land of the Romans', and Romanian is a Romance language."
+          },
+          {
+            "id": "ROU.en.3",
+            "type": "sound",
+            "text": "Romania: a Roman soldier roams the Carpathians looking for Dracula's castle."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ROU.nb.1",
+            "type": "anchor",
+            "text": "Romania ligger ved Svartehavet, rundt buen av Karpatene, med Moldova og Ukraina i nord."
+          },
+          {
+            "id": "ROU.nb.2",
+            "type": "etymology",
+            "text": "Romania betyr «romernes land», og rumensk er et romansk språk."
+          },
+          {
+            "id": "ROU.nb.3",
+            "type": "sound",
+            "text": "Romania: et romskip lander i Karpatene, rett ved slottet til Dracula."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "ROU.cap.en.1",
+            "type": "anchor",
+            "text": "Bucharest sits on the plain in the south, near the Danube and Bulgaria."
+          },
+          {
+            "id": "ROU.cap.en.2",
+            "type": "sound",
+            "text": "Bucharest: a buck rests on the steps of the vast Palace of the Parliament."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ROU.cap.nb.1",
+            "type": "anchor",
+            "text": "București ligger på sletta i sør, nær Donau og Bulgaria."
+          },
+          {
+            "id": "ROU.cap.nb.2",
+            "type": "sound",
+            "text": "București: en bukk klatrer opp trappene til Parlamentspalasset."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue, yellow and red vertical stripes, almost identical to Chad's flag.",
+        "nb": "Blå, gule og røde loddrette striper, nesten helt likt flagget til Tsjad."
+      },
+      "facts": [
+        {
+          "id": "ROU.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Romania borders Ukraine, Moldova, Hungary, Serbia and Bulgaria, and has a Black Sea coast.",
+            "nb": "Romania grenser til Ukraina, Moldova, Ungarn, Serbia og Bulgaria, og har kyst mot Svartehavet."
+          }
+        },
+        {
+          "id": "ROU.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Danube ends in a wide delta on the Black Sea coast of Romania.",
+            "nb": "Donau ender i et stort delta på svartehavskysten av Romania."
+          }
+        },
+        {
+          "id": "ROU.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Palace of the Parliament in Bucharest is one of the heaviest buildings in the world.",
+            "nb": "Parlamentspalasset i București er en av de tyngste bygningene i verden."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "RUS",
+      "hooks": {
+        "en": [
+          {
+            "id": "RUS.en.1",
+            "type": "anchor",
+            "text": "Russia is the largest country on Earth, stretching from the Baltic to the Pacific."
+          },
+          {
+            "id": "RUS.en.2",
+            "type": "contrast",
+            "text": "Russia spans Europe and Asia; the Ural Mountains are the usual dividing line."
+          },
+          {
+            "id": "RUS.en.3",
+            "type": "sound",
+            "text": "Russia: a train rushes from Moscow to the Pacific and still needs about a week."
+          }
+        ],
+        "nb": [
+          {
+            "id": "RUS.nb.1",
+            "type": "anchor",
+            "text": "Russland er verdens største land, fra Østersjøen til Stillehavet."
+          },
+          {
+            "id": "RUS.nb.2",
+            "type": "contrast",
+            "text": "Russland ligger både i Europa og Asia; Uralfjellene er det vanlige skillet."
+          },
+          {
+            "id": "RUS.nb.3",
+            "type": "sound",
+            "text": "Russland: en russ i rød buss kjører fra Moskva helt til Stillehavet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "RUS.cap.en.1",
+            "type": "anchor",
+            "text": "Moscow sits on the Moskva river in the west of Russia."
+          },
+          {
+            "id": "RUS.cap.en.2",
+            "type": "story",
+            "text": "The Kremlin, a walled fortress beside Red Square, is the seat of power in Moscow."
+          }
+        ],
+        "nb": [
+          {
+            "id": "RUS.cap.nb.1",
+            "type": "anchor",
+            "text": "Moskva ligger ved elva Moskva, vest i Russland."
+          },
+          {
+            "id": "RUS.cap.nb.2",
+            "type": "story",
+            "text": "Kreml, festningen ved Den røde plass, er maktsentrum i Moskva."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "White, blue and red horizontal stripes from the top. Serbia's run red, blue, white.",
+        "nb": "Hvite, blå og røde vannrette striper ovenfra. Serbias går rødt, blått, hvitt."
+      },
+      "facts": [
+        {
+          "id": "RUS.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Russia's land neighbors run from Norway and Finland in the northwest to North Korea in the far east.",
+            "nb": "Russlands naboland strekker seg fra Norge og Finland i nordvest til Nord-Korea helt i øst."
+          }
+        },
+        {
+          "id": "RUS.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Kaliningrad is a Russian exclave, a piece cut off from the rest of the country, between Poland and Lithuania.",
+            "nb": "Kaliningrad er en russisk eksklave, en del som er skilt fra resten av landet, mellom Polen og Litauen."
+          }
+        },
+        {
+          "id": "RUS.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Lake Baikal in Siberia is the deepest lake in the world.",
+            "nb": "Bajkalsjøen i Sibir er verdens dypeste innsjø."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "SVK",
+      "hooks": {
+        "en": [
+          {
+            "id": "SVK.en.1",
+            "type": "contrast",
+            "text": "Slovakia is landlocked, with no coast; Slovenia has a short Adriatic coast."
+          },
+          {
+            "id": "SVK.en.2",
+            "type": "anchor",
+            "text": "Slovakia sits between Poland to the north and Hungary to the south, east of Czechia and Austria."
+          },
+          {
+            "id": "SVK.en.3",
+            "type": "sound",
+            "text": "Slovakia: a slow yak plods up the High Tatras."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SVK.nb.1",
+            "type": "contrast",
+            "text": "Slovakia er en innlandsstat, et land uten kyst; Slovenia har en kort kyst mot Adriaterhavet."
+          },
+          {
+            "id": "SVK.nb.2",
+            "type": "anchor",
+            "text": "Slovakia ligger mellom Polen i nord og Ungarn i sør, øst for Tsjekkia og Østerrike."
+          },
+          {
+            "id": "SVK.nb.3",
+            "type": "sound",
+            "text": "Slovakia: en sløv vakt sover på toppen av Høye Tatra."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "SVK.cap.en.1",
+            "type": "anchor",
+            "text": "Bratislava touches both Austria and Hungary, the only capital that borders two other countries."
+          },
+          {
+            "id": "SVK.cap.en.2",
+            "type": "sound",
+            "text": "Bratislava: a bratwurst slides down the Danube from Vienna."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SVK.cap.nb.1",
+            "type": "anchor",
+            "text": "Bratislava grenser både til Østerrike og Ungarn, som eneste hovedstad med to naboland."
+          },
+          {
+            "id": "SVK.cap.nb.2",
+            "type": "sound",
+            "text": "Bratislava: bratte bakker fører ned til Donau, med Wien like oppover elva."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "White, blue and red stripes with a shield showing a white double cross on three blue hills.",
+        "nb": "Hvite, blå og røde striper med et skjold som viser et hvitt dobbeltkors på tre blå åser."
+      },
+      "facts": [
+        {
+          "id": "SVK.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Slovakia borders Czechia, Poland, Ukraine, Hungary and Austria.",
+            "nb": "Slovakia grenser til Tsjekkia, Polen, Ukraina, Ungarn og Østerrike."
+          }
+        },
+        {
+          "id": "SVK.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Slovakia uses the euro, unlike its neighbors Czechia, Poland, Hungary and Ukraine.",
+            "nb": "Slovakia bruker euro, i motsetning til nabolandene Tsjekkia, Polen, Ungarn og Ukraina."
+          }
+        },
+        {
+          "id": "SVK.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Slovakia makes more cars per person than any other country.",
+            "nb": "Slovakia produserer flere biler per innbygger enn noe annet land."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "UKR",
+      "hooks": {
+        "en": [
+          {
+            "id": "UKR.en.1",
+            "type": "anchor",
+            "text": "Ukraine is the largest country lying wholly in Europe, on the north coast of the Black Sea."
+          },
+          {
+            "id": "UKR.en.2",
+            "type": "etymology",
+            "text": "Ukraine is often read as 'borderland', though the origin of the name is debated."
+          },
+          {
+            "id": "UKR.en.3",
+            "type": "sound",
+            "text": "Ukraine: a crane lifts giant sunflowers out of the wheat fields."
+          }
+        ],
+        "nb": [
+          {
+            "id": "UKR.nb.1",
+            "type": "anchor",
+            "text": "Ukraina er det største landet som ligger helt i Europa, på nordkysten av Svartehavet."
+          },
+          {
+            "id": "UKR.nb.2",
+            "type": "etymology",
+            "text": "Ukraina tolkes ofte som «grenseland», men opphavet til navnet er omstridt."
+          },
+          {
+            "id": "UKR.nb.3",
+            "type": "sound",
+            "text": "Ukraina: «Ut med kranen», roper bonden, og løfter en diger solsikke opp av åkeren."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "UKR.cap.en.1",
+            "type": "anchor",
+            "text": "Kyiv sits on the Dnipro river in the north of Ukraine."
+          },
+          {
+            "id": "UKR.cap.en.2",
+            "type": "contrast",
+            "text": "Kyiv is the spelling from Ukrainian; Kiev is the older spelling from Russian."
+          }
+        ],
+        "nb": [
+          {
+            "id": "UKR.cap.nb.1",
+            "type": "anchor",
+            "text": "Kyiv ligger ved elva Dnipro nord i Ukraina."
+          },
+          {
+            "id": "UKR.cap.nb.2",
+            "type": "contrast",
+            "text": "Kyiv er skrivemåten fra ukrainsk; Kiev er den eldre, fra russisk."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue over yellow, often read as a blue sky over yellow wheat fields.",
+        "nb": "Blått over gult, ofte tolket som blå himmel over gule kornåkre."
+      },
+      "facts": [
+        {
+          "id": "UKR.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Ukraine borders Russia, Belarus, Poland, Slovakia, Hungary, Romania and Moldova, and has a Black Sea coast.",
+            "nb": "Ukraina grenser til Russland, Belarus, Polen, Slovakia, Ungarn, Romania og Moldova, og har kyst mot Svartehavet."
+          }
+        },
+        {
+          "id": "UKR.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The hryvnia, the Ukrainian currency, takes its name from a medieval unit of silver.",
+            "nb": "Hryvnja, valutaen i Ukraina, har navn etter en sølvenhet fra middelalderen."
+          }
+        },
+        {
+          "id": "UKR.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Dnipro river flows through the middle of Ukraine and splits it into a left bank and a right bank.",
+            "nb": "Elva Dnipro renner gjennom midten av Ukraina og deler landet i en venstre og en høyre elvebredd."
+          }
+        }
+      ]
+    }
+  ]
+}

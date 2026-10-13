@@ -98,7 +98,8 @@
     "flag_to_name": "Hvilket land har dette flagget?",
     "name_to_flag": "Hvilket flagg tilhører {{name}}?",
     "country_to_currency": "Hvilken valuta brukes {{inName}}?",
-    "country_to_language": "Hvilket språk er offisielt språk {{inName}}?"
+    "country_to_language": "Hvilket språk er offisielt språk {{inName}}?",
+    "contrast": "Hvilket av disse er {{name}}?"
   },
   "answer": {
     "placeholder": "Skriv svaret",
@@ -121,7 +122,11 @@
     "currency": "Valuta",
     "languages": "Offisielle språk",
     "continue": "Fortsett",
-    "placeholder": "Forklaringer til hvert svar kommer i neste versjon."
+    "hookLabel": "Huskeregel",
+    "notHelpful": "Ikke nyttig",
+    "hookHidden": "Skjult for dette kortet.",
+    "contrastLabel": "Slik skiller du dem",
+    "deeperLabel": "Dypere"
   },
   "role": {
     "primary": "hovedstad",

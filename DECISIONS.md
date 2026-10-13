@@ -151,3 +151,11 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 
 - **Context:** after the first real session the author found the UI plain and asked for a smoother, more modern feel. PLAN.md 8.2 keeps visual boldness for the answer moment and everything else quiet.
 - **Decision:** add quiet motion only: panels fade and rise in (about 400 ms), the map glides between prompts with the same fly-to as answers, progress eases, buttons press. One UI easing for every theme; the map easing stays the only per-theme difference. Reduced motion turns all of it off. The answer moment stays the boldest thing on screen: the target fills in, the wrong pick's outline draws itself, labels fade in as the map settles.
+
+## 029. Explanation content details
+
+- **Fact verification:** a fact is `verified: true` only when it restates committed data (neighbors, coast, official languages). Every other fact starts as `verified: false` and is listed in `content/REVIEW.md` until the author confirms it. Facts avoid hand-written numbers and dates; the linter rejects digits without a `sourceUrl`.
+- **Leech moment:** shows every remaining hook (PLAN.md 6.9), so it is exempt from the 60-word cap in 7.4.
+- **Hook ids:** `<ISO3>.<locale>.<n>` for hooks and `<ISO3>.cap.<locale>.<n>` for capital hooks; ids never change once shipped, because "Not helpful" votes and snippet ids refer to them.
+- **Flag notes** count as tier 1 facts on flag cards. `flag_decode` hooks are never shown on map cards.
+- **Snippets shown on the intro panel** are stored with that card's first review event, so they count as seen.

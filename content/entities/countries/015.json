@@ -1,0 +1,593 @@
+{
+  "group": "015",
+  "entities": [
+    {
+      "entityId": "DZA",
+      "hooks": {
+        "en": [
+          {
+            "id": "DZA.en.1",
+            "type": "anchor",
+            "text": "Algeria is the giant between Morocco and Tunisia, stretching from the Mediterranean deep into the Sahara."
+          },
+          {
+            "id": "DZA.en.2",
+            "type": "etymology",
+            "text": "Algeria is named after its capital, Algiers, from the Arabic for 'the islands'."
+          },
+          {
+            "id": "DZA.en.3",
+            "type": "sound",
+            "text": "Algeria: an algae bloom so big it spreads across the whole Sahara, from Morocco to Libya."
+          }
+        ],
+        "nb": [
+          {
+            "id": "DZA.nb.1",
+            "type": "anchor",
+            "text": "Algerie er kjempen mellom Marokko og Tunisia, fra Middelhavet langt inn i Sahara."
+          },
+          {
+            "id": "DZA.nb.2",
+            "type": "etymology",
+            "text": "Algerie har navnet etter hovedstaden Alger, av arabisk for «øyene»."
+          },
+          {
+            "id": "DZA.nb.3",
+            "type": "sound",
+            "text": "Algerie: en alge rir på en kamel tvers over Sahara."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "DZA.cap.en.1",
+            "type": "etymology",
+            "text": "Algiers comes from Arabic al-Jazair, 'the islands', after small islands off its harbor."
+          },
+          {
+            "id": "DZA.cap.en.2",
+            "type": "anchor",
+            "text": "Algiers sits on the Mediterranean coast, roughly due south of Mallorca."
+          }
+        ],
+        "nb": [
+          {
+            "id": "DZA.cap.nb.1",
+            "type": "etymology",
+            "text": "Alger kommer av arabisk al-Jazair, «øyene», etter småøyer utenfor havna."
+          },
+          {
+            "id": "DZA.cap.nb.2",
+            "type": "anchor",
+            "text": "Alger ligger ved Middelhavet, omtrent rett sør for Mallorca."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green and white halves with a red crescent and star in the middle.",
+        "nb": "Grønn og hvit halvdel med en rød halvmåne og stjerne i midten."
+      },
+      "facts": [
+        {
+          "id": "DZA.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Algeria borders Morocco, Tunisia, Libya, Niger, Mali and Mauritania, and has a Mediterranean coast.",
+            "nb": "Algerie grenser til Marokko, Tunisia, Libya, Niger, Mali og Mauritania, og har kyst mot Middelhavet."
+          }
+        },
+        {
+          "id": "DZA.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Arabic and Tamazight (Berber) are the official languages of Algeria.",
+            "nb": "Arabisk og tamazight (berbisk) er de offisielle språkene i Algerie."
+          }
+        },
+        {
+          "id": "DZA.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Algeria is the largest country in Africa by area.",
+            "nb": "Algerie er Afrikas største land i areal."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "EGY",
+      "hooks": {
+        "en": [
+          {
+            "id": "EGY.en.1",
+            "type": "anchor",
+            "text": "Egypt is Africa's northeast corner, with the Nile running north through it to the Mediterranean."
+          },
+          {
+            "id": "EGY.en.2",
+            "type": "shape",
+            "text": "Egypt is nearly a square, with Sinai as a triangle hanging off its top right corner."
+          },
+          {
+            "id": "EGY.en.3",
+            "type": "contrast",
+            "text": "Egypt reaches into Asia: Sinai, across the Suez Canal, is the part that borders Israel."
+          }
+        ],
+        "nb": [
+          {
+            "id": "EGY.nb.1",
+            "type": "anchor",
+            "text": "Egypt er Afrikas nordøstre hjørne, med Nilen som renner nordover gjennom landet til Middelhavet."
+          },
+          {
+            "id": "EGY.nb.2",
+            "type": "shape",
+            "text": "Egypt er nesten et kvadrat, med Sinai som en trekant hengende i øvre høyre hjørne."
+          },
+          {
+            "id": "EGY.nb.3",
+            "type": "sound",
+            "text": "Egypt: et egg balanserer på toppen av en pyramide ved Nilen."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "EGY.cap.en.1",
+            "type": "anchor",
+            "text": "Cairo sits on the Nile just south of where the river fans out into its delta."
+          },
+          {
+            "id": "EGY.cap.en.2",
+            "type": "etymology",
+            "text": "Cairo comes from al-Qahira, Arabic for 'the victorious'."
+          }
+        ],
+        "nb": [
+          {
+            "id": "EGY.cap.nb.1",
+            "type": "anchor",
+            "text": "Kairo ligger ved Nilen like sør for der elva sprer seg ut i deltaet."
+          },
+          {
+            "id": "EGY.cap.nb.2",
+            "type": "sound",
+            "text": "Kairo: båtene ror inn til kaia ved Nilen, rett sør for deltaet."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, white and black stripes with a golden eagle in the middle.",
+        "nb": "Rød, hvit og svart stripe med en gyllen ørn i midten."
+      },
+      "facts": [
+        {
+          "id": "EGY.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Egypt borders Libya, Sudan, Israel and Palestine, with coasts on the Mediterranean and the Red Sea.",
+            "nb": "Egypt grenser til Libya, Sudan, Israel og Palestina, med kyst mot både Middelhavet og Rødehavet."
+          }
+        },
+        {
+          "id": "EGY.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Suez Canal crosses Egypt and links the Mediterranean with the Red Sea.",
+            "nb": "Suezkanalen går gjennom Egypt og forbinder Middelhavet med Rødehavet."
+          }
+        },
+        {
+          "id": "EGY.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Great Pyramid of Giza is the only one of the Seven Wonders of the Ancient World still standing.",
+            "nb": "Den store pyramiden i Giza er det eneste av antikkens sju underverker som fortsatt står."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "LBY",
+      "hooks": {
+        "en": [
+          {
+            "id": "LBY.en.1",
+            "type": "anchor",
+            "text": "Libya sits on the Mediterranean between Tunisia and Egypt, with the Sahara filling most of it."
+          },
+          {
+            "id": "LBY.en.2",
+            "type": "contrast",
+            "text": "Libya is between Tunisia and Egypt on the Mediterranean; Liberia is far away in West Africa."
+          },
+          {
+            "id": "LBY.en.3",
+            "type": "sound",
+            "text": "Libya: a tube of lip balm melts in the Saharan sun between Tunisia and Egypt."
+          }
+        ],
+        "nb": [
+          {
+            "id": "LBY.nb.1",
+            "type": "anchor",
+            "text": "Libya ligger ved Middelhavet mellom Tunisia og Egypt, og det meste av landet er Sahara."
+          },
+          {
+            "id": "LBY.nb.2",
+            "type": "contrast",
+            "text": "Libya ligger ved Middelhavet mellom Tunisia og Egypt; Liberia ligger langt unna i Vest-Afrika."
+          },
+          {
+            "id": "LBY.nb.3",
+            "type": "sound",
+            "text": "Libya: en lilla bie surrer over sanddynene mellom Tunisia og Egypt."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "LBY.cap.en.1",
+            "type": "etymology",
+            "text": "Tripoli comes from Greek for 'three cities'."
+          },
+          {
+            "id": "LBY.cap.en.2",
+            "type": "anchor",
+            "text": "Tripoli sits on the coast in Libya's northwest, much closer to Tunisia than to Egypt."
+          }
+        ],
+        "nb": [
+          {
+            "id": "LBY.cap.nb.1",
+            "type": "etymology",
+            "text": "Tripoli kommer av gresk for «tre byer»."
+          },
+          {
+            "id": "LBY.cap.nb.2",
+            "type": "anchor",
+            "text": "Tripoli ligger på kysten nordvest i Libya, mye nærmere Tunisia enn Egypt."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, black and green stripes, with a white crescent and star on the wide black middle stripe.",
+        "nb": "Rød, svart og grønn stripe, med hvit halvmåne og stjerne på den brede svarte midtstripa."
+      },
+      "facts": [
+        {
+          "id": "LBY.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Libya borders Tunisia, Algeria, Niger, Chad, Sudan and Egypt, and has a Mediterranean coast.",
+            "nb": "Libya grenser til Tunisia, Algerie, Niger, Tsjad, Sudan og Egypt, og har kyst mot Middelhavet."
+          }
+        },
+        {
+          "id": "LBY.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Arabic is the official language of Libya.",
+            "nb": "Arabisk er offisielt språk i Libya."
+          }
+        },
+        {
+          "id": "LBY.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Great Man-Made River pipes groundwater from beneath the Sahara to Libya's coastal cities.",
+            "nb": "Great Man-Made River er et rørsystem som fører grunnvann fra under Sahara til byene på kysten av Libya."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "MAR",
+      "hooks": {
+        "en": [
+          {
+            "id": "MAR.en.1",
+            "type": "anchor",
+            "text": "Morocco is Africa's northwest corner, facing Spain across the Strait of Gibraltar."
+          },
+          {
+            "id": "MAR.en.2",
+            "type": "etymology",
+            "text": "Morocco's name comes from the city of Marrakesh."
+          },
+          {
+            "id": "MAR.en.3",
+            "type": "sound",
+            "text": "Morocco: maracas shake in a market at the foot of the Atlas Mountains."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MAR.nb.1",
+            "type": "anchor",
+            "text": "Marokko er Afrikas nordvestre hjørne, rett over Gibraltarstredet fra Spania."
+          },
+          {
+            "id": "MAR.nb.2",
+            "type": "etymology",
+            "text": "Marokko har navnet fra byen Marrakech."
+          },
+          {
+            "id": "MAR.nb.3",
+            "type": "sound",
+            "text": "Marokko: mor rokker i gyngestolen og ser over Gibraltarstredet mot Spania."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "MAR.cap.en.1",
+            "type": "contrast",
+            "text": "Rabat is the capital, not Casablanca or Marrakesh; it sits on the Atlantic coast."
+          },
+          {
+            "id": "MAR.cap.en.2",
+            "type": "sound",
+            "text": "Rabat: a rabbit with a bat guards the capital on the Atlantic."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MAR.cap.nb.1",
+            "type": "contrast",
+            "text": "Rabat er hovedstaden, ikke Casablanca eller Marrakech; den ligger ved Atlanterhavet."
+          },
+          {
+            "id": "MAR.cap.nb.2",
+            "type": "sound",
+            "text": "Rabat: du får rabatt i hovedstaden, ikke i Casablanca."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red with a green star in the middle, drawn as an interlaced outline.",
+        "nb": "Rødt med en grønn stjerne i midten, tegnet som et sammenflettet omriss."
+      },
+      "facts": [
+        {
+          "id": "MAR.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Morocco borders Algeria to the east and has coasts on both the Atlantic and the Mediterranean.",
+            "nb": "Marokko grenser til Algerie i øst og har kyst mot både Atlanterhavet og Middelhavet."
+          }
+        },
+        {
+          "id": "MAR.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Arabic and Tamazight (Berber) are both official languages in Morocco.",
+            "nb": "Arabisk og tamazight (berbisk) er begge offisielle språk i Marokko."
+          }
+        },
+        {
+          "id": "MAR.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Al-Qarawiyyin in Fez is often called the oldest university in the world still operating.",
+            "nb": "Al-Qarawiyyin i Fès blir ofte kalt verdens eldste universitet som fortsatt er i drift."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "SDN",
+      "hooks": {
+        "en": [
+          {
+            "id": "SDN.en.1",
+            "type": "anchor",
+            "text": "Sudan sits south of Egypt, where the Blue Nile and the White Nile meet at Khartoum."
+          },
+          {
+            "id": "SDN.en.2",
+            "type": "contrast",
+            "text": "Sudan is the northern one, with the Red Sea coast; South Sudan, which split off, is landlocked (no coast)."
+          },
+          {
+            "id": "SDN.en.3",
+            "type": "story",
+            "text": "Sudan was the largest country in Africa until South Sudan broke away."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SDN.nb.1",
+            "type": "anchor",
+            "text": "Sudan ligger sør for Egypt, der Nilens to armer, den blå og den hvite, møtes ved Khartoum."
+          },
+          {
+            "id": "SDN.nb.2",
+            "type": "contrast",
+            "text": "Sudan er den nordlige, med kyst mot Rødehavet; Sør-Sudan, som brøt ut, er en innlandsstat (uten kyst)."
+          },
+          {
+            "id": "SDN.nb.3",
+            "type": "sound",
+            "text": "Sudan: en sau danser langs Nilen, fra Khartoum mot Egypt."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "SDN.cap.en.1",
+            "type": "anchor",
+            "text": "Khartoum sits where the Blue Nile and the White Nile join to form the Nile."
+          },
+          {
+            "id": "SDN.cap.en.2",
+            "type": "sound",
+            "text": "Khartoum: a cart of tomatoes tips over where the two Niles meet."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SDN.cap.nb.1",
+            "type": "anchor",
+            "text": "Khartoum ligger der Den blå og Den hvite Nil flyter sammen og blir til Nilen."
+          },
+          {
+            "id": "SDN.cap.nb.2",
+            "type": "sound",
+            "text": "Khartoum: et kart med et tomt felt akkurat der to elver møtes."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, white and black stripes with a green triangle at the hoist.",
+        "nb": "Rød, hvit og svart stripe med en grønn trekant ved stangen."
+      },
+      "facts": [
+        {
+          "id": "SDN.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Sudan borders Egypt, Libya, Chad, the Central African Republic, South Sudan, Ethiopia and Eritrea, and has a Red Sea coast.",
+            "nb": "Sudan grenser til Egypt, Libya, Tsjad, Den sentralafrikanske republikk, Sør-Sudan, Etiopia og Eritrea, og har kyst mot Rødehavet."
+          }
+        },
+        {
+          "id": "SDN.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Arabic and English are the official languages of Sudan.",
+            "nb": "Arabisk og engelsk er de offisielle språkene i Sudan."
+          }
+        },
+        {
+          "id": "SDN.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Sudan has more pyramids than Egypt, built by the kings of Kush at sites such as Meroë.",
+            "nb": "Sudan har flere pyramider enn Egypt, bygget av kongene i Kush ved steder som Meroë."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "TUN",
+      "hooks": {
+        "en": [
+          {
+            "id": "TUN.en.1",
+            "type": "anchor",
+            "text": "Tunisia is the small northern tip of Africa between Algeria and Libya, pointing at Sicily."
+          },
+          {
+            "id": "TUN.en.2",
+            "type": "etymology",
+            "text": "Tunisia is named after its capital, Tunis."
+          },
+          {
+            "id": "TUN.en.3",
+            "type": "sound",
+            "text": "Tunisia: a tuna swims out from Tunis toward Sicily."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TUN.nb.1",
+            "type": "anchor",
+            "text": "Tunisia er den lille nordspissen av Afrika mellom Algerie og Libya, rett mot Sicilia."
+          },
+          {
+            "id": "TUN.nb.2",
+            "type": "etymology",
+            "text": "Tunisia har navnet etter hovedstaden Tunis."
+          },
+          {
+            "id": "TUN.nb.3",
+            "type": "sound",
+            "text": "Tunisia: en tunfisk svømmer ut fra Tunis mot Sicilia."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "TUN.cap.en.1",
+            "type": "story",
+            "text": "Tunis lies beside the ruins of Carthage, Rome's old rival."
+          },
+          {
+            "id": "TUN.cap.en.2",
+            "type": "contrast",
+            "text": "Tunis is the city and Tunisia the country: add 'ia' to the capital to get the country."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TUN.cap.nb.1",
+            "type": "story",
+            "text": "Tunis ligger ved ruinene av Kartago, Romas gamle rival."
+          },
+          {
+            "id": "TUN.cap.nb.2",
+            "type": "contrast",
+            "text": "Tunis er byen og Tunisia landet: legg «ia» til hovedstaden, så får du landet."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red with a white disc holding a red crescent and star; Türkiye's flag is similar but has no disc.",
+        "nb": "Rødt med en hvit sirkel som holder en rød halvmåne og stjerne; Tyrkias flagg ligner, men har ingen sirkel."
+      },
+      "facts": [
+        {
+          "id": "TUN.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Tunisia borders Algeria and Libya, and has a long Mediterranean coast.",
+            "nb": "Tunisia grenser til Algerie og Libya, og har lang kyst mot Middelhavet."
+          }
+        },
+        {
+          "id": "TUN.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Arabic is the official language of Tunisia.",
+            "nb": "Arabisk er offisielt språk i Tunisia."
+          }
+        },
+        {
+          "id": "TUN.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Cave houses in the Tunisian town of Matmata were used as a set in Star Wars.",
+            "nb": "Hulehus i den tunisiske byen Matmata ble brukt som kulisse i Star Wars."
+          }
+        }
+      ]
+    }
+  ]
+}

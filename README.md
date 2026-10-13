@@ -9,7 +9,7 @@
 
 Spaced-repetition geography trainer. Local-first PWA, English and Norwegian.
 
-> Status: Phase 2 (core learning loop, local only). Explanations and content arrive in Phase 3. See `PLAN.md`.
+> Status: Phase 3 (explanation engine and country content). Sync and offline install arrive in Phase 4. See `PLAN.md`.
 
 ## Features (planned)
 
@@ -33,6 +33,8 @@ pnpm test         # unit tests (Vitest)
 pnpm test:e2e     # end-to-end tests (Playwright, 1440x900 and 390x844)
 pnpm lint         # Biome and the no-dash check
 pnpm typecheck
+pnpm content:lint     # VOICE.md rules on all content, both languages
+pnpm content:review   # regenerate content/REVIEW.md (facts waiting for review)
 ```
 
 ## Data

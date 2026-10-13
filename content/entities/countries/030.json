@@ -1,0 +1,523 @@
+{
+  "group": "030",
+  "entities": [
+    {
+      "entityId": "CHN",
+      "hooks": {
+        "en": [
+          {
+            "id": "CHN.en.1",
+            "type": "anchor",
+            "text": "China fills most of East Asia, with Mongolia to the north and the Himalayas along its southwest edge."
+          },
+          {
+            "id": "CHN.en.2",
+            "type": "shape",
+            "text": "China's outline is often compared to a rooster facing east, its head in the far northeast."
+          },
+          {
+            "id": "CHN.en.3",
+            "type": "sound",
+            "text": "China: a china plate so big it covers East Asia, with the Great Wall painted round the rim."
+          },
+          {
+            "id": "CHN.en.4",
+            "type": "etymology",
+            "text": "The name China probably comes from Qin, the dynasty that first unified the country."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CHN.nb.1",
+            "type": "anchor",
+            "text": "Kina dekker det meste av Øst-Asia, med Mongolia i nord og Himalaya langs sørvestgrensen."
+          },
+          {
+            "id": "CHN.nb.2",
+            "type": "shape",
+            "text": "Kinas omriss sammenlignes ofte med en hane som ser mot øst, med hodet helt i nordøst."
+          },
+          {
+            "id": "CHN.nb.3",
+            "type": "sound",
+            "text": "Kina: en kino så stor at Den kinesiske mur er lerretet."
+          },
+          {
+            "id": "CHN.nb.4",
+            "type": "etymology",
+            "text": "Navnet Kina kommer trolig fra Qin, dynastiet som først samlet landet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "CHN.cap.en.1",
+            "type": "etymology",
+            "text": "Beijing means 'northern capital'; Nanjing, an earlier capital, means 'southern capital'."
+          },
+          {
+            "id": "CHN.cap.en.2",
+            "type": "anchor",
+            "text": "Beijing sits in China's northeast, inland from the Bohai Sea and close to the Great Wall."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CHN.cap.nb.1",
+            "type": "etymology",
+            "text": "Beijing betyr «nordlig hovedstad»; Nanjing, en tidligere hovedstad, betyr «sørlig hovedstad»."
+          },
+          {
+            "id": "CHN.cap.nb.2",
+            "type": "anchor",
+            "text": "Beijing ligger nordøst i Kina, et stykke inn i landet fra Bohaihavet og nær Den kinesiske mur."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red with five yellow stars in the top left: one large star and four small ones curving around it.",
+        "nb": "Rødt med fem gule stjerner øverst til venstre: én stor og fire små i en bue rundt den."
+      },
+      "facts": [
+        {
+          "id": "CHN.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "China's land neighbors run from North Korea and Russia in the northeast to Vietnam, Laos and Myanmar in the south.",
+            "nb": "Kinas naboland strekker seg fra Nord-Korea og Russland i nordøst til Vietnam, Laos og Myanmar i sør."
+          }
+        },
+        {
+          "id": "CHN.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Yangtze is China's longest river and reaches the sea at Shanghai.",
+            "nb": "Yangtze er Kinas lengste elv og renner ut i havet ved Shanghai."
+          }
+        },
+        {
+          "id": "CHN.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The yuan is the unit of China's currency, the renminbi, which means 'the people's currency'.",
+            "nb": "Yuan er enheten i Kinas valuta, renminbi, som betyr «folkets valuta»."
+          }
+        },
+        {
+          "id": "CHN.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "China uses a single time zone, Beijing time, across the whole country.",
+            "nb": "Kina bruker én tidssone, Beijing-tid, i hele landet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "JPN",
+      "hooks": {
+        "en": [
+          {
+            "id": "JPN.en.1",
+            "type": "anchor",
+            "text": "Japan is the chain of islands east of Korea and China, across the Sea of Japan."
+          },
+          {
+            "id": "JPN.en.2",
+            "type": "etymology",
+            "text": "Japan's own name, Nihon, means 'origin of the sun', hence 'land of the rising sun'."
+          },
+          {
+            "id": "JPN.en.3",
+            "type": "sound",
+            "text": "Japan: a giant frying pan, a 'ja-pan', with four big islands sizzling in it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "JPN.nb.1",
+            "type": "anchor",
+            "text": "Japan er øyrekka øst for Korea og Kina, på andre siden av Japanhavet."
+          },
+          {
+            "id": "JPN.nb.2",
+            "type": "etymology",
+            "text": "Japans eget navn, Nihon, betyr «solens opprinnelse», derav «den oppgående sols land»."
+          },
+          {
+            "id": "JPN.nb.3",
+            "type": "sound",
+            "text": "Japan: «ja, panne»: fire store øyer som freser i en stekepanne ute i Stillehavet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "JPN.cap.en.1",
+            "type": "etymology",
+            "text": "Tokyo means 'eastern capital'; Kyoto, the old capital, lies to its west."
+          },
+          {
+            "id": "JPN.cap.en.2",
+            "type": "story",
+            "text": "Tokyo was called Edo until the emperor moved there from Kyoto."
+          }
+        ],
+        "nb": [
+          {
+            "id": "JPN.cap.nb.1",
+            "type": "etymology",
+            "text": "Tokyo betyr «østlig hovedstad»; den gamle hovedstaden Kyoto ligger lenger vest."
+          },
+          {
+            "id": "JPN.cap.nb.2",
+            "type": "story",
+            "text": "Tokyo het Edo før keiseren flyttet dit fra Kyoto."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A red disc on white: the sun. The flag is called Hinomaru, 'circle of the sun'.",
+        "nb": "En rød sirkel på hvitt: solen. Flagget kalles Hinomaru, «solsirkelen»."
+      },
+      "facts": [
+        {
+          "id": "JPN.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Japan has no land borders; every neighbor lies across the sea.",
+            "nb": "Japan har ingen landegrenser; alle nabolandene ligger på andre siden av havet."
+          }
+        },
+        {
+          "id": "JPN.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Mount Fuji, Japan's highest mountain, is a volcano southwest of Tokyo.",
+            "nb": "Fuji, Japans høyeste fjell, er en vulkan sørvest for Tokyo."
+          }
+        },
+        {
+          "id": "JPN.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Honshu is the largest of Japan's islands and holds Tokyo, Osaka and Kyoto.",
+            "nb": "Honshu er den største av Japans øyer, med Tokyo, Osaka og Kyoto."
+          }
+        },
+        {
+          "id": "JPN.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The yen, the Chinese yuan and the Korean won all come from the same Chinese character, meaning 'round'.",
+            "nb": "Japansk yen, kinesisk yuan og koreansk won kommer alle fra det samme kinesiske tegnet, som betyr «rund»."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "KOR",
+      "hooks": {
+        "en": [
+          {
+            "id": "KOR.en.1",
+            "type": "anchor",
+            "text": "South Korea is the southern half of the Korean Peninsula, with Japan across the strait to the southeast."
+          },
+          {
+            "id": "KOR.en.2",
+            "type": "contrast",
+            "text": "South Korea holds Seoul and the southern tip; North Korea holds Pyongyang and borders China."
+          },
+          {
+            "id": "KOR.en.3",
+            "type": "sound",
+            "text": "Korea: an apple core dangling south from China, with Seoul as the seed near the top."
+          }
+        ],
+        "nb": [
+          {
+            "id": "KOR.nb.1",
+            "type": "anchor",
+            "text": "Sør-Korea er den sørlige halvdelen av Koreahalvøya, med Japan over stredet i sørøst."
+          },
+          {
+            "id": "KOR.nb.2",
+            "type": "contrast",
+            "text": "Sør-Korea har Seoul og sørspissen; Nord-Korea har Pyongyang og grenser til Kina."
+          },
+          {
+            "id": "KOR.nb.3",
+            "type": "sound",
+            "text": "Korea: et kor som synger på en halvøy, og sopranene står i sør, i Sør-Korea."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "KOR.cap.en.1",
+            "type": "anchor",
+            "text": "Seoul sits in the northwest of South Korea, on the Han River, not far south of the border."
+          },
+          {
+            "id": "KOR.cap.en.2",
+            "type": "sound",
+            "text": "Seoul sounds like 'soul': the soul of the south, sitting on the Han River."
+          }
+        ],
+        "nb": [
+          {
+            "id": "KOR.cap.nb.1",
+            "type": "anchor",
+            "text": "Seoul ligger nordvest i Sør-Korea, ved elva Han, ikke langt sør for grensen."
+          },
+          {
+            "id": "KOR.cap.nb.2",
+            "type": "sound",
+            "text": "Seoul: en sau med «sø-ull», sørlig ull, som beiter ved elva Han."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "White with a red and blue yin-yang circle in the middle and four black trigrams in the corners.",
+        "nb": "Hvitt med en rød og blå yin-yang-sirkel i midten og fire svarte trigrammer i hjørnene."
+      },
+      "facts": [
+        {
+          "id": "KOR.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "South Korea's only land border is with North Korea; the rest of the country is surrounded by sea.",
+            "nb": "Sør-Koreas eneste landegrense er mot Nord-Korea; resten av landet er omgitt av hav."
+          }
+        },
+        {
+          "id": "KOR.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Han River runs through Seoul on its way to the Yellow Sea.",
+            "nb": "Elva Han renner gjennom Seoul på vei ut i Gulehavet."
+          }
+        },
+        {
+          "id": "KOR.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Hangul, the Korean alphabet, was designed on purpose under King Sejong rather than adapted from Chinese characters.",
+            "nb": "Hangul, det koreanske alfabetet, ble laget med vilje under kong Sejong, ikke tilpasset fra kinesiske tegn."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "MNG",
+      "hooks": {
+        "en": [
+          {
+            "id": "MNG.en.1",
+            "type": "anchor",
+            "text": "Mongolia is sandwiched between Russia to the north and China to the south, and touches nothing else."
+          },
+          {
+            "id": "MNG.en.2",
+            "type": "contrast",
+            "text": "Mongolia is the country; Inner Mongolia is a region of China, just across the southern border."
+          },
+          {
+            "id": "MNG.en.3",
+            "type": "sound",
+            "text": "Mongolia: a mongoose on horseback, galloping across the steppe between Russia and China."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MNG.nb.1",
+            "type": "anchor",
+            "text": "Mongolia er klemt mellom Russland i nord og Kina i sør, og grenser ikke til noe annet land."
+          },
+          {
+            "id": "MNG.nb.2",
+            "type": "contrast",
+            "text": "Mongolia er landet; Indre Mongolia er en region i Kina, rett sør for grensen."
+          },
+          {
+            "id": "MNG.nb.3",
+            "type": "sound",
+            "text": "Mongolia: en mango på hesteryggen som galopperer over steppen mellom Russland og Kina."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "MNG.cap.en.1",
+            "type": "etymology",
+            "text": "Ulaanbaatar means 'red hero', a name from the communist era."
+          },
+          {
+            "id": "MNG.cap.en.2",
+            "type": "anchor",
+            "text": "Ulaanbaatar sits in the north of Mongolia, much closer to Russia than to China."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MNG.cap.nb.1",
+            "type": "etymology",
+            "text": "Ulan Bator betyr «rød helt», et navn fra kommunisttiden."
+          },
+          {
+            "id": "MNG.cap.nb.2",
+            "type": "anchor",
+            "text": "Ulan Bator ligger nord i Mongolia, mye nærmere Russland enn Kina."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, blue, red vertical stripes, with the yellow Soyombo symbol on the left red stripe.",
+        "nb": "Rød, blå, rød loddrette striper, med det gule Soyombo-symbolet på den venstre røde stripen."
+      },
+      "facts": [
+        {
+          "id": "MNG.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Mongolia is landlocked, with no coast at all, and its only neighbors are Russia and China.",
+            "nb": "Mongolia er en innlandsstat, uten kyst, og grenser bare til Russland og Kina."
+          }
+        },
+        {
+          "id": "MNG.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Ulaanbaatar is generally ranked as the coldest national capital in the world.",
+            "nb": "Ulan Bator regnes vanligvis som verdens kaldeste hovedstad."
+          }
+        },
+        {
+          "id": "MNG.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Mongolia is the most sparsely populated sovereign country in the world.",
+            "nb": "Mongolia er den selvstendige staten i verden med færrest innbyggere per areal."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "PRK",
+      "hooks": {
+        "en": [
+          {
+            "id": "PRK.en.1",
+            "type": "anchor",
+            "text": "North Korea is the northern half of the Korean Peninsula, with China across two border rivers."
+          },
+          {
+            "id": "PRK.en.2",
+            "type": "contrast",
+            "text": "North Korea touches China and, for a short stretch, Russia. South Korea touches only North Korea."
+          },
+          {
+            "id": "PRK.en.3",
+            "type": "story",
+            "text": "The peninsula was split after the Second World War: the north under Soviet, the south under American occupation."
+          }
+        ],
+        "nb": [
+          {
+            "id": "PRK.nb.1",
+            "type": "anchor",
+            "text": "Nord-Korea er den nordlige halvdelen av Koreahalvøya, med Kina på andre siden av to grenseelver."
+          },
+          {
+            "id": "PRK.nb.2",
+            "type": "contrast",
+            "text": "Nord-Korea grenser til Kina og et kort stykke til Russland. Sør-Korea grenser bare til Nord-Korea."
+          },
+          {
+            "id": "PRK.nb.3",
+            "type": "story",
+            "text": "Halvøya ble delt etter andre verdenskrig: nord under sovjetisk og sør under amerikansk okkupasjon."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "PRK.cap.en.1",
+            "type": "anchor",
+            "text": "Pyongyang sits on the Taedong River in the west of North Korea, not far from the Yellow Sea."
+          },
+          {
+            "id": "PRK.cap.en.2",
+            "type": "etymology",
+            "text": "Pyongyang means 'flat land', and the city lies on a river plain."
+          }
+        ],
+        "nb": [
+          {
+            "id": "PRK.cap.nb.1",
+            "type": "anchor",
+            "text": "Pyongyang ligger ved elva Taedong vest i Nord-Korea, ikke langt fra Gulehavet."
+          },
+          {
+            "id": "PRK.cap.nb.2",
+            "type": "etymology",
+            "text": "Pyongyang betyr «flatt land», og byen ligger på en elveslette."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue, red, blue bands edged in thin white, with a red star in a white disc near the hoist.",
+        "nb": "Blå, rød, blå vannrette felt med tynne hvite kanter, og en rød stjerne i en hvit sirkel nær stangen."
+      },
+      "facts": [
+        {
+          "id": "PRK.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "North Korea borders China, Russia and South Korea, with coast on both its east and west sides.",
+            "nb": "Nord-Korea grenser til Kina, Russland og Sør-Korea, og har kyst både i øst og vest."
+          }
+        },
+        {
+          "id": "PRK.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Yalu River forms much of the border between North Korea and China.",
+            "nb": "Elva Yalu utgjør mye av grensen mellom Nord-Korea og Kina."
+          }
+        },
+        {
+          "id": "PRK.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "North Korea's border with Russia is very short, along the lower Tumen River near the sea.",
+            "nb": "Grensen mellom Nord-Korea og Russland er svært kort, langs nedre del av elva Tumen nær havet."
+          }
+        }
+      ]
+    }
+  ]
+}

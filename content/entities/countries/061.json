@@ -1,0 +1,299 @@
+{
+  "group": "061",
+  "entities": [
+    {
+      "entityId": "TON",
+      "hooks": {
+        "en": [
+          {
+            "id": "TON.en.1",
+            "type": "anchor",
+            "text": "Tonga is an island kingdom in the South Pacific, east of Fiji and south of Samoa."
+          },
+          {
+            "id": "TON.en.2",
+            "type": "story",
+            "text": "Tonga was never formally colonized; it was a British protected state and kept its own king."
+          },
+          {
+            "id": "TON.en.3",
+            "type": "sound",
+            "text": "Tonga: a giant tongue licking the date line just east of Fiji."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TON.nb.1",
+            "type": "anchor",
+            "text": "Tonga er et øykongedømme i Sør-Stillehavet, øst for Fiji og sør for Samoa."
+          },
+          {
+            "id": "TON.nb.2",
+            "type": "story",
+            "text": "Tonga ble aldri formelt kolonisert; landet var britisk protektorat og beholdt sin egen konge."
+          },
+          {
+            "id": "TON.nb.3",
+            "type": "sound",
+            "text": "Tonga: en kjempe som bruker ei tang til å plukke opp øyer øst for Fiji."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "TON.cap.en.1",
+            "type": "anchor",
+            "text": "Nukuʻalofa is on the north coast of Tongatapu, the main island."
+          },
+          {
+            "id": "TON.cap.en.2",
+            "type": "sound",
+            "text": "Nukuʻalofa: 'nuke a loaf': a loaf of bread warming in a microwave on Tongatapu."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TON.cap.nb.1",
+            "type": "anchor",
+            "text": "Nuku'alofa ligger på nordkysten av Tongatapu, hovedøya."
+          },
+          {
+            "id": "TON.cap.nb.2",
+            "type": "sound",
+            "text": "Nuku'alofa: en loff som ligger og steker i sola på Tongatapu."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red with a white canton holding a red cross, like a Red Cross flag tucked into the corner.",
+        "nb": "Rødt med et hvitt felt øverst til venstre med et rødt kors, som et Røde Kors-flagg i hjørnet."
+      },
+      "facts": [
+        {
+          "id": "TON.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Tonga has no land borders; it is spread over many small islands.",
+            "nb": "Tonga har ingen landegrenser; landet er spredt over mange små øyer."
+          }
+        },
+        {
+          "id": "TON.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Tongan and English are the official languages of Tonga.",
+            "nb": "Tongansk og engelsk er de offisielle språkene på Tonga."
+          }
+        },
+        {
+          "id": "TON.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Tonga lies just west of the date line and is among the first countries to see each new day.",
+            "nb": "Tonga ligger like vest for datogrensen og er blant de første landene som får hver nye dag."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "TUV",
+      "hooks": {
+        "en": [
+          {
+            "id": "TUV.en.1",
+            "type": "anchor",
+            "text": "Tuvalu is a chain of small atolls, rings of coral islets, north of Fiji in the Pacific."
+          },
+          {
+            "id": "TUV.en.2",
+            "type": "etymology",
+            "text": "Tuvalu means 'eight standing together', after its inhabited islands."
+          },
+          {
+            "id": "TUV.en.3",
+            "type": "story",
+            "text": "Tuvalu earns money by licensing its web address ending, 'tv', to television companies."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TUV.nb.1",
+            "type": "anchor",
+            "text": "Tuvalu er en rekke små atoller, ringer av koralløyer, nord for Fiji i Stillehavet."
+          },
+          {
+            "id": "TUV.nb.2",
+            "type": "etymology",
+            "text": "Tuvalu betyr «åtte som står sammen», etter de bebodde øyene."
+          },
+          {
+            "id": "TUV.nb.3",
+            "type": "story",
+            "text": "Tuvalu tjener penger på å leie ut nettadresse-endelsen «tv» til TV-selskaper."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "TUV.cap.en.1",
+            "type": "anchor",
+            "text": "Funafuti is the atoll that holds Tuvalu's capital and its only airport."
+          },
+          {
+            "id": "TUV.cap.en.2",
+            "type": "sound",
+            "text": "Funafuti: fun on a futon, napping on a thin strip of coral."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TUV.cap.nb.1",
+            "type": "anchor",
+            "text": "Funafuti er atollen med hovedstaden og den eneste flyplassen på Tuvalu."
+          },
+          {
+            "id": "TUV.cap.nb.2",
+            "type": "sound",
+            "text": "Funafuti: en futon midt på en smal stripe korall, der du sover til flyet kommer."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Light blue with the Union Jack top left and nine yellow stars on the right, one for each island.",
+        "nb": "Lyseblått med Union Jack øverst til venstre og ni gule stjerner til høyre, én for hver øy."
+      },
+      "facts": [
+        {
+          "id": "TUV.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Tuvalu has no land borders and uses the Australian dollar.",
+            "nb": "Tuvalu har ingen landegrenser og bruker australske dollar."
+          }
+        },
+        {
+          "id": "TUV.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Tuvaluan and English are the official languages of Tuvalu.",
+            "nb": "Tuvalsk og engelsk er de offisielle språkene på Tuvalu."
+          }
+        },
+        {
+          "id": "TUV.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Tuvalu is so low-lying that rising sea levels threaten much of its land.",
+            "nb": "Tuvalu ligger så lavt at stigende havnivå truer store deler av landet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "WSM",
+      "hooks": {
+        "en": [
+          {
+            "id": "WSM.en.1",
+            "type": "anchor",
+            "text": "Samoa lies in the South Pacific, north of Tonga and east of Fiji, with two large islands."
+          },
+          {
+            "id": "WSM.en.2",
+            "type": "contrast",
+            "text": "Samoa is the independent country to the west; American Samoa, a US territory, lies to its east."
+          },
+          {
+            "id": "WSM.en.3",
+            "type": "story",
+            "text": "Samoa skipped a whole day to move west of the date line, closer to the working week of Australia and New Zealand."
+          }
+        ],
+        "nb": [
+          {
+            "id": "WSM.nb.1",
+            "type": "anchor",
+            "text": "Samoa ligger i Sør-Stillehavet, nord for Tonga og øst for Fiji, med to store øyer."
+          },
+          {
+            "id": "WSM.nb.2",
+            "type": "contrast",
+            "text": "Samoa er den selvstendige staten i vest; Amerikansk Samoa, et amerikansk territorium, ligger i øst."
+          },
+          {
+            "id": "WSM.nb.3",
+            "type": "story",
+            "text": "Samoa hoppet over en hel dag for å komme på vestsiden av datogrensen, nærmere Australia og New Zealand."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "WSM.cap.en.1",
+            "type": "anchor",
+            "text": "Apia is on the north coast of Upolu, the more populous of Samoa's two main islands."
+          },
+          {
+            "id": "WSM.cap.en.2",
+            "type": "sound",
+            "text": "Apia: 'a pear': a giant pear washed up on the north shore of Upolu."
+          }
+        ],
+        "nb": [
+          {
+            "id": "WSM.cap.nb.1",
+            "type": "anchor",
+            "text": "Apia ligger på nordkysten av Upolu, den mest folkerike av Samoas to hovedøyer."
+          },
+          {
+            "id": "WSM.cap.nb.2",
+            "type": "sound",
+            "text": "Apia: en ape som spiser papaya på nordkysten av Upolu."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red with a blue canton holding the Southern Cross in five white stars.",
+        "nb": "Rødt med et blått felt øverst til venstre med Sørkorset i fem hvite stjerner."
+      },
+      "facts": [
+        {
+          "id": "WSM.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Samoa has no land borders; it is made up of islands.",
+            "nb": "Samoa har ingen landegrenser; landet består av øyer."
+          }
+        },
+        {
+          "id": "WSM.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Samoan and English are the official languages of Samoa.",
+            "nb": "Samoansk og engelsk er de offisielle språkene på Samoa."
+          }
+        },
+        {
+          "id": "WSM.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Samoa's currency, the tālā, takes its name from the Samoan pronunciation of 'dollar'.",
+            "nb": "Samoas valuta, tala, har navnet sitt fra den samoanske uttalen av «dollar»."
+          }
+        }
+      ]
+    }
+  ]
+}

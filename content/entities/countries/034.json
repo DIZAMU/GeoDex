@@ -1,0 +1,901 @@
+{
+  "group": "034",
+  "entities": [
+    {
+      "entityId": "AFG",
+      "hooks": {
+        "en": [
+          {
+            "id": "AFG.en.1",
+            "type": "anchor",
+            "text": "Afghanistan is landlocked (no sea coast), between Iran to the west and Pakistan to the east and south."
+          },
+          {
+            "id": "AFG.en.2",
+            "type": "shape",
+            "text": "The Wakhan Corridor is a thin finger Afghanistan stretches east to touch China."
+          },
+          {
+            "id": "AFG.en.3",
+            "type": "etymology",
+            "text": "Afghanistan means 'land of the Afghans', with the Persian ending '-stan' for land."
+          }
+        ],
+        "nb": [
+          {
+            "id": "AFG.nb.1",
+            "type": "anchor",
+            "text": "Afghanistan er en innlandsstat (uten kyst), mellom Iran i vest og Pakistan i øst og sør."
+          },
+          {
+            "id": "AFG.nb.2",
+            "type": "shape",
+            "text": "Wakhan-korridoren er en tynn finger som Afghanistan strekker østover for å nå Kina."
+          },
+          {
+            "id": "AFG.nb.3",
+            "type": "etymology",
+            "text": "Afghanistan betyr «afghanernes land», med den persiske endelsen «-stan» for land."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "AFG.cap.en.1",
+            "type": "anchor",
+            "text": "Kabul sits in a high valley in the east, on the Kabul River."
+          },
+          {
+            "id": "AFG.cap.en.2",
+            "type": "story",
+            "text": "The road from Kabul to Pakistan runs east through the Khyber Pass."
+          }
+        ],
+        "nb": [
+          {
+            "id": "AFG.cap.nb.1",
+            "type": "anchor",
+            "text": "Kabul ligger i en høy dal øst i landet, ved Kabulelva."
+          },
+          {
+            "id": "AFG.cap.nb.2",
+            "type": "sound",
+            "text": "Kabul: en kabel strukket tvers over dalen der hovedstaden ligger."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Black, red and green vertical stripes with a white emblem of a mosque in the centre.",
+        "nb": "Svart, rød og grønn loddrett stripe med et hvitt våpen med en moské i midten."
+      },
+      "facts": [
+        {
+          "id": "AFG.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Afghanistan is landlocked and borders Iran, Pakistan, China, Tajikistan, Uzbekistan and Turkmenistan.",
+            "nb": "Afghanistan er en innlandsstat og grenser til Iran, Pakistan, Kina, Tadsjikistan, Usbekistan og Turkmenistan."
+          }
+        },
+        {
+          "id": "AFG.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Pashto and Dari are the official languages of Afghanistan.",
+            "nb": "Pashto og dari er de offisielle språkene i Afghanistan."
+          }
+        },
+        {
+          "id": "AFG.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Afghanistan's short border with China runs only along the far end of the narrow Wakhan Corridor.",
+            "nb": "Afghanistans korte grense mot Kina går bare ytterst i den smale Wakhan-korridoren."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "BGD",
+      "hooks": {
+        "en": [
+          {
+            "id": "BGD.en.1",
+            "type": "anchor",
+            "text": "Bangladesh is almost surrounded by India, with a short border with Myanmar and the Bay of Bengal to the south."
+          },
+          {
+            "id": "BGD.en.2",
+            "type": "etymology",
+            "text": "Bangladesh means 'country of Bengal'."
+          },
+          {
+            "id": "BGD.en.3",
+            "type": "story",
+            "text": "The Ganges and the Brahmaputra meet in Bangladesh and spread into the world's largest river delta."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BGD.nb.1",
+            "type": "anchor",
+            "text": "Bangladesh er nesten omringet av India, med en kort grense mot Myanmar og Bengalbukta i sør."
+          },
+          { "id": "BGD.nb.2", "type": "etymology", "text": "Bangladesh betyr «Bengals land»." },
+          {
+            "id": "BGD.nb.3",
+            "type": "story",
+            "text": "Ganges og Brahmaputra møtes i Bangladesh og brer seg ut i verdens største elvedelta."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "BGD.cap.en.1",
+            "type": "anchor",
+            "text": "Dhaka lies on the Buriganga River, near the middle of the country."
+          },
+          {
+            "id": "BGD.cap.en.2",
+            "type": "sound",
+            "text": "Dhaka: a duck on a cart floats down the delta to the capital."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BGD.cap.nb.1",
+            "type": "anchor",
+            "text": "Dhaka ligger ved elva Buriganga, nær midten av landet."
+          },
+          {
+            "id": "BGD.cap.nb.2",
+            "type": "sound",
+            "text": "Dhaka: ei stekepanne, en takke, som flyter ned deltaet til hovedstaden."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Dark green with a red disc set slightly toward the hoist. Japan's disc is red on white.",
+        "nb": "Mørkegrønt med en rød sirkel flyttet litt mot stangen. Japans sirkel er rød på hvitt."
+      },
+      "facts": [
+        {
+          "id": "BGD.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Bangladesh borders India and Myanmar, and has a coast on the Bay of Bengal.",
+            "nb": "Bangladesh grenser til India og Myanmar, og har kyst mot Bengalbukta."
+          }
+        },
+        {
+          "id": "BGD.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Bengali is the official language of Bangladesh.",
+            "nb": "Bengali er det offisielle språket i Bangladesh."
+          }
+        },
+        {
+          "id": "BGD.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Sundarbans, a mangrove forest shared with India, is home to Bengal tigers that swim between islands.",
+            "nb": "Sundarbans, en mangroveskog som deles med India, har bengaltigre som svømmer mellom øyene."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "BTN",
+      "hooks": {
+        "en": [
+          {
+            "id": "BTN.en.1",
+            "type": "anchor",
+            "text": "Bhutan is landlocked (no sea coast) in the Himalayas, between China to the north and India to the south."
+          },
+          {
+            "id": "BTN.en.2",
+            "type": "etymology",
+            "text": "Bhutanese call their country Druk Yul, 'land of the thunder dragon'."
+          },
+          {
+            "id": "BTN.en.3",
+            "type": "story",
+            "text": "Bhutan measures progress by Gross National Happiness, not only by money."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BTN.nb.1",
+            "type": "anchor",
+            "text": "Bhutan er en innlandsstat (uten kyst) i Himalaya, mellom Kina i nord og India i sør."
+          },
+          {
+            "id": "BTN.nb.2",
+            "type": "etymology",
+            "text": "Innbyggerne kaller landet Druk Yul, «tordendragens land»."
+          },
+          {
+            "id": "BTN.nb.3",
+            "type": "sound",
+            "text": "Bhutan: ei bu høyt oppe i Himalaya, med en tordendrage som vokter døra."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "BTN.cap.en.1",
+            "type": "anchor",
+            "text": "Thimphu sits in a river valley in the west of Bhutan."
+          },
+          {
+            "id": "BTN.cap.en.2",
+            "type": "sound",
+            "text": "Thimphu: 'Tim, phew', gasps a hiker after the climb up to the capital."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BTN.cap.nb.1",
+            "type": "anchor",
+            "text": "Thimphu ligger i en elvedal vest i Bhutan."
+          },
+          {
+            "id": "BTN.cap.nb.2",
+            "type": "sound",
+            "text": "Thimphu: «Tim, puh», stønner en fotturist etter klatringen opp til hovedstaden."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Split diagonally, yellow above and orange below, with a white dragon along the line.",
+        "nb": "Delt på skrå, gult øverst og oransje nederst, med en hvit drage langs skillelinjen."
+      },
+      "facts": [
+        {
+          "id": "BTN.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Bhutan is landlocked and borders only China and India.",
+            "nb": "Bhutan er en innlandsstat og grenser bare til Kina og India."
+          }
+        },
+        {
+          "id": "BTN.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Bhutan uses its own ngultrum alongside the Indian rupee.",
+            "nb": "Bhutan bruker sin egen ngultrum side om side med indisk rupi."
+          }
+        },
+        {
+          "id": "BTN.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Bhutan's constitution requires a large share of the country to stay under forest.",
+            "nb": "Grunnloven i Bhutan krever at en stor del av landet skal forbli dekket av skog."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "IND",
+      "hooks": {
+        "en": [
+          {
+            "id": "IND.en.1",
+            "type": "anchor",
+            "text": "India is the big triangle pointing south into the Indian Ocean, between Pakistan and Bangladesh."
+          },
+          {
+            "id": "IND.en.2",
+            "type": "shape",
+            "text": "India is a kite, its tail tip pointing south at Sri Lanka."
+          },
+          {
+            "id": "IND.en.3",
+            "type": "etymology",
+            "text": "India is named after the Indus River, which today flows mostly through Pakistan."
+          }
+        ],
+        "nb": [
+          {
+            "id": "IND.nb.1",
+            "type": "anchor",
+            "text": "India er den store trekanten som peker sørover i Det indiske hav, mellom Pakistan og Bangladesh."
+          },
+          {
+            "id": "IND.nb.2",
+            "type": "shape",
+            "text": "India er en papirdrage med spissen pekende sørover mot Sri Lanka."
+          },
+          {
+            "id": "IND.nb.3",
+            "type": "etymology",
+            "text": "India har navn etter elva Indus, som i dag renner mest gjennom Pakistan."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "IND.cap.en.1",
+            "type": "story",
+            "text": "New Delhi was built as the capital next to the old city of Delhi."
+          },
+          {
+            "id": "IND.cap.en.2",
+            "type": "anchor",
+            "text": "New Delhi sits on the Yamuna River in northern India."
+          }
+        ],
+        "nb": [
+          {
+            "id": "IND.cap.nb.1",
+            "type": "story",
+            "text": "New Delhi ble bygd som hovedstad ved siden av den gamle byen Delhi."
+          },
+          {
+            "id": "IND.cap.nb.2",
+            "type": "anchor",
+            "text": "New Delhi ligger ved elva Yamuna nord i India."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Saffron, white and green stripes with a navy blue wheel, the Ashoka Chakra, in the centre.",
+        "nb": "Safrangul, hvit og grønn stripe med et marineblått hjul, Ashoka-chakraet, i midten."
+      },
+      "facts": [
+        {
+          "id": "IND.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "India borders Pakistan, China, Nepal, Bhutan, Bangladesh and Myanmar.",
+            "nb": "India grenser til Pakistan, Kina, Nepal, Bhutan, Bangladesh og Myanmar."
+          }
+        },
+        {
+          "id": "IND.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Hindi and English are both official languages of India.",
+            "nb": "Hindi og engelsk er begge offisielle språk i India."
+          }
+        },
+        {
+          "id": "IND.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Ganges starts at a glacier in the Indian Himalayas.",
+            "nb": "Ganges har sitt utspring i en isbre i den indiske delen av Himalaya."
+          }
+        },
+        {
+          "id": "IND.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Chess traces back to chaturanga, a board game from India.",
+            "nb": "Sjakk kan spores tilbake til chaturanga, et brettspill fra India."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "IRN",
+      "hooks": {
+        "en": [
+          {
+            "id": "IRN.en.1",
+            "type": "anchor",
+            "text": "Iran stretches from the Caspian Sea in the north to the Persian Gulf in the south."
+          },
+          {
+            "id": "IRN.en.2",
+            "type": "contrast",
+            "text": "Iran is the Persian-speaking one, east of Arabic-speaking Iraq; one letter apart."
+          },
+          {
+            "id": "IRN.en.3",
+            "type": "sound",
+            "text": "Iran: 'I ran' all the way from the Caspian Sea down to the Gulf."
+          }
+        ],
+        "nb": [
+          {
+            "id": "IRN.nb.1",
+            "type": "anchor",
+            "text": "Iran strekker seg fra Det kaspiske hav i nord til Persiabukta i sør."
+          },
+          {
+            "id": "IRN.nb.2",
+            "type": "contrast",
+            "text": "I Iran snakker de persisk, i nabolandet Irak arabisk; navnene skiller seg med én bokstav."
+          },
+          {
+            "id": "IRN.nb.3",
+            "type": "story",
+            "text": "Iran het Persia i Vesten, helt til landet ba utlandet bruke det egne navnet Iran."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "IRN.cap.en.1",
+            "type": "anchor",
+            "text": "Tehran sits at the foot of the Alborz mountains, south of the Caspian Sea."
+          },
+          {
+            "id": "IRN.cap.en.2",
+            "type": "sound",
+            "text": "Tehran: tea runs down the Alborz slopes into the capital."
+          }
+        ],
+        "nb": [
+          {
+            "id": "IRN.cap.nb.1",
+            "type": "anchor",
+            "text": "Teheran ligger ved foten av Alborz-fjellene, sør for Det kaspiske hav."
+          },
+          {
+            "id": "IRN.cap.nb.2",
+            "type": "sound",
+            "text": "Teheran: noen heller te over hele byen fra fjellene i nord."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green, white and red stripes with a red emblem in the centre and Arabic script along the stripe edges.",
+        "nb": "Grønn, hvit og rød stripe med et rødt emblem i midten og arabisk skrift langs stripekantene."
+      },
+      "facts": [
+        {
+          "id": "IRN.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Iran borders Türkiye, Iraq, Armenia, Azerbaijan, Turkmenistan, Afghanistan and Pakistan.",
+            "nb": "Iran grenser til Tyrkia, Irak, Armenia, Aserbajdsjan, Turkmenistan, Afghanistan og Pakistan."
+          }
+        },
+        {
+          "id": "IRN.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Persian, also called Farsi, is the official language of Iran.",
+            "nb": "Persisk, også kalt farsi, er det offisielle språket i Iran."
+          }
+        },
+        {
+          "id": "IRN.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Strait of Hormuz, between Iran and Oman, links the Persian Gulf to the open sea.",
+            "nb": "Hormuzstredet, mellom Iran og Oman, forbinder Persiabukta med det åpne havet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "LKA",
+      "hooks": {
+        "en": [
+          {
+            "id": "LKA.en.1",
+            "type": "anchor",
+            "text": "Sri Lanka is the island off India's southeast tip, across the narrow Palk Strait."
+          },
+          {
+            "id": "LKA.en.2",
+            "type": "shape",
+            "text": "Sri Lanka is a teardrop falling from the southern tip of India."
+          },
+          {
+            "id": "LKA.en.3",
+            "type": "etymology",
+            "text": "Ceylon, Sri Lanka's old name, lives on in Ceylon tea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "LKA.nb.1",
+            "type": "anchor",
+            "text": "Sri Lanka er øya utenfor sørøstspissen av India, over det smale Palkstredet."
+          },
+          {
+            "id": "LKA.nb.2",
+            "type": "shape",
+            "text": "Sri Lanka er en tåre som drypper fra sørspissen av India."
+          },
+          {
+            "id": "LKA.nb.3",
+            "type": "etymology",
+            "text": "Ceylon, det gamle navnet på Sri Lanka, lever videre i ceylonte."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "LKA.cap.en.1",
+            "type": "story",
+            "text": "Sri Jayawardenepura Kotte is the legislative capital; its parliament stands on an island in a lake."
+          },
+          {
+            "id": "LKA.cap.en.2",
+            "type": "anchor",
+            "text": "Colombo, the executive capital and main port, lies next to Kotte on the west coast."
+          }
+        ],
+        "nb": [
+          {
+            "id": "LKA.cap.nb.1",
+            "type": "story",
+            "text": "Sri Jayawardenapura Kotte er den lovgivende hovedstaden; nasjonalforsamlingen står på en øy i en innsjø."
+          },
+          {
+            "id": "LKA.cap.nb.2",
+            "type": "anchor",
+            "text": "Colombo, den utøvende hovedstaden og største havnen, ligger like ved Kotte på vestkysten."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A gold lion holding a sword on maroon, with green and orange bands at the hoist.",
+        "nb": "En gyllen løve med sverd på vinrødt, med grønne og oransje felt ved stangen."
+      },
+      "facts": [
+        {
+          "id": "LKA.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Sri Lanka has no land borders; it is an island south of India.",
+            "nb": "Sri Lanka har ingen landegrenser; det er en øy sør for India."
+          }
+        },
+        {
+          "id": "LKA.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Sinhala and Tamil are the official languages of Sri Lanka.",
+            "nb": "Singalesisk og tamil er de offisielle språkene på Sri Lanka."
+          }
+        },
+        {
+          "id": "LKA.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Sri Lanka had the world's first female prime minister, Sirimavo Bandaranaike.",
+            "nb": "Sri Lanka fikk verdens første kvinnelige statsminister, Sirimavo Bandaranaike."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "MDV",
+      "hooks": {
+        "en": [
+          {
+            "id": "MDV.en.1",
+            "type": "anchor",
+            "text": "The Maldives is an archipelago (a chain of islands) of coral atolls southwest of India and Sri Lanka."
+          },
+          {
+            "id": "MDV.en.2",
+            "type": "etymology",
+            "text": "The word atoll comes from Dhivehi, the language of the Maldives."
+          },
+          {
+            "id": "MDV.en.3",
+            "type": "sound",
+            "text": "Maldives: shoppers dive off the roof of a mall straight into the Indian Ocean."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MDV.nb.1",
+            "type": "anchor",
+            "text": "Maldivene er en øygruppe (mange øyer samlet) av korallatoller sørvest for India og Sri Lanka."
+          },
+          {
+            "id": "MDV.nb.2",
+            "type": "etymology",
+            "text": "Ordet atoll kommer fra dhivehi, språket på Maldivene."
+          },
+          {
+            "id": "MDV.nb.3",
+            "type": "sound",
+            "text": "Maldivene: en diva maler neglene sine på en korallstrand i Det indiske hav."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "MDV.cap.en.1",
+            "type": "anchor",
+            "text": "Malé is an island city, built up almost to the water's edge."
+          },
+          {
+            "id": "MDV.cap.en.2",
+            "type": "story",
+            "text": "Malé has no room for an airport, so planes land on a separate island next door."
+          }
+        ],
+        "nb": [
+          {
+            "id": "MDV.cap.nb.1",
+            "type": "anchor",
+            "text": "Malé er en øyby der bebyggelsen går nesten helt ned til vannkanten."
+          },
+          {
+            "id": "MDV.cap.nb.2",
+            "type": "story",
+            "text": "Malé har ikke plass til flyplass, så flyene lander på en egen øy like ved."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A green rectangle with a white crescent, framed by a wide red border.",
+        "nb": "Et grønt rektangel med en hvit halvmåne, innrammet av en bred rød kant."
+      },
+      "facts": [
+        {
+          "id": "MDV.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "The Maldives has no land borders; the country is made up entirely of islands.",
+            "nb": "Maldivene har ingen landegrenser; landet består bare av øyer."
+          }
+        },
+        {
+          "id": "MDV.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Dhivehi is the official language of the Maldives.",
+            "nb": "Dhivehi er det offisielle språket på Maldivene."
+          }
+        },
+        {
+          "id": "MDV.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Cowrie shells gathered in the Maldives were used as money around the Indian Ocean.",
+            "nb": "Kaurisnegler samlet på Maldivene ble brukt som penger rundt Det indiske hav."
+          }
+        },
+        {
+          "id": "MDV.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Maldives is the lowest-lying country on Earth; its highest point is only a few metres above the sea.",
+            "nb": "Maldivene er verdens lavest liggende land; det høyeste punktet er bare noen få meter over havet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "NPL",
+      "hooks": {
+        "en": [
+          {
+            "id": "NPL.en.1",
+            "type": "anchor",
+            "text": "Nepal is landlocked (no sea coast) along the Himalayas, between China to the north and India to the south."
+          },
+          {
+            "id": "NPL.en.2",
+            "type": "flag_decode",
+            "text": "Nepal's flag is two stacked pennants, the only national flag that is not a rectangle."
+          },
+          {
+            "id": "NPL.en.3",
+            "type": "sound",
+            "text": "Nepal: your pal kneels at the foot of Everest to tie his boots."
+          }
+        ],
+        "nb": [
+          {
+            "id": "NPL.nb.1",
+            "type": "anchor",
+            "text": "Nepal er en innlandsstat (uten kyst) langs Himalaya, mellom Kina i nord og India i sør."
+          },
+          {
+            "id": "NPL.nb.2",
+            "type": "flag_decode",
+            "text": "Nepals flagg er to vimpler oppå hverandre, det eneste nasjonalflagget som ikke er rektangulært."
+          },
+          {
+            "id": "NPL.nb.3",
+            "type": "sound",
+            "text": "Nepal: en kjempenepe ligger og triller på toppen av Mount Everest."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "NPL.cap.en.1",
+            "type": "anchor",
+            "text": "Kathmandu sits in a bowl-shaped valley in the middle of Nepal."
+          },
+          {
+            "id": "NPL.cap.en.2",
+            "type": "etymology",
+            "text": "Kathmandu is usually traced to Kasthamandap, a wooden temple in the old city."
+          }
+        ],
+        "nb": [
+          {
+            "id": "NPL.cap.nb.1",
+            "type": "anchor",
+            "text": "Katmandu ligger i en skålformet dal midt i Nepal."
+          },
+          {
+            "id": "NPL.cap.nb.2",
+            "type": "sound",
+            "text": "Katmandu: en katt og en mann deler en dyne i dalen under Himalaya."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Two stacked red pennants with blue borders, a white moon in the upper one and a white sun in the lower.",
+        "nb": "To røde vimpler oppå hverandre med blå kant, en hvit måne i den øverste og en hvit sol i den nederste."
+      },
+      "facts": [
+        {
+          "id": "NPL.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Nepal is landlocked and borders only China and India.",
+            "nb": "Nepal er en innlandsstat og grenser bare til Kina og India."
+          }
+        },
+        {
+          "id": "NPL.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Mount Everest stands on the border between Nepal and China.",
+            "nb": "Mount Everest står på grensen mellom Nepal og Kina."
+          }
+        },
+        {
+          "id": "NPL.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Lumbini, by tradition the birthplace of the Buddha, is in southern Nepal.",
+            "nb": "Lumbini, ifølge tradisjonen Buddhas fødested, ligger sør i Nepal."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "PAK",
+      "hooks": {
+        "en": [
+          {
+            "id": "PAK.en.1",
+            "type": "anchor",
+            "text": "Pakistan lies between India and Afghanistan, with Iran to the west and the Arabian Sea to the south."
+          },
+          {
+            "id": "PAK.en.2",
+            "type": "etymology",
+            "text": "Pakistan is usually read as 'land of the pure' in Urdu and Persian."
+          },
+          {
+            "id": "PAK.en.3",
+            "type": "sound",
+            "text": "Pakistan: pack your bags and stand on the bank of the Indus."
+          }
+        ],
+        "nb": [
+          {
+            "id": "PAK.nb.1",
+            "type": "anchor",
+            "text": "Pakistan ligger mellom India og Afghanistan, med Iran i vest og Arabiahavet i sør."
+          },
+          {
+            "id": "PAK.nb.2",
+            "type": "etymology",
+            "text": "Pakistan tolkes vanligvis som «de renes land» på urdu og persisk."
+          },
+          {
+            "id": "PAK.nb.3",
+            "type": "sound",
+            "text": "Pakistan: «Pakk i stand» bagasjen før turen langs elva Indus."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "PAK.cap.en.1",
+            "type": "story",
+            "text": "Islamabad was built as a planned capital and took over from Karachi on the coast."
+          },
+          {
+            "id": "PAK.cap.en.2",
+            "type": "anchor",
+            "text": "Islamabad sits beside the older city of Rawalpindi, below the Margalla Hills."
+          }
+        ],
+        "nb": [
+          {
+            "id": "PAK.cap.nb.1",
+            "type": "story",
+            "text": "Islamabad ble bygd som planlagt hovedstad og overtok fra Karachi ved kysten."
+          },
+          {
+            "id": "PAK.cap.nb.2",
+            "type": "anchor",
+            "text": "Islamabad ligger rett ved den eldre byen Rawalpindi, under Margalla-åsene."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Dark green with a white crescent and star, and a white vertical band at the hoist.",
+        "nb": "Mørkegrønt med hvit halvmåne og stjerne, og et hvitt loddrett felt ved stangen."
+      },
+      "facts": [
+        {
+          "id": "PAK.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Pakistan borders India, China, Afghanistan and Iran, and has a sea coast.",
+            "nb": "Pakistan grenser til India, Kina, Afghanistan og Iran, og har kyst mot havet."
+          }
+        },
+        {
+          "id": "PAK.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Urdu and English are the official languages of Pakistan.",
+            "nb": "Urdu og engelsk er de offisielle språkene i Pakistan."
+          }
+        },
+        {
+          "id": "PAK.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Karakoram Highway crosses from Pakistan into China over the high Khunjerab Pass.",
+            "nb": "Karakoram-veien krysser fra Pakistan inn i Kina over det høyt beliggende Khunjerab-passet."
+          }
+        }
+      ]
+    }
+  ]
+}

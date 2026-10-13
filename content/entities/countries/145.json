@@ -1,0 +1,1807 @@
+{
+  "group": "145",
+  "entities": [
+    {
+      "entityId": "ARE",
+      "hooks": {
+        "en": [
+          {
+            "id": "ARE.en.1",
+            "type": "anchor",
+            "text": "The United Arab Emirates fills the Gulf corner of Arabia between Saudi Arabia and Oman."
+          },
+          {
+            "id": "ARE.en.2",
+            "type": "contrast",
+            "text": "Dubai is the famous city, but Abu Dhabi is the capital and the largest of the seven emirates."
+          },
+          {
+            "id": "ARE.en.3",
+            "type": "sound",
+            "text": "Emirates: picture seven emirs sharing one very long sofa on a Gulf beach."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ARE.nb.1",
+            "type": "anchor",
+            "text": "De forente arabiske emirater ligger ved Persiabukta, mellom Saudi-Arabia og Oman."
+          },
+          {
+            "id": "ARE.nb.2",
+            "type": "contrast",
+            "text": "Dubai er den kjente byen, men Abu Dhabi er hovedstaden og det største av de sju emiratene."
+          },
+          {
+            "id": "ARE.nb.3",
+            "type": "sound",
+            "text": "Emiratene: sju emirer som deler én svært lang sofa på stranda ved Persiabukta."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "ARE.cap.en.1",
+            "type": "anchor",
+            "text": "Abu Dhabi sits on an island just off the Gulf coast, southwest of Dubai."
+          },
+          {
+            "id": "ARE.cap.en.2",
+            "type": "etymology",
+            "text": "Abu Dhabi is usually read as 'father of the gazelle'."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ARE.cap.nb.1",
+            "type": "anchor",
+            "text": "Abu Dhabi ligger på en øy like utenfor kysten, sørvest for Dubai."
+          },
+          {
+            "id": "ARE.cap.nb.2",
+            "type": "etymology",
+            "text": "Abu Dhabi tolkes gjerne som «gasellens far»."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green, white and black horizontal stripes with a vertical red bar at the hoist.",
+        "nb": "Vannrette striper i grønt, hvitt og svart, med et loddrett rødt felt ved stangen."
+      },
+      "facts": [
+        {
+          "id": "ARE.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "The United Arab Emirates has land borders with only Saudi Arabia and Oman.",
+            "nb": "De forente arabiske emirater har landegrense bare mot Saudi-Arabia og Oman."
+          }
+        },
+        {
+          "id": "ARE.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Each emirate, including Abu Dhabi and Dubai, has its own ruling family.",
+            "nb": "Hvert emirat, også Abu Dhabi og Dubai, har sin egen herskerfamilie."
+          }
+        },
+        {
+          "id": "ARE.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Burj Khalifa in Dubai is the tallest building in the world.",
+            "nb": "Burj Khalifa i Dubai er verdens høyeste bygning."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "ARM",
+      "hooks": {
+        "en": [
+          {
+            "id": "ARM.en.1",
+            "type": "anchor",
+            "text": "Armenia is landlocked (no sea coast) in the Caucasus, between Georgia to the north and Iran to the south."
+          },
+          {
+            "id": "ARM.en.2",
+            "type": "story",
+            "text": "Mount Ararat, Armenia's national symbol, stands just across the border in Türkiye, in view of Yerevan."
+          },
+          {
+            "id": "ARM.en.3",
+            "type": "contrast",
+            "text": "Armenia writes in its own alphabet; neighboring Azerbaijan writes in Latin letters."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ARM.nb.1",
+            "type": "anchor",
+            "text": "Armenia er en innlandsstat (uten kyst) i Kaukasus, mellom Georgia i nord og Iran i sør."
+          },
+          {
+            "id": "ARM.nb.2",
+            "type": "story",
+            "text": "Ararat, Armenias nasjonalsymbol, står like over grensen i Tyrkia, men synes fra Jerevan."
+          },
+          {
+            "id": "ARM.nb.3",
+            "type": "contrast",
+            "text": "Armenia skriver med sitt eget alfabet; nabolandet Aserbajdsjan bruker latinske bokstaver."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "ARM.cap.en.1",
+            "type": "anchor",
+            "text": "Yerevan looks south across the border to the twin peaks of Mount Ararat."
+          },
+          {
+            "id": "ARM.cap.en.2",
+            "type": "sound",
+            "text": "Yerevan: 'yeah, a van' will drive you to the viewpoint for Ararat."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ARM.cap.nb.1",
+            "type": "anchor",
+            "text": "Jerevan ser sørover mot Ararat, på andre siden av grensen."
+          },
+          {
+            "id": "ARM.cap.nb.2",
+            "type": "sound",
+            "text": "Jerevan: en jerv på vandring ned fra fjellet mot Armenias hovedstad."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Three horizontal stripes: red over blue over orange.",
+        "nb": "Tre vannrette striper: rødt over blått over oransje."
+      },
+      "facts": [
+        {
+          "id": "ARM.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Armenia is landlocked and borders Georgia, Azerbaijan, Iran and Türkiye.",
+            "nb": "Armenia er en innlandsstat og grenser til Georgia, Aserbajdsjan, Iran og Tyrkia."
+          }
+        },
+        {
+          "id": "ARM.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Armenian alphabet was created by the monk Mesrop Mashtots in the early Middle Ages.",
+            "nb": "Det armenske alfabetet ble laget av munken Mesrop Masjtots i tidlig middelalder."
+          }
+        },
+        {
+          "id": "ARM.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Armenia made Christianity its state religion before the Roman Empire did.",
+            "nb": "Armenia gjorde kristendommen til statsreligion før Romerriket gjorde det."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "AZE",
+      "hooks": {
+        "en": [
+          {
+            "id": "AZE.en.1",
+            "type": "anchor",
+            "text": "Azerbaijan sits on the west shore of the Caspian Sea, between Russia and Iran."
+          },
+          {
+            "id": "AZE.en.2",
+            "type": "contrast",
+            "text": "Nakhchivan, an exclave (a part cut off from the rest), belongs to Azerbaijan but lies beyond Armenia."
+          },
+          {
+            "id": "AZE.en.3",
+            "type": "story",
+            "text": "Azerbaijan is called the land of fire: gas seeping from a hillside near Baku keeps flames burning."
+          }
+        ],
+        "nb": [
+          {
+            "id": "AZE.nb.1",
+            "type": "anchor",
+            "text": "Aserbajdsjan ligger på vestbredden av Det kaspiske hav, mellom Russland og Iran."
+          },
+          {
+            "id": "AZE.nb.2",
+            "type": "contrast",
+            "text": "Nakhitsjevan, en eksklave (en avskåret landsdel), hører til Aserbajdsjan, men ligger på andre siden av Armenia."
+          },
+          {
+            "id": "AZE.nb.3",
+            "type": "story",
+            "text": "Aserbajdsjan kalles ildens land: gass som siver ut av en åsside ved Baku, holder flammer brennende."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "AZE.cap.en.1",
+            "type": "anchor",
+            "text": "Baku is on the Caspian Sea, on the Absheron Peninsula."
+          },
+          {
+            "id": "AZE.cap.en.2",
+            "type": "story",
+            "text": "Baku had one of the first oil booms; derricks once crowded its shoreline."
+          }
+        ],
+        "nb": [
+          {
+            "id": "AZE.cap.nb.1",
+            "type": "anchor",
+            "text": "Baku ligger ved Det kaspiske hav, på Apsjeronhalvøya."
+          },
+          {
+            "id": "AZE.cap.nb.2",
+            "type": "sound",
+            "text": "Baku: en ku som bader i Det kaspiske hav, rett utenfor hovedstaden."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue, red and green stripes, with a white crescent and eight-pointed star in the red.",
+        "nb": "Blå, rød og grønn stripe, med hvit halvmåne og åttetakket stjerne i det røde feltet."
+      },
+      "facts": [
+        {
+          "id": "AZE.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Azerbaijan borders Russia, Georgia, Armenia, Iran and Türkiye.",
+            "nb": "Aserbajdsjan grenser til Russland, Georgia, Armenia, Iran og Tyrkia."
+          }
+        },
+        {
+          "id": "AZE.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Azerbaijan's short border with Türkiye runs only along Nakhchivan, its exclave cut off by Armenia.",
+            "nb": "Aserbajdsjans korte grense mot Tyrkia går bare langs Nakhitsjevan, eksklaven som Armenia skiller fra resten."
+          }
+        },
+        {
+          "id": "AZE.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Azerbaijan's only coast is on the Caspian Sea, which has no outlet to the ocean.",
+            "nb": "Aserbajdsjans eneste kyst er mot Det kaspiske hav, som ikke har noe utløp til verdenshavet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "BHR",
+      "hooks": {
+        "en": [
+          {
+            "id": "BHR.en.1",
+            "type": "anchor",
+            "text": "Bahrain is an island country in the Persian Gulf, between Qatar and the Saudi coast."
+          },
+          {
+            "id": "BHR.en.2",
+            "type": "etymology",
+            "text": "Bahrain means 'two seas' in Arabic."
+          },
+          {
+            "id": "BHR.en.3",
+            "type": "story",
+            "text": "Bahrain is an island, yet you can drive there: a causeway runs across the sea from Saudi Arabia."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BHR.nb.1",
+            "type": "anchor",
+            "text": "Bahrain er en øystat i Persiabukta, mellom Qatar og kysten av Saudi-Arabia."
+          },
+          {
+            "id": "BHR.nb.2",
+            "type": "etymology",
+            "text": "Bahrain betyr «to hav» på arabisk."
+          },
+          {
+            "id": "BHR.nb.3",
+            "type": "sound",
+            "text": "Bahrain: «Bare inn», vinker tolleren på dammen over havet fra Saudi-Arabia."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "BHR.cap.en.1",
+            "type": "anchor",
+            "text": "Manama sits at the northeast tip of Bahrain's main island."
+          },
+          {
+            "id": "BHR.cap.en.2",
+            "type": "sound",
+            "text": "Manama: a man and his mama run the capital from the north tip of the island."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BHR.cap.nb.1",
+            "type": "anchor",
+            "text": "Manama ligger på nordøstspissen av hovedøya i Bahrain."
+          },
+          {
+            "id": "BHR.cap.nb.2",
+            "type": "sound",
+            "text": "Manama: en mann og mamma hans deler en robåt i havna i Bahrain."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red with a white band at the hoist and a zigzag edge of five points. Qatar's is maroon with more points.",
+        "nb": "Rødt med hvitt felt ved stangen og en sagtakket kant med fem tagger. Qatars er vinrødt med flere tagger."
+      },
+      "facts": [
+        {
+          "id": "BHR.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Bahrain has no land border; it is made up entirely of islands.",
+            "nb": "Bahrain har ingen landegrense; landet består bare av øyer."
+          }
+        },
+        {
+          "id": "BHR.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The King Fahd Causeway links Bahrain to Saudi Arabia by road.",
+            "nb": "Kong Fahd-dammen forbinder Bahrain med Saudi-Arabia med bilvei."
+          }
+        },
+        {
+          "id": "BHR.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Bahrain was the heart of Dilmun, an ancient trading civilization of the Gulf.",
+            "nb": "Bahrain var sentrum i Dilmun, en gammel handelssivilisasjon ved Persiabukta."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "CYP",
+      "hooks": {
+        "en": [
+          {
+            "id": "CYP.en.1",
+            "type": "anchor",
+            "text": "Cyprus is the island in the eastern Mediterranean, south of Türkiye and west of Syria and Lebanon."
+          },
+          {
+            "id": "CYP.en.2",
+            "type": "shape",
+            "text": "Cyprus is a frying pan, with the Karpas Peninsula as its handle pointing northeast."
+          },
+          {
+            "id": "CYP.en.3",
+            "type": "story",
+            "text": "Greek myth has Aphrodite rising from the sea foam off the coast of Cyprus."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CYP.nb.1",
+            "type": "anchor",
+            "text": "Kypros er øya i det østlige Middelhavet, sør for Tyrkia og vest for Syria og Libanon."
+          },
+          {
+            "id": "CYP.nb.2",
+            "type": "shape",
+            "text": "Kypros er en stekepanne, med Karpas-halvøya som skaft mot nordøst."
+          },
+          {
+            "id": "CYP.nb.3",
+            "type": "story",
+            "text": "I gresk myte steg Afrodite opp av havskummet utenfor kysten av Kypros."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "CYP.cap.en.1",
+            "type": "anchor",
+            "text": "Nicosia lies inland, in the middle of the island."
+          },
+          {
+            "id": "CYP.cap.en.2",
+            "type": "story",
+            "text": "Nicosia is split by a UN buffer zone between the Greek Cypriot south and the Turkish Cypriot north."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CYP.cap.nb.1",
+            "type": "anchor",
+            "text": "Nikosia ligger inne i landet, midt på øya."
+          },
+          {
+            "id": "CYP.cap.nb.2",
+            "type": "story",
+            "text": "Nikosia er delt av en FN-buffersone mellom gresk-kypriotisk sør og tyrkisk-kypriotisk nord."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "White with a copper-colored map of the island above two olive branches.",
+        "nb": "Hvitt med et kobberfarget kart over øya over to olivengrener."
+      },
+      "facts": [
+        {
+          "id": "CYP.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Cyprus has no land borders with other countries; it is an island.",
+            "nb": "Kypros har ingen landegrenser mot andre land; det er en øy."
+          }
+        },
+        {
+          "id": "CYP.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Cyprus has two official languages, Greek and Turkish.",
+            "nb": "Kypros har to offisielle språk, gresk og tyrkisk."
+          }
+        },
+        {
+          "id": "CYP.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Latin word for copper, cuprum, comes from the name of Cyprus, where copper was mined.",
+            "nb": "Det latinske ordet for kobber, cuprum, kommer av navnet Kypros, der det ble utvunnet kobber."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "GEO",
+      "hooks": {
+        "en": [
+          {
+            "id": "GEO.en.1",
+            "type": "anchor",
+            "text": "Georgia sits on the east coast of the Black Sea, just south of the Caucasus and Russia."
+          },
+          {
+            "id": "GEO.en.2",
+            "type": "contrast",
+            "text": "Georgia the country is on the Black Sea; Georgia the US state is on the Atlantic."
+          },
+          {
+            "id": "GEO.en.3",
+            "type": "etymology",
+            "text": "Georgians call their country Sakartvelo; Georgia is the outsiders' name."
+          },
+          {
+            "id": "GEO.en.4",
+            "type": "sound",
+            "text": "Georgia: a man named George rides a horse along the Black Sea beach."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GEO.nb.1",
+            "type": "anchor",
+            "text": "Georgia ligger ved østkysten av Svartehavet, like sør for Kaukasus og Russland."
+          },
+          {
+            "id": "GEO.nb.2",
+            "type": "contrast",
+            "text": "Landet Georgia ligger ved Svartehavet; delstaten Georgia ligger i USA."
+          },
+          {
+            "id": "GEO.nb.3",
+            "type": "etymology",
+            "text": "Georgierne kaller selv landet Sakartvelo."
+          },
+          {
+            "id": "GEO.nb.4",
+            "type": "sound",
+            "text": "Georgia: en svær georgine (blomsten) plantet på stranda ved Svartehavet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "GEO.cap.en.1",
+            "type": "anchor",
+            "text": "Tbilisi lies on the Kura River in the east of the country."
+          },
+          {
+            "id": "GEO.cap.en.2",
+            "type": "etymology",
+            "text": "Tbilisi comes from the Georgian word for warm, after its hot sulphur springs."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GEO.cap.nb.1",
+            "type": "anchor",
+            "text": "Tbilisi ligger ved elva Kura øst i landet."
+          },
+          {
+            "id": "GEO.cap.nb.2",
+            "type": "etymology",
+            "text": "Navnet Tbilisi kommer av georgisk for «varm», etter de varme svovelkildene."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "White with a large red cross and a small red cross in each quarter: the five-cross flag.",
+        "nb": "Hvitt med et stort rødt kors og et lite rødt kors i hver firedel: femkorsflagget."
+      },
+      "facts": [
+        {
+          "id": "GEO.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Georgia borders Russia, Türkiye, Armenia and Azerbaijan, and has a sea coast.",
+            "nb": "Georgia grenser til Russland, Tyrkia, Armenia og Aserbajdsjan, og har kyst mot havet."
+          }
+        },
+        {
+          "id": "GEO.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Georgian is written in its own alphabet, neither Latin nor Cyrillic.",
+            "nb": "Georgisk skrives med sitt eget alfabet, verken latinsk eller kyrillisk."
+          }
+        },
+        {
+          "id": "GEO.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Some of the oldest known traces of winemaking, in Stone Age clay jars, were found in Georgia.",
+            "nb": "Noen av de eldste kjente sporene etter vinproduksjon, i leirkrukker fra steinalderen, er funnet i Georgia."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "IRQ",
+      "hooks": {
+        "en": [
+          {
+            "id": "IRQ.en.1",
+            "type": "anchor",
+            "text": "Iraq is the land of the Tigris and Euphrates, between Iran to the east and Syria to the west."
+          },
+          {
+            "id": "IRQ.en.2",
+            "type": "contrast",
+            "text": "Iraq and Iran differ by one letter. Iraq is the Arabic-speaking one, west of Iran."
+          },
+          {
+            "id": "IRQ.en.3",
+            "type": "etymology",
+            "text": "Mesopotamia, Greek for 'between rivers', is the old name for Iraq's heartland."
+          },
+          {
+            "id": "IRQ.en.4",
+            "type": "sound",
+            "text": "Iraq: a tiger, the Tigris, races the Euphrates down to the Gulf."
+          }
+        ],
+        "nb": [
+          {
+            "id": "IRQ.nb.1",
+            "type": "anchor",
+            "text": "Irak er landet ved Eufrat og Tigris, mellom Iran i øst og Syria i vest."
+          },
+          {
+            "id": "IRQ.nb.2",
+            "type": "contrast",
+            "text": "Irak og Iran skiller seg med én bokstav. Irak er det arabisktalende landet, vest for Iran."
+          },
+          {
+            "id": "IRQ.nb.3",
+            "type": "etymology",
+            "text": "Mesopotamia, gresk for «mellom elvene», er det gamle navnet på kjernelandet i Irak."
+          },
+          {
+            "id": "IRQ.nb.4",
+            "type": "sound",
+            "text": "Irak: en irritert tiger, Tigris, som raker sanden langs elvebredden."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "IRQ.cap.en.1",
+            "type": "anchor",
+            "text": "Baghdad sits on the Tigris in central Iraq."
+          },
+          {
+            "id": "IRQ.cap.en.2",
+            "type": "story",
+            "text": "Baghdad was the seat of the Abbasid caliphs and their House of Wisdom."
+          }
+        ],
+        "nb": [
+          {
+            "id": "IRQ.cap.nb.1",
+            "type": "anchor",
+            "text": "Bagdad ligger ved Tigris midt i Irak."
+          },
+          {
+            "id": "IRQ.cap.nb.2",
+            "type": "sound",
+            "text": "Bagdad: en bag full av dadler på markedet ved Tigris."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, white and black stripes with green Arabic script, 'God is greatest', in the white.",
+        "nb": "Rødt, hvitt og svart, med grønn arabisk skrift, «Gud er størst», i det hvite feltet."
+      },
+      "facts": [
+        {
+          "id": "IRQ.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Iraq borders Türkiye, Iran, Kuwait, Saudi Arabia, Jordan and Syria.",
+            "nb": "Irak grenser til Tyrkia, Iran, Kuwait, Saudi-Arabia, Jordan og Syria."
+          }
+        },
+        {
+          "id": "IRQ.f2",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Iraq's only sea coast is a short stretch on the Persian Gulf, squeezed between Kuwait and Iran.",
+            "nb": "Iraks eneste kyst er en kort strekning ved Persiabukta, klemt mellom Kuwait og Iran."
+          }
+        },
+        {
+          "id": "IRQ.f3",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Arabic and Kurdish are both official languages in Iraq.",
+            "nb": "Arabisk og kurdisk er begge offisielle språk i Irak."
+          }
+        },
+        {
+          "id": "IRQ.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Cuneiform, one of the earliest writing systems, developed in Sumer, in what is now southern Iraq.",
+            "nb": "Kileskrift, et av de eldste skriftsystemene, oppsto i Sumer, i dagens sørlige Irak."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "ISR",
+      "hooks": {
+        "en": [
+          {
+            "id": "ISR.en.1",
+            "type": "anchor",
+            "text": "Israel lies on the eastern Mediterranean coast, between Lebanon to the north and Egypt to the southwest."
+          },
+          {
+            "id": "ISR.en.2",
+            "type": "anchor",
+            "text": "Israel touches the Red Sea only at its southern tip, at the port of Eilat."
+          },
+          {
+            "id": "ISR.en.3",
+            "type": "story",
+            "text": "Hebrew was revived as an everyday spoken language and became Israel's main language."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ISR.nb.1",
+            "type": "anchor",
+            "text": "Israel ligger ved østkysten av Middelhavet, mellom Libanon i nord og Egypt i sørvest."
+          },
+          {
+            "id": "ISR.nb.2",
+            "type": "anchor",
+            "text": "Israel når Rødehavet bare helt i sør, ved havnebyen Eilat."
+          },
+          {
+            "id": "ISR.nb.3",
+            "type": "story",
+            "text": "Hebraisk ble gjenopplivet som hverdagsspråk og ble hovedspråket i Israel."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "ISR.cap.en.1",
+            "type": "anchor",
+            "text": "Jerusalem sits in the hills between the Mediterranean and the Dead Sea."
+          },
+          {
+            "id": "ISR.cap.en.2",
+            "type": "story",
+            "text": "Jerusalem is a holy city for Judaism, Christianity and Islam."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ISR.cap.nb.1",
+            "type": "anchor",
+            "text": "Jerusalem ligger i åsene mellom Middelhavet og Dødehavet."
+          },
+          {
+            "id": "ISR.cap.nb.2",
+            "type": "story",
+            "text": "Jerusalem er en hellig by for jødedom, kristendom og islam."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "White with two horizontal blue stripes and a blue Star of David between them.",
+        "nb": "Hvitt med to vannrette blå striper og en blå Davidsstjerne mellom dem."
+      },
+      "facts": [
+        {
+          "id": "ISR.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Israel borders Lebanon, Syria, Jordan, Egypt and Palestine.",
+            "nb": "Israel grenser til Libanon, Syria, Jordan, Egypt og Palestina."
+          }
+        },
+        {
+          "id": "ISR.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Hebrew is the official language of Israel.",
+            "nb": "Hebraisk er det offisielle språket i Israel."
+          }
+        },
+        {
+          "id": "ISR.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The shores of the Dead Sea are the lowest dry land on Earth, far below sea level.",
+            "nb": "Breddene av Dødehavet er det laveste tørre landet på jorda, langt under havnivå."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "JOR",
+      "hooks": {
+        "en": [
+          {
+            "id": "JOR.en.1",
+            "type": "anchor",
+            "text": "Jordan lies east of Israel and Palestine, with Syria, Iraq and Saudi Arabia around its other sides."
+          },
+          {
+            "id": "JOR.en.2",
+            "type": "etymology",
+            "text": "Jordan takes its name from the Jordan River along its western edge."
+          },
+          {
+            "id": "JOR.en.3",
+            "type": "story",
+            "text": "Petra, Jordan's rock city, was carved straight into red sandstone cliffs by the Nabataeans."
+          }
+        ],
+        "nb": [
+          {
+            "id": "JOR.nb.1",
+            "type": "anchor",
+            "text": "Jordan ligger øst for Israel og Palestina, med Syria, Irak og Saudi-Arabia rundt resten."
+          },
+          {
+            "id": "JOR.nb.2",
+            "type": "etymology",
+            "text": "Landet Jordan har navn etter Jordanelva langs vestgrensen."
+          },
+          {
+            "id": "JOR.nb.3",
+            "type": "story",
+            "text": "Petra, klippebyen i Jordan, ble hogd rett inn i rød sandstein av nabateerne."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "JOR.cap.en.1",
+            "type": "story",
+            "text": "Amman was Philadelphia in Greek and Roman times, and its Roman theatre still stands downtown."
+          },
+          {
+            "id": "JOR.cap.en.2",
+            "type": "anchor",
+            "text": "Amman is in the northwest highlands, east of the Jordan River."
+          }
+        ],
+        "nb": [
+          {
+            "id": "JOR.cap.nb.1",
+            "type": "story",
+            "text": "Amman het Filadelfia i gresk og romersk tid, og det romerske teatret står fortsatt midt i byen."
+          },
+          {
+            "id": "JOR.cap.nb.2",
+            "type": "sound",
+            "text": "Amman: «Å, mann», sier du når du ser det romerske teatret midt i hovedstaden."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Black, white and green stripes with a red triangle holding a white star. Palestine's has no star.",
+        "nb": "Svart, hvit og grønn stripe med en rød trekant med en hvit stjerne. Palestinas har ingen stjerne."
+      },
+      "facts": [
+        {
+          "id": "JOR.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Jordan borders Israel, Palestine, Syria, Iraq and Saudi Arabia.",
+            "nb": "Jordan grenser til Israel, Palestina, Syria, Irak og Saudi-Arabia."
+          }
+        },
+        {
+          "id": "JOR.f2",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Jordan's only sea access is a short coast on the Gulf of Aqaba, at the port of Aqaba.",
+            "nb": "Jordans eneste tilgang til havet er en kort kyst ved Akababukta, der havnebyen Aqaba ligger."
+          }
+        },
+        {
+          "id": "JOR.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Jordan River flows south into the Dead Sea, which has no outlet.",
+            "nb": "Jordanelva renner sørover ut i Dødehavet, som ikke har noe utløp."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "KWT",
+      "hooks": {
+        "en": [
+          {
+            "id": "KWT.en.1",
+            "type": "anchor",
+            "text": "Kuwait sits at the top of the Persian Gulf, between Iraq and Saudi Arabia."
+          },
+          {
+            "id": "KWT.en.2",
+            "type": "contrast",
+            "text": "Kuwait is the country; Kuwait City is its capital, on Kuwait Bay."
+          },
+          {
+            "id": "KWT.en.3",
+            "type": "sound",
+            "text": "Kuwait: a cow waits patiently on the beach at the very top of the Persian Gulf."
+          }
+        ],
+        "nb": [
+          {
+            "id": "KWT.nb.1",
+            "type": "anchor",
+            "text": "Kuwait ligger innerst i Persiabukta, mellom Irak og Saudi-Arabia."
+          },
+          {
+            "id": "KWT.nb.2",
+            "type": "contrast",
+            "text": "Både landet og hovedstaden heter Kuwait, så svaret er det samme to ganger."
+          },
+          {
+            "id": "KWT.nb.3",
+            "type": "sound",
+            "text": "Kuwait: en kvit ku som vasser innerst i Persiabukta."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "KWT.cap.en.1",
+            "type": "anchor",
+            "text": "Kuwait City wraps around Kuwait Bay, the country's natural harbor."
+          },
+          {
+            "id": "KWT.cap.en.2",
+            "type": "contrast",
+            "text": "The capital and the country share one name, so Kuwait City is easy to place."
+          }
+        ],
+        "nb": [
+          {
+            "id": "KWT.cap.nb.1",
+            "type": "anchor",
+            "text": "Hovedstaden Kuwait ligger rundt Kuwaitbukta, landets naturlige havn."
+          },
+          {
+            "id": "KWT.cap.nb.2",
+            "type": "sound",
+            "text": "Kuwait: kua som vasset i bukta, går rett inn i hovedstaden med samme navn."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green, white and red stripes with a black trapezoid at the hoist.",
+        "nb": "Grønn, hvit og rød stripe med et svart trapes ved stangen."
+      },
+      "facts": [
+        {
+          "id": "KWT.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Kuwait borders Iraq to the north and Saudi Arabia to the south.",
+            "nb": "Kuwait grenser til Irak i nord og Saudi-Arabia i sør."
+          }
+        },
+        {
+          "id": "KWT.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Kuwaiti dinar is the highest-valued currency unit in the world.",
+            "nb": "Den kuwaitiske dinaren er verdens mest verdifulle valutaenhet."
+          }
+        },
+        {
+          "id": "KWT.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Iraq's invasion of Kuwait led to the Gulf War, which ended the occupation.",
+            "nb": "Iraks invasjon av Kuwait førte til Gulfkrigen, som avsluttet okkupasjonen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "LBN",
+      "hooks": {
+        "en": [
+          {
+            "id": "LBN.en.1",
+            "type": "anchor",
+            "text": "Lebanon is the narrow strip on the Mediterranean between Syria and Israel."
+          },
+          {
+            "id": "LBN.en.2",
+            "type": "etymology",
+            "text": "Lebanon comes from a Semitic root for white, after the snow on its mountains."
+          },
+          {
+            "id": "LBN.en.3",
+            "type": "story",
+            "text": "Phoenician sailors set out from Lebanon's coast, and their alphabet is an ancestor of ours."
+          }
+        ],
+        "nb": [
+          {
+            "id": "LBN.nb.1",
+            "type": "anchor",
+            "text": "Libanon er den smale stripen ved Middelhavet mellom Syria og Israel."
+          },
+          {
+            "id": "LBN.nb.2",
+            "type": "etymology",
+            "text": "Libanon kommer av et semittisk ord for «hvit», etter snøen på fjellene."
+          },
+          {
+            "id": "LBN.nb.3",
+            "type": "story",
+            "text": "Fønikiske sjøfolk seilte ut fra kysten av Libanon, og alfabetet deres er stamfar til vårt."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "LBN.cap.en.1",
+            "type": "anchor",
+            "text": "Beirut sits on a cape jutting into the Mediterranean, midway along the coast."
+          },
+          {
+            "id": "LBN.cap.en.2",
+            "type": "etymology",
+            "text": "Beirut's name is usually traced to an old word for wells."
+          }
+        ],
+        "nb": [
+          {
+            "id": "LBN.cap.nb.1",
+            "type": "anchor",
+            "text": "Beirut ligger på et nes ut i Middelhavet, midt på kysten."
+          },
+          {
+            "id": "LBN.cap.nb.2",
+            "type": "etymology",
+            "text": "Navnet Beirut føres ofte tilbake til et gammelt ord for «brønner»."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red stripes at top and bottom, a wide white stripe between, and a green cedar tree in the middle.",
+        "nb": "Røde striper øverst og nederst, en bred hvit stripe imellom og et grønt sedertre i midten."
+      },
+      "facts": [
+        {
+          "id": "LBN.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Lebanon borders only Syria and Israel, and has a coast on the Mediterranean.",
+            "nb": "Libanon grenser bare til Syria og Israel, og har kyst mot Middelhavet."
+          }
+        },
+        {
+          "id": "LBN.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The cedar of Lebanon was prized in the ancient world for ships and temples.",
+            "nb": "Libanonseder var ettertraktet i oldtiden til skip og templer."
+          }
+        },
+        {
+          "id": "LBN.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Greek word for book, and so the word Bible, comes from Byblos, a Lebanese port that traded papyrus.",
+            "nb": "Det greske ordet for bok, og dermed ordet Bibel, kommer av Byblos, en havn i Libanon som handlet med papyrus."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "OMN",
+      "hooks": {
+        "en": [
+          {
+            "id": "OMN.en.1",
+            "type": "anchor",
+            "text": "Oman wraps around the southeast corner of the Arabian Peninsula, facing the Arabian Sea."
+          },
+          {
+            "id": "OMN.en.2",
+            "type": "contrast",
+            "text": "Oman also owns Musandam, an exclave (a cut-off piece) at the Strait of Hormuz, beyond the UAE."
+          },
+          {
+            "id": "OMN.en.3",
+            "type": "sound",
+            "text": "Oman: 'Oh, man', groans a sailor rounding the far corner of Arabia."
+          }
+        ],
+        "nb": [
+          {
+            "id": "OMN.nb.1",
+            "type": "anchor",
+            "text": "Oman ligger i sørøsthjørnet av Den arabiske halvøy, ut mot Arabiahavet."
+          },
+          {
+            "id": "OMN.nb.2",
+            "type": "contrast",
+            "text": "Oman eier også Musandam, en eksklave (en avskåret bit) ved Hormuzstredet, på andre siden av emiratene."
+          },
+          {
+            "id": "OMN.nb.3",
+            "type": "story",
+            "text": "Sultaner fra Oman styrte en gang Zanzibar, langt sør langs kysten av Øst-Afrika."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "OMN.cap.en.1",
+            "type": "anchor",
+            "text": "Muscat sits on the Gulf of Oman, ringed by bare rocky mountains."
+          },
+          {
+            "id": "OMN.cap.en.2",
+            "type": "sound",
+            "text": "Muscat: a musketeer and his cat guard the harbor of Oman's capital."
+          }
+        ],
+        "nb": [
+          {
+            "id": "OMN.cap.nb.1",
+            "type": "anchor",
+            "text": "Muskat ligger ved Omanbukta, omringet av nakne, steinete fjell."
+          },
+          {
+            "id": "OMN.cap.nb.2",
+            "type": "sound",
+            "text": "Muskat: en kurv med muskatnøtter står klar på kaia i Omans hovedstad."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red with white and green blocks on the right, and an emblem of crossed swords and a dagger at top left.",
+        "nb": "Rødt med hvite og grønne felt til høyre, og et våpen med kryssede sverd og en dolk øverst til venstre."
+      },
+      "facts": [
+        {
+          "id": "OMN.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Oman borders the United Arab Emirates, Saudi Arabia and Yemen.",
+            "nb": "Oman grenser til De forente arabiske emirater, Saudi-Arabia og Jemen."
+          }
+        },
+        {
+          "id": "OMN.f2",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Musandam, a detached part of Oman (an exclave), is separated from the rest of the country by UAE territory.",
+            "nb": "Musandam, en løsrevet del av Oman (en eksklave), er skilt fra resten av landet av emiratenes territorium."
+          }
+        },
+        {
+          "id": "OMN.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Oman's sultans once ruled Zanzibar, off the coast of East Africa.",
+            "nb": "Omans sultaner styrte en gang Zanzibar, utenfor kysten av Øst-Afrika."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "PSE",
+      "hooks": {
+        "en": [
+          {
+            "id": "PSE.en.1",
+            "type": "anchor",
+            "text": "Palestine is two separate areas: the West Bank, west of Jordan, and the Gaza Strip, next to Egypt."
+          },
+          {
+            "id": "PSE.en.2",
+            "type": "contrast",
+            "text": "The West Bank is landlocked (no sea coast); the Gaza Strip lies on the Mediterranean."
+          },
+          {
+            "id": "PSE.en.3",
+            "type": "sound",
+            "text": "Palestine: a pale stone from the West Bank hills, set down between Jordan and the sea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "PSE.nb.1",
+            "type": "anchor",
+            "text": "Palestina består av to atskilte områder: Vestbredden, vest for Jordan, og Gazastripen, ved Egypt."
+          },
+          {
+            "id": "PSE.nb.2",
+            "type": "etymology",
+            "text": "Vestbredden har navnet fordi området ligger på vestbredden av Jordanelva."
+          },
+          {
+            "id": "PSE.nb.3",
+            "type": "sound",
+            "text": "Palestina: en pall med stein fra åsene på Vestbredden."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "PSE.cap.en.1",
+            "type": "contrast",
+            "text": "Palestine names East Jerusalem as its capital, while the government works from Ramallah."
+          },
+          {
+            "id": "PSE.cap.en.2",
+            "type": "anchor",
+            "text": "Ramallah, the seat of government, lies just north of Jerusalem in the West Bank."
+          }
+        ],
+        "nb": [
+          {
+            "id": "PSE.cap.nb.1",
+            "type": "contrast",
+            "text": "Palestina regner Øst-Jerusalem som hovedstad, mens regjeringen holder til i Ramallah."
+          },
+          {
+            "id": "PSE.cap.nb.2",
+            "type": "anchor",
+            "text": "Ramallah, regjeringssetet, ligger like nord for Jerusalem på Vestbredden."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Black, white and green stripes with a red triangle at the hoist. Jordan's adds a white star.",
+        "nb": "Svart, hvit og grønn stripe med en rød trekant ved stangen. Jordans har i tillegg en hvit stjerne."
+      },
+      "facts": [
+        {
+          "id": "PSE.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Palestine borders Israel, Jordan and Egypt.",
+            "nb": "Palestina grenser til Israel, Jordan og Egypt."
+          }
+        },
+        {
+          "id": "PSE.f2",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Gaza Strip has a short Mediterranean coast and borders Egypt to the south.",
+            "nb": "Gazastripen har en kort kyst mot Middelhavet og grenser til Egypt i sør."
+          }
+        },
+        {
+          "id": "PSE.f3",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Palestine has no currency of its own; it uses the Israeli new shekel and the Jordanian dinar.",
+            "nb": "Palestina har ingen egen valuta; der brukes ny israelsk shekel og jordansk dinar."
+          }
+        },
+        {
+          "id": "PSE.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Jericho, in the West Bank, lies below sea level and is often called the lowest city in the world.",
+            "nb": "Jeriko på Vestbredden ligger under havnivå og kalles ofte verdens laveste by."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "QAT",
+      "hooks": {
+        "en": [
+          {
+            "id": "QAT.en.1",
+            "type": "anchor",
+            "text": "Qatar's only land border is with Saudi Arabia, at the base of its peninsula."
+          },
+          {
+            "id": "QAT.en.2",
+            "type": "shape",
+            "text": "Qatar is a thumb pointing north into the Persian Gulf, with Bahrain just off its west side."
+          },
+          {
+            "id": "QAT.en.3",
+            "type": "contrast",
+            "text": "Qatar and Bahrain have look-alike flags; Qatar's is maroon, Bahrain's is red."
+          }
+        ],
+        "nb": [
+          {
+            "id": "QAT.nb.1",
+            "type": "anchor",
+            "text": "Qatar er en halvøy som stikker nordover fra Saudi-Arabia ut i Persiabukta."
+          },
+          {
+            "id": "QAT.nb.2",
+            "type": "shape",
+            "text": "Qatar er en tommel som peker nordover i Persiabukta, med Bahrain like vest for."
+          },
+          {
+            "id": "QAT.nb.3",
+            "type": "contrast",
+            "text": "Qatar og Bahrain har like flagg; Qatars er vinrødt, Bahrains er rødt."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "QAT.cap.en.1",
+            "type": "anchor",
+            "text": "Doha sits on the east coast, about halfway up the peninsula."
+          },
+          {
+            "id": "QAT.cap.en.2",
+            "type": "sound",
+            "text": "Doha: a ball of dough rolls along the seafront of Qatar's capital."
+          }
+        ],
+        "nb": [
+          {
+            "id": "QAT.cap.nb.1",
+            "type": "anchor",
+            "text": "Doha ligger på østkysten, omtrent midt på halvøya."
+          },
+          {
+            "id": "QAT.cap.nb.2",
+            "type": "sound",
+            "text": "Doha: en do med havutsikt, rett ved Persiabukta."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Maroon with a white band at the hoist and a zigzag edge of nine points.",
+        "nb": "Vinrødt med hvitt felt ved stangen og en sagtakket kant med ni tagger."
+      },
+      "facts": [
+        {
+          "id": "QAT.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Qatar's only land border is with Saudi Arabia.",
+            "nb": "Qatars eneste landegrense er mot Saudi-Arabia."
+          }
+        },
+        {
+          "id": "QAT.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Qatar hosted the men's FIFA World Cup, the first held in the Arab world.",
+            "nb": "Qatar var vert for fotball-VM for menn, det første i den arabiske verden."
+          }
+        },
+        {
+          "id": "QAT.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Qatar shares the world's largest natural gas field with Iran, under the Persian Gulf.",
+            "nb": "Qatar deler verdens største naturgassfelt med Iran, under Persiabukta."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "SAU",
+      "hooks": {
+        "en": [
+          {
+            "id": "SAU.en.1",
+            "type": "anchor",
+            "text": "Saudi Arabia covers most of the Arabian Peninsula, between the Red Sea and the Persian Gulf."
+          },
+          {
+            "id": "SAU.en.2",
+            "type": "etymology",
+            "text": "Saudi Arabia is named after its ruling family, the House of Saud."
+          },
+          {
+            "id": "SAU.en.3",
+            "type": "sound",
+            "text": "Saudi Arabia: a sultan saws a giant dune in half between two seas."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SAU.nb.1",
+            "type": "anchor",
+            "text": "Saudi-Arabia dekker det meste av Den arabiske halvøy, mellom Rødehavet og Persiabukta."
+          },
+          {
+            "id": "SAU.nb.2",
+            "type": "etymology",
+            "text": "Saudi-Arabia har navn etter kongefamilien, huset Saud."
+          },
+          {
+            "id": "SAU.nb.3",
+            "type": "sound",
+            "text": "Saudi-Arabia: en ensom sau vandrer over sanddynene mellom to hav."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "SAU.cap.en.1",
+            "type": "anchor",
+            "text": "Riyadh lies inland, in the middle of the peninsula, far from both coasts."
+          },
+          {
+            "id": "SAU.cap.en.2",
+            "type": "etymology",
+            "text": "Riyadh means 'gardens', after the oases the city grew around."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SAU.cap.nb.1",
+            "type": "anchor",
+            "text": "Riyadh ligger inne i landet, midt på halvøya, langt fra begge kystene."
+          },
+          {
+            "id": "SAU.cap.nb.2",
+            "type": "etymology",
+            "text": "Riyadh betyr «hagene», etter oasene byen vokste fram rundt."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green with the Islamic creed, the Shahada, in white Arabic script above a sword.",
+        "nb": "Grønt med den islamske trosbekjennelsen i hvit arabisk skrift over et sverd."
+      },
+      "facts": [
+        {
+          "id": "SAU.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Saudi Arabia borders Jordan, Iraq, Kuwait, Qatar, the United Arab Emirates, Oman and Yemen.",
+            "nb": "Saudi-Arabia grenser til Jordan, Irak, Kuwait, Qatar, De forente arabiske emirater, Oman og Jemen."
+          }
+        },
+        {
+          "id": "SAU.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Mecca and Medina, the two holiest cities of Islam, are both in Saudi Arabia.",
+            "nb": "Mekka og Medina, islams to helligste byer, ligger begge i Saudi-Arabia."
+          }
+        },
+        {
+          "id": "SAU.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Saudi Arabia has no permanent rivers.",
+            "nb": "Saudi-Arabia har ingen elver som renner hele året."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "SYR",
+      "hooks": {
+        "en": [
+          {
+            "id": "SYR.en.1",
+            "type": "anchor",
+            "text": "Syria sits north of Jordan and east of Lebanon, with a short Mediterranean coast."
+          },
+          {
+            "id": "SYR.en.2",
+            "type": "anchor",
+            "text": "The Euphrates enters Syria from Türkiye and flows southeast into Iraq."
+          },
+          {
+            "id": "SYR.en.3",
+            "type": "story",
+            "text": "Palmyra, a caravan city in the Syrian desert, grew rich on trade between Rome and the East."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SYR.nb.1",
+            "type": "anchor",
+            "text": "Syria ligger nord for Jordan og øst for Libanon, med en kort kyst mot Middelhavet."
+          },
+          {
+            "id": "SYR.nb.2",
+            "type": "sound",
+            "text": "Syria: sirup renner fra en stabel baklava på markedet i Damaskus."
+          },
+          {
+            "id": "SYR.nb.3",
+            "type": "story",
+            "text": "Palmyra, en karavaneby i den syriske ørkenen, ble rik på handel mellom Roma og Østen."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "SYR.cap.en.1",
+            "type": "anchor",
+            "text": "Damascus lies in the southwest of Syria, near the border with Lebanon."
+          },
+          {
+            "id": "SYR.cap.en.2",
+            "type": "etymology",
+            "text": "Damask, the patterned fabric, is named after Damascus."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SYR.cap.nb.1",
+            "type": "anchor",
+            "text": "Damaskus ligger sørvest i Syria, nær grensen til Libanon."
+          },
+          {
+            "id": "SYR.cap.nb.2",
+            "type": "etymology",
+            "text": "Damask, det mønstrete stoffet, har navn etter Damaskus."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green, white and black horizontal stripes with three red stars in the white.",
+        "nb": "Grønne, hvite og svarte vannrette striper med tre røde stjerner i det hvite feltet."
+      },
+      "facts": [
+        {
+          "id": "SYR.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Syria borders Türkiye, Iraq, Jordan, Israel and Lebanon.",
+            "nb": "Syria grenser til Tyrkia, Irak, Jordan, Israel og Libanon."
+          }
+        },
+        {
+          "id": "SYR.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Euphrates crosses Syria on its way from Türkiye to Iraq.",
+            "nb": "Eufrat krysser Syria på veien fra Tyrkia til Irak."
+          }
+        },
+        {
+          "id": "SYR.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Ugarit, on Syria's coast, left one of the earliest known alphabets, written in wedge-shaped signs.",
+            "nb": "Ugarit, på kysten av Syria, etterlot et av de eldste kjente alfabetene, skrevet med kileformede tegn."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "TUR",
+      "hooks": {
+        "en": [
+          {
+            "id": "TUR.en.1",
+            "type": "anchor",
+            "text": "Türkiye spans two continents: a small corner in Europe and the large Anatolian peninsula in Asia."
+          },
+          {
+            "id": "TUR.en.2",
+            "type": "shape",
+            "text": "Türkiye is a long rectangular rug laid between the Black Sea and the Mediterranean."
+          },
+          {
+            "id": "TUR.en.3",
+            "type": "contrast",
+            "text": "Türkiye borders both Greece and Iran: it reaches from the Balkans to the Persian world."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TUR.nb.1",
+            "type": "anchor",
+            "text": "Tyrkia strekker seg over to verdensdeler: et lite hjørne i Europa og den store halvøya Anatolia i Asia."
+          },
+          {
+            "id": "TUR.nb.2",
+            "type": "shape",
+            "text": "Tyrkia er et langt, rektangulært teppe lagt mellom Svartehavet og Middelhavet."
+          },
+          {
+            "id": "TUR.nb.3",
+            "type": "sound",
+            "text": "Tyrkia: en tyr står på brua over Bosporos med ett bein i Europa og ett i Asia."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "TUR.cap.en.1",
+            "type": "contrast",
+            "text": "Istanbul is the largest city, but the capital is Ankara, in central Anatolia."
+          },
+          {
+            "id": "TUR.cap.en.2",
+            "type": "story",
+            "text": "Atatürk made Ankara the capital, a central town far from the old imperial seat of Istanbul."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TUR.cap.nb.1",
+            "type": "contrast",
+            "text": "Istanbul er størst, men hovedstaden er Ankara, midt i Anatolia."
+          },
+          {
+            "id": "TUR.cap.nb.2",
+            "type": "sound",
+            "text": "Ankara: et anker kastet midt i Anatolia, langt fra havet."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red with a white crescent and a white star, the crescent opening toward the fly.",
+        "nb": "Rødt med en hvit halvmåne og en hvit stjerne, med halvmånen åpen mot den frie kanten."
+      },
+      "facts": [
+        {
+          "id": "TUR.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Türkiye borders Greece, Bulgaria, Georgia, Armenia, Azerbaijan, Iran, Iraq and Syria.",
+            "nb": "Tyrkia grenser til Hellas, Bulgaria, Georgia, Armenia, Aserbajdsjan, Iran, Irak og Syria."
+          }
+        },
+        {
+          "id": "TUR.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Bosphorus strait splits Istanbul between Europe and Asia.",
+            "nb": "Bosporos-stredet deler Istanbul mellom Europa og Asia."
+          }
+        },
+        {
+          "id": "TUR.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Tulips reached Western Europe from the Ottoman Empire.",
+            "nb": "Tulipanen kom til Vest-Europa fra Osmanerriket."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "YEM",
+      "hooks": {
+        "en": [
+          {
+            "id": "YEM.en.1",
+            "type": "anchor",
+            "text": "Yemen fills the southwest corner of the Arabian Peninsula, south of Saudi Arabia."
+          },
+          {
+            "id": "YEM.en.2",
+            "type": "anchor",
+            "text": "Yemen faces Djibouti and Eritrea across the Bab-el-Mandeb, the strait at the mouth of the Red Sea."
+          },
+          {
+            "id": "YEM.en.3",
+            "type": "story",
+            "text": "Mocha, an old Yemeni port, gave its name to mocha coffee."
+          }
+        ],
+        "nb": [
+          {
+            "id": "YEM.nb.1",
+            "type": "anchor",
+            "text": "Jemen ligger i sørvesthjørnet av Den arabiske halvøy, sør for Saudi-Arabia."
+          },
+          {
+            "id": "YEM.nb.2",
+            "type": "anchor",
+            "text": "Jemen ligger rett over Bab el-Mandeb-stredet fra Djibouti og Eritrea, ved inngangen til Rødehavet."
+          },
+          {
+            "id": "YEM.nb.3",
+            "type": "story",
+            "text": "Havnebyen Mokka i Jemen har gitt navn til mokkakaffe."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "YEM.cap.en.1",
+            "type": "anchor",
+            "text": "Sanaa, the constitutional capital, sits high in the mountains, with tall tower houses of mud brick."
+          },
+          {
+            "id": "YEM.cap.en.2",
+            "type": "contrast",
+            "text": "Aden, a port on the Gulf of Aden, serves as seat of the internationally recognized government."
+          }
+        ],
+        "nb": [
+          {
+            "id": "YEM.cap.nb.1",
+            "type": "anchor",
+            "text": "Sana, den grunnlovsfestede hovedstaden, ligger høyt i fjellene, med høye tårnhus av leirstein."
+          },
+          {
+            "id": "YEM.cap.nb.2",
+            "type": "contrast",
+            "text": "Aden, en havneby ved Adenbukta, er sete for den internasjonalt anerkjente regjeringen."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Plain red, white and black horizontal stripes, with no emblem or stars.",
+        "nb": "Enkle røde, hvite og svarte vannrette striper, uten våpen eller stjerner."
+      },
+      "facts": [
+        {
+          "id": "YEM.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Yemen borders Saudi Arabia and Oman.",
+            "nb": "Jemen grenser til Saudi-Arabia og Oman."
+          }
+        },
+        {
+          "id": "YEM.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Yemeni island of Socotra is known for its umbrella-shaped dragon's blood trees.",
+            "nb": "Den jemenittiske øya Sokotra er kjent for de paraplyformede drageblodtrærne."
+          }
+        },
+        {
+          "id": "YEM.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Shibam, a walled town in Yemen, packs mud-brick tower houses so tightly it is called the Manhattan of the desert.",
+            "nb": "Shibam, en bymur-omkranset by i Jemen, har så tette tårnhus av leirstein at den kalles ørkenens Manhattan."
+          }
+        }
+      ]
+    }
+  ]
+}
