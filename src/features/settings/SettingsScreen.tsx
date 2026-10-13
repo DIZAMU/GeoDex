@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import { db, type SettingsRow } from "@/db/db";
@@ -57,6 +58,15 @@ function Choice<T extends string | number>({
   );
 }
 
+function Group({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <section className="surface flex flex-col gap-6 p-5 md:p-7">
+      <h2 className="font-name text-lg">{title}</h2>
+      {children}
+    </section>
+  );
+}
+
 export function SettingsScreen() {
   const { t, i18n } = useTranslation();
   const locale = isLocale(i18n.language) ? i18n.language : "en";
@@ -67,57 +77,62 @@ export function SettingsScreen() {
   const set = (patch: Partial<SettingsRow>) => void updateSettings(db, patch);
 
   return (
-    <div className="mx-auto flex w-full max-w-3xl flex-col gap-8 px-4 py-10 md:px-10">
-      <h1 className="font-name text-3xl">{t("settings.title")}</h1>
-      <LanguageSwitcher />
-      <ThemeSwitcher />
-      <Choice
-        label={t("settings.dailyMinutes")}
-        value={
-          MINUTES.includes(s.dailyMinutes as (typeof MINUTES)[number])
-            ? (s.dailyMinutes as (typeof MINUTES)[number])
-            : 18
-        }
-        options={MINUTES}
-        render={(m) => t("settings.minutes", { count: m })}
-        onChange={(dailyMinutes) => set({ dailyMinutes })}
-        testId="minutes"
-      />
-      <Choice
-        label={t("settings.countdown")}
-        value={s.countdownSeconds}
-        options={COUNTDOWNS}
-        render={(n) => (n === 0 ? t("settings.countdownOff") : t("settings.seconds", { count: n }))}
-        onChange={(countdownSeconds) => set({ countdownSeconds })}
-        testId="countdown"
-      />
-      <Choice
-        label={t("settings.currencyLanguage")}
-        value={s.currencyAndLanguage ? "on" : "off"}
-        options={["on", "off"] as const}
-        render={(v) => (v === "on" ? t("settings.on") : t("settings.off"))}
-        onChange={(v) => set({ currencyAndLanguage: v === "on" })}
-        testId="stage4"
-      />
-      <section className="flex flex-col gap-3">
-        <h2 className="text-sm text-muted-foreground">{t("settings.homeCountry")}</h2>
+    <div className="stagger mx-auto flex w-full max-w-3xl flex-col gap-6 px-4 py-8 md:px-10 md:py-14">
+      <h1 className="font-name text-4xl tracking-tight">{t("settings.title")}</h1>
+      <Group title={t("settings.groupLook")}>
+        <LanguageSwitcher />
+        <ThemeSwitcher />
+      </Group>
+      <Group title={t("settings.groupStudy")}>
+        <Choice
+          label={t("settings.dailyMinutes")}
+          value={
+            MINUTES.includes(s.dailyMinutes as (typeof MINUTES)[number])
+              ? (s.dailyMinutes as (typeof MINUTES)[number])
+              : 18
+          }
+          options={MINUTES}
+          render={(m) => t("settings.minutes", { count: m })}
+          onChange={(dailyMinutes) => set({ dailyMinutes })}
+          testId="minutes"
+        />
+        <Choice
+          label={t("settings.countdown")}
+          value={s.countdownSeconds}
+          options={COUNTDOWNS}
+          render={(n) =>
+            n === 0 ? t("settings.countdownOff") : t("settings.seconds", { count: n })
+          }
+          onChange={(countdownSeconds) => set({ countdownSeconds })}
+          testId="countdown"
+        />
+        <Choice
+          label={t("settings.currencyLanguage")}
+          value={s.currencyAndLanguage ? "on" : "off"}
+          options={["on", "off"] as const}
+          render={(v) => (v === "on" ? t("settings.on") : t("settings.off"))}
+          onChange={(v) => set({ currencyAndLanguage: v === "on" })}
+          testId="stage4"
+        />
+        <Button
+          variant="outline"
+          className="self-start"
+          onClick={async () => {
+            await db.placementProgress.clear();
+            navigate("/placement");
+          }}
+        >
+          {t("settings.rerunPlacement")}
+        </Button>
+      </Group>
+      <Group title={t("settings.homeCountry")}>
         <CountryPicker
           countries={scopedCountries(learner.world, s)}
           value={s.homeCountry}
           onChange={(homeCountry) => set({ homeCountry })}
           locale={locale}
         />
-      </section>
-      <Button
-        variant="outline"
-        className="self-start"
-        onClick={async () => {
-          await db.placementProgress.clear();
-          navigate("/placement");
-        }}
-      >
-        {t("settings.rerunPlacement")}
-      </Button>
+      </Group>
     </div>
   );
 }

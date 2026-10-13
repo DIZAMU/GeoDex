@@ -67,11 +67,15 @@ export function PromptText({
   })();
   return (
     <div className="flex flex-col gap-3 lg:gap-4">
-      <h2 className="font-name text-lg lg:text-2xl" data-testid="prompt">
+      <h2 className="font-name text-xl tracking-tight lg:text-3xl" data-testid="prompt">
         {text}
       </h2>
       {question.prompt.kind === "flag" ? (
-        <Flag iso2={country.iso2} alt={t("flag.alt")} className="w-48 max-w-full" />
+        <Flag
+          iso2={country.iso2}
+          alt={t("flag.alt")}
+          className="w-56 max-w-full shadow-[var(--elevation)]"
+        />
       ) : null}
     </div>
   );
@@ -87,21 +91,21 @@ export function ChoiceAnswer({
   disabled?: boolean;
 }) {
   return (
-    <ol className="flex flex-col gap-2" data-testid="choices">
+    <ol className="stagger flex flex-col gap-2.5" data-testid="choices">
       {options.map((option, index) => (
         <li key={option.id}>
-          <Button
-            variant="outline"
-            className="h-auto min-h-11 w-full justify-start gap-3 py-2 text-left text-base whitespace-normal"
+          <button
+            type="button"
+            className="group flex min-h-12 w-full items-center gap-3 rounded-lg border border-border bg-background/40 px-3 py-2.5 text-left text-base transition-[background-color,border-color,box-shadow,transform] duration-200 ease-(--ease-ui) outline-none hover:-translate-y-px hover:border-primary/60 hover:bg-background/70 hover:shadow-[var(--elevation-hover)] focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:scale-[0.99] disabled:pointer-events-none disabled:opacity-50 motion-reduce:hover:translate-y-0 motion-reduce:active:scale-100"
             onClick={() => onPick(option.id)}
             disabled={disabled}
             data-option={option.id}
           >
-            <kbd className="rounded border border-border px-1.5 text-sm text-muted-foreground">
+            <kbd className="flex size-7 shrink-0 items-center justify-center rounded-md border border-border bg-card text-sm text-muted-foreground transition-colors duration-200 group-hover:border-primary/60 group-hover:text-foreground">
               {index + 1}
             </kbd>
             <span>{option.label}</span>
-          </Button>
+          </button>
         </li>
       ))}
     </ol>
@@ -119,7 +123,7 @@ export function FlagAnswer({
 }) {
   const { t } = useTranslation();
   return (
-    <ol className="grid grid-cols-2 gap-3" data-testid="flag-choices">
+    <ol className="stagger grid grid-cols-2 gap-3" data-testid="flag-choices">
       {options.map((option, index) => (
         <li key={option.id}>
           <button
@@ -127,10 +131,10 @@ export function FlagAnswer({
             onClick={() => onPick(option.id)}
             disabled={disabled}
             data-option={option.id}
-            className="relative block w-full rounded-md p-1 outline-none hover:bg-muted focus-visible:ring-3 focus-visible:ring-ring/50"
+            className="relative block w-full rounded-lg border border-transparent p-1.5 transition-[background-color,border-color,box-shadow,transform] duration-200 ease-(--ease-ui) outline-none hover:-translate-y-0.5 hover:border-primary/60 hover:bg-background/60 hover:shadow-[var(--elevation-hover)] focus-visible:ring-3 focus-visible:ring-ring/50 active:scale-[0.98] motion-reduce:hover:translate-y-0 motion-reduce:active:scale-100"
           >
             <Flag iso2={option.flag ?? ""} alt={t("flag.alt")} className="w-full" />
-            <kbd className="absolute top-2 left-2 rounded bg-background/80 px-1.5 text-sm">
+            <kbd className="absolute top-3 left-3 flex size-6 items-center justify-center rounded-md bg-background/85 text-sm shadow-sm">
               {index + 1}
             </kbd>
           </button>
@@ -175,15 +179,15 @@ export function TypedAnswer({
         autoCorrect="off"
         spellCheck={false}
         autoComplete="off"
-        className="text-lg"
+        className="h-12 text-lg"
       />
       {hint ? <p className="text-muted-foreground">{hint}</p> : null}
       <div className="flex flex-wrap gap-2">
         <Button type="submit">{t("answer.check")}</Button>
-        <Button type="button" variant="ghost" onClick={onHint} disabled={hint !== null}>
+        <Button type="button" variant="outline" onClick={onHint} disabled={hint !== null}>
           {t("answer.hint")}
         </Button>
-        <Button type="button" variant="ghost" onClick={onGiveUp}>
+        <Button type="button" variant="outline" onClick={onGiveUp}>
           {t("answer.giveUp")}
         </Button>
       </div>
@@ -201,15 +205,25 @@ export function StatusLine({
   const { t } = useTranslation();
   return (
     <p
-      className="flex items-center gap-2 font-name text-lg"
+      className={cn(
+        "flex items-center gap-2.5 self-start rounded-full py-1 pr-4 pl-1 font-name text-lg",
+        correct ? "bg-primary/15" : "bg-destructive/15",
+      )}
       data-testid="status"
       data-correct={correct}
     >
-      {correct ? (
-        <CheckIcon aria-hidden className="size-5" />
-      ) : (
-        <XIcon aria-hidden className="size-5" />
-      )}
+      <span
+        className={cn(
+          "flex size-8 items-center justify-center rounded-full",
+          correct ? "bg-primary text-primary-foreground" : "bg-destructive text-background",
+        )}
+      >
+        {correct ? (
+          <CheckIcon aria-hidden className="size-5" strokeWidth={2.5} />
+        ) : (
+          <XIcon aria-hidden className="size-5" strokeWidth={2.5} />
+        )}
+      </span>
       <span>{correct ? t("feedback.correct") : t("feedback.wrong")}</span>
       {children}
     </p>
@@ -222,14 +236,14 @@ export function CountryCard({ country, locale }: { country: Country; locale: Loc
   const other: Locale = locale === "en" ? "nb" : "en";
   const capitals = country.capitals;
   return (
-    <div className="flex items-start gap-4">
+    <div className="surface flex items-start gap-4 p-4">
       <Flag
         iso2={country.iso2}
         alt={t("flag.of", { name: country.names[locale] })}
-        className="w-20 shrink-0"
+        className="w-20 shrink-0 shadow-sm"
       />
       <div className="flex min-w-0 flex-col gap-1">
-        <p className="font-name text-xl leading-tight" data-testid="answer-name">
+        <p className="font-name text-2xl leading-tight tracking-tight" data-testid="answer-name">
           {country.names[locale]}
           {country.names[other] !== country.names[locale] ? (
             <span className="ml-2 text-sm font-normal text-muted-foreground" lang={other}>
