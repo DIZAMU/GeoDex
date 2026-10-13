@@ -1,10 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="atlas">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GeoDex</title>
+    <script>
+      // Applies the stored theme before first paint. Mirrors src/themes/apply.ts.
+      (() => {
+        var preference = "atlas";
+        try {
+          preference = localStorage.getItem("geodex.theme") || preference;
+        } catch {}
+        if (["atlas", "minimal", "playful", "auto"].indexOf(preference) < 0) preference = "atlas";
+        var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var root = document.documentElement;
+        root.dataset.theme = preference === "auto" ? (dark ? "atlas" : "minimal") : preference;
+        root.dataset.themePreference = preference;
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
