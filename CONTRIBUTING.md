@@ -1,6 +1,6 @@
 # CONTRIBUTING.md
 
-Geodex is a spaced-repetition geography trainer by DIZAMU (sole author). The full spec is in `PLAN.md`; section 0 lists decisions already made with the author, do not reopen them. The voice for all learner-facing text is in `content/VOICE.md`.
+GeoDex is a spaced-repetition geography trainer by DIZAMU (sole author). The full spec is in `PLAN.md`; section 0 lists decisions already made with the author, do not reopen them. The voice for all learner-facing text is in `content/VOICE.md`.
 
 ## How to work
 
@@ -12,7 +12,7 @@ Geodex is a spaced-repetition geography trainer by DIZAMU (sole author). The ful
 
 ## Hard rules
 
-- The repo is `DIZAMU/Geodex`, private. Never change its visibility, never add other remotes, never force-push `main`.
+- The repo is `DIZAMU/GeoDex`, private. Never change its visibility, never add other remotes, never force-push `main`.
 - No dependency or service that costs money or needs an API key. The only external service is optional Supabase.
 - No LLM API calls from app code or scripts. All content is written by you during development and committed.
 - No runtime network requests except Supabase, same-origin assets, and Wikimedia Commons images for landmarks. No font CDNs, flag CDNs or tile servers.

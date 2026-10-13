@@ -1,4 +1,4 @@
-# Geodex: Build Plan
+# GeoDex: Build Plan
 
 Author: DIZAMU (sole author). Spaced-repetition geography trainer. Local-first web app (installable PWA), laptop-first, with Supabase sync to phone. Zero running cost, no paid APIs, English and Norwegian.
 
@@ -10,7 +10,7 @@ Read `CONTRIBUTING.md` for working rules. Read `content/VOICE.md` before writing
 
 | Topic | Decision |
 |---|---|
-| Name | Geodex (repo `DIZAMU/Geodex`) |
+| Name | GeoDex (repo `DIZAMU/GeoDex`) |
 | Repo visibility | Private for now. Going public is the author's call at release (Phase 10) |
 | Primary layout | Laptop first. Phone fully supported |
 | Daily time | 15-20 min. New-card count adapts to fit the budget (6.3) |
@@ -92,7 +92,7 @@ Equal Earth projection is deliberate: Mercator inflates high latitudes (Greenlan
 ## 3. Licensing, attribution, contributions
 
 - **Code and content:** PolyForm Noncommercial 1.0.0. Copy the official text verbatim into `LICENSE` from https://polyformproject.org/licenses/noncommercial/1.0.0/ and add:
-  `Required Notice: Copyright (c) 2026 DIZAMU (https://github.com/DIZAMU/Geodex)`
+  `Required Notice: Copyright (c) 2026 DIZAMU (https://github.com/DIZAMU/GeoDex)`
   The notices clause requires anyone redistributing to keep this line. That is the credit requirement.
 - The repo is source-available, not OSI open source. README states: free for personal and noncommercial use, credit to DIZAMU required, commercial use not permitted.
 - **Contributions:** sole author. Once the repo is public, README says issues are welcome for fact corrections; pull requests are not accepted.
@@ -583,7 +583,7 @@ On answer: the map flies to the target (~600 ms d3-zoom transition), the target 
 - **Placement:** intro line, adaptive test, result map.
 - **Session:** desktop has the map on the left two thirds and the panel on the right; phone has the map in the top ~55% and the panel in a bottom sheet. Thin progress bar + "34 left". Optional countdown ring when enabled.
 - **Session summary:** reviews done, today's retention, new achievements, tomorrow's forecast.
-- **Atlas (the Geodex):** full-screen mastery map with module switcher. Unseen items show as silhouettes. Region achievement badges. Entry pages: state of every card, capitals, flag, currency, languages, neighbors, cities, facts seen, review history sparkline.
+- **Atlas (the GeoDex):** full-screen mastery map with module switcher. Unseen items show as silhouettes. Region achievement badges. Entry pages: state of every card, capitals, flag, currency, languages, neighbors, cities, facts seen, review history sparkline.
 - **Stats:** skill x continent grid, retention vs target (30 days), forecast (30 days), top confusions, leeches, hooks that work for you, recognition-only share, 365-day heatmap.
 - **Settings:** language, home country, daily minutes or fixed new cards, target retention, day start hour, countdown (off / 10 / 15 / 20 s), scope toggles, modules and weights, theme, sync sign-in, rerun placement, export/import, reset.
 
@@ -615,7 +615,7 @@ Copy: sentence case, active verbs, no praise filler. Errors say what happened an
 ## 9. Repo structure
 
 ```
-Geodex/
+GeoDex/
   CONTRIBUTING.md
   PLAN.md
   DECISIONS.md               # deviations from the plan, ADR style
