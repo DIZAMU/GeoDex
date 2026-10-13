@@ -1,12 +1,13 @@
 import { execFileSync } from "node:child_process";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { findDashes, shouldCheck } from "./dashes.ts";
 
 const files = execFileSync("git", ["ls-files", "--cached", "--others", "--exclude-standard"], {
   encoding: "utf8",
 })
   .split("\n")
-  .filter((path) => path !== "" && shouldCheck(path));
+  // Deleted files stay in the index until staged.
+  .filter((path) => path !== "" && shouldCheck(path) && existsSync(path));
 
 const hits = files.flatMap((path) => findDashes(path, readFileSync(path, "utf8")));
 
