@@ -71,8 +71,9 @@ export function SyncSection() {
               </label>
               <Input
                 id="sync-code"
-                inputMode="numeric"
                 autoComplete="one-time-code"
+                autoCapitalize="off"
+                spellCheck={false}
                 required
                 placeholder={t("sync.code")}
                 value={code}

@@ -58,7 +58,7 @@ Without Supabase settings the app is local-only and fully works. To sync between
 2. In the SQL editor, run `supabase/migrations/0001_init.sql`. It creates the event tables (insert and read only, never update or delete) and the settings table, all with row-level security.
 3. Under Authentication, Users, add your own user with your email address. The app never creates accounts.
 4. Under Authentication, Sign In / Providers, turn off **Allow new users to sign up**. The publishable key ships in the app by design; row-level security protects your data, and disabled sign-ups stop anyone else from creating an account on your project.
-5. Under Authentication, Emails, edit the **Magic Link** template so it contains the code, for example `Your GeoDex code: {{ .Token }}`. The app signs in with a typed code, not a link, because home-screen apps on iOS keep their storage separate from Safari.
+5. Under Authentication, URL Configuration, set the Site URL to the app's address (for example `https://geodex.dilovanzm.workers.dev`) and add the same address under Redirect URLs.
 6. Under Project Settings, API, copy the project URL and the publishable key. Put them in `.env.local` for development and in the Cloudflare Worker's build variables, never in the repo:
 
 ```
@@ -66,7 +66,7 @@ VITE_SUPABASE_URL=https://<project>.supabase.co
 VITE_SUPABASE_PUBLISHABLE_KEY=<publishable key>
 ```
 
-Then sign in under Settings, Sync, on each device. Sync runs when the app opens, when a session ends, when the tab is hidden, every five minutes, and when the connection returns. Free projects pause after a week without use; the app keeps working locally and syncs again once the project is restored.
+Then sign in under Settings, Sync, on each device: enter your email, and Supabase sends a sign-in email. On a laptop, click the link in it. In an app added to an iPhone home screen, long-press the link, copy it, and paste it into the app: home-screen apps keep their storage separate from Safari, so opening the link would sign in the wrong place. (With custom SMTP set up in Supabase you can add `{{ .Token }}` to the Magic Link template and type the code instead.) Sync runs when the app opens, when a session ends, when the tab is hidden, every five minutes, and when the connection returns. Free projects pause after a week without use; the app keeps working locally and syncs again once the project is restored.
 
 Settings, Backup exports everything to a JSON file and imports one, with or without Supabase.
 

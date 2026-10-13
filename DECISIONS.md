@@ -165,3 +165,9 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 - **`duration_ms` column:** the review event schema in PLAN.md 5.6 has no column for `durationMs` (DECISIONS.md 023), so the migration adds `duration_ms integer`. Without it, a synced device would lose the time-budget input for events from other devices.
 - **Fresh settings:** a new device writes default settings with `updatedAt: 0`, so on its first sync the settings from an existing device win by last write wins instead of being overwritten by defaults.
 - **Accounts:** the app asks for an email code with `shouldCreateUser: false`, so it can never create an account. The author creates the account in the Supabase dashboard, then disables sign-ups (README).
+
+## 031. Sign in with a pasted link
+
+- **Context:** PLAN.md 5.6 asks for an email code typed into the app. Supabase now lets the Magic Link email template be edited only with custom SMTP, which would add another service, and the default email contains a link, not a code.
+- **Options:** (a) require custom SMTP so the email can show `{{ .Token }}`; (b) accept the link itself: the learner pastes it into the app, which reads its token hash and calls `verifyOtp` with it.
+- **Decision:** (b), and typed codes still work if a template shows one. Pasting keeps the iOS benefit of codes (sign-in happens inside the home-screen app's own storage) with no extra service. On a laptop, clicking the link signs in directly, since the client picks the session up from the URL.
