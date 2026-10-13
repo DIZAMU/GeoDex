@@ -25,7 +25,7 @@
     "data:build": "node scripts/data/build-countries.ts && node scripts/data/build-flags.ts",
     "data:verify": "node scripts/data/verify.ts",
     "content:compile": "node scripts/content/compile-templates.ts",
-    "content:lint": "node scripts/content/lint.ts",
+    "content:lint": "node scripts/content/lint.ts --complete",
     "content:review": "node scripts/content/review.ts"
   },
   "dependencies": {
