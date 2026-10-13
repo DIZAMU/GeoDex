@@ -171,3 +171,10 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 - **Context:** PLAN.md 5.6 asks for an email code typed into the app. Supabase now lets the Magic Link email template be edited only with custom SMTP, which would add another service, and the default email contains a link, not a code.
 - **Options:** (a) require custom SMTP so the email can show `{{ .Token }}`; (b) accept the link itself: the learner pastes it into the app, which reads its token hash and calls `verifyOtp` with it.
 - **Decision:** (b), and typed codes still work if a template shows one. Pasting keeps the iOS benefit of codes (sign-in happens inside the home-screen app's own storage) with no extra service. On a laptop, clicking the link signs in directly, since the client picks the session up from the URL.
+
+## 032. Phase 5 progress details
+
+- **Playful mastery ramp:** PLAN.md 8.1 asks for viridis. Viridis starts at saturated yellow, which made every country not yet started the loudest thing on the Atlas and Stats screens. Options: (a) plain viridis for levels 0 to 4; (b) a neutral tint for level 0 (not started is the absence of mastery, not a step on the scale) and viridis for levels 1 to 4. Chose (b); the ramp stays luminance-monotonic and is covered by the contrast test.
+- **Card cache self-heal:** the empty-cache check runs once per load. Checking on every update misread the moment between the first review event and its card state (two live queries update one after the other) as a missing cache, and remounted the running session.
+- **Region drills:** studied cards first, then location cards for every country in the region fill the drill to 20, so a region with one studied card still gives a real drill.
+- **Mastery level of a country for a skill** is the lower level of the skill's two cards, so both directions must be known before a country reads as mastered.

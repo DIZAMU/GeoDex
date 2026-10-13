@@ -81,6 +81,7 @@ function Atlas({ learner }: { learner: Learner }) {
             spacing={0}
             value={skill}
             aria-label={t("atlas.show")}
+            className="grid w-full grid-cols-2 sm:flex sm:w-fit"
             onValueChange={(value) => {
               if (isSkill(value)) setParams({ skill: value }, { replace: true });
             }}
@@ -93,7 +94,7 @@ function Atlas({ learner }: { learner: Learner }) {
           </ToggleGroup>
         </div>
         <div
-          className="surface h-[55dvh] min-h-0 overflow-hidden lg:h-auto lg:flex-1"
+          className="surface aspect-[16/10] min-h-0 overflow-hidden lg:aspect-auto lg:flex-1"
           data-testid="atlas-map"
         >
           <WorldMap
