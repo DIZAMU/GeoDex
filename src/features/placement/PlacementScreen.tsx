@@ -17,6 +17,7 @@ import { subregionOrder } from "@/engine/session";
 import { isLocale } from "@/i18n/locales";
 import { type MapFocus, type MapHighlight, WorldMap } from "@/map/WorldMap";
 import { Button } from "@/ui/button";
+import { Loader } from "@/ui/loader";
 import { Stat } from "@/ui/stat";
 import {
   ChoiceAnswer,
@@ -36,8 +37,7 @@ import { type Learner, useLearner } from "../study/useLearner";
 
 export function PlacementScreen() {
   const learner = useLearner();
-  const { t } = useTranslation();
-  if (!learner) return <p className="p-8 text-muted-foreground">{t("common.loading")}</p>;
+  if (!learner) return <Loader />;
   return <Placement learner={learner} />;
 }
 
@@ -179,8 +179,7 @@ function Placement({ learner }: { learner: Learner }) {
   );
 
   if (finished) return <Result learner={learner} tally={tally.current} locale={locale} />;
-  if (!state || !question || !ctx)
-    return <p className="p-8 text-muted-foreground">{t("common.loading")}</p>;
+  if (!state || !question || !ctx) return <Loader />;
 
   const subregionIds = countries.filter((c) => c.subregion === asked?.subregion).map((c) => c.id);
   const country = learner.world.byId.get(question.entityId);
@@ -349,7 +348,9 @@ function Result({
           <p className="text-muted-foreground">{t("placement.startsWith", { region })}</p>
         ) : null}
         <Button asChild size="lg" className="self-start" data-testid="to-today">
-          <Link to="/">{t("placement.toToday")}</Link>
+          <Link to="/" viewTransition>
+            {t("placement.toToday")}
+          </Link>
         </Button>
       </section>
     </div>

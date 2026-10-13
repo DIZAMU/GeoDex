@@ -170,6 +170,8 @@
   }
   html {
     @apply font-sans;
+    /* Shows through while two pages cross-fade. */
+    background-color: var(--background);
     font-weight: var(--weight-ui);
   }
   body {
@@ -183,5 +185,65 @@
   kbd {
     font-family: inherit;
     font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Loader: appears after 250 ms, then the dot orbits once a second. */
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  animation: fade 300ms var(--ease-ui) 250ms both;
+}
+
+.loader-orbit {
+  transform-origin: 24px 24px;
+  animation: orbit 1.1s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader-orbit {
+    animation: none;
+  }
+}
+
+/*
+ * Page transitions (View Transitions API). The old page fades out as the new one rises in;
+ * the header is its own layer, so it holds still between pages that share it. Browsers
+ * without the API switch pages instantly.
+ */
+::view-transition-old(root) {
+  animation: 160ms var(--ease-ui) both page-out;
+}
+
+::view-transition-new(root) {
+  animation: 320ms var(--ease-ui) 60ms both page-in;
+}
+
+::view-transition-group(site-header) {
+  animation-duration: 0s;
+}
+
+@keyframes page-out {
+  to {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.995);
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.995);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
   }
 }

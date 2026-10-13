@@ -3,6 +3,7 @@ import { createMemoryRouter, RouterProvider } from "react-router";
 import { beforeAll, describe, expect, it } from "vitest";
 import { db } from "@/db/db";
 import { ensureDeviceSettings, ensureSettings } from "@/db/settings";
+import { LearnerProvider } from "@/features/study/useLearner";
 import { routes } from "./routes";
 
 beforeAll(async () => {
@@ -13,7 +14,11 @@ beforeAll(async () => {
 describe("routes", () => {
   it("renders Today with navigation and asks a new learner to set up", async () => {
     const router = createMemoryRouter(routes, { initialEntries: ["/"] });
-    render(<RouterProvider router={router} />);
+    render(
+      <LearnerProvider>
+        <RouterProvider router={router} />
+      </LearnerProvider>,
+    );
     expect(screen.getByRole("link", { name: "Today" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Settings" })).toBeInTheDocument();
     expect(
@@ -24,7 +29,11 @@ describe("routes", () => {
 
   it("renders Settings with theme and language controls", async () => {
     const router = createMemoryRouter(routes, { initialEntries: ["/settings"] });
-    render(<RouterProvider router={router} />);
+    render(
+      <LearnerProvider>
+        <RouterProvider router={router} />
+      </LearnerProvider>,
+    );
     expect(
       await screen.findByRole("group", { name: "Theme" }, { timeout: 10_000 }),
     ).toBeInTheDocument();
