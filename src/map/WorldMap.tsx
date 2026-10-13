@@ -3,7 +3,7 @@
  * move a single transform. Labels and markers are drawn in screen space so they keep
  * their size at every zoom level.
  */
-import { geoEqualEarth, geoPath } from "d3-geo";
+import { geoEqualEarth, geoGraticule10, geoPath } from "d3-geo";
 import { select } from "d3-selection";
 import "d3-transition";
 import { type D3ZoomEvent, type ZoomBehavior, zoom, zoomIdentity } from "d3-zoom";
@@ -36,6 +36,8 @@ export type MapHighlight = {
   labels?: readonly string[];
   /** Countries shaded as known (placement result, mastery views). */
   filled?: ReadonlySet<string>;
+  /** Countries tinted lightly, such as the next region to learn. */
+  tinted?: ReadonlySet<string>;
 };
 
 export type WorldMapProps = {
@@ -52,6 +54,8 @@ export type WorldMapProps = {
   animate?: boolean;
   /** Share of the viewport left as margin around the focus. Larger shows more context. */
   padding?: number;
+  /** Pan and zoom with wheel, drag and pinch. Off for thumbnails inside scrolling pages. */
+  interactive?: boolean;
 };
 
 /** bounds: the largest polygon only, so overseas parts and date-line wraps do not widen views. */
@@ -119,16 +123,19 @@ const Land = memo(function Land({
   shapes,
   outline,
   sphere,
+  graticule,
   selectable,
 }: {
   shapes: readonly Shape[];
   outline: string;
   sphere: string;
+  graticule: string;
   selectable: ReadonlySet<string>;
 }) {
   return (
     <>
       <path d={sphere} className="map-ocean" />
+      <path d={graticule} className="map-graticule" />
       <path d={outline} className="map-land-other" />
       {shapes.map((shape) => (
         <path
@@ -153,6 +160,7 @@ export function WorldMap({
   ariaLabel,
   animate = false,
   padding = 0.12,
+  interactive = true,
 }: WorldMapProps) {
   const { ref: containerRef, width, height } = useSize<HTMLDivElement>();
   const svgRef = useRef<SVGSVGElement>(null);
@@ -216,6 +224,7 @@ export function WorldMap({
       byId: new Map([...shapes, ...markerOnly].map((s) => [s.id, s])),
       outline: path({ type: "FeatureCollection", features: others }) ?? "",
       sphere: path({ type: "Sphere" }) ?? "",
+      graticule: path(geoGraticule10()) ?? "",
     };
   }, [topology, countries, inScope, width, height]);
 
@@ -235,11 +244,12 @@ export function WorldMap({
         frame.current = requestAnimationFrame(() => setTransform({ k, x, y }));
       });
     zoomRef.current = behavior;
-    select(svg).call(behavior).on("dblclick.zoom", null);
+    // A view-only map still uses the behavior to move, but listens to no input.
+    if (interactive) select(svg).call(behavior).on("dblclick.zoom", null);
     return () => {
       select(svg).on(".zoom", null);
     };
-  }, [width, height]);
+  }, [width, height, interactive]);
 
   // Focus: fit the requested countries, animated only for the answer moment. The key is a
   // string so a new array with the same ids does not refit the map.
@@ -301,6 +311,7 @@ export function WorldMap({
     <div
       ref={containerRef}
       className="relative h-full w-full overflow-hidden bg-[var(--map-ocean)]"
+      data-interactive={interactive}
     >
       {/* biome-ignore lint/a11y/useKeyWithClickEvents: map picks have a keyboard alternative in the answer panel */}
       <svg
@@ -319,8 +330,14 @@ export function WorldMap({
                 shapes={geometry.shapes}
                 outline={geometry.outline}
                 sphere={geometry.sphere}
+                graticule={geometry.graticule}
                 selectable={selectable}
               />
+              {[...(highlight.tinted ?? [])].map((id) =>
+                geometry.byId.get(id)?.d ? (
+                  <path key={`tint-${id}`} d={geometry.byId.get(id)?.d} className="map-tinted" />
+                ) : null,
+              )}
               {[...(highlight.filled ?? [])].map((id) =>
                 geometry.byId.get(id)?.d ? (
                   <path key={`fill-${id}`} d={geometry.byId.get(id)?.d} className="map-filled" />
@@ -387,6 +404,8 @@ export function WorldMap({
           </>
         )}
       </svg>
+      {/* Edge shading gives the map depth; it never takes clicks. */}
+      <div aria-hidden className="map-vignette pointer-events-none absolute inset-0" />
     </div>
   );
 }

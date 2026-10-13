@@ -1,5 +1,5 @@
 import Dexie, { type EntityTable } from "dexie";
-import type { CardState } from "@/engine/scheduler";
+import { type CardState, createScheduler, replayAll } from "@/engine/scheduler";
 import type { AnswerMode, CardId, InputSetting, Rating } from "@/engine/types";
 import type { Locale } from "@/i18n/locales";
 import type { ThemePreference } from "@/themes/themes";
@@ -135,6 +135,25 @@ export function createDb(name = "geodex"): GeoDexDb {
           row.lastInputMode ??= "auto";
           row.persistRequested ??= false;
         });
+    });
+  // v3: correct placement answers now seed a review interval of days (DECISIONS.md 027).
+  // The card state cache is rebuilt from events so existing placements pick that up.
+  db.version(3)
+    .stores({})
+    .upgrade(async (tx) => {
+      const settings = (await tx.table("settings").get(SETTINGS_ROW_ID)) as
+        | Partial<SettingsRow>
+        | undefined;
+      const scheduler = createScheduler({
+        requestRetention: settings?.requestRetention ?? DEFAULT_SETTINGS.requestRetention,
+        ...(settings?.fsrsParams ? { w: settings.fsrsParams } : {}),
+      });
+      const states = replayAll(
+        scheduler,
+        (await tx.table("reviewEvents").toArray()) as ReviewEvent[],
+      );
+      await tx.table("cardState").clear();
+      await tx.table("cardState").bulkPut([...states.values()]);
     });
   return db;
 }

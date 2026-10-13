@@ -140,3 +140,14 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 
 - **Context:** the main chunk is about 710 kB minified (227 kB gzipped), mostly React DOM, React Router, Dexie, i18next and d3. World data loads as separate chunks.
 - **Decision:** accepted for Phase 2. Route-level code splitting and precaching come with the PWA work in Phase 4 and the performance pass in Phase 10.
+
+## 027. Placement seeds a review interval of days
+
+- **Context:** the scheduler runs with short-term learning steps, so a correct placement answer (rating Good on a new card) came back due in 10 minutes. After placement, the first daily session was all re-checks of countries the learner had just placed, and no new cards fit the budget. PLAN.md 6.4 asks for a check "within days".
+- **Options:** (a) seed placement answers with a scheduler that skips short-term steps, so they enter review with the FSRS first interval for Good (3 days at 0.9 retention); (b) keep learning steps and exclude placement cards from today's due list.
+- **Decision:** (a). It is a pure function of the event, so replay stays deterministic, and it does not need special cases in the day plan. Only the first scheduled review of a new card in `placement` mode is affected. Schema v3 rebuilds the card state cache once so existing placements pick it up.
+
+## 028. Motion beyond the answer moment
+
+- **Context:** after the first real session the author found the UI plain and asked for a smoother, more modern feel. PLAN.md 8.2 keeps visual boldness for the answer moment and everything else quiet.
+- **Decision:** add quiet motion only: panels fade and rise in (about 400 ms), the map glides between prompts with the same fly-to as answers, progress eases, buttons press. One UI easing for every theme; the map easing stays the only per-theme difference. Reduced motion turns all of it off. The answer moment stays the boldest thing on screen: the target fills in, the wrong pick's outline draws itself, labels fade in as the map settles.

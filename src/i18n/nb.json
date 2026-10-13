@@ -16,7 +16,14 @@
     "reviews_one": "{{count}} repetisjon",
     "reviews_other": "{{count}} repetisjoner",
     "newCards_one": "{{count}} nytt kort",
-    "newCards_other": "{{count}} nye kort"
+    "newCards_other": "{{count}} nye kort",
+    "statReviews": "Repetisjoner",
+    "statNew": "Nye",
+    "statMinutes": "Minutter",
+    "mapTitle": "Kartet ditt",
+    "mapStarted": "{{count}} av {{total}} land påbegynt",
+    "legendStarted": "Påbegynt",
+    "legendNext": "Neste region"
   },
   "settings": {
     "label": "Innstillinger",
@@ -42,7 +49,9 @@
     "on": "På",
     "off": "Av",
     "homeCountry": "Hjemland",
-    "rerunPlacement": "Ta plasseringstesten på nytt"
+    "rerunPlacement": "Ta plasseringstesten på nytt",
+    "groupLook": "Språk og utseende",
+    "groupStudy": "Øving"
   },
   "nav": {
     "today": "I dag",
@@ -76,7 +85,10 @@
     "capitals": "Hovedsteder du kan: {{count}}",
     "flags": "Flagg du kan: {{count}}",
     "startsWith": "Den daglige læringen starter med {{region}}.",
-    "toToday": "Gå til i dag"
+    "toToday": "Gå til i dag",
+    "statCountries": "Land",
+    "statCapitals": "Hovedsteder",
+    "statFlags": "Flagg"
   },
   "q": {
     "map_to_name": "Hvilket land er dette?",

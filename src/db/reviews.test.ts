@@ -1,3 +1,4 @@
+import Dexie from "dexie";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { createDb, type GeoDexDb, type ReviewEvent } from "./db";
 import { loadCardStates, rebuildCardStates, recordReview, schedulerFor } from "./reviews";
@@ -72,5 +73,35 @@ describe("review events and card state", () => {
       recordReview(db, scheduler, review("DNK:map_to_name", T0 + 1, 1, "dup")),
     ).rejects.toThrow();
     expect((await db.reviewEvents.get("dup"))?.rating).toBe(3);
+  });
+});
+
+describe("schema v3", () => {
+  it("rebuilds a stale card state cache so placements seed a review interval", async () => {
+    const name = `upgrade-${counter}`;
+    const old = new Dexie(name);
+    old.version(2).stores({
+      settings: "id",
+      deviceSettings: "id",
+      reviewEvents: "id, cardId, reviewedAt, synced",
+      hookVoteEvents: "id, cardId, synced",
+      cardState: "cardId, due",
+      syncMeta: "table",
+      placementProgress: "id",
+    });
+    await old.open();
+    await old
+      .table("reviewEvents")
+      .add({ ...review("ISL:map_to_name", T0, 3, "p"), mode: "placement" });
+    await old
+      .table("cardState")
+      .add({ cardId: "ISL:map_to_name", phase: "learning", due: T0 + 600_000 });
+    old.close();
+
+    const upgraded = createDb(name);
+    const state = await upgraded.cardState.get("ISL:map_to_name");
+    expect(state?.phase).toBe("review");
+    expect((state?.due ?? 0) - T0).toBeGreaterThanOrEqual(2 * 86_400_000);
+    await upgraded.delete();
   });
 });

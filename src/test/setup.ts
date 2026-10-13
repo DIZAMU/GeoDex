@@ -17,4 +17,13 @@ if (typeof window !== "undefined" && !window.matchMedia) {
     }) as MediaQueryList;
 }
 
+// jsdom has no ResizeObserver. The map measures its container with it; in tests it stays 0x0.
+if (typeof window !== "undefined" && !window.ResizeObserver) {
+  window.ResizeObserver = class {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  };
+}
+
 if (typeof document !== "undefined") initI18n("en");
