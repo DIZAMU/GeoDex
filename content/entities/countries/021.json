@@ -1,0 +1,220 @@
+{
+  "group": "021",
+  "entities": [
+    {
+      "entityId": "CAN",
+      "hooks": {
+        "en": [
+          {
+            "id": "CAN.en.1",
+            "type": "anchor",
+            "text": "Canada covers the north of North America, above the United States, from the Pacific to the Atlantic."
+          },
+          {
+            "id": "CAN.en.2",
+            "type": "etymology",
+            "text": "Canada comes from 'kanata', an Iroquoian word for village or settlement."
+          },
+          {
+            "id": "CAN.en.3",
+            "type": "story",
+            "text": "Canada's only land neighbor is the United States, which it meets in two places: the main border and Alaska."
+          },
+          {
+            "id": "CAN.en.4",
+            "type": "sound",
+            "text": "Canada: a giant can of maple syrup tipped over the top of the United States."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CAN.nb.1",
+            "type": "anchor",
+            "text": "Canada dekker nord i Nord-Amerika, over USA, fra Stillehavet til Atlanterhavet."
+          },
+          {
+            "id": "CAN.nb.2",
+            "type": "etymology",
+            "text": "Canada kommer av «kanata», et irokesisk ord for landsby."
+          },
+          {
+            "id": "CAN.nb.3",
+            "type": "story",
+            "text": "Canadas eneste naboland er USA, som det møter to steder: hovedgrensen og Alaska."
+          },
+          {
+            "id": "CAN.nb.4",
+            "type": "sound",
+            "text": "Canada: en kano full av lønnesirup padler over hele toppen av Nord-Amerika."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "CAN.cap.en.1",
+            "type": "story",
+            "text": "Ottawa sits on the river between English-speaking Ontario and French-speaking Quebec, a deliberate compromise."
+          },
+          {
+            "id": "CAN.cap.en.2",
+            "type": "contrast",
+            "text": "Ottawa, not Toronto or Montreal, is the capital of Canada."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CAN.cap.nb.1",
+            "type": "story",
+            "text": "Ottawa ligger ved elva mellom engelskspråklige Ontario og franskspråklige Quebec, et bevisst kompromiss."
+          },
+          {
+            "id": "CAN.cap.nb.2",
+            "type": "contrast",
+            "text": "Det er Ottawa, ikke Toronto eller Montreal, som er hovedstaden i Canada."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "A red maple leaf on a white square, between two red side bands.",
+        "nb": "Et rødt lønneblad på et hvitt kvadrat, mellom to røde sidefelt."
+      },
+      "facts": [
+        {
+          "id": "CAN.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Canada's only land border is with the United States.",
+            "nb": "Canadas eneste landegrense er mot USA."
+          }
+        },
+        {
+          "id": "CAN.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "English and French are both official languages of Canada.",
+            "nb": "Engelsk og fransk er begge offisielle språk i Canada."
+          }
+        },
+        {
+          "id": "CAN.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Canada has the longest coastline of any country.",
+            "nb": "Canada har lengre kystlinje enn noe annet land."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "USA",
+      "hooks": {
+        "en": [
+          {
+            "id": "USA.en.1",
+            "type": "anchor",
+            "text": "The United States spans the middle of North America, between Canada to the north and Mexico to the south."
+          },
+          {
+            "id": "USA.en.2",
+            "type": "contrast",
+            "text": "Alaska and Hawaii are US states, but neither touches the rest of the country."
+          },
+          {
+            "id": "USA.en.3",
+            "type": "story",
+            "text": "The United States bought Alaska from Russia, so the two are neighbors across the Bering Strait."
+          }
+        ],
+        "nb": [
+          {
+            "id": "USA.nb.1",
+            "type": "anchor",
+            "text": "USA strekker seg over midten av Nord-Amerika, mellom Canada i nord og Mexico i sør."
+          },
+          {
+            "id": "USA.nb.2",
+            "type": "contrast",
+            "text": "Alaska og Hawaii er delstater i USA, men ingen av dem henger sammen med resten av landet."
+          },
+          {
+            "id": "USA.nb.3",
+            "type": "story",
+            "text": "USA kjøpte Alaska fra Russland, så de to landene er naboer over Beringstredet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "USA.cap.en.1",
+            "type": "contrast",
+            "text": "Washington, D.C. is the capital; Washington State is on the opposite coast."
+          },
+          {
+            "id": "USA.cap.en.2",
+            "type": "story",
+            "text": "Washington, D.C. was set apart as a federal district so that no state would hold the capital."
+          }
+        ],
+        "nb": [
+          {
+            "id": "USA.cap.nb.1",
+            "type": "contrast",
+            "text": "Washington D.C. er hovedstaden; delstaten Washington ligger på motsatt kyst."
+          },
+          {
+            "id": "USA.cap.nb.2",
+            "type": "story",
+            "text": "Washington D.C. er et eget føderalt distrikt, slik at ingen delstat skal ha hovedstaden."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Thirteen red and white stripes for the first colonies, and a white star on blue for each state.",
+        "nb": "Tretten røde og hvite striper for de første koloniene, og én hvit stjerne på blått for hver delstat."
+      },
+      "facts": [
+        {
+          "id": "USA.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "The United States borders Canada and Mexico.",
+            "nb": "USA grenser til Canada og Mexico."
+          }
+        },
+        {
+          "id": "USA.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "English is the official language of the United States.",
+            "nb": "Engelsk er det offisielle språket i USA."
+          }
+        },
+        {
+          "id": "USA.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The word dollar comes from the thaler, a silver coin first minted in Bohemia.",
+            "nb": "Ordet dollar kommer av «thaler», en sølvmynt som først ble preget i Böhmen."
+          }
+        },
+        {
+          "id": "USA.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Point Roberts in Washington State can only be reached over land through Canada.",
+            "nb": "Point Roberts i delstaten Washington kan bare nås over land gjennom Canada."
+          }
+        }
+      ]
+    }
+  ]
+}
