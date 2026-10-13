@@ -1,0 +1,495 @@
+{
+  "group": "143",
+  "entities": [
+    {
+      "entityId": "KAZ",
+      "hooks": {
+        "en": [
+          {
+            "id": "KAZ.en.1",
+            "type": "anchor",
+            "text": "Kazakhstan is the huge landlocked country (no ocean coast) between Russia and China."
+          },
+          {
+            "id": "KAZ.en.2",
+            "type": "etymology",
+            "text": "The ending '-stan' is Persian for 'land': Kazakhstan is the land of the Kazakhs."
+          },
+          {
+            "id": "KAZ.en.3",
+            "type": "story",
+            "text": "Rockets to the space station lift off from Baikonur, a Russian-run launch site on the Kazakh steppe."
+          }
+        ],
+        "nb": [
+          {
+            "id": "KAZ.nb.1",
+            "type": "anchor",
+            "text": "Kasakhstan er den enorme innlandsstaten (uten kyst mot verdenshavet) mellom Russland og Kina."
+          },
+          {
+            "id": "KAZ.nb.2",
+            "type": "etymology",
+            "text": "Endelsen «-stan» betyr «land» på persisk: Kasakhstan er kasakhenes land."
+          },
+          {
+            "id": "KAZ.nb.3",
+            "type": "story",
+            "text": "Romraketter skytes opp fra Bajkonur, en russiskdrevet oppskytingsbase på steppen i Kasakhstan."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "KAZ.cap.en.1",
+            "type": "etymology",
+            "text": "Astana simply means 'capital' in Kazakh."
+          },
+          {
+            "id": "KAZ.cap.en.2",
+            "type": "story",
+            "text": "The capital moved north from Almaty, by the mountains, to Astana on the open steppe."
+          }
+        ],
+        "nb": [
+          {
+            "id": "KAZ.cap.nb.1",
+            "type": "etymology",
+            "text": "Astana betyr ganske enkelt «hovedstad» på kasakhisk."
+          },
+          {
+            "id": "KAZ.cap.nb.2",
+            "type": "story",
+            "text": "Hovedstaden ble flyttet nordover fra Almaty ved fjellene til Astana på den åpne steppen."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Sky blue with a golden sun above a soaring steppe eagle, and a gold ornament at the hoist.",
+        "nb": "Himmelblått med en gyllen sol over en svevende steppeørn, og et gyllent ornament ved stangen."
+      },
+      "facts": [
+        {
+          "id": "KAZ.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Kazakhstan is landlocked and borders Russia, China, Kyrgyzstan, Uzbekistan and Turkmenistan.",
+            "nb": "Kasakhstan er en innlandsstat og grenser til Russland, Kina, Kirgisistan, Usbekistan og Turkmenistan."
+          }
+        },
+        {
+          "id": "KAZ.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Kazakh and Russian are both official languages in Kazakhstan.",
+            "nb": "Kasakhisk og russisk er begge offisielle språk i Kasakhstan."
+          }
+        },
+        {
+          "id": "KAZ.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Kazakhstan is the largest landlocked country in the world.",
+            "nb": "Kasakhstan er verdens største innlandsstat."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "KGZ",
+      "hooks": {
+        "en": [
+          {
+            "id": "KGZ.en.1",
+            "type": "anchor",
+            "text": "Kyrgyzstan is a mountain country between Kazakhstan to the north and China to the east."
+          },
+          {
+            "id": "KGZ.en.2",
+            "type": "contrast",
+            "text": "Kyrgyzstan is the small mountain state squeezed between Kazakhstan and Tajikistan."
+          },
+          {
+            "id": "KGZ.en.3",
+            "type": "story",
+            "text": "Issyk-Kul, a big lake high in Kyrgyzstan's mountains, does not freeze over in winter."
+          }
+        ],
+        "nb": [
+          {
+            "id": "KGZ.nb.1",
+            "type": "anchor",
+            "text": "Kirgisistan er et fjelland mellom Kasakhstan i nord og Kina i øst."
+          },
+          {
+            "id": "KGZ.nb.2",
+            "type": "story",
+            "text": "Issyk-Kul, en stor sjø høyt oppe i fjellene i Kirgisistan, fryser ikke til om vinteren."
+          },
+          {
+            "id": "KGZ.nb.3",
+            "type": "sound",
+            "text": "Kirgisistan: en kiste full av kirsebær står på en snødekt fjelltopp."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "KGZ.cap.en.1",
+            "type": "anchor",
+            "text": "Bishkek sits in the north, near the Kazakh border, below a snowy mountain range."
+          },
+          {
+            "id": "KGZ.cap.en.2",
+            "type": "sound",
+            "text": "Bishkek: a bishop eats a cake in the shadow of snowy peaks."
+          }
+        ],
+        "nb": [
+          {
+            "id": "KGZ.cap.nb.1",
+            "type": "anchor",
+            "text": "Bisjkek ligger nord i landet, nær grensen til Kasakhstan, under en snødekt fjellkjede."
+          },
+          {
+            "id": "KGZ.cap.nb.2",
+            "type": "sound",
+            "text": "Bisjkek: en biskop deler ut kjeks i skyggen av snødekte fjell."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red with a yellow sun; the sun's centre shows the crossed roof frame of a yurt seen from below.",
+        "nb": "Rødt med en gul sol; i midten av solen ser du den kryssede takkransen på en jurt."
+      },
+      "facts": [
+        {
+          "id": "KGZ.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Kyrgyzstan is landlocked (no sea coast) and borders Kazakhstan, Uzbekistan, Tajikistan and China.",
+            "nb": "Kirgisistan er en innlandsstat (uten kyst) og grenser til Kasakhstan, Usbekistan, Tadsjikistan og Kina."
+          }
+        },
+        {
+          "id": "KGZ.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Kyrgyz and Russian are both official languages in Kyrgyzstan.",
+            "nb": "Kirgisisk og russisk er begge offisielle språk i Kirgisistan."
+          }
+        },
+        {
+          "id": "KGZ.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Issyk-Kul is slightly salty, one reason it stays open in winter despite its altitude.",
+            "nb": "Issyk-Kul er litt salt, en av grunnene til at sjøen holder seg åpen om vinteren til tross for høyden."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "TJK",
+      "hooks": {
+        "en": [
+          {
+            "id": "TJK.en.1",
+            "type": "anchor",
+            "text": "Tajikistan lies south of Kyrgyzstan and north of Afghanistan, mostly in the Pamir mountains."
+          },
+          {
+            "id": "TJK.en.2",
+            "type": "contrast",
+            "text": "Tajik is a form of Persian; most neighboring languages in Central Asia are Turkic."
+          },
+          {
+            "id": "TJK.en.3",
+            "type": "story",
+            "text": "The Pamirs, nicknamed 'the roof of the world', fill most of Tajikistan's east."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TJK.nb.1",
+            "type": "anchor",
+            "text": "Tadsjikistan ligger sør for Kirgisistan og nord for Afghanistan, mest i Pamir-fjellene."
+          },
+          {
+            "id": "TJK.nb.2",
+            "type": "contrast",
+            "text": "Tadsjikisk er en form for persisk, mens nabospråkene i Sentral-Asia stort sett er tyrkiske."
+          },
+          {
+            "id": "TJK.nb.3",
+            "type": "story",
+            "text": "Pamir, med kallenavnet «verdens tak», fyller det meste av østlige Tadsjikistan."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "TJK.cap.en.1",
+            "type": "etymology",
+            "text": "Dushanbe means 'Monday' in Tajik, after the Monday market held there."
+          },
+          {
+            "id": "TJK.cap.en.2",
+            "type": "anchor",
+            "text": "Dushanbe sits in the west of Tajikistan, in a valley below the mountains."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TJK.cap.nb.1",
+            "type": "etymology",
+            "text": "Dusjanbe betyr «mandag» på tadsjikisk, etter mandagsmarkedet som ble holdt der."
+          },
+          {
+            "id": "TJK.cap.nb.2",
+            "type": "sound",
+            "text": "Dusjanbe: en kald dusj på beina hver mandag i Tadsjikistans hovedstad."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, white and green stripes, the white wider, with a gold crown under an arc of seven stars.",
+        "nb": "Rød, hvit og grønn stripe, den hvite bredest, med en gullkrone under en bue av sju stjerner."
+      },
+      "facts": [
+        {
+          "id": "TJK.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Tajikistan is landlocked (no sea coast) and borders Afghanistan, China, Kyrgyzstan and Uzbekistan.",
+            "nb": "Tadsjikistan er en innlandsstat (uten kyst) og grenser til Afghanistan, Kina, Kirgisistan og Usbekistan."
+          }
+        },
+        {
+          "id": "TJK.f2",
+          "tier": 2,
+          "verified": true,
+          "text": {
+            "en": "Tajik is the official language of Tajikistan.",
+            "nb": "Tadsjikisk er det offisielle språket i Tadsjikistan."
+          }
+        },
+        {
+          "id": "TJK.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The somoni, Tajikistan's currency, is named after Ismail Samani, a ruler of the Samanid dynasty.",
+            "nb": "Somoni, valutaen i Tadsjikistan, har navn etter Ismail Samani, en hersker i samanide-dynastiet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "TKM",
+      "hooks": {
+        "en": [
+          {
+            "id": "TKM.en.1",
+            "type": "anchor",
+            "text": "Turkmenistan lies between the Caspian Sea and Uzbekistan, with Iran and Afghanistan to the south."
+          },
+          {
+            "id": "TKM.en.2",
+            "type": "etymology",
+            "text": "Most of Turkmenistan is the Karakum, a name meaning 'black sand'."
+          },
+          {
+            "id": "TKM.en.3",
+            "type": "story",
+            "text": "The Darvaza gas crater, nicknamed the Door to Hell, has burned in Turkmenistan's desert for decades."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TKM.nb.1",
+            "type": "anchor",
+            "text": "Turkmenistan ligger mellom Det kaspiske hav og Usbekistan, med Iran og Afghanistan i sør."
+          },
+          {
+            "id": "TKM.nb.2",
+            "type": "etymology",
+            "text": "Karakum, ørkenen som dekker det meste av Turkmenistan, betyr «svart sand»."
+          },
+          {
+            "id": "TKM.nb.3",
+            "type": "story",
+            "text": "Gasskrateret ved Darvaza, kalt «Helvetes port», har brent i ørkenen i Turkmenistan i flere tiår."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "TKM.cap.en.1",
+            "type": "anchor",
+            "text": "Ashgabat sits in the south, close to the Iranian border, below the Kopet Dag mountains."
+          },
+          {
+            "id": "TKM.cap.en.2",
+            "type": "story",
+            "text": "Ashgabat is known for rows of buildings clad in white marble."
+          }
+        ],
+        "nb": [
+          {
+            "id": "TKM.cap.nb.1",
+            "type": "anchor",
+            "text": "Asjkhabad ligger sør i landet, nær grensen til Iran, under Kopet Dag-fjellene."
+          },
+          {
+            "id": "TKM.cap.nb.2",
+            "type": "sound",
+            "text": "Asjkhabad: et bad av hvit marmor, så blankt at ikke engang aske legger seg."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green with a white crescent and stars, and a red stripe of carpet patterns at the hoist.",
+        "nb": "Grønt med hvit halvmåne og stjerner, og en rød stripe med teppemønstre ved stangen."
+      },
+      "facts": [
+        {
+          "id": "TKM.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Turkmenistan is landlocked and borders Kazakhstan, Uzbekistan, Afghanistan and Iran.",
+            "nb": "Turkmenistan er en innlandsstat og grenser til Kasakhstan, Usbekistan, Afghanistan og Iran."
+          }
+        },
+        {
+          "id": "TKM.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Turkmenistan's western shore is on the Caspian Sea, which has no outlet to the ocean.",
+            "nb": "Turkmenistans vestkyst ligger mot Det kaspiske hav, som ikke har noe utløp til verdenshavet."
+          }
+        },
+        {
+          "id": "TKM.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The Karakum Canal carries water from the Amu Darya river across the desert.",
+            "nb": "Karakumkanalen fører vann fra elva Amu Darja tvers over ørkenen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "UZB",
+      "hooks": {
+        "en": [
+          {
+            "id": "UZB.en.1",
+            "type": "anchor",
+            "text": "Uzbekistan sits in the middle of Central Asia, bordering all four other '-stan' states of the region and Afghanistan."
+          },
+          {
+            "id": "UZB.en.2",
+            "type": "contrast",
+            "text": "Uzbekistan is doubly landlocked: neither it nor any neighbor has an ocean coast."
+          },
+          {
+            "id": "UZB.en.3",
+            "type": "sound",
+            "text": "Uzbekistan: 'oops, back again', sighs a ship looking for the sea, since there is none in reach."
+          }
+        ],
+        "nb": [
+          {
+            "id": "UZB.nb.1",
+            "type": "anchor",
+            "text": "Usbekistan ligger midt i Sentral-Asia og grenser til alle de fire andre «stan»-landene i regionen og til Afghanistan."
+          },
+          {
+            "id": "UZB.nb.2",
+            "type": "contrast",
+            "text": "Usbekistan er dobbelt innlandsstat: verken landet eller noen nabo har kyst mot verdenshavet."
+          },
+          {
+            "id": "UZB.nb.3",
+            "type": "sound",
+            "text": "Usbekistan: «Ups, en bekk», sier en sjømann som leter etter havet, men bare finner en bekk."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "UZB.cap.en.1",
+            "type": "etymology",
+            "text": "Tashkent means 'stone city' in Turkic."
+          },
+          {
+            "id": "UZB.cap.en.2",
+            "type": "anchor",
+            "text": "Tashkent sits in the northeast of Uzbekistan, close to the Kazakh border."
+          }
+        ],
+        "nb": [
+          {
+            "id": "UZB.cap.nb.1",
+            "type": "etymology",
+            "text": "Tasjkent betyr «steinbyen» på tyrkisk språk."
+          },
+          {
+            "id": "UZB.cap.nb.2",
+            "type": "sound",
+            "text": "Tasjkent: ei taske full av stein fra steinbyen nordøst i Usbekistan."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Blue, white and green stripes split by thin red lines, with a white crescent and stars in the blue.",
+        "nb": "Blå, hvit og grønn stripe skilt av tynne røde linjer, med hvit halvmåne og stjerner i det blå."
+      },
+      "facts": [
+        {
+          "id": "UZB.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Uzbekistan is landlocked and borders Kazakhstan, Kyrgyzstan, Tajikistan, Afghanistan and Turkmenistan.",
+            "nb": "Usbekistan er en innlandsstat og grenser til Kasakhstan, Kirgisistan, Tadsjikistan, Afghanistan og Turkmenistan."
+          }
+        },
+        {
+          "id": "UZB.f2",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Uzbekistan and Liechtenstein are the only doubly landlocked countries.",
+            "nb": "Usbekistan og Liechtenstein er de eneste landene som er dobbelt innlandsstat."
+          }
+        },
+        {
+          "id": "UZB.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Aral Sea, on Uzbekistan's border with Kazakhstan, has mostly dried up since its rivers were diverted to water cotton.",
+            "nb": "Aralsjøen, på grensen mellom Usbekistan og Kasakhstan, er stort sett tørket ut etter at elvene ble ledet bort til bomullsåkre."
+          }
+        }
+      ]
+    }
+  ]
+}
