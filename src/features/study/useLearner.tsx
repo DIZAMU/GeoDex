@@ -1,5 +1,13 @@
 import { useLiveQuery } from "dexie-react-hooks";
-import { createContext, type ReactNode, useContext, useEffect, useMemo, useState } from "react";
+import {
+  createContext,
+  type ReactNode,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { type ContentIndex, loadContent } from "@/data/content";
 import { useWorld } from "@/data/useWorld";
 import type { WorldData } from "@/data/world";
@@ -12,7 +20,7 @@ import {
   SETTINGS_ROW_ID,
   type SettingsRow,
 } from "@/db/db";
-import { schedulerFor } from "@/db/reviews";
+import { rebuildCardStates, schedulerFor } from "@/db/reviews";
 import type { CardState } from "@/engine/scheduler";
 import type { CardId } from "@/engine/types";
 
@@ -60,9 +68,30 @@ export function LearnerProvider({ children }: { children: ReactNode }) {
     [retention, params],
   );
 
+  // cardState is only a cache (CONTRIBUTING.md invariant 2): if it is missing while events exist,
+  // rebuild it from the events instead of showing an empty learner.
+  const rebuilding = useRef(false);
+  useEffect(() => {
+    if (!stateRows || !events || rebuilding.current) return;
+    if (stateRows.length === 0 && events.some((e) => e.scheduled)) {
+      rebuilding.current = true;
+      void rebuildCardStates(db, scheduler).finally(() => {
+        rebuilding.current = false;
+      });
+    }
+  }, [stateRows, events, scheduler]);
+
   const learner = useMemo(
     () =>
-      world && settings && device && stateRows && events && votes && content
+      world &&
+      settings &&
+      device &&
+      stateRows &&
+      events &&
+      votes &&
+      content &&
+      // While a missing cache is rebuilt, show loading rather than an empty learner.
+      !(stateRows.length === 0 && events.some((e) => e.scheduled))
         ? { world, settings, device, states, events, votes, content, scheduler }
         : null,
     [world, settings, device, stateRows, events, votes, content, states, scheduler],
