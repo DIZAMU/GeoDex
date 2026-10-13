@@ -9,7 +9,7 @@
 
 Spaced-repetition geography trainer. Local-first PWA, English and Norwegian.
 
-> Status: Phase 1 (country data). The learning engine and content arrive in later phases. See `PLAN.md`.
+> Status: Phase 2 (core learning loop, local only). Explanations and content arrive in Phase 3. See `PLAN.md`.
 
 ## Features (planned)
 

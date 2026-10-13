@@ -25,9 +25,19 @@ Local-first single-page app. IndexedDB (Dexie) is the source of truth on each de
 - `deviceSettings` (never synced): device id and theme preference.
 - Theme and locale are mirrored to `localStorage` for the first paint only (`DECISIONS.md` 005).
 
-## Event sourcing and sync
+## Event sourcing
 
-Phase 2 and Phase 4. See `PLAN.md` sections 4 and 5.6.
+- Every answer is one immutable `reviewEvents` row, written when the learner continues (`responseMs` prompt to answer, `durationMs` prompt to continue).
+- `cardState` is a cache: `recordReview` applies one event; a late, older event replays that card; `rebuildCardStates` replays everything. FSRS fuzz is off, so replay is identical on every device.
+- Today, sessions and placement read the same pure plan (`src/features/study/plan.ts`): due cards, the time budget, new cards from home outward.
+
+## Learning engine
+
+Pure modules in `src/engine/` (no React or Dexie, enforced by a test): matching, grading, scheduler, cards, budget, distractors, confusions, session, placement, day boundaries, seeded randomness.
+
+## Sync
+
+Phase 4. See `PLAN.md` section 5.6.
 
 ## Data pipeline
 
