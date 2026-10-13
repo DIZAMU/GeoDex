@@ -1,5 +1,5 @@
 import { AwardIcon, DumbbellIcon } from "lucide-react";
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 import { CONTINENTS } from "@/data/types";
@@ -40,7 +40,7 @@ function Panel({
   return (
     <section
       aria-labelledby={`${id}-title`}
-      className={`surface flex flex-col gap-3 p-5 ${className ?? ""}`}
+      className={`surface flex min-w-0 flex-col gap-3 p-5 ${className ?? ""}`}
       data-testid={`stats-${id}`}
     >
       <h2 id={`${id}-title`} className="font-name text-lg">
@@ -95,7 +95,7 @@ function Stats({ learner }: { learner: Learner }) {
     <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-6 md:px-10 lg:py-8">
       <h1 className="font-name text-3xl tracking-tight">{t("stats.title")}</h1>
 
-      <div className="stagger grid gap-4 lg:grid-cols-3">
+      <div className="stagger grid grid-cols-[minmax(0,1fr)] gap-4 lg:grid-cols-3">
         <Panel title={t("stats.grid")} id="grid" className="lg:col-span-2">
           <p className="text-sm text-muted-foreground">{t("stats.gridHelp")}</p>
           <div className="overflow-x-auto">
@@ -350,8 +350,14 @@ function Heatmap({ days, locale }: { days: { start: number; count: number }[]; l
   const max = Math.max(1, ...days.map((d) => d.count));
   const offset = (new Date(days[0]?.start ?? 0).getDay() + 6) % 7;
   const reviewed = days.filter((d) => d.count > 0).length;
+  // Narrow screens show the latest weeks first; older ones are a scroll away.
+  const scroller = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = scroller.current;
+    if (el) el.scrollLeft = el.scrollWidth;
+  }, []);
   return (
-    <div className="overflow-x-auto">
+    <div ref={scroller} className="overflow-x-auto">
       <div
         role="img"
         aria-label={`${t("stats.activity")}: ${number.format(reviewed)}`}
