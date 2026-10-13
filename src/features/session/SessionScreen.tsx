@@ -46,7 +46,7 @@ function Session({ learner, input }: { learner: Learner; input: InputSetting }) 
   const navigate = useNavigate();
   // Confusion scores are fixed for the session, like the queue.
   const [scores] = useState(() => confusionScoresFor(learner.world, learner.events, Date.now()));
-  const ctx = useStudyContext(learner.world, locale, scores);
+  const ctx = useStudyContext(learner.world, locale, scores, learner.content);
   const s = useDailySession(learner, ctx, input, locale);
   const [help, setHelp] = useState(false);
   const countdownSeconds = learner.settings.countdownSeconds;
@@ -116,7 +116,11 @@ function Session({ learner, input }: { learner: Learner; input: InputSetting }) 
 
   const { focus, highlight, animate, padding } = mapState(view, learner);
   const mapSelectable =
-    view.kind === "prompt" && view.question.answer.kind === "map" ? selectable : undefined;
+    view.kind === "prompt" && view.question.answer.kind === "map"
+      ? view.question.answer.selectable
+        ? new Set(view.question.answer.selectable)
+        : selectable
+      : undefined;
 
   return (
     <>
@@ -183,7 +187,7 @@ function Panel({
   locale: "en" | "nb";
 }) {
   const { t } = useTranslation();
-  const country = learner.world.byId.get(view.item.entityId);
+  const country = learner.world.byId.get(view.question.entityId);
   if (!country) return null;
 
   if (view.kind === "intro") {
@@ -317,7 +321,7 @@ function mapState(
   view: Exclude<SessionView, { kind: "done" }>,
   learner: Learner,
 ): { focus: MapFocus; highlight: MapHighlight; animate: boolean; padding?: number } {
-  const id = view.item.entityId;
+  const id = view.question.entityId;
   const country = learner.world.byId.get(id);
   const neighbors = country?.neighbors.slice(0, 6) ?? [];
   if (view.kind === "intro") {

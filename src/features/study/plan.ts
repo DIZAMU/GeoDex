@@ -8,7 +8,7 @@ import type { Country } from "@/data/types";
 import type { WorldData } from "@/data/world";
 import { type Budget, computeBudget, MAX_DUE_PER_DAY, secondsPerReview } from "@/engine/budget";
 import { isIntroduced, stageOf, unlockedNewCards } from "@/engine/cards";
-import { confusionScores } from "@/engine/confusions";
+import { confusionScores, contrastCards } from "@/engine/confusions";
 import { learningDay } from "@/engine/day";
 import { rollingMedian } from "@/engine/grading";
 import { type CardState, retrievability } from "@/engine/scheduler";
@@ -53,6 +53,9 @@ export function scopedCountries(
   );
 }
 
+/** New contrast cards a day can add on top of the new-card allowance. */
+export const MAX_NEW_CONTRAST_PER_DAY = 3;
+
 export function planDay(input: {
   world: WorldData;
   settings: PlanSettings;
@@ -60,8 +63,11 @@ export function planDay(input: {
   events: readonly PlanEvent[];
   scheduler: FSRS;
   now: number;
+  /** Written content. Contrast cards exist only for pairs with contrast text. */
+  content?: { confusion: (a: string, b: string) => unknown } | null;
 }): DayPlan {
   const { world, settings, states, events, scheduler, now } = input;
+  const hasContrast = (a: string, b: string) => Boolean(input.content?.confusion(a, b));
   const countries = scopedCountries(world, settings);
   const inScope = new Map(countries.map((c) => [c.id, c]));
   const day = learningDay(now, settings.dayStartHour);
@@ -70,9 +76,23 @@ export function planDay(input: {
     .filter((s) => s.due < day.end && s.phase !== "new")
     .flatMap((s) => {
       const { entityId, type } = parseCardId(s.cardId);
+      if (type === "contrast") {
+        const [a, b] = entityId.split("|");
+        const first = a ? inScope.get(a) : undefined;
+        if (!first || !b || !inScope.has(b) || !hasContrast(first.id, b)) return [];
+        return [
+          {
+            cardId: s.cardId,
+            entityId,
+            subregion: first.subregion,
+            isNew: false,
+            retrievability: retrievability(scheduler, s, now),
+          },
+        ];
+      }
       const country = inScope.get(entityId);
       // Skip cards of entities out of scope or removed from the data; their events stay.
-      if (!country || type === "contrast") return [];
+      if (!country) return [];
       if (!settings.currencyAndLanguage && stageOf(type as CountryCardType) === 4) return [];
       return [
         {
@@ -118,7 +138,19 @@ export function planDay(input: {
       stage: stageOf(parseCardId(cardId).type as CountryCardType),
     }));
   });
-  const fresh = pickNewCards(candidates, order, newAllowance);
+  // Contrast cards for pairs the learner keeps confusing (PLAN.md 6.7), ahead of new cards.
+  const contrasts = contrastCards(confusionScoresFor(world, events, now))
+    .filter((id) => !states.has(id))
+    .flatMap((id) => {
+      const [a, b] = parseCardId(id).entityId.split("|");
+      const first = a ? inScope.get(a) : undefined;
+      if (!first || !b || !inScope.has(b) || !hasContrast(first.id, b)) return [];
+      return [
+        { cardId: id, entityId: `${first.id}|${b}`, subregion: first.subregion, isNew: true },
+      ];
+    })
+    .slice(0, MAX_NEW_CONTRAST_PER_DAY);
+  const fresh = [...contrasts, ...pickNewCards(candidates, order, newAllowance)];
   const capped = [...due]
     .sort((a, b) => a.retrievability - b.retrievability)
     .slice(0, MAX_DUE_PER_DAY);
