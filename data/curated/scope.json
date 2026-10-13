@@ -1,0 +1,793 @@
+{
+  "_comment": "Entity scope. 193 UN members (Wikidata P463 Q1065, no end date) and 2 observers form the default scope. NLD and DNK use the country items, not the kingdoms that hold the membership.",
+  "countries": {
+    "AFG": {
+      "qid": "Q889",
+      "status": "un_member"
+    },
+    "AGO": {
+      "qid": "Q916",
+      "status": "un_member"
+    },
+    "ALB": {
+      "qid": "Q222",
+      "status": "un_member"
+    },
+    "AND": {
+      "qid": "Q228",
+      "status": "un_member"
+    },
+    "ARE": {
+      "qid": "Q878",
+      "status": "un_member"
+    },
+    "ARG": {
+      "qid": "Q414",
+      "status": "un_member"
+    },
+    "ARM": {
+      "qid": "Q399",
+      "status": "un_member"
+    },
+    "ATG": {
+      "qid": "Q781",
+      "status": "un_member"
+    },
+    "AUS": {
+      "qid": "Q408",
+      "status": "un_member"
+    },
+    "AUT": {
+      "qid": "Q40",
+      "status": "un_member"
+    },
+    "AZE": {
+      "qid": "Q227",
+      "status": "un_member"
+    },
+    "BDI": {
+      "qid": "Q967",
+      "status": "un_member"
+    },
+    "BEL": {
+      "qid": "Q31",
+      "status": "un_member"
+    },
+    "BEN": {
+      "qid": "Q962",
+      "status": "un_member"
+    },
+    "BFA": {
+      "qid": "Q965",
+      "status": "un_member"
+    },
+    "BGD": {
+      "qid": "Q902",
+      "status": "un_member"
+    },
+    "BGR": {
+      "qid": "Q219",
+      "status": "un_member"
+    },
+    "BHR": {
+      "qid": "Q398",
+      "status": "un_member"
+    },
+    "BHS": {
+      "qid": "Q778",
+      "status": "un_member"
+    },
+    "BIH": {
+      "qid": "Q225",
+      "status": "un_member"
+    },
+    "BLR": {
+      "qid": "Q184",
+      "status": "un_member"
+    },
+    "BLZ": {
+      "qid": "Q242",
+      "status": "un_member"
+    },
+    "BOL": {
+      "qid": "Q750",
+      "status": "un_member"
+    },
+    "BRA": {
+      "qid": "Q155",
+      "status": "un_member"
+    },
+    "BRB": {
+      "qid": "Q244",
+      "status": "un_member"
+    },
+    "BRN": {
+      "qid": "Q921",
+      "status": "un_member"
+    },
+    "BTN": {
+      "qid": "Q917",
+      "status": "un_member"
+    },
+    "BWA": {
+      "qid": "Q963",
+      "status": "un_member"
+    },
+    "CAF": {
+      "qid": "Q929",
+      "status": "un_member"
+    },
+    "CAN": {
+      "qid": "Q16",
+      "status": "un_member"
+    },
+    "CHE": {
+      "qid": "Q39",
+      "status": "un_member"
+    },
+    "CHL": {
+      "qid": "Q298",
+      "status": "un_member"
+    },
+    "CHN": {
+      "qid": "Q148",
+      "status": "un_member"
+    },
+    "CIV": {
+      "qid": "Q1008",
+      "status": "un_member"
+    },
+    "CMR": {
+      "qid": "Q1009",
+      "status": "un_member"
+    },
+    "COD": {
+      "qid": "Q974",
+      "status": "un_member"
+    },
+    "COG": {
+      "qid": "Q971",
+      "status": "un_member"
+    },
+    "COL": {
+      "qid": "Q739",
+      "status": "un_member"
+    },
+    "COM": {
+      "qid": "Q970",
+      "status": "un_member"
+    },
+    "CPV": {
+      "qid": "Q1011",
+      "status": "un_member"
+    },
+    "CRI": {
+      "qid": "Q800",
+      "status": "un_member"
+    },
+    "CUB": {
+      "qid": "Q241",
+      "status": "un_member"
+    },
+    "CYP": {
+      "qid": "Q229",
+      "status": "un_member"
+    },
+    "CZE": {
+      "qid": "Q213",
+      "status": "un_member"
+    },
+    "DEU": {
+      "qid": "Q183",
+      "status": "un_member"
+    },
+    "DJI": {
+      "qid": "Q977",
+      "status": "un_member"
+    },
+    "DMA": {
+      "qid": "Q784",
+      "status": "un_member"
+    },
+    "DNK": {
+      "qid": "Q35",
+      "status": "un_member"
+    },
+    "DOM": {
+      "qid": "Q786",
+      "status": "un_member"
+    },
+    "DZA": {
+      "qid": "Q262",
+      "status": "un_member"
+    },
+    "ECU": {
+      "qid": "Q736",
+      "status": "un_member"
+    },
+    "EGY": {
+      "qid": "Q79",
+      "status": "un_member"
+    },
+    "ERI": {
+      "qid": "Q986",
+      "status": "un_member"
+    },
+    "ESP": {
+      "qid": "Q29",
+      "status": "un_member"
+    },
+    "EST": {
+      "qid": "Q191",
+      "status": "un_member"
+    },
+    "ETH": {
+      "qid": "Q115",
+      "status": "un_member"
+    },
+    "FIN": {
+      "qid": "Q33",
+      "status": "un_member"
+    },
+    "FJI": {
+      "qid": "Q712",
+      "status": "un_member"
+    },
+    "FRA": {
+      "qid": "Q142",
+      "status": "un_member"
+    },
+    "FSM": {
+      "qid": "Q702",
+      "status": "un_member"
+    },
+    "GAB": {
+      "qid": "Q1000",
+      "status": "un_member"
+    },
+    "GBR": {
+      "qid": "Q145",
+      "status": "un_member"
+    },
+    "GEO": {
+      "qid": "Q230",
+      "status": "un_member"
+    },
+    "GHA": {
+      "qid": "Q117",
+      "status": "un_member"
+    },
+    "GIN": {
+      "qid": "Q1006",
+      "status": "un_member"
+    },
+    "GMB": {
+      "qid": "Q1005",
+      "status": "un_member"
+    },
+    "GNB": {
+      "qid": "Q1007",
+      "status": "un_member"
+    },
+    "GNQ": {
+      "qid": "Q983",
+      "status": "un_member"
+    },
+    "GRC": {
+      "qid": "Q41",
+      "status": "un_member"
+    },
+    "GRD": {
+      "qid": "Q769",
+      "status": "un_member"
+    },
+    "GTM": {
+      "qid": "Q774",
+      "status": "un_member"
+    },
+    "GUY": {
+      "qid": "Q734",
+      "status": "un_member"
+    },
+    "HND": {
+      "qid": "Q783",
+      "status": "un_member"
+    },
+    "HRV": {
+      "qid": "Q224",
+      "status": "un_member"
+    },
+    "HTI": {
+      "qid": "Q790",
+      "status": "un_member"
+    },
+    "HUN": {
+      "qid": "Q28",
+      "status": "un_member"
+    },
+    "IDN": {
+      "qid": "Q252",
+      "status": "un_member"
+    },
+    "IND": {
+      "qid": "Q668",
+      "status": "un_member"
+    },
+    "IRL": {
+      "qid": "Q27",
+      "status": "un_member"
+    },
+    "IRN": {
+      "qid": "Q794",
+      "status": "un_member"
+    },
+    "IRQ": {
+      "qid": "Q796",
+      "status": "un_member"
+    },
+    "ISL": {
+      "qid": "Q189",
+      "status": "un_member"
+    },
+    "ISR": {
+      "qid": "Q801",
+      "status": "un_member"
+    },
+    "ITA": {
+      "qid": "Q38",
+      "status": "un_member"
+    },
+    "JAM": {
+      "qid": "Q766",
+      "status": "un_member"
+    },
+    "JOR": {
+      "qid": "Q810",
+      "status": "un_member"
+    },
+    "JPN": {
+      "qid": "Q17",
+      "status": "un_member"
+    },
+    "KAZ": {
+      "qid": "Q232",
+      "status": "un_member"
+    },
+    "KEN": {
+      "qid": "Q114",
+      "status": "un_member"
+    },
+    "KGZ": {
+      "qid": "Q813",
+      "status": "un_member"
+    },
+    "KHM": {
+      "qid": "Q424",
+      "status": "un_member"
+    },
+    "KIR": {
+      "qid": "Q710",
+      "status": "un_member"
+    },
+    "KNA": {
+      "qid": "Q763",
+      "status": "un_member"
+    },
+    "KOR": {
+      "qid": "Q884",
+      "status": "un_member"
+    },
+    "KWT": {
+      "qid": "Q817",
+      "status": "un_member"
+    },
+    "LAO": {
+      "qid": "Q819",
+      "status": "un_member"
+    },
+    "LBN": {
+      "qid": "Q822",
+      "status": "un_member"
+    },
+    "LBR": {
+      "qid": "Q1014",
+      "status": "un_member"
+    },
+    "LBY": {
+      "qid": "Q1016",
+      "status": "un_member"
+    },
+    "LCA": {
+      "qid": "Q760",
+      "status": "un_member"
+    },
+    "LIE": {
+      "qid": "Q347",
+      "status": "un_member"
+    },
+    "LKA": {
+      "qid": "Q854",
+      "status": "un_member"
+    },
+    "LSO": {
+      "qid": "Q1013",
+      "status": "un_member"
+    },
+    "LTU": {
+      "qid": "Q37",
+      "status": "un_member"
+    },
+    "LUX": {
+      "qid": "Q32",
+      "status": "un_member"
+    },
+    "LVA": {
+      "qid": "Q211",
+      "status": "un_member"
+    },
+    "MAR": {
+      "qid": "Q1028",
+      "status": "un_member"
+    },
+    "MCO": {
+      "qid": "Q235",
+      "status": "un_member"
+    },
+    "MDA": {
+      "qid": "Q217",
+      "status": "un_member"
+    },
+    "MDG": {
+      "qid": "Q1019",
+      "status": "un_member"
+    },
+    "MDV": {
+      "qid": "Q826",
+      "status": "un_member"
+    },
+    "MEX": {
+      "qid": "Q96",
+      "status": "un_member"
+    },
+    "MHL": {
+      "qid": "Q709",
+      "status": "un_member"
+    },
+    "MKD": {
+      "qid": "Q221",
+      "status": "un_member"
+    },
+    "MLI": {
+      "qid": "Q912",
+      "status": "un_member"
+    },
+    "MLT": {
+      "qid": "Q233",
+      "status": "un_member"
+    },
+    "MMR": {
+      "qid": "Q836",
+      "status": "un_member"
+    },
+    "MNE": {
+      "qid": "Q236",
+      "status": "un_member"
+    },
+    "MNG": {
+      "qid": "Q711",
+      "status": "un_member"
+    },
+    "MOZ": {
+      "qid": "Q1029",
+      "status": "un_member"
+    },
+    "MRT": {
+      "qid": "Q1025",
+      "status": "un_member"
+    },
+    "MUS": {
+      "qid": "Q1027",
+      "status": "un_member"
+    },
+    "MWI": {
+      "qid": "Q1020",
+      "status": "un_member"
+    },
+    "MYS": {
+      "qid": "Q833",
+      "status": "un_member"
+    },
+    "NAM": {
+      "qid": "Q1030",
+      "status": "un_member"
+    },
+    "NER": {
+      "qid": "Q1032",
+      "status": "un_member"
+    },
+    "NGA": {
+      "qid": "Q1033",
+      "status": "un_member"
+    },
+    "NIC": {
+      "qid": "Q811",
+      "status": "un_member"
+    },
+    "NLD": {
+      "qid": "Q55",
+      "status": "un_member"
+    },
+    "NOR": {
+      "qid": "Q20",
+      "status": "un_member"
+    },
+    "NPL": {
+      "qid": "Q837",
+      "status": "un_member"
+    },
+    "NRU": {
+      "qid": "Q697",
+      "status": "un_member"
+    },
+    "NZL": {
+      "qid": "Q664",
+      "status": "un_member"
+    },
+    "OMN": {
+      "qid": "Q842",
+      "status": "un_member"
+    },
+    "PAK": {
+      "qid": "Q843",
+      "status": "un_member"
+    },
+    "PAN": {
+      "qid": "Q804",
+      "status": "un_member"
+    },
+    "PER": {
+      "qid": "Q419",
+      "status": "un_member"
+    },
+    "PHL": {
+      "qid": "Q928",
+      "status": "un_member"
+    },
+    "PLW": {
+      "qid": "Q695",
+      "status": "un_member"
+    },
+    "PNG": {
+      "qid": "Q691",
+      "status": "un_member"
+    },
+    "POL": {
+      "qid": "Q36",
+      "status": "un_member"
+    },
+    "PRK": {
+      "qid": "Q423",
+      "status": "un_member"
+    },
+    "PRT": {
+      "qid": "Q45",
+      "status": "un_member"
+    },
+    "PRY": {
+      "qid": "Q733",
+      "status": "un_member"
+    },
+    "PSE": {
+      "qid": "Q219060",
+      "status": "un_observer"
+    },
+    "QAT": {
+      "qid": "Q846",
+      "status": "un_member"
+    },
+    "ROU": {
+      "qid": "Q218",
+      "status": "un_member"
+    },
+    "RUS": {
+      "qid": "Q159",
+      "status": "un_member"
+    },
+    "RWA": {
+      "qid": "Q1037",
+      "status": "un_member"
+    },
+    "SAU": {
+      "qid": "Q851",
+      "status": "un_member"
+    },
+    "SDN": {
+      "qid": "Q1049",
+      "status": "un_member"
+    },
+    "SEN": {
+      "qid": "Q1041",
+      "status": "un_member"
+    },
+    "SGP": {
+      "qid": "Q334",
+      "status": "un_member"
+    },
+    "SLB": {
+      "qid": "Q685",
+      "status": "un_member"
+    },
+    "SLE": {
+      "qid": "Q1044",
+      "status": "un_member"
+    },
+    "SLV": {
+      "qid": "Q792",
+      "status": "un_member"
+    },
+    "SMR": {
+      "qid": "Q238",
+      "status": "un_member"
+    },
+    "SOM": {
+      "qid": "Q1045",
+      "status": "un_member"
+    },
+    "SRB": {
+      "qid": "Q403",
+      "status": "un_member"
+    },
+    "SSD": {
+      "qid": "Q958",
+      "status": "un_member"
+    },
+    "STP": {
+      "qid": "Q1039",
+      "status": "un_member"
+    },
+    "SUR": {
+      "qid": "Q730",
+      "status": "un_member"
+    },
+    "SVK": {
+      "qid": "Q214",
+      "status": "un_member"
+    },
+    "SVN": {
+      "qid": "Q215",
+      "status": "un_member"
+    },
+    "SWE": {
+      "qid": "Q34",
+      "status": "un_member"
+    },
+    "SWZ": {
+      "qid": "Q1050",
+      "status": "un_member"
+    },
+    "SYC": {
+      "qid": "Q1042",
+      "status": "un_member"
+    },
+    "SYR": {
+      "qid": "Q858",
+      "status": "un_member"
+    },
+    "TCD": {
+      "qid": "Q657",
+      "status": "un_member"
+    },
+    "TGO": {
+      "qid": "Q945",
+      "status": "un_member"
+    },
+    "THA": {
+      "qid": "Q869",
+      "status": "un_member"
+    },
+    "TJK": {
+      "qid": "Q863",
+      "status": "un_member"
+    },
+    "TKM": {
+      "qid": "Q874",
+      "status": "un_member"
+    },
+    "TLS": {
+      "qid": "Q574",
+      "status": "un_member"
+    },
+    "TON": {
+      "qid": "Q678",
+      "status": "un_member"
+    },
+    "TTO": {
+      "qid": "Q754",
+      "status": "un_member"
+    },
+    "TUN": {
+      "qid": "Q948",
+      "status": "un_member"
+    },
+    "TUR": {
+      "qid": "Q43",
+      "status": "un_member"
+    },
+    "TUV": {
+      "qid": "Q672",
+      "status": "un_member"
+    },
+    "TWN": {
+      "qid": "Q865",
+      "status": "partially_recognized"
+    },
+    "TZA": {
+      "qid": "Q924",
+      "status": "un_member"
+    },
+    "UGA": {
+      "qid": "Q1036",
+      "status": "un_member"
+    },
+    "UKR": {
+      "qid": "Q212",
+      "status": "un_member"
+    },
+    "URY": {
+      "qid": "Q77",
+      "status": "un_member"
+    },
+    "USA": {
+      "qid": "Q30",
+      "status": "un_member"
+    },
+    "UZB": {
+      "qid": "Q265",
+      "status": "un_member"
+    },
+    "VAT": {
+      "qid": "Q237",
+      "status": "un_observer"
+    },
+    "VCT": {
+      "qid": "Q757",
+      "status": "un_member"
+    },
+    "VEN": {
+      "qid": "Q717",
+      "status": "un_member"
+    },
+    "VNM": {
+      "qid": "Q881",
+      "status": "un_member"
+    },
+    "VUT": {
+      "qid": "Q686",
+      "status": "un_member"
+    },
+    "WSM": {
+      "qid": "Q683",
+      "status": "un_member"
+    },
+    "XKX": {
+      "qid": "Q1246",
+      "status": "partially_recognized"
+    },
+    "YEM": {
+      "qid": "Q805",
+      "status": "un_member"
+    },
+    "ZAF": {
+      "qid": "Q258",
+      "status": "un_member"
+    },
+    "ZMB": {
+      "qid": "Q953",
+      "status": "un_member"
+    },
+    "ZWE": {
+      "qid": "Q954",
+      "status": "un_member"
+    }
+  }
+}
