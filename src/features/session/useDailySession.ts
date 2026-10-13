@@ -19,6 +19,7 @@ import {
 } from "@/engine/session";
 import type { InputSetting, Rating } from "@/engine/types";
 import type { Locale } from "@/i18n/locales";
+import { requestSync } from "@/sync/SyncProvider";
 import { answerMoment, explain } from "../study/explain";
 import { modeStats, planDay } from "../study/plan";
 import {
@@ -103,6 +104,7 @@ export function useDailySession(
     const next = nextItem(session.current, Date.now());
     if (!next) {
       setView({ kind: "done", reviewed: session.current.answered });
+      requestSync();
       return;
     }
     session.current = next.state;
@@ -250,6 +252,7 @@ export function useDailySession(
   const end = useCallback(async () => {
     if (view?.kind === "feedback") await commit();
     setView({ kind: "done", reviewed: session.current.answered });
+    requestSync();
   }, [view, commit]);
 
   return {
