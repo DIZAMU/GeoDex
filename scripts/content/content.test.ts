@@ -69,7 +69,7 @@ describe("content linter", () => {
     expect(textProblems("Rich in oil.", "en", "fact", rules)).toEqual([]);
   });
 
-  it("passes the committed content", () => {
-    expect(lintContent()).toEqual([]);
+  it("passes the committed content, with content for every country in scope", () => {
+    expect(lintContent({ complete: true })).toEqual([]);
   });
 });
