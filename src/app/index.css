@@ -3,6 +3,7 @@
 @import "@fontsource-variable/schibsted-grotesk/wght.css";
 @import "@fontsource-variable/newsreader/opsz-italic.css";
 @import "../themes/themes.css";
+@import "../map/map.css";
 
 /* shadcn dark: variants apply to the one dark theme. */
 @custom-variant dark (&:where([data-theme="atlas"], [data-theme="atlas"] *));

@@ -1,0 +1,342 @@
+/**
+ * Equal Earth world map (PLAN.md 2, 8.2). SVG paths are projected once; zoom and fly-to
+ * move a single transform. Labels and markers are drawn in screen space so they keep
+ * their size at every zoom level.
+ */
+import { geoEqualEarth, geoPath } from "d3-geo";
+import { select } from "d3-selection";
+import "d3-transition";
+import { type D3ZoomEvent, type ZoomBehavior, zoom, zoomIdentity } from "d3-zoom";
+import type { Feature, Geometry } from "geojson";
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { feature } from "topojson-client";
+import type { Topology } from "topojson-specification";
+import type { Country } from "@/data/types";
+import type { CountryTopology } from "@/data/world";
+import {
+  type Bounds,
+  fitTransform,
+  MARKER_AREA_PX,
+  MAX_ZOOM,
+  screenArea,
+  type Transform,
+  unionBounds,
+} from "./fit";
+
+export type MapFocus = { kind: "world" } | { kind: "countries"; ids: readonly string[] };
+
+export type MapHighlight = {
+  /** Filled with the accent: the answer. */
+  target?: string | null;
+  /** Dashed outline and its own label: what the learner picked when wrong. */
+  chosen?: string | null;
+  /** Shown as selected before submitting. */
+  selected?: string | null;
+  /** Countries that get a name label. */
+  labels?: readonly string[];
+};
+
+export type WorldMapProps = {
+  countries: readonly Country[];
+  topology: CountryTopology;
+  focus: MapFocus;
+  highlight?: MapHighlight;
+  /** Countries that respond to clicks. Empty means the map is view-only. */
+  selectable?: ReadonlySet<string>;
+  onSelect?: (id: string) => void;
+  labelFor: (id: string) => string;
+  ariaLabel: string;
+  /** Animate focus changes (the answer fly-to). Off for prompts. */
+  animate?: boolean;
+};
+
+type Shape = { id: string; d: string; centroid: [number, number]; area: number; bounds: Bounds };
+
+const FLY_MS = 600;
+
+function prefersReducedMotion(): boolean {
+  return (
+    typeof window !== "undefined" &&
+    window.matchMedia?.("(prefers-reduced-motion: reduce)").matches === true
+  );
+}
+
+/** Playful gets a slightly springy ease; the other themes ease out. */
+function themeEase(t: number): number {
+  if (document.documentElement.dataset.theme === "playful") {
+    const s = 1.4;
+    const u = t - 1;
+    return u * u * ((s + 1) * u + s) + 1;
+  }
+  return 1 - (1 - t) ** 3;
+}
+
+function useSize<T extends HTMLElement>() {
+  const ref = useRef<T>(null);
+  const [size, setSize] = useState({ width: 0, height: 0 });
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+    const observer = new ResizeObserver(([entry]) => {
+      if (!entry) return;
+      const { width, height } = entry.contentRect;
+      setSize((prev) =>
+        prev.width === width && prev.height === height ? prev : { width, height },
+      );
+    });
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+  return { ref, ...size };
+}
+
+const Land = memo(function Land({
+  shapes,
+  outline,
+  sphere,
+  selectable,
+}: {
+  shapes: readonly Shape[];
+  outline: string;
+  sphere: string;
+  selectable: ReadonlySet<string>;
+}) {
+  return (
+    <>
+      <path d={sphere} className="map-ocean" />
+      <path d={outline} className="map-land-other" />
+      {shapes.map((shape) => (
+        <path
+          key={shape.id}
+          d={shape.d}
+          data-country={shape.id}
+          className={selectable.has(shape.id) ? "map-country map-selectable" : "map-country"}
+        />
+      ))}
+    </>
+  );
+});
+
+export function WorldMap({
+  countries,
+  topology,
+  focus,
+  highlight = {},
+  selectable = new Set(),
+  onSelect,
+  labelFor,
+  ariaLabel,
+  animate = false,
+}: WorldMapProps) {
+  const { ref: containerRef, width, height } = useSize<HTMLDivElement>();
+  const svgRef = useRef<SVGSVGElement>(null);
+  const zoomRef = useRef<ZoomBehavior<SVGSVGElement, unknown> | null>(null);
+  const [transform, setTransform] = useState<Transform>({ k: 1, x: 0, y: 0 });
+  const frame = useRef<number | null>(null);
+
+  const inScope = useMemo(() => new Set(countries.map((c) => c.id)), [countries]);
+
+  const geometry = useMemo(() => {
+    if (width === 0 || height === 0) return null;
+    const topo = topology as unknown as Topology;
+    const collection = feature(topo, topo.objects.countries as never) as unknown as {
+      features: Feature<Geometry>[];
+    };
+    const projection = geoEqualEarth().fitExtent(
+      [
+        [8, 8],
+        [width - 8, height - 8],
+      ],
+      { type: "Sphere" },
+    );
+    const path = geoPath(projection).digits(1);
+    const shapes: Shape[] = [];
+    const others: Feature<Geometry>[] = [];
+    for (const f of collection.features) {
+      const id = String(f.id ?? "");
+      if (!inScope.has(id)) {
+        others.push(f);
+        continue;
+      }
+      const country = countries.find((c) => c.id === id);
+      const centroid = country ? projection([country.centroid[0], country.centroid[1]]) : null;
+      shapes.push({
+        id,
+        d: path(f) ?? "",
+        centroid: centroid ?? (path.centroid(f) as [number, number]),
+        area: path.area(f),
+        bounds: path.bounds(f) as Bounds,
+      });
+    }
+    // Countries drawn only as markers (no geometry), such as Tuvalu.
+    const markerOnly = countries
+      .filter((c) => c.markerOnly)
+      .map((c) => {
+        const point = projection([c.centroid[0], c.centroid[1]]) ?? [0, 0];
+        return {
+          id: c.id,
+          d: "",
+          centroid: point,
+          area: 0,
+          bounds: [
+            [point[0] - 2, point[1] - 2],
+            [point[0] + 2, point[1] + 2],
+          ] as Bounds,
+        };
+      });
+    return {
+      shapes,
+      markerOnly,
+      byId: new Map([...shapes, ...markerOnly].map((s) => [s.id, s])),
+      outline: path({ type: "FeatureCollection", features: others }) ?? "",
+      sphere: path({ type: "Sphere" }) ?? "",
+    };
+  }, [topology, countries, inScope, width, height]);
+
+  // Zoom behavior: wheel, drag and pinch, with the transform kept in React state per frame.
+  useEffect(() => {
+    const svg = svgRef.current;
+    if (!svg || width === 0) return;
+    const behavior = zoom<SVGSVGElement, unknown>()
+      .scaleExtent([1, MAX_ZOOM])
+      .translateExtent([
+        [-width * 0.25, -height * 0.25],
+        [width * 1.25, height * 1.25],
+      ])
+      .on("zoom", (event: D3ZoomEvent<SVGSVGElement, unknown>) => {
+        const { k, x, y } = event.transform;
+        if (frame.current !== null) cancelAnimationFrame(frame.current);
+        frame.current = requestAnimationFrame(() => setTransform({ k, x, y }));
+      });
+    zoomRef.current = behavior;
+    select(svg).call(behavior).on("dblclick.zoom", null);
+    return () => {
+      select(svg).on(".zoom", null);
+    };
+  }, [width, height]);
+
+  // Focus: fit the requested countries, animated only for the answer moment. The key is a
+  // string so a new array with the same ids does not refit the map.
+  const focusKey = focus.kind === "world" ? "" : focus.ids.join(",");
+  useEffect(() => {
+    const svg = svgRef.current;
+    const behavior = zoomRef.current;
+    if (!svg || !behavior || !geometry) return;
+    let target: Transform = { k: 1, x: 0, y: 0 };
+    const ids = focusKey === "" ? [] : focusKey.split(",");
+    const bounds = unionBounds(
+      ids.map((id) => geometry.byId.get(id)?.bounds).filter((b): b is Bounds => b !== undefined),
+    );
+    if (bounds) target = fitTransform(bounds, width, height, 0.12);
+    const next = zoomIdentity.translate(target.x, target.y).scale(target.k);
+    const selection = select(svg);
+    if (animate && !prefersReducedMotion()) {
+      selection.transition().duration(FLY_MS).ease(themeEase).call(behavior.transform, next);
+    } else {
+      selection.interrupt().call(behavior.transform, next);
+    }
+  }, [focusKey, geometry, width, height, animate]);
+
+  const handleClick = useCallback(
+    (event: React.MouseEvent<SVGSVGElement>) => {
+      const id = (event.target as Element).closest("[data-country]")?.getAttribute("data-country");
+      if (id && selectable.has(id)) onSelect?.(id);
+    },
+    [selectable, onSelect],
+  );
+
+  const toScreen = (point: [number, number]): [number, number] => [
+    point[0] * transform.k + transform.x,
+    point[1] * transform.k + transform.y,
+  ];
+
+  const markers = geometry
+    ? [...geometry.shapes, ...geometry.markerOnly].filter(
+        (s) => s.d === "" || screenArea(s.area, transform.k) < MARKER_AREA_PX,
+      )
+    : [];
+  const labels = [
+    ...new Set([...(highlight.labels ?? []), highlight.chosen].filter(Boolean) as string[]),
+  ];
+
+  return (
+    <div ref={containerRef} className="relative h-full w-full overflow-hidden">
+      {/* biome-ignore lint/a11y/useKeyWithClickEvents: map picks have a keyboard alternative in the answer panel */}
+      <svg
+        ref={svgRef}
+        width={width}
+        height={height}
+        role="img"
+        aria-label={ariaLabel}
+        className="world-map block touch-none select-none"
+        onClick={handleClick}
+      >
+        {geometry && (
+          <>
+            <g transform={`translate(${transform.x},${transform.y}) scale(${transform.k})`}>
+              <Land
+                shapes={geometry.shapes}
+                outline={geometry.outline}
+                sphere={geometry.sphere}
+                selectable={selectable}
+              />
+              {highlight.selected && geometry.byId.get(highlight.selected)?.d ? (
+                <path d={geometry.byId.get(highlight.selected)?.d} className="map-selected" />
+              ) : null}
+              {highlight.target && geometry.byId.get(highlight.target)?.d ? (
+                <path
+                  d={geometry.byId.get(highlight.target)?.d}
+                  className="map-target"
+                  data-testid="map-target"
+                />
+              ) : null}
+              {highlight.chosen && geometry.byId.get(highlight.chosen)?.d ? (
+                <path
+                  d={geometry.byId.get(highlight.chosen)?.d}
+                  className="map-chosen"
+                  data-testid="map-chosen"
+                />
+              ) : null}
+            </g>
+            <g>
+              {markers.map((m) => {
+                const [x, y] = toScreen(m.centroid);
+                const state =
+                  m.id === highlight.target
+                    ? "map-marker-target"
+                    : m.id === highlight.chosen
+                      ? "map-marker-chosen"
+                      : m.id === highlight.selected
+                        ? "map-marker-selected"
+                        : "";
+                return (
+                  <g key={m.id} data-country={m.id} transform={`translate(${x},${y})`}>
+                    {selectable.has(m.id) ? <circle r={22} className="map-marker-hit" /> : null}
+                    <circle r={5} className={`map-marker ${state}`} />
+                  </g>
+                );
+              })}
+              {labels.map((id) => {
+                const shape = geometry.byId.get(id);
+                if (!shape) return null;
+                const [x, y] = toScreen(shape.centroid);
+                return (
+                  <text
+                    key={id}
+                    x={x}
+                    y={y}
+                    className={id === highlight.chosen ? "map-label map-label-chosen" : "map-label"}
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                  >
+                    {labelFor(id)}
+                  </text>
+                );
+              })}
+            </g>
+          </>
+        )}
+      </svg>
+    </div>
+  );
+}
