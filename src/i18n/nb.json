@@ -55,7 +55,9 @@
   },
   "nav": {
     "today": "I dag",
-    "settings": "Innstillinger"
+    "settings": "Innstillinger",
+    "atlas": "Atlas",
+    "stats": "Statistikk"
   },
   "common": {
     "loading": "Laster"
@@ -197,5 +199,122 @@
     "import": "Importer data",
     "imported": "Importerte {{reviews}} repetisjoner og {{votes}} stemmer på huskeregler.",
     "importError": "Den filen er ikke en eksport fra GeoDex."
+  },
+  "continent": {
+    "africa": "Afrika",
+    "asia": "Asia",
+    "europe": "Europa",
+    "north_america": "Nord-Amerika",
+    "south_america": "Sør-Amerika",
+    "oceania": "Oseania"
+  },
+  "skill": {
+    "location": "Plassering",
+    "capitals": "Hovedsteder",
+    "flags": "Flagg",
+    "currency_language": "Valuta og språk"
+  },
+  "level": {
+    "0": "Ikke startet",
+    "1": "Lærer",
+    "2": "Sitter under en uke",
+    "3": "Sitter under tre uker",
+    "4": "Mestret"
+  },
+  "cardType": {
+    "map_to_name": "Kart til navn",
+    "name_to_map": "Navn til kart",
+    "country_to_capital": "Land til hovedstad",
+    "capital_to_country": "Hovedstad til land",
+    "flag_to_name": "Flagg til navn",
+    "name_to_flag": "Navn til flagg",
+    "country_to_currency": "Land til valuta",
+    "country_to_language": "Land til språk",
+    "contrast": "Skill dem"
+  },
+  "hookType": {
+    "anchor": "Anker",
+    "shape": "Form",
+    "etymology": "Navneopphav",
+    "sound": "Lydlikhet",
+    "story": "Historie",
+    "flag_decode": "Flaggets betydning",
+    "contrast": "Kontrast"
+  },
+  "atlas": {
+    "title": "Atlas",
+    "show": "Vis",
+    "regions": "Regioner",
+    "mastered": "{{n}} av {{total}} mestret",
+    "badge": "Merke oppnådd",
+    "drill": "Øv på denne regionen",
+    "legend": "Mestring"
+  },
+  "entry": {
+    "back": "Atlas",
+    "cards": "Kort",
+    "due": "Neste gang {{date}}",
+    "holds": "sitter omtrent {{days}} dager",
+    "neighbors": "Naboland",
+    "none": "Ingen",
+    "facts": "Fakta du har sett",
+    "noFacts": "Ingen ennå. Fakta dukker opp når du repeterer.",
+    "history": "Repetisjoner",
+    "noHistory": "Ikke repetert ennå.",
+    "correct": "Riktig",
+    "wrong": "Feil",
+    "drill": "Øv på {{region}}"
+  },
+  "stats": {
+    "title": "Statistikk",
+    "grid": "Ferdigheter per verdensdel",
+    "gridHelp": "Andel kort som er mestret (21+ dager).",
+    "retention": "Husket, siste 30 dager",
+    "retentionValue": "{{correct}} av {{total}} repetisjoner riktige",
+    "target": "mål {{value}}",
+    "noRetention": "Ingen repetisjoner av kjente kort de siste 30 dagene.",
+    "forecast": "Til repetisjon de neste 30 dagene",
+    "confusions": "Oftest forvekslet",
+    "noConfusions": "Ingen forvekslinger ennå.",
+    "leeches": "Igler",
+    "noLeeches": "Ingen kort har glippet seks ganger.",
+    "hooks": "Huskeregler som virker for deg",
+    "hookRate": "{{value}} husket neste gang",
+    "noHooks": "For få repetisjoner etter huskeregler ennå.",
+    "recognition": "Bare gjenkjenning",
+    "recognitionBody": "Av de {{of}} landene du kjenner igjen på kartet, kan du ennå ikke plassere {{n}} ut fra navnet.",
+    "noRecognition": "Ingenting ennå: dette fylles ut når kartkortene har sittet en uke.",
+    "activity": "Siste 365 dager",
+    "achievements": "Merker",
+    "noAchievements": "Ingen ennå.",
+    "drill": "Øv"
+  },
+  "streak": {
+    "days_one": "{{count}} dag på rad",
+    "days_other": "{{count}} dager på rad",
+    "none": "Ingen dager på rad ennå",
+    "longest": "Lengste {{count}}",
+    "freezes_one": "{{count}} fridag i reserve",
+    "freezes_other": "{{count}} fridager i reserve"
+  },
+  "achievement": {
+    "region": "{{skill}}: {{name}}",
+    "continent": "{{skill}}: hele {{name}}",
+    "world": "{{skill}}: hele verden",
+    "untangled": "Løst opp: {{a}} og {{b}}",
+    "streak": "{{count}} dager på rad"
+  },
+  "summary": {
+    "retention": "Riktige: {{value}}",
+    "tomorrow_one": "{{count}} kort til repetisjon i morgen",
+    "tomorrow_other": "{{count}} kort til repetisjon i morgen",
+    "newAchievements": "Nye merker"
+  },
+  "drill": {
+    "title": "Øv",
+    "note": "Bare øving: svarene endrer verken timeplanen eller rekken din.",
+    "region": "Øv: {{name}}",
+    "pair": "Øv: {{a}} og {{b}}",
+    "empty": "Ingenting å øve på her ennå."
   }
 }

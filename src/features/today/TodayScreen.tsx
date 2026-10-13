@@ -1,9 +1,10 @@
-import { ArrowRightIcon, MapPinIcon } from "lucide-react";
+import { ArrowRightIcon, FlameIcon, MapPinIcon } from "lucide-react";
 import { useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router";
 import { db } from "@/db/db";
 import { setLastInputMode } from "@/db/settings";
+import type { Streak } from "@/engine/streak";
 import { type InputSetting, parseCardId } from "@/engine/types";
 import { isLocale } from "@/i18n/locales";
 import { WorldMap } from "@/map/WorldMap";
@@ -13,6 +14,7 @@ import { Stat } from "@/ui/stat";
 import { ToggleGroup, ToggleGroupItem } from "@/ui/toggle-group";
 import { nameOf } from "../session/parts";
 import { planDay, scopedCountries } from "../study/plan";
+import { useProgress } from "../study/progress";
 import { type Learner, useLearner } from "../study/useLearner";
 
 const INPUTS: readonly InputSetting[] = ["auto", "mc", "typing"];
@@ -27,6 +29,7 @@ function Today({ learner }: { learner: Learner }) {
   const { t, i18n } = useTranslation();
   const locale = isLocale(i18n.language) ? i18n.language : "en";
   const navigate = useNavigate();
+  const { streak } = useProgress(learner);
   const plan = useMemo(
     () => (learner.settings.homeCountry ? planDay({ ...learner, now: Date.now() }) : null),
     [learner],
@@ -49,7 +52,10 @@ function Today({ learner }: { learner: Learner }) {
     <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-8 md:px-10 md:py-14 lg:min-h-[calc(100dvh-4rem)] lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:content-center lg:items-center lg:gap-14">
       <section aria-labelledby="today-title" className="stagger flex flex-col gap-6">
         <div className="flex flex-col gap-1">
-          <p className="text-sm text-muted-foreground first-letter:uppercase">{date}</p>
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="text-sm text-muted-foreground first-letter:uppercase">{date}</p>
+            {needsSetup ? null : <StreakChip streak={streak} />}
+          </div>
           <h1 id="today-title" className="font-name text-4xl tracking-tight">
             {t("today.title")}
           </h1>
@@ -132,6 +138,27 @@ function Today({ learner }: { learner: Learner }) {
 
       <MapCard learner={learner} nextSubregion={plan?.nextSubregion ?? null} locale={locale} />
     </div>
+  );
+}
+
+/** Current streak, with freezes in reserve; the longest run sits in the tooltip. */
+function StreakChip({ streak }: { streak: Streak }) {
+  const { t } = useTranslation();
+  return (
+    <p
+      className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 text-sm tabular-nums"
+      title={t("streak.longest", { count: streak.longest })}
+      data-testid="streak"
+    >
+      <FlameIcon aria-hidden className="size-4 text-primary" />
+      {streak.current > 0 ? t("streak.days", { count: streak.current }) : t("streak.none")}
+      {streak.freezes > 0 ? (
+        <span className="text-muted-foreground">
+          {" · "}
+          {t("streak.freezes", { count: streak.freezes })}
+        </span>
+      ) : null}
+    </p>
   );
 }
 
