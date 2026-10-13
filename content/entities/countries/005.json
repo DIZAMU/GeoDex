@@ -1,0 +1,1264 @@
+{
+  "group": "005",
+  "entities": [
+    {
+      "entityId": "ARG",
+      "hooks": {
+        "en": [
+          {
+            "id": "ARG.en.1",
+            "type": "anchor",
+            "text": "Argentina fills the southern cone of South America, with Chile along the Andes to its west."
+          },
+          {
+            "id": "ARG.en.2",
+            "type": "etymology",
+            "text": "Argentina comes from Latin 'argentum', silver, the same silver as in the Río de la Plata, 'river of silver'."
+          },
+          {
+            "id": "ARG.en.3",
+            "type": "shape",
+            "text": "Argentina is a long carrot hanging down the east side of the Andes toward Antarctica."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ARG.nb.1",
+            "type": "anchor",
+            "text": "Argentina fyller den sørlige spissen av Sør-Amerika, med Chile på andre siden av Andesfjellene i vest."
+          },
+          {
+            "id": "ARG.nb.2",
+            "type": "etymology",
+            "text": "Argentina kommer av latin «argentum», sølv, samme sølv som i elvenavnet Río de la Plata."
+          },
+          {
+            "id": "ARG.nb.3",
+            "type": "sound",
+            "text": "Argentina: en arg tangodanser stamper hele veien sørover til Ildlandet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "ARG.cap.en.1",
+            "type": "anchor",
+            "text": "Buenos Aires sits on the Río de la Plata, across the water from Uruguay."
+          },
+          {
+            "id": "ARG.cap.en.2",
+            "type": "etymology",
+            "text": "Buenos Aires is Spanish for 'good airs', from a patron saint sailors prayed to for fair winds."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ARG.cap.nb.1",
+            "type": "anchor",
+            "text": "Buenos Aires ligger ved Río de la Plata, rett over vannet fra Uruguay."
+          },
+          {
+            "id": "ARG.cap.nb.2",
+            "type": "etymology",
+            "text": "Buenos Aires betyr «god luft» på spansk, etter en skytshelgen sjøfolk ba til for god vind."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Light blue, white and light blue horizontal stripes, with a golden Sun of May in the middle.",
+        "nb": "Lyseblå, hvit og lyseblå vannrette striper, med en gyllen maisol i midten."
+      },
+      "facts": [
+        {
+          "id": "ARG.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Argentina borders Chile, Bolivia, Paraguay, Brazil and Uruguay.",
+            "nb": "Argentina grenser til Chile, Bolivia, Paraguay, Brasil og Uruguay."
+          }
+        },
+        {
+          "id": "ARG.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Aconcagua, on the Argentine side of the Andes, is the highest mountain in the Americas.",
+            "nb": "Aconcagua, på argentinsk side av Andes, er det høyeste fjellet i Amerika."
+          }
+        },
+        {
+          "id": "ARG.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Argentina claims the Falkland Islands, which it calls the Malvinas; the United Kingdom governs them.",
+            "nb": "Argentina gjør krav på Falklandsøyene, som landet kaller Malvinas; Storbritannia styrer dem."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "BOL",
+      "hooks": {
+        "en": [
+          {
+            "id": "BOL.en.1",
+            "type": "anchor",
+            "text": "Bolivia is landlocked (no coast at all), wedged between Peru, Brazil, Paraguay, Argentina and Chile."
+          },
+          {
+            "id": "BOL.en.2",
+            "type": "etymology",
+            "text": "Bolivia is named after Simón Bolívar, the general who led the fight for its independence."
+          },
+          {
+            "id": "BOL.en.3",
+            "type": "story",
+            "text": "Bolivia lost its coast to Chile in a war, yet still keeps a navy, which trains on Lake Titicaca."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BOL.nb.1",
+            "type": "anchor",
+            "text": "Bolivia er en innlandsstat (uten kyst), klemt mellom Peru, Brasil, Paraguay, Argentina og Chile."
+          },
+          {
+            "id": "BOL.nb.2",
+            "type": "etymology",
+            "text": "Bolivia har navn etter Simón Bolívar, generalen som ledet kampen for uavhengighet fra Spania."
+          },
+          {
+            "id": "BOL.nb.3",
+            "type": "story",
+            "text": "Bolivia mistet kysten til Chile i en krig, men har fortsatt marine, som øver på Titicacasjøen."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "BOL.cap.en.1",
+            "type": "story",
+            "text": "Bolivia has two capitals: Sucre is the constitutional capital with the top courts, La Paz is the seat of government."
+          },
+          {
+            "id": "BOL.cap.en.2",
+            "type": "anchor",
+            "text": "La Paz sits high on the Andean plateau near Lake Titicaca, among the highest seats of government in the world."
+          },
+          {
+            "id": "BOL.cap.en.3",
+            "type": "etymology",
+            "text": "Sucre is named after Antonio José de Sucre, one of Bolívar's generals."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BOL.cap.nb.1",
+            "type": "story",
+            "text": "Bolivia har to hovedsteder: Sucre er den konstitusjonelle med de øverste domstolene, La Paz er regjeringssete."
+          },
+          {
+            "id": "BOL.cap.nb.2",
+            "type": "anchor",
+            "text": "La Paz ligger høyt på høysletta i Andes nær Titicacasjøen, blant verdens høyestliggende regjeringsseter."
+          },
+          {
+            "id": "BOL.cap.nb.3",
+            "type": "sound",
+            "text": "Sucre: tenk sukker, og se for deg dommerne i Bolivias høyesterett som strør sukker i kaffen."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, yellow and green horizontal stripes, red on top; the state flag adds the coat of arms.",
+        "nb": "Rød, gul og grønn vannrette striper, rødt øverst; statsflagget har riksvåpenet i midten."
+      },
+      "facts": [
+        {
+          "id": "BOL.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Bolivia is landlocked, bordering Peru, Brazil, Paraguay, Argentina and Chile.",
+            "nb": "Bolivia er en innlandsstat som grenser til Peru, Brasil, Paraguay, Argentina og Chile."
+          }
+        },
+        {
+          "id": "BOL.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Bolivia has several official languages, among them Spanish, Quechua, Aymara and Guaraní.",
+            "nb": "Bolivia har flere offisielle språk, blant dem spansk, quechua, aymara og guaraní."
+          }
+        },
+        {
+          "id": "BOL.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Salar de Uyuni in Bolivia is the largest salt flat in the world.",
+            "nb": "Salar de Uyuni i Bolivia er verdens største saltslette."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "BRA",
+      "hooks": {
+        "en": [
+          {
+            "id": "BRA.en.1",
+            "type": "anchor",
+            "text": "Brazil takes up nearly half of South America and borders every country there except Chile and Ecuador."
+          },
+          {
+            "id": "BRA.en.2",
+            "type": "etymology",
+            "text": "Brazil is named after brazilwood, a tree the Portuguese shipped home for its red dye."
+          },
+          {
+            "id": "BRA.en.3",
+            "type": "contrast",
+            "text": "Brazil speaks Portuguese, not Spanish, because Portugal, not Spain, colonized it."
+          },
+          {
+            "id": "BRA.en.4",
+            "type": "sound",
+            "text": "Brazil: a giant brazier glowing in the Amazon, red like the brazilwood the country is named for."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BRA.nb.1",
+            "type": "anchor",
+            "text": "Brasil dekker nesten halve Sør-Amerika og grenser til alle landene der unntatt Chile og Ecuador."
+          },
+          {
+            "id": "BRA.nb.2",
+            "type": "etymology",
+            "text": "Brasil har navn etter brasiltre, et tre portugiserne fraktet hjem for det røde fargestoffet."
+          },
+          {
+            "id": "BRA.nb.3",
+            "type": "contrast",
+            "text": "Brasil snakker portugisisk, ikke spansk, fordi det var Portugal som koloniserte landet."
+          },
+          {
+            "id": "BRA.nb.4",
+            "type": "sound",
+            "text": "Brasil: noen braser egg på en glohet stekepanne midt i Amazonas."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "BRA.cap.en.1",
+            "type": "story",
+            "text": "Brasília was built from scratch in the interior to replace Rio de Janeiro as capital and pull people inland."
+          },
+          {
+            "id": "BRA.cap.en.2",
+            "type": "shape",
+            "text": "Brasília's master plan is shaped like an airplane, or a bird, seen from above."
+          }
+        ],
+        "nb": [
+          {
+            "id": "BRA.cap.nb.1",
+            "type": "story",
+            "text": "Brasília ble bygget fra bunnen av inne i landet for å erstatte Rio de Janeiro og trekke folk bort fra kysten."
+          },
+          {
+            "id": "BRA.cap.nb.2",
+            "type": "shape",
+            "text": "Brasília er planlagt i form av et fly, eller en fugl, sett ovenfra."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green field, yellow diamond and a blue globe of stars with a white band reading 'Ordem e Progresso'.",
+        "nb": "Grønn bunn, gul rombe og en blå himmelglobe med stjerner og et hvitt bånd med «Ordem e Progresso»."
+      },
+      "facts": [
+        {
+          "id": "BRA.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Brazil borders every South American country except Chile and Ecuador, plus France via French Guiana.",
+            "nb": "Brasil grenser til alle land i Sør-Amerika unntatt Chile og Ecuador, og til Frankrike via Fransk Guyana."
+          }
+        },
+        {
+          "id": "BRA.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Portuguese is the official language of Brazil.",
+            "nb": "Portugisisk er det offisielle språket i Brasil."
+          }
+        },
+        {
+          "id": "BRA.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Amazon River reaches the Atlantic in northern Brazil, carrying more water than any other river.",
+            "nb": "Amazonas munner ut i Atlanterhavet nord i Brasil og fører mer vann enn noen annen elv."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "CHL",
+      "hooks": {
+        "en": [
+          {
+            "id": "CHL.en.1",
+            "type": "shape",
+            "text": "Chile is a long, thin ribbon down the Pacific side of South America, west of the Andes."
+          },
+          {
+            "id": "CHL.en.2",
+            "type": "anchor",
+            "text": "Chile lies west of Argentina, with the Andes between them and the Pacific on its other side."
+          },
+          {
+            "id": "CHL.en.3",
+            "type": "sound",
+            "text": "Chile: a chili pepper, long, thin and red, hanging down the Pacific coast."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CHL.nb.1",
+            "type": "shape",
+            "text": "Chile er et langt, tynt bånd langs Stillehavet, på vestsiden av Andes."
+          },
+          {
+            "id": "CHL.nb.2",
+            "type": "anchor",
+            "text": "Chile ligger vest for Argentina, med Andesfjellene imellom og Stillehavet på den andre siden."
+          },
+          {
+            "id": "CHL.nb.3",
+            "type": "sound",
+            "text": "Chile: en lang, rød chili som henger nedover stillehavskysten."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "CHL.cap.en.1",
+            "type": "anchor",
+            "text": "Santiago lies in a central valley at the foot of the Andes, inland from the port of Valparaíso."
+          },
+          {
+            "id": "CHL.cap.en.2",
+            "type": "etymology",
+            "text": "Santiago is named for Saint James, Sant Iago in old Spanish."
+          }
+        ],
+        "nb": [
+          {
+            "id": "CHL.cap.nb.1",
+            "type": "anchor",
+            "text": "Santiago ligger i en dal midt i landet ved foten av Andes, innenfor havnebyen Valparaíso."
+          },
+          {
+            "id": "CHL.cap.nb.2",
+            "type": "etymology",
+            "text": "Santiago har navn etter apostelen Jakob, på gammelspansk Sant Iago."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "White over red, with a blue square in the top corner holding one white star; Texas has a full blue bar instead.",
+        "nb": "Hvitt over rødt, med et blått felt øverst ved stangen og én hvit stjerne; Texas har et helt blått felt i stedet."
+      },
+      "facts": [
+        {
+          "id": "CHL.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Chile borders Peru, Bolivia and Argentina, and has a long Pacific coast.",
+            "nb": "Chile grenser til Peru, Bolivia og Argentina, og har lang kyst mot Stillehavet."
+          }
+        },
+        {
+          "id": "CHL.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Atacama Desert in northern Chile is one of the driest places on Earth.",
+            "nb": "Atacamaørkenen nord i Chile er et av de tørreste stedene på jorda."
+          }
+        },
+        {
+          "id": "CHL.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Easter Island, with its moai statues, belongs to Chile.",
+            "nb": "Påskeøya, med moai-statuene, hører til Chile."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "COL",
+      "hooks": {
+        "en": [
+          {
+            "id": "COL.en.1",
+            "type": "anchor",
+            "text": "Colombia is the northwest corner of South America, joined to Panama, with coasts on both the Caribbean and the Pacific."
+          },
+          {
+            "id": "COL.en.2",
+            "type": "etymology",
+            "text": "Colombia is named after Christopher Columbus."
+          },
+          {
+            "id": "COL.en.3",
+            "type": "contrast",
+            "text": "Colombia with an O is the country; Columbia with a U is a river, a university and a district in the US."
+          },
+          {
+            "id": "COL.en.4",
+            "type": "sound",
+            "text": "Colombia: Columbus in a coffee cup, waving from the corner where South America meets Panama."
+          }
+        ],
+        "nb": [
+          {
+            "id": "COL.nb.1",
+            "type": "anchor",
+            "text": "Colombia er nordvesthjørnet av Sør-Amerika, med grense mot Panama og kyst mot både Karibhavet og Stillehavet."
+          },
+          {
+            "id": "COL.nb.2",
+            "type": "etymology",
+            "text": "Colombia har navn etter Christofer Columbus."
+          },
+          {
+            "id": "COL.nb.3",
+            "type": "contrast",
+            "text": "Landet staves Colombia, med o; Columbia med u er blant annet en elv og et universitet i USA."
+          },
+          {
+            "id": "COL.nb.4",
+            "type": "sound",
+            "text": "Colombia: en kolonne av kaffebønder bærer sekker over grensen til Panama."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "COL.cap.en.1",
+            "type": "anchor",
+            "text": "Bogotá sits high on a plateau in the eastern Andes, far inland from both coasts."
+          },
+          {
+            "id": "COL.cap.en.2",
+            "type": "sound",
+            "text": "Bogotá: a bogus boat stranded high in the Andes, far from either sea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "COL.cap.nb.1",
+            "type": "anchor",
+            "text": "Bogotá ligger høyt på et platå i den østlige delen av Andes, langt fra begge kystene."
+          },
+          {
+            "id": "COL.cap.nb.2",
+            "type": "sound",
+            "text": "Bogotá: «Bo godt, da», sier verten i høyfjellsbyen i Andes."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Yellow, blue and red horizontal stripes, the yellow band as tall as the other two together, with no emblem.",
+        "nb": "Gul, blå og rød vannrette striper, der det gule feltet er like høyt som de to andre til sammen, uten emblem."
+      },
+      "facts": [
+        {
+          "id": "COL.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Colombia borders Panama, Venezuela, Brazil, Peru and Ecuador.",
+            "nb": "Colombia grenser til Panama, Venezuela, Brasil, Peru og Ecuador."
+          }
+        },
+        {
+          "id": "COL.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Colombia is the only South American country with coasts on both the Pacific and the Caribbean.",
+            "nb": "Colombia er det eneste landet i Sør-Amerika med kyst mot både Stillehavet og Karibhavet."
+          }
+        },
+        {
+          "id": "COL.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Colombia has more bird species than any other country.",
+            "nb": "Colombia har flere fuglearter enn noe annet land."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "ECU",
+      "hooks": {
+        "en": [
+          {
+            "id": "ECU.en.1",
+            "type": "etymology",
+            "text": "Ecuador is simply Spanish for 'equator', the line that crosses the country just north of Quito."
+          },
+          {
+            "id": "ECU.en.2",
+            "type": "anchor",
+            "text": "Ecuador sits on the Pacific between Colombia to the north and Peru to the south and east."
+          },
+          {
+            "id": "ECU.en.3",
+            "type": "sound",
+            "text": "Ecuador: an 'equal door' standing on the equator, half in the north, half in the south."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ECU.nb.1",
+            "type": "etymology",
+            "text": "Ecuador er spansk for ekvator, linjen som krysser landet rett nord for Quito."
+          },
+          {
+            "id": "ECU.nb.2",
+            "type": "anchor",
+            "text": "Ecuador ligger ved Stillehavet mellom Colombia i nord og Peru i sør og øst."
+          },
+          {
+            "id": "ECU.nb.3",
+            "type": "sound",
+            "text": "Ecuador: et ekko i en dør på ekvator, halvt i nord og halvt i sør."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "ECU.cap.en.1",
+            "type": "anchor",
+            "text": "Quito lies high in the Andes, just south of the equator."
+          },
+          {
+            "id": "ECU.cap.en.2",
+            "type": "sound",
+            "text": "Quito: a mosquito gasping for air at Andean altitude, right next to the equator."
+          }
+        ],
+        "nb": [
+          {
+            "id": "ECU.cap.nb.1",
+            "type": "anchor",
+            "text": "Quito ligger høyt i Andes, rett sør for ekvator."
+          },
+          {
+            "id": "ECU.cap.nb.2",
+            "type": "sound",
+            "text": "Quito: en fugl kvitrer på ekvator, høyt oppe i Andes."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Yellow, blue and red like Colombia's flag, but with a coat of arms topped by a condor in the middle.",
+        "nb": "Gul, blå og rød som Colombias flagg, men med et riksvåpen med en kondor på toppen i midten."
+      },
+      "facts": [
+        {
+          "id": "ECU.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Ecuador borders Colombia and Peru, and has a Pacific coast.",
+            "nb": "Ecuador grenser til Colombia og Peru, og har kyst mot Stillehavet."
+          }
+        },
+        {
+          "id": "ECU.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Ecuador uses the United States dollar as its currency.",
+            "nb": "Ecuador bruker amerikansk dollar som valuta."
+          }
+        },
+        {
+          "id": "ECU.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Galápagos Islands, where Darwin studied finches and tortoises, belong to Ecuador.",
+            "nb": "Galápagosøyene, der Darwin studerte finker og skilpadder, hører til Ecuador."
+          }
+        },
+        {
+          "id": "ECU.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Because Earth bulges at the equator, the summit of Chimborazo in Ecuador is the point farthest from Earth's center.",
+            "nb": "Fordi jorda buler ut ved ekvator, er toppen av Chimborazo i Ecuador det punktet som ligger lengst fra jordas sentrum."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "GUY",
+      "hooks": {
+        "en": [
+          {
+            "id": "GUY.en.1",
+            "type": "anchor",
+            "text": "Guyana is on South America's north coast, between Venezuela and Suriname, with Brazil to the south."
+          },
+          {
+            "id": "GUY.en.2",
+            "type": "contrast",
+            "text": "Guyana is the English-speaking one; Suriname next door speaks Dutch, and French Guiana is part of France."
+          },
+          {
+            "id": "GUY.en.3",
+            "type": "etymology",
+            "text": "Guyana is usually explained as 'land of many waters', from an Indigenous word."
+          },
+          {
+            "id": "GUY.en.4",
+            "type": "sound",
+            "text": "Guyana: a guy in a canoe paddling through a land of many waters."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GUY.nb.1",
+            "type": "anchor",
+            "text": "Guyana ligger på nordkysten av Sør-Amerika mellom Venezuela og Surinam, med Brasil i sør."
+          },
+          {
+            "id": "GUY.nb.2",
+            "type": "contrast",
+            "text": "Guyana snakker engelsk; nabolandet Surinam snakker nederlandsk, og Fransk Guyana er en del av Frankrike."
+          },
+          {
+            "id": "GUY.nb.3",
+            "type": "etymology",
+            "text": "Guyana forklares ofte som «landet med mye vann», fra et urfolksord."
+          },
+          {
+            "id": "GUY.nb.4",
+            "type": "sound",
+            "text": "Guyana: «Gi ananas», roper en padler fra kanoen i landet med mange elver."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "GUY.cap.en.1",
+            "type": "anchor",
+            "text": "Georgetown is on the Atlantic coast at the mouth of the Demerara River."
+          },
+          {
+            "id": "GUY.cap.en.2",
+            "type": "etymology",
+            "text": "Georgetown is named after the British king George III."
+          }
+        ],
+        "nb": [
+          {
+            "id": "GUY.cap.nb.1",
+            "type": "anchor",
+            "text": "Georgetown ligger ved Atlanterhavet, ved munningen av elva Demerara."
+          },
+          {
+            "id": "GUY.cap.nb.2",
+            "type": "etymology",
+            "text": "Georgetown har navn etter den britiske kongen Georg III."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "The Golden Arrowhead: a yellow arrowhead on green, with a red triangle inside it, edged in black and white.",
+        "nb": "«Den gylne pilspissen»: en gul pilspiss på grønt, med en rød trekant inni, kantet med svart og hvitt."
+      },
+      "facts": [
+        {
+          "id": "GUY.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Guyana borders Venezuela, Brazil and Suriname, and has an Atlantic coast.",
+            "nb": "Guyana grenser til Venezuela, Brasil og Surinam, og har kyst mot Atlanterhavet."
+          }
+        },
+        {
+          "id": "GUY.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "English is the official language of Guyana.",
+            "nb": "Engelsk er det offisielle språket i Guyana."
+          }
+        },
+        {
+          "id": "GUY.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Kaieteur Falls in Guyana is a single drop far taller than Niagara Falls.",
+            "nb": "Kaieteurfallet i Guyana er ett enkelt fall, langt høyere enn Niagarafallene."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "PER",
+      "hooks": {
+        "en": [
+          {
+            "id": "PER.en.1",
+            "type": "anchor",
+            "text": "Peru is on the Pacific between Ecuador and Chile, with Brazil and Bolivia behind the Andes."
+          },
+          {
+            "id": "PER.en.2",
+            "type": "story",
+            "text": "Machu Picchu, the Inca city on a ridge, is in Peru, above the Urubamba valley near Cusco."
+          },
+          {
+            "id": "PER.en.3",
+            "type": "sound",
+            "text": "Peru: a pear rolling down the Andes into the Pacific."
+          }
+        ],
+        "nb": [
+          {
+            "id": "PER.nb.1",
+            "type": "anchor",
+            "text": "Peru ligger ved Stillehavet mellom Ecuador og Chile, med Brasil og Bolivia på andre siden av Andes."
+          },
+          {
+            "id": "PER.nb.2",
+            "type": "story",
+            "text": "Inkabyen Machu Picchu ligger på en fjellrygg i Peru, over Urubamba-dalen nær Cusco."
+          },
+          {
+            "id": "PER.nb.3",
+            "type": "sound",
+            "text": "Peru: en pære ruller ned Andesfjellene og ut i Stillehavet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "PER.cap.en.1",
+            "type": "anchor",
+            "text": "Lima is on Peru's central Pacific coast."
+          },
+          {
+            "id": "PER.cap.en.2",
+            "type": "story",
+            "text": "Lima was founded by Francisco Pizarro as the 'City of Kings'."
+          },
+          {
+            "id": "PER.cap.en.3",
+            "type": "sound",
+            "text": "Lima: a lime squeezed over ceviche on the Pacific coast."
+          }
+        ],
+        "nb": [
+          {
+            "id": "PER.cap.nb.1",
+            "type": "anchor",
+            "text": "Lima ligger midt på stillehavskysten av Peru."
+          },
+          {
+            "id": "PER.cap.nb.2",
+            "type": "story",
+            "text": "Lima ble grunnlagt av Francisco Pizarro som «Kongenes by»."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, white, red vertical stripes; the state flag adds a coat of arms with a vicuña.",
+        "nb": "Rød, hvit og rød loddrette striper; statsflagget har et riksvåpen med en vikunja."
+      },
+      "facts": [
+        {
+          "id": "PER.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Peru borders Ecuador, Colombia, Brazil, Bolivia and Chile, and has a Pacific coast.",
+            "nb": "Peru grenser til Ecuador, Colombia, Brasil, Bolivia og Chile, og har kyst mot Stillehavet."
+          }
+        },
+        {
+          "id": "PER.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Spanish, Quechua and Aymara are official languages of Peru.",
+            "nb": "Spansk, quechua og aymara er offisielle språk i Peru."
+          }
+        },
+        {
+          "id": "PER.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The sol, Peru's currency, is the Spanish word for sun.",
+            "nb": "Sol, Perus valuta, er det spanske ordet for sol."
+          }
+        },
+        {
+          "id": "PER.f4",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "The most distant source of the Amazon River lies in the Peruvian Andes.",
+            "nb": "Amazonas har sin fjerneste kilde i Andes i Peru."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "PRY",
+      "hooks": {
+        "en": [
+          {
+            "id": "PRY.en.1",
+            "type": "anchor",
+            "text": "Paraguay is landlocked (no coast at all), between Argentina, Bolivia and Brazil."
+          },
+          {
+            "id": "PRY.en.2",
+            "type": "contrast",
+            "text": "Paraguay is landlocked; Uruguay, its near-namesake, has an Atlantic coast."
+          },
+          {
+            "id": "PRY.en.3",
+            "type": "story",
+            "text": "The Paraguay River splits the country: the dry Chaco to the west, most of the people to the east."
+          },
+          {
+            "id": "PRY.en.4",
+            "type": "sound",
+            "text": "Paraguay: a pair of guys paddling a canoe down the river, nowhere near the sea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "PRY.nb.1",
+            "type": "anchor",
+            "text": "Paraguay er en innlandsstat (uten kyst) mellom Argentina, Bolivia og Brasil."
+          },
+          {
+            "id": "PRY.nb.2",
+            "type": "contrast",
+            "text": "Paraguay har ingen kyst; navnebroren Uruguay ligger ved Atlanterhavet."
+          },
+          {
+            "id": "PRY.nb.3",
+            "type": "story",
+            "text": "Elva Paraguay deler landet: det tørre Chaco i vest, og der de fleste bor, i øst."
+          },
+          {
+            "id": "PRY.nb.4",
+            "type": "sound",
+            "text": "Paraguay: et par gauker padler nedover elva, langt fra havet."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "PRY.cap.en.1",
+            "type": "anchor",
+            "text": "Asunción sits on the east bank of the Paraguay River, facing Argentina across the water."
+          },
+          {
+            "id": "PRY.cap.en.2",
+            "type": "etymology",
+            "text": "Asunción is Spanish for 'Assumption', the feast day on which its fort was founded."
+          }
+        ],
+        "nb": [
+          {
+            "id": "PRY.cap.nb.1",
+            "type": "anchor",
+            "text": "Asunción ligger på østbredden av elva Paraguay, rett overfor Argentina."
+          },
+          {
+            "id": "PRY.cap.nb.2",
+            "type": "etymology",
+            "text": "Asunción er spansk for «himmelfart», etter Marias himmelfartsdag, da fortet ble grunnlagt."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Red, white and blue horizontal stripes, with a different emblem on each side of the flag.",
+        "nb": "Rød, hvit og blå vannrette striper, med ulikt emblem på hver side av flagget."
+      },
+      "facts": [
+        {
+          "id": "PRY.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Paraguay is landlocked, bordering Argentina, Brazil and Bolivia.",
+            "nb": "Paraguay er en innlandsstat som grenser til Argentina, Brasil og Bolivia."
+          }
+        },
+        {
+          "id": "PRY.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Spanish and Guaraní are both official languages of Paraguay.",
+            "nb": "Spansk og guaraní er begge offisielle språk i Paraguay."
+          }
+        },
+        {
+          "id": "PRY.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Itaipú Dam, shared by Paraguay and Brazil on the Paraná River, is one of the largest hydroelectric plants in the world.",
+            "nb": "Itaipú-dammen, som Paraguay og Brasil deler i elva Paraná, er et av verdens største vannkraftverk."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "SUR",
+      "hooks": {
+        "en": [
+          {
+            "id": "SUR.en.1",
+            "type": "anchor",
+            "text": "Suriname sits on South America's north coast between Guyana and French Guiana, with Brazil to the south."
+          },
+          {
+            "id": "SUR.en.2",
+            "type": "contrast",
+            "text": "Suriname speaks Dutch, a legacy of Dutch rule; Guyana to its west speaks English."
+          },
+          {
+            "id": "SUR.en.3",
+            "type": "story",
+            "text": "The Dutch kept Suriname and let the English have New Amsterdam, now New York."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SUR.nb.1",
+            "type": "anchor",
+            "text": "Surinam ligger på nordkysten av Sør-Amerika mellom Guyana og Fransk Guyana, med Brasil i sør."
+          },
+          {
+            "id": "SUR.nb.2",
+            "type": "contrast",
+            "text": "Surinam snakker nederlandsk etter tiden som nederlandsk koloni; Guyana i vest snakker engelsk."
+          },
+          {
+            "id": "SUR.nb.3",
+            "type": "story",
+            "text": "Nederlenderne beholdt Surinam og lot engelskmennene få Ny-Amsterdam, dagens New York."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "SUR.cap.en.1",
+            "type": "anchor",
+            "text": "Paramaribo lies on the Suriname River, close to the Atlantic coast."
+          },
+          {
+            "id": "SUR.cap.en.2",
+            "type": "sound",
+            "text": "Paramaribo: a parrot gnawing a rib bone by the river, squawking in Dutch."
+          }
+        ],
+        "nb": [
+          {
+            "id": "SUR.cap.nb.1",
+            "type": "anchor",
+            "text": "Paramaribo ligger ved elva Suriname, like ved atlanterhavskysten."
+          },
+          {
+            "id": "SUR.cap.nb.2",
+            "type": "sound",
+            "text": "Paramaribo: en marihøne under en paraply venter på båten på elva Suriname."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Green, white, red, white and green horizontal bands, with a yellow star on the wide red band.",
+        "nb": "Grønn, hvit, rød, hvit og grønn vannrette felt, med en gul stjerne midt på det brede røde feltet."
+      },
+      "facts": [
+        {
+          "id": "SUR.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Suriname borders Guyana, Brazil and France, through French Guiana, and has an Atlantic coast.",
+            "nb": "Surinam grenser til Guyana, Brasil og Frankrike, via Fransk Guyana, og har kyst mot Atlanterhavet."
+          }
+        },
+        {
+          "id": "SUR.f2",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Dutch is the official language of Suriname, the only country in South America where it is.",
+            "nb": "Nederlandsk er det offisielle språket i Surinam, som eneste land i Sør-Amerika."
+          }
+        },
+        {
+          "id": "SUR.f3",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Rainforest covers most of Suriname's land.",
+            "nb": "Regnskog dekker det meste av Surinam."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "URY",
+      "hooks": {
+        "en": [
+          {
+            "id": "URY.en.1",
+            "type": "anchor",
+            "text": "Uruguay sits between Argentina and Brazil, across the Río de la Plata from Buenos Aires."
+          },
+          {
+            "id": "URY.en.2",
+            "type": "contrast",
+            "text": "Uruguay has an Atlantic coast; Paraguay, its near-namesake upriver, is landlocked (no coast at all)."
+          },
+          {
+            "id": "URY.en.3",
+            "type": "etymology",
+            "text": "Uruguay takes its name from the Uruguay River, its western border with Argentina."
+          },
+          {
+            "id": "URY.en.4",
+            "type": "sound",
+            "text": "Uruguay: you're a guy squeezed between two giants, Argentina and Brazil."
+          }
+        ],
+        "nb": [
+          {
+            "id": "URY.nb.1",
+            "type": "anchor",
+            "text": "Uruguay ligger mellom Argentina og Brasil, over Río de la Plata fra Buenos Aires."
+          },
+          {
+            "id": "URY.nb.2",
+            "type": "contrast",
+            "text": "Uruguay har kyst mot Atlanterhavet; navnebroren Paraguay, lenger opp langs elvene, er en innlandsstat (uten kyst)."
+          },
+          {
+            "id": "URY.nb.3",
+            "type": "etymology",
+            "text": "Uruguay har navn etter elva Uruguay, som er grensen mot Argentina i vest."
+          },
+          {
+            "id": "URY.nb.4",
+            "type": "sound",
+            "text": "Uruguay: et urverk tikker mellom to kjemper, Argentina og Brasil."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "URY.cap.en.1",
+            "type": "anchor",
+            "text": "Montevideo faces Buenos Aires across the wide Río de la Plata estuary."
+          },
+          {
+            "id": "URY.cap.en.2",
+            "type": "etymology",
+            "text": "Montevideo is named after the hill, 'monte', across its bay; the rest of the name is disputed."
+          }
+        ],
+        "nb": [
+          {
+            "id": "URY.cap.nb.1",
+            "type": "anchor",
+            "text": "Montevideo ligger rett over den brede elvemunningen Río de la Plata fra Buenos Aires."
+          },
+          {
+            "id": "URY.cap.nb.2",
+            "type": "sound",
+            "text": "Montevideo: se for deg en video filmet fra fjellet («monte») over bukta."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "White and blue horizontal stripes, with a golden Sun of May in the white top corner by the pole.",
+        "nb": "Hvite og blå vannrette striper, med en gyllen maisol i det hvite hjørnet øverst ved stangen."
+      },
+      "facts": [
+        {
+          "id": "URY.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Uruguay borders Argentina and Brazil, and has an Atlantic coast.",
+            "nb": "Uruguay grenser til Argentina og Brasil, og har kyst mot Atlanterhavet."
+          }
+        },
+        {
+          "id": "URY.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Uruguay hosted and won the first FIFA World Cup.",
+            "nb": "Uruguay arrangerte og vant det første fotball-VM."
+          }
+        },
+        {
+          "id": "URY.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Uruguay was the first country to make it legal to grow, sell and use cannabis nationwide.",
+            "nb": "Uruguay var det første landet som gjorde det lovlig å dyrke, selge og bruke cannabis i hele landet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "VEN",
+      "hooks": {
+        "en": [
+          {
+            "id": "VEN.en.1",
+            "type": "etymology",
+            "text": "Venezuela means 'little Venice', after houses on stilts that explorers saw on Lake Maracaibo."
+          },
+          {
+            "id": "VEN.en.2",
+            "type": "anchor",
+            "text": "Venezuela is on South America's Caribbean coast, between Colombia and Guyana, with Brazil to the south."
+          },
+          {
+            "id": "VEN.en.3",
+            "type": "story",
+            "text": "Angel Falls, the highest waterfall in the world, plunges off a flat-topped mountain in Venezuela."
+          }
+        ],
+        "nb": [
+          {
+            "id": "VEN.nb.1",
+            "type": "etymology",
+            "text": "Venezuela betyr «lille Venezia», etter pælehusene oppdagerne så ved Maracaibosjøen."
+          },
+          {
+            "id": "VEN.nb.2",
+            "type": "anchor",
+            "text": "Venezuela ligger ved Karibhavet mellom Colombia og Guyana, med Brasil i sør."
+          },
+          {
+            "id": "VEN.nb.3",
+            "type": "story",
+            "text": "Angel Falls, verdens høyeste foss, stuper utfor et flatt bordfjell i Venezuela."
+          }
+        ]
+      },
+      "capitalHooks": {
+        "en": [
+          {
+            "id": "VEN.cap.en.1",
+            "type": "anchor",
+            "text": "Caracas lies in a mountain valley just inland from the Caribbean coast."
+          },
+          {
+            "id": "VEN.cap.en.2",
+            "type": "sound",
+            "text": "Caracas: a car carrying cacao climbs the hills above the Caribbean."
+          }
+        ],
+        "nb": [
+          {
+            "id": "VEN.cap.nb.1",
+            "type": "anchor",
+            "text": "Caracas ligger i en fjelldal like innenfor karibkysten."
+          },
+          {
+            "id": "VEN.cap.nb.2",
+            "type": "sound",
+            "text": "Caracas: en kar med kakao klatrer opp fjellsiden fra Karibhavet."
+          }
+        ]
+      },
+      "flagNote": {
+        "en": "Yellow, blue and red stripes of equal height, with an arc of white stars in the blue band.",
+        "nb": "Gul, blå og rød striper med lik høyde, og en bue av hvite stjerner i det blå feltet."
+      },
+      "facts": [
+        {
+          "id": "VEN.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Venezuela borders Colombia, Brazil and Guyana, and has a long Caribbean coast.",
+            "nb": "Venezuela grenser til Colombia, Brasil og Guyana, og har lang kyst mot Karibhavet."
+          }
+        },
+        {
+          "id": "VEN.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The bolívar, Venezuela's currency, is named after Simón Bolívar, who was born in Caracas.",
+            "nb": "Bolívar, Venezuelas valuta, har navn etter Simón Bolívar, som ble født i Caracas."
+          }
+        },
+        {
+          "id": "VEN.f3",
+          "tier": 3,
+          "verified": false,
+          "text": {
+            "en": "Venezuela has the largest proven oil reserves in the world.",
+            "nb": "Venezuela har verdens største påviste oljereserver."
+          }
+        }
+      ]
+    }
+  ]
+}
