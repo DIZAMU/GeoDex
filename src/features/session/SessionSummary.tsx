@@ -42,7 +42,7 @@ export function SessionSummary({
     <main className="flex min-h-dvh items-center justify-center px-4 py-16">
       <div
         className="surface stagger flex w-full max-w-md flex-col gap-5 p-8"
-        data-testid="summary"
+        data-testid="session-summary"
       >
         <h1 className="font-name text-3xl tracking-tight">{t("session.doneTitle")}</h1>
         <div className="flex flex-col gap-1">
