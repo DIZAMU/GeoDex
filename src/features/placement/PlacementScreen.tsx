@@ -17,6 +17,7 @@ import { subregionOrder } from "@/engine/session";
 import { isLocale } from "@/i18n/locales";
 import { type MapFocus, type MapHighlight, WorldMap } from "@/map/WorldMap";
 import { Button } from "@/ui/button";
+import { useFocusOnMount } from "@/ui/focus";
 import { Loader } from "@/ui/loader";
 import { Stat } from "@/ui/stat";
 import {
@@ -45,6 +46,7 @@ type Tally = { countries: Set<string>; capitals: number; flags: number };
 type Feedback = { question: Question; correct: boolean; chosenId: string };
 
 function Placement({ learner }: { learner: Learner }) {
+  const focusOnMount = useFocusOnMount<HTMLButtonElement>();
   const { t, i18n } = useTranslation();
   const locale = isLocale(i18n.language) ? i18n.language : "en";
   const ctx = useStudyContext(
@@ -262,7 +264,7 @@ function Placement({ learner }: { learner: Learner }) {
                   size="lg"
                   className="self-start"
                   onClick={() => void proceed()}
-                  autoFocus
+                  ref={focusOnMount}
                   data-testid="continue"
                 >
                   {t("feedback.continue")}

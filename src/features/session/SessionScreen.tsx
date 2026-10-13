@@ -6,6 +6,7 @@ import type { InputSetting } from "@/engine/types";
 import { isLocale } from "@/i18n/locales";
 import { type MapFocus, type MapHighlight, WorldMap } from "@/map/WorldMap";
 import { Button } from "@/ui/button";
+import { useFocusOnMount } from "@/ui/focus";
 import { Loader } from "@/ui/loader";
 import { useStudyContext } from "../study/context";
 import { confusionScoresFor, scopedCountries } from "../study/plan";
@@ -187,6 +188,7 @@ function Panel({
   locale: "en" | "nb";
 }) {
   const { t } = useTranslation();
+  const focusOnMount = useFocusOnMount<HTMLButtonElement>();
   const country = learner.world.byId.get(view.question.entityId);
   if (!country) return null;
 
@@ -196,7 +198,7 @@ function Panel({
         <p className="text-sm text-muted-foreground">{t("intro.label")}</p>
         <CountryCard country={country} locale={locale} />
         <ExplanationView explanation={view.explanation} />
-        <Button size="lg" className="self-start" onClick={s.startPrompt} autoFocus>
+        <Button size="lg" className="self-start" onClick={s.startPrompt} ref={focusOnMount}>
           {t("intro.continue")}
         </Button>
       </div>
@@ -308,7 +310,7 @@ function Panel({
         size="lg"
         className="self-start"
         onClick={() => void s.proceed()}
-        autoFocus
+        ref={focusOnMount}
         data-testid="continue"
       >
         {t("feedback.continue")}
