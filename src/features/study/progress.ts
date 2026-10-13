@@ -20,13 +20,18 @@ export function cardLevel(state: CardState | undefined): Level {
   return 4;
 }
 
-/** A country's level for a skill: its weaker card, so both directions must be known. */
+/**
+ * A country's level for a skill: its weaker card, so both directions must hold before it
+ * reads as mastered. A country with any card started is at least "learning", so studying
+ * one direction already shows on the map.
+ */
 export function countryLevel(
   states: ReadonlyMap<string, CardState>,
   id: string,
   skill: Skill,
 ): Level {
-  return Math.min(...SKILLS[skill].map((t) => cardLevel(states.get(`${id}:${t}`)))) as Level;
+  const levels = SKILLS[skill].map((t) => cardLevel(states.get(`${id}:${t}`)));
+  return Math.max(Math.min(...levels), levels.some((l) => l > 0) ? 1 : 0) as Level;
 }
 
 export type Progress = {
