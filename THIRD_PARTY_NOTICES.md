@@ -11,6 +11,8 @@ GeoDex is licensed under PolyForm Noncommercial 1.0.0 (see `LICENSE`). It includ
 
 The full license texts ship with the app in `public/licenses/`.
 
+The GeoDex wordmark in `assets/brand/` is drawn from Schibsted Grotesk (SIL Open Font License 1.1), converted to outlines.
+
 ## JavaScript and CSS bundled into the app (shipped)
 
 | Package | License |

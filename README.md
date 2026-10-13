@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/brand/svg/geodex-lockup-on-dark.svg">
+    <img src="assets/brand/svg/geodex-lockup.svg" alt="GeoDex" height="72">
+  </picture>
+</p>
+
 # GeoDex
 
 Spaced-repetition geography trainer. Local-first PWA, English and Norwegian.

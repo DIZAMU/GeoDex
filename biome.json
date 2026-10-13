@@ -14,7 +14,9 @@
       "!**/data/countries.json",
       "!**/data/geo",
       "!**/data/flags-meta.json",
-      "!**/public/flags"
+      "!**/public/flags",
+      "!**/assets/brand",
+      "!**/public/favicon.svg"
     ]
   },
   "formatter": {
