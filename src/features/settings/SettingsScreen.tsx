@@ -12,6 +12,8 @@ import { ToggleGroup, ToggleGroupItem } from "@/ui/toggle-group";
 import { CountryPicker } from "../onboarding/CountryPicker";
 import { scopedCountries } from "../study/plan";
 import { useLearner } from "../study/useLearner";
+import { BackupSection } from "./BackupSection";
+import { SyncSection } from "./SyncSection";
 
 const MINUTES = [10, 15, 18, 20, 30] as const;
 const COUNTDOWNS = [0, 10, 15, 20] as const;
@@ -125,6 +127,12 @@ export function SettingsScreen() {
         >
           {t("settings.rerunPlacement")}
         </Button>
+      </Group>
+      <Group title={t("sync.title")}>
+        <SyncSection />
+      </Group>
+      <Group title={t("backup.title")}>
+        <BackupSection learner={learner} />
       </Group>
       <Group title={t("settings.homeCountry")}>
         <CountryPicker

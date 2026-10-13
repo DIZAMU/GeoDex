@@ -166,5 +166,35 @@
   "flag": {
     "alt": "Flag",
     "of": "Flag of {{name}}"
+  },
+  "sync": {
+    "title": "Sync",
+    "off": "Sync is off in this build, so everything stays on this device. Use export below to keep a backup.",
+    "intro": "Sign in to keep your progress the same on all your devices.",
+    "email": "Email",
+    "sendCode": "Send code",
+    "codeSent": "A sign-in code is on its way to {{email}}. Type it here.",
+    "code": "Code",
+    "signIn": "Sign in",
+    "signedIn": "Signed in as {{email}}",
+    "lastSynced": "Last synced {{time}}",
+    "never": "Not synced yet on this device",
+    "pending_one": "{{count}} change waiting to sync",
+    "pending_other": "{{count}} changes waiting to sync",
+    "syncNow": "Sync now",
+    "syncing": "Syncing",
+    "offline": "Offline. Changes sync when you reconnect.",
+    "error": "Sync failed: {{message}}. Your progress is safe on this device; try again.",
+    "signOut": "Sign out",
+    "codeError": "That code did not work. Check it, or send a new one.",
+    "sendError": "The code could not be sent: {{message}}"
+  },
+  "backup": {
+    "title": "Backup",
+    "body": "Export all your reviews and settings to a file, or import one. Importing adds what is missing and never removes anything.",
+    "export": "Export data",
+    "import": "Import data",
+    "imported": "Imported {{reviews}} reviews and {{votes}} hook votes.",
+    "importError": "That file is not a GeoDex export."
   }
 }
