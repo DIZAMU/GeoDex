@@ -7,6 +7,7 @@ import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import type { AnswerMode, InputSetting, Rating } from "@/engine/types";
 import type { Locale } from "@/i18n/locales";
 import type { Sequenced, SyncBackend, WireReview, WireSettings, WireVote } from "./backend";
+import { parseSignInProof } from "./signin";
 
 type ReviewRow = {
   id: string;
@@ -153,7 +154,8 @@ export function supabaseBackend(client: SupabaseClient): SyncBackend {
 
 export function createSupabase(url: string, key: string): SupabaseClient {
   return createClient(url, key, {
-    auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: false },
+    // A clicked email link lands on the app with the session in the URL; pick it up.
+    auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true },
   });
 }
 
@@ -166,11 +168,17 @@ export async function sendCode(client: SupabaseClient, email: string): Promise<v
   if (error) throw new Error(error.message);
 }
 
+/** Finishes sign-in with the emailed code or the pasted sign-in link. */
 export async function verifyCode(
   client: SupabaseClient,
   email: string,
-  token: string,
+  input: string,
 ): Promise<void> {
-  const { error } = await client.auth.verifyOtp({ email, token, type: "email" });
+  const proof = parseSignInProof(input);
+  if (!proof) throw new Error("unreadable");
+  const { error } =
+    proof.kind === "code"
+      ? await client.auth.verifyOtp({ email, token: proof.token, type: "email" })
+      : await client.auth.verifyOtp({ token_hash: proof.tokenHash, type: proof.type as "email" });
   if (error) throw new Error(error.message);
 }
