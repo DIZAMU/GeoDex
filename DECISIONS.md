@@ -103,3 +103,10 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 - **Context:** connecting the repository in the Cloudflare dashboard created a Worker, not a Pages project; Cloudflare now routes new Git-connected sites to Workers. `geodex.pages.dev` also belongs to an unrelated site.
 - **Options:** (a) delete the Worker and create a Pages project, (b) keep the Worker and serve `dist/` as static assets.
 - **Decision:** (b). Free tier, same build. `wrangler.jsonc` is committed so the deploy is defined by the repository, not dashboard state; `wrangler` is a pinned dev dependency so the build uses a known version. `pnpm-workspace.yaml` allows the install scripts of `esbuild` and `workerd`, which wrangler needs.
+
+## 020. Brand pack
+
+- **Context:** the author delivered a final brand pack (mark, wordmark, lockups, app and web icons, social images) with `BRAND.md` and handoff steps.
+- **Decision:** `assets/brand/` is the source of truth (svg, png, BRAND.md); web icons are in `public/`, replacing the placeholder favicon. Files are used exactly as delivered.
+- **Name:** the wordmark artwork reads "Geodex"; text in the app and docs uses "GeoDex", as the author asked earlier. The artwork is not redrawn.
+- **Deferred:** the PWA manifest icons from the handoff go in with vite-plugin-pwa in Phase 4. `og:image` uses the absolute workers.dev URL so link previews work. The GitHub social preview is uploaded by the author in repo settings and only shows once the repo is public.
