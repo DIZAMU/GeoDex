@@ -8,7 +8,16 @@ import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import type { CitiesFile, City, CountriesFile, L10n, L10nList } from "../../src/data/types.ts";
 import { cityIds } from "./lib/city-list.ts";
 import { readRaw } from "./lib/raw.ts";
-import { type Binding, bindings, pickStatement, point, qid, rank, val, year } from "./lib/sparql.ts";
+import {
+  type Binding,
+  bindings,
+  pickStatement,
+  point,
+  qid,
+  rank,
+  val,
+  year,
+} from "./lib/sparql.ts";
 
 type Curated = {
   names: Record<string, L10n>;
@@ -28,7 +37,9 @@ const mistaken = new Set(
 const { countries } = JSON.parse(readFileSync("data/countries.json", "utf8")) as CountriesFile;
 const iso3ByQid = new Map(countries.map((c) => [c.wikidataId, c.id]));
 const primaryCapitals = new Set(
-  countries.flatMap((c) => c.capitals.filter((cap) => cap.roles.includes("primary")).map((cap) => cap.id)),
+  countries.flatMap((c) =>
+    c.capitals.filter((cap) => cap.roles.includes("primary")).map((cap) => cap.id),
+  ),
 );
 
 function rows(kind: string): Binding[] {
@@ -66,12 +77,18 @@ for (const row of rows("coord")) {
   if (value && !coords.has(id)) coords.set(id, point(value));
 }
 
-const populations = new Map<string, { rank: ReturnType<typeof rank>; time?: number; amount: number }[]>();
+const populations = new Map<
+  string,
+  { rank: ReturnType<typeof rank>; time?: number; amount: number }[]
+>();
 for (const row of rows("population")) {
   const id = qid(row, "item") as string;
   const amount = Number(val(row, "pop"));
   if (!Number.isFinite(amount)) continue;
-  populations.set(id, [...(populations.get(id) ?? []), { rank: rank(row), time: year(row, "time"), amount }]);
+  populations.set(id, [
+    ...(populations.get(id) ?? []),
+    { rank: rank(row), time: year(row, "time"), amount },
+  ]);
 }
 
 /** Former national capitals of the city's current country (P1376 with an end date). */
@@ -96,7 +113,10 @@ for (const id of ids) {
     continue;
   }
   // A city mistaken for the capital may hold another capital role (Abidjan); others may not.
-  if (primaryCapitals.has(id) || (!mistaken.has(id) && countries.some((c) => c.capitals.some((cap) => cap.id === id)))) {
+  if (
+    primaryCapitals.has(id) ||
+    (!mistaken.has(id) && countries.some((c) => c.capitals.some((cap) => cap.id === id)))
+  ) {
     errors.push(`${id} (${label.en}): is a capital`);
     continue;
   }

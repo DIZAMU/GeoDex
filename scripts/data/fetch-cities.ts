@@ -28,7 +28,11 @@ for (const [name, query] of Object.entries(cityQueries(values))) {
     continue;
   }
   const url = `${ENDPOINT}?format=json&query=${encodeURIComponent(query)}`;
-  writeRaw(file, ENDPOINT, await fetchText(url, { headers: { Accept: "application/sparql-results+json" } }));
+  writeRaw(
+    file,
+    ENDPOINT,
+    await fetchText(url, { headers: { Accept: "application/sparql-results+json" } }),
+  );
   console.log(`fetched ${file}`);
 }
 // Files from an earlier list are stale.

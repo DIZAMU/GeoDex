@@ -12,6 +12,7 @@
       "!**/src/generated",
       "!**/pnpm-lock.yaml",
       "!**/data/countries.json",
+      "!**/data/cities.json",
       "!**/data/geo",
       "!**/data/flags-meta.json",
       "!**/public/flags",
