@@ -1,0 +1,1743 @@
+{
+  "_comment": "History layer (PLAN.md Phase 9). QIDs resolved from English Wikipedia titles; former-* ids are names of states that still exist under another name, with no item of their own. Outlines: a union of modern countries, or a hand-simplified envelope clipped to land or to the listed countries. Every outline is approximate unless marked otherwise. See DECISIONS.md 037.",
+  "entities": [
+    {
+      "id": "Q6500954",
+      "kind": "former_name",
+      "names": {
+        "en": "Zaire",
+        "nb": "Zaïre"
+      },
+      "aliases": {
+        "en": [],
+        "nb": ["Zaire"]
+      },
+      "currentCountry": "COD",
+      "until": 1997
+    },
+    {
+      "id": "former-ceylon",
+      "kind": "former_name",
+      "names": {
+        "en": "Ceylon",
+        "nb": "Ceylon"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "currentCountry": "LKA",
+      "until": 1972
+    },
+    {
+      "id": "Q1081620",
+      "kind": "former_name",
+      "names": {
+        "en": "Siam",
+        "nb": "Siam"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "currentCountry": "THA",
+      "until": 1939
+    },
+    {
+      "id": "former-persia",
+      "kind": "former_name",
+      "names": {
+        "en": "Persia",
+        "nb": "Persia"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "currentCountry": "IRN",
+      "until": 1935
+    },
+    {
+      "id": "former-burma",
+      "kind": "former_name",
+      "names": {
+        "en": "Burma",
+        "nb": "Burma"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "currentCountry": "MMR",
+      "until": 1989
+    },
+    {
+      "id": "Q798431",
+      "kind": "former_name",
+      "names": {
+        "en": "Dahomey",
+        "nb": "Dahomey"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "currentCountry": "BEN",
+      "until": 1975
+    },
+    {
+      "id": "Q797422",
+      "kind": "former_name",
+      "names": {
+        "en": "Upper Volta",
+        "nb": "Øvre Volta"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "currentCountry": "BFA",
+      "until": 1984
+    },
+    {
+      "id": "Q207521",
+      "kind": "former_name",
+      "names": {
+        "en": "Abyssinia",
+        "nb": "Abessinia"
+      },
+      "aliases": {
+        "en": [],
+        "nb": ["Abyssinia"]
+      },
+      "currentCountry": "ETH"
+    },
+    {
+      "id": "Q217169",
+      "kind": "former_name",
+      "names": {
+        "en": "Rhodesia",
+        "nb": "Rhodesia"
+      },
+      "aliases": {
+        "en": ["Southern Rhodesia"],
+        "nb": ["Sør-Rhodesia"]
+      },
+      "currentCountry": "ZWE",
+      "until": 1979,
+      "exclude": ["ZMB"]
+    },
+    {
+      "id": "Q953903",
+      "kind": "former_name",
+      "names": {
+        "en": "Northern Rhodesia",
+        "nb": "Nord-Rhodesia"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "currentCountry": "ZMB",
+      "until": 1964,
+      "exclude": ["ZWE"]
+    },
+    {
+      "id": "Q1649306",
+      "kind": "former_name",
+      "names": {
+        "en": "Nyasaland",
+        "nb": "Nyasaland"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "currentCountry": "MWI",
+      "until": 1964
+    },
+    {
+      "id": "Q503623",
+      "kind": "former_name",
+      "names": {
+        "en": "Gold Coast",
+        "nb": "Gullkysten"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "currentCountry": "GHA",
+      "until": 1957
+    },
+    {
+      "id": "Q747314",
+      "kind": "former_name",
+      "names": {
+        "en": "Bechuanaland",
+        "nb": "Betsjuanaland"
+      },
+      "aliases": {
+        "en": [],
+        "nb": ["Bechuanaland"]
+      },
+      "currentCountry": "BWA",
+      "until": 1966
+    },
+    {
+      "id": "Q2340665",
+      "kind": "former_name",
+      "names": {
+        "en": "Basutoland",
+        "nb": "Basutoland"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "currentCountry": "LSO",
+      "until": 1966
+    },
+    {
+      "id": "former-kampuchea",
+      "kind": "former_name",
+      "names": {
+        "en": "Kampuchea",
+        "nb": "Kampuchea"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "currentCountry": "KHM",
+      "until": 1989
+    },
+    {
+      "id": "Q842931",
+      "kind": "former_name",
+      "names": {
+        "en": "East Pakistan",
+        "nb": "Øst-Pakistan"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "currentCountry": "BGD",
+      "until": 1971,
+      "exclude": ["PAK"]
+    },
+    {
+      "id": "Q188161",
+      "kind": "former_name",
+      "names": {
+        "en": "Dutch East Indies",
+        "nb": "Nederlandsk Øst-India"
+      },
+      "aliases": {
+        "en": [],
+        "nb": ["Nederlandsk India"]
+      },
+      "currentCountry": "IDN",
+      "until": 1949
+    },
+    {
+      "id": "Q1643555",
+      "kind": "former_name",
+      "names": {
+        "en": "British Honduras",
+        "nb": "Britisk Honduras"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "currentCountry": "BLZ",
+      "until": 1973,
+      "exclude": ["HND"]
+    },
+    {
+      "id": "former-swaziland",
+      "kind": "former_name",
+      "names": {
+        "en": "Swaziland",
+        "nb": "Swaziland"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "currentCountry": "SWZ",
+      "until": 2018
+    },
+    {
+      "id": "Q158725",
+      "kind": "former_name",
+      "names": {
+        "en": "Tanganyika",
+        "nb": "Tanganyika"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "currentCountry": "TZA"
+    },
+    {
+      "id": "Q953068",
+      "kind": "former_name",
+      "names": {
+        "en": "South West Africa",
+        "nb": "Sørvest-Afrika"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "currentCountry": "NAM",
+      "until": 1990
+    },
+    {
+      "id": "Q1421888",
+      "kind": "former_name",
+      "names": {
+        "en": "Ubangi-Shari",
+        "nb": "Ubangi-Shari"
+      },
+      "aliases": {
+        "en": ["Oubangui-Chari"],
+        "nb": []
+      },
+      "currentCountry": "CAF",
+      "until": 1958
+    },
+    {
+      "id": "Q508014",
+      "kind": "former_name",
+      "names": {
+        "en": "French Sudan",
+        "nb": "Fransk Sudan"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "currentCountry": "MLI",
+      "until": 1960,
+      "exclude": ["SDN", "SSD"]
+    },
+    {
+      "id": "Q1232509",
+      "kind": "former_name",
+      "names": {
+        "en": "Spanish Guinea",
+        "nb": "Spansk Guinea"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "currentCountry": "GNQ",
+      "until": 1968,
+      "exclude": ["GIN", "GNB"]
+    },
+    {
+      "id": "Q7646305",
+      "kind": "former_name",
+      "names": {
+        "en": "Dutch Guiana",
+        "nb": "Nederlandsk Guyana"
+      },
+      "aliases": {
+        "en": ["Surinam"],
+        "nb": []
+      },
+      "currentCountry": "SUR"
+    },
+    {
+      "id": "Q918126",
+      "kind": "former_name",
+      "names": {
+        "en": "British Guiana",
+        "nb": "Britisk Guyana"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "currentCountry": "GUY",
+      "until": 1966
+    },
+    {
+      "id": "Q1121819",
+      "kind": "former_name",
+      "names": {
+        "en": "Transjordan",
+        "nb": "Transjordan"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "currentCountry": "JOR"
+    },
+    {
+      "id": "former-macedonia",
+      "kind": "former_name",
+      "names": {
+        "en": "Macedonia",
+        "nb": "Makedonia"
+      },
+      "aliases": {
+        "en": ["Republic of Macedonia"],
+        "nb": ["Republikken Makedonia"]
+      },
+      "currentCountry": "MKD",
+      "until": 2019,
+      "exclude": ["GRC"]
+    },
+    {
+      "id": "Q15180",
+      "kind": "dissolved_state",
+      "names": {
+        "en": "Soviet Union",
+        "nb": "Sovjetunionen"
+      },
+      "aliases": {
+        "en": ["USSR"],
+        "nb": ["USSR", "Sovjet"]
+      },
+      "period": [1922, 1991],
+      "snapshotYear": 1991,
+      "approximate": false,
+      "successors": [
+        "RUS",
+        "UKR",
+        "BLR",
+        "MDA",
+        "EST",
+        "LVA",
+        "LTU",
+        "GEO",
+        "ARM",
+        "AZE",
+        "KAZ",
+        "UZB",
+        "TKM",
+        "KGZ",
+        "TJK"
+      ],
+      "partly": [],
+      "outline": {
+        "countries": [
+          "RUS",
+          "UKR",
+          "BLR",
+          "MDA",
+          "EST",
+          "LVA",
+          "LTU",
+          "GEO",
+          "ARM",
+          "AZE",
+          "KAZ",
+          "UZB",
+          "TKM",
+          "KGZ",
+          "TJK"
+        ]
+      }
+    },
+    {
+      "id": "Q83286",
+      "kind": "dissolved_state",
+      "names": {
+        "en": "Yugoslavia",
+        "nb": "Jugoslavia"
+      },
+      "aliases": {
+        "en": ["Socialist Federal Republic of Yugoslavia"],
+        "nb": []
+      },
+      "period": [1945, 1992],
+      "snapshotYear": 1991,
+      "approximate": false,
+      "successors": ["SVN", "HRV", "BIH", "SRB", "MNE", "MKD", "XKX"],
+      "partly": [],
+      "outline": {
+        "countries": ["SVN", "HRV", "BIH", "SRB", "MNE", "MKD", "XKX"]
+      }
+    },
+    {
+      "id": "Q33946",
+      "kind": "dissolved_state",
+      "names": {
+        "en": "Czechoslovakia",
+        "nb": "Tsjekkoslovakia"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "period": [1918, 1992],
+      "snapshotYear": 1992,
+      "approximate": false,
+      "successors": ["CZE", "SVK"],
+      "partly": [],
+      "outline": {
+        "countries": ["CZE", "SVK"]
+      }
+    },
+    {
+      "id": "Q16957",
+      "kind": "dissolved_state",
+      "names": {
+        "en": "East Germany",
+        "nb": "Øst-Tyskland"
+      },
+      "aliases": {
+        "en": ["GDR", "German Democratic Republic"],
+        "nb": ["DDR"]
+      },
+      "period": [1949, 1990],
+      "snapshotYear": 1989,
+      "approximate": true,
+      "successors": ["DEU"],
+      "partly": [],
+      "outline": {
+        "envelope": [
+          [
+            [11.6, 54.6],
+            [11.0, 54.15],
+            [10.9, 53.95],
+            [10.75, 53.6],
+            [10.6, 53.37],
+            [11.0, 53.25],
+            [11.57, 53.04],
+            [11.4, 52.85],
+            [11.0, 52.8],
+            [10.75, 52.6],
+            [10.95, 52.3],
+            [11.0, 52.15],
+            [10.9, 52.0],
+            [10.65, 51.85],
+            [10.55, 51.65],
+            [10.3, 51.55],
+            [10.0, 51.4],
+            [9.95, 51.3],
+            [10.05, 51.1],
+            [10.15, 50.98],
+            [9.95, 50.75],
+            [10.05, 50.6],
+            [10.3, 50.43],
+            [10.7, 50.35],
+            [11.1, 50.35],
+            [11.4, 50.48],
+            [11.6, 50.4],
+            [11.9, 50.42],
+            [12.15, 50.3],
+            [12.35, 50.15],
+            [16, 50],
+            [16, 55],
+            [11.6, 55]
+          ]
+        ],
+        "clip": ["DEU"]
+      }
+    },
+    {
+      "id": "Q713750",
+      "kind": "dissolved_state",
+      "names": {
+        "en": "West Germany",
+        "nb": "Vest-Tyskland"
+      },
+      "aliases": {
+        "en": ["FRG", "Federal Republic of Germany"],
+        "nb": ["BRD", "Forbundsrepublikken Tyskland"]
+      },
+      "period": [1949, 1990],
+      "snapshotYear": 1989,
+      "approximate": true,
+      "successors": ["DEU"],
+      "partly": [],
+      "outline": {
+        "envelope": [
+          [
+            [11.6, 55.0],
+            [5, 55.5],
+            [5, 46.5],
+            [14.5, 46.5],
+            [14.5, 49.9],
+            [12.35, 50.15],
+            [12.15, 50.3],
+            [11.9, 50.42],
+            [11.6, 50.4],
+            [11.4, 50.48],
+            [11.1, 50.35],
+            [10.7, 50.35],
+            [10.3, 50.43],
+            [10.05, 50.6],
+            [9.95, 50.75],
+            [10.15, 50.98],
+            [10.05, 51.1],
+            [9.95, 51.3],
+            [10.0, 51.4],
+            [10.3, 51.55],
+            [10.55, 51.65],
+            [10.65, 51.85],
+            [10.9, 52.0],
+            [11.0, 52.15],
+            [10.95, 52.3],
+            [10.75, 52.6],
+            [11.0, 52.8],
+            [11.4, 52.85],
+            [11.57, 53.04],
+            [11.0, 53.25],
+            [10.6, 53.37],
+            [10.75, 53.6],
+            [10.9, 53.95],
+            [11.0, 54.15],
+            [11.6, 54.6]
+          ]
+        ],
+        "clip": ["DEU"]
+      }
+    },
+    {
+      "id": "Q28513",
+      "kind": "dissolved_state",
+      "names": {
+        "en": "Austria-Hungary",
+        "nb": "Østerrike-Ungarn"
+      },
+      "aliases": {
+        "en": ["Austro-Hungarian Empire"],
+        "nb": ["Dobbeltmonarkiet"]
+      },
+      "period": [1867, 1918],
+      "snapshotYear": 1914,
+      "approximate": true,
+      "successors": ["AUT", "HUN", "CZE", "SVK", "SVN", "HRV", "BIH"],
+      "partly": ["POL", "UKR", "ROU", "ITA", "SRB", "MNE"],
+      "outline": {
+        "envelope": [
+          [
+            [9.5, 47.5],
+            [10.2, 47.3],
+            [11.0, 47.4],
+            [12.2, 47.7],
+            [13.0, 47.5],
+            [13.4, 48.5],
+            [13.8, 48.8],
+            [12.5, 49.8],
+            [12.1, 50.3],
+            [12.5, 50.4],
+            [13.5, 50.7],
+            [14.3, 51.05],
+            [15.0, 51.0],
+            [16.3, 50.65],
+            [16.8, 50.2],
+            [17.6, 50.3],
+            [18.3, 50.0],
+            [19.3, 50.25],
+            [19.9, 50.15],
+            [21.0, 50.4],
+            [21.9, 50.7],
+            [22.6, 50.5],
+            [23.5, 50.5],
+            [24.1, 50.7],
+            [25.2, 50.4],
+            [26.0, 49.9],
+            [26.2, 49.4],
+            [26.3, 48.6],
+            [26.6, 48.3],
+            [26.2, 47.8],
+            [25.3, 47.4],
+            [25.8, 47.0],
+            [26.3, 46.2],
+            [26.0, 45.6],
+            [25.5, 45.4],
+            [24.5, 45.6],
+            [23.2, 45.3],
+            [22.3, 44.6],
+            [21.4, 44.8],
+            [20.4, 44.85],
+            [19.4, 44.9],
+            [19.3, 44.3],
+            [19.5, 43.6],
+            [18.8, 42.7],
+            [18.7, 42.3],
+            [18.0, 42.2],
+            [14.5, 44.5],
+            [13.5, 45.5],
+            [13.6, 46.0],
+            [13.4, 46.3],
+            [12.5, 46.6],
+            [11.6, 46.0],
+            [11.0, 45.7],
+            [10.5, 45.9],
+            [10.4, 46.5],
+            [9.6, 46.9]
+          ]
+        ],
+        "clip": "land"
+      }
+    },
+    {
+      "id": "Q199821",
+      "kind": "dissolved_state",
+      "names": {
+        "en": "Gran Colombia",
+        "nb": "Stor-Colombia"
+      },
+      "aliases": {
+        "en": [],
+        "nb": ["Gran Colombia"]
+      },
+      "period": [1819, 1831],
+      "snapshotYear": 1824,
+      "approximate": true,
+      "successors": ["COL", "VEN", "ECU", "PAN"],
+      "partly": ["PER", "BRA", "GUY", "CRI", "NIC"],
+      "outline": {
+        "countries": ["COL", "VEN", "ECU", "PAN"]
+      }
+    },
+    {
+      "id": "Q170468",
+      "kind": "dissolved_state",
+      "names": {
+        "en": "United Arab Republic",
+        "nb": "Den forente arabiske republikk"
+      },
+      "aliases": {
+        "en": ["UAR"],
+        "nb": []
+      },
+      "period": [1958, 1961],
+      "snapshotYear": 1960,
+      "approximate": false,
+      "successors": ["EGY", "SYR"],
+      "partly": ["YEM"],
+      "outline": {
+        "countries": ["EGY", "SYR"]
+      }
+    },
+    {
+      "id": "Q2277",
+      "kind": "empire",
+      "names": {
+        "en": "Roman Empire",
+        "nb": "Romerriket"
+      },
+      "aliases": {
+        "en": [],
+        "nb": ["Det romerske keiserriket"]
+      },
+      "period": [-27, 476],
+      "snapshotYear": 117,
+      "approximate": true,
+      "outline": {
+        "envelope": [
+          [
+            [4.5, 52.4],
+            [6.1, 51.85],
+            [7.0, 50.9],
+            [7.6, 50.4],
+            [8.3, 50.3],
+            [8.9, 50.1],
+            [9.2, 49.4],
+            [9.6, 49.0],
+            [11.0, 49.0],
+            [11.9, 48.9],
+            [13.5, 48.6],
+            [16.4, 48.25],
+            [17.1, 48.05],
+            [18.8, 47.8],
+            [18.95, 46.0],
+            [19.6, 45.5],
+            [21.5, 46.2],
+            [22.5, 47.6],
+            [24.5, 47.6],
+            [25.5, 46.5],
+            [24.8, 45.2],
+            [24.5, 43.9],
+            [26.0, 44.0],
+            [28.0, 44.2],
+            [29.6, 45.2],
+            [32, 43.5],
+            [40, 41.2],
+            [41.5, 41.5],
+            [43.5, 41.2],
+            [46, 40.5],
+            [47.5, 39],
+            [45.5, 36],
+            [48.5, 31],
+            [48, 29.8],
+            [46, 29.5],
+            [39, 30.5],
+            [38, 26.8],
+            [36, 26.5],
+            [35, 24],
+            [32.6, 23.0],
+            [30, 23],
+            [29, 25],
+            [26, 29.5],
+            [24, 30.5],
+            [20, 30.3],
+            [15.5, 31],
+            [13.5, 31.5],
+            [11, 32.5],
+            [10, 33.5],
+            [8, 34],
+            [5, 35],
+            [0, 35],
+            [-2, 34.5],
+            [-5, 34],
+            [-7, 34],
+            [-9.5, 36.5],
+            [-9.8, 37],
+            [-9.8, 43.5],
+            [-8, 44],
+            [-4, 44],
+            [-5, 46],
+            [-5.5, 48.5],
+            [-6, 49.8],
+            [-5.8, 49.9],
+            [-5.4, 51.6],
+            [-5.0, 52.8],
+            [-4.9, 54.6],
+            [-3.1, 55.2],
+            [-1.6, 55.3],
+            [2.0, 54.5]
+          ]
+        ],
+        "clip": "land"
+      }
+    },
+    {
+      "id": "Q12544",
+      "kind": "empire",
+      "names": {
+        "en": "Byzantine Empire",
+        "nb": "Østromerriket"
+      },
+      "aliases": {
+        "en": ["Eastern Roman Empire"],
+        "nb": ["Det bysantinske riket", "Bysants"]
+      },
+      "period": [395, 1453],
+      "snapshotYear": 555,
+      "approximate": true,
+      "outline": {
+        "envelope": [
+          [
+            [6.6, 44.2],
+            [6.6, 45.5],
+            [7.5, 46.2],
+            [10, 46.5],
+            [13.5, 46.5],
+            [14.5, 45.6],
+            [15.5, 45.6],
+            [17, 45.2],
+            [19, 45],
+            [20.5, 44.8],
+            [22.5, 44.6],
+            [25, 43.7],
+            [28, 44.1],
+            [29.6, 45.2],
+            [33.4, 44.6],
+            [41.5, 42.0],
+            [42.5, 40.8],
+            [41.5, 39],
+            [40.5, 37.5],
+            [39, 36.8],
+            [40.4, 35.2],
+            [38.5, 33],
+            [37, 32],
+            [36.3, 30],
+            [35, 29.5],
+            [34.5, 28],
+            [32.9, 24.0],
+            [32, 23.5],
+            [30.5, 24],
+            [30, 27],
+            [29, 30.5],
+            [25, 31.5],
+            [20, 30.3],
+            [15, 31.2],
+            [12, 32.5],
+            [9, 33.5],
+            [8, 35],
+            [6, 36],
+            [3, 36.5],
+            [1, 36.3],
+            [-1, 36.5],
+            [-5.4, 35.9],
+            [-6.3, 36.7],
+            [-5.0, 37.4],
+            [-2.5, 37.6],
+            [-0.5, 38.7],
+            [0.3, 38.6],
+            [2, 38],
+            [8.1, 40.5],
+            [9.8, 43.2],
+            [7.5, 43.7]
+          ]
+        ],
+        "clip": "land"
+      }
+    },
+    {
+      "id": "Q12557",
+      "kind": "empire",
+      "names": {
+        "en": "Mongol Empire",
+        "nb": "Mongolriket"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "period": [1206, 1368],
+      "snapshotYear": 1279,
+      "approximate": true,
+      "outline": {
+        "envelope": [
+          [
+            [124.5, 40],
+            [130, 43],
+            [131, 43],
+            [135, 48],
+            [140, 53],
+            [140, 60],
+            [120, 58],
+            [100, 58],
+            [85, 58],
+            [65, 58],
+            [55, 59],
+            [40, 59],
+            [35, 57],
+            [30, 54],
+            [25, 51],
+            [28, 48],
+            [28.5, 46],
+            [29.5, 45],
+            [33, 44.3],
+            [37, 44.5],
+            [40, 43],
+            [38, 41],
+            [32, 41.5],
+            [30, 38],
+            [36, 37],
+            [38.5, 36.5],
+            [40, 34.5],
+            [44, 31],
+            [48, 30],
+            [57, 25],
+            [61.5, 25],
+            [62, 30],
+            [66, 30],
+            [70, 32],
+            [72, 35],
+            [75, 36],
+            [78, 35],
+            [80, 32],
+            [85, 28.5],
+            [88, 27.5],
+            [92, 27],
+            [97, 24],
+            [98, 22],
+            [101, 21.5],
+            [106, 22],
+            [108, 21.5],
+            [108.5, 18],
+            [111, 17.8],
+            [118, 22.5],
+            [120.5, 26],
+            [123, 30],
+            [122.5, 37],
+            [122, 40]
+          ]
+        ],
+        "clip": "land"
+      }
+    },
+    {
+      "id": "Q12560",
+      "kind": "empire",
+      "names": {
+        "en": "Ottoman Empire",
+        "nb": "Det osmanske riket"
+      },
+      "aliases": {
+        "en": [],
+        "nb": ["Osmanerriket"]
+      },
+      "period": [1299, 1922],
+      "snapshotYear": 1683,
+      "approximate": true,
+      "outline": {
+        "envelope": [
+          [
+            [17, 47.8],
+            [19, 48.3],
+            [22, 48.4],
+            [24, 47.8],
+            [26.5, 48.2],
+            [27, 49],
+            [28, 48.4],
+            [30, 48],
+            [33, 46.6],
+            [35.5, 46.5],
+            [38, 47.2],
+            [40, 45],
+            [41, 43],
+            [43, 42],
+            [44, 41],
+            [43.5, 40],
+            [44.5, 39],
+            [45, 37],
+            [46, 35],
+            [47.5, 32],
+            [48.5, 30],
+            [49.5, 26],
+            [50, 25],
+            [46, 27],
+            [40, 27],
+            [40, 24],
+            [42, 19],
+            [40, 17],
+            [39.5, 15.6],
+            [38.5, 18],
+            [37.5, 18.5],
+            [32, 22],
+            [25, 22],
+            [25, 30],
+            [20, 29],
+            [14, 30],
+            [10, 30.5],
+            [8, 33],
+            [2, 34],
+            [-1.8, 35.0],
+            [-1.8, 35.3],
+            [10, 37.3],
+            [11.5, 36.5],
+            [15, 35],
+            [20, 35],
+            [19.5, 39.8],
+            [19.3, 41.0],
+            [17.5, 43.0],
+            [15.8, 44.8],
+            [16.5, 46.2]
+          ]
+        ],
+        "clip": "land"
+      }
+    },
+    {
+      "id": "Q389688",
+      "kind": "empire",
+      "names": {
+        "en": "Achaemenid Empire",
+        "nb": "Akamenideriket"
+      },
+      "aliases": {
+        "en": ["Persian Empire", "First Persian Empire"],
+        "nb": ["Perserriket"]
+      },
+      "period": [-550, -330],
+      "snapshotYear": -500,
+      "approximate": true,
+      "outline": {
+        "envelope": [
+          [
+            [26, 42],
+            [29, 41.3],
+            [41, 41.5],
+            [44, 42.5],
+            [47, 42],
+            [49.5, 41],
+            [54, 37.5],
+            [55, 40],
+            [59, 42.5],
+            [61, 44],
+            [66, 43],
+            [69, 42],
+            [71, 41],
+            [73, 40],
+            [73, 36],
+            [72, 33],
+            [71, 30],
+            [68.5, 24],
+            [57, 25],
+            [50, 27],
+            [48, 29.5],
+            [46, 31],
+            [42, 33],
+            [38, 31],
+            [35, 30],
+            [34, 29.5],
+            [32.5, 29],
+            [33.5, 24],
+            [32.9, 24.1],
+            [31, 23.8],
+            [29, 26],
+            [25, 30],
+            [20, 31],
+            [20, 32.5],
+            [26, 36],
+            [23, 40],
+            [22, 41],
+            [24, 42.5]
+          ]
+        ],
+        "clip": "land"
+      }
+    },
+    {
+      "id": "Q62943",
+      "kind": "empire",
+      "names": {
+        "en": "Maurya Empire",
+        "nb": "Mauryariket"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "period": [-322, -185],
+      "snapshotYear": -250,
+      "approximate": true,
+      "outline": {
+        "envelope": [
+          [
+            [62, 31],
+            [61, 33],
+            [64, 35.5],
+            [68, 35.8],
+            [72, 36],
+            [75, 35],
+            [77, 34],
+            [79, 31],
+            [81, 30],
+            [84, 27.3],
+            [88, 26.4],
+            [92, 26],
+            [92, 22],
+            [89, 21],
+            [85, 19.5],
+            [80, 15],
+            [78, 13],
+            [75.5, 13.5],
+            [72, 20],
+            [67, 24],
+            [62, 25]
+          ]
+        ],
+        "clip": "land"
+      }
+    },
+    {
+      "id": "Q33296",
+      "kind": "empire",
+      "names": {
+        "en": "Mughal Empire",
+        "nb": "Mogulriket"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "period": [1526, 1857],
+      "snapshotYear": 1700,
+      "approximate": true,
+      "outline": {
+        "envelope": [
+          [
+            [66, 31],
+            [67, 35],
+            [71.5, 36],
+            [75, 35.5],
+            [77, 35],
+            [78, 33],
+            [80, 30.5],
+            [80.5, 28.8],
+            [84, 27.3],
+            [88, 26.4],
+            [92, 26],
+            [92.5, 24],
+            [92, 21],
+            [89, 21],
+            [86.5, 20],
+            [84, 18],
+            [80, 15],
+            [80, 12],
+            [79, 10.5],
+            [77, 10.5],
+            [76, 12],
+            [74, 15],
+            [73, 17],
+            [72.5, 21],
+            [69, 22],
+            [68, 23.5],
+            [66.5, 25],
+            [66, 28]
+          ]
+        ],
+        "clip": "land"
+      }
+    },
+    {
+      "id": "Q8733",
+      "kind": "empire",
+      "names": {
+        "en": "Qing dynasty",
+        "nb": "Qing-dynastiet"
+      },
+      "aliases": {
+        "en": ["Qing Empire"],
+        "nb": ["Qing-riket"]
+      },
+      "period": [1644, 1912],
+      "snapshotYear": 1820,
+      "approximate": true,
+      "outline": {
+        "envelope": [
+          [
+            [73.5, 39.5],
+            [74, 37],
+            [78, 35.5],
+            [79, 31],
+            [82, 30.2],
+            [86, 28],
+            [89, 27.8],
+            [92, 27.8],
+            [96, 28.3],
+            [98, 26],
+            [98, 24],
+            [100, 21.5],
+            [102, 22.4],
+            [106, 22.8],
+            [108, 21.6],
+            [108.5, 18],
+            [111, 18],
+            [111.5, 20.5],
+            [117, 22.5],
+            [120, 21.8],
+            [122.2, 25],
+            [121.5, 27],
+            [123, 31],
+            [122.5, 37],
+            [124.4, 40],
+            [127, 41.8],
+            [129, 42.5],
+            [131, 42.5],
+            [137, 45],
+            [141, 52],
+            [138, 54],
+            [135, 55.5],
+            [126, 55.5],
+            [120, 52.5],
+            [106.5, 50.3],
+            [98, 51.5],
+            [95, 52],
+            [89, 51],
+            [87.5, 49.5],
+            [85, 47],
+            [82.5, 45.5],
+            [80, 45],
+            [80.5, 42.5],
+            [76, 41],
+            [74, 39.5]
+          ]
+        ],
+        "clip": "land"
+      }
+    },
+    {
+      "id": "Q201705",
+      "kind": "empire",
+      "names": {
+        "en": "Khmer Empire",
+        "nb": "Khmerriket"
+      },
+      "aliases": {
+        "en": ["Angkor"],
+        "nb": []
+      },
+      "period": [802, 1431],
+      "snapshotYear": 1200,
+      "approximate": true,
+      "outline": {
+        "envelope": [
+          [
+            [98.6, 16.5],
+            [100, 18],
+            [103, 18.5],
+            [105.5, 16.5],
+            [107.5, 14.5],
+            [108.5, 12],
+            [109.3, 13],
+            [109.5, 11.5],
+            [107, 10],
+            [106, 9],
+            [104.5, 8.5],
+            [102, 11],
+            [100, 10],
+            [99.3, 10],
+            [98.7, 12],
+            [98.5, 13]
+          ]
+        ],
+        "clip": "land"
+      }
+    },
+    {
+      "id": "Q184536",
+      "kind": "empire",
+      "names": {
+        "en": "Mali Empire",
+        "nb": "Maliriket"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "period": [1235, 1670],
+      "snapshotYear": 1350,
+      "approximate": true,
+      "outline": {
+        "envelope": [
+          [
+            [-17.5, 15],
+            [-16.8, 12.5],
+            [-16.5, 12],
+            [-15, 11],
+            [-13, 10],
+            [-11, 9.5],
+            [-8, 9.5],
+            [-5, 11],
+            [-2, 13],
+            [0, 15],
+            [2.5, 16.5],
+            [6.5, 17],
+            [5, 18.5],
+            [0, 18.5],
+            [-7, 17.5],
+            [-10, 18],
+            [-14, 17],
+            [-16.5, 16.5]
+          ]
+        ],
+        "clip": "land"
+      }
+    },
+    {
+      "id": "Q202687",
+      "kind": "empire",
+      "names": {
+        "en": "Songhai Empire",
+        "nb": "Songhairiket"
+      },
+      "aliases": {
+        "en": [],
+        "nb": ["Songhai"]
+      },
+      "period": [1464, 1591],
+      "snapshotYear": 1500,
+      "approximate": true,
+      "outline": {
+        "envelope": [
+          [
+            [-12, 15],
+            [-10, 16.5],
+            [-6, 18],
+            [-3, 20],
+            [0, 18.5],
+            [4, 18.5],
+            [8, 17],
+            [9, 16],
+            [8, 13.5],
+            [5, 12.5],
+            [3, 11.5],
+            [1, 12],
+            [-2, 12.5],
+            [-4.5, 12.5],
+            [-8, 13],
+            [-11, 13.5]
+          ]
+        ],
+        "clip": "land"
+      }
+    },
+    {
+      "id": "Q206789",
+      "kind": "empire",
+      "names": {
+        "en": "Ghana Empire",
+        "nb": "Ghanariket"
+      },
+      "aliases": {
+        "en": ["Wagadu"],
+        "nb": []
+      },
+      "period": [700, 1240],
+      "snapshotYear": 1050,
+      "approximate": true,
+      "outline": {
+        "envelope": [
+          [
+            [-12.5, 14.5],
+            [-13.5, 16.5],
+            [-12, 18],
+            [-8, 18],
+            [-6, 16.5],
+            [-6, 14.5],
+            [-8, 13.5],
+            [-11, 13.5]
+          ]
+        ],
+        "clip": "land"
+      }
+    },
+    {
+      "id": "Q28573",
+      "kind": "empire",
+      "names": {
+        "en": "Inca Empire",
+        "nb": "Inkariket"
+      },
+      "aliases": {
+        "en": ["Tawantinsuyu"],
+        "nb": []
+      },
+      "period": [1438, 1533],
+      "snapshotYear": 1525,
+      "approximate": true,
+      "outline": {
+        "envelope": [
+          [
+            [-80, 2],
+            [-77.5, 1.5],
+            [-76.5, 0],
+            [-77, -2.5],
+            [-77.5, -6],
+            [-76, -9],
+            [-74.5, -12],
+            [-71, -13],
+            [-68, -14],
+            [-65.5, -17],
+            [-64.5, -21],
+            [-65, -25],
+            [-66.5, -28],
+            [-68.5, -31],
+            [-69.5, -34],
+            [-70.5, -35.7],
+            [-73, -36],
+            [-72, -30],
+            [-71, -23],
+            [-71, -18],
+            [-76, -15],
+            [-79.5, -8],
+            [-81.5, -5],
+            [-81, -1]
+          ]
+        ],
+        "clip": "land"
+      }
+    },
+    {
+      "id": "Q2608489",
+      "kind": "empire",
+      "names": {
+        "en": "Aztec Empire",
+        "nb": "Aztekerriket"
+      },
+      "aliases": {
+        "en": ["Triple Alliance"],
+        "nb": []
+      },
+      "period": [1428, 1521],
+      "snapshotYear": 1519,
+      "approximate": true,
+      "outline": {
+        "envelope": [
+          [
+            [-100.4, 20.3],
+            [-99, 21],
+            [-98, 22],
+            [-97.2, 21.5],
+            [-96, 19.5],
+            [-94.5, 18.3],
+            [-95.5, 17],
+            [-96, 16.2],
+            [-98, 16],
+            [-101.5, 17.2],
+            [-101, 19],
+            [-100.5, 19.3]
+          ]
+        ],
+        "clip": "land"
+      }
+    },
+    {
+      "id": "Q7209",
+      "kind": "empire",
+      "names": {
+        "en": "Han dynasty",
+        "nb": "Han-dynastiet"
+      },
+      "aliases": {
+        "en": [],
+        "nb": ["Han-riket"]
+      },
+      "period": [-202, 220],
+      "snapshotYear": 2,
+      "approximate": true,
+      "outline": {
+        "envelope": [
+          [
+            [75.5, 40],
+            [80, 41.8],
+            [88, 43],
+            [95, 42],
+            [100, 40.5],
+            [106, 41.5],
+            [112, 41],
+            [117, 41],
+            [122, 41.5],
+            [124, 42],
+            [128, 40],
+            [127, 37.5],
+            [124, 37],
+            [122, 37],
+            [121, 32],
+            [122, 30],
+            [120, 26],
+            [116, 22.5],
+            [110, 20],
+            [108, 17],
+            [106, 17],
+            [105, 19.5],
+            [104, 22.5],
+            [100, 23],
+            [99, 25],
+            [100, 28],
+            [102, 30],
+            [102, 33],
+            [101, 35],
+            [98, 36],
+            [94, 37],
+            [90, 36.5],
+            [85, 36.5],
+            [79, 36.3],
+            [76, 37]
+          ]
+        ],
+        "clip": "land"
+      }
+    },
+    {
+      "id": "Q31929",
+      "kind": "empire",
+      "names": {
+        "en": "Carolingian Empire",
+        "nb": "Karolingerriket"
+      },
+      "aliases": {
+        "en": ["Frankish Empire"],
+        "nb": ["Frankerriket"]
+      },
+      "period": [800, 888],
+      "snapshotYear": 814,
+      "approximate": true,
+      "outline": {
+        "envelope": [
+          [
+            [-1.8, 43.3],
+            [0.5, 42.5],
+            [1.0, 41.2],
+            [3.5, 42],
+            [8, 43.5],
+            [12.5, 42],
+            [13.8, 41.7],
+            [15.5, 42.0],
+            [13.8, 45.6],
+            [16.5, 46],
+            [17, 47.5],
+            [16.5, 48.7],
+            [14, 48.7],
+            [12.5, 49.5],
+            [12, 50.3],
+            [12, 51],
+            [11.8, 52],
+            [11, 53.5],
+            [10, 54],
+            [9, 54.4],
+            [8.3, 54.5],
+            [4.5, 53],
+            [2, 51.3],
+            [-1.5, 49.8],
+            [-5.5, 48.6],
+            [-1.8, 46]
+          ]
+        ],
+        "clip": "land"
+      }
+    },
+    {
+      "id": "Q8680",
+      "kind": "empire",
+      "names": {
+        "en": "British Empire",
+        "nb": "Det britiske imperiet"
+      },
+      "aliases": {
+        "en": [],
+        "nb": ["Britiske imperiet"]
+      },
+      "period": [1607, 1997],
+      "snapshotYear": 1920,
+      "approximate": true,
+      "outline": {
+        "countries": [
+          "GBR",
+          "IRL",
+          "CAN",
+          "AUS",
+          "NZL",
+          "ZAF",
+          "NAM",
+          "IND",
+          "PAK",
+          "BGD",
+          "MMR",
+          "LKA",
+          "MYS",
+          "SGP",
+          "BRN",
+          "EGY",
+          "SDN",
+          "SSD",
+          "KEN",
+          "UGA",
+          "TZA",
+          "ZMB",
+          "ZWE",
+          "MWI",
+          "BWA",
+          "LSO",
+          "SWZ",
+          "NGA",
+          "GHA",
+          "SLE",
+          "GMB",
+          "IRQ",
+          "JOR",
+          "ISR",
+          "PSE",
+          "CYP",
+          "MLT",
+          "GUY",
+          "BLZ",
+          "JAM",
+          "BHS",
+          "TTO",
+          "BRB",
+          "FJI",
+          "PNG",
+          "SLB",
+          "KIR",
+          "TUV",
+          "NRU",
+          "MDV",
+          "SYC",
+          "MUS",
+          "WSM",
+          "KWT",
+          "BHR",
+          "QAT",
+          "ARE"
+        ]
+      }
+    },
+    {
+      "id": "Q80702",
+      "kind": "empire",
+      "names": {
+        "en": "Spanish Empire",
+        "nb": "Det spanske imperiet"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "period": [1492, 1898],
+      "snapshotYear": 1790,
+      "approximate": true,
+      "outline": {
+        "countries": [
+          "ESP",
+          "MEX",
+          "GTM",
+          "HND",
+          "SLV",
+          "NIC",
+          "CRI",
+          "PAN",
+          "CUB",
+          "DOM",
+          "COL",
+          "VEN",
+          "ECU",
+          "PER",
+          "BOL",
+          "CHL",
+          "ARG",
+          "PRY",
+          "URY",
+          "PHL",
+          "GNQ"
+        ]
+      }
+    },
+    {
+      "id": "Q34266",
+      "kind": "empire",
+      "names": {
+        "en": "Russian Empire",
+        "nb": "Det russiske keiserriket"
+      },
+      "aliases": {
+        "en": ["Tsarist Russia"],
+        "nb": ["Tsar-Russland", "Det russiske keiserdømmet"]
+      },
+      "period": [1721, 1917],
+      "snapshotYear": 1914,
+      "approximate": true,
+      "outline": {
+        "countries": [
+          "RUS",
+          "UKR",
+          "BLR",
+          "FIN",
+          "EST",
+          "LVA",
+          "LTU",
+          "POL",
+          "MDA",
+          "GEO",
+          "ARM",
+          "AZE",
+          "KAZ",
+          "UZB",
+          "TKM",
+          "KGZ",
+          "TJK"
+        ]
+      }
+    }
+  ]
+}
