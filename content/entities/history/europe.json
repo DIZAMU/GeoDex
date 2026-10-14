@@ -1,0 +1,684 @@
+{
+  "group": "europe",
+  "entities": [
+    {
+      "entityId": "former-macedonia",
+      "hooks": {
+        "en": [
+          {
+            "id": "former-macedonia.en.1",
+            "type": "anchor",
+            "text": "Macedonia is now North Macedonia, the landlocked (no coast) country just north of Greece."
+          },
+          {
+            "id": "former-macedonia.en.2",
+            "type": "contrast",
+            "text": "North Macedonia is the country. Macedonia in Greece is a region south of the border, home to Thessaloniki."
+          },
+          {
+            "id": "former-macedonia.en.3",
+            "type": "story",
+            "text": "Greece objected to the name for decades. The fix was one compass word in front: North."
+          },
+          {
+            "id": "former-macedonia.en.4",
+            "type": "story",
+            "text": "Picture a sign painter in Skopje adding North to every Macedonia sign in the country."
+          }
+        ],
+        "nb": [
+          {
+            "id": "former-macedonia.nb.1",
+            "type": "anchor",
+            "text": "Makedonia heter nå Nord-Makedonia, innlandsstaten (landet uten kyst) rett nord for Hellas."
+          },
+          {
+            "id": "former-macedonia.nb.2",
+            "type": "contrast",
+            "text": "Nord-Makedonia er landet. Makedonia i Hellas er en region sør for grensen, med Thessaloniki."
+          },
+          {
+            "id": "former-macedonia.nb.3",
+            "type": "story",
+            "text": "Hellas protesterte mot navnet i flere tiår. Løsningen ble ett kompassord foran: Nord."
+          },
+          {
+            "id": "former-macedonia.nb.4",
+            "type": "story",
+            "text": "Se for deg en skiltmaler i Skopje som setter «Nord-» foran hvert eneste Makedonia-skilt i landet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "former-macedonia.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "North Macedonia is landlocked and borders Greece, Bulgaria, Serbia, Kosovo and Albania.",
+            "nb": "Nord-Makedonia har ingen kyst og grenser til Hellas, Bulgaria, Serbia, Kosovo og Albania."
+          }
+        },
+        {
+          "id": "former-macedonia.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The new name came from the Prespa agreement, named after Lake Prespa, where North Macedonia, Greece and Albania meet.",
+            "nb": "Det nye navnet kom med Prespa-avtalen, oppkalt etter Prespasjøen, der Nord-Makedonia, Hellas og Albania møtes."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q16957",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q16957.en.1",
+            "type": "anchor",
+            "text": "East Germany was the eastern part of today's Germany, bordering Poland and Czechoslovakia, with a Baltic coast."
+          },
+          {
+            "id": "Q16957.en.2",
+            "type": "contrast",
+            "text": "East Germany surrounded West Berlin. West Germany was the larger western part, with Bonn as capital."
+          },
+          {
+            "id": "Q16957.en.3",
+            "type": "story",
+            "text": "Picture the Ampelmann, the little hat-wearing figure from East German traffic lights, still waving people across streets in the east."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q16957.nb.1",
+            "type": "anchor",
+            "text": "Øst-Tyskland var den østlige delen av dagens Tyskland, med grense mot Polen og Tsjekkoslovakia og kyst mot Østersjøen."
+          },
+          {
+            "id": "Q16957.nb.2",
+            "type": "contrast",
+            "text": "Øst-Tyskland omsluttet Vest-Berlin. Vest-Tyskland var den største, vestlige delen, med Bonn som hovedstad."
+          },
+          {
+            "id": "Q16957.nb.3",
+            "type": "story",
+            "text": "Se for deg Ampelmann, den lille figuren med hatt fra østtyske trafikklys, som fortsatt viser vei over gatene i øst."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q16957.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "East Germany covered today's eastern German states and East Berlin, bordering Poland and Czechoslovakia.",
+            "nb": "Øst-Tyskland dekket dagens østlige tyske delstater og Øst-Berlin, med grense mot Polen og Tsjekkoslovakia."
+          }
+        },
+        {
+          "id": "Q16957.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "East Germany joined the Federal Republic, so today's Germany continues West Germany rather than being a new state.",
+            "nb": "Øst-Tyskland gikk inn i Forbundsrepublikken, så dagens Tyskland er en fortsettelse av Vest-Tyskland, ikke en ny stat."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q713750",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q713750.en.1",
+            "type": "anchor",
+            "text": "West Germany was the larger western part of today's Germany, from the North Sea coast to the Alps."
+          },
+          {
+            "id": "Q713750.en.2",
+            "type": "contrast",
+            "text": "West Germany's capital was Bonn, a small city on the Rhine. East Germany used East Berlin."
+          },
+          {
+            "id": "Q713750.en.3",
+            "type": "story",
+            "text": "Picture Bonn, a quiet university town on the Rhine, suddenly filled with ministries: that was West Germany's capital."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q713750.nb.1",
+            "type": "anchor",
+            "text": "Vest-Tyskland var den største, vestlige delen av dagens Tyskland, fra Nordsjøkysten til Alpene."
+          },
+          {
+            "id": "Q713750.nb.2",
+            "type": "contrast",
+            "text": "Vest-Tysklands hovedstad var Bonn, en liten by ved Rhinen. Øst-Tyskland brukte Øst-Berlin."
+          },
+          {
+            "id": "Q713750.nb.3",
+            "type": "story",
+            "text": "Se for deg Bonn, en rolig universitetsby ved Rhinen, plutselig full av departementer: slik ble Vest-Tysklands hovedstad."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q713750.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "West Germany bordered Denmark, the Netherlands, Belgium, Luxembourg, France, Switzerland, Austria, Czechoslovakia and East Germany.",
+            "nb": "Vest-Tyskland grenset til Danmark, Nederland, Belgia, Luxembourg, Frankrike, Sveits, Østerrike, Tsjekkoslovakia og Øst-Tyskland."
+          }
+        },
+        {
+          "id": "Q713750.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Reunified Germany kept West Germany's name, Federal Republic of Germany, and moved its capital to Berlin.",
+            "nb": "Det gjenforente Tyskland beholdt Vest-Tysklands navn, Forbundsrepublikken Tyskland, og flyttet hovedstaden til Berlin."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q28513",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q28513.en.1",
+            "type": "anchor",
+            "text": "Austria-Hungary covered the middle Danube: today's Austria, Hungary, Czechia, Slovakia, Slovenia, Croatia and Bosnia."
+          },
+          {
+            "id": "Q28513.en.2",
+            "type": "etymology",
+            "text": "Austria-Hungary is two names joined by a hyphen: one monarch was emperor of Austria and king of Hungary."
+          },
+          {
+            "id": "Q28513.en.3",
+            "type": "story",
+            "text": "Picture Vienna and Budapest as two heads under one crown, also ruling Prague, Zagreb and Sarajevo."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q28513.nb.1",
+            "type": "anchor",
+            "text": "Østerrike-Ungarn dekket midtre Donau: dagens Østerrike, Ungarn, Tsjekkia, Slovakia, Slovenia, Kroatia og Bosnia-Hercegovina."
+          },
+          {
+            "id": "Q28513.nb.2",
+            "type": "etymology",
+            "text": "Dobbeltmonarkiet het det fordi én monark var både keiser av Østerrike og konge av Ungarn."
+          },
+          {
+            "id": "Q28513.nb.3",
+            "type": "story",
+            "text": "Se for deg Wien og Budapest som to hoder under én krone, som også styrte Praha, Zagreb og Sarajevo."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q28513.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Austria-Hungary's two capitals, Vienna and Budapest, both stand on the Danube.",
+            "nb": "Østerrike-Ungarns to hovedsteder, Wien og Budapest, ligger begge ved Donau."
+          }
+        },
+        {
+          "id": "Q28513.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Austria-Hungary broke apart at the end of the First World War into Austria, Hungary, Czechoslovakia and parts of other states.",
+            "nb": "Østerrike-Ungarn gikk i oppløsning ved slutten av første verdenskrig, til Østerrike, Ungarn, Tsjekkoslovakia og deler av andre stater."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q33946",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q33946.en.1",
+            "type": "anchor",
+            "text": "Czechoslovakia was today's Czechia and Slovakia together, a long band from Germany to Ukraine."
+          },
+          {
+            "id": "Q33946.en.2",
+            "type": "etymology",
+            "text": "The name is the two halves glued together: Czecho plus Slovakia."
+          },
+          {
+            "id": "Q33946.en.3",
+            "type": "shape",
+            "text": "Czechoslovakia's outline is a long sausage lying east to west in the middle of Europe."
+          },
+          {
+            "id": "Q33946.en.4",
+            "type": "story",
+            "text": "The split came without a war and got the nickname the Velvet Divorce."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q33946.nb.1",
+            "type": "anchor",
+            "text": "Tsjekkoslovakia var dagens Tsjekkia og Slovakia sammen, et langt belte fra Tyskland til Ukraina."
+          },
+          {
+            "id": "Q33946.nb.2",
+            "type": "etymology",
+            "text": "Navnet er de to halvdelene limt sammen: Tsjekko pluss Slovakia."
+          },
+          {
+            "id": "Q33946.nb.3",
+            "type": "shape",
+            "text": "Omrisset av Tsjekkoslovakia ligner en lang pølse som ligger øst-vest midt i Europa."
+          },
+          {
+            "id": "Q33946.nb.4",
+            "type": "story",
+            "text": "Delingen skjedde uten krig og fikk kallenavnet «fløyelsskilsmissen»."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q33946.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Czechoslovakia was landlocked (no sea coast): its western half is today's Czechia, its eastern half Slovakia.",
+            "nb": "Tsjekkoslovakia hadde ingen kyst: den vestlige halvdelen er dagens Tsjekkia, den østlige Slovakia."
+          }
+        },
+        {
+          "id": "Q33946.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Prague was the capital of Czechoslovakia and stayed the capital of Czechia. Slovakia took Bratislava.",
+            "nb": "Praha var hovedstad i Tsjekkoslovakia og fortsatte som hovedstad i Tsjekkia. Slovakia fikk Bratislava."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q83286",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q83286.en.1",
+            "type": "etymology",
+            "text": "Yugoslavia means land of the South Slavs: jug is the Slavic word for south."
+          },
+          {
+            "id": "Q83286.en.2",
+            "type": "anchor",
+            "text": "Yugoslavia covered today's Slovenia, Croatia, Bosnia, Serbia, Montenegro, North Macedonia and Kosovo."
+          },
+          {
+            "id": "Q83286.en.3",
+            "type": "story",
+            "text": "Picture one suitcase packed from the Alps of Slovenia to Lake Ohrid in North Macedonia: that was Yugoslavia."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q83286.nb.1",
+            "type": "etymology",
+            "text": "Jugoslavia betyr sørslavernes land: jug er det slaviske ordet for sør."
+          },
+          {
+            "id": "Q83286.nb.2",
+            "type": "anchor",
+            "text": "Jugoslavia dekket dagens Slovenia, Kroatia, Bosnia-Hercegovina, Serbia, Montenegro, Nord-Makedonia og Kosovo."
+          },
+          {
+            "id": "Q83286.nb.3",
+            "type": "story",
+            "text": "Se for deg én koffert pakket fra Alpene i Slovenia til Ohridsjøen i Nord-Makedonia: det var Jugoslavia."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q83286.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Yugoslavia stretched from Italy and Austria in the northwest to Greece in the south, with a long Adriatic coast.",
+            "nb": "Jugoslavia strakte seg fra Italia og Østerrike i nordvest til Hellas i sør, med en lang kyst mot Adriaterhavet."
+          }
+        },
+        {
+          "id": "Q83286.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Belgrade, today the capital of Serbia, was the capital of Yugoslavia.",
+            "nb": "Beograd, i dag hovedstaden i Serbia, var hovedstaden i Jugoslavia."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q12544",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q12544.en.1",
+            "type": "anchor",
+            "text": "The Byzantine Empire was the eastern half of the Roman Empire, ruled from Constantinople (today's Istanbul)."
+          },
+          {
+            "id": "Q12544.en.2",
+            "type": "contrast",
+            "text": "Rome fell in the west in the 400s. The Byzantine east carried on for nearly a thousand years more."
+          },
+          {
+            "id": "Q12544.en.3",
+            "type": "etymology",
+            "text": "Byzantine comes from Byzantium, the Greek town that Constantine rebuilt as Constantinople."
+          },
+          {
+            "id": "Q12544.en.4",
+            "type": "story",
+            "text": "Picture a Roman emperor who speaks Greek and prays in Hagia Sophia: that is Byzantium."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q12544.nb.1",
+            "type": "anchor",
+            "text": "Østromerriket var den østlige halvdelen av Romerriket, styrt fra Konstantinopel (dagens Istanbul)."
+          },
+          {
+            "id": "Q12544.nb.2",
+            "type": "etymology",
+            "text": "Navnet sier det: Øst-Romerriket er Romerriket som fortsatte i øst etter at vest falt."
+          },
+          {
+            "id": "Q12544.nb.3",
+            "type": "contrast",
+            "text": "Vestromerriket falt på 400-tallet. Østromerriket varte i nesten tusen år til."
+          },
+          {
+            "id": "Q12544.nb.4",
+            "type": "story",
+            "text": "Se for deg en romersk keiser som snakker gresk og ber i Hagia Sofia: det er Østromerriket."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q12544.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "At its core the Byzantine Empire held Anatolia and the Balkans, with its capital on the Bosporus.",
+            "nb": "Kjernen i Østromerriket var Anatolia og Balkan, med hovedstaden ved Bosporos."
+          }
+        },
+        {
+          "id": "Q12544.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its people called themselves Romans. Byzantine is a label later historians gave the empire.",
+            "nb": "Innbyggerne kalte seg romere. «Bysantinsk» er en betegnelse senere historikere ga riket."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q12560",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q12560.en.1",
+            "type": "anchor",
+            "text": "The Ottoman Empire grew out of Anatolia, was ruled from Istanbul, and is the forerunner of today's Turkey."
+          },
+          {
+            "id": "Q12560.en.2",
+            "type": "etymology",
+            "text": "Ottoman comes from Osman, the founder of the ruling dynasty."
+          },
+          {
+            "id": "Q12560.en.3",
+            "type": "story",
+            "text": "Picture a footstool called an ottoman: it is named after an empire that spanned the Balkans, the Middle East and North Africa."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q12560.nb.1",
+            "type": "anchor",
+            "text": "Det osmanske riket vokste fram i Anatolia, ble styrt fra Istanbul og er forløperen til dagens Tyrkia."
+          },
+          {
+            "id": "Q12560.nb.2",
+            "type": "etymology",
+            "text": "Osmansk kommer av Osman, grunnleggeren av herskerslekten."
+          },
+          {
+            "id": "Q12560.nb.3",
+            "type": "story",
+            "text": "Se for deg en sultan i Istanbul med fingeren på et kart fra Ungarn til Egypt: det var Det osmanske riket."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q12560.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "At its widest, the Ottoman Empire reached from Hungary through the Balkans and Anatolia to Iraq, Egypt and Tunisia.",
+            "nb": "På det største strakte Det osmanske riket seg fra Ungarn gjennom Balkan og Anatolia til Irak, Egypt og Tunisia."
+          }
+        },
+        {
+          "id": "Q12560.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The empire ended after the First World War, and the Republic of Turkey was founded in its Anatolian core.",
+            "nb": "Riket tok slutt etter første verdenskrig, og Republikken Tyrkia ble grunnlagt i kjernen i Anatolia."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q2277",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q2277.en.1",
+            "type": "anchor",
+            "text": "The Roman Empire ringed the Mediterranean: Italy, Spain, Gaul (France), Egypt, Anatolia and Britain."
+          },
+          {
+            "id": "Q2277.en.2",
+            "type": "story",
+            "text": "The Romans called the Mediterranean Mare Nostrum, our sea, and the map shows why: they held every shore."
+          },
+          {
+            "id": "Q2277.en.3",
+            "type": "contrast",
+            "text": "The Roman Empire began with Augustus, around the start of the common era. Its western half fell in the 400s."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q2277.nb.1",
+            "type": "anchor",
+            "text": "Romerriket omsluttet Middelhavet: Italia, Spania, Gallia (Frankrike), Egypt, Anatolia og Britannia."
+          },
+          {
+            "id": "Q2277.nb.2",
+            "type": "story",
+            "text": "Romerne kalte Middelhavet Mare Nostrum, «vårt hav», og kartet viser hvorfor: de hadde hver eneste kyst."
+          },
+          {
+            "id": "Q2277.nb.3",
+            "type": "contrast",
+            "text": "Romerriket begynte med keiser Augustus, rundt begynnelsen av vår tidsregning. Vestdelen falt på 400-tallet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q2277.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "At its height the Roman Empire ran from northern England to Egypt, and from Portugal to Mesopotamia.",
+            "nb": "På det største gikk Romerriket fra Nord-England til Egypt, og fra Portugal til Mesopotamia."
+          }
+        },
+        {
+          "id": "Q2277.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Hadrian's Wall, across northern England, marked a northwest frontier of the empire.",
+            "nb": "Hadrians mur, tvers over Nord-England, markerte en nordvestlig grense for riket."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q31929",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q31929.en.1",
+            "type": "etymology",
+            "text": "Carolingian comes from Carolus, Latin for Charles, as in Charlemagne (Charles the Great)."
+          },
+          {
+            "id": "Q31929.en.2",
+            "type": "anchor",
+            "text": "The Carolingian Empire covered today's France, Benelux, most of Germany, Switzerland, Austria and northern Italy."
+          },
+          {
+            "id": "Q31929.en.3",
+            "type": "story",
+            "text": "Charlemagne was crowned emperor in Rome on Christmas Day, and his grandsons later split the empire in three."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q31929.nb.1",
+            "type": "etymology",
+            "text": "Karolingerriket har navn etter Karl den store, Carolus på latin."
+          },
+          {
+            "id": "Q31929.nb.2",
+            "type": "anchor",
+            "text": "Karolingerriket dekket dagens Frankrike, Benelux, det meste av Tyskland, Sveits, Østerrike og Nord-Italia."
+          },
+          {
+            "id": "Q31929.nb.3",
+            "type": "story",
+            "text": "Karl den store ble kronet til keiser i Roma første juledag, og barnebarna hans delte senere riket i tre."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q31929.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Carolingian Empire stretched from the Pyrenees to the Elbe and south into Italy.",
+            "nb": "Karolingerriket strakte seg fra Pyreneene til Elben og sørover inn i Italia."
+          }
+        },
+        {
+          "id": "Q31929.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The split among Charlemagne's grandsons left a western and an eastern kingdom that later grew into France and Germany.",
+            "nb": "Delingen mellom Karl den stores barnebarn ga et vestlig og et østlig rike som senere vokste til Frankrike og Tyskland."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q34266",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q34266.en.1",
+            "type": "anchor",
+            "text": "The Russian Empire was ruled by tsars from St Petersburg and stretched from Poland and Finland to the Pacific."
+          },
+          {
+            "id": "Q34266.en.2",
+            "type": "contrast",
+            "text": "Finland, the Baltic states, Ukraine and the Caucasus lay inside the Russian Empire. The Soviet Union came after it."
+          },
+          {
+            "id": "Q34266.en.3",
+            "type": "story",
+            "text": "Peter the Great built a new capital on Baltic marshland, St Petersburg, and took the title of emperor."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q34266.nb.1",
+            "type": "anchor",
+            "text": "Det russiske keiserriket ble styrt av tsarer fra St. Petersburg og strakte seg fra Polen og Finland til Stillehavet."
+          },
+          {
+            "id": "Q34266.nb.2",
+            "type": "contrast",
+            "text": "Finland, Baltikum, Ukraina og Kaukasus lå i Det russiske keiserriket. Sovjetunionen kom etterpå."
+          },
+          {
+            "id": "Q34266.nb.3",
+            "type": "story",
+            "text": "Peter den store bygde en ny hovedstad på myrene ved Østersjøen, St. Petersburg, og tok tittelen keiser."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q34266.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Russian Empire spanned Eastern Europe and northern Asia, from the Baltic Sea to the Pacific Ocean.",
+            "nb": "Det russiske keiserriket dekket Øst-Europa og Nord-Asia, fra Østersjøen til Stillehavet."
+          }
+        },
+        {
+          "id": "Q34266.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Finland was a grand duchy inside the Russian Empire, with the tsar as grand duke.",
+            "nb": "Finland var et storfyrstedømme i Det russiske keiserriket, med tsaren som storfyrste."
+          }
+        }
+      ]
+    }
+  ]
+}
