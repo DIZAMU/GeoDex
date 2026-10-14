@@ -14,6 +14,7 @@ const world = assembleWorld(
   read("data/curated/confusion-pairs.json"),
   read("data/cities.json"),
   read("data/curated/groups.json"),
+  read("data/landmarks.json"),
 );
 const scheduler = createScheduler();
 const settings: PlanSettings = {
@@ -216,5 +217,46 @@ describe("groups in the plan", () => {
     expect(on.queue.map((q) => q.cardId)).toContain(`${SCANDINAVIA}:group_member`);
     const off = planDay({ world, settings, states, events, scheduler, now });
     expect(off.queue.map((q) => q.cardId)).not.toContain(`${SCANDINAVIA}:group_member`);
+  });
+});
+
+describe("landmarks in the plan", () => {
+  const on = { ...settings, modules: { landmarks: true } };
+  const intro = [
+    ev("FRA:map_to_name", now - 86_400_000 * 2, "f1"),
+    ev("FRA:name_to_map", now - 86_400_000 * 2, "f2"),
+  ];
+  const introStates = replayAll(scheduler, intro);
+  const isLandmark = (id: string) => world.landmarkById.has(id);
+
+  it("adds no landmark cards while the module is off", () => {
+    const plan = planDay({ world, settings, states: introStates, events: intro, scheduler, now });
+    expect(plan.queue.some((q) => isLandmark(q.entityId))).toBe(false);
+  });
+
+  it("starts landmarks only in countries already introduced", () => {
+    const plan = planDay({
+      world,
+      settings: on,
+      states: introStates,
+      events: intro,
+      scheduler,
+      now,
+    });
+    const items = plan.queue.filter((q) => isLandmark(q.entityId));
+    expect(items.length).toBeGreaterThan(0);
+    expect(items.every((q) => world.landmarkById.get(q.entityId)?.countryId === "FRA")).toBe(true);
+    expect(plan.newCount).toBe(25);
+  });
+
+  it("keeps due landmark cards while on and drops them when off", () => {
+    const events = [...intro, ev("Q243:landmark_to_map", now - 86_400_000 * 30, "l")];
+    const states = replayAll(scheduler, events);
+    expect(
+      planDay({ world, settings: on, states, events, scheduler, now }).queue.map((q) => q.cardId),
+    ).toContain("Q243:landmark_to_map");
+    expect(
+      planDay({ world, settings, states, events, scheduler, now }).queue.map((q) => q.cardId),
+    ).not.toContain("Q243:landmark_to_map");
   });
 });

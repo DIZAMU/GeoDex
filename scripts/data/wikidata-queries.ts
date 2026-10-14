@@ -110,3 +110,23 @@ export function cityQueries(values: string): Record<string, string> {
 }`,
   };
 }
+
+/** Landmark facts for the seed QIDs: names, country statements, coordinates and image. */
+export function landmarkQueries(values: string): Record<string, string> {
+  return {
+    labels: labelQuery(values),
+    country: `SELECT ?item ?country ?rank ?end WHERE {
+  VALUES ?item { ${values} }
+  ?item p:P17 ?st . ?st ps:P17 ?country ; wikibase:rank ?rank .
+  OPTIONAL { ?st pq:P582 ?end }
+}`,
+    coord: `SELECT ?item ?coord WHERE {
+  VALUES ?item { ${values} }
+  ?item wdt:P625 ?coord .
+}`,
+    image: `SELECT ?item ?image WHERE {
+  VALUES ?item { ${values} }
+  ?item wdt:P18 ?image .
+}`,
+  };
+}

@@ -53,7 +53,8 @@
     "rerunPlacement": "Ta plasseringstesten på nytt",
     "groupLook": "Språk og utseende",
     "groupStudy": "Øving",
-    "groups": "Landgrupper (når halvparten av landene er startet)"
+    "groups": "Landgrupper (når halvparten av landene er startet)",
+    "landmarks": "Severdigheter (etter landet sitt)"
   },
   "nav": {
     "today": "I dag",
@@ -109,7 +110,10 @@
     "contrast": "Hvilket av disse er {{name}}?",
     "group_to_map": "Trykk på alle land som er {{phrase}}.",
     "map_to_group": "Hvilken landgruppe er markert?",
-    "group_member": "Hvilket av disse landene er {{phrase}}?"
+    "group_member": "Hvilket av disse landene er {{phrase}}?",
+    "photo_to_name": "Hva er dette?",
+    "landmark_to_country": "Hvilket land ligger {{landmark}} i?",
+    "landmark_to_map": "Plasser {{landmark}} på kartet."
   },
   "answer": {
     "pinHelp": "Trykk der byen ligger.",
@@ -122,7 +126,8 @@
     "label": "Ditt svar",
     "tapHelp": "Trykk på hvert land, og sjekk til slutt. Trykk igjen for å fjerne et land.",
     "tapCount_one": "{{count}} land valgt",
-    "tapCount_other": "{{count}} land valgt"
+    "tapCount_other": "{{count}} land valgt",
+    "pinHelpLandmark": "Trykk der det ligger."
   },
   "feedback": {
     "distance": "Nålen din var {{distance}} fra byen.",
@@ -146,7 +151,9 @@
     "contrastLabel": "Slik skiller du dem",
     "deeperLabel": "Dypere",
     "missed": "Mangler: {{names}}.",
-    "notInGroup": "Ikke med i gruppen: {{names}}."
+    "notInGroup": "Ikke med i gruppen: {{names}}.",
+    "landmarkIn": "Severdighet {{inName}}",
+    "landmarkDistance": "Nålen din var {{distance}} unna."
   },
   "role": {
     "primary": "hovedstad",
@@ -253,7 +260,10 @@
     "contrast": "Skill dem",
     "group_to_map": "Trykk på medlemmene",
     "map_to_group": "Gruppe på kartet",
-    "group_member": "Medlem av gruppen"
+    "group_member": "Medlem av gruppen",
+    "photo_to_name": "Foto til navn",
+    "landmark_to_country": "Severdighet til land",
+    "landmark_to_map": "Severdighet på kartet"
   },
   "hookType": {
     "anchor": "Anker",
@@ -291,7 +301,8 @@
     "noHistory": "Ikke repetert ennå.",
     "correct": "Riktig",
     "wrong": "Feil",
-    "drill": "Øv på {{region}}"
+    "drill": "Øv på {{region}}",
+    "landmarks": "Severdigheter"
   },
   "stats": {
     "title": "Statistikk",
@@ -317,7 +328,8 @@
     "activity": "Siste 365 dager",
     "achievements": "Merker",
     "noAchievements": "Ingen ennå.",
-    "drill": "Øv"
+    "drill": "Øv",
+    "landmarks": "Severdigheter"
   },
   "streak": {
     "days_one": "{{count}} dag på rad",
@@ -360,5 +372,10 @@
     "un_subregion": "FN-region",
     "unNote": "En statistisk region fra FN (M49). I dagligtale kan grensene trekkes annerledes.",
     "sometimesNote": "Land som bare noen definisjoner tar med, teller verken for eller mot deg."
+  },
+  "photo": {
+    "credit": "Foto: {{author}}, {{license}}",
+    "altPrompt": "Foto av stedet du skal navngi",
+    "alt": "Foto av {{name}}"
   }
 }

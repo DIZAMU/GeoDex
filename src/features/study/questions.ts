@@ -11,7 +11,7 @@ import {
   languageDistractors,
 } from "@/engine/distractors";
 import { haversineKm } from "@/engine/geo";
-import { gradePin } from "@/engine/grading";
+import { CITY_PIN, gradePin, LANDMARK_PIN } from "@/engine/grading";
 import { gradeTaps, groupNameDistractors, pickFromPools, pickMember } from "@/engine/groups";
 import { type Answerable, buildIndex, matchAnswer } from "@/engine/matching";
 import { createRng, shuffle } from "@/engine/random";
@@ -22,6 +22,7 @@ import {
   type CountryCardType,
   type GroupCardType,
   type InputSetting,
+  type LandmarkCardType,
   parseCardId,
   type Rating,
 } from "@/engine/types";
@@ -40,6 +41,10 @@ export type Prompt =
   | { kind: "capitalOf"; countryId: string }
   /** A group by name: "Which of these is in the Balkans?", "Tap every country in it". */
   | { kind: "group"; groupId: string }
+  /** A landmark's photo: "What is this?". */
+  | { kind: "photo"; landmarkId: string; countryId: string }
+  /** A landmark by name: "Which country is it in?" or "Where is it?". */
+  | { kind: "landmark"; landmarkId: string; countryId: string; place: boolean }
   /** A group shown on the map: its members highlighted inside `view`. */
   | { kind: "groupMap"; groupId: string; ids: string[]; view: MapView };
 
@@ -55,7 +60,7 @@ export type AnswerFormat =
   /** Tap every member, then check. `sometimes` taps are neither right nor wrong. */
   | { kind: "taps"; view: MapView; members: string[]; sometimes: string[] };
 
-export type AnswerKind = "country" | "capital" | "currency" | "language" | "group";
+export type AnswerKind = "country" | "capital" | "currency" | "language" | "group" | "landmark";
 
 export type Question = {
   cardId: string;
@@ -127,12 +132,17 @@ export function buildIndexes(
     id: g.id,
     names: [g.names.en, g.names.nb, ...g.aliases.en, ...g.aliases.nb],
   }));
+  const landmarks: Answerable[] = world.landmarks.map((l) => ({
+    id: l.id,
+    names: [l.names.en, l.names.nb, ...l.aliases.en, ...l.aliases.nb],
+  }));
   return {
     country: buildIndex(countries),
     capital: buildIndex(capitals),
     currency: buildIndex(currencies),
     language: buildIndex(languages),
     group: buildIndex(groups),
+    landmark: buildIndex(landmarks),
   };
 }
 
@@ -180,6 +190,9 @@ export function buildQuestion(
   if (type === "contrast") return contrastQuestion(ctx, cardId, entityId, seed);
   if (type === "city_to_country" || type === "city_to_map") {
     return cityQuestion(ctx, cardId, entityId, type, state, inputSetting, seed);
+  }
+  if (type === "photo_to_name" || type === "landmark_to_country" || type === "landmark_to_map") {
+    return landmarkQuestion(ctx, cardId, entityId, type, state, inputSetting, seed);
   }
   if (type === "group_to_map" || type === "map_to_group" || type === "group_member") {
     return groupQuestion(ctx, cardId, entityId, type, state, inputSetting, seed);
@@ -513,6 +526,141 @@ function cityQuestion(
   };
 }
 
+/**
+ * Landmark cards (PLAN.md 5.3): name it from its photo, say which country it is in, or pin
+ * it on the map (graded 150/500 km).
+ */
+function landmarkQuestion(
+  ctx: StudyContext,
+  cardId: string,
+  landmarkId: string,
+  type: LandmarkCardType,
+  state: CardState | undefined,
+  inputSetting: InputSetting,
+  seed: string,
+): Question {
+  const landmark = ctx.world.landmarkById.get(landmarkId);
+  const country = landmark ? ctx.world.byId.get(landmark.countryId) : undefined;
+  const facts = country ? ctx.facts.get(country.id) : undefined;
+  if (!landmark || !country || !facts) throw new Error(`Unknown landmark ${landmarkId}`);
+  const rng = createRng(seed);
+  const level = band(state);
+  const firstReview = !state || state.reps === 0;
+  const textAsChoice =
+    inputSetting === "mc" ||
+    (inputSetting === "auto" && level === "new") ||
+    (inputSetting === "typing" && firstReview);
+  const base = { cardId, entityId: landmark.id, countryId: country.id, type };
+  const loc = ctx.locale;
+
+  if (type === "landmark_to_map") {
+    const mapLevel =
+      inputSetting === "mc" || level === "new"
+        ? "subregion"
+        : level === "middle"
+          ? "continent"
+          : "world";
+    return {
+      ...base,
+      prompt: { kind: "landmark", landmarkId, countryId: country.id, place: true },
+      answer: {
+        kind: "pin",
+        view: mapView(country, ctx.world.countries, mapLevel),
+        target: [landmark.lon, landmark.lat],
+      },
+      answerKind: "landmark",
+      correctIds: [landmark.id],
+      mode: "pin",
+    };
+  }
+
+  if (type === "photo_to_name") {
+    const prompt: Prompt = { kind: "photo", landmarkId, countryId: country.id };
+    if (!textAsChoice) {
+      return {
+        ...base,
+        prompt,
+        answer: { kind: "typed" },
+        answerKind: "landmark",
+        correctIds: [landmark.id],
+        mode: "typed",
+      };
+    }
+    // Wrong names from the same region first, so the photo has to be read, not the continent.
+    const near = (pred: (c: { subregion: string; continent: string }) => boolean) =>
+      ctx.world.landmarks
+        .filter((l) => {
+          const c = ctx.world.byId.get(l.countryId);
+          return c ? pred(c) : false;
+        })
+        .map((l) => l.id);
+    const others = pickFromPools(
+      [
+        near((c) => c.subregion === country.subregion),
+        near((c) => c.continent === country.continent),
+        ctx.world.landmarks.map((l) => l.id),
+      ],
+      new Set([landmark.id]),
+      3,
+      rng,
+    );
+    return {
+      ...base,
+      prompt,
+      answer: {
+        kind: "choice",
+        options: shuffle(
+          [landmark.id, ...others].map((id) => ({
+            id,
+            label: ctx.world.landmarkById.get(id)?.names[loc] ?? id,
+          })),
+          rng,
+        ),
+      },
+      answerKind: "landmark",
+      correctIds: [landmark.id],
+      mode: "mc",
+    };
+  }
+
+  const prompt: Prompt = { kind: "landmark", landmarkId, countryId: country.id, place: false };
+  if (!textAsChoice) {
+    return {
+      ...base,
+      prompt,
+      answer: { kind: "typed" },
+      answerKind: "country",
+      correctIds: [country.id],
+      mode: "typed",
+    };
+  }
+  const others = countryDistractors(facts, [...ctx.facts.values()], {
+    count: 3,
+    rng,
+    firstReview,
+    byFlag: false,
+    userConfusions: ctx.confusionsFor(country.id),
+    curatedConfusions: ctx.curatedFor(country.id, "name"),
+  });
+  return {
+    ...base,
+    prompt,
+    answer: {
+      kind: "choice",
+      options: shuffle(
+        [country.id, ...others].map((id) => ({
+          id,
+          label: ctx.world.byId.get(id)?.names[loc] ?? id,
+        })),
+        rng,
+      ),
+    },
+    answerKind: "country",
+    correctIds: [country.id],
+    mode: "mc",
+  };
+}
+
 /** A group's members and "sometimes" members, limited to the learner's scope. */
 export function scopedMembers(
   ctx: Pick<StudyContext, "world" | "scope">,
@@ -715,7 +863,8 @@ export function checkPin(question: Question, at: [number, number]): CheckResult 
   if (question.answer.kind !== "pin") throw new Error("Not a pin question");
   const [lon, lat] = question.answer.target;
   const distanceKm = Math.round(haversineKm(at[0], at[1], lon, lat));
-  const { rating, correct } = gradePin(distanceKm);
+  const limits = question.type === "landmark_to_map" ? LANDMARK_PIN : CITY_PIN;
+  const { rating, correct } = gradePin(distanceKm, limits);
   return { correct, typo: false, chosenId: null, distanceKm, rating, pinned: at };
 }
 

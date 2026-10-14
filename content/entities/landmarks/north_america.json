@@ -1,0 +1,1136 @@
+{
+  "group": "north_america",
+  "entities": [
+    {
+      "entityId": "Q1072342",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1072342.en.1",
+            "type": "anchor",
+            "text": "Moraine Lake lies in Banff National Park in the Canadian Rockies, in the province of Alberta."
+          },
+          {
+            "id": "Q1072342.en.2",
+            "type": "shape",
+            "text": "Moraine Lake is a pool of turquoise paint poured below a jagged row of ten peaks."
+          },
+          {
+            "id": "Q1072342.en.3",
+            "type": "story",
+            "text": "Moraine Lake gets its colour from rock flour, ground fine by glaciers and floating in the water."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1072342.nb.1",
+            "type": "anchor",
+            "text": "Moraine Lake ligger i Banff nasjonalpark i de kanadiske Rocky Mountains, i provinsen Alberta."
+          },
+          {
+            "id": "Q1072342.nb.2",
+            "type": "shape",
+            "text": "Moraine Lake er et basseng av turkis maling helt under en tagget rekke med ti tinder."
+          },
+          {
+            "id": "Q1072342.nb.3",
+            "type": "story",
+            "text": "Moraine Lake får fargen fra steinmel, malt fint av isbreer og svevende i vannet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1072342.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Moraine Lake is in Banff National Park, Alberta, Canada.",
+            "nb": "Moraine Lake ligger i Banff nasjonalpark i Alberta i Canada."
+          }
+        },
+        {
+          "id": "Q1072342.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The lake is fed by glacier meltwater.",
+            "nb": "Innsjøen får vann fra smeltende isbreer."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q134883",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q134883.en.1",
+            "type": "anchor",
+            "text": "The CN Tower stands in downtown Toronto, on the north shore of Lake Ontario in Canada."
+          },
+          {
+            "id": "Q134883.en.2",
+            "type": "shape",
+            "text": "The CN Tower is a concrete needle with a doughnut stuck halfway up, poking the sky over Toronto."
+          },
+          {
+            "id": "Q134883.en.3",
+            "type": "contrast",
+            "text": "The CN Tower is in Toronto, Canada; the Space Needle, the shorter tower with a flying saucer top, is in Seattle."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q134883.nb.1",
+            "type": "anchor",
+            "text": "CN Tower står i sentrum av Toronto, på nordbredden av Ontariosjøen i Canada."
+          },
+          {
+            "id": "Q134883.nb.2",
+            "type": "shape",
+            "text": "CN Tower er en betongnål med en smultring tredd halvveis opp, som stikker i himmelen over Toronto."
+          },
+          {
+            "id": "Q134883.nb.3",
+            "type": "contrast",
+            "text": "CN Tower står i Toronto i Canada. Space Needle, det lavere tårnet med flygende tallerken på toppen, er i Seattle."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q134883.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The CN Tower is in Toronto, Canada.",
+            "nb": "CN Tower står i Toronto i Canada."
+          }
+        },
+        {
+          "id": "Q134883.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is a communications and observation tower.",
+            "nb": "Det er et kommunikasjons- og utsiktstårn."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q745964",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q745964.en.1",
+            "type": "anchor",
+            "text": "The Château Frontenac stands on a cliff above the St. Lawrence River in Quebec City, Canada."
+          },
+          {
+            "id": "Q745964.en.2",
+            "type": "contrast",
+            "text": "The Château Frontenac looks like a medieval French castle but is a railway hotel built in the late nineteenth century."
+          },
+          {
+            "id": "Q745964.en.3",
+            "type": "story",
+            "text": "The Château Frontenac is named after Count Frontenac, a governor of New France, so the hotel carries a French name in French Canada."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q745964.nb.1",
+            "type": "anchor",
+            "text": "Château Frontenac står på en klippe over St. Lawrence-elven i Québec by i Canada."
+          },
+          {
+            "id": "Q745964.nb.2",
+            "type": "contrast",
+            "text": "Château Frontenac ser ut som et fransk middelalderslott, men er et jernbanehotell fra slutten av attenhundretallet."
+          },
+          {
+            "id": "Q745964.nb.3",
+            "type": "story",
+            "text": "Château Frontenac er oppkalt etter greve Frontenac, guvernør i Ny-Frankrike, så hotellet har fransk navn i fransk Canada."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q745964.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Château Frontenac is in Quebec City, Canada.",
+            "nb": "Château Frontenac ligger i Québec by i Canada."
+          }
+        },
+        {
+          "id": "Q745964.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is a hotel built by the Canadian Pacific Railway.",
+            "nb": "Det er et hotell bygd av jernbaneselskapet Canadian Pacific."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q181172",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q181172.en.1",
+            "type": "anchor",
+            "text": "Tikal lies in the rainforest of northern Guatemala, in the Petén region near the border with Mexico."
+          },
+          {
+            "id": "Q181172.en.2",
+            "type": "shape",
+            "text": "Tikal's temples are steep stone pyramids poking their heads out above the jungle roof."
+          },
+          {
+            "id": "Q181172.en.3",
+            "type": "story",
+            "text": "Tikal was one of the largest cities of the Maya, then the forest swallowed it for centuries."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q181172.nb.1",
+            "type": "anchor",
+            "text": "Tikal ligger i regnskogen nord i Guatemala, i Petén-regionen nær grensen mot Mexico."
+          },
+          {
+            "id": "Q181172.nb.2",
+            "type": "shape",
+            "text": "Templene i Tikal er bratte steinpyramider som stikker hodet opp over jungeltaket."
+          },
+          {
+            "id": "Q181172.nb.3",
+            "type": "story",
+            "text": "Tikal var en av mayafolkets største byer, så slukte skogen den i flere hundre år."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q181172.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Tikal is in northern Guatemala.",
+            "nb": "Tikal ligger nord i Guatemala."
+          }
+        },
+        {
+          "id": "Q181172.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was a major city of the ancient Maya civilization.",
+            "nb": "Det var en viktig by i den gamle mayasivilisasjonen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q172613",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q172613.en.1",
+            "type": "anchor",
+            "text": "Teotihuacan lies northeast of Mexico City, in the Valley of Mexico."
+          },
+          {
+            "id": "Q172613.en.2",
+            "type": "etymology",
+            "text": "Teotihuacan is an Aztec name meaning roughly the place where the gods were made."
+          },
+          {
+            "id": "Q172613.en.3",
+            "type": "contrast",
+            "text": "Teotihuacan is near Mexico City in central Mexico; Chichen Itza is far east, on the Yucatán Peninsula."
+          },
+          {
+            "id": "Q172613.en.4",
+            "type": "shape",
+            "text": "Teotihuacan's Avenue of the Dead is a long straight runway with giant pyramids parked along it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q172613.nb.1",
+            "type": "anchor",
+            "text": "Teotihuacán ligger nordøst for Mexico by, i Mexicodalen."
+          },
+          {
+            "id": "Q172613.nb.2",
+            "type": "etymology",
+            "text": "Teotihuacán er et aztekisk navn som omtrent betyr stedet der gudene ble skapt."
+          },
+          {
+            "id": "Q172613.nb.3",
+            "type": "contrast",
+            "text": "Teotihuacán ligger ved Mexico by midt i Mexico. Chichen Itza ligger langt øst, på Yucatánhalvøya."
+          },
+          {
+            "id": "Q172613.nb.4",
+            "type": "shape",
+            "text": "De dødes allé i Teotihuacán er en lang, rett rullebane med kjempestore pyramider parkert langs den."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q172613.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Teotihuacan is near Mexico City, Mexico.",
+            "nb": "Teotihuacán ligger ved Mexico by i Mexico."
+          }
+        },
+        {
+          "id": "Q172613.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its largest building is the Pyramid of the Sun.",
+            "nb": "Den største bygningen er Solpyramiden."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q5859",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q5859.en.1",
+            "type": "anchor",
+            "text": "Chichen Itza lies on the Yucatán Peninsula in southeast Mexico, inland from Cancún."
+          },
+          {
+            "id": "Q5859.en.2",
+            "type": "story",
+            "text": "At the equinox, the sun casts a shadow snake that slides down the steps of Chichen Itza's pyramid."
+          },
+          {
+            "id": "Q5859.en.3",
+            "type": "shape",
+            "text": "El Castillo at Chichen Itza is a stepped stone pyramid with a staircase up each of its four sides."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q5859.nb.1",
+            "type": "anchor",
+            "text": "Chichen Itza ligger på Yucatánhalvøya sørøst i Mexico, inne i landet fra Cancún."
+          },
+          {
+            "id": "Q5859.nb.2",
+            "type": "story",
+            "text": "Ved jevndøgn kaster solen en skygge formet som en slange som glir ned trappene på pyramiden i Chichen Itza."
+          },
+          {
+            "id": "Q5859.nb.3",
+            "type": "shape",
+            "text": "El Castillo i Chichen Itza er en trappet steinpyramide med en trapp opp hver av de fire sidene."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q5859.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Chichen Itza is in the state of Yucatán, Mexico.",
+            "nb": "Chichen Itza ligger i delstaten Yucatán i Mexico."
+          }
+        },
+        {
+          "id": "Q5859.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was a large city of the Maya.",
+            "nb": "Det var en stor by i mayariket."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q7350",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q7350.en.1",
+            "type": "anchor",
+            "text": "The Panama Canal cuts across the Isthmus of Panama, linking the Atlantic side to the Pacific."
+          },
+          {
+            "id": "Q7350.en.2",
+            "type": "story",
+            "text": "Ships climb up through locks to a lake in the middle of Panama, then down again to the other ocean."
+          },
+          {
+            "id": "Q7350.en.3",
+            "type": "contrast",
+            "text": "The Panama Canal joins two oceans in Central America; the Suez Canal joins two seas in Egypt."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q7350.nb.1",
+            "type": "anchor",
+            "text": "Panamakanalen skjærer gjennom Panamaeidet og binder Atlanterhavssiden til Stillehavet."
+          },
+          {
+            "id": "Q7350.nb.2",
+            "type": "story",
+            "text": "Skipene løftes gjennom sluser opp til en innsjø midt i Panama, og senkes så ned igjen til det andre havet."
+          },
+          {
+            "id": "Q7350.nb.3",
+            "type": "contrast",
+            "text": "Panamakanalen forbinder to hav i Mellom-Amerika. Suezkanalen forbinder to hav i Egypt."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q7350.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Panama Canal crosses Panama.",
+            "nb": "Panamakanalen går tvers gjennom Panama."
+          }
+        },
+        {
+          "id": "Q7350.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It uses locks to lift ships up to Gatun Lake and back down.",
+            "nb": "Den bruker sluser til å løfte skipene opp til Gatúnsjøen og ned igjen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q11259",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q11259.en.1",
+            "type": "anchor",
+            "text": "Times Square is in Midtown Manhattan, New York City, where Broadway crosses Seventh Avenue."
+          },
+          {
+            "id": "Q11259.en.2",
+            "type": "etymology",
+            "text": "Times Square is named after The New York Times, which moved its offices there."
+          },
+          {
+            "id": "Q11259.en.3",
+            "type": "shape",
+            "text": "Times Square is a canyon of glowing billboards, so bright that night never quite arrives."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q11259.nb.1",
+            "type": "anchor",
+            "text": "Times Square ligger på Midtown Manhattan i New York, der Broadway krysser Seventh Avenue."
+          },
+          {
+            "id": "Q11259.nb.2",
+            "type": "etymology",
+            "text": "Times Square er oppkalt etter avisen The New York Times, som flyttet kontorene sine dit."
+          },
+          {
+            "id": "Q11259.nb.3",
+            "type": "shape",
+            "text": "Times Square er en kløft av lysende reklameskilt, så lys at natten aldri helt kommer."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q11259.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Times Square is in Manhattan, New York City.",
+            "nb": "Times Square ligger på Manhattan i New York."
+          }
+        },
+        {
+          "id": "Q11259.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "A ball drops there every New Year's Eve at midnight.",
+            "nb": "En kule senkes der hver nyttårsaften ved midnatt."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q118841",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q118841.en.1",
+            "type": "anchor",
+            "text": "The Grand Canyon lies in northern Arizona in the southwestern United States."
+          },
+          {
+            "id": "Q118841.en.2",
+            "type": "story",
+            "text": "The Colorado River cut the Grand Canyon, sawing down through rock layer after rock layer."
+          },
+          {
+            "id": "Q118841.en.3",
+            "type": "shape",
+            "text": "The Grand Canyon is the earth sliced open like a layer cake, red and orange bands all the way down."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q118841.nb.1",
+            "type": "anchor",
+            "text": "Grand Canyon ligger nord i Arizona, sørvest i USA."
+          },
+          {
+            "id": "Q118841.nb.2",
+            "type": "story",
+            "text": "Coloradoelven gravde ut Grand Canyon og sagde seg ned gjennom lag etter lag med stein."
+          },
+          {
+            "id": "Q118841.nb.3",
+            "type": "shape",
+            "text": "Grand Canyon er jorden skåret opp som en lagkake, med røde og oransje striper hele veien ned."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q118841.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Grand Canyon is in Arizona, United States.",
+            "nb": "Grand Canyon ligger i Arizona i USA."
+          }
+        },
+        {
+          "id": "Q118841.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was carved by the Colorado River.",
+            "nb": "Den ble gravd ut av Coloradoelven."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q131354",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q131354.en.1",
+            "type": "anchor",
+            "text": "Alcatraz Island sits in San Francisco Bay, California, off the city's northern waterfront."
+          },
+          {
+            "id": "Q131354.en.2",
+            "type": "story",
+            "text": "Alcatraz was a federal prison whose cold currents were meant to make escape by swimming impossible."
+          },
+          {
+            "id": "Q131354.en.3",
+            "type": "etymology",
+            "text": "Alcatraz comes from an old Spanish word for the pelican, a bird of the bay."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q131354.nb.1",
+            "type": "anchor",
+            "text": "Alcatraz ligger i San Francisco-bukta i California, utenfor byens nordre havnefront."
+          },
+          {
+            "id": "Q131354.nb.2",
+            "type": "story",
+            "text": "Alcatraz var et føderalt fengsel der de kalde strømmene skulle gjøre det umulig å svømme i land."
+          },
+          {
+            "id": "Q131354.nb.3",
+            "type": "etymology",
+            "text": "Alcatraz kommer av et gammelt spansk ord for pelikan, en fugl som holder til i bukta."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q131354.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Alcatraz Island is in San Francisco Bay, California.",
+            "nb": "Alcatraz ligger i San Francisco-bukta i California."
+          }
+        },
+        {
+          "id": "Q131354.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It held a federal prison and is now a museum site.",
+            "nb": "Øya hadde et føderalt fengsel og er nå et museum."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q180376",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q180376.en.1",
+            "type": "anchor",
+            "text": "The Hollywood Sign stands on Mount Lee in the Hollywood Hills, above Los Angeles."
+          },
+          {
+            "id": "Q180376.en.2",
+            "type": "story",
+            "text": "The Hollywood Sign began as an advert for a housing estate called Hollywoodland; the last letters came down later."
+          },
+          {
+            "id": "Q180376.en.3",
+            "type": "shape",
+            "text": "The Hollywood Sign is nine giant white letters propped up on a dry hillside."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q180376.nb.1",
+            "type": "anchor",
+            "text": "Hollywoodskiltet står på Mount Lee i Hollywood Hills, over Los Angeles."
+          },
+          {
+            "id": "Q180376.nb.2",
+            "type": "story",
+            "text": "Hollywoodskiltet begynte som reklame for boligfeltet Hollywoodland. De siste bokstavene ble tatt ned senere."
+          },
+          {
+            "id": "Q180376.nb.3",
+            "type": "shape",
+            "text": "Hollywoodskiltet er ni kjempestore hvite bokstaver stablet opp i en tørr åsside."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q180376.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Hollywood Sign is in Los Angeles, California.",
+            "nb": "Hollywoodskiltet står i Los Angeles i California."
+          }
+        },
+        {
+          "id": "Q180376.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It originally read Hollywoodland.",
+            "nb": "Det sto først Hollywoodland på skiltet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q192017",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q192017.en.1",
+            "type": "anchor",
+            "text": "Monument Valley lies on the border of Arizona and Utah, in the Navajo Nation in the southwestern US."
+          },
+          {
+            "id": "Q192017.en.2",
+            "type": "shape",
+            "text": "Monument Valley is a flat red desert with sandstone towers standing on it like giant chess rooks."
+          },
+          {
+            "id": "Q192017.en.3",
+            "type": "story",
+            "text": "So many Western films were shot in Monument Valley that it became the picture of the Wild West."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q192017.nb.1",
+            "type": "anchor",
+            "text": "Monument Valley ligger på grensen mellom Arizona og Utah, i Navajo Nation sørvest i USA."
+          },
+          {
+            "id": "Q192017.nb.2",
+            "type": "shape",
+            "text": "Monument Valley er en flat rød ørken med sandsteinstårn som står der som kjempestore sjakktårn."
+          },
+          {
+            "id": "Q192017.nb.3",
+            "type": "story",
+            "text": "Så mange westernfilmer ble spilt inn i Monument Valley at stedet ble selve bildet på Det ville vesten."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q192017.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Monument Valley is on the Arizona and Utah border, in the United States.",
+            "nb": "Monument Valley ligger på grensen mellom Arizona og Utah i USA."
+          }
+        },
+        {
+          "id": "Q192017.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It lies within the Navajo Nation.",
+            "nb": "Det ligger i Navajo Nation."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q2027162",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q2027162.en.1",
+            "type": "anchor",
+            "text": "The Gateway Arch stands on the Mississippi riverfront in St. Louis, Missouri, in the middle of the US."
+          },
+          {
+            "id": "Q2027162.en.2",
+            "type": "story",
+            "text": "The Gateway Arch marks St. Louis as the gateway to the West, where pioneers set out across the plains."
+          },
+          {
+            "id": "Q2027162.en.3",
+            "type": "shape",
+            "text": "The Gateway Arch is a giant steel croquet hoop stuck into the riverbank."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q2027162.nb.1",
+            "type": "anchor",
+            "text": "Gateway Arch står ved Mississippi-elven i St. Louis i Missouri, midt i USA."
+          },
+          {
+            "id": "Q2027162.nb.2",
+            "type": "story",
+            "text": "Gateway Arch markerer St. Louis som porten mot vest, der nybyggerne la ut over slettene."
+          },
+          {
+            "id": "Q2027162.nb.3",
+            "type": "shape",
+            "text": "Gateway Arch er en kjempestor krokketbøyle av stål stukket ned i elvebredden."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q2027162.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Gateway Arch is in St. Louis, Missouri.",
+            "nb": "Gateway Arch står i St. Louis i Missouri."
+          }
+        },
+        {
+          "id": "Q2027162.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is clad in stainless steel.",
+            "nb": "Den er kledd med rustfritt stål."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q35525",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q35525.en.1",
+            "type": "anchor",
+            "text": "The White House stands on Pennsylvania Avenue in Washington, D.C., the capital of the United States."
+          },
+          {
+            "id": "Q35525.en.2",
+            "type": "story",
+            "text": "Every US president since John Adams has lived and worked in the White House."
+          },
+          {
+            "id": "Q35525.en.3",
+            "type": "contrast",
+            "text": "The White House is the president's home; the Capitol, with the big dome, is where Congress meets."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q35525.nb.1",
+            "type": "anchor",
+            "text": "Det hvite hus ligger ved Pennsylvania Avenue i Washington, D.C., hovedstaden i USA."
+          },
+          {
+            "id": "Q35525.nb.2",
+            "type": "story",
+            "text": "Alle amerikanske presidenter siden John Adams har bodd og arbeidet i Det hvite hus."
+          },
+          {
+            "id": "Q35525.nb.3",
+            "type": "contrast",
+            "text": "Det hvite hus er presidentens hjem. Kongressen møtes i Capitol, bygningen med den store kuppelen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q35525.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The White House is in Washington, D.C.",
+            "nb": "Det hvite hus ligger i Washington, D.C."
+          }
+        },
+        {
+          "id": "Q35525.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the official residence and workplace of the US president.",
+            "nb": "Det er den amerikanske presidentens offisielle bolig og arbeidssted."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q44440",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q44440.en.1",
+            "type": "anchor",
+            "text": "The Golden Gate Bridge spans the strait where San Francisco Bay meets the Pacific, in California."
+          },
+          {
+            "id": "Q44440.en.2",
+            "type": "contrast",
+            "text": "The Golden Gate Bridge is painted orange, not gold: the Golden Gate is the name of the strait."
+          },
+          {
+            "id": "Q44440.en.3",
+            "type": "shape",
+            "text": "The Golden Gate Bridge is two orange towers holding up a red ribbon over the fog."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q44440.nb.1",
+            "type": "anchor",
+            "text": "Golden Gate Bridge krysser stredet der San Francisco-bukta møter Stillehavet, i California."
+          },
+          {
+            "id": "Q44440.nb.2",
+            "type": "contrast",
+            "text": "Golden Gate Bridge er malt oransje, ikke gull: Golden Gate er navnet på stredet."
+          },
+          {
+            "id": "Q44440.nb.3",
+            "type": "shape",
+            "text": "Golden Gate Bridge er to oransje tårn som holder et rødt bånd over tåken."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q44440.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Golden Gate Bridge is in San Francisco, California.",
+            "nb": "Golden Gate Bridge ligger i San Francisco i California."
+          }
+        },
+        {
+          "id": "Q44440.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is a suspension bridge across the Golden Gate strait.",
+            "nb": "Det er en hengebro over stredet Golden Gate."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q5317",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q5317.en.1",
+            "type": "anchor",
+            "text": "The Space Needle stands in Seattle, in Washington state in the Pacific Northwest of the US."
+          },
+          {
+            "id": "Q5317.en.2",
+            "type": "shape",
+            "text": "The Space Needle is a flying saucer balanced on three thin legs."
+          },
+          {
+            "id": "Q5317.en.3",
+            "type": "story",
+            "text": "The Space Needle was built for a world's fair about the space age, and it still looks like it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q5317.nb.1",
+            "type": "anchor",
+            "text": "Space Needle står i Seattle, i delstaten Washington nordvest i USA."
+          },
+          {
+            "id": "Q5317.nb.2",
+            "type": "shape",
+            "text": "Space Needle er en flygende tallerken som balanserer på tre tynne bein."
+          },
+          {
+            "id": "Q5317.nb.3",
+            "type": "story",
+            "text": "Space Needle ble bygd til en verdensutstilling om romalderen, og det ser fortsatt slik ut."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q5317.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Space Needle is in Seattle, Washington.",
+            "nb": "Space Needle står i Seattle i Washington."
+          }
+        },
+        {
+          "id": "Q5317.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was built for a world's fair held in Seattle.",
+            "nb": "Den ble bygd til en verdensutstilling i Seattle."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q83497",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q83497.en.1",
+            "type": "anchor",
+            "text": "Mount Rushmore is in the Black Hills of South Dakota, in the northern Great Plains of the US."
+          },
+          {
+            "id": "Q83497.en.2",
+            "type": "story",
+            "text": "Four presidents' faces were carved into Mount Rushmore: Washington, Jefferson, Theodore Roosevelt and Lincoln."
+          },
+          {
+            "id": "Q83497.en.3",
+            "type": "shape",
+            "text": "Mount Rushmore is a granite cliff with four giant heads peering out of it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q83497.nb.1",
+            "type": "anchor",
+            "text": "Mount Rushmore ligger i Black Hills i South Dakota, nord på De store sletter i USA."
+          },
+          {
+            "id": "Q83497.nb.2",
+            "type": "story",
+            "text": "Fire presidentansikter er hugget inn i Mount Rushmore: Washington, Jefferson, Theodore Roosevelt og Lincoln."
+          },
+          {
+            "id": "Q83497.nb.3",
+            "type": "shape",
+            "text": "Mount Rushmore er en granittklippe med fire kjempestore hoder som titter ut."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q83497.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Mount Rushmore is in South Dakota, United States.",
+            "nb": "Mount Rushmore ligger i South Dakota i USA."
+          }
+        },
+        {
+          "id": "Q83497.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its sculpture shows four US presidents.",
+            "nb": "Skulpturen viser fire amerikanske presidenter."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q9188",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q9188.en.1",
+            "type": "anchor",
+            "text": "The Empire State Building stands in Midtown Manhattan, New York City, on Fifth Avenue."
+          },
+          {
+            "id": "Q9188.en.2",
+            "type": "story",
+            "text": "King Kong climbed the Empire State Building in the film and swatted at planes from the top."
+          },
+          {
+            "id": "Q9188.en.3",
+            "type": "etymology",
+            "text": "Empire State is a nickname for New York State, so the building is named after its home state."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q9188.nb.1",
+            "type": "anchor",
+            "text": "Empire State Building står på Midtown Manhattan i New York, ved Fifth Avenue."
+          },
+          {
+            "id": "Q9188.nb.2",
+            "type": "story",
+            "text": "King Kong klatret opp Empire State Building i filmen og slo etter fly fra toppen."
+          },
+          {
+            "id": "Q9188.nb.3",
+            "type": "etymology",
+            "text": "Empire State er et kallenavn på delstaten New York, så bygningen har navn etter hjemstaten sin."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q9188.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Empire State Building is in Manhattan, New York City.",
+            "nb": "Empire State Building står på Manhattan i New York."
+          }
+        },
+        {
+          "id": "Q9188.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was the tallest building in the world for about four decades.",
+            "nb": "Den var verdens høyeste bygning i rundt fire tiår."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q9202",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q9202.en.1",
+            "type": "anchor",
+            "text": "The Statue of Liberty stands on Liberty Island in New York Harbor, off the tip of Manhattan."
+          },
+          {
+            "id": "Q9202.en.2",
+            "type": "story",
+            "text": "France gave the Statue of Liberty to the United States, and it was shipped across the Atlantic in pieces."
+          },
+          {
+            "id": "Q9202.en.3",
+            "type": "contrast",
+            "text": "The Statue of Liberty is green because its copper skin turned green with age; it was once shiny brown."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q9202.nb.1",
+            "type": "anchor",
+            "text": "Frihetsgudinnen står på Liberty Island i havnen i New York, utenfor sørspissen av Manhattan."
+          },
+          {
+            "id": "Q9202.nb.2",
+            "type": "story",
+            "text": "Frankrike ga Frihetsgudinnen til USA, og den ble fraktet over Atlanterhavet i deler."
+          },
+          {
+            "id": "Q9202.nb.3",
+            "type": "contrast",
+            "text": "Frihetsgudinnen er grønn fordi kobberhuden ble grønn med årene. Den var en gang blank og brun."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q9202.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Statue of Liberty is on Liberty Island in New York Harbor.",
+            "nb": "Frihetsgudinnen står på Liberty Island i havnen i New York."
+          }
+        },
+        {
+          "id": "Q9202.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was a gift from the people of France.",
+            "nb": "Den var en gave fra det franske folk."
+          }
+        }
+      ]
+    }
+  ]
+}
