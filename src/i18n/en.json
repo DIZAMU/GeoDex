@@ -248,6 +248,10 @@
     "mastered": "{{n}} of {{total}} mastered",
     "badge": "Badge earned",
     "drill": "Drill this region",
+    "globe": "Globe",
+    "flat": "Flat map",
+    "view": "Map view",
+    "globeLabel": "Globe: drag to turn, scroll or pinch to zoom, arrow keys to turn",
     "legend": "Mastery"
   },
   "entry": {
