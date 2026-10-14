@@ -1,0 +1,1249 @@
+{
+  "group": "africa",
+  "entities": [
+    {
+      "entityId": "former-swaziland",
+      "hooks": {
+        "en": [
+          {
+            "id": "former-swaziland.en.1",
+            "type": "anchor",
+            "text": "Swaziland is today's Eswatini, the small landlocked kingdom wedged between South Africa and Mozambique."
+          },
+          {
+            "id": "former-swaziland.en.2",
+            "type": "etymology",
+            "text": "Eswatini is siSwati for land of the Swazi: the same name as Swaziland, just in the local language."
+          },
+          {
+            "id": "former-swaziland.en.3",
+            "type": "sound",
+            "text": "Swaziland: a king swats the English word land off the end and sticks an E on the front. Eswatini."
+          }
+        ],
+        "nb": [
+          {
+            "id": "former-swaziland.nb.1",
+            "type": "anchor",
+            "text": "Swaziland heter i dag Eswatini, det lille kongedømmet mellom Sør-Afrika og Mosambik."
+          },
+          {
+            "id": "former-swaziland.nb.2",
+            "type": "etymology",
+            "text": "Eswatini betyr swazienes land på siSwati: samme navn som Swaziland, bare på landets eget språk."
+          },
+          {
+            "id": "former-swaziland.nb.3",
+            "type": "story",
+            "text": "Kongen byttet skilt: «land» ble fjernet bak, en «E» ble satt foran. Swaziland ble Eswatini."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "former-swaziland.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Eswatini is landlocked, bordered by South Africa and Mozambique.",
+            "nb": "Eswatini er en innlandsstat (uten kyst) som grenser til Sør-Afrika og Mosambik."
+          }
+        },
+        {
+          "id": "former-swaziland.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Eswatini is one of the few absolute monarchies left in the world: the king holds executive power.",
+            "nb": "Eswatini er et av få gjenværende eneveldige monarkier: kongen har den utøvende makten."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1232509",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1232509.en.1",
+            "type": "anchor",
+            "text": "Spanish Guinea sat on the equator between Cameroon and Gabon, plus an island offshore: today it is Equatorial Guinea."
+          },
+          {
+            "id": "Q1232509.en.2",
+            "type": "contrast",
+            "text": "Three Guineas, three colonisers: French Guinea is Guinea, Portuguese Guinea is Guinea-Bissau, Spanish Guinea is Equatorial Guinea."
+          },
+          {
+            "id": "Q1232509.en.3",
+            "type": "story",
+            "text": "Picture a flamenco dancer sweating on the equator: Spanish Guinea became Equatorial Guinea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1232509.nb.1",
+            "type": "anchor",
+            "text": "Spansk Guinea lå ved ekvator mellom Kamerun og Gabon, med en øy utenfor: i dag Ekvatorial-Guinea."
+          },
+          {
+            "id": "Q1232509.nb.2",
+            "type": "contrast",
+            "text": "Tre Guineaer: fransk Guinea ble Guinea, portugisisk Guinea ble Guinea-Bissau, Spansk Guinea ble Ekvatorial-Guinea."
+          },
+          {
+            "id": "Q1232509.nb.3",
+            "type": "story",
+            "text": "Se for deg en flamencodanser som svetter på ekvator: Spansk Guinea ble Ekvatorial-Guinea."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1232509.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Equatorial Guinea has a mainland part between Cameroon and Gabon and the island of Bioko in the Gulf of Guinea.",
+            "nb": "Ekvatorial-Guinea består av et fastlandsområde mellom Kamerun og Gabon og øya Bioko i Guineabukta."
+          }
+        },
+        {
+          "id": "Q1232509.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Spanish Guinea's Spanish survived independence: Spanish is still an official language of Equatorial Guinea.",
+            "nb": "Spansken fra Spansk Guinea overlevde selvstendigheten: spansk er fortsatt offisielt språk i Ekvatorial-Guinea."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1421888",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1421888.en.1",
+            "type": "anchor",
+            "text": "Ubangi-Shari is now the Central African Republic, landlocked in the middle of the continent."
+          },
+          {
+            "id": "Q1421888.en.2",
+            "type": "etymology",
+            "text": "Ubangi-Shari was named after two rivers: the Ubangi on its southern border and the Shari (Chari), which flows north to Lake Chad."
+          },
+          {
+            "id": "Q1421888.en.3",
+            "type": "story",
+            "text": "Picture a country with a river tied to each foot, Ubangi pulling south, Shari pulling north: the Central African Republic."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1421888.nb.1",
+            "type": "anchor",
+            "text": "Ubangi-Shari heter i dag Den sentralafrikanske republikk, en innlandsstat midt i Afrika."
+          },
+          {
+            "id": "Q1421888.nb.2",
+            "type": "etymology",
+            "text": "Ubangi-Shari er oppkalt etter to elver: Ubangi langs sørgrensen og Shari (Chari), som renner nordover til Tsjadsjøen."
+          },
+          {
+            "id": "Q1421888.nb.3",
+            "type": "story",
+            "text": "Se for deg et land med en elv bundet til hver fot, Ubangi drar sørover og Shari nordover: Den sentralafrikanske republikk."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1421888.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Central African Republic is landlocked and borders Chad, Sudan, South Sudan, DR Congo, Congo and Cameroon.",
+            "nb": "Den sentralafrikanske republikk er en innlandsstat og grenser til Tsjad, Sudan, Sør-Sudan, Kongo, Kongo-Brazzaville og Kamerun."
+          }
+        },
+        {
+          "id": "Q1421888.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Ubangi River forms part of the country's southern border with DR Congo.",
+            "nb": "Ubangi-elven danner en del av landets sørgrense mot Kongo."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q158725",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q158725.en.1",
+            "type": "etymology",
+            "text": "Tanzania is a blend: TANganyika plus ZANzibar."
+          },
+          {
+            "id": "Q158725.en.2",
+            "type": "anchor",
+            "text": "Lake Tanganyika, on Tanzania's western border, still carries the old name of the mainland."
+          },
+          {
+            "id": "Q158725.en.3",
+            "type": "story",
+            "text": "Tanganyika married the island of Zanzibar, and the couple took a double-barrelled name: Tan-Zan-ia."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q158725.nb.1",
+            "type": "etymology",
+            "text": "Tanzania er et sammenslått navn: TANganyika pluss ZANzibar."
+          },
+          {
+            "id": "Q158725.nb.2",
+            "type": "anchor",
+            "text": "Tanganyikasjøen, på Tanzanias vestgrense, bærer fortsatt det gamle navnet på fastlandet."
+          },
+          {
+            "id": "Q158725.nb.3",
+            "type": "story",
+            "text": "Tanganyika giftet seg med øya Zanzibar, og paret tok et dobbelt etternavn: Tan-Zan-ia."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q158725.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Tanzania lies on the Indian Ocean, with Kenya and Uganda to the north and Mozambique to the south.",
+            "nb": "Tanzania ligger ved Indiahavet, med Kenya og Uganda i nord og Mosambik i sør."
+          }
+        },
+        {
+          "id": "Q158725.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Tanzania was formed when mainland Tanganyika united with the islands of Zanzibar.",
+            "nb": "Tanzania ble dannet da fastlandet Tanganyika slo seg sammen med øyene Zanzibar."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1649306",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1649306.en.1",
+            "type": "anchor",
+            "text": "Nyasaland was named after Lake Nyasa, which today is called Lake Malawi: the country is Malawi."
+          },
+          {
+            "id": "Q1649306.en.2",
+            "type": "shape",
+            "text": "Picture a long, thin country lying beside a long, thin lake like a towel next to a swimmer: Nyasaland, now Malawi."
+          },
+          {
+            "id": "Q1649306.en.3",
+            "type": "contrast",
+            "text": "Northern Rhodesia became Zambia; its eastern neighbour Nyasaland became Malawi, the one with the long lake."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1649306.nb.1",
+            "type": "anchor",
+            "text": "Nyasaland var oppkalt etter Nyasasjøen, som i dag heter Malawisjøen: landet er Malawi."
+          },
+          {
+            "id": "Q1649306.nb.2",
+            "type": "sound",
+            "text": "Nyasaland, «ny sjø-land»: et smalt land som ligger langs en lang sjø. I dag heter det Malawi."
+          },
+          {
+            "id": "Q1649306.nb.3",
+            "type": "contrast",
+            "text": "Nord-Rhodesia ble Zambia; naboen i øst, Nyasaland, ble Malawi, landet med den lange innsjøen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1649306.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Malawi is landlocked between Zambia, Tanzania and Mozambique.",
+            "nb": "Malawi er en innlandsstat mellom Zambia, Tanzania og Mosambik."
+          }
+        },
+        {
+          "id": "Q1649306.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Lake Malawi runs along much of the country's eastern side; in Tanzania it is called Lake Nyasa.",
+            "nb": "Malawisjøen strekker seg langs store deler av landets østside; i Tanzania heter den Nyasasjøen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q207521",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q207521.en.1",
+            "type": "anchor",
+            "text": "Abyssinia is the old European name for Ethiopia, the highland country in the Horn of Africa."
+          },
+          {
+            "id": "Q207521.en.2",
+            "type": "sound",
+            "text": "Abyssinia sounds like abyss: picture the deep river gorges cut into the Ethiopian Highlands."
+          },
+          {
+            "id": "Q207521.en.3",
+            "type": "contrast",
+            "text": "Abyssinia was Ethiopia, the inland highlands. Eritrea, to the north, holds the Red Sea coast."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q207521.nb.1",
+            "type": "anchor",
+            "text": "Abessinia er det gamle europeiske navnet på Etiopia, høylandet på Afrikas Horn."
+          },
+          {
+            "id": "Q207521.nb.2",
+            "type": "sound",
+            "text": "Abessinia: en abbedisse vandrer mellom de gamle kirkene i Etiopias høyland."
+          },
+          {
+            "id": "Q207521.nb.3",
+            "type": "contrast",
+            "text": "Abessinia var Etiopia, høylandet i innlandet. Eritrea, i nord, har kysten mot Rødehavet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q207521.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Ethiopia is landlocked and borders Eritrea, Djibouti, Somalia, Kenya, South Sudan and Sudan.",
+            "nb": "Etiopia er en innlandsstat og grenser til Eritrea, Djibouti, Somalia, Kenya, Sør-Sudan og Sudan."
+          }
+        },
+        {
+          "id": "Q207521.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Amharic, Ethiopia's federal working language, is written in the Ge'ez script, not in Latin or Arabic letters.",
+            "nb": "Amharisk, Etiopias føderale arbeidsspråk, skrives med ge'ez-skrift, ikke med latinske eller arabiske bokstaver."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q217169",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q217169.en.1",
+            "type": "etymology",
+            "text": "Rhodesia was named after the British businessman Cecil Rhodes. The country is now Zimbabwe."
+          },
+          {
+            "id": "Q217169.en.2",
+            "type": "contrast",
+            "text": "Rhodesia (Southern Rhodesia) became Zimbabwe, south of the Zambezi. Northern Rhodesia, across the river, became Zambia."
+          },
+          {
+            "id": "Q217169.en.3",
+            "type": "story",
+            "text": "Zimbabwe swapped a colonist's surname for the name of Great Zimbabwe, the old stone city inside its own borders."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q217169.nb.1",
+            "type": "etymology",
+            "text": "Rhodesia var oppkalt etter den britiske forretningsmannen Cecil Rhodes. Landet heter i dag Zimbabwe."
+          },
+          {
+            "id": "Q217169.nb.2",
+            "type": "contrast",
+            "text": "Rhodesia (Sør-Rhodesia) ble Zimbabwe, sør for Zambezi. Nord-Rhodesia, på andre siden av elva, ble Zambia."
+          },
+          {
+            "id": "Q217169.nb.3",
+            "type": "story",
+            "text": "Zimbabwe byttet ut en kolonists etternavn med navnet på Stor-Zimbabwe, den gamle steinbyen innenfor egne grenser."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q217169.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Zimbabwe is landlocked between the Zambezi River in the north and the Limpopo River in the south.",
+            "nb": "Zimbabwe er en innlandsstat mellom Zambezi-elven i nord og Limpopo-elven i sør."
+          }
+        },
+        {
+          "id": "Q217169.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The name Zimbabwe comes from Great Zimbabwe, a medieval stone city in the southeast of the country.",
+            "nb": "Navnet Zimbabwe kommer fra Stor-Zimbabwe, en middelalderby av stein i den sørøstlige delen av landet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q2340665",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q2340665.en.1",
+            "type": "etymology",
+            "text": "Basutoland and Lesotho both name the Sotho people: the old form was Basuto, the modern one Lesotho, land of the Sotho."
+          },
+          {
+            "id": "Q2340665.en.2",
+            "type": "anchor",
+            "text": "Basutoland is today's Lesotho, the mountain kingdom completely surrounded by South Africa."
+          },
+          {
+            "id": "Q2340665.en.3",
+            "type": "shape",
+            "text": "Picture a hole punched in the middle of South Africa and filled with mountains: Basutoland, now Lesotho."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q2340665.nb.1",
+            "type": "etymology",
+            "text": "Basutoland og Lesotho er begge oppkalt etter sotho-folket: Lesotho betyr sothoenes land."
+          },
+          {
+            "id": "Q2340665.nb.2",
+            "type": "anchor",
+            "text": "Basutoland heter i dag Lesotho, fjellkongedømmet som er helt omringet av Sør-Afrika."
+          },
+          {
+            "id": "Q2340665.nb.3",
+            "type": "shape",
+            "text": "Basutoland ligger som en fjellknute i lomma på Sør-Afrika. I dag heter knuten Lesotho."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q2340665.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Lesotho is an enclave: a country entirely surrounded by another, South Africa.",
+            "nb": "Lesotho er en enklave: et land som er helt omringet av et annet land, Sør-Afrika."
+          }
+        },
+        {
+          "id": "Q2340665.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Most of Lesotho is covered by the Maloti and Drakensberg mountains.",
+            "nb": "Mesteparten av Lesotho dekkes av fjellkjedene Maloti og Drakensberg."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q503623",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q503623.en.1",
+            "type": "anchor",
+            "text": "The Gold Coast is now Ghana, on the Gulf of Guinea between Côte d'Ivoire and Togo."
+          },
+          {
+            "id": "Q503623.en.2",
+            "type": "etymology",
+            "text": "European traders named the Gold Coast after the gold they bought there."
+          },
+          {
+            "id": "Q503623.en.3",
+            "type": "story",
+            "text": "Picture a beach where the sand is gold dust: the Gold Coast, today Ghana."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q503623.nb.1",
+            "type": "anchor",
+            "text": "Gullkysten heter i dag Ghana og ligger ved Guineabukta mellom Elfenbenskysten og Togo."
+          },
+          {
+            "id": "Q503623.nb.2",
+            "type": "etymology",
+            "text": "Europeiske handelsfolk kalte området Gullkysten etter gullet de kjøpte der."
+          },
+          {
+            "id": "Q503623.nb.3",
+            "type": "contrast",
+            "text": "Gullkysten og Elfenbenskysten er naboer: Elfenbenskysten beholdt navnet, Gullkysten ble Ghana."
+          },
+          {
+            "id": "Q503623.nb.4",
+            "type": "story",
+            "text": "Se for deg en strand der sanden er gullstøv: Gullkysten, i dag Ghana."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q503623.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Ghana has a coast on the Gulf of Guinea, with Côte d'Ivoire to the west, Togo to the east and Burkina Faso to the north.",
+            "nb": "Ghana har kyst mot Guineabukta, med Elfenbenskysten i vest, Togo i øst og Burkina Faso i nord."
+          }
+        },
+        {
+          "id": "Q503623.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Ghana took its name from the medieval Ghana Empire, which lay far to the northwest, in today's Mali and Mauritania.",
+            "nb": "Ghana tok navnet fra middelalderriket Ghana, som lå langt mot nordvest, i dagens Mali og Mauritania."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q508014",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q508014.en.1",
+            "type": "contrast",
+            "text": "French Sudan is not today's Sudan: it lay far to the west, around the Niger River, and became Mali."
+          },
+          {
+            "id": "Q508014.en.2",
+            "type": "etymology",
+            "text": "Sudan comes from Arabic for land of the Black people, a name once used for the whole belt south of the Sahara."
+          },
+          {
+            "id": "Q508014.en.3",
+            "type": "story",
+            "text": "Picture a French officer unfolding a map of Sudan and landing in Timbuktu: French Sudan is Mali."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q508014.nb.1",
+            "type": "contrast",
+            "text": "Fransk Sudan er ikke dagens Sudan: det lå langt mot vest, rundt Niger-elven, og ble Mali."
+          },
+          {
+            "id": "Q508014.nb.2",
+            "type": "etymology",
+            "text": "Sudan kommer fra arabisk for de svartes land, et navn som en gang ble brukt om hele beltet sør for Sahara."
+          },
+          {
+            "id": "Q508014.nb.3",
+            "type": "story",
+            "text": "En fransk offiser skal til Sudan, men kartet er feil og han havner i Timbuktu: Fransk Sudan er Mali."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q508014.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Mali is landlocked and borders Algeria, Niger, Burkina Faso, Côte d'Ivoire, Guinea, Senegal and Mauritania.",
+            "nb": "Mali er en innlandsstat og grenser til Algerie, Niger, Burkina Faso, Elfenbenskysten, Guinea, Senegal og Mauritania."
+          }
+        },
+        {
+          "id": "Q508014.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Mali took its name from the medieval Mali Empire.",
+            "nb": "Mali tok navnet fra middelalderriket Mali."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q6500954",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q6500954.en.1",
+            "type": "contrast",
+            "text": "Zaire was the big Congo, with its capital Kinshasa. The smaller Republic of the Congo, across the river, never had that name."
+          },
+          {
+            "id": "Q6500954.en.2",
+            "type": "etymology",
+            "text": "Zaire comes from a Kikongo word for river: the country was named after the Congo River."
+          },
+          {
+            "id": "Q6500954.en.3",
+            "type": "story",
+            "text": "One river, three Zaires: the country, its river and its money all shared the name. Today the country is DR Congo."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q6500954.nb.1",
+            "type": "contrast",
+            "text": "Zaïre var det store Kongo, med hovedstaden Kinshasa. Kongo-Brazzaville, på andre siden av elva, har aldri hatt det navnet."
+          },
+          {
+            "id": "Q6500954.nb.2",
+            "type": "etymology",
+            "text": "Zaïre kommer av et kikongo-ord for elv: landet var oppkalt etter Kongo-elven."
+          },
+          {
+            "id": "Q6500954.nb.3",
+            "type": "story",
+            "text": "Én elv, tre Zaïre: landet, elva og pengene delte navn. I dag heter landet Kongo."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q6500954.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "DR Congo reaches the Atlantic only through a short coastline at the mouth of the Congo River.",
+            "nb": "Kongo når Atlanterhavet bare gjennom en kort kyststripe ved munningen av Kongo-elven."
+          }
+        },
+        {
+          "id": "Q6500954.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "While the country was called Zaire, both its currency and the Congo River were also called Zaire.",
+            "nb": "Mens landet het Zaïre, het både valutaen og Kongo-elven også Zaïre."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q747314",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q747314.en.1",
+            "type": "etymology",
+            "text": "Bechuana is an old spelling of Tswana, the people who give Botswana its name."
+          },
+          {
+            "id": "Q747314.en.2",
+            "type": "sound",
+            "text": "Say Bechuana with a sneeze and out comes Tswana: Bechuanaland is Botswana."
+          },
+          {
+            "id": "Q747314.en.3",
+            "type": "anchor",
+            "text": "Bechuanaland is now Botswana, the landlocked country north of South Africa covered largely by the Kalahari."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q747314.nb.1",
+            "type": "etymology",
+            "text": "Betsjuana er en gammel skrivemåte for tswana, folket som har gitt navn til Botswana."
+          },
+          {
+            "id": "Q747314.nb.2",
+            "type": "sound",
+            "text": "Betsjuanaland: nys «tsjuana» og ut kommer tswana. Landet heter i dag Botswana."
+          },
+          {
+            "id": "Q747314.nb.3",
+            "type": "anchor",
+            "text": "Betsjuanaland heter i dag Botswana, innlandsstaten nord for Sør-Afrika der Kalahari dekker store deler."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q747314.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Botswana is landlocked between South Africa, Namibia and Zimbabwe, and touches Zambia only along a very short stretch of the Zambezi.",
+            "nb": "Botswana er en innlandsstat mellom Sør-Afrika, Namibia og Zimbabwe, og grenser til Zambia bare på en svært kort strekning ved Zambezi."
+          }
+        },
+        {
+          "id": "Q747314.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Okavango Delta in northern Botswana is a river delta that ends inland, in the Kalahari, instead of in the sea.",
+            "nb": "Okavangodeltaet nord i Botswana er et elvedelta som ender inne i Kalahari, ikke i havet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q797422",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q797422.en.1",
+            "type": "anchor",
+            "text": "Upper Volta sat upstream of Ghana on the Volta rivers: it is now Burkina Faso."
+          },
+          {
+            "id": "Q797422.en.2",
+            "type": "etymology",
+            "text": "Burkina Faso combines words from two local languages, Mooré and Dioula, and is usually translated as land of upright people."
+          },
+          {
+            "id": "Q797422.en.3",
+            "type": "story",
+            "text": "Picture three rivers, black, white and red, pouring downhill out of Upper Volta into Ghana: today that upstream land is Burkina Faso."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q797422.nb.1",
+            "type": "anchor",
+            "text": "Øvre Volta lå oppstrøms for Ghana ved Volta-elvene: i dag heter landet Burkina Faso."
+          },
+          {
+            "id": "Q797422.nb.2",
+            "type": "etymology",
+            "text": "Burkina Faso består av ord fra to lokale språk, mooré og dioula, og oversettes ofte som de oppriktiges land."
+          },
+          {
+            "id": "Q797422.nb.3",
+            "type": "story",
+            "text": "Øvre Volta bor i etasjen over Ghana: Den svarte, den hvite og den røde Volta renner ned trappa. Øverst bor Burkina Faso."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q797422.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Burkina Faso is landlocked and borders Mali, Niger, Benin, Togo, Ghana and Côte d'Ivoire.",
+            "nb": "Burkina Faso er en innlandsstat og grenser til Mali, Niger, Benin, Togo, Ghana og Elfenbenskysten."
+          }
+        },
+        {
+          "id": "Q797422.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Black, White and Red Volta rivers rise in Burkina Faso and flow south into Ghana.",
+            "nb": "Den svarte, den hvite og den røde Volta har sine kilder i Burkina Faso og renner sørover inn i Ghana."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q798431",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q798431.en.1",
+            "type": "anchor",
+            "text": "Dahomey is now Benin, the narrow country between Togo and Nigeria."
+          },
+          {
+            "id": "Q798431.en.2",
+            "type": "contrast",
+            "text": "Benin is named after the Bight of Benin, a bay. The old Kingdom of Benin lay next door, in today's Nigeria."
+          },
+          {
+            "id": "Q798431.en.3",
+            "type": "sound",
+            "text": "Dahomey, 'the home, eh': a narrow home squeezed between Togo and Nigeria, now called Benin."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q798431.nb.1",
+            "type": "anchor",
+            "text": "Dahomey heter i dag Benin, det smale landet mellom Togo og Nigeria."
+          },
+          {
+            "id": "Q798431.nb.2",
+            "type": "contrast",
+            "text": "Benin er oppkalt etter Beninbukta. Det gamle kongeriket Benin lå hos naboen, i dagens Nigeria."
+          },
+          {
+            "id": "Q798431.nb.3",
+            "type": "sound",
+            "text": "Dahomey: «Da, hjem i.» Et smalt hjem klemt mellom Togo og Nigeria. I dag heter det Benin."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q798431.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Benin is a narrow country between Togo and Nigeria, with a short coast on the Gulf of Guinea.",
+            "nb": "Benin er et smalt land mellom Togo og Nigeria, med en kort kyst mot Guineabukta."
+          }
+        },
+        {
+          "id": "Q798431.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Dahomey was the name of a kingdom in the south of today's Benin.",
+            "nb": "Dahomey var navnet på et kongerike sør i dagens Benin."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q953068",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q953068.en.1",
+            "type": "anchor",
+            "text": "South West Africa is exactly where the name says: the southwest coast of Africa, today Namibia."
+          },
+          {
+            "id": "Q953068.en.2",
+            "type": "etymology",
+            "text": "Namibia is named after the Namib, the coastal desert running down its Atlantic shore."
+          },
+          {
+            "id": "Q953068.en.3",
+            "type": "shape",
+            "text": "Picture a frying pan on the Atlantic with a long thin handle sticking east (the Caprivi Strip): South West Africa, now Namibia."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q953068.nb.1",
+            "type": "anchor",
+            "text": "Sørvest-Afrika ligger der navnet sier: på sørvestkysten av Afrika. I dag heter landet Namibia."
+          },
+          {
+            "id": "Q953068.nb.2",
+            "type": "etymology",
+            "text": "Namibia er oppkalt etter Namib, ørkenen langs landets kyst mot Atlanterhavet."
+          },
+          {
+            "id": "Q953068.nb.3",
+            "type": "shape",
+            "text": "Se for deg en stekepanne ved Atlanterhavet med et langt, tynt skaft mot øst (Caprivistripen): Sørvest-Afrika, i dag Namibia."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q953068.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Namibia lies on the Atlantic coast between Angola and South Africa, with Botswana to the east.",
+            "nb": "Namibia ligger ved Atlanterhavet mellom Angola og Sør-Afrika, med Botswana i øst."
+          }
+        },
+        {
+          "id": "Q953068.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Namib Desert runs along almost the whole of Namibia's coast.",
+            "nb": "Namibørkenen strekker seg langs nesten hele kysten av Namibia."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q953903",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q953903.en.1",
+            "type": "contrast",
+            "text": "Northern Rhodesia is north of the Zambezi and became Zambia. Rhodesia south of the river became Zimbabwe."
+          },
+          {
+            "id": "Q953903.en.2",
+            "type": "etymology",
+            "text": "Zambia is named after the Zambezi River, which forms its southern border."
+          },
+          {
+            "id": "Q953903.en.3",
+            "type": "story",
+            "text": "Northern Rhodesia stands on the north bank of Victoria Falls, looking across the spray at Zimbabwe: today it is Zambia."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q953903.nb.1",
+            "type": "contrast",
+            "text": "Nord-Rhodesia ligger nord for Zambezi og ble Zambia. Rhodesia sør for elva ble Zimbabwe."
+          },
+          {
+            "id": "Q953903.nb.2",
+            "type": "etymology",
+            "text": "Zambia er oppkalt etter Zambezi-elven, som danner landets sørgrense."
+          },
+          {
+            "id": "Q953903.nb.3",
+            "type": "story",
+            "text": "Nord-Rhodesia står på nordsiden av Victoriafallene og blir dusjet av sprøyten fra fossen: i dag heter landet Zambia."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q953903.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Zambia is landlocked; the Zambezi River forms much of its southern border with Zimbabwe.",
+            "nb": "Zambia er en innlandsstat; Zambezi-elven danner store deler av sørgrensen mot Zimbabwe."
+          }
+        },
+        {
+          "id": "Q953903.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Kariba, one of the largest artificial lakes in the world, lies on the Zambezi between Zambia and Zimbabwe.",
+            "nb": "Karibasjøen, en av verdens største kunstige innsjøer, ligger i Zambezi mellom Zambia og Zimbabwe."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q170468",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q170468.en.1",
+            "type": "anchor",
+            "text": "The United Arab Republic was a union of Egypt and Syria."
+          },
+          {
+            "id": "Q170468.en.2",
+            "type": "shape",
+            "text": "The outline comes in two pieces: Egypt in Africa and Syria in Asia, with Israel and Jordan in the gap."
+          },
+          {
+            "id": "Q170468.en.3",
+            "type": "story",
+            "text": "A country like a sandwich with the filling missing: Egypt below, Syria above, and someone else's land in between."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q170468.nb.1",
+            "type": "anchor",
+            "text": "Den forente arabiske republikk var en union mellom Egypt og Syria."
+          },
+          {
+            "id": "Q170468.nb.2",
+            "type": "shape",
+            "text": "Omrisset består av to deler: Egypt i Afrika og Syria i Asia, med Israel og Jordan i mellomrommet."
+          },
+          {
+            "id": "Q170468.nb.3",
+            "type": "story",
+            "text": "Et land som en brødskive delt i to: Egypt nederst, Syria øverst, og naboenes land midt i mellom."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q170468.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The United Arab Republic joined Egypt and Syria, two countries that do not share a border.",
+            "nb": "Den forente arabiske republikk forente Egypt og Syria, to land som ikke grenser til hverandre."
+          }
+        },
+        {
+          "id": "Q170468.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Egypt kept the name United Arab Republic for years after Syria left the union.",
+            "nb": "Egypt beholdt navnet Den forente arabiske republikk i flere år etter at Syria hadde gått ut av unionen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q184536",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q184536.en.1",
+            "type": "anchor",
+            "text": "The Mali Empire covered today's Mali and reached west to the Atlantic in Senegal and Gambia."
+          },
+          {
+            "id": "Q184536.en.2",
+            "type": "contrast",
+            "text": "Three West African empires in order: Ghana, then Mali, then Songhai. Mali is the middle one, at its height in the 1300s."
+          },
+          {
+            "id": "Q184536.en.3",
+            "type": "story",
+            "text": "Mansa Musa rides through Cairo with camels loaded with gold on his way to Mecca: that is the Mali Empire, medieval and rich."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q184536.nb.1",
+            "type": "anchor",
+            "text": "Maliriket dekket dagens Mali og nådde vestover til Atlanterhavet i Senegal og Gambia."
+          },
+          {
+            "id": "Q184536.nb.2",
+            "type": "contrast",
+            "text": "Tre vestafrikanske riker etter hverandre: Ghana, Mali, Songhai. Mali er det midterste, på topp på 1300-tallet."
+          },
+          {
+            "id": "Q184536.nb.3",
+            "type": "story",
+            "text": "Mansa Musa rir gjennom Kairo med kameler lastet med gull på vei til Mekka: det er Maliriket, i middelalderen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q184536.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "At its height, the Mali Empire stretched from the Atlantic coast of Senegal and Gambia inland along the upper Niger River.",
+            "nb": "På sitt største strakte Maliriket seg fra Atlanterhavskysten i Senegal og Gambia innover langs øvre del av Niger-elven."
+          }
+        },
+        {
+          "id": "Q184536.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its ruler Mansa Musa travelled to Mecca by way of Cairo, carrying large amounts of gold.",
+            "nb": "Herskeren Mansa Musa reiste til Mekka via Kairo og hadde med seg store mengder gull."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q202687",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q202687.en.1",
+            "type": "anchor",
+            "text": "The Songhai Empire was centred on Gao, at the great bend of the Niger River in today's Mali and Niger."
+          },
+          {
+            "id": "Q202687.en.2",
+            "type": "contrast",
+            "text": "Songhai is the last of the three West African empires (Ghana, Mali, Songhai), strongest in the 1400s and 1500s."
+          },
+          {
+            "id": "Q202687.en.3",
+            "type": "sound",
+            "text": "Songhai: a song sung high from the riverbank at Gao, echoing along the Niger."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q202687.nb.1",
+            "type": "anchor",
+            "text": "Songhairiket hadde sentrum i Gao, ved den store svingen i Niger-elven, i dagens Mali og Niger."
+          },
+          {
+            "id": "Q202687.nb.2",
+            "type": "contrast",
+            "text": "Songhai er det siste av de tre vestafrikanske rikene (Ghana, Mali, Songhai), sterkest på 1400- og 1500-tallet."
+          },
+          {
+            "id": "Q202687.nb.3",
+            "type": "sound",
+            "text": "Songhai: en hai synger en sang («song») i Niger-elva ved Gao."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q202687.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Songhai Empire was centred on the city of Gao, on the Niger River.",
+            "nb": "Songhairiket hadde sentrum i byen Gao ved Niger-elven."
+          }
+        },
+        {
+          "id": "Q202687.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Timbuktu and Djenné were major trading and learning centres within the Songhai Empire.",
+            "nb": "Timbuktu og Djenné var viktige handels- og lærdomssentre i Songhairiket."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q206789",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q206789.en.1",
+            "type": "contrast",
+            "text": "The Ghana Empire lay in today's Mauritania and Mali, far northwest of modern Ghana, which borrowed its name."
+          },
+          {
+            "id": "Q206789.en.2",
+            "type": "anchor",
+            "text": "Ghana is the oldest of the three West African empires: Ghana, Mali, Songhai. It flourished before and around the year 1000."
+          },
+          {
+            "id": "Q206789.en.3",
+            "type": "story",
+            "text": "Camel caravans haul salt south across the Sahara and carry gold back north, with the Ghana Empire taking its cut in between."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q206789.nb.1",
+            "type": "contrast",
+            "text": "Ghanariket lå i dagens Mauritania og Mali, langt nordvest for dagens Ghana, som lånte navnet."
+          },
+          {
+            "id": "Q206789.nb.2",
+            "type": "anchor",
+            "text": "Ghana er det eldste av de tre vestafrikanske rikene: Ghana, Mali, Songhai. Det blomstret før og rundt år 1000."
+          },
+          {
+            "id": "Q206789.nb.3",
+            "type": "story",
+            "text": "Kamelkaravaner drar salt sørover over Sahara og gull nordover, og Ghanariket tar sin del på veien."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q206789.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Ghana Empire lay in today's southern Mauritania and western Mali, not in modern Ghana.",
+            "nb": "Ghanariket lå i dagens sørlige Mauritania og vestlige Mali, ikke i dagens Ghana."
+          }
+        },
+        {
+          "id": "Q206789.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It grew rich from trade across the Sahara in gold and salt.",
+            "nb": "Riket ble rikt på handel med gull og salt over Sahara."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q8680",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q8680.en.1",
+            "type": "shape",
+            "text": "The British Empire's outline is scattered over every continent: Canada, India, Australia and large parts of Africa."
+          },
+          {
+            "id": "Q8680.en.2",
+            "type": "anchor",
+            "text": "The British Empire spans the 1600s, with the first colonies in North America, to the late 1900s, when Hong Kong was handed over."
+          },
+          {
+            "id": "Q8680.en.3",
+            "type": "story",
+            "text": "The empire on which the sun never set: somewhere on its map it was always daytime."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q8680.nb.1",
+            "type": "shape",
+            "text": "Omrisset av Det britiske imperiet er spredt over alle kontinenter: Canada, India, Australia og store deler av Afrika."
+          },
+          {
+            "id": "Q8680.nb.2",
+            "type": "anchor",
+            "text": "Det britiske imperiet varte fra 1600-tallet, med de første koloniene i Nord-Amerika, til slutten av 1900-tallet og Hongkong."
+          },
+          {
+            "id": "Q8680.nb.3",
+            "type": "story",
+            "text": "Imperiet der solen aldri gikk ned: et sted på kartet var det alltid dag."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q8680.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "At its largest, the British Empire was the biggest empire in history by land area.",
+            "nb": "På sitt største var Det britiske imperiet historiens største imperium målt i landareal."
+          }
+        },
+        {
+          "id": "Q8680.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The handover of Hong Kong to China is often used as the end point of the British Empire.",
+            "nb": "Overleveringen av Hongkong til Kina blir ofte brukt som sluttpunktet for Det britiske imperiet."
+          }
+        }
+      ]
+    }
+  ]
+}

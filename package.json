@@ -22,7 +22,7 @@
     "test:e2e": "playwright test",
     "lint:dashes": "node scripts/lint/no-dashes.ts",
     "data:fetch": "node --use-env-proxy scripts/data/fetch-wikidata.ts && node --use-env-proxy scripts/data/fetch-reference.ts && node --use-env-proxy scripts/data/fetch-cities.ts && node --use-env-proxy scripts/data/fetch-landmarks.ts && node --use-env-proxy scripts/data/fetch-physical.ts",
-    "data:build": "node scripts/data/build-countries.ts && node scripts/data/build-flags.ts && node scripts/data/build-cities.ts && node scripts/data/build-landmarks.ts && node scripts/data/build-physical.ts",
+    "data:build": "node scripts/data/build-countries.ts && node scripts/data/build-flags.ts && node scripts/data/build-cities.ts && node scripts/data/build-landmarks.ts && node scripts/data/build-physical.ts && node scripts/data/build-history.ts",
     "data:verify": "node scripts/data/verify.ts",
     "content:compile": "node scripts/content/compile-templates.ts",
     "content:lint": "node scripts/content/lint.ts --complete",

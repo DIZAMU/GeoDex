@@ -2,6 +2,7 @@ import { XIcon } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useSearchParams } from "react-router";
+import type { HistoricalEntity } from "@/data/types";
 import type { InputSetting } from "@/engine/types";
 import { isLocale } from "@/i18n/locales";
 import { type MapFocus, type MapHighlight, WorldMap } from "@/map/WorldMap";
@@ -18,6 +19,7 @@ import {
   checkTyped,
   featureView,
   type MapView,
+  outlineView,
   type Question,
   type StudyContext,
   scopedMembers,
@@ -30,9 +32,12 @@ import {
   CountryCard,
   FeatureCard,
   FlagAnswer,
+  formatPeriod,
   GroupCard,
+  HistoryCard,
   LandmarkCard,
   nameOf,
+  OutlineCaption,
   PromptText,
   StatusLine,
   TapAnswer,
@@ -165,6 +170,10 @@ export function Session({
   }
 
   const { focus, highlight, animate, padding } = mapState(view, learner, locale, s.ctx, picked);
+  const outlines = historyOutlines(view, learner);
+  const past = view.question.historyId
+    ? learner.world.historyById.get(view.question.historyId)
+    : undefined;
   const mapSelectable =
     view.kind === "prompt" && view.question.answer.kind === "map"
       ? view.question.answer.selectable
@@ -223,6 +232,12 @@ export function Session({
                 ? allFeatures
                 : undefined
             }
+            history={outlines}
+            caption={
+              past && outlines?.some((e) => e.id === past.id) ? (
+                <OutlineCaption entity={past} />
+              ) : undefined
+            }
             ariaLabel={t("map.label")}
             animate={animate}
             padding={padding}
@@ -271,8 +286,11 @@ function Panel({
   // shows country details, so any country stands in to keep the shared code simple.
   const country =
     learner.world.byId.get(view.question.countryId) ??
-    (view.question.featureId ? learner.world.countries[0] : undefined);
+    (view.question.featureId || view.question.historyId ? learner.world.countries[0] : undefined);
   if (!country) return null;
+  const past = view.question.historyId
+    ? learner.world.historyById.get(view.question.historyId)
+    : undefined;
   const city = learner.world.cityById.get(view.question.entityId);
   const landmark = learner.world.landmarkById.get(view.question.entityId);
   const physical = view.question.featureId
@@ -376,20 +394,23 @@ function Panel({
   if (group)
     return <GroupFeedback view={view} ctx={ctx} session={s} learner={learner} locale={locale} />;
   const chosenCountry = !o.correct && o.chosenId ? learner.world.byId.get(o.chosenId) : undefined;
+  const chosenPast = o.chosenId ? learner.world.historyById.get(o.chosenId) : undefined;
   const chosenLabel =
-    chosenCountry?.names[locale] ??
-    (o.chosenId
-      ? (learner.world.countries.flatMap((c) => c.capitals).find((c) => c.id === o.chosenId)?.names[
-          locale
-        ] ??
-        learner.world.cityById.get(o.chosenId)?.names[locale] ??
-        learner.world.landmarkById.get(o.chosenId)?.names[locale] ??
-        learner.world.physicalById.get(o.chosenId)?.names[locale] ??
-        learner.world.languageNames[o.chosenId]?.[locale] ??
-        learner.world.countries.flatMap((c) => c.currencies).find((c) => c.code === o.chosenId)
-          ?.names[locale] ??
-        null)
-      : null);
+    q.answerKind === "era" && chosenPast && chosenPast.kind === "empire"
+      ? formatPeriod(chosenPast.period, t)
+      : (chosenPast?.names[locale] ??
+        chosenCountry?.names[locale] ??
+        (o.chosenId
+          ? (learner.world.countries.flatMap((c) => c.capitals).find((c) => c.id === o.chosenId)
+              ?.names[locale] ??
+            learner.world.cityById.get(o.chosenId)?.names[locale] ??
+            learner.world.landmarkById.get(o.chosenId)?.names[locale] ??
+            learner.world.physicalById.get(o.chosenId)?.names[locale] ??
+            learner.world.languageNames[o.chosenId]?.[locale] ??
+            learner.world.countries.flatMap((c) => c.currencies).find((c) => c.code === o.chosenId)
+              ?.names[locale] ??
+            null)
+          : null));
   // Wrong picks of a country or capital are described by the moment template instead.
   const pickedPlace =
     !!o.chosenId &&
@@ -405,7 +426,9 @@ function Panel({
       {o.correct && o.typo && o.matched ? (
         <p>{t("feedback.spelling", { name: o.matched })}</p>
       ) : null}
-      {physical ? (
+      {past ? (
+        <HistoryCard entity={past} world={learner.world} locale={locale} />
+      ) : physical ? (
         <FeatureCard feature={physical} world={learner.world} locale={locale} />
       ) : landmark ? (
         <LandmarkCard
@@ -530,6 +553,7 @@ function mapState(
   const q0 = view.question;
   if (q0.groupId) return groupMapState(view, learner, ctx, picked);
   if (q0.featureId) return featureMapState(view, learner, ctx);
+  if (q0.historyId) return historyMapState(view, learner);
   const id = q0.countryId;
   const country = learner.world.byId.get(id);
   const neighbors = country?.neighbors.slice(0, 6) ?? [];
@@ -678,6 +702,64 @@ function groupMapState(
       chosen: wrong,
       tinted: new Set(sometimes),
       labels: members.length <= 8 ? members : [],
+    },
+    animate: true,
+    padding: 0.12,
+  };
+}
+
+/**
+ * History outlines to draw: the one asked about while it is the prompt, and at feedback the
+ * answer plus the learner's wrong pick. Never on a prompt where it would give the answer away.
+ */
+function historyOutlines(
+  view: Exclude<SessionView, { kind: "done" }>,
+  learner: Learner,
+): HistoricalEntity[] | undefined {
+  const q = view.question;
+  const entity = q.historyId ? learner.world.historyById.get(q.historyId) : undefined;
+  if (!entity || entity.kind === "former_name") return undefined;
+  if (view.kind !== "feedback") return q.prompt.kind === "historyMap" ? [entity] : undefined;
+  const o = view.outcome;
+  const wrong =
+    !o.correct && o.chosenId && q.answerKind === "history"
+      ? learner.world.historyById.get(o.chosenId)
+      : undefined;
+  return wrong && wrong.kind !== "former_name" ? [entity, wrong] : [entity];
+}
+
+/** History cards: the outline asked about, then the answer: the outline or today's country. */
+function historyMapState(
+  view: Exclude<SessionView, { kind: "done" }>,
+  learner: Learner,
+): { focus: MapFocus; highlight: MapHighlight; animate: boolean; padding?: number } {
+  const q = view.question;
+  const entity = q.historyId ? learner.world.historyById.get(q.historyId) : undefined;
+  if (!entity) return { focus: { kind: "world" }, highlight: {}, animate: true };
+  if (view.kind !== "feedback") {
+    if (q.prompt.kind === "historyMap")
+      return { focus: q.prompt.view, highlight: { selected: entity.id }, animate: true };
+    return { focus: { kind: "world" }, highlight: {}, animate: true };
+  }
+  const o = view.outcome;
+  const wrongCountry =
+    !o.correct && o.chosenId && learner.world.byId.has(o.chosenId) ? o.chosenId : null;
+  if (entity.kind === "former_name") {
+    const id = entity.currentCountry;
+    const near = learner.world.byId.get(id)?.neighbors.slice(0, 6) ?? [];
+    return {
+      focus: { kind: "countries", ids: [id, ...near, ...(wrongCountry ? [wrongCountry] : [])] },
+      highlight: { target: id, chosen: wrongCountry, labels: [id, ...near] },
+      animate: true,
+    };
+  }
+  const wrongOutline = !o.correct && o.chosenId && q.answerKind === "history" ? o.chosenId : null;
+  return {
+    focus: outlineView(entity),
+    highlight: {
+      target: entity.id,
+      chosen: wrongOutline ?? wrongCountry,
+      labels: [entity.id, ...(wrongOutline ? [wrongOutline] : [])],
     },
     animate: true,
     padding: 0.12,

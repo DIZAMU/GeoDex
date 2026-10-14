@@ -17,7 +17,7 @@ import { WorldMap } from "@/map/WorldMap";
 import { Button } from "@/ui/button";
 import { Loader } from "@/ui/loader";
 import { Flag, nameOf } from "../session/parts";
-import { scopedCountries } from "../study/plan";
+import { historyCardTypes, scopedCountries } from "../study/plan";
 import { cardLevel } from "../study/progress";
 import { type Learner, useLearner } from "../study/useLearner";
 
@@ -62,6 +62,7 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
   const cities = learner.world.cities.filter((c) => c.countryId === country.id);
   const landmarks = learner.world.landmarks.filter((l) => l.countryId === country.id);
   const physical = learner.world.physical.filter((f) => f.countries.includes(country.id));
+  const past = learner.world.history.filter((e) => e.countries.includes(country.id));
   const date = new Intl.DateTimeFormat(locale, { day: "numeric", month: "short" });
   const number = new Intl.NumberFormat(locale);
   const list = new Intl.ListFormat(locale, { type: "conjunction" });
@@ -250,6 +251,17 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
             learner={learner}
             locale={locale}
           />
+          <ModuleList
+            id="history"
+            title={t("entry.pastNames")}
+            items={past}
+            types={(id) => {
+              const e = learner.world.historyById.get(id);
+              return e ? historyCardTypes(e, (c) => learner.world.byId.has(c)) : [];
+            }}
+            learner={learner}
+            locale={locale}
+          />
 
           <section aria-labelledby="facts-title" className="flex flex-col gap-3">
             <h2 id="facts-title" className="font-name text-lg">
@@ -303,7 +315,7 @@ function ModuleList({
   id: string;
   title: string;
   items: readonly { id: string; names: { en: string; nb: string } }[];
-  types: readonly CardType[];
+  types: readonly CardType[] | ((id: string) => readonly CardType[]);
   learner: Learner;
   locale: "en" | "nb";
 }) {
@@ -317,7 +329,9 @@ function ModuleList({
       <ul className="surface divide-y divide-border" data-testid={`entry-${id}`}>
         {items.map((item) => {
           const level = Math.min(
-            ...types.map((type) => cardLevel(learner.states.get(cardId(item.id, type)))),
+            ...(typeof types === "function" ? types(item.id) : types).map((type) =>
+              cardLevel(learner.states.get(cardId(item.id, type))),
+            ),
           );
           return (
             <li key={item.id} className="flex items-center justify-between gap-4 px-4 py-2.5">

@@ -2,7 +2,7 @@
  * Turns a card into a concrete question: what to show, how to answer, and how to check it
  * (PLAN.md 5.3, 5.4). Pure: same inputs, same question.
  */
-import type { Country, PhysicalFeature } from "@/data/types";
+import type { Country, HistoricalEntity, PhysicalFeature } from "@/data/types";
 import type { WorldData } from "@/data/world";
 import {
   type CountryFacts,
@@ -21,6 +21,7 @@ import {
   type CardType,
   type CountryCardType,
   type GroupCardType,
+  type HistoryCardType,
   type InputSetting,
   type LandmarkCardType,
   type PhysicalCardType,
@@ -54,10 +55,15 @@ export type Prompt =
   | { kind: "feature"; featureId: string }
   /** A physical feature highlighted on the map: "What is this river called?". */
   | { kind: "featureMap"; featureId: string; view: MapView }
+  /** A history entity by name: "What is Siam called today?", "When did it exist?". */
+  | { kind: "history"; historyId: string }
+  /** A dissolved state's or an empire's outline: "Which empire is this?". */
+  | { kind: "historyMap"; historyId: string; view: MapView }
   /** A group shown on the map: its members highlighted inside `view`. */
   | { kind: "groupMap"; groupId: string; ids: string[]; view: MapView };
 
-export type Option = { id: string; label: string; flag?: string };
+/** `period` options (empire eras) are worded by the UI in the active language. */
+export type Option = { id: string; label: string; flag?: string; period?: [number, number] };
 
 export type AnswerFormat =
   | { kind: "choice"; options: Option[] }
@@ -78,7 +84,9 @@ export type AnswerKind =
   | "language"
   | "group"
   | "landmark"
-  | "feature";
+  | "feature"
+  | "history"
+  | "era";
 
 export type Question = {
   cardId: string;
@@ -90,6 +98,8 @@ export type Question = {
   groupId?: string;
   /** Physical cards: the feature asked about. */
   featureId?: string;
+  /** History cards: the former name, dissolved state or empire asked about. */
+  historyId?: string;
   type: CardType;
   prompt: Prompt;
   answer: AnswerFormat;
@@ -169,6 +179,13 @@ export function buildIndexes(
         names: [f.names.en, f.names.nb, ...f.aliases.en, ...f.aliases.nb],
       })),
     ),
+    history: buildIndex(
+      world.history.map((e) => ({
+        id: e.id,
+        names: [e.names.en, e.names.nb, ...e.aliases.en, ...e.aliases.nb],
+      })),
+    ),
+    era: buildIndex([]),
   };
 }
 
@@ -222,6 +239,9 @@ export function buildQuestion(
   }
   if (type === "feature_to_map" || type === "map_to_feature") {
     return physicalQuestion(ctx, cardId, entityId, type, state, inputSetting, seed);
+  }
+  if (isHistoryCard(type)) {
+    return historyQuestion(ctx, cardId, entityId, type, state, inputSetting, seed);
   }
   if (type === "group_to_map" || type === "map_to_group" || type === "group_member") {
     return groupQuestion(ctx, cardId, entityId, type, state, inputSetting, seed);
@@ -816,6 +836,195 @@ function physicalQuestion(
     },
     answerKind: "feature",
     correctIds: [featureId],
+    mode: "mc",
+  };
+}
+
+const HISTORY_TYPES: readonly string[] = [
+  "former_name_to_country",
+  "map_to_dissolved_state",
+  "dissolved_state_member",
+  "map_to_empire",
+  "empire_to_era",
+];
+const isHistoryCard = (type: string): type is HistoryCardType => HISTORY_TYPES.includes(type);
+
+/** An outline's map area: its bounding box with room around it, or the world when wider. */
+const outlineCache = new WeakMap<object, MapView>();
+export function outlineView(entity: HistoricalEntity): MapView {
+  if (entity.kind === "former_name") return { kind: "world" };
+  const cached = outlineCache.get(entity);
+  if (cached) return cached;
+  const points = entity.outline.geometry.coordinates.flat(2);
+  const lons = points.map((p) => p[0]);
+  const lats = points.map((p) => p[1]);
+  let [w, e, s, n] = [Math.min(...lons), Math.max(...lons), Math.min(...lats), Math.max(...lats)];
+  const [cx, cy] = [(w + e) / 2, (s + n) / 2];
+  const halfX = Math.max((e - w) / 2, MIN_SPAN[0] / 2) * 1.15;
+  const halfY = Math.max((n - s) / 2, MIN_SPAN[1] / 2) * 1.15;
+  [w, e, s, n] = [cx - halfX, cx + halfX, Math.max(-85, cy - halfY), Math.min(85, cy + halfY)];
+  const view: MapView = e - w > 180 ? { kind: "world" } : { kind: "box", box: [w, s, e, n] };
+  outlineCache.set(entity, view);
+  return view;
+}
+
+/** True when two periods share no year. */
+export function periodsApart(a: readonly [number, number], b: readonly [number, number]): boolean {
+  return a[1] < b[0] || a[0] > b[1];
+}
+
+/**
+ * History cards (PLAN.md 5.3): today's name for a former name, the name of an outline, a
+ * member of a dissolved state, and when an empire existed.
+ */
+function historyQuestion(
+  ctx: StudyContext,
+  cardId: string,
+  historyId: string,
+  type: HistoryCardType,
+  state: CardState | undefined,
+  inputSetting: InputSetting,
+  seed: string,
+): Question {
+  const entity = ctx.world.historyById.get(historyId);
+  if (!entity) throw new Error(`Unknown history entity ${historyId}`);
+  const rng = createRng(seed);
+  const level = band(state);
+  const firstReview = !state || state.reps === 0;
+  const loc = ctx.locale;
+  const keep = (id: string) => ctx.world.byId.has(id) && (!ctx.scope || ctx.scope.has(id));
+  const countries = ctx.world.countries.filter((c) => keep(c.id));
+  const countryId = entity.countries.find(keep) ?? entity.countries[0] ?? "";
+  const base = { cardId, entityId: historyId, countryId, historyId, type };
+  const textAsChoice =
+    inputSetting === "mc" ||
+    (inputSetting === "auto" && level === "new") ||
+    (inputSetting === "typing" && firstReview);
+  const countryOptions = (ids: string[]) =>
+    shuffle(
+      ids.map((id) => ({ id, label: ctx.world.byId.get(id)?.names[loc] ?? id })),
+      rng,
+    );
+  /** Wrong countries near the right ones: neighbors, then subregion, continent, world. */
+  const nearbyCountries = (right: string[], exclude: string[]) => {
+    const subregions = new Set(right.map((id) => ctx.world.byId.get(id)?.subregion));
+    const continents = new Set(right.map((id) => ctx.world.byId.get(id)?.continent));
+    return pickFromPools(
+      [
+        right.flatMap((id) => ctx.world.byId.get(id)?.neighbors ?? []).filter(keep),
+        countries.filter((c) => subregions.has(c.subregion)).map((c) => c.id),
+        countries.filter((c) => continents.has(c.continent)).map((c) => c.id),
+        countries.map((c) => c.id),
+      ],
+      new Set([...right, ...exclude]),
+      3,
+      rng,
+    );
+  };
+
+  if (entity.kind === "former_name") {
+    const target = entity.currentCountry;
+    const prompt: Prompt = { kind: "history", historyId };
+    if (!textAsChoice) {
+      return {
+        ...base,
+        countryId: target,
+        prompt,
+        answer: { kind: "typed" },
+        answerKind: "country",
+        correctIds: [target],
+        mode: "typed",
+      };
+    }
+    return {
+      ...base,
+      countryId: target,
+      prompt,
+      answer: {
+        kind: "choice",
+        options: countryOptions([target, ...nearbyCountries([target], entity.exclude)]),
+      },
+      answerKind: "country",
+      correctIds: [target],
+      mode: "mc",
+    };
+  }
+
+  if (type === "dissolved_state_member" && entity.kind === "dissolved_state") {
+    const members = entity.successors.filter(keep);
+    const member = pickMember(members, seed);
+    return {
+      ...base,
+      countryId: member,
+      prompt: { kind: "history", historyId },
+      answer: {
+        kind: "choice",
+        options: countryOptions([member, ...nearbyCountries(members, entity.partly)]),
+      },
+      answerKind: "country",
+      correctIds: members,
+      mode: "mc",
+    };
+  }
+
+  if (type === "empire_to_era" && entity.kind === "empire") {
+    const empires = ctx.world.history.flatMap((e) => (e.kind === "empire" ? [e] : []));
+    const wrong = pickFromPools(
+      [empires.filter((e) => periodsApart(e.period, entity.period)).map((e) => e.id)],
+      new Set([historyId]),
+      3,
+      rng,
+    );
+    const options = [entity, ...wrong.map((id) => ctx.world.historyById.get(id))].flatMap((e) =>
+      e && e.kind === "empire" ? [{ id: e.id, label: "", period: e.period }] : [],
+    );
+    return {
+      ...base,
+      prompt: { kind: "history", historyId },
+      answer: { kind: "choice", options: shuffle(options, rng) },
+      answerKind: "era",
+      correctIds: [historyId],
+      mode: "mc",
+    };
+  }
+
+  // An outline: name it. Wrong names of the same kind, nearby ones first.
+  const prompt: Prompt = { kind: "historyMap", historyId, view: outlineView(entity) };
+  if (!textAsChoice) {
+    return {
+      ...base,
+      prompt,
+      answer: { kind: "typed" },
+      answerKind: "history",
+      correctIds: [historyId],
+      mode: "typed",
+    };
+  }
+  const sameKind = ctx.world.history.filter((e) => e.kind === entity.kind && e.id !== historyId);
+  const others = pickFromPools(
+    [
+      sameKind.filter((e) => e.region === entity.region).map((e) => e.id),
+      sameKind.map((e) => e.id),
+    ],
+    new Set([historyId]),
+    3,
+    rng,
+  );
+  return {
+    ...base,
+    prompt,
+    answer: {
+      kind: "choice",
+      options: shuffle(
+        [historyId, ...others].map((id) => ({
+          id,
+          label: ctx.world.historyById.get(id)?.names[loc] ?? id,
+        })),
+        rng,
+      ),
+    },
+    answerKind: "history",
+    correctIds: [historyId],
     mode: "mc",
   };
 }
