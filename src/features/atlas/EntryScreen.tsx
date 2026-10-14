@@ -3,7 +3,7 @@ import { useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, Navigate, useParams } from "react-router";
 import type { Country } from "@/data/types";
-import { COUNTRY_CARD_TYPES, cardId, parseCardId } from "@/engine/types";
+import { CITY_CARD_TYPES, COUNTRY_CARD_TYPES, cardId, parseCardId } from "@/engine/types";
 import { isLocale, type Locale } from "@/i18n/locales";
 import { WorldMap } from "@/map/WorldMap";
 import { Button } from "@/ui/button";
@@ -51,6 +51,7 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
     return (learner.content.byEntity.get(country.id)?.facts ?? []).filter((f) => seen.has(f.id));
   }, [events, learner.content, country.id]);
   const region = learner.world.subregions.find((s) => s.id === country.subregion);
+  const cities = learner.world.cities.filter((c) => c.countryId === country.id);
   const date = new Intl.DateTimeFormat(locale, { day: "numeric", month: "short" });
   const number = new Intl.NumberFormat(locale);
   const list = new Intl.ListFormat(locale, { type: "conjunction" });
@@ -214,6 +215,42 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
               </figure>
             )}
           </section>
+
+          {cities.length > 0 ? (
+            <section aria-labelledby="cities-title" className="flex flex-col gap-3">
+              <h2 id="cities-title" className="font-name text-lg">
+                {t("entry.cities")}
+              </h2>
+              <ul className="surface divide-y divide-border" data-testid="entry-cities">
+                {cities.map((city) => {
+                  // A city's level is its weaker card, like a country's skill.
+                  const level = Math.min(
+                    ...CITY_CARD_TYPES.map((type) =>
+                      cardLevel(learner.states.get(cardId(city.id, type))),
+                    ),
+                  );
+                  return (
+                    <li
+                      key={city.id}
+                      className="flex items-center justify-between gap-4 px-4 py-2.5"
+                    >
+                      <span className="flex items-center gap-3">
+                        <span
+                          aria-hidden
+                          className="size-3 rounded-sm border border-border"
+                          style={{ background: `var(--mastery-${level})` }}
+                        />
+                        {city.names[locale]}
+                      </span>
+                      <span className="text-sm text-muted-foreground">
+                        {t(`level.${level as 0 | 1 | 2 | 3 | 4}`)}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+          ) : null}
 
           <section aria-labelledby="facts-title" className="flex flex-col gap-3">
             <h2 id="facts-title" className="font-name text-lg">

@@ -11,11 +11,12 @@ import { Loader } from "@/ui/loader";
 import { useStudyContext } from "../study/context";
 import { confusionScoresFor, scopedCountries } from "../study/plan";
 import { computeProgress } from "../study/progress";
-import { checkChoice, checkTyped, type StudyContext } from "../study/questions";
+import { checkChoice, checkPin, checkTyped, type StudyContext } from "../study/questions";
 import { type Learner, useLearner } from "../study/useLearner";
 import { ExplanationView } from "./ExplanationView";
 import {
   ChoiceAnswer,
+  CityCard,
   CountryCard,
   FlagAnswer,
   nameOf,
@@ -123,7 +124,7 @@ export function Session({
     );
   }
 
-  const { focus, highlight, animate, padding } = mapState(view, learner);
+  const { focus, highlight, animate, padding } = mapState(view, learner, locale);
   const mapSelectable =
     view.kind === "prompt" && view.question.answer.kind === "map"
       ? view.question.answer.selectable
@@ -164,6 +165,11 @@ export function Session({
             highlight={highlight}
             selectable={mapSelectable}
             onSelect={(id) => view.kind === "prompt" && s.answer(checkChoice(view.question, id))}
+            onPin={
+              view.kind === "prompt" && view.question.answer.kind === "pin"
+                ? (at) => s.answer(checkPin(view.question, at))
+                : undefined
+            }
             labelFor={labelFor}
             ariaLabel={t("map.label")}
             animate={animate}
@@ -197,8 +203,9 @@ function Panel({
 }) {
   const { t } = useTranslation();
   const focusOnMount = useFocusOnMount<HTMLButtonElement>();
-  const country = learner.world.byId.get(view.question.entityId);
+  const country = learner.world.byId.get(view.question.countryId);
   if (!country) return null;
+  const city = learner.world.cityById.get(view.question.entityId);
 
   if (view.kind === "intro") {
     return (
@@ -250,7 +257,9 @@ function Panel({
           />
         ) : (
           <div className="flex flex-col gap-3">
-            <p className="text-muted-foreground">{t("answer.mapHelp")}</p>
+            <p className="text-muted-foreground">
+              {answer.kind === "pin" ? t("answer.pinHelp") : t("answer.mapHelp")}
+            </p>
             <Button
               variant="outline"
               data-testid="give-up"
@@ -276,6 +285,7 @@ function Panel({
       ? (learner.world.countries.flatMap((c) => c.capitals).find((c) => c.id === o.chosenId)?.names[
           locale
         ] ??
+        learner.world.cityById.get(o.chosenId)?.names[locale] ??
         learner.world.languageNames[o.chosenId]?.[locale] ??
         learner.world.countries.flatMap((c) => c.currencies).find((c) => c.code === o.chosenId)
           ?.names[locale] ??
@@ -296,7 +306,11 @@ function Panel({
       {o.correct && o.typo && o.matched ? (
         <p>{t("feedback.spelling", { name: o.matched })}</p>
       ) : null}
-      <CountryCard country={country} locale={locale} />
+      {city && q.type !== "contrast" ? (
+        <CityCard city={city} country={country} locale={locale} distanceKm={o.distanceKm} />
+      ) : (
+        <CountryCard country={country} locale={locale} />
+      )}
       {q.answerKind === "currency" ? (
         <p>
           {t("feedback.currency")}:{" "}
@@ -330,10 +344,13 @@ function Panel({
 function mapState(
   view: Exclude<SessionView, { kind: "done" }>,
   learner: Learner,
+  locale: "en" | "nb",
 ): { focus: MapFocus; highlight: MapHighlight; animate: boolean; padding?: number } {
-  const id = view.question.entityId;
+  const q0 = view.question;
+  const id = q0.countryId;
   const country = learner.world.byId.get(id);
   const neighbors = country?.neighbors.slice(0, 6) ?? [];
+  const city = learner.world.cityById.get(q0.entityId);
   if (view.kind === "intro") {
     return {
       focus: { kind: "countries", ids: [id, ...neighbors] },
@@ -351,6 +368,14 @@ function mapState(
         animate: true,
       };
     }
+    if (q.answer.kind === "pin") {
+      const v = q.answer.view;
+      return {
+        focus: v.kind === "world" ? { kind: "world" } : { kind: "countries", ids: v.ids },
+        highlight: {},
+        animate: true,
+      };
+    }
     if (q.answer.kind === "map") {
       const v = q.answer.view;
       return {
@@ -360,6 +385,44 @@ function mapState(
       };
     }
     return { focus: { kind: "world" }, highlight: {}, animate: true };
+  }
+  // City cards: the city on the map; a pin answer adds the pin and the line between them. A
+  // not-the-capital card shows the capital and the city it is mistaken for.
+  if (city && country) {
+    const capital = country.capitals.find((c) => c.roles.includes("primary"));
+    const pinned = view.outcome.pinned;
+    const points =
+      q0.type === "contrast"
+        ? [
+            ...(capital
+              ? [
+                  {
+                    at: [capital.lon, capital.lat] as [number, number],
+                    kind: "target" as const,
+                    label: capital.names[locale],
+                  },
+                ]
+              : []),
+            {
+              at: [city.lon, city.lat] as [number, number],
+              kind: "pin" as const,
+              label: city.names[locale],
+            },
+          ]
+        : [
+            {
+              at: [city.lon, city.lat] as [number, number],
+              kind: "target" as const,
+              label: city.names[locale],
+            },
+            ...(pinned ? [{ at: pinned, kind: "pin" as const }] : []),
+          ];
+    return {
+      focus: { kind: "countries", ids: [id] },
+      highlight: { points },
+      animate: true,
+      padding: 0.3,
+    };
   }
   const chosen =
     !view.outcome.correct && view.outcome.chosenId && learner.world.byId.has(view.outcome.chosenId)

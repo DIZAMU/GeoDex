@@ -3,11 +3,11 @@ import { useEffect, useMemo, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 import { CONTINENTS } from "@/data/types";
-import { SKILL_IDS } from "@/engine/achievements";
+import { isMastered, SKILL_IDS } from "@/engine/achievements";
 import { hookStats, hookWeight } from "@/engine/explain/select";
 import { HOOK_TYPES } from "@/engine/explain/types";
 import { activity, forecast, leeches, recognitionOnly, retention, skillGrid } from "@/engine/stats";
-import { parseCardId } from "@/engine/types";
+import { CITY_CARD_TYPES, cardId, parseCardId } from "@/engine/types";
 import { isLocale, type Locale } from "@/i18n/locales";
 import { Loader } from "@/ui/loader";
 import { nameOf } from "../session/parts";
@@ -64,6 +64,7 @@ function Stats({ learner }: { learner: Learner }) {
     return {
       countries,
       grid: skillGrid(countries, learner.states),
+      cityGrid: cityGrid(learner, countries),
       retention: retention(learner.events, now, dsh),
       forecast: forecast(states, now, dsh),
       activity: activity(learner.events, now, dsh),
@@ -115,13 +116,22 @@ function Stats({ learner }: { learner: Learner }) {
                 </tr>
               </thead>
               <tbody>
-                {SKILL_IDS.map((skill) => (
-                  <tr key={skill}>
+                {[
+                  ...SKILL_IDS.map((skill) => ({
+                    key: skill as string,
+                    label: t(`skill.${skill}`),
+                    row: data.grid.get(skill),
+                  })),
+                  ...(learner.settings.modules.cities
+                    ? [{ key: "cities", label: t("stats.cities"), row: data.cityGrid }]
+                    : []),
+                ].map(({ key, label, row }) => (
+                  <tr key={key}>
                     <th scope="row" className="pr-2 text-left font-normal whitespace-nowrap">
-                      {t(`skill.${skill}`)}
+                      {label}
                     </th>
                     {continents.map((c) => {
-                      const cell = data.grid.get(skill)?.get(c) ?? {
+                      const cell = row?.get(c) ?? {
                         total: 0,
                         started: 0,
                         mastered: 0,
@@ -388,4 +398,26 @@ function Heatmap({ days, locale }: { days: { start: number; count: number }[]; l
       </div>
     </div>
   );
+}
+
+/** Cities per continent, like a skill row: two cards per city, mastered at 21+ days. */
+function cityGrid(
+  learner: Learner,
+  countries: readonly { id: string; continent: string }[],
+): Map<string, { total: number; started: number; mastered: number }> {
+  const continentOf = new Map(countries.map((c) => [c.id, c.continent]));
+  const grid = new Map<string, { total: number; started: number; mastered: number }>();
+  for (const city of learner.world.cities) {
+    const continent = continentOf.get(city.countryId);
+    if (!continent) continue;
+    const cell = grid.get(continent) ?? { total: 0, started: 0, mastered: 0 };
+    for (const type of CITY_CARD_TYPES) {
+      const state = learner.states.get(cardId(city.id, type));
+      cell.total++;
+      if (state && state.phase !== "new") cell.started++;
+      if (isMastered(state)) cell.mastered++;
+    }
+    grid.set(continent, cell);
+  }
+  return grid;
 }
