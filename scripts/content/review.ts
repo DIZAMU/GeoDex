@@ -25,6 +25,13 @@ export function reviewMarkdown(
           }
         ).landmarks.map((l) => [l.id, l.names.en] as const)
       : []),
+    ...(existsSync("data/physical.json")
+      ? (
+          JSON.parse(readFileSync("data/physical.json", "utf8")) as {
+            features: { id: string; names: { en: string } }[];
+          }
+        ).features.map((f) => [f.id, f.names.en] as const)
+      : []),
   ]);
   const continentNames: Record<string, string> = {
     africa: "Africa",
@@ -46,6 +53,7 @@ export function reviewMarkdown(
     ["countries", "Countries", (id: string) => subregions.get(id) ?? id],
     ["cities", "Cities", (id: string) => continentNames[id] ?? id],
     ["landmarks", "Landmarks", (id: string) => continentNames[id] ?? id],
+    ["physical", "Physical geography", (id: string) => continentNames[id] ?? "Oceans"],
   ] as const) {
     const dir = `${root}/entities/${module}`;
     const files = existsSync(dir)

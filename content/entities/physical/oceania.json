@@ -1,0 +1,418 @@
+{
+  "group": "oceania",
+  "entities": [
+    {
+      "entityId": "Q33254",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q33254.en.1",
+            "type": "anchor",
+            "text": "The Tasman Sea lies between southeast Australia and New Zealand."
+          },
+          {
+            "id": "Q33254.en.2",
+            "type": "etymology",
+            "text": "The Tasman Sea is named after Abel Tasman, the Dutch navigator who reached New Zealand and Tasmania."
+          },
+          {
+            "id": "Q33254.en.3",
+            "type": "story",
+            "text": "Australians and New Zealanders call the Tasman the ditch, as if it were a gap you could step over."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q33254.nb.1",
+            "type": "anchor",
+            "text": "Tasmanhavet ligger mellom Sørøst-Australia og New Zealand."
+          },
+          {
+            "id": "Q33254.nb.2",
+            "type": "etymology",
+            "text": "Tasmanhavet er oppkalt etter Abel Tasman, den nederlandske sjøfareren som nådde New Zealand og Tasmania."
+          },
+          {
+            "id": "Q33254.nb.3",
+            "type": "story",
+            "text": "Australiere og newzealendere kaller Tasmanhavet grøfta, som om det var en grøft man kunne hoppe over."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q33254.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Tasman Sea separates Australia and New Zealand.",
+            "nb": "Tasmanhavet skiller Australia og New Zealand."
+          }
+        },
+        {
+          "id": "Q33254.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is part of the Pacific Ocean.",
+            "nb": "Det er en del av Stillehavet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q82931",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q82931.en.1",
+            "type": "anchor",
+            "text": "The Coral Sea lies off northeast Australia, between Queensland, Papua New Guinea and Vanuatu."
+          },
+          {
+            "id": "Q82931.en.2",
+            "type": "story",
+            "text": "The Great Barrier Reef lies along the western edge of the Coral Sea."
+          },
+          {
+            "id": "Q82931.en.3",
+            "type": "contrast",
+            "text": "The Coral Sea is off Australia's northeast coast; the Tasman Sea is off its southeast coast."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q82931.nb.1",
+            "type": "anchor",
+            "text": "Korallhavet ligger utenfor Nordøst-Australia, mellom Queensland, Papua Ny-Guinea og Vanuatu."
+          },
+          {
+            "id": "Q82931.nb.2",
+            "type": "story",
+            "text": "Great Barrier Reef ligger langs vestkanten av Korallhavet."
+          },
+          {
+            "id": "Q82931.nb.3",
+            "type": "contrast",
+            "text": "Korallhavet ligger utenfor nordøstkysten av Australia. Tasmanhavet ligger utenfor sørøstkysten."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q82931.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Coral Sea is part of the Pacific Ocean, off northeast Australia.",
+            "nb": "Korallhavet er en del av Stillehavet, utenfor Nordøst-Australia."
+          }
+        },
+        {
+          "id": "Q82931.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Great Barrier Reef lies along its western edge.",
+            "nb": "Great Barrier Reef ligger langs vestkanten."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q183078",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q183078.en.1",
+            "type": "anchor",
+            "text": "The Murray flows west through southeast Australia along the border of New South Wales and Victoria to the sea in South Australia."
+          },
+          {
+            "id": "Q183078.en.2",
+            "type": "contrast",
+            "text": "The Murray is Australia's longest river; with the Darling it drains much of the southeast."
+          },
+          {
+            "id": "Q183078.en.3",
+            "type": "story",
+            "text": "The Murray nearly fails to reach the sea in dry years, and dredgers keep its mouth open."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q183078.nb.1",
+            "type": "anchor",
+            "text": "Murray renner vestover gjennom Sørøst-Australia langs grensen mellom New South Wales og Victoria til havet i South Australia."
+          },
+          {
+            "id": "Q183078.nb.2",
+            "type": "contrast",
+            "text": "Murray er Australias lengste elv, og sammen med Darling drenerer den mye av sørøst."
+          },
+          {
+            "id": "Q183078.nb.3",
+            "type": "story",
+            "text": "Murray når nesten ikke havet i tørre år, og mudringsfartøy holder munningen åpen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q183078.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Murray flows entirely within Australia.",
+            "nb": "Murray renner bare gjennom Australia."
+          }
+        },
+        {
+          "id": "Q183078.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It forms most of the border between New South Wales and Victoria.",
+            "nb": "Den utgjør det meste av grensen mellom New South Wales og Victoria."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q192583",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q192583.en.1",
+            "type": "anchor",
+            "text": "The Great Dividing Range runs down eastern Australia, from Queensland through New South Wales to Victoria."
+          },
+          {
+            "id": "Q192583.en.2",
+            "type": "shape",
+            "text": "The Great Dividing Range is a long fence between Australia's green east coast and its dry interior."
+          },
+          {
+            "id": "Q192583.en.3",
+            "type": "contrast",
+            "text": "Rain falling east of the Great Dividing Range flows to the Pacific; rain falling west of it flows inland."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q192583.nb.1",
+            "type": "anchor",
+            "text": "Great Dividing Range går nedover det østlige Australia, fra Queensland gjennom New South Wales til Victoria."
+          },
+          {
+            "id": "Q192583.nb.2",
+            "type": "shape",
+            "text": "Great Dividing Range er et langt gjerde mellom Australias grønne østkyst og det tørre innlandet."
+          },
+          {
+            "id": "Q192583.nb.3",
+            "type": "contrast",
+            "text": "Regn som faller øst for Great Dividing Range, renner til Stillehavet. Regn vest for den renner innover i landet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q192583.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Great Dividing Range lies in eastern Australia.",
+            "nb": "Great Dividing Range ligger i det østlige Australia."
+          }
+        },
+        {
+          "id": "Q192583.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its highest point is Mount Kosciuszko.",
+            "nb": "Det høyeste punktet er Mount Kosciuszko."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q206650",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q206650.en.1",
+            "type": "anchor",
+            "text": "The Southern Alps run down the west side of New Zealand's South Island."
+          },
+          {
+            "id": "Q206650.en.2",
+            "type": "story",
+            "text": "Glaciers flow down from the Southern Alps almost to the rainforest on the west coast."
+          },
+          {
+            "id": "Q206650.en.3",
+            "type": "contrast",
+            "text": "The Southern Alps are on New Zealand's South Island; the Alps of Europe are on the other side of the world."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q206650.nb.1",
+            "type": "anchor",
+            "text": "Søralpene går nedover vestsiden av Sørøya i New Zealand."
+          },
+          {
+            "id": "Q206650.nb.2",
+            "type": "story",
+            "text": "Isbreer renner ned fra Søralpene nesten helt til regnskogen på vestkysten."
+          },
+          {
+            "id": "Q206650.nb.3",
+            "type": "contrast",
+            "text": "Søralpene ligger på Sørøya i New Zealand. Alpene i Europa ligger på andre siden av jorden."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q206650.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Southern Alps are on the South Island of New Zealand.",
+            "nb": "Søralpene ligger på Sørøya i New Zealand."
+          }
+        },
+        {
+          "id": "Q206650.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Aoraki / Mount Cook is the highest peak.",
+            "nb": "Aoraki / Mount Cook er den høyeste toppen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q145165",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q145165.en.1",
+            "type": "anchor",
+            "text": "The Great Victoria Desert stretches across Western Australia and South Australia, south of Uluru."
+          },
+          {
+            "id": "Q145165.en.2",
+            "type": "contrast",
+            "text": "The Great Victoria is Australia's largest desert; the Great Sandy Desert lies further north."
+          },
+          {
+            "id": "Q145165.en.3",
+            "type": "story",
+            "text": "The British tested nuclear weapons at Maralinga, on the edge of the Great Victoria Desert."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q145165.nb.1",
+            "type": "anchor",
+            "text": "Victoriaørkenen strekker seg over Western Australia og South Australia, sør for Uluru."
+          },
+          {
+            "id": "Q145165.nb.2",
+            "type": "contrast",
+            "text": "Victoriaørkenen er Australias største ørken. Store sandørken ligger lenger nord."
+          },
+          {
+            "id": "Q145165.nb.3",
+            "type": "story",
+            "text": "Britene testet atomvåpen ved Maralinga, i utkanten av Victoriaørkenen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q145165.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Great Victoria Desert lies in Western Australia and South Australia.",
+            "nb": "Victoriaørkenen ligger i Western Australia og South Australia."
+          }
+        },
+        {
+          "id": "Q145165.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the largest desert in Australia.",
+            "nb": "Den er Australias største ørken."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q326896",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q326896.en.1",
+            "type": "anchor",
+            "text": "The Great Sandy Desert lies in northwest Australia, inland from the Kimberley and the Pilbara."
+          },
+          {
+            "id": "Q326896.en.2",
+            "type": "shape",
+            "text": "The Great Sandy Desert is a sea of long parallel red dunes, combed in lines by the wind."
+          },
+          {
+            "id": "Q326896.en.3",
+            "type": "contrast",
+            "text": "The Great Sandy is the northern of Australia's big deserts; the Great Victoria is in the south."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q326896.nb.1",
+            "type": "anchor",
+            "text": "Store sandørken ligger nordvest i Australia, innenfor Kimberley og Pilbara."
+          },
+          {
+            "id": "Q326896.nb.2",
+            "type": "shape",
+            "text": "Store sandørken er et hav av lange parallelle røde sanddyner, gredd i linjer av vinden."
+          },
+          {
+            "id": "Q326896.nb.3",
+            "type": "contrast",
+            "text": "Store sandørken er den nordlige av Australias store ørkener. Victoriaørkenen ligger i sør."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q326896.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Great Sandy Desert is in Western Australia.",
+            "nb": "Store sandørken ligger i Western Australia."
+          }
+        },
+        {
+          "id": "Q326896.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is covered in long parallel sand dunes.",
+            "nb": "Den er dekket av lange parallelle sanddyner."
+          }
+        }
+      ]
+    }
+  ]
+}

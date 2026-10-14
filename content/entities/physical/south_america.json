@@ -1,0 +1,300 @@
+{
+  "group": "south_america",
+  "entities": [
+    {
+      "entityId": "Q35342",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q35342.en.1",
+            "type": "anchor",
+            "text": "Lake Titicaca lies high in the Andes on the border between Peru and Bolivia."
+          },
+          {
+            "id": "Q35342.en.2",
+            "type": "story",
+            "text": "Reed islands float on Lake Titicaca, built and rebuilt by the Uros people who live on them."
+          },
+          {
+            "id": "Q35342.en.3",
+            "type": "contrast",
+            "text": "Titicaca is high up in the Andes; most of the world's big lakes lie much lower."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q35342.nb.1",
+            "type": "anchor",
+            "text": "Titicacasjøen ligger høyt oppe i Andesfjellene på grensen mellom Peru og Bolivia."
+          },
+          {
+            "id": "Q35342.nb.2",
+            "type": "story",
+            "text": "Sivøyer flyter på Titicacasjøen, bygd og bygd om av urosfolket som bor på dem."
+          },
+          {
+            "id": "Q35342.nb.3",
+            "type": "contrast",
+            "text": "Titicaca ligger høyt oppe i Andes. De fleste store innsjøer i verden ligger mye lavere."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q35342.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Lake Titicaca is shared by Peru and Bolivia.",
+            "nb": "Titicacasjøen deles av Peru og Bolivia."
+          }
+        },
+        {
+          "id": "Q35342.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is often called the highest navigable lake in the world.",
+            "nb": "Den kalles ofte verdens høyeste seilbare innsjø."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q127892",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q127892.en.1",
+            "type": "anchor",
+            "text": "The Paraná River flows south from Brazil along Paraguay and through Argentina to the Río de la Plata."
+          },
+          {
+            "id": "Q127892.en.2",
+            "type": "story",
+            "text": "The Paraná falls over the Itaipu Dam on the Brazil and Paraguay border, one of the largest power stations on Earth."
+          },
+          {
+            "id": "Q127892.en.3",
+            "type": "contrast",
+            "text": "The Paraná runs south to the Atlantic near Buenos Aires; the Amazon runs east to the Atlantic near the equator."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q127892.nb.1",
+            "type": "anchor",
+            "text": "Paraná renner sørover fra Brasil langs Paraguay og gjennom Argentina til Río de la Plata."
+          },
+          {
+            "id": "Q127892.nb.2",
+            "type": "story",
+            "text": "Paraná går gjennom Itaipu-demningen på grensen mellom Brasil og Paraguay, et av verdens største kraftverk."
+          },
+          {
+            "id": "Q127892.nb.3",
+            "type": "contrast",
+            "text": "Paraná renner sørover til Atlanterhavet ved Buenos Aires. Amazonas renner østover til Atlanterhavet ved ekvator."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q127892.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Paraná flows through Brazil, Paraguay and Argentina.",
+            "nb": "Paraná renner gjennom Brasil, Paraguay og Argentina."
+          }
+        },
+        {
+          "id": "Q127892.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It ends in the Río de la Plata estuary together with the Uruguay River.",
+            "nb": "Den ender i elvemunningen Río de la Plata sammen med elven Uruguay."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q131792",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q131792.en.1",
+            "type": "anchor",
+            "text": "The Orinoco River curves through Venezuela and reaches the Atlantic in a wide delta near Trinidad."
+          },
+          {
+            "id": "Q131792.en.2",
+            "type": "shape",
+            "text": "The Orinoco loops through Venezuela like a question mark lying on its side."
+          },
+          {
+            "id": "Q131792.en.3",
+            "type": "story",
+            "text": "The Casiquiare channel links the Orinoco to the Amazon basin, so a canoe can cross from one river system to the other."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q131792.nb.1",
+            "type": "anchor",
+            "text": "Orinoco svinger gjennom Venezuela og når Atlanterhavet i et bredt delta nær Trinidad."
+          },
+          {
+            "id": "Q131792.nb.2",
+            "type": "shape",
+            "text": "Orinoco slynger seg gjennom Venezuela som et spørsmålstegn som ligger på siden."
+          },
+          {
+            "id": "Q131792.nb.3",
+            "type": "story",
+            "text": "Casiquiare-kanalen forbinder Orinoco med Amazonas-bassenget, så en kano kan krysse fra det ene elvesystemet til det andre."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q131792.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Orinoco flows mainly through Venezuela, with part of its course along Colombia.",
+            "nb": "Orinoco renner mest gjennom Venezuela, med en del av løpet langs Colombia."
+          }
+        },
+        {
+          "id": "Q131792.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It empties into the Atlantic Ocean through a large delta.",
+            "nb": "Den munner ut i Atlanterhavet gjennom et stort delta."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q3783",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q3783.en.1",
+            "type": "anchor",
+            "text": "The Amazon River crosses northern South America from the Andes in Peru east through Brazil to the Atlantic."
+          },
+          {
+            "id": "Q3783.en.2",
+            "type": "story",
+            "text": "The Amazon pours so much fresh water into the Atlantic that the sea stays less salty far out from the coast."
+          },
+          {
+            "id": "Q3783.en.3",
+            "type": "contrast",
+            "text": "The Amazon carries more water than any other river; the Nile is the one usually named the longest."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q3783.nb.1",
+            "type": "anchor",
+            "text": "Amazonas krysser det nordlige Sør-Amerika fra Andes i Peru østover gjennom Brasil til Atlanterhavet."
+          },
+          {
+            "id": "Q3783.nb.2",
+            "type": "story",
+            "text": "Amazonas heller så mye ferskvann i Atlanterhavet at havet er mindre salt langt ut fra kysten."
+          },
+          {
+            "id": "Q3783.nb.3",
+            "type": "contrast",
+            "text": "Amazonas fører mer vann enn noen annen elv. Nilen er den som vanligvis kalles den lengste."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q3783.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Amazon flows through Peru, Colombia and Brazil.",
+            "nb": "Amazonas renner gjennom Peru, Colombia og Brasil."
+          }
+        },
+        {
+          "id": "Q3783.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It discharges more water than any other river in the world.",
+            "nb": "Den fører mer vann enn noen annen elv i verden."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q5456",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q5456.en.1",
+            "type": "anchor",
+            "text": "The Andes run down the whole west side of South America, from Venezuela to the tip of Chile and Argentina."
+          },
+          {
+            "id": "Q5456.en.2",
+            "type": "shape",
+            "text": "The Andes are the spine of South America, a backbone running down its Pacific edge."
+          },
+          {
+            "id": "Q5456.en.3",
+            "type": "contrast",
+            "text": "The Andes are the longest mountain range above sea level; the Himalayas are the highest."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q5456.nb.1",
+            "type": "anchor",
+            "text": "Andesfjellene går langs hele vestsiden av Sør-Amerika, fra Venezuela til sørspissen av Chile og Argentina."
+          },
+          {
+            "id": "Q5456.nb.2",
+            "type": "shape",
+            "text": "Andes er ryggraden i Sør-Amerika, en ryggrad langs kysten mot Stillehavet."
+          },
+          {
+            "id": "Q5456.nb.3",
+            "type": "contrast",
+            "text": "Andes er verdens lengste fjellkjede over havet. Himalaya er den høyeste."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q5456.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Andes run through seven countries along western South America.",
+            "nb": "Andesfjellene går gjennom sju land langs vestsiden av Sør-Amerika."
+          }
+        },
+        {
+          "id": "Q5456.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Aconcagua in Argentina is its highest peak.",
+            "nb": "Aconcagua i Argentina er den høyeste toppen."
+          }
+        }
+      ]
+    }
+  ]
+}
