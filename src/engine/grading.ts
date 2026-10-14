@@ -62,12 +62,19 @@ export function rollingMedian(values: readonly number[], window = 200): number |
     : ((sorted[mid - 1] as number) + (sorted[mid] as number)) / 2;
 }
 
-/** Pin grading for cities (PLAN.md 5.3): distance in km to the rating. */
+/** Pin grading (PLAN.md 5.3): distance in km to the rating. Cities 100/300 km. */
 export const PIN_GOOD_KM = 100;
 export const PIN_HARD_KM = 300;
+export type PinLimits = { goodKm: number; hardKm: number };
+export const CITY_PIN: PinLimits = { goodKm: PIN_GOOD_KM, hardKm: PIN_HARD_KM };
+/** Landmarks are often large (a reef, a desert, a national park): 150/500 km. */
+export const LANDMARK_PIN: PinLimits = { goodKm: 150, hardKm: 500 };
 
-export function gradePin(distanceKm: number): { rating: Rating; correct: boolean } {
-  if (distanceKm <= PIN_GOOD_KM) return { rating: 3, correct: true };
-  if (distanceKm <= PIN_HARD_KM) return { rating: 2, correct: true };
+export function gradePin(
+  distanceKm: number,
+  limits: PinLimits = CITY_PIN,
+): { rating: Rating; correct: boolean } {
+  if (distanceKm <= limits.goodKm) return { rating: 3, correct: true };
+  if (distanceKm <= limits.hardKm) return { rating: 2, correct: true };
   return { rating: 1, correct: false };
 }
