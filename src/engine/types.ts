@@ -11,7 +11,10 @@ export const COUNTRY_CARD_TYPES = [
   "country_to_language",
 ] as const;
 export type CountryCardType = (typeof COUNTRY_CARD_TYPES)[number];
-export type CardType = CountryCardType | "contrast";
+/** Cities (PLAN.md 5.3): which country a city is in, and where it is (pin on the map). */
+export const CITY_CARD_TYPES = ["city_to_country", "city_to_map"] as const;
+export type CityCardType = (typeof CITY_CARD_TYPES)[number];
+export type CardType = CountryCardType | CityCardType | "contrast";
 
 /** `${entityId}:${cardType}`. Never changes once shipped. */
 export type CardId = string;
