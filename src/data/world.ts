@@ -1,5 +1,5 @@
 /** Loads the static world data once, as a separate chunk so the first screen stays light. */
-import type { CountriesFile, Country, Subregion } from "./types";
+import type { CitiesFile, City, CountriesFile, Country, Subregion } from "./types";
 
 export type FlagMeta = Record<string, { file: string; colors: { color: string; share: number }[] }>;
 
@@ -26,6 +26,9 @@ export type WorldData = {
   /** Languages never offered as a wrong answer for a country. */
   excludeAsDistractor: Record<string, string[]>;
   confusionPairs: ConfusionPair[];
+  /** Famous cities (the cities module), by QID. */
+  cities: City[];
+  cityById: Map<string, City>;
 };
 
 type LanguagesFile = {
@@ -39,6 +42,7 @@ export function assembleWorld(
   flags: FlagMeta,
   languages: LanguagesFile,
   pairs: { pairs: ConfusionPair[] },
+  cities: CitiesFile = { cities: [] },
 ): WorldData {
   return {
     countries: file.countries,
@@ -49,6 +53,8 @@ export function assembleWorld(
     languageNames: languages.names,
     excludeAsDistractor: languages.excludeAsDistractor,
     confusionPairs: pairs.pairs,
+    cities: cities.cities,
+    cityById: new Map(cities.cities.map((c) => [c.id, c])),
   };
 }
 
@@ -61,13 +67,15 @@ export function loadWorld(): Promise<WorldData> {
     import("../../data/flags-meta.json"),
     import("../../data/curated/official-languages.json"),
     import("../../data/curated/confusion-pairs.json"),
-  ]).then(([countries, topology, flags, languages, pairs]) =>
+    import("../../data/cities.json"),
+  ]).then(([countries, topology, flags, languages, pairs, cities]) =>
     assembleWorld(
       countries.default as unknown as CountriesFile,
       topology.default as unknown as CountryTopology,
       flags.default as unknown as FlagMeta,
       languages.default as unknown as LanguagesFile,
       pairs.default as unknown as { pairs: ConfusionPair[] },
+      cities.default as unknown as CitiesFile,
     ),
   );
   return pending;
