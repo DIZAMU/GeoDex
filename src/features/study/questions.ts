@@ -10,6 +10,8 @@ import {
   currencyDistractors,
   languageDistractors,
 } from "@/engine/distractors";
+import { haversineKm } from "@/engine/geo";
+import { gradePin } from "@/engine/grading";
 import { type Answerable, buildIndex, matchAnswer } from "@/engine/matching";
 import { createRng, shuffle } from "@/engine/random";
 import type { CardState } from "@/engine/scheduler";
@@ -19,6 +21,7 @@ import {
   type CountryCardType,
   type InputSetting,
   parseCardId,
+  type Rating,
 } from "@/engine/types";
 import type { Locale } from "@/i18n/locales";
 
@@ -28,7 +31,11 @@ export type Prompt =
   | { kind: "map"; countryId: string; view: MapView }
   | { kind: "name"; countryId: string }
   | { kind: "flag"; countryId: string }
-  | { kind: "capital"; countryId: string; capitalId: string };
+  | { kind: "capital"; countryId: string; capitalId: string }
+  /** A city by name: "Which country is Sydney in?" or "Where is Sydney?". */
+  | { kind: "city"; countryId: string; cityId: string; place: boolean }
+  /** "Which is the capital of Australia?" for a city mistaken for the capital. */
+  | { kind: "capitalOf"; countryId: string };
 
 export type Option = { id: string; label: string; flag?: string };
 
@@ -36,14 +43,18 @@ export type AnswerFormat =
   | { kind: "choice"; options: Option[] }
   | { kind: "flags"; options: Option[] }
   | { kind: "typed" }
-  | { kind: "map"; view: MapView; selectable?: string[] };
+  | { kind: "map"; view: MapView; selectable?: string[] }
+  /** Tap the spot on the map; graded by distance to `target` [lon, lat]. */
+  | { kind: "pin"; view: MapView; target: [number, number] };
 
 export type AnswerKind = "country" | "capital" | "currency" | "language";
 
 export type Question = {
   cardId: string;
-  /** The country asked about. For a contrast card, the one of the pair this review asks for. */
+  /** The entity asked about. For a contrast card, the one of the pair this review asks for. */
   entityId: string;
+  /** The country the card is about: the entity itself, or the country of a city. */
+  countryId: string;
   type: CardType;
   prompt: Prompt;
   answer: AnswerFormat;
@@ -150,6 +161,9 @@ export function buildQuestion(
 ): Question {
   const { entityId, type } = parseCardId(cardId);
   if (type === "contrast") return contrastQuestion(ctx, cardId, entityId, seed);
+  if (type === "city_to_country" || type === "city_to_map") {
+    return cityQuestion(ctx, cardId, entityId, type, state, inputSetting, seed);
+  }
   const country = ctx.world.byId.get(entityId);
   const facts = ctx.facts.get(entityId);
   if (!country || !facts) throw new Error(`Unknown country ${entityId}`);
@@ -200,6 +214,7 @@ export function buildQuestion(
     return {
       cardId,
       entityId,
+      countryId: entityId,
       type: countryType,
       prompt,
       answer: { kind: "map", view: mapView(country, scope, mapLevel) },
@@ -215,6 +230,7 @@ export function buildQuestion(
     return {
       cardId,
       entityId,
+      countryId: entityId,
       type: countryType,
       prompt,
       answer: {
@@ -245,6 +261,7 @@ export function buildQuestion(
     return {
       cardId,
       entityId,
+      countryId: entityId,
       type: countryType,
       prompt,
       answer: { kind: "typed" },
@@ -302,6 +319,7 @@ export function buildQuestion(
   return {
     cardId,
     entityId,
+    countryId: entityId,
     type: countryType,
     prompt,
     answer: { kind: "choice", options: shuffle(options, rng) },
@@ -317,6 +335,9 @@ export function buildQuestion(
  */
 function contrastQuestion(ctx: StudyContext, cardId: string, pair: string, seed: string): Question {
   const [a, b] = pair.split("|");
+  const city = ctx.world.cityById.get(a ?? "") ?? ctx.world.cityById.get(b ?? "");
+  if (city)
+    return notCapitalQuestion(ctx, cardId, city.id, city.id === a ? (b ?? "") : (a ?? ""), seed);
   const first = a ? ctx.world.byId.get(a) : undefined;
   const second = b ? ctx.world.byId.get(b) : undefined;
   if (!first || !second) throw new Error(`Unknown contrast pair ${pair}`);
@@ -326,6 +347,7 @@ function contrastQuestion(ctx: StudyContext, cardId: string, pair: string, seed:
   const base = {
     cardId,
     entityId: target.id,
+    countryId: target.id,
     type: "contrast" as const,
     prompt: { kind: "name" as const, countryId: target.id },
     answerKind: "country" as const,
@@ -349,6 +371,125 @@ function contrastQuestion(ctx: StudyContext, cardId: string, pair: string, seed:
     ...base,
     answer: { kind: "map", view: { kind: "countries", ids }, selectable: ids },
     mode: "map",
+  };
+}
+
+/**
+ * "Which is the capital of Australia?": the capital and the city mistaken for it, side by
+ * side (PLAN.md 5.2, not_capital confusions).
+ */
+function notCapitalQuestion(
+  ctx: StudyContext,
+  cardId: string,
+  cityId: string,
+  capitalId: string,
+  seed: string,
+): Question {
+  const city = ctx.world.cityById.get(cityId);
+  const country = city ? ctx.world.byId.get(city.countryId) : undefined;
+  const capital = country?.capitals.find((c) => c.id === capitalId);
+  if (!city || !country || !capital) throw new Error(`Unknown not-the-capital pair ${cardId}`);
+  const rng = createRng(seed);
+  return {
+    cardId,
+    entityId: cityId,
+    countryId: country.id,
+    type: "contrast",
+    prompt: { kind: "capitalOf", countryId: country.id },
+    answer: {
+      kind: "choice",
+      options: shuffle(
+        [
+          { id: capital.id, label: capital.names[ctx.locale] },
+          { id: city.id, label: city.names[ctx.locale] },
+        ],
+        rng,
+      ),
+    },
+    answerKind: "capital",
+    correctIds: [capital.id],
+    mode: "mc",
+  };
+}
+
+/** City cards: which country a city is in, and where it is on the map (a pin). */
+function cityQuestion(
+  ctx: StudyContext,
+  cardId: string,
+  cityId: string,
+  type: "city_to_country" | "city_to_map",
+  state: CardState | undefined,
+  inputSetting: InputSetting,
+  seed: string,
+): Question {
+  const city = ctx.world.cityById.get(cityId);
+  const country = city ? ctx.world.byId.get(city.countryId) : undefined;
+  const facts = country ? ctx.facts.get(country.id) : undefined;
+  if (!city || !country || !facts) throw new Error(`Unknown city ${cityId}`);
+  const rng = createRng(seed);
+  const level = band(state);
+  const firstReview = !state || state.reps === 0;
+  const base = { cardId, entityId: city.id, countryId: country.id, type };
+  if (type === "city_to_map") {
+    // New: the country's region; then its continent; then the whole world.
+    const mapLevel =
+      inputSetting === "mc" || level === "new"
+        ? "subregion"
+        : level === "middle"
+          ? "continent"
+          : "world";
+    return {
+      ...base,
+      prompt: { kind: "city", countryId: country.id, cityId: city.id, place: true },
+      answer: {
+        kind: "pin",
+        view: mapView(country, ctx.world.countries, mapLevel),
+        target: [city.lon, city.lat],
+      },
+      answerKind: "country",
+      correctIds: [city.id],
+      mode: "pin",
+    };
+  }
+  const prompt: Prompt = { kind: "city", countryId: country.id, cityId: city.id, place: false };
+  const textAsChoice =
+    inputSetting === "mc" ||
+    (inputSetting === "auto" && level === "new") ||
+    (inputSetting === "typing" && firstReview);
+  if (!textAsChoice) {
+    return {
+      ...base,
+      prompt,
+      answer: { kind: "typed" },
+      answerKind: "country",
+      correctIds: [country.id],
+      mode: "typed",
+    };
+  }
+  const others = countryDistractors(facts, [...ctx.facts.values()], {
+    count: 3,
+    rng,
+    firstReview,
+    byFlag: false,
+    userConfusions: ctx.confusionsFor(country.id),
+    curatedConfusions: ctx.curatedFor(country.id, "name"),
+  });
+  return {
+    ...base,
+    prompt,
+    answer: {
+      kind: "choice",
+      options: shuffle(
+        [country.id, ...others].map((id) => ({
+          id,
+          label: ctx.world.byId.get(id)?.names[ctx.locale] ?? id,
+        })),
+        rng,
+      ),
+    },
+    answerKind: "country",
+    correctIds: [country.id],
+    mode: "mc",
   };
 }
 
@@ -383,11 +524,25 @@ export type CheckResult = {
   chosenId: string | null;
   /** Correct spelling to show after a typo. */
   matched?: string;
+  /** Pin answers: how far the pin landed from the target, and the rating that earns. */
+  distanceKm?: number;
+  rating?: Rating;
+  /** Pin answers: where the learner tapped, [lon, lat]. */
+  pinned?: [number, number];
 };
 
 /** Checks a chosen option id or clicked country. */
 export function checkChoice(question: Question, chosenId: string): CheckResult {
   return { correct: question.correctIds.includes(chosenId), typo: false, chosenId };
+}
+
+/** Checks a pin against the target: graded by distance (PLAN.md 5.3). */
+export function checkPin(question: Question, at: [number, number]): CheckResult {
+  if (question.answer.kind !== "pin") throw new Error("Not a pin question");
+  const [lon, lat] = question.answer.target;
+  const distanceKm = Math.round(haversineKm(at[0], at[1], lon, lat));
+  const { rating, correct } = gradePin(distanceKm);
+  return { correct, typo: false, chosenId: null, distanceKm, rating, pinned: at };
 }
 
 /** Checks typed text against every accepted answer, in both languages. */

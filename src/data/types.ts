@@ -79,3 +79,19 @@ export type CountriesFile = {
   subregions: Subregion[];
   countries: Country[];
 };
+
+/** A city outside the capitals (PLAN.md 5.1). Built by scripts/data/build-cities.ts. */
+export type City = {
+  id: string; // Wikidata QID
+  names: L10n;
+  aliases: L10nList;
+  countryId: string; // ISO3
+  lat: number;
+  lon: number;
+  population: number;
+  populationYear: number | null;
+  /** Was once the national capital of its current country (Lagos, Almaty, Rio de Janeiro). */
+  formerCapital: boolean;
+};
+
+export type CitiesFile = { cities: City[] };

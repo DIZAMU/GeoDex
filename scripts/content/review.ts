@@ -3,12 +3,30 @@
  * so the author can check them. Deterministic.
  */
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
-import type { CountriesFile } from "../../src/data/types.ts";
+import type { CitiesFile, CountriesFile } from "../../src/data/types.ts";
 import type { ContentGroupFile } from "../../src/engine/explain/types.ts";
 
-export function reviewMarkdown(root = "content", countriesPath = "data/countries.json"): string {
+export function reviewMarkdown(
+  root = "content",
+  countriesPath = "data/countries.json",
+  citiesPath = "data/cities.json",
+): string {
   const countries = JSON.parse(readFileSync(countriesPath, "utf8")) as CountriesFile;
-  const names = new Map(countries.countries.map((c) => [c.id, c.names.en]));
+  const cities = existsSync(citiesPath)
+    ? (JSON.parse(readFileSync(citiesPath, "utf8")) as CitiesFile).cities
+    : [];
+  const names = new Map([
+    ...countries.countries.map((c) => [c.id, c.names.en] as const),
+    ...cities.map((c) => [c.id, c.names.en] as const),
+  ]);
+  const continentNames: Record<string, string> = {
+    africa: "Africa",
+    asia: "Asia",
+    europe: "Europe",
+    north_america: "North America",
+    south_america: "South America",
+    oceania: "Oceania",
+  };
   const subregions = new Map(countries.subregions.map((s) => [s.id, s.names.en]));
   const lines = [
     "# Content review",
@@ -17,28 +35,34 @@ export function reviewMarkdown(root = "content", countriesPath = "data/countries
     "",
   ];
   let total = 0;
-  const dir = `${root}/entities/countries`;
-  const files = existsSync(dir)
-    ? readdirSync(dir)
-        .filter((f) => f.endsWith(".json"))
-        .sort()
-    : [];
-  lines.push("## Countries", "");
-  for (const file of files) {
-    const group = JSON.parse(readFileSync(`${dir}/${file}`, "utf8")) as ContentGroupFile;
-    const rows: string[] = [];
-    for (const e of group.entities) {
-      for (const f of e.facts) {
-        if (f.verified) continue;
-        total += 1;
-        rows.push(`- **${names.get(e.entityId) ?? e.entityId}** \`${f.id}\` (tier ${f.tier})`);
-        rows.push(`  - en: ${f.text.en}`);
-        rows.push(`  - nb: ${f.text.nb}`);
-        if (f.sourceUrl) rows.push(`  - source: ${f.sourceUrl}`);
+  for (const [module, heading, groupName] of [
+    ["countries", "Countries", (id: string) => subregions.get(id) ?? id],
+    ["cities", "Cities", (id: string) => continentNames[id] ?? id],
+  ] as const) {
+    const dir = `${root}/entities/${module}`;
+    const files = existsSync(dir)
+      ? readdirSync(dir)
+          .filter((f) => f.endsWith(".json"))
+          .sort()
+      : [];
+    if (files.length === 0) continue;
+    lines.push(`## ${heading}`, "");
+    for (const file of files) {
+      const group = JSON.parse(readFileSync(`${dir}/${file}`, "utf8")) as ContentGroupFile;
+      const rows: string[] = [];
+      for (const e of group.entities) {
+        for (const f of e.facts) {
+          if (f.verified) continue;
+          total += 1;
+          rows.push(`- **${names.get(e.entityId) ?? e.entityId}** \`${f.id}\` (tier ${f.tier})`);
+          rows.push(`  - en: ${f.text.en}`);
+          rows.push(`  - nb: ${f.text.nb}`);
+          if (f.sourceUrl) rows.push(`  - source: ${f.sourceUrl}`);
+        }
       }
+      if (rows.length === 0) continue;
+      lines.push(`### ${groupName(group.group)}`, "", ...rows, "");
     }
-    if (rows.length === 0) continue;
-    lines.push(`### ${subregions.get(group.group) ?? group.group}`, "", ...rows, "");
   }
   lines.splice(4, 0, `${total} facts to review.`, "");
   return `${lines.join("\n").trimEnd()}\n`;

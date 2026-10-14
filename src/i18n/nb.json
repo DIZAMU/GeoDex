@@ -45,6 +45,7 @@
     "countdown": "Nedtelling",
     "countdownOff": "Av",
     "seconds": "{{count}} s",
+    "cities": "Kjente byer (etter landet sitt)",
     "currencyLanguage": "Kort for valuta og språk",
     "on": "På",
     "off": "Av",
@@ -93,6 +94,9 @@
     "statFlags": "Flagg"
   },
   "q": {
+    "city_to_country": "Hvilket land ligger {{city}} i?",
+    "city_to_map": "Plasser {{city}} på kartet.",
+    "capitalOf": "Hvilken er hovedstaden {{inName}}?",
     "map_to_name": "Hvilket land er dette?",
     "name_to_map": "Finn {{name}} på kartet.",
     "country_to_capital": "Hva er hovedstaden {{inName}}?",
@@ -104,6 +108,7 @@
     "contrast": "Hvilket av disse er {{name}}?"
   },
   "answer": {
+    "pinHelp": "Trykk der byen ligger.",
     "placeholder": "Skriv svaret",
     "check": "Sjekk",
     "giveUp": "Vis svaret",
@@ -113,6 +118,10 @@
     "label": "Ditt svar"
   },
   "feedback": {
+    "distance": "Nålen din var {{distance}} fra byen.",
+    "formerCapital": "Tidligere hovedstad",
+    "population": "Folketall",
+    "cityIn": "By {{inName}}",
     "correct": "Riktig",
     "wrong": "Feil",
     "youPicked": "Du valgte {{name}}.",
@@ -230,6 +239,8 @@
     "name_to_flag": "Navn til flagg",
     "country_to_currency": "Land til valuta",
     "country_to_language": "Land til språk",
+    "city_to_country": "By til land",
+    "city_to_map": "By på kartet",
     "contrast": "Skill dem"
   },
   "hookType": {
@@ -261,6 +272,7 @@
     "holds": "sitter omtrent {{days}} dager",
     "neighbors": "Naboland",
     "none": "Ingen",
+    "cities": "Kjente byer",
     "facts": "Fakta du har sett",
     "noFacts": "Ingen ennå. Fakta dukker opp når du repeterer.",
     "history": "Repetisjoner",
@@ -271,6 +283,7 @@
   },
   "stats": {
     "title": "Statistikk",
+    "cities": "Kjente byer",
     "grid": "Ferdigheter per verdensdel",
     "cell": "{{mastered}} mestret, {{started}} startet, {{total}} kort",
     "gridHelp": "Andel kort som er mestret (21+ dager).",

@@ -180,3 +180,9 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 - **Mastery level of a country for a skill** is the lower level of the skill's two cards, so both directions must be known before a country reads as mastered. A country with either card started is at least "learning": with the plain minimum, placement (which seeds one direction) left every skill map blank.
 - **Atlas globe:** sideways drags turn the projection instead of sliding the picture, so the Pacific can sit in the middle. Re-projecting 50m borders takes about 70 ms, too slow per frame, so the globe draws with every sixth vertex while turning (about 16 ms) and at full detail when released. Session maps keep plain pan and zoom so the answer fly-to stays exact.
 - **Map taps:** a marker's visible dot wins, then the country shape under the pointer, then the nearest marker tap target. Before this, the 44 px tap targets of small countries covered parts of Norway at world zoom.
+
+## 033. Cities: a short list of world-famous cities
+
+- **Context:** PLAN.md 5.1 asks for about 200 cities (the largest non-capital city per country plus globally known ones). The author narrowed this: only really famous cities.
+- **Options:** (a) an automatic rule (Natural Earth's world-city rank), which lets in Ürümqi and Denver and misses Barcelona and Venice; (b) a short hand-picked list in `data/curated/cities.json`, with Wikidata supplying names, coordinates and population.
+- **Decision:** (b). 38 cities: world-famous non-capitals plus every city commonly mistaken for its country's capital (Sydney, Istanbul, Toronto...), which the Phase 6 acceptance needs. Aliases are curated too (Bombay, Saigon, Rangoon); Wikidata's alternative labels are mostly nicknames. The data test caps the list at 50.

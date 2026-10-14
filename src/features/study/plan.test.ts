@@ -12,6 +12,7 @@ const world = assembleWorld(
   read("data/flags-meta.json"),
   read("data/curated/official-languages.json"),
   read("data/curated/confusion-pairs.json"),
+  read("data/cities.json"),
 );
 const scheduler = createScheduler();
 const settings: PlanSettings = {
@@ -103,5 +104,76 @@ describe("contrast cards in the plan", () => {
   it("adds none without contrast text", () => {
     const plan = planDay({ world, settings, states, events, scheduler, now });
     expect(plan.queue.some((q) => q.cardId.endsWith(":contrast"))).toBe(false);
+  });
+});
+
+describe("cities in the plan", () => {
+  const cities = {
+    ...settings,
+    modules: { cities: true },
+    moduleWeights: { countries: 3, cities: 1 },
+  };
+  // Australia introduced well before today, so its cities (Sydney, Melbourne) can start.
+  const intro = [
+    ev("AUS:map_to_name", now - 86_400_000 * 2, "a1"),
+    ev("AUS:name_to_map", now - 86_400_000 * 2, "a2"),
+  ];
+  const introStates = replayAll(scheduler, intro);
+  const isCity = (id: string) => world.cityById.has(id);
+
+  it("adds no city cards while the module is off", () => {
+    const plan = planDay({ world, settings, states: introStates, events: intro, scheduler, now });
+    expect(plan.queue.some((q) => isCity(q.entityId))).toBe(false);
+  });
+
+  it("starts cities only in countries already introduced, and splits new cards by weight", () => {
+    const plan = planDay({
+      world,
+      settings: cities,
+      states: introStates,
+      events: intro,
+      scheduler,
+      now,
+    });
+    const cityItems = plan.queue.filter((q) => isCity(q.entityId));
+    expect(cityItems.length).toBeGreaterThan(0);
+    expect(cityItems.every((q) => world.cityById.get(q.entityId)?.countryId === "AUS")).toBe(true);
+    // Sydney and Melbourne: 2 cities x 2 cards at most, below their 1-in-4 share.
+    expect(cityItems.length).toBeLessThanOrEqual(4);
+    expect(plan.newCount).toBe(25);
+  });
+
+  it("seeds the not-the-capital contrast card once the city has been studied", () => {
+    const content = {
+      confusion: (a: string, b: string) =>
+        [a, b].sort().join("|") === ["Q3130", "Q3114"].sort().join("|")
+          ? { contrast: {} }
+          : undefined,
+      confusions: [{ a: "Q3130", b: "Q3114", dimension: "not_capital" }],
+    };
+    const before = planDay({
+      world,
+      settings: cities,
+      states: introStates,
+      events: intro,
+      scheduler,
+      now,
+      content,
+    });
+    expect(before.queue.some((q) => q.cardId.endsWith(":contrast"))).toBe(false);
+    const events = [...intro, ev("Q3130:city_to_country", now - 86_400_000, "s1")];
+    const states = replayAll(scheduler, events);
+    const after = planDay({ world, settings: cities, states, events, scheduler, now, content });
+    expect(after.queue.map((q) => q.cardId)).toContain("Q3114|Q3130:contrast");
+    // Off again: the seeded card and the city card both drop out.
+    const off = planDay({ world, settings, states, events, scheduler, now, content });
+    expect(off.queue.some((q) => q.entityId.includes("Q3130"))).toBe(false);
+  });
+
+  it("keeps due city cards while the module is on", () => {
+    const events = [...intro, ev("Q3130:city_to_country", now - 86_400_000 * 30, "s1")];
+    const states = replayAll(scheduler, events);
+    const plan = planDay({ world, settings: cities, states, events, scheduler, now });
+    expect(plan.queue.some((q) => q.cardId === "Q3130:city_to_country" && !q.isNew)).toBe(true);
   });
 });
