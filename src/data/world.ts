@@ -120,43 +120,37 @@ export function resolveGroups(file: GroupsFile, countries: readonly Country[]): 
 
 let pending: Promise<WorldData> | null = null;
 
+// The data ships as JSON files, not JavaScript modules: browsers parse JSON several times
+// faster than the same data as an object literal, which matters on phones (PLAN.md 10).
+import citiesUrl from "../../data/cities.json?url";
+import countriesUrl from "../../data/countries.json?url";
+import pairsUrl from "../../data/curated/confusion-pairs.json?url";
+import groupsUrl from "../../data/curated/groups.json?url";
+import languagesUrl from "../../data/curated/official-languages.json?url";
+import flagsUrl from "../../data/flags-meta.json?url";
+import topologyUrl from "../../data/geo/countries-50m.json?url";
+import historyUrl from "../../data/history.json?url";
+import landmarksUrl from "../../data/landmarks.json?url";
+import physicalUrl from "../../data/physical.json?url";
+
+async function json<T>(url: string): Promise<T> {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`Could not load ${url}: ${response.status}`);
+  return (await response.json()) as T;
+}
+
 export function loadWorld(): Promise<WorldData> {
   pending ??= Promise.all([
-    import("../../data/countries.json"),
-    import("../../data/geo/countries-50m.json"),
-    import("../../data/flags-meta.json"),
-    import("../../data/curated/official-languages.json"),
-    import("../../data/curated/confusion-pairs.json"),
-    import("../../data/cities.json"),
-    import("../../data/curated/groups.json"),
-    import("../../data/landmarks.json"),
-    import("../../data/physical.json"),
-    import("../../data/history.json"),
-  ]).then(
-    ([
-      countries,
-      topology,
-      flags,
-      languages,
-      pairs,
-      cities,
-      groups,
-      landmarks,
-      physical,
-      history,
-    ]) =>
-      assembleWorld(
-        countries.default as unknown as CountriesFile,
-        topology.default as unknown as CountryTopology,
-        flags.default as unknown as FlagMeta,
-        languages.default as unknown as LanguagesFile,
-        pairs.default as unknown as { pairs: ConfusionPair[] },
-        cities.default as unknown as CitiesFile,
-        groups.default as unknown as GroupsFile,
-        landmarks.default as unknown as LandmarksFile,
-        physical.default as unknown as PhysicalFile,
-        history.default as unknown as HistoryFile,
-      ),
-  );
+    json<CountriesFile>(countriesUrl),
+    json<CountryTopology>(topologyUrl),
+    json<FlagMeta>(flagsUrl),
+    json<LanguagesFile>(languagesUrl),
+    json<{ pairs: ConfusionPair[] }>(pairsUrl),
+    json<CitiesFile>(citiesUrl),
+    json<GroupsFile>(groupsUrl),
+    json<LandmarksFile>(landmarksUrl),
+    json<PhysicalFile>(physicalUrl),
+    json<HistoryFile>(historyUrl),
+  ]).then((files) => assembleWorld(...files));
   return pending;
 }
