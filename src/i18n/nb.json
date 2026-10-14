@@ -317,5 +317,10 @@
     "region": "Øv: {{name}}",
     "pair": "Øv: {{a}} og {{b}}",
     "empty": "Ingenting å øve på her ennå."
+  },
+  "error": {
+    "title": "Noe gikk galt",
+    "body": "Denne skjermen kunne ikke lastes. Fremgangen din er lagret på denne enheten; last inn på nytt for å fortsette.",
+    "reload": "Last inn på nytt"
   }
 }
