@@ -1,0 +1,123 @@
+{
+  "group": "south_america",
+  "entities": [
+    {
+      "entityId": "Q174",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q174.en.1",
+            "type": "anchor",
+            "text": "São Paulo lies on a plateau in southeastern Brazil, inland from the coast and southwest of Rio de Janeiro."
+          },
+          {
+            "id": "Q174.en.2",
+            "type": "etymology",
+            "text": "São Paulo is Portuguese for Saint Paul: Jesuits founded it on the feast of Paul's conversion."
+          },
+          {
+            "id": "Q174.en.3",
+            "type": "sound",
+            "text": "São Paulo: a sow called Paulo trots across the Brazilian highlands in a football shirt."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q174.nb.1",
+            "type": "anchor",
+            "text": "São Paulo ligger på en høyslette sørøst i Brasil, inne fra kysten og sørvest for Rio de Janeiro."
+          },
+          {
+            "id": "Q174.nb.2",
+            "type": "etymology",
+            "text": "São Paulo er portugisisk for Sankt Paulus: jesuittene grunnla byen på dagen for Paulus' omvendelse."
+          },
+          {
+            "id": "Q174.nb.3",
+            "type": "sound",
+            "text": "São Paulo: en sau som heter Paulo, gresser på høysletta i Brasil med fotballdrakt på."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q174.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "São Paulo is the largest city in Brazil and in South America.",
+            "nb": "São Paulo er den største byen i Brasil og i Sør-Amerika."
+          }
+        },
+        {
+          "id": "Q174.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Brazil's capital is not São Paulo but Brasília, a planned city further inland.",
+            "nb": "Brasils hovedstad er ikke São Paulo, men Brasília, en planlagt by lenger inne i landet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q8678",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q8678.en.1",
+            "type": "anchor",
+            "text": "Rio de Janeiro is on Brazil's Atlantic coast around Guanabara Bay, northeast of São Paulo."
+          },
+          {
+            "id": "Q8678.en.2",
+            "type": "contrast",
+            "text": "Rio was Brazil's capital until Brasília was built inland. Today the capital is Brasília."
+          },
+          {
+            "id": "Q8678.en.3",
+            "type": "etymology",
+            "text": "Rio de Janeiro means River of January: sailors arrived in January and took the bay for a river mouth."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q8678.nb.1",
+            "type": "anchor",
+            "text": "Rio de Janeiro ligger på atlanterhavskysten av Brasil, rundt Guanabarabukta, nordøst for São Paulo."
+          },
+          {
+            "id": "Q8678.nb.2",
+            "type": "contrast",
+            "text": "Rio var Brasils hovedstad til Brasília ble bygd inne i landet. I dag er Brasília hovedstaden."
+          },
+          {
+            "id": "Q8678.nb.3",
+            "type": "etymology",
+            "text": "Rio de Janeiro betyr januarelven: sjøfolk kom i januar og trodde bukta var en elvemunning."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q8678.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Rio de Janeiro was the capital of Brazil until the government moved to Brasília.",
+            "nb": "Rio de Janeiro var Brasils hovedstad til regjeringen flyttet til Brasília."
+          }
+        },
+        {
+          "id": "Q8678.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Sugarloaf Mountain rises at the entrance to Guanabara Bay.",
+            "nb": "Sukkertoppen reiser seg ved innløpet til Guanabarabukta."
+          }
+        }
+      ]
+    }
+  ]
+}
