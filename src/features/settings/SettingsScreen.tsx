@@ -149,6 +149,14 @@ export function SettingsScreen() {
           onChange={(v) => set({ modules: { ...s.modules, physical: v === "on" } })}
           testId="module-physical"
         />
+        <Choice
+          label={t("settings.history")}
+          value={s.modules.history ? "on" : "off"}
+          options={["on", "off"] as const}
+          render={(v) => (v === "on" ? t("settings.on") : t("settings.off"))}
+          onChange={(v) => set({ modules: { ...s.modules, history: v === "on" } })}
+          testId="module-history"
+        />
         <Button
           variant="outline"
           className="self-start"
