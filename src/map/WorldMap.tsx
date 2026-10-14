@@ -470,7 +470,13 @@ export function WorldMap({
                           className={`map-point map-point-${p.kind}`}
                         />
                         {p.label ? (
-                          <text y={-14} className="map-label" textAnchor="middle">
+                          // Target labels sit above the dot, pin labels below, so two
+                          // close points (Canberra and Sydney) never cover each other.
+                          <text
+                            y={p.kind === "target" ? -14 : 22}
+                            className="map-label"
+                            textAnchor="middle"
+                          >
                             {p.label}
                           </text>
                         ) : null}
