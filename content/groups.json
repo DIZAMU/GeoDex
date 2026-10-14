@@ -1,0 +1,152 @@
+{
+  "_comment": "One note per named group (not UN subregions), shown on the group card after an answer. Written per content/VOICE.md; verified: false until the author checks it.",
+  "notes": {
+    "Q21195": {
+      "text": {
+        "en": "Strictly, Scandinavia is the three kingdoms: Denmark, Norway and Sweden. Finland and Iceland are Nordic, and only loose usage calls them Scandinavian.",
+        "nb": "Strengt tatt er Skandinavia de tre kongedømmene Danmark, Norge og Sverige. Finland og Island er nordiske land og kalles bare løst skandinaviske."
+      },
+      "verified": false
+    },
+    "Q52062": {
+      "text": {
+        "en": "The Nordic countries are Scandinavia plus Finland and Iceland. Greenland, the Faroe Islands and Åland belong too, but are not sovereign states.",
+        "nb": "Norden er Skandinavia pluss Finland og Island. Grønland, Færøyene og Åland hører også med, men er ikke selvstendige stater."
+      },
+      "verified": false
+    },
+    "Q39731": {
+      "text": {
+        "en": "The Baltic states run north to south as Estonia, Latvia, Lithuania, which is also their alphabetical order.",
+        "nb": "De baltiske statene ligger fra nord til sør som Estland, Latvia, Litauen, som også er alfabetisk rekkefølge."
+      },
+      "verified": false
+    },
+    "Q13116": {
+      "text": {
+        "en": "The name Benelux is built from the starts of Belgium, the Netherlands and Luxembourg: Be, Ne, Lux.",
+        "nb": "Navnet Benelux er satt sammen av begynnelsen på Belgia, Nederland og Luxembourg: Be, Ne, Lux."
+      },
+      "verified": false
+    },
+    "Q12837": {
+      "text": {
+        "en": "The Iberian Peninsula holds Spain, Portugal and Andorra in the Pyrenees, plus the British territory of Gibraltar.",
+        "nb": "Den iberiske halvøy rommer Spania, Portugal og Andorra i Pyreneene, og det britiske området Gibraltar."
+      },
+      "verified": false
+    },
+    "Q23522": {
+      "text": {
+        "en": "Balkan is Turkish for a wooded mountain range. Where the region ends is disputed: Greece, Croatia, Slovenia and Romania are counted only by some.",
+        "nb": "Balkan er tyrkisk for en skogkledd fjellkjede. Hvor regionen slutter, er omstridt: Hellas, Kroatia, Slovenia og Romania regnes bare med av noen."
+      },
+      "verified": false
+    },
+    "Q200173": {
+      "text": {
+        "en": "The South Caucasus lies between the Black Sea and the Caspian, south of the main Caucasus range: Georgia, Armenia and Azerbaijan.",
+        "nb": "Sør-Kaukasus ligger mellom Svartehavet og Det kaspiske hav, sør for Kaukasus-fjellene: Georgia, Armenia og Aserbajdsjan."
+      },
+      "verified": false
+    },
+    "Q7204": {
+      "text": {
+        "en": "The Middle East has no fixed border. Egypt is counted though it lies in Africa; Cyprus, Libya, Sudan and Afghanistan only by some.",
+        "nb": "Midtøsten har ingen fast grense. Egypt regnes med selv om landet ligger i Afrika; Kypros, Libya, Sudan og Afghanistan bare av noen."
+      },
+      "verified": false
+    },
+    "Q81483": {
+      "text": {
+        "en": "Levant comes from the French for rising, as the sun rises in the east. The core is Syria, Lebanon, Israel, Palestine and Jordan.",
+        "nb": "Levanten kommer av fransk for «stigende», om solen som står opp i øst. Kjernen er Syria, Libanon, Israel, Palestina og Jordan."
+      },
+      "verified": false
+    },
+    "Q28227": {
+      "text": {
+        "en": "Maghreb is Arabic for the west, where the sun sets. The core is Morocco, Algeria and Tunisia; Libya and Mauritania are sometimes added.",
+        "nb": "Maghreb er arabisk for vest, der solen går ned. Kjernen er Marokko, Algerie og Tunisia; Libya og Mauritania tas noen ganger med."
+      },
+      "verified": false
+    },
+    "Q40556": {
+      "text": {
+        "en": "The Horn of Africa is the point that juts into the Arabian Sea east of Ethiopia: Somalia, Ethiopia, Eritrea and Djibouti.",
+        "nb": "Afrikas horn er spissen som stikker ut i Arabiahavet øst for Etiopia: Somalia, Etiopia, Eritrea og Djibouti."
+      },
+      "verified": false
+    },
+    "Q31945": {
+      "text": {
+        "en": "The Arabian Peninsula is Saudi Arabia, Yemen, Oman and the Gulf states. Jordan and Iraq touch its northern edge and are counted only by some.",
+        "nb": "Den arabiske halvøy er Saudi-Arabia, Jemen, Oman og gulfstatene. Jordan og Irak grenser til den i nord og regnes bare med av noen."
+      },
+      "verified": false
+    },
+    "Q2218629": {
+      "text": {
+        "en": "The Arab Gulf states are the six members of the Gulf Cooperation Council. Iraq and Iran also touch the Gulf but are not among them.",
+        "nb": "Gulfstatene er de seks medlemmene av Gulfstatenes samarbeidsråd. Irak og Iran ligger også ved Persiabukta, men regnes ikke med."
+      },
+      "verified": false
+    },
+    "Q60140": {
+      "text": {
+        "en": "The Indian subcontinent rides its own tectonic plate, which pushed up the Himalayas when it hit Asia.",
+        "nb": "Det indiske subkontinent ligger på sin egen kontinentalplate, som presset opp Himalaya da den traff Asia."
+      },
+      "verified": false
+    },
+    "Q43467": {
+      "text": {
+        "en": "Indochina is named for lying between India and China: Myanmar, Thailand, Laos, Cambodia and Vietnam.",
+        "nb": "Indokina har navnet fordi halvøya ligger mellom India og Kina: Myanmar, Thailand, Laos, Kambodsja og Vietnam."
+      },
+      "verified": false
+    },
+    "Q483134": {
+      "text": {
+        "en": "North and South Korea share the peninsula. A demilitarized zone runs across its waist.",
+        "nb": "Nord-Korea og Sør-Korea deler halvøya. En demilitarisert sone går tvers over midten av den."
+      },
+      "verified": false
+    },
+    "Q27611": {
+      "text": {
+        "en": "Central America is the land bridge from Mexico to Colombia. The UN counts Mexico in it; most everyday usage puts Mexico in North America.",
+        "nb": "Mellom-Amerika er landbroen fra Mexico til Colombia. FN regner Mexico med, men i dagligtale hører Mexico til Nord-Amerika."
+      },
+      "verified": false
+    },
+    "Q244323": {
+      "text": {
+        "en": "The Visegrád Group is named after the Hungarian castle town where its founders met: Poland, Czechia, Slovakia and Hungary.",
+        "nb": "Visegrádgruppen har navn etter den ungarske borgbyen der grunnleggerne møttes: Polen, Tsjekkia, Slovakia og Ungarn."
+      },
+      "verified": false
+    },
+    "Q1764511": {
+      "text": {
+        "en": "The Group of Seven is the United States, Japan, Germany, the United Kingdom, France, Italy and Canada. The EU also takes part.",
+        "nb": "Gruppen av sju er USA, Japan, Tyskland, Storbritannia, Frankrike, Italia og Canada. EU deltar også."
+      },
+      "verified": false
+    },
+    "Q458": {
+      "text": {
+        "en": "Norway, Iceland, Switzerland and the United Kingdom are in Europe but not in the EU.",
+        "nb": "Norge, Island, Sveits og Storbritannia ligger i Europa, men er ikke med i EU."
+      },
+      "verified": false
+    },
+    "Q7184": {
+      "text": {
+        "en": "NATO spans the Atlantic: the United States and Canada plus most of Europe. Finland and Sweden are its newest members.",
+        "nb": "NATO spenner over Atlanterhavet: USA og Canada pluss det meste av Europa. Finland og Sverige er de nyeste medlemmene."
+      },
+      "verified": false
+    }
+  }
+}
