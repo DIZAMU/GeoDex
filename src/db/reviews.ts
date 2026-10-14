@@ -3,9 +3,15 @@
  * from them and can be rebuilt at any time (CONTRIBUTING.md invariants 1 and 2).
  */
 import type { FSRS } from "ts-fsrs";
+import { eventsSince } from "@/engine/reset";
 import { applyReview, type CardState, createScheduler, replayAll } from "@/engine/scheduler";
 import type { CardId } from "@/engine/types";
-import type { GeoDexDb, ReviewEvent, SettingsRow } from "./db";
+import { type GeoDexDb, type ReviewEvent, SETTINGS_ROW_ID, type SettingsRow } from "./db";
+
+/** When progress was last reset, if ever. Events up to then are not replayed. */
+async function resetTime(db: GeoDexDb): Promise<number | null> {
+  return (await db.settings.get(SETTINGS_ROW_ID))?.progressResetAt ?? null;
+}
 
 export function schedulerFor(settings: Pick<SettingsRow, "requestRetention" | "fsrsParams">): FSRS {
   return createScheduler({
@@ -23,7 +29,7 @@ export async function recordReview(
   scheduler: FSRS,
   event: ReviewEvent,
 ): Promise<CardState | null> {
-  return db.transaction("rw", db.reviewEvents, db.cardState, async () => {
+  return db.transaction("rw", db.reviewEvents, db.cardState, db.settings, async () => {
     await db.reviewEvents.add(event);
     const cached = (await db.cardState.get(event.cardId)) ?? null;
     if (cached?.lastReview != null && event.reviewedAt < cached.lastReview) {
@@ -40,7 +46,10 @@ async function rebuildCard(
   scheduler: FSRS,
   cardId: CardId,
 ): Promise<CardState | null> {
-  const events = await db.reviewEvents.where("cardId").equals(cardId).toArray();
+  const events = eventsSince(
+    await db.reviewEvents.where("cardId").equals(cardId).toArray(),
+    await resetTime(db),
+  );
   const state = replayAll(scheduler, events).get(cardId) ?? null;
   if (state) await db.cardState.put(state);
   else await db.cardState.delete(cardId);
@@ -49,8 +58,11 @@ async function rebuildCard(
 
 /** Throws away the cache and replays every event. Used after sync and settings changes. */
 export async function rebuildCardStates(db: GeoDexDb, scheduler: FSRS): Promise<number> {
-  return db.transaction("rw", db.reviewEvents, db.cardState, async () => {
-    const states = replayAll(scheduler, await db.reviewEvents.toArray());
+  return db.transaction("rw", db.reviewEvents, db.cardState, db.settings, async () => {
+    const states = replayAll(
+      scheduler,
+      eventsSince(await db.reviewEvents.toArray(), await resetTime(db)),
+    );
     await db.cardState.clear();
     await db.cardState.bulkPut([...states.values()]);
     return states.size;
@@ -59,4 +71,18 @@ export async function rebuildCardStates(db: GeoDexDb, scheduler: FSRS): Promise<
 
 export async function loadCardStates(db: GeoDexDb): Promise<Map<CardId, CardState>> {
   return new Map((await db.cardState.toArray()).map((state) => [state.cardId, state]));
+}
+
+/**
+ * Starts over: progress, streak and stats count only reviews from now on, and placement
+ * runs again. Nothing is deleted: the events stay in the log and in exports.
+ */
+export async function resetProgress(db: GeoDexDb, scheduler: FSRS, now = Date.now()) {
+  await db.settings.update(SETTINGS_ROW_ID, {
+    progressResetAt: now,
+    placementCompletedAt: null,
+    updatedAt: now,
+  });
+  await db.placementProgress.clear();
+  await rebuildCardStates(db, scheduler);
 }

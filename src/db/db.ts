@@ -26,6 +26,11 @@ export type SettingsRow = {
   currencyAndLanguage: boolean;
   countdownSeconds: 0 | 10 | 15 | 20;
   placementCompletedAt: number | null;
+  /**
+   * "Reset progress": events at or before this time are kept but no longer replayed.
+   * Absent on rows written before the reset existed.
+   */
+  progressResetAt?: number | null;
   updatedAt: number;
 };
 
@@ -51,6 +56,7 @@ export const DEFAULT_SETTINGS: SettingsValues = {
   currencyAndLanguage: true,
   countdownSeconds: 0,
   placementCompletedAt: null,
+  progressResetAt: null,
 };
 
 /** Settings that stay on this device and are never synced. */

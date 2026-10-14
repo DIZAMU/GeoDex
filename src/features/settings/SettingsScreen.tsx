@@ -1,7 +1,8 @@
-import type { ReactNode } from "react";
+import { type ReactNode, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import { db, type SettingsRow } from "@/db/db";
+import { resetProgress } from "@/db/reviews";
 import { updateSettings } from "@/db/settings";
 import { LanguageSwitcher } from "@/i18n/LanguageSwitcher";
 import { isLocale } from "@/i18n/locales";
@@ -11,7 +12,7 @@ import { Loader } from "@/ui/loader";
 import { ToggleGroup, ToggleGroupItem } from "@/ui/toggle-group";
 import { CountryPicker } from "../onboarding/CountryPicker";
 import { scopedCountries } from "../study/plan";
-import { useLearner } from "../study/useLearner";
+import { type Learner, useLearner } from "../study/useLearner";
 import { BackupSection } from "./BackupSection";
 import { SyncSection } from "./SyncSection";
 
@@ -168,6 +169,9 @@ export function SettingsScreen() {
           {t("settings.rerunPlacement")}
         </Button>
       </Group>
+      <Group title={t("reset.title")}>
+        <ResetProgress learner={learner} />
+      </Group>
       <Group title={t("sync.title")}>
         <SyncSection />
       </Group>
@@ -182,6 +186,45 @@ export function SettingsScreen() {
           locale={locale}
         />
       </Group>
+    </div>
+  );
+}
+
+/** Reset progress, behind a confirm step. Events are kept (CONTRIBUTING.md invariant 1). */
+function ResetProgress({ learner }: { learner: Learner }) {
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+  const [confirming, setConfirming] = useState(false);
+  return (
+    <div className="flex flex-col gap-3" data-testid="reset-progress">
+      <p className="max-w-[60ch] text-muted-foreground">{t("reset.body")}</p>
+      {confirming ? (
+        <div className="flex flex-wrap items-center gap-3">
+          <p className="w-full font-medium">{t("reset.confirm")}</p>
+          <Button
+            variant="destructive"
+            onClick={async () => {
+              await resetProgress(db, learner.scheduler);
+              navigate("/", { viewTransition: true });
+            }}
+            data-testid="reset-confirm"
+          >
+            {t("reset.yes")}
+          </Button>
+          <Button variant="outline" onClick={() => setConfirming(false)} data-testid="reset-cancel">
+            {t("reset.cancel")}
+          </Button>
+        </div>
+      ) : (
+        <Button
+          variant="outline"
+          className="self-start"
+          onClick={() => setConfirming(true)}
+          data-testid="reset-start"
+        >
+          {t("reset.button")}
+        </Button>
+      )}
     </div>
   );
 }
