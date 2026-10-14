@@ -7,5 +7,8 @@
     "directory": "./dist",
     // Client-side routes (for example /atlas) return index.html.
     "not_found_handling": "single-page-application"
-  }
+  },
+  // Cloudflare builds a preview of every pull request branch with `wrangler preview`, which
+  // needs this block. Previews take their settings from the top level.
+  "previews": {}
 }
