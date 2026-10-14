@@ -46,140 +46,71 @@
       "nb": "New York"
     }
   },
-  "formerCapital": [
-    "Q35493",
-    "Q8660",
-    "Q37995"
-  ],
+  "formerCapital": ["Q35493", "Q8660", "Q37995"],
   "aliases": {
     "Q1156": {
-      "en": [
-        "Bombay"
-      ],
-      "nb": [
-        "Bombay"
-      ]
+      "en": ["Bombay"],
+      "nb": ["Bombay"]
     },
     "Q1854": {
-      "en": [
-        "Saigon"
-      ],
-      "nb": [
-        "Saigon"
-      ]
+      "en": ["Saigon"],
+      "nb": ["Saigon"]
     },
     "Q37995": {
-      "en": [
-        "Rangoon"
-      ],
-      "nb": [
-        "Rangoon"
-      ]
+      "en": ["Rangoon"],
+      "nb": ["Rangoon"]
     },
     "Q35493": {
-      "en": [
-        "Alma-Ata"
-      ],
-      "nb": [
-        "Alma-Ata"
-      ]
+      "en": ["Alma-Ata"],
+      "nb": ["Alma-Ata"]
     },
     "Q656": {
-      "en": [
-        "St Petersburg",
-        "Leningrad"
-      ],
-      "nb": [
-        "Sankt Petersburg",
-        "Leningrad"
-      ]
+      "en": ["St Petersburg", "Leningrad"],
+      "nb": ["Sankt Petersburg", "Leningrad"]
     },
     "Q101625": {
-      "en": [
-        "Marrakesh"
-      ],
-      "nb": [
-        "Marrakesh"
-      ]
+      "en": ["Marrakesh"],
+      "nb": ["Marrakesh"]
     },
     "Q72": {
-      "en": [
-        "Zürich"
-      ],
-      "nb": [
-        "Zurich"
-      ]
+      "en": ["Zürich"],
+      "nb": ["Zurich"]
     },
     "Q71": {
-      "en": [
-        "Genève"
-      ],
-      "nb": [
-        "Geneva",
-        "Genf"
-      ]
+      "en": ["Genève"],
+      "nb": ["Geneva", "Genf"]
     },
     "Q1726": {
-      "en": [
-        "München"
-      ],
-      "nb": [
-        "Munich"
-      ]
+      "en": ["München"],
+      "nb": ["Munich"]
     },
     "Q490": {
-      "en": [
-        "Milano"
-      ],
-      "nb": [
-        "Milan"
-      ]
+      "en": ["Milano"],
+      "nb": ["Milan"]
     },
     "Q641": {
-      "en": [
-        "Venezia"
-      ],
-      "nb": [
-        "Venice",
-        "Venedig"
-      ]
+      "en": ["Venezia"],
+      "nb": ["Venice", "Venedig"]
     },
     "Q406": {
-      "en": [
-        "Constantinople"
-      ],
-      "nb": [
-        "Konstantinopel"
-      ]
+      "en": ["Constantinople"],
+      "nb": ["Konstantinopel"]
     },
     "Q60": {
-      "en": [
-        "New York City",
-        "NYC"
-      ],
-      "nb": [
-        "New York City"
-      ]
+      "en": ["New York City", "NYC"],
+      "nb": ["New York City"]
     },
     "Q65": {
-      "en": [
-        "LA"
-      ],
-      "nb": [
-        "LA"
-      ]
+      "en": ["LA"],
+      "nb": ["LA"]
     },
     "Q8646": {
       "en": [],
-      "nb": [
-        "Hong Kong"
-      ]
+      "nb": ["Hong Kong"]
     },
     "Q1960": {
       "en": [],
-      "nb": [
-        "Dar es Salaam"
-      ]
+      "nb": ["Dar es Salaam"]
     }
   }
 }
