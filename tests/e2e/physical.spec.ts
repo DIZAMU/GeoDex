@@ -1,62 +1,11 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { expect, type Page, test } from "@playwright/test";
-import { chooseThemeAndLocale, setUpLearner } from "./helpers";
+import { chooseThemeAndLocale, seed, setUpLearner } from "./helpers";
 
 type Feature = { id: string; kind: string; names: { en: string; nb: string } };
 const FEATURES = (JSON.parse(readFileSync("data/physical.json", "utf8")) as { features: Feature[] })
   .features;
-
-/** Appends review events to IndexedDB and clears the card cache, so a reload replays them. */
-async function seed(
-  page: Page,
-  cards: { cardId: string; daysAgo: number; rating: number }[],
-  noNewCards = false,
-) {
-  await page.evaluate(
-    ({ cards, noNewCards }) =>
-      new Promise<void>((resolve, reject) => {
-        const open = indexedDB.open("geodex");
-        open.onerror = () => reject(open.error);
-        open.onsuccess = () => {
-          const tx = open.result.transaction(
-            ["reviewEvents", "cardState", "settings"],
-            "readwrite",
-          );
-          if (noNewCards) {
-            // Only the seeded cards come up: no new cards today.
-            const settings = tx.objectStore("settings");
-            const get = settings.get("user");
-            get.onsuccess = () => settings.put({ ...get.result, newPerDayOverride: 0 });
-          }
-          const events = tx.objectStore("reviewEvents");
-          cards.forEach(({ cardId, daysAgo, rating }, i) => {
-            events.put({
-              id: `seed-${i}-${cardId}`,
-              cardId,
-              reviewedAt: Date.now() - daysAgo * 86_400_000,
-              rating,
-              mode: "mc",
-              inputSetting: "mc",
-              correct: rating > 1,
-              chosenAnswer: null,
-              responseMs: 3000,
-              durationMs: 8000,
-              snippetIds: [],
-              scheduled: true,
-              locale: "en",
-              deviceId: "seed",
-              synced: 0,
-            });
-          });
-          tx.objectStore("cardState").clear();
-          tx.oncomplete = () => resolve();
-          tx.onerror = () => reject(tx.error);
-        };
-      }),
-    { cards, noNewCards },
-  );
-}
 
 /**
  * A whole-pixel screen point where the topmost tappable feature is `id`, inside the map:
