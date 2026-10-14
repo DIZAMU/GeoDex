@@ -8,6 +8,7 @@ import { parse } from "yaml";
 import type {
   CitiesFile,
   CountriesFile,
+  HistoryFile,
   LandmarksFile,
   PhysicalFile,
 } from "../../src/data/types.ts";
@@ -96,6 +97,7 @@ export function lintContent(
     citiesPath?: string;
     landmarksPath?: string;
     physicalPath?: string;
+    historyPath?: string;
   } = {},
 ): string[] {
   const root = options.root ?? "content";
@@ -120,6 +122,11 @@ export function lintContent(
     ? (JSON.parse(readFileSync(physicalPath, "utf8")) as PhysicalFile).features
     : [];
   const physicalById = new Map(physical.map((f) => [f.id, f]));
+  const historyPath = options.historyPath ?? "data/history.json";
+  const history = existsSync(historyPath)
+    ? (JSON.parse(readFileSync(historyPath, "utf8")) as HistoryFile).entities
+    : [];
+  const historyById = new Map(history.map((e) => [e.id, e]));
   const ids = new Set<string>();
   const texts: Record<Locale, Map<string, string>> = { en: new Map(), nb: new Map() };
   const seenEntities = new Set<string>();
@@ -170,6 +177,13 @@ export function lintContent(
       // Physical features are grouped by region: a continent, or "ocean".
       name: "physical",
       groupOf: (id: string) => physicalById.get(id)?.region,
+      minFacts: rules.min_facts_per_city,
+      countryExtras: false,
+    },
+    {
+      // Former names, dissolved states and empires are grouped by continent.
+      name: "history",
+      groupOf: (id: string) => historyById.get(id)?.region,
       minFacts: rules.min_facts_per_city,
       countryExtras: false,
     },
@@ -271,6 +285,8 @@ export function lintContent(
       if (!seenEntities.has(l.id)) errors.push(`${l.id} (${l.names.en}): no content`);
     for (const f of physical)
       if (!seenEntities.has(f.id)) errors.push(`${f.id} (${f.names.en}): no content`);
+    for (const e of history)
+      if (!seenEntities.has(e.id)) errors.push(`${e.id} (${e.names.en}): no content`);
   }
 
   const confusionsPath = `${root}/confusions.json`;
