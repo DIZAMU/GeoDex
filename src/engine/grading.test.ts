@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { type GradeInput, grade, rollingMedian } from "./grading";
+import { type GradeInput, grade, gradePin, rollingMedian } from "./grading";
 
 const base: GradeInput = {
   correct: true,
@@ -50,5 +50,15 @@ describe("rollingMedian", () => {
     expect(rollingMedian([1, 2, 3, 4])).toBe(2.5);
     expect(rollingMedian([1000, 90_000, 90_000])).toBe(60_000);
     expect(rollingMedian([100, 1, 2, 3], 3)).toBe(2);
+  });
+});
+
+describe("gradePin", () => {
+  it("grades by distance: 100 km Good, 300 km Hard, beyond Again", () => {
+    expect(gradePin(0)).toEqual({ rating: 3, correct: true });
+    expect(gradePin(100)).toEqual({ rating: 3, correct: true });
+    expect(gradePin(101)).toEqual({ rating: 2, correct: true });
+    expect(gradePin(300)).toEqual({ rating: 2, correct: true });
+    expect(gradePin(301)).toEqual({ rating: 1, correct: false });
   });
 });
