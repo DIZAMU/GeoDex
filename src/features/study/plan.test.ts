@@ -13,6 +13,7 @@ const world = assembleWorld(
   read("data/curated/official-languages.json"),
   read("data/curated/confusion-pairs.json"),
   read("data/cities.json"),
+  read("data/curated/groups.json"),
 );
 const scheduler = createScheduler();
 const settings: PlanSettings = {
@@ -175,5 +176,45 @@ describe("cities in the plan", () => {
     const states = replayAll(scheduler, events);
     const plan = planDay({ world, settings: cities, states, events, scheduler, now });
     expect(plan.queue.some((q) => q.cardId === "Q3130:city_to_country" && !q.isNew)).toBe(true);
+  });
+});
+
+describe("groups in the plan", () => {
+  const groups = { ...settings, modules: { groups: true } };
+  const SCANDINAVIA = "Q21195";
+  const introduce = (ids: string[]) => {
+    const events = ids.flatMap((id, i) => [
+      ev(`${id}:map_to_name`, now - 86_400_000 * 2, `${id}m${i}`),
+      ev(`${id}:name_to_map`, now - 86_400_000 * 2, `${id}n${i}`),
+    ]);
+    return { events, states: replayAll(scheduler, events) };
+  };
+
+  it("adds no group cards while the module is off", () => {
+    const { events, states } = introduce(["NOR", "SWE"]);
+    const plan = planDay({ world, settings, states, events, scheduler, now });
+    expect(plan.queue.some((q) => world.groupById.has(q.entityId))).toBe(false);
+  });
+
+  it("starts a group once half its members are introduced", () => {
+    const one = introduce(["NOR"]);
+    const early = planDay({ world, settings: groups, ...one, scheduler, now });
+    expect(early.queue.some((q) => q.entityId === SCANDINAVIA)).toBe(false);
+    const two = introduce(["NOR", "SWE"]);
+    const plan = planDay({ world, settings: groups, ...two, scheduler, now });
+    const cards = plan.queue.filter((q) => q.entityId === SCANDINAVIA).map((q) => q.cardId);
+    expect(cards.length).toBeGreaterThan(0);
+    expect(plan.queue.find((q) => q.entityId === SCANDINAVIA)?.subregion).toBe("154");
+    expect(plan.newCount).toBe(25);
+  });
+
+  it("keeps due group cards on the plan, and drops them when the module is off", () => {
+    const base = introduce(["NOR", "SWE"]);
+    const events = [...base.events, ev(`${SCANDINAVIA}:group_member`, now - 86_400_000 * 30, "g")];
+    const states = replayAll(scheduler, events);
+    const on = planDay({ world, settings: groups, states, events, scheduler, now });
+    expect(on.queue.map((q) => q.cardId)).toContain(`${SCANDINAVIA}:group_member`);
+    const off = planDay({ world, settings, states, events, scheduler, now });
+    expect(off.queue.map((q) => q.cardId)).not.toContain(`${SCANDINAVIA}:group_member`);
   });
 });

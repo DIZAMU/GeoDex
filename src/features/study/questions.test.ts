@@ -10,6 +10,7 @@ import {
   buildQuestion,
   checkChoice,
   checkPin,
+  checkTaps,
   checkTyped,
   countryFacts,
   type StudyContext,
@@ -23,6 +24,7 @@ const world = assembleWorld(
   read("data/curated/official-languages.json"),
   read("data/curated/confusion-pairs.json"),
   read("data/cities.json"),
+  read("data/curated/groups.json"),
 );
 const ctx: StudyContext = {
   world,
@@ -218,5 +220,79 @@ describe("cities (PLAN.md Phase 6)", () => {
     expect(checkPin(q, [144.96, -37.81])).toMatchObject({ correct: false, rating: 1 });
     const strong = buildQuestion(ctx, "Q3130:city_to_map", state(30), "auto", "s");
     expect(strong.answer).toMatchObject({ kind: "pin", view: { kind: "world" } });
+  });
+});
+
+describe("group questions (DECISIONS.md 034)", () => {
+  const scoped = {
+    ...ctx,
+    scope: new Set(
+      world.countries.filter((c) => c.status !== "partially_recognized").map((c) => c.id),
+    ),
+  };
+  const SCANDINAVIA = "Q21195";
+  const BALKANS = "Q23522";
+
+  it("asks for a member among countries outside the group and its sometimes members", () => {
+    for (let i = 0; i < 20; i++) {
+      const q = buildQuestion(scoped, `${BALKANS}:group_member`, undefined, "auto", `s${i}`);
+      expect(q.answer.kind).toBe("choice");
+      if (q.answer.kind !== "choice") continue;
+      const ids = q.answer.options.map((o) => o.id);
+      expect(ids).toHaveLength(4);
+      expect(ids.filter((id) => q.correctIds.includes(id))).toHaveLength(1);
+      for (const id of ["GRC", "HRV", "SVN", "ROU", "TUR", "XKX"]) expect(ids).not.toContain(id);
+    }
+  });
+
+  it("accepts any member typed, in either language", () => {
+    const q = buildQuestion(scoped, `${SCANDINAVIA}:group_member`, state(30), "auto", "t");
+    expect(q.answer.kind).toBe("typed");
+    expect(checkTyped(q, ctx.indexes, "Sverige").correct).toBe(true);
+    expect(checkTyped(q, ctx.indexes, "Denmark").correct).toBe(true);
+    expect(checkTyped(q, ctx.indexes, "Finland").correct).toBe(false);
+  });
+
+  it("names a highlighted group, with overlapping groups as wrong names", () => {
+    const q = buildQuestion(scoped, "Q52062:map_to_group", undefined, "auto", "n");
+    expect(q.prompt.kind).toBe("groupMap");
+    if (q.prompt.kind === "groupMap")
+      expect(q.prompt.ids).toEqual(["DNK", "FIN", "ISL", "NOR", "SWE"]);
+    if (q.answer.kind !== "choice") throw new Error("expected choice");
+    expect(q.answer.options.map((o) => o.id)).toContain(SCANDINAVIA);
+    expect(checkChoice(q, "Q52062").correct).toBe(true);
+    const typed = buildQuestion(scoped, "Q52062:map_to_group", state(30), "auto", "n");
+    expect(checkTyped(typed, ctx.indexes, "Norden").correct).toBe(true);
+    expect(checkTyped(typed, ctx.indexes, "the Nordics").correct).toBe(true);
+    expect(checkTyped(typed, ctx.indexes, "Scandinavia").correct).toBe(false);
+  });
+
+  it("grades taps on the map, ignoring sometimes members", () => {
+    const q = buildQuestion(scoped, `${SCANDINAVIA}:group_to_map`, undefined, "auto", "m");
+    expect(q.answer.kind).toBe("taps");
+    if (q.answer.kind === "taps" && q.answer.view.kind === "countries") {
+      expect(q.answer.view.ids).toEqual(expect.arrayContaining(["NOR", "FIN", "GBR", "RUS"]));
+    }
+    expect(checkTaps(q, ["NOR", "SWE", "DNK", "FIN"])).toMatchObject({ correct: true, rating: 3 });
+    expect(checkTaps(q, ["NOR", "SWE"])).toMatchObject({ correct: true, rating: 2 });
+    expect(checkTaps(q, ["NOR", "EST"])).toMatchObject({
+      correct: false,
+      rating: 1,
+      chosenId: "EST",
+      taps: { tapped: ["EST", "NOR"], missed: ["DNK", "SWE"], wrong: ["EST"] },
+    });
+  });
+
+  it("builds every group card the plan can schedule", () => {
+    for (const g of world.groups) {
+      for (const type of ["group_to_map", "map_to_group", "group_member"]) {
+        for (const st of [undefined, state(30)]) {
+          const q = buildQuestion(scoped, `${g.id}:${type}`, st, "auto", "x");
+          expect(q.groupId).toBe(g.id);
+          expect(q.correctIds.length, g.id).toBeGreaterThan(0);
+          if (q.answer.kind === "choice") expect(q.answer.options).toHaveLength(4);
+        }
+      }
+    }
   });
 });
