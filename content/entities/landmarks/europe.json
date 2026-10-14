@@ -1,0 +1,1598 @@
+{
+  "group": "europe",
+  "entities": [
+    {
+      "entityId": "Q243",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q243.en.1",
+            "type": "anchor",
+            "text": "The Eiffel Tower stands in Paris on the Champ de Mars, an iron lattice rising beside the Seine."
+          },
+          {
+            "id": "Q243.en.2",
+            "type": "shape",
+            "text": "The Eiffel Tower is a giant iron letter A, legs planted wide in the middle of Paris."
+          },
+          {
+            "id": "Q243.en.3",
+            "type": "story",
+            "text": "Gustave Eiffel's firm built it, and Eiffel also engineered the iron frame inside the Statue of Liberty."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q243.nb.1",
+            "type": "anchor",
+            "text": "Eiffeltårnet står på Champ de Mars i Paris, et jerngitter som reiser seg ved Seinen."
+          },
+          {
+            "id": "Q243.nb.2",
+            "type": "shape",
+            "text": "Eiffeltårnet er en kjempestor bokstav A i jern som står bredbeint midt i Paris."
+          },
+          {
+            "id": "Q243.nb.3",
+            "type": "story",
+            "text": "Gustave Eiffels firma bygde tårnet, og Eiffel konstruerte også jernskjelettet inne i Frihetsgudinnen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q243.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Eiffel Tower is in Paris, on the left bank of the Seine.",
+            "nb": "Eiffeltårnet står i Paris, på venstre bredd av Seinen."
+          }
+        },
+        {
+          "id": "Q243.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was built for a world's fair and was first meant to stand for only a limited number of years.",
+            "nb": "Tårnet ble bygd til en verdensutstilling og skulle først bare stå i et begrenset antall år."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q10285",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q10285.en.1",
+            "type": "anchor",
+            "text": "The Colosseum is in the middle of Rome, a short walk from the Roman Forum."
+          },
+          {
+            "id": "Q10285.en.2",
+            "type": "shape",
+            "text": "The Colosseum is a giant stone doughnut with one bite taken out of its outer ring."
+          },
+          {
+            "id": "Q10285.en.3",
+            "type": "etymology",
+            "text": "Colosseum likely comes from a colossal bronze statue of Nero that once stood beside it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q10285.nb.1",
+            "type": "anchor",
+            "text": "Colosseum ligger midt i Roma, et kort stykke fra Forum Romanum."
+          },
+          {
+            "id": "Q10285.nb.2",
+            "type": "shape",
+            "text": "Colosseum er en kjempestor smultring av stein der noen har tatt en bit av den ytre ringen."
+          },
+          {
+            "id": "Q10285.nb.3",
+            "type": "etymology",
+            "text": "Navnet Colosseum kommer trolig av en enorm bronsestatue av Nero som en gang sto ved siden av."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q10285.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Colosseum is an amphitheatre in Rome, the capital of Italy.",
+            "nb": "Colosseum er et amfiteater i Roma, hovedstaden i Italia."
+          }
+        },
+        {
+          "id": "Q10285.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Gladiator fights and animal hunts were staged in it for spectators in ancient Rome.",
+            "nb": "I antikkens Roma ble det holdt gladiatorkamper og dyrejakter her for publikum."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q41225",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q41225.en.1",
+            "type": "anchor",
+            "text": "Big Ben hangs in the clock tower at the north end of the Houses of Parliament in London, on the Thames."
+          },
+          {
+            "id": "Q41225.en.2",
+            "type": "contrast",
+            "text": "Big Ben is the name of the great bell; the tower itself is officially the Elizabeth Tower."
+          },
+          {
+            "id": "Q41225.en.3",
+            "type": "story",
+            "text": "A huge bell nicknamed Ben rings the hour so loudly that the whole of Westminster sets its watch by it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q41225.nb.1",
+            "type": "anchor",
+            "text": "Big Ben henger i klokketårnet i nordenden av parlamentsbygningen i London, ved Themsen."
+          },
+          {
+            "id": "Q41225.nb.2",
+            "type": "contrast",
+            "text": "Big Ben er navnet på den store klokken. Selve tårnet heter offisielt Elizabeth Tower."
+          },
+          {
+            "id": "Q41225.nb.3",
+            "type": "story",
+            "text": "En diger klokke med kallenavnet Ben slår timene så høyt at hele Westminster stiller klokka etter den."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q41225.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Big Ben is in Westminster, London, beside the River Thames.",
+            "nb": "Big Ben står i Westminster i London, ved elven Themsen."
+          }
+        },
+        {
+          "id": "Q41225.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The tower was renamed Elizabeth Tower in honour of Queen Elizabeth II.",
+            "nb": "Tårnet fikk navnet Elizabeth Tower til ære for dronning Elizabeth II."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q48435",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q48435.en.1",
+            "type": "anchor",
+            "text": "The Sagrada Família rises in Barcelona, on Spain's Mediterranean coast in Catalonia."
+          },
+          {
+            "id": "Q48435.en.2",
+            "type": "story",
+            "text": "Antoni Gaudí worked on the Sagrada Família for decades, and it was still unfinished when he died."
+          },
+          {
+            "id": "Q48435.en.3",
+            "type": "shape",
+            "text": "The Sagrada Família looks like a cluster of stone sandcastles dripped from wet sand, spires and all."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q48435.nb.1",
+            "type": "anchor",
+            "text": "Sagrada Família reiser seg i Barcelona, på Spanias middelhavskyst i Catalonia."
+          },
+          {
+            "id": "Q48435.nb.2",
+            "type": "story",
+            "text": "Antoni Gaudí arbeidet med Sagrada Família i flere tiår, og kirken var fortsatt uferdig da han døde."
+          },
+          {
+            "id": "Q48435.nb.3",
+            "type": "shape",
+            "text": "Sagrada Família ser ut som sandslott laget av drypp av våt sand, med spir på spir."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q48435.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Sagrada Família is a basilica in Barcelona, Spain.",
+            "nb": "Sagrada Família er en basilika i Barcelona i Spania."
+          }
+        },
+        {
+          "id": "Q48435.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was designed by the Catalan architect Antoni Gaudí and has been under construction for more than a century.",
+            "nb": "Den ble tegnet av den katalanske arkitekten Antoni Gaudí og har vært under bygging i over hundre år."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q131013",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q131013.en.1",
+            "type": "anchor",
+            "text": "The Acropolis is the rocky hill above central Athens, crowned by the Parthenon."
+          },
+          {
+            "id": "Q131013.en.2",
+            "type": "etymology",
+            "text": "Acropolis is Greek for the high city: akros means top, polis means city."
+          },
+          {
+            "id": "Q131013.en.3",
+            "type": "story",
+            "text": "Athena's temple sits on a rock above Athens so the goddess can keep an eye on the whole city."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q131013.nb.1",
+            "type": "anchor",
+            "text": "Akropolis er klippehøyden over sentrum av Athen, med Parthenon på toppen."
+          },
+          {
+            "id": "Q131013.nb.2",
+            "type": "etymology",
+            "text": "Akropolis er gresk for den høye byen: akros betyr topp, polis betyr by."
+          },
+          {
+            "id": "Q131013.nb.3",
+            "type": "story",
+            "text": "Athenas tempel står på en klippe over Athen, så gudinnen kan holde øye med hele byen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q131013.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Acropolis stands above Athens, the capital of Greece.",
+            "nb": "Akropolis ligger over Athen, hovedstaden i Hellas."
+          }
+        },
+        {
+          "id": "Q131013.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its best-known building, the Parthenon, was a temple to the goddess Athena.",
+            "nb": "Den mest kjente bygningen, Parthenon, var et tempel for gudinnen Athena."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q39054",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q39054.en.1",
+            "type": "anchor",
+            "text": "The Leaning Tower of Pisa stands in Tuscany in central Italy, next to Pisa's cathedral."
+          },
+          {
+            "id": "Q39054.en.2",
+            "type": "story",
+            "text": "The tower started leaning while it was being built, because the soft ground under one side gave way."
+          },
+          {
+            "id": "Q39054.en.3",
+            "type": "shape",
+            "text": "Every tourist in Pisa holds a hand out to push the tower back up, and it keeps leaning anyway."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q39054.nb.1",
+            "type": "anchor",
+            "text": "Det skjeve tårn i Pisa står i Toscana midt i Italia, ved siden av domkirken i Pisa."
+          },
+          {
+            "id": "Q39054.nb.2",
+            "type": "story",
+            "text": "Tårnet begynte å helle allerede mens det ble bygd, fordi den myke grunnen under den ene siden ga etter."
+          },
+          {
+            "id": "Q39054.nb.3",
+            "type": "shape",
+            "text": "Alle turister i Pisa holder ut hånden for å skyve tårnet på plass, men det heller like mye."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q39054.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The tower is in Pisa, in the Italian region of Tuscany.",
+            "nb": "Tårnet står i Pisa, i regionen Toscana i Italia."
+          }
+        },
+        {
+          "id": "Q39054.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the bell tower of Pisa's cathedral.",
+            "nb": "Det er klokketårnet til domkirken i Pisa."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q4152",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q4152.en.1",
+            "type": "anchor",
+            "text": "Neuschwanstein sits on a crag in the Bavarian Alps in southern Germany, near the Austrian border."
+          },
+          {
+            "id": "Q4152.en.2",
+            "type": "story",
+            "text": "King Ludwig II of Bavaria built Neuschwanstein as a fairy-tale retreat, and it later inspired Disney's castle."
+          },
+          {
+            "id": "Q4152.en.3",
+            "type": "etymology",
+            "text": "Neuschwanstein means new swan stone; the swan was the emblem of the knight in Wagner's operas that Ludwig loved."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q4152.nb.1",
+            "type": "anchor",
+            "text": "Neuschwanstein ligger på en klippe i de bayerske Alpene sør i Tyskland, nær grensen til Østerrike."
+          },
+          {
+            "id": "Q4152.nb.2",
+            "type": "story",
+            "text": "Kong Ludwig II av Bayern bygde Neuschwanstein som et eventyrslott, og det inspirerte senere Disneys slott."
+          },
+          {
+            "id": "Q4152.nb.3",
+            "type": "etymology",
+            "text": "Neuschwanstein betyr ny svanestein. Svanen hørte til ridderen i Wagners operaer, som Ludwig elsket."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q4152.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Neuschwanstein Castle is in Bavaria, in the south of Germany.",
+            "nb": "Neuschwanstein ligger i Bayern, sør i Tyskland."
+          }
+        },
+        {
+          "id": "Q4152.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was built for King Ludwig II of Bavaria in the late nineteenth century.",
+            "nb": "Slottet ble bygd for kong Ludwig II av Bayern på slutten av attenhundretallet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q82425",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q82425.en.1",
+            "type": "anchor",
+            "text": "The Brandenburg Gate stands in central Berlin, at the west end of the avenue Unter den Linden."
+          },
+          {
+            "id": "Q82425.en.2",
+            "type": "story",
+            "text": "The Berlin Wall ran right past the Brandenburg Gate, so for decades nobody could walk through it."
+          },
+          {
+            "id": "Q82425.en.3",
+            "type": "shape",
+            "text": "The Brandenburg Gate is a row of stone columns with a chariot and four horses parked on the roof."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q82425.nb.1",
+            "type": "anchor",
+            "text": "Brandenburger Tor står i sentrum av Berlin, i vestenden av gaten Unter den Linden."
+          },
+          {
+            "id": "Q82425.nb.2",
+            "type": "story",
+            "text": "Berlinmuren gikk tett forbi Brandenburger Tor, så i flere tiår kunne ingen gå gjennom porten."
+          },
+          {
+            "id": "Q82425.nb.3",
+            "type": "shape",
+            "text": "Brandenburger Tor er en rekke steinsøyler med en vogn og fire hester parkert på taket."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q82425.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Brandenburg Gate is in Berlin, the capital of Germany.",
+            "nb": "Brandenburger Tor står i Berlin, hovedstaden i Tyskland."
+          }
+        },
+        {
+          "id": "Q82425.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It became a symbol of German reunification after the Berlin Wall fell.",
+            "nb": "Porten ble et symbol på gjenforeningen av Tyskland etter at Berlinmuren falt."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q39671",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q39671.en.1",
+            "type": "anchor",
+            "text": "Stonehenge stands on Salisbury Plain in southern England, west of London."
+          },
+          {
+            "id": "Q39671.en.2",
+            "type": "shape",
+            "text": "Stonehenge is a ring of giant stone door frames standing in an open field."
+          },
+          {
+            "id": "Q39671.en.3",
+            "type": "contrast",
+            "text": "Stonehenge is far older than the druids often linked to it; it was built thousands of years before them."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q39671.nb.1",
+            "type": "anchor",
+            "text": "Stonehenge står på Salisbury-sletten sør i England, vest for London."
+          },
+          {
+            "id": "Q39671.nb.2",
+            "type": "shape",
+            "text": "Stonehenge er en ring av kjempestore dørkarmer av stein midt på et åpent jorde."
+          },
+          {
+            "id": "Q39671.nb.3",
+            "type": "contrast",
+            "text": "Stonehenge er langt eldre enn druidene det ofte kobles til. Det ble reist tusenvis av år før dem."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q39671.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Stonehenge is in Wiltshire, in the south of England.",
+            "nb": "Stonehenge ligger i Wiltshire, sør i England."
+          }
+        },
+        {
+          "id": "Q39671.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its large stones are arranged to line up with the sunrise on the summer solstice.",
+            "nb": "De store steinene står slik at de peker mot soloppgangen ved sommersolverv."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q129846",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q129846.en.1",
+            "type": "anchor",
+            "text": "St. Basil's Cathedral stands on Red Square in Moscow, right beside the Kremlin walls."
+          },
+          {
+            "id": "Q129846.en.2",
+            "type": "shape",
+            "text": "St. Basil's looks like a box of giant striped ice-cream cones, each in a different flavour."
+          },
+          {
+            "id": "Q129846.en.3",
+            "type": "story",
+            "text": "Ivan the Terrible had St. Basil's built to celebrate a victory over the Khanate of Kazan."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q129846.nb.1",
+            "type": "anchor",
+            "text": "Vasilijkatedralen står på Den røde plass i Moskva, rett ved Kremlmurene."
+          },
+          {
+            "id": "Q129846.nb.2",
+            "type": "shape",
+            "text": "Vasilijkatedralen ser ut som en eske med kjempestore stripete iskremkjegler i hver sin smak."
+          },
+          {
+            "id": "Q129846.nb.3",
+            "type": "story",
+            "text": "Ivan den grusomme lot Vasilijkatedralen bygge for å feire en seier over khanatet Kazan."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q129846.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "St. Basil's Cathedral is on Red Square in Moscow, Russia.",
+            "nb": "Vasilijkatedralen står på Den røde plass i Moskva i Russland."
+          }
+        },
+        {
+          "id": "Q129846.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its onion domes are each painted in different colours and patterns.",
+            "nb": "Løkkuplene er malt i hver sine farger og mønstre."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q83125",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q83125.en.1",
+            "type": "anchor",
+            "text": "Tower Bridge crosses the Thames in London next to the Tower of London, hence its name."
+          },
+          {
+            "id": "Q83125.en.2",
+            "type": "contrast",
+            "text": "Tower Bridge has two towers and opens up; London Bridge, the next bridge upstream, is plain and flat."
+          },
+          {
+            "id": "Q83125.en.3",
+            "type": "story",
+            "text": "Tower Bridge splits in the middle and lifts both halves so tall ships can sail into the Pool of London."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q83125.nb.1",
+            "type": "anchor",
+            "text": "Tower Bridge krysser Themsen i London ved siden av Tower of London, derav navnet."
+          },
+          {
+            "id": "Q83125.nb.2",
+            "type": "contrast",
+            "text": "Tower Bridge har to tårn og kan åpnes. London Bridge, neste bro oppover elven, er enkel og flat."
+          },
+          {
+            "id": "Q83125.nb.3",
+            "type": "story",
+            "text": "Tower Bridge deler seg på midten og løfter begge halvdelene så høye skip kan seile inn til London."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q83125.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Tower Bridge crosses the River Thames in London.",
+            "nb": "Tower Bridge krysser elven Themsen i London."
+          }
+        },
+        {
+          "id": "Q83125.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is a bascule bridge: two sections of the road deck lift to let ships through.",
+            "nb": "Det er en klaffebro: to deler av kjørebanen løftes for å slippe skip gjennom."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q20892",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q20892.en.1",
+            "type": "anchor",
+            "text": "Mont-Saint-Michel is a tidal island off Normandy, in northern France near the border with Brittany."
+          },
+          {
+            "id": "Q20892.en.2",
+            "type": "shape",
+            "text": "Mont-Saint-Michel is a stone cone of houses with an abbey on top, sitting in the sea like a wedding cake."
+          },
+          {
+            "id": "Q20892.en.3",
+            "type": "story",
+            "text": "The tide here comes in so fast that the island turns from a hill in the sand to a rock in the sea within hours."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q20892.nb.1",
+            "type": "anchor",
+            "text": "Mont-Saint-Michel er en tidevannsøy utenfor Normandie nord i Frankrike, nær grensen mot Bretagne."
+          },
+          {
+            "id": "Q20892.nb.2",
+            "type": "shape",
+            "text": "Mont-Saint-Michel er en kjegle av steinhus med et kloster på toppen, som en bryllupskake i havet."
+          },
+          {
+            "id": "Q20892.nb.3",
+            "type": "story",
+            "text": "Tidevannet kommer så fort inn at øya går fra å være en haug i sanden til en klippe i havet på noen timer."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q20892.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Mont-Saint-Michel is in Normandy, in northwestern France.",
+            "nb": "Mont-Saint-Michel ligger i Normandie, nordvest i Frankrike."
+          }
+        },
+        {
+          "id": "Q20892.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its abbey was built on the top of the rock in the Middle Ages.",
+            "nb": "Klosteret på toppen av klippen ble bygd i middelalderen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q47476",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q47476.en.1",
+            "type": "anchor",
+            "text": "The Alhambra stands on a hill above Granada in Andalusia, southern Spain, below the Sierra Nevada."
+          },
+          {
+            "id": "Q47476.en.2",
+            "type": "etymology",
+            "text": "Alhambra comes from Arabic for the red one, after the reddish walls of the fortress."
+          },
+          {
+            "id": "Q47476.en.3",
+            "type": "story",
+            "text": "The Moorish rulers of Granada built their palace here, and it was the last Muslim stronghold in Spain to fall."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q47476.nb.1",
+            "type": "anchor",
+            "text": "Alhambra ligger på en høyde over Granada i Andalucía sør i Spania, nedenfor Sierra Nevada."
+          },
+          {
+            "id": "Q47476.nb.2",
+            "type": "etymology",
+            "text": "Alhambra kommer av arabisk for den røde, etter de rødlige murene i festningen."
+          },
+          {
+            "id": "Q47476.nb.3",
+            "type": "story",
+            "text": "De mauriske herskerne i Granada bygde palasset sitt her, og det var den siste muslimske festningen i Spania som falt."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q47476.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Alhambra is in Granada, in the Andalusia region of southern Spain.",
+            "nb": "Alhambra ligger i Granada, i regionen Andalucía sør i Spania."
+          }
+        },
+        {
+          "id": "Q47476.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is a palace and fortress complex built by the Nasrid rulers of Granada.",
+            "nb": "Det er et palass og en festning bygd av nasride-herskerne i Granada."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q12512",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q12512.en.1",
+            "type": "anchor",
+            "text": "St. Peter's Basilica stands in Vatican City, the tiny state surrounded by Rome."
+          },
+          {
+            "id": "Q12512.en.2",
+            "type": "story",
+            "text": "Michelangelo designed the great dome of St. Peter's, which rises over the square where crowds meet the pope."
+          },
+          {
+            "id": "Q12512.en.3",
+            "type": "contrast",
+            "text": "St. Peter's is in Vatican City, not in Italy, even though you can walk there from a Rome street."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q12512.nb.1",
+            "type": "anchor",
+            "text": "Peterskirken står i Vatikanstaten, den lille staten som er omgitt av Roma."
+          },
+          {
+            "id": "Q12512.nb.2",
+            "type": "story",
+            "text": "Michelangelo tegnet den store kuppelen på Peterskirken, som hever seg over plassen der folk samles for å se paven."
+          },
+          {
+            "id": "Q12512.nb.3",
+            "type": "contrast",
+            "text": "Peterskirken ligger i Vatikanstaten, ikke i Italia, selv om du kan gå dit fra en gate i Roma."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q12512.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "St. Peter's Basilica is in Vatican City.",
+            "nb": "Peterskirken ligger i Vatikanstaten."
+          }
+        },
+        {
+          "id": "Q12512.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its dome was designed by Michelangelo.",
+            "nb": "Kuppelen ble tegnet av Michelangelo."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q64436",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q64436.en.1",
+            "type": "anchor",
+            "text": "The Arc de Triomphe stands at the top of the Champs-Élysées in Paris, in the middle of a huge roundabout."
+          },
+          {
+            "id": "Q64436.en.2",
+            "type": "story",
+            "text": "Napoleon ordered the Arc de Triomphe to honour his army, and France's Unknown Soldier lies buried beneath it."
+          },
+          {
+            "id": "Q64436.en.3",
+            "type": "contrast",
+            "text": "The Arc de Triomphe is a solid stone arch; the Eiffel Tower, across the Seine, is open iron lattice."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q64436.nb.1",
+            "type": "anchor",
+            "text": "Triumfbuen står øverst på Champs-Élysées i Paris, midt i en enorm rundkjøring."
+          },
+          {
+            "id": "Q64436.nb.2",
+            "type": "story",
+            "text": "Napoleon bestilte Triumfbuen for å hedre hæren sin, og Frankrikes ukjente soldat ligger begravd under den."
+          },
+          {
+            "id": "Q64436.nb.3",
+            "type": "contrast",
+            "text": "Triumfbuen er en massiv bue av stein. Eiffeltårnet, på andre siden av Seinen, er et åpent gitter av jern."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q64436.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Arc de Triomphe is in Paris, at the western end of the Champs-Élysées.",
+            "nb": "Triumfbuen står i Paris, i vestenden av Champs-Élysées."
+          }
+        },
+        {
+          "id": "Q64436.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The tomb of France's Unknown Soldier lies beneath the arch.",
+            "nb": "Graven til Frankrikes ukjente soldat ligger under buen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q185382",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q185382.en.1",
+            "type": "anchor",
+            "text": "The Trevi Fountain fills the end of a small square in central Rome, Italy."
+          },
+          {
+            "id": "Q185382.en.2",
+            "type": "story",
+            "text": "Tradition says a coin thrown over your shoulder into the Trevi Fountain means you will return to Rome."
+          },
+          {
+            "id": "Q185382.en.3",
+            "type": "shape",
+            "text": "The Trevi Fountain is a whole palace wall turned into a waterfall, with a sea god riding out of it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q185382.nb.1",
+            "type": "anchor",
+            "text": "Trevifontenen fyller enden av en liten plass midt i Roma i Italia."
+          },
+          {
+            "id": "Q185382.nb.2",
+            "type": "story",
+            "text": "Ifølge tradisjonen kommer du tilbake til Roma hvis du kaster en mynt over skulderen i Trevifontenen."
+          },
+          {
+            "id": "Q185382.nb.3",
+            "type": "shape",
+            "text": "Trevifontenen er en hel palassvegg gjort om til en foss, med en havgud som rir ut av den."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q185382.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Trevi Fountain is in Rome, the capital of Italy.",
+            "nb": "Trevifontenen ligger i Roma, hovedstaden i Italia."
+          }
+        },
+        {
+          "id": "Q185382.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Coins thrown into the fountain are collected and given to charity.",
+            "nb": "Myntene som kastes i fontenen, samles inn og går til veldedighet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q239477",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q239477.en.1",
+            "type": "anchor",
+            "text": "The Cliffs of Moher face the Atlantic on Ireland's west coast, in County Clare."
+          },
+          {
+            "id": "Q239477.en.2",
+            "type": "shape",
+            "text": "The Cliffs of Moher are a green carpet that stops dead and drops straight into the Atlantic."
+          },
+          {
+            "id": "Q239477.en.3",
+            "type": "contrast",
+            "text": "The Cliffs of Moher are in the Republic of Ireland, on the west coast, not in Northern Ireland."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q239477.nb.1",
+            "type": "anchor",
+            "text": "Cliffs of Moher vender ut mot Atlanterhavet på vestkysten av Irland, i County Clare."
+          },
+          {
+            "id": "Q239477.nb.2",
+            "type": "shape",
+            "text": "Cliffs of Moher er et grønt teppe som stopper brått og stuper rett ned i Atlanterhavet."
+          },
+          {
+            "id": "Q239477.nb.3",
+            "type": "contrast",
+            "text": "Cliffs of Moher ligger i republikken Irland, på vestkysten, ikke i Nord-Irland."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q239477.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Cliffs of Moher are in County Clare, on the west coast of Ireland.",
+            "nb": "Cliffs of Moher ligger i County Clare, på vestkysten av Irland."
+          }
+        },
+        {
+          "id": "Q239477.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The cliffs face the Atlantic Ocean.",
+            "nb": "Klippene vender ut mot Atlanterhavet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q746223",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q746223.en.1",
+            "type": "anchor",
+            "text": "Preikestolen sits above the Lysefjord in Rogaland, east of Stavanger in southwest Norway."
+          },
+          {
+            "id": "Q746223.en.2",
+            "type": "etymology",
+            "text": "Preikestolen means the pulpit rock: its flat top looks like a preacher's pulpit."
+          },
+          {
+            "id": "Q746223.en.3",
+            "type": "shape",
+            "text": "Preikestolen is a flat-topped block of rock jutting out over the fjord like a giant's diving board."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q746223.nb.1",
+            "type": "anchor",
+            "text": "Preikestolen ligger over Lysefjorden i Rogaland, øst for Stavanger sørvest i Norge."
+          },
+          {
+            "id": "Q746223.nb.2",
+            "type": "etymology",
+            "text": "Preikestolen betyr prekestolen: den flate toppen ligner prestens talerstol i kirken."
+          },
+          {
+            "id": "Q746223.nb.3",
+            "type": "shape",
+            "text": "Preikestolen er en flat steinblokk som stikker ut over fjorden som et stupebrett for kjemper."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q746223.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Preikestolen is in Rogaland county in southwestern Norway.",
+            "nb": "Preikestolen ligger i Rogaland sørvest i Norge."
+          }
+        },
+        {
+          "id": "Q746223.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The rock rises steeply above the Lysefjord.",
+            "nb": "Fjellet stuper bratt ned mot Lysefjorden."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q193989",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q193989.en.1",
+            "type": "anchor",
+            "text": "The Geirangerfjord cuts into the mountains of Møre og Romsdal in western Norway, inland from Ålesund."
+          },
+          {
+            "id": "Q193989.en.2",
+            "type": "story",
+            "text": "Waterfalls called the Seven Sisters pour down one side of the Geirangerfjord, opposite one called the Suitor."
+          },
+          {
+            "id": "Q193989.en.3",
+            "type": "contrast",
+            "text": "The Geirangerfjord is a narrow arm of the Storfjord, not open sea: cruise ships sail far inland to reach it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q193989.nb.1",
+            "type": "anchor",
+            "text": "Geirangerfjorden skjærer seg inn i fjellene i Møre og Romsdal på Vestlandet, innenfor Ålesund."
+          },
+          {
+            "id": "Q193989.nb.2",
+            "type": "story",
+            "text": "Fossene De syv søstrene faller ned den ene siden av Geirangerfjorden, rett overfor fossen Friaren."
+          },
+          {
+            "id": "Q193989.nb.3",
+            "type": "contrast",
+            "text": "Geirangerfjorden er en smal arm av Storfjorden, ikke åpent hav: cruiseskipene seiler langt inn i landet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q193989.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Geirangerfjord is in Møre og Romsdal county in western Norway.",
+            "nb": "Geirangerfjorden ligger i Møre og Romsdal på Vestlandet i Norge."
+          }
+        },
+        {
+          "id": "Q193989.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is on UNESCO's World Heritage List together with the Nærøyfjord.",
+            "nb": "Den står på UNESCOs verdensarvliste sammen med Nærøyfjorden."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q2981",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q2981.en.1",
+            "type": "anchor",
+            "text": "Notre-Dame de Paris stands on the Île de la Cité, an island in the Seine in the heart of Paris."
+          },
+          {
+            "id": "Q2981.en.2",
+            "type": "etymology",
+            "text": "Notre-Dame is French for Our Lady, meaning the Virgin Mary."
+          },
+          {
+            "id": "Q2981.en.3",
+            "type": "story",
+            "text": "Victor Hugo's hunchback Quasimodo rang the bells of Notre-Dame, and the novel helped save the cathedral from decay."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q2981.nb.1",
+            "type": "anchor",
+            "text": "Notre-Dame de Paris står på Île de la Cité, en øy i Seinen midt i Paris."
+          },
+          {
+            "id": "Q2981.nb.2",
+            "type": "etymology",
+            "text": "Notre-Dame er fransk for Vår Frue, altså jomfru Maria."
+          },
+          {
+            "id": "Q2981.nb.3",
+            "type": "story",
+            "text": "Victor Hugos pukkelrygg Quasimodo ringte i klokkene i Notre-Dame, og romanen bidro til å redde katedralen fra forfall."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q2981.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Notre-Dame de Paris is a cathedral on an island in the Seine in Paris.",
+            "nb": "Notre-Dame de Paris er en katedral på en øy i Seinen i Paris."
+          }
+        },
+        {
+          "id": "Q2981.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "A fire destroyed its roof and spire, and the cathedral reopened after a long restoration.",
+            "nb": "En brann ødela taket og spiret, og katedralen åpnet igjen etter en lang restaurering."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q212065",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q212065.en.1",
+            "type": "anchor",
+            "text": "Edinburgh Castle sits on Castle Rock above the centre of Edinburgh, the capital of Scotland."
+          },
+          {
+            "id": "Q212065.en.2",
+            "type": "shape",
+            "text": "Edinburgh Castle sits on an old volcano's plug, a stone fist punching up out of the city."
+          },
+          {
+            "id": "Q212065.en.3",
+            "type": "story",
+            "text": "A cannon at Edinburgh Castle fires at one o'clock most days, once used so ships could set their clocks."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q212065.nb.1",
+            "type": "anchor",
+            "text": "Edinburgh Castle ligger på Castle Rock over sentrum av Edinburgh, hovedstaden i Skottland."
+          },
+          {
+            "id": "Q212065.nb.2",
+            "type": "shape",
+            "text": "Edinburgh Castle står på restene av en gammel vulkan, en steinneve som slår opp gjennom byen."
+          },
+          {
+            "id": "Q212065.nb.3",
+            "type": "story",
+            "text": "En kanon på Edinburgh Castle avfyres klokka ett de fleste dager, en gang slik at skip kunne stille klokkene."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q212065.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Edinburgh Castle is in Edinburgh, Scotland, part of the United Kingdom.",
+            "nb": "Edinburgh Castle ligger i Edinburgh i Skottland, en del av Storbritannia."
+          }
+        },
+        {
+          "id": "Q212065.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The castle stands on Castle Rock, the remains of an extinct volcano.",
+            "nb": "Borgen står på Castle Rock, restene av en utdødd vulkan."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q214619",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q214619.en.1",
+            "type": "anchor",
+            "text": "The Little Mermaid sits on a rock by the Langelinie promenade in Copenhagen harbour, Denmark."
+          },
+          {
+            "id": "Q214619.en.2",
+            "type": "story",
+            "text": "The statue shows Hans Christian Andersen's mermaid, the Danish writer's sea girl who longs to be human."
+          },
+          {
+            "id": "Q214619.en.3",
+            "type": "contrast",
+            "text": "The Little Mermaid is far smaller than most visitors expect: a small bronze on a rock, not a monument."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q214619.nb.1",
+            "type": "anchor",
+            "text": "Den lille havfrue sitter på en stein ved Langelinie i havnen i København i Danmark."
+          },
+          {
+            "id": "Q214619.nb.2",
+            "type": "story",
+            "text": "Statuen viser havfruen fra eventyret til H.C. Andersen, den danske forfatteren, om havpiken som vil bli menneske."
+          },
+          {
+            "id": "Q214619.nb.3",
+            "type": "contrast",
+            "text": "Den lille havfrue er mye mindre enn de fleste venter: en liten bronsefigur på en stein, ikke et monument."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q214619.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Little Mermaid is a bronze statue in Copenhagen, the capital of Denmark.",
+            "nb": "Den lille havfrue er en bronsestatue i København, hovedstaden i Danmark."
+          }
+        },
+        {
+          "id": "Q214619.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is based on the fairy tale by Hans Christian Andersen.",
+            "nb": "Den bygger på eventyret av H.C. Andersen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q2946",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q2946.en.1",
+            "type": "anchor",
+            "text": "The Palace of Versailles lies just southwest of Paris, in the town of Versailles."
+          },
+          {
+            "id": "Q2946.en.2",
+            "type": "story",
+            "text": "Louis XIV moved the French court out of Paris to Versailles to keep the nobles close and busy."
+          },
+          {
+            "id": "Q2946.en.3",
+            "type": "shape",
+            "text": "The Hall of Mirrors at Versailles is a corridor of windows on one side and matching mirrors on the other."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q2946.nb.1",
+            "type": "anchor",
+            "text": "Slottet i Versailles ligger like sørvest for Paris, i byen Versailles."
+          },
+          {
+            "id": "Q2946.nb.2",
+            "type": "story",
+            "text": "Ludvig XIV flyttet det franske hoffet ut av Paris til Versailles for å holde adelen nær og opptatt."
+          },
+          {
+            "id": "Q2946.nb.3",
+            "type": "shape",
+            "text": "Speilsalen i Versailles er en gang med vinduer på den ene siden og like mange speil på den andre."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q2946.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Palace of Versailles is in Versailles, just outside Paris, France.",
+            "nb": "Slottet i Versailles ligger i Versailles, like utenfor Paris i Frankrike."
+          }
+        },
+        {
+          "id": "Q2946.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The treaty that formally ended the First World War was signed in its Hall of Mirrors.",
+            "nb": "Traktaten som formelt avsluttet første verdenskrig, ble undertegnet i Speilsalen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q524",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q524.en.1",
+            "type": "anchor",
+            "text": "Mount Vesuvius rises over the Bay of Naples in southern Italy, just east of the city of Naples."
+          },
+          {
+            "id": "Q524.en.2",
+            "type": "story",
+            "text": "Vesuvius buried Pompeii and Herculaneum in ash, which kept the Roman towns preserved until they were dug up."
+          },
+          {
+            "id": "Q524.en.3",
+            "type": "contrast",
+            "text": "Vesuvius is on the Italian mainland near Naples; Etna, the larger active volcano, is on Sicily."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q524.nb.1",
+            "type": "anchor",
+            "text": "Vesuv rager over Napolibukta sør i Italia, like øst for byen Napoli."
+          },
+          {
+            "id": "Q524.nb.2",
+            "type": "story",
+            "text": "Vesuv begravde Pompeii og Herculaneum i aske, som holdt de romerske byene bevart til de ble gravd fram."
+          },
+          {
+            "id": "Q524.nb.3",
+            "type": "contrast",
+            "text": "Vesuv ligger på fastlandet ved Napoli. Etna, den større aktive vulkanen, ligger på Sicilia."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q524.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Mount Vesuvius is a volcano near Naples in southern Italy.",
+            "nb": "Vesuv er en vulkan ved Napoli sør i Italia."
+          }
+        },
+        {
+          "id": "Q524.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "An eruption of Vesuvius buried the Roman town of Pompeii.",
+            "nb": "Et utbrudd fra Vesuv begravde den romerske byen Pompeii."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q3125051",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q3125051.en.1",
+            "type": "anchor",
+            "text": "Meteora rises from the plain of Thessaly in central Greece, near the town of Kalambaka."
+          },
+          {
+            "id": "Q3125051.en.2",
+            "type": "etymology",
+            "text": "Meteora means suspended in the air, which is how the monasteries on the rock pillars look."
+          },
+          {
+            "id": "Q3125051.en.3",
+            "type": "story",
+            "text": "Monks at Meteora once reached their cliff-top monasteries in nets hauled up by rope."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q3125051.nb.1",
+            "type": "anchor",
+            "text": "Meteora reiser seg fra Thessalia-sletten midt i Hellas, ved byen Kalambaka."
+          },
+          {
+            "id": "Q3125051.nb.2",
+            "type": "etymology",
+            "text": "Meteora betyr svevende i luften, og slik ser klostrene på steinsøylene ut."
+          },
+          {
+            "id": "Q3125051.nb.3",
+            "type": "story",
+            "text": "Munkene i Meteora ble en gang heist opp til klostrene på klippetoppene i nett med tau."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q3125051.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Meteora is in Thessaly, in central Greece.",
+            "nb": "Meteora ligger i Thessalia midt i Hellas."
+          }
+        },
+        {
+          "id": "Q3125051.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Orthodox monasteries stand on top of its tall rock pillars.",
+            "nb": "Ortodokse klostre står på toppen av de høye steinsøylene."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q189849",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q189849.en.1",
+            "type": "anchor",
+            "text": "Plitvice Lakes National Park lies in central Croatia, inland between Zagreb and the Adriatic coast."
+          },
+          {
+            "id": "Q189849.en.2",
+            "type": "shape",
+            "text": "Plitvice is a staircase of turquoise lakes, each spilling over a wall of waterfalls into the next."
+          },
+          {
+            "id": "Q189849.en.3",
+            "type": "contrast",
+            "text": "Plitvice is inland Croatia; the Croatian islands and Dubrovnik are down on the Adriatic coast."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q189849.nb.1",
+            "type": "anchor",
+            "text": "Plitvicesjøene nasjonalpark ligger inne i Kroatia, mellom Zagreb og Adriaterhavskysten."
+          },
+          {
+            "id": "Q189849.nb.2",
+            "type": "shape",
+            "text": "Plitvice er en trapp av turkise innsjøer der hver renner over en vegg av fosser og ned i den neste."
+          },
+          {
+            "id": "Q189849.nb.3",
+            "type": "contrast",
+            "text": "Plitvice ligger inne i landet. Kroatias øyer og Dubrovnik ligger nede ved Adriaterhavet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q189849.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Plitvice Lakes National Park is in Croatia.",
+            "nb": "Plitvicesjøene nasjonalpark ligger i Kroatia."
+          }
+        },
+        {
+          "id": "Q189849.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its lakes are linked by waterfalls over natural barriers of travertine.",
+            "nb": "Innsjøene er bundet sammen av fosser over naturlige terskler av kalktuff."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q52505",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q52505.en.1",
+            "type": "anchor",
+            "text": "The Rialto Bridge crosses the Grand Canal in the middle of Venice, in northeast Italy."
+          },
+          {
+            "id": "Q52505.en.2",
+            "type": "shape",
+            "text": "The Rialto Bridge is a stone hump with a row of little shops riding on its back."
+          },
+          {
+            "id": "Q52505.en.3",
+            "type": "story",
+            "text": "For centuries the Rialto was the only bridge across Venice's Grand Canal, so all foot traffic squeezed over it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q52505.nb.1",
+            "type": "anchor",
+            "text": "Rialtobroen krysser Canal Grande midt i Venezia, nordøst i Italia."
+          },
+          {
+            "id": "Q52505.nb.2",
+            "type": "shape",
+            "text": "Rialtobroen er en pukkel av stein med en rekke små butikker på ryggen."
+          },
+          {
+            "id": "Q52505.nb.3",
+            "type": "story",
+            "text": "I flere hundre år var Rialtobroen den eneste broen over Canal Grande, så all gangtrafikk måtte over den."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q52505.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Rialto Bridge is in Venice, Italy.",
+            "nb": "Rialtobroen ligger i Venezia i Italia."
+          }
+        },
+        {
+          "id": "Q52505.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the oldest of the bridges that cross the Grand Canal.",
+            "nb": "Den er den eldste av broene over Canal Grande."
+          }
+        }
+      ]
+    }
+  ]
+}

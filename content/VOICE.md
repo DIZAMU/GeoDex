@@ -30,7 +30,7 @@ Someone who wants to actually remember. Smart, busy, reviewing between other thi
 
 ## Hook types
 
-Each entity needs at least 3 hooks across at least 2 types, in each language. Cities follow the same hook rules; they need 2 facts instead of 3, and no capital hooks or flag note. City hooks link the city to its country or its spot in the country (the cards ask "which country" and "where"). Mixing mechanisms matters: when one fails on a lapse, the engine switches to a different type.
+Each entity needs at least 3 hooks across at least 2 types, in each language. Cities follow the same hook rules; they need 2 facts instead of 3, and no capital hooks or flag note. City hooks link the city to its country or its spot in the country (the cards ask "which country" and "where"). Landmarks follow the city rules; their hooks link what the photo shows to the name, or the landmark to its country and spot (the cards ask "what is this", "which country" and "where"). Mixing mechanisms matters: when one fails on a lapse, the engine switches to a different type.
 
 | Type | What it does | English | Norsk |
 |---|---|---|---|
@@ -136,7 +136,7 @@ min_hook_types_per_entity_per_locale: 2
 require_plain_hook_per_locale: true    # at least one of anchor, etymology, contrast
 min_capital_hooks_per_country_per_locale: 2
 min_facts_per_entity: 3
-min_facts_per_city: 2                  # cities: no capital hooks or flag note; facts per city
+min_facts_per_city: 2                  # cities and landmarks: no capital hooks or flag note; facts per item
 facts_require_both_locales: true
 template_ids_match_across_locales: true
 no_duplicate_text: true                # across all entities, per locale
