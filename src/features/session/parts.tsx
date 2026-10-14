@@ -286,6 +286,8 @@ export function useSessionKeys(handlers: {
       const typing =
         event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement;
       const h = ref.current;
+      // An open dialog (the shortcut overlay) owns the keyboard: Escape closes it, nothing more.
+      if (event.defaultPrevented || document.querySelector('[role="dialog"]')) return;
       if (event.key === "Escape") {
         h.end?.();
         return;
