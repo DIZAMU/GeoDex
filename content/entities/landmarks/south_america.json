@@ -1,0 +1,890 @@
+{
+  "group": "south_america",
+  "entities": [
+    {
+      "entityId": "Q367943",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q367943.en.1",
+            "type": "anchor",
+            "text": "The Perito Moreno Glacier lies in Los Glaciares National Park in Argentine Patagonia, near El Calafate."
+          },
+          {
+            "id": "Q367943.en.2",
+            "type": "story",
+            "text": "Perito Moreno pushes across the lake until it dams it, then the water bursts through the ice wall in a roaring collapse."
+          },
+          {
+            "id": "Q367943.en.3",
+            "type": "shape",
+            "text": "Perito Moreno is a wall of blue-white ice as tall as a building, ending straight in a lake."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q367943.nb.1",
+            "type": "anchor",
+            "text": "Perito Moreno-breen ligger i Los Glaciares nasjonalpark i argentinsk Patagonia, ved El Calafate."
+          },
+          {
+            "id": "Q367943.nb.2",
+            "type": "story",
+            "text": "Perito Moreno skyver seg over innsjøen til den demmer den opp, så bryter vannet gjennom isveggen med et brak."
+          },
+          {
+            "id": "Q367943.nb.3",
+            "type": "shape",
+            "text": "Perito Moreno er en vegg av blåhvit is høy som en bygning, som ender rett i en innsjø."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q367943.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Perito Moreno Glacier is in Santa Cruz Province, Argentina.",
+            "nb": "Perito Moreno-breen ligger i provinsen Santa Cruz i Argentina."
+          }
+        },
+        {
+          "id": "Q367943.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It flows into Lake Argentino.",
+            "nb": "Breen renner ut i innsjøen Lago Argentino."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q39739",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q39739.en.1",
+            "type": "anchor",
+            "text": "Aconcagua rises in the Andes of western Argentina, near the border with Chile and east of Santiago."
+          },
+          {
+            "id": "Q39739.en.2",
+            "type": "contrast",
+            "text": "Aconcagua is the highest mountain outside Asia, and it stands in Argentina, not Chile."
+          },
+          {
+            "id": "Q39739.en.3",
+            "type": "story",
+            "text": "Aconcagua is so high and so dry that climbers can reach the summit without technical gear, if their lungs allow it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q39739.nb.1",
+            "type": "anchor",
+            "text": "Aconcagua reiser seg i Andesfjellene vest i Argentina, nær grensen mot Chile og øst for Santiago."
+          },
+          {
+            "id": "Q39739.nb.2",
+            "type": "contrast",
+            "text": "Aconcagua er det høyeste fjellet utenfor Asia, og det står i Argentina, ikke Chile."
+          },
+          {
+            "id": "Q39739.nb.3",
+            "type": "story",
+            "text": "Aconcagua er så høyt og tørt at klatrere kan nå toppen uten teknisk utstyr, hvis lungene holder."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q39739.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Aconcagua is in Mendoza Province, Argentina.",
+            "nb": "Aconcagua ligger i provinsen Mendoza i Argentina."
+          }
+        },
+        {
+          "id": "Q39739.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the highest mountain in the Americas.",
+            "nb": "Det er det høyeste fjellet i Amerika."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q76122",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q76122.en.1",
+            "type": "anchor",
+            "text": "Salar de Uyuni lies on the high Altiplano of southwest Bolivia, near the border with Chile."
+          },
+          {
+            "id": "Q76122.en.2",
+            "type": "shape",
+            "text": "After rain, Salar de Uyuni becomes a giant mirror, and the sky seems to continue under your feet."
+          },
+          {
+            "id": "Q76122.en.3",
+            "type": "etymology",
+            "text": "Salar is Spanish for salt flat, and Uyuni is the nearby town."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q76122.nb.1",
+            "type": "anchor",
+            "text": "Salar de Uyuni ligger på høysletten Altiplano sørvest i Bolivia, nær grensen mot Chile."
+          },
+          {
+            "id": "Q76122.nb.2",
+            "type": "shape",
+            "text": "Etter regn blir Salar de Uyuni et kjempestort speil, og himmelen ser ut til å fortsette under føttene."
+          },
+          {
+            "id": "Q76122.nb.3",
+            "type": "etymology",
+            "text": "Salar er spansk for saltslette, og Uyuni er byen like ved."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q76122.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Salar de Uyuni is in southwest Bolivia.",
+            "nb": "Salar de Uyuni ligger sørvest i Bolivia."
+          }
+        },
+        {
+          "id": "Q76122.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the largest salt flat in the world.",
+            "nb": "Det er verdens største saltslette."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q210722",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q210722.en.1",
+            "type": "anchor",
+            "text": "Sugarloaf Mountain rises at the mouth of Guanabara Bay in Rio de Janeiro, Brazil."
+          },
+          {
+            "id": "Q210722.en.2",
+            "type": "etymology",
+            "text": "Sugarloaf is named after the cone-shaped loaves sugar was once sold in."
+          },
+          {
+            "id": "Q210722.en.3",
+            "type": "story",
+            "text": "Cable cars hop from hill to hill to the top of Sugarloaf, swinging over Rio's bay."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q210722.nb.1",
+            "type": "anchor",
+            "text": "Sukkertoppen reiser seg ved innløpet til Guanabarabukta i Rio de Janeiro i Brasil."
+          },
+          {
+            "id": "Q210722.nb.2",
+            "type": "etymology",
+            "text": "Sukkertoppen har navn etter kjeglene som sukker en gang ble solgt i."
+          },
+          {
+            "id": "Q210722.nb.3",
+            "type": "story",
+            "text": "Taubanevogner hopper fra topp til topp opp til Sukkertoppen og svinger over bukta i Rio."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q210722.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Sugarloaf Mountain is in Rio de Janeiro, Brazil.",
+            "nb": "Sukkertoppen ligger i Rio de Janeiro i Brasil."
+          }
+        },
+        {
+          "id": "Q210722.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "A cable car runs to its summit.",
+            "nb": "En taubane går til toppen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q79961",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q79961.en.1",
+            "type": "anchor",
+            "text": "Christ the Redeemer stands on Corcovado mountain above Rio de Janeiro, Brazil."
+          },
+          {
+            "id": "Q79961.en.2",
+            "type": "shape",
+            "text": "Christ the Redeemer stands with arms spread wide, a giant cross watching over Rio."
+          },
+          {
+            "id": "Q79961.en.3",
+            "type": "contrast",
+            "text": "Christ the Redeemer stands on Corcovado; Sugarloaf, across the city, is the bare rock cone by the bay."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q79961.nb.1",
+            "type": "anchor",
+            "text": "Kristusstatuen står på fjellet Corcovado over Rio de Janeiro i Brasil."
+          },
+          {
+            "id": "Q79961.nb.2",
+            "type": "shape",
+            "text": "Kristusstatuen står med armene strakt ut, et kjempestort kors som våker over Rio."
+          },
+          {
+            "id": "Q79961.nb.3",
+            "type": "contrast",
+            "text": "Kristusstatuen står på Corcovado. Sukkertoppen, på andre siden av byen, er den nakne steinkjeglen ved bukta."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q79961.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Christ the Redeemer is in Rio de Janeiro, Brazil.",
+            "nb": "Kristusstatuen står i Rio de Janeiro i Brasil."
+          }
+        },
+        {
+          "id": "Q79961.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The statue is made of reinforced concrete covered with soapstone tiles.",
+            "nb": "Statuen er laget av armert betong dekket med fliser av kleberstein."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q14452",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q14452.en.1",
+            "type": "anchor",
+            "text": "Easter Island lies alone in the Pacific, thousands of kilometres west of mainland Chile, which governs it."
+          },
+          {
+            "id": "Q14452.en.2",
+            "type": "story",
+            "text": "Dutch sailors reached the island on Easter Sunday and named it for the day."
+          },
+          {
+            "id": "Q14452.en.3",
+            "type": "shape",
+            "text": "The moai are giant stone heads with long ears and heavy brows, most of them with their backs to the sea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q14452.nb.1",
+            "type": "anchor",
+            "text": "Påskeøya ligger alene i Stillehavet, tusenvis av kilometer vest for fastlands-Chile, som styrer den."
+          },
+          {
+            "id": "Q14452.nb.2",
+            "type": "story",
+            "text": "Nederlandske sjøfolk kom til øya første påskedag og ga den navn etter dagen."
+          },
+          {
+            "id": "Q14452.nb.3",
+            "type": "shape",
+            "text": "Moai er kjempestore steinhoder med lange ører og tunge bryn, de fleste med ryggen mot havet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q14452.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Easter Island is a Chilean island in the southeastern Pacific.",
+            "nb": "Påskeøya er en chilensk øy i det sørøstlige Stillehavet."
+          }
+        },
+        {
+          "id": "Q14452.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its moai statues were carved by the Rapa Nui people.",
+            "nb": "Moai-statuene ble hugget av rapanuifolket."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q47141",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q47141.en.1",
+            "type": "anchor",
+            "text": "The Atacama Desert stretches along northern Chile, between the Pacific coast and the Andes."
+          },
+          {
+            "id": "Q47141.en.2",
+            "type": "contrast",
+            "text": "The Atacama is one of the driest places on Earth, yet it lies right next to the Pacific."
+          },
+          {
+            "id": "Q47141.en.3",
+            "type": "story",
+            "text": "Space agencies test Mars rovers in the Atacama because its soil is the closest thing to Mars on Earth."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q47141.nb.1",
+            "type": "anchor",
+            "text": "Atacama strekker seg langs Nord-Chile, mellom Stillehavskysten og Andesfjellene."
+          },
+          {
+            "id": "Q47141.nb.2",
+            "type": "contrast",
+            "text": "Atacama er et av de tørreste stedene på jorden, men ligger rett ved Stillehavet."
+          },
+          {
+            "id": "Q47141.nb.3",
+            "type": "story",
+            "text": "Romorganisasjoner tester marsbiler i Atacama fordi jordsmonnet er det nærmeste vi kommer Mars på jorden."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q47141.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Atacama Desert is in northern Chile.",
+            "nb": "Atacamaørkenen ligger nord i Chile."
+          }
+        },
+        {
+          "id": "Q47141.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its clear, dry skies host major astronomical observatories.",
+            "nb": "Den klare, tørre himmelen har gitt plass til store astronomiske observatorier."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q901646",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q901646.en.1",
+            "type": "anchor",
+            "text": "Torres del Paine National Park lies in Chilean Patagonia, near the southern tip of South America."
+          },
+          {
+            "id": "Q901646.en.2",
+            "type": "etymology",
+            "text": "Torres del Paine means the towers of Paine; paine is a local word for blue."
+          },
+          {
+            "id": "Q901646.en.3",
+            "type": "shape",
+            "text": "The Torres del Paine are three granite fingers pointing straight up out of the Patagonian steppe."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q901646.nb.1",
+            "type": "anchor",
+            "text": "Torres del Paine nasjonalpark ligger i chilensk Patagonia, nær sørspissen av Sør-Amerika."
+          },
+          {
+            "id": "Q901646.nb.2",
+            "type": "etymology",
+            "text": "Torres del Paine betyr Paine-tårnene. Paine er et lokalt ord for blå."
+          },
+          {
+            "id": "Q901646.nb.3",
+            "type": "shape",
+            "text": "Torres del Paine er tre granittfingre som peker rett opp fra steppen i Patagonia."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q901646.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Torres del Paine National Park is in southern Chile.",
+            "nb": "Torres del Paine nasjonalpark ligger sør i Chile."
+          }
+        },
+        {
+          "id": "Q901646.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is named after three granite peaks, the towers of Paine.",
+            "nb": "Den har navn etter tre granittopper, Paine-tårnene."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q14081",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q14081.en.1",
+            "type": "anchor",
+            "text": "Chimborazo rises in the Andes of central Ecuador, south of Quito."
+          },
+          {
+            "id": "Q14081.en.2",
+            "type": "story",
+            "text": "Chimborazo's summit is the point on Earth farthest from its centre, thanks to the bulge at the equator."
+          },
+          {
+            "id": "Q14081.en.3",
+            "type": "contrast",
+            "text": "Chimborazo is the highest peak in Ecuador; Cotopaxi, to the north, is the perfect cone that still erupts."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q14081.nb.1",
+            "type": "anchor",
+            "text": "Chimborazo reiser seg i Andesfjellene midt i Ecuador, sør for Quito."
+          },
+          {
+            "id": "Q14081.nb.2",
+            "type": "story",
+            "text": "Toppen av Chimborazo er punktet på jorden lengst fra jordens sentrum, takket være bulen ved ekvator."
+          },
+          {
+            "id": "Q14081.nb.3",
+            "type": "contrast",
+            "text": "Chimborazo er Ecuadors høyeste topp. Cotopaxi, lenger nord, er den perfekte kjeglen som fortsatt har utbrudd."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q14081.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Chimborazo is in Ecuador.",
+            "nb": "Chimborazo ligger i Ecuador."
+          }
+        },
+        {
+          "id": "Q14081.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the highest mountain in Ecuador.",
+            "nb": "Det er Ecuadors høyeste fjell."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q181476",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q181476.en.1",
+            "type": "anchor",
+            "text": "Cotopaxi rises in the Andes of Ecuador, south of Quito."
+          },
+          {
+            "id": "Q181476.en.2",
+            "type": "shape",
+            "text": "Cotopaxi is a nearly perfect snow-capped cone, like a giant ice-cream cone turned upside down."
+          },
+          {
+            "id": "Q181476.en.3",
+            "type": "story",
+            "text": "Cotopaxi is one of the highest active volcanoes in the world, and its eruptions send mudflows down its valleys."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q181476.nb.1",
+            "type": "anchor",
+            "text": "Cotopaxi reiser seg i Andesfjellene i Ecuador, sør for Quito."
+          },
+          {
+            "id": "Q181476.nb.2",
+            "type": "shape",
+            "text": "Cotopaxi er en nesten perfekt kjegle med snøtopp, som en kjempestor iskremkjeks snudd opp ned."
+          },
+          {
+            "id": "Q181476.nb.3",
+            "type": "story",
+            "text": "Cotopaxi er en av verdens høyeste aktive vulkaner, og utbruddene sender slamstrømmer ned dalene."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q181476.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Cotopaxi is an active volcano in Ecuador.",
+            "nb": "Cotopaxi er en aktiv vulkan i Ecuador."
+          }
+        },
+        {
+          "id": "Q181476.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It lies in Cotopaxi National Park.",
+            "nb": "Den ligger i Cotopaxi nasjonalpark."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q38095",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q38095.en.1",
+            "type": "anchor",
+            "text": "The Galápagos Islands lie in the Pacific on the equator, far west of mainland Ecuador, which governs them."
+          },
+          {
+            "id": "Q38095.en.2",
+            "type": "story",
+            "text": "Charles Darwin's visit to the Galápagos helped him work out his theory of evolution."
+          },
+          {
+            "id": "Q38095.en.3",
+            "type": "etymology",
+            "text": "Galápago is an old Spanish word for tortoise, after the giant tortoises on the islands."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q38095.nb.1",
+            "type": "anchor",
+            "text": "Galápagosøyene ligger i Stillehavet ved ekvator, langt vest for fastlands-Ecuador, som styrer dem."
+          },
+          {
+            "id": "Q38095.nb.2",
+            "type": "story",
+            "text": "Charles Darwins besøk på Galápagos hjalp ham å utvikle evolusjonsteorien."
+          },
+          {
+            "id": "Q38095.nb.3",
+            "type": "etymology",
+            "text": "Galápago er et gammelt spansk ord for skilpadde, etter kjempeskilpaddene på øyene."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q38095.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Galápagos Islands belong to Ecuador.",
+            "nb": "Galápagosøyene hører til Ecuador."
+          }
+        },
+        {
+          "id": "Q38095.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "They are home to giant tortoises found nowhere else.",
+            "nb": "Der lever kjempeskilpadder som ikke finnes noe annet sted."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q38120",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q38120.en.1",
+            "type": "anchor",
+            "text": "Kaieteur Falls lies in the rainforest of central Guyana, on the Potaro River."
+          },
+          {
+            "id": "Q38120.en.2",
+            "type": "contrast",
+            "text": "Kaieteur Falls drops in one single, wide plunge; Angel Falls in Venezuela is taller but much thinner."
+          },
+          {
+            "id": "Q38120.en.3",
+            "type": "story",
+            "text": "Kaieteur is so remote that most visitors arrive by small plane and land on a strip in the jungle."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q38120.nb.1",
+            "type": "anchor",
+            "text": "Kaieteurfallet ligger i regnskogen midt i Guyana, ved elven Potaro."
+          },
+          {
+            "id": "Q38120.nb.2",
+            "type": "contrast",
+            "text": "Kaieteurfallet stuper i ett eneste bredt fall. Angelfossen i Venezuela er høyere, men mye smalere."
+          },
+          {
+            "id": "Q38120.nb.3",
+            "type": "story",
+            "text": "Kaieteur ligger så avsides at de fleste besøkende kommer med småfly og lander på en stripe i jungelen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q38120.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Kaieteur Falls is in Guyana.",
+            "nb": "Kaieteurfallet ligger i Guyana."
+          }
+        },
+        {
+          "id": "Q38120.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is on the Potaro River, in Kaieteur National Park.",
+            "nb": "Det ligger ved elven Potaro i Kaieteur nasjonalpark."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q2620036",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q2620036.en.1",
+            "type": "anchor",
+            "text": "The Nazca Lines are drawn into the desert of southern Peru, between the Andes and the Pacific."
+          },
+          {
+            "id": "Q2620036.en.2",
+            "type": "shape",
+            "text": "The Nazca Lines are a hummingbird, a monkey and a spider drawn so big you need a plane to see them."
+          },
+          {
+            "id": "Q2620036.en.3",
+            "type": "story",
+            "text": "The dry, windless desert has kept the Nazca Lines sharp for well over a thousand years."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q2620036.nb.1",
+            "type": "anchor",
+            "text": "Nazcalinjene er tegnet inn i ørkenen sør i Peru, mellom Andesfjellene og Stillehavet."
+          },
+          {
+            "id": "Q2620036.nb.2",
+            "type": "shape",
+            "text": "Nazcalinjene er en kolibri, en ape og en edderkopp tegnet så store at du trenger fly for å se dem."
+          },
+          {
+            "id": "Q2620036.nb.3",
+            "type": "story",
+            "text": "Den tørre, vindstille ørkenen har holdt Nazcalinjene skarpe i godt over tusen år."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q2620036.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Nazca Lines are in southern Peru.",
+            "nb": "Nazcalinjene ligger sør i Peru."
+          }
+        },
+        {
+          "id": "Q2620036.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "They were made by removing the dark stones on the surface to show lighter ground beneath.",
+            "nb": "De ble laget ved å fjerne de mørke steinene på overflaten, så den lysere bakken under kom fram."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q676203",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q676203.en.1",
+            "type": "anchor",
+            "text": "Machu Picchu sits on a mountain ridge above the Urubamba valley in southern Peru, northwest of Cusco."
+          },
+          {
+            "id": "Q676203.en.2",
+            "type": "story",
+            "text": "The Spanish conquerors never found Machu Picchu, so the Inca city survived hidden in the clouds."
+          },
+          {
+            "id": "Q676203.en.3",
+            "type": "shape",
+            "text": "Machu Picchu is a stone city laid on a saddle between two peaks, with Huayna Picchu rising behind like a horn."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q676203.nb.1",
+            "type": "anchor",
+            "text": "Machu Picchu ligger på en fjellrygg over Urubamba-dalen sør i Peru, nordvest for Cusco."
+          },
+          {
+            "id": "Q676203.nb.2",
+            "type": "story",
+            "text": "De spanske erobrerne fant aldri Machu Picchu, så inkabyen overlevde skjult i skyene."
+          },
+          {
+            "id": "Q676203.nb.3",
+            "type": "shape",
+            "text": "Machu Picchu er en steinby lagt på en sal mellom to topper, med Huayna Picchu bak som et horn."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q676203.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Machu Picchu is in the Cusco Region of Peru.",
+            "nb": "Machu Picchu ligger i Cusco-regionen i Peru."
+          }
+        },
+        {
+          "id": "Q676203.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was built by the Incas.",
+            "nb": "Den ble bygd av inkaene."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q80299",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q80299.en.1",
+            "type": "anchor",
+            "text": "Angel Falls drops from a flat-topped mountain in the rainforest of southeast Venezuela."
+          },
+          {
+            "id": "Q80299.en.2",
+            "type": "story",
+            "text": "Angel Falls is named after Jimmie Angel, an American pilot who landed his plane on the mountain above it."
+          },
+          {
+            "id": "Q80299.en.3",
+            "type": "contrast",
+            "text": "Angel Falls is the highest waterfall on Earth; the water turns to mist before it reaches the bottom."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q80299.nb.1",
+            "type": "anchor",
+            "text": "Angelfossen stuper ned fra et flatt fjell i regnskogen sørøst i Venezuela."
+          },
+          {
+            "id": "Q80299.nb.2",
+            "type": "story",
+            "text": "Angelfossen er oppkalt etter Jimmie Angel, en amerikansk flyger som landet flyet sitt på fjellet over fossen."
+          },
+          {
+            "id": "Q80299.nb.3",
+            "type": "contrast",
+            "text": "Angelfossen er verdens høyeste foss. Vannet blir til tåke før det når bunnen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q80299.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Angel Falls is in Canaima National Park, Venezuela.",
+            "nb": "Angelfossen ligger i Canaima nasjonalpark i Venezuela."
+          }
+        },
+        {
+          "id": "Q80299.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the world's highest uninterrupted waterfall.",
+            "nb": "Det er verdens høyeste sammenhengende foss."
+          }
+        }
+      ]
+    }
+  ]
+}
