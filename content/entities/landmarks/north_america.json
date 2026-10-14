@@ -255,6 +255,11 @@
             "id": "Q172613.en.3",
             "type": "contrast",
             "text": "Teotihuacan is near Mexico City in central Mexico; Chichen Itza is far east, on the Yucatán Peninsula."
+          },
+          {
+            "id": "Q172613.en.4",
+            "type": "shape",
+            "text": "Teotihuacan's Avenue of the Dead is a long straight runway with giant pyramids parked along it."
           }
         ],
         "nb": [
@@ -272,6 +277,11 @@
             "id": "Q172613.nb.3",
             "type": "contrast",
             "text": "Teotihuacán ligger ved Mexico by midt i Mexico. Chichen Itza ligger langt øst, på Yucatánhalvøya."
+          },
+          {
+            "id": "Q172613.nb.4",
+            "type": "shape",
+            "text": "De dødes allé i Teotihuacán er en lang, rett rullebane med kjempestore pyramider parkert langs den."
           }
         ]
       },

@@ -373,6 +373,11 @@
             "id": "Q172070.en.3",
             "type": "contrast",
             "text": "Mount Kenya is in Kenya; Kilimanjaro, the higher mountain, is just across the border in Tanzania."
+          },
+          {
+            "id": "Q172070.en.4",
+            "type": "shape",
+            "text": "Mount Kenya is a jagged crown of rock with glaciers, a cold white cap sitting right on the equator."
           }
         ],
         "nb": [
@@ -390,6 +395,11 @@
             "id": "Q172070.nb.3",
             "type": "contrast",
             "text": "Mount Kenya ligger i Kenya. Kilimanjaro, det høyere fjellet, ligger like over grensen i Tanzania."
+          },
+          {
+            "id": "Q172070.nb.4",
+            "type": "shape",
+            "text": "Mount Kenya er en tagget krone av stein med isbreer, en kald hvit lue rett på ekvator."
           }
         ]
       },
