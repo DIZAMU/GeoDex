@@ -137,7 +137,9 @@
     "tapCount_one": "{{count}} land valgt",
     "tapCount_other": "{{count}} land valgt",
     "pinHelpLandmark": "Trykk der det ligger.",
-    "featureHelp": "Trykk på det på kartet."
+    "featureHelp": "Trykk på det på kartet.",
+    "list": "Svar fra en liste",
+    "filter": "Filtrer navn"
   },
   "feedback": {
     "distance": "Nålen din var {{distance}} fra byen.",
@@ -444,5 +446,13 @@
     "link": "Meld fra om feil",
     "title": "Feil fakta: {{id}}",
     "body": "Fakta {{id}} ({{locale}}), vist på kortet {{card}}:\n\n> {{text}}\n\nHva er feil, og en kilde for det riktige:\n"
+  },
+  "reset": {
+    "title": "Nullstill fremgang",
+    "body": "Begynn på nytt fra plasseringstesten. Fremgang, rekke og statistikk teller bare repetisjoner fra nå av. Tidligere repetisjoner blir værende i eksporter og synkronisert historikk, så ingenting går tapt.",
+    "button": "Nullstill fremgang",
+    "confirm": "Nullstille all fremgang nå? Dette kan ikke angres i appen.",
+    "yes": "Nullstill",
+    "cancel": "Avbryt"
   }
 }

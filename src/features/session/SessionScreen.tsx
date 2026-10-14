@@ -36,6 +36,7 @@ import {
   GroupCard,
   HistoryCard,
   LandmarkCard,
+  ListAnswer,
   nameOf,
   OutlineCaption,
   PromptText,
@@ -254,6 +255,8 @@ export function Session({
               locale={locale}
               tapCount={picked.size}
               onCheckTaps={submitTaps}
+              picked={picked}
+              onToggleTap={toggleTap}
             />
           </div>
         }
@@ -271,6 +274,8 @@ function Panel({
   locale,
   tapCount,
   onCheckTaps,
+  picked,
+  onToggleTap,
 }: {
   view: Exclude<SessionView, { kind: "done" }>;
   ctx: StudyContext;
@@ -279,6 +284,8 @@ function Panel({
   locale: "en" | "nb";
   tapCount: number;
   onCheckTaps: () => void;
+  picked: ReadonlySet<string>;
+  onToggleTap: (id: string) => void;
 }) {
   const { t } = useTranslation();
   const focusOnMount = useFocusOnMount<HTMLButtonElement>();
@@ -345,13 +352,20 @@ function Panel({
         ) : answer.kind === "flags" ? (
           <FlagAnswer options={answer.options} onPick={(id) => s.answer(checkChoice(q, id))} />
         ) : answer.kind === "taps" ? (
-          <TapAnswer
-            count={tapCount}
-            onCheck={onCheckTaps}
-            onGiveUp={() =>
-              s.answer({ correct: false, typo: false, chosenId: null }, { gaveUp: true })
-            }
-          />
+          <>
+            <TapAnswer
+              count={tapCount}
+              onCheck={onCheckTaps}
+              onGiveUp={() =>
+                s.answer({ correct: false, typo: false, chosenId: null }, { gaveUp: true })
+              }
+            />
+            <ListAnswer
+              options={listOptions(answer.view, learner, ctx, locale)}
+              onPick={onToggleTap}
+              picked={picked}
+            />
+          </>
         ) : answer.kind === "typed" ? (
           <TypedAnswer
             key={q.cardId}
@@ -383,6 +397,38 @@ function Panel({
             >
               {t("answer.giveUp")}
             </Button>
+            {answer.kind === "feature" ? (
+              <ListAnswer
+                options={learner.world.physical
+                  .map((f) => ({ id: f.id, label: f.names[locale] }))
+                  .sort((a, b) => a.label.localeCompare(b.label, locale))}
+                onPick={(id) => s.answer(checkChoice(q, id))}
+              />
+            ) : answer.kind === "pin" ? (
+              <ListAnswer
+                options={listOptions(answer.view, learner, ctx, locale)}
+                onPick={(id) => {
+                  // Naming the right country counts as a pin on the place itself; any other
+                  // country as a pin on its center.
+                  const at =
+                    id === q.countryId
+                      ? answer.target
+                      : (learner.world.byId.get(id)?.centroid ?? answer.target);
+                  s.answer(checkPin(q, [at[0], at[1]]));
+                }}
+              />
+            ) : answer.kind === "map" ? (
+              <ListAnswer
+                options={(answer.selectable
+                  ? answer.selectable.map((id) => ({
+                      id,
+                      label: nameOf(learner.world, id, locale),
+                    }))
+                  : listOptions(answer.view, learner, ctx, locale)
+                ).sort((a, b) => a.label.localeCompare(b.label, locale))}
+                onPick={(id) => s.answer(checkChoice(q, id))}
+              />
+            ) : null}
           </div>
         )}
       </div>
@@ -542,6 +588,23 @@ function GroupFeedback({
       </Button>
     </div>
   );
+}
+
+/** Countries in a map view, by name, for the list alternative to map answers. */
+function listOptions(
+  view: MapView,
+  learner: Learner,
+  ctx: StudyContext,
+  locale: "en" | "nb",
+): { id: string; label: string }[] {
+  const inScope = (id: string) => !ctx.scope || ctx.scope.has(id);
+  const ids =
+    view.kind === "countries"
+      ? view.ids.filter(inScope)
+      : learner.world.countries.filter((c) => inScope(c.id)).map((c) => c.id);
+  return ids
+    .map((id) => ({ id, label: nameOf(learner.world, id, locale) }))
+    .sort((a, b) => a.label.localeCompare(b.label, locale));
 }
 
 function mapState(
