@@ -29,7 +29,9 @@ async function pointIn(
         const sy = y - rect.top;
         // Inside another country's tap target, but clear of its visible dot.
         const nearest = Math.min(...markers.map((m) => Math.hypot(m.x - sx, m.y - sy)));
-        const near = nearest > 10 && nearest < 22;
+        // A tap on a visible dot means that dot's country, so never pick one.
+        if (nearest <= 10) continue;
+        const near = nearest < 22;
         if (near) return { x, y, contested: true, nearest };
         fallback ??= { x, y };
       }
@@ -49,10 +51,18 @@ test("a tap on a country opens it, even next to small neighbors' tap targets", a
       .getAnimations()
       .every((a) => a.playState !== "running" || a.effect?.getTiming().iterations === Infinity),
   );
+  if (test.info().project.name === "phone") {
+    // At phone size Norway is a few pixels wide; zoom in on it the way a learner would.
+    const box = await page.locator('path.map-country[data-country="NOR"]').boundingBox();
+    if (!box) throw new Error("no Norway");
+    await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+    await page.mouse.wheel(0, -500);
+    await page.waitForTimeout(300);
+  }
   const point = await pointIn(page, "NOR");
-  // At laptop size, part of Norway lies under other countries' tap targets: the case that
-  // used to open Estonia or Denmark. On a phone the world view is too small for that.
-  if (test.info().project.name === "desktop") expect(point.contested).toBe(true);
+  // Part of Norway lies under other countries' tap targets: the case that used to open
+  // Estonia or Denmark.
+  expect(point.contested).toBe(true);
   await page.mouse.click(point.x, point.y);
   await expect(page).toHaveURL(/\/atlas\/NOR$/);
 });
