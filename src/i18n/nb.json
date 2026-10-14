@@ -52,7 +52,8 @@
     "homeCountry": "Hjemland",
     "rerunPlacement": "Ta plasseringstesten på nytt",
     "groupLook": "Språk og utseende",
-    "groupStudy": "Øving"
+    "groupStudy": "Øving",
+    "groups": "Landgrupper (når halvparten av landene er startet)"
   },
   "nav": {
     "today": "I dag",
@@ -105,7 +106,10 @@
     "name_to_flag": "Hvilket flagg tilhører {{name}}?",
     "country_to_currency": "Hvilken valuta brukes {{inName}}?",
     "country_to_language": "Hvilket språk er offisielt språk {{inName}}?",
-    "contrast": "Hvilket av disse er {{name}}?"
+    "contrast": "Hvilket av disse er {{name}}?",
+    "group_to_map": "Trykk på alle land som er {{phrase}}.",
+    "map_to_group": "Hvilken landgruppe er markert?",
+    "group_member": "Hvilket av disse landene er {{phrase}}?"
   },
   "answer": {
     "pinHelp": "Trykk der byen ligger.",
@@ -115,7 +119,10 @@
     "hint": "Hint",
     "hintStarts": "Begynner med {{letter}}, {{count}} bokstaver",
     "mapHelp": "Klikk eller trykk på landet.",
-    "label": "Ditt svar"
+    "label": "Ditt svar",
+    "tapHelp": "Trykk på hvert land, og sjekk til slutt. Trykk igjen for å fjerne et land.",
+    "tapCount_one": "{{count}} land valgt",
+    "tapCount_other": "{{count}} land valgt"
   },
   "feedback": {
     "distance": "Nålen din var {{distance}} fra byen.",
@@ -137,7 +144,9 @@
     "notHelpful": "Ikke nyttig",
     "hookHidden": "Skjult for dette kortet.",
     "contrastLabel": "Slik skiller du dem",
-    "deeperLabel": "Dypere"
+    "deeperLabel": "Dypere",
+    "missed": "Mangler: {{names}}.",
+    "notInGroup": "Ikke med i gruppen: {{names}}."
   },
   "role": {
     "primary": "hovedstad",
@@ -241,7 +250,10 @@
     "country_to_language": "Land til språk",
     "city_to_country": "By til land",
     "city_to_map": "By på kartet",
-    "contrast": "Skill dem"
+    "contrast": "Skill dem",
+    "group_to_map": "Trykk på medlemmene",
+    "map_to_group": "Gruppe på kartet",
+    "group_member": "Medlem av gruppen"
   },
   "hookType": {
     "anchor": "Anker",
@@ -339,5 +351,14 @@
     "title": "Noe gikk galt",
     "body": "Denne skjermen kunne ikke lastes. Fremgangen din er lagret på denne enheten; last inn på nytt for å fortsette.",
     "reload": "Last inn på nytt"
+  },
+  "group": {
+    "countries": "Land",
+    "sometimes": "Regnes noen ganger med",
+    "region": "Region",
+    "organization": "Organisasjon",
+    "un_subregion": "FN-region",
+    "unNote": "En statistisk region fra FN (M49). I dagligtale kan grensene trekkes annerledes.",
+    "sometimesNote": "Land som bare noen definisjoner tar med, teller verken for eller mot deg."
   }
 }
