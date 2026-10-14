@@ -1258,6 +1258,11 @@
             "id": "Q80541.en.3",
             "type": "etymology",
             "text": "It is called the Blue Mosque after the blue tiles that cover its walls inside."
+          },
+          {
+            "id": "Q80541.en.4",
+            "type": "shape",
+            "text": "The Blue Mosque is a cascade of grey domes, one spilling onto the next, ringed by six pencil-thin minarets."
           }
         ],
         "nb": [
@@ -1275,6 +1280,11 @@
             "id": "Q80541.nb.3",
             "type": "etymology",
             "text": "Den kalles Den blå moské etter de blå flisene som dekker veggene inne."
+          },
+          {
+            "id": "Q80541.nb.4",
+            "type": "shape",
+            "text": "Den blå moské er en kaskade av grå kupler som renner over i hverandre, omgitt av seks blyantsmale minareter."
           }
         ]
       },
