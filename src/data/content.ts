@@ -54,7 +54,7 @@ let pending: Promise<ContentIndex> | null = null;
 export function loadContent(): Promise<ContentIndex> {
   pending ??= (async () => {
     const modules = import.meta.glob<{ default: ContentGroupFile }>(
-      "../../content/entities/countries/*.json",
+      "../../content/entities/*/*.json",
     );
     const [groups, confusions, templates] = await Promise.all([
       Promise.all(Object.values(modules).map((load) => load().then((m) => m.default))),
