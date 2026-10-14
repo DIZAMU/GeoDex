@@ -156,6 +156,7 @@ function Atlas({ learner }: { learner: Learner }) {
             variant="outline"
             spacing={0}
             size="sm"
+            className="grid w-full grid-cols-3 sm:flex sm:w-fit"
             value={time ? "time" : flat ? "flat" : "globe"}
             aria-label={t("atlas.view")}
             onValueChange={(value) => {
@@ -172,7 +173,7 @@ function Atlas({ learner }: { learner: Learner }) {
             </ToggleGroupItem>
             <ToggleGroupItem value="time" data-testid="view-time">
               <HourglassIcon aria-hidden />
-              {t("atlas.timeline")}
+              {t("atlas.timelineShort")}
             </ToggleGroupItem>
           </ToggleGroup>
         </div>
