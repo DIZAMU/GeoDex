@@ -8,14 +8,27 @@ const FEATURES = (JSON.parse(readFileSync("data/physical.json", "utf8")) as { fe
   .features;
 
 /** Appends review events to IndexedDB and clears the card cache, so a reload replays them. */
-async function seed(page: Page, cards: { cardId: string; daysAgo: number; rating: number }[]) {
+async function seed(
+  page: Page,
+  cards: { cardId: string; daysAgo: number; rating: number }[],
+  noNewCards = false,
+) {
   await page.evaluate(
-    (cards) =>
+    ({ cards, noNewCards }) =>
       new Promise<void>((resolve, reject) => {
         const open = indexedDB.open("geodex");
         open.onerror = () => reject(open.error);
         open.onsuccess = () => {
-          const tx = open.result.transaction(["reviewEvents", "cardState"], "readwrite");
+          const tx = open.result.transaction(
+            ["reviewEvents", "cardState", "settings"],
+            "readwrite",
+          );
+          if (noNewCards) {
+            // Only the seeded cards come up: no new cards today.
+            const settings = tx.objectStore("settings");
+            const get = settings.get("user");
+            get.onsuccess = () => settings.put({ ...get.result, newPerDayOverride: 0 });
+          }
           const events = tx.objectStore("reviewEvents");
           cards.forEach(({ cardId, daysAgo, rating }, i) => {
             events.put({
@@ -41,7 +54,7 @@ async function seed(page: Page, cards: { cardId: string; daysAgo: number; rating
           tx.onerror = () => reject(tx.error);
         };
       }),
-    cards,
+    { cards, noNewCards },
   );
 }
 
@@ -178,7 +191,7 @@ for (const [name, kinds] of SLICES) {
 }
 
 test("physical cards in every theme and language", async ({ page }) => {
-  test.setTimeout(900_000);
+  test.setTimeout(300_000);
   await setUpLearner(page, 2);
   // Each round has its own river and country: reviews from one round reschedule its cards.
   const rounds = [
@@ -193,12 +206,16 @@ test("physical cards in every theme and language", async ({ page }) => {
     const feature = FEATURES.find((f) => f.id === featureId) as Feature;
     await chooseThemeAndLocale(page, theme, locale);
     await page.getByTestId("module-physical-on").click();
-    await seed(page, [
-      { cardId: `${countryId}:map_to_name`, daysAgo: 5, rating: 3 },
-      { cardId: `${countryId}:name_to_map`, daysAgo: 5, rating: 3 },
-      { cardId: `${feature.id}:feature_to_map`, daysAgo: 2, rating: 1 },
-      { cardId: `${feature.id}:map_to_feature`, daysAgo: 2, rating: 1 },
-    ]);
+    await seed(
+      page,
+      [
+        { cardId: `${countryId}:map_to_name`, daysAgo: 5, rating: 3 },
+        { cardId: `${countryId}:name_to_map`, daysAgo: 5, rating: 3 },
+        { cardId: `${feature.id}:feature_to_map`, daysAgo: 2, rating: 1 },
+        { cardId: `${feature.id}:map_to_feature`, daysAgo: 2, rating: 1 },
+      ],
+      true,
+    );
     await page.goto("/session?input=mc");
     const seen = { tap: false, name: false };
     for (let i = 0; i < 80 && !(seen.tap && seen.name); i++) {
@@ -224,10 +241,8 @@ test("physical cards in every theme and language", async ({ page }) => {
         continue;
       }
       if (
-        (await page
-          .getByTestId("feature-selected")
-          .getAttribute("data-feature")
-          .catch(() => null)) === feature.id &&
+        (await page.getByTestId("feature-selected").count()) > 0 &&
+        (await page.getByTestId("feature-selected").getAttribute("data-feature")) === feature.id &&
         !seen.name
       ) {
         seen.name = true;
@@ -240,7 +255,9 @@ test("physical cards in every theme and language", async ({ page }) => {
       }
       if (await page.getByTestId("choices").isVisible()) await page.keyboard.press("1");
       else if (await page.getByTestId("flag-choices").isVisible()) await page.keyboard.press("1");
-      else await page.getByTestId("give-up").click();
+      else if (await page.getByTestId("give-up").isVisible())
+        await page.getByTestId("give-up").click();
+      else await page.keyboard.press("Enter");
     }
     expect(seen, `${theme} ${locale}`).toEqual({ tap: true, name: true });
     await page.keyboard.press("Escape");
