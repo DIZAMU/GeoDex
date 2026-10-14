@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { decimateRing, degreesPerPixel, fitTransform, pickCountry, unionBounds } from "./fit";
+import { decimateRing, fitTransform, pickCountry, simplifyRing, unionBounds } from "./fit";
 
 describe("fitTransform", () => {
   it("centers and scales bounds into the viewport with padding", () => {
@@ -86,13 +86,6 @@ describe("pickCountry", () => {
   });
 });
 
-describe("degreesPerPixel", () => {
-  it("turns a full map width into a full turn, less when zoomed in", () => {
-    expect(degreesPerPixel(720, 1) * 720).toBeCloseTo(360);
-    expect(degreesPerPixel(720, 4)).toBeCloseTo(0.125);
-  });
-});
-
 describe("decimateRing", () => {
   it("keeps closure and leaves small rings intact", () => {
     const ring = Array.from({ length: 20 }, (_, i) => [i, 0] as [number, number]);
@@ -102,5 +95,21 @@ describe("decimateRing", () => {
     expect(out.at(-1)).toBe(ring.at(-1));
     expect(out.length).toBeLessThan(ring.length);
     expect(decimateRing(ring.slice(0, 6), 5)).toHaveLength(6);
+  });
+});
+
+describe("simplifyRing", () => {
+  it("drops close vertices, keeps the ends and a valid ring", () => {
+    const ring = Array.from({ length: 200 }, (_, i) => [
+      Math.cos(i / 31.6) * 5,
+      Math.sin(i / 31.6) * 5,
+    ]);
+    ring.push(ring[0] as number[]);
+    const out = simplifyRing(ring, 0.5);
+    expect(out.length).toBeLessThan(ring.length / 2);
+    expect(out[0]).toBe(ring[0]);
+    expect(out.at(-1)).toBe(ring.at(-1));
+    expect(simplifyRing(ring.slice(0, 5), 10)).toHaveLength(5);
+    expect(simplifyRing(ring, 100).length).toBeGreaterThanOrEqual(4);
   });
 });
