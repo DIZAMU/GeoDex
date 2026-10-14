@@ -18,7 +18,7 @@ import {
 import { isLocale, type Locale } from "@/i18n/locales";
 import { Loader } from "@/ui/loader";
 import { nameOf } from "../session/parts";
-import { confusionScoresFor, scopedCountries } from "../study/plan";
+import { confusionScoresFor, historyCardTypes, scopedCountries } from "../study/plan";
 import { useProgress } from "../study/progress";
 import { type Learner, useLearner } from "../study/useLearner";
 import { achievementLabel } from "./labels";
@@ -81,6 +81,18 @@ function Stats({ learner }: { learner: Learner }) {
           f.countries[0] ? [{ id: f.id, countryId: f.countries[0] }] : [],
         ),
         PHYSICAL_CARD_TYPES,
+      ),
+      // A history entity counts on the continent it is grouped under, via its first country.
+      historyGrid: moduleGrid(
+        learner,
+        countries,
+        learner.world.history.flatMap((e) =>
+          e.countries[0] ? [{ id: e.id, countryId: e.countries[0] }] : [],
+        ),
+        (id) => {
+          const e = learner.world.historyById.get(id);
+          return e ? historyCardTypes(e, (c) => learner.world.byId.has(c)) : [];
+        },
       ),
       retention: retention(learner.events, now, dsh),
       forecast: forecast(states, now, dsh),
@@ -147,6 +159,9 @@ function Stats({ learner }: { learner: Learner }) {
                     : []),
                   ...(learner.settings.modules.physical
                     ? [{ key: "physical", label: t("stats.physical"), row: data.physicalGrid }]
+                    : []),
+                  ...(learner.settings.modules.history
+                    ? [{ key: "history", label: t("stats.history"), row: data.historyGrid }]
                     : []),
                 ].map(({ key, label, row }) => (
                   <tr key={key}>
@@ -428,7 +443,7 @@ function moduleGrid(
   learner: Learner,
   countries: readonly { id: string; continent: string }[],
   items: readonly { id: string; countryId: string }[],
-  types: readonly CardType[],
+  types: readonly CardType[] | ((id: string) => readonly CardType[]),
 ): Map<string, { total: number; started: number; mastered: number }> {
   const continentOf = new Map(countries.map((c) => [c.id, c.continent]));
   const grid = new Map<string, { total: number; started: number; mastered: number }>();
@@ -436,7 +451,7 @@ function moduleGrid(
     const continent = continentOf.get(item.countryId);
     if (!continent) continue;
     const cell = grid.get(continent) ?? { total: 0, started: 0, mastered: 0 };
-    for (const type of types) {
+    for (const type of typeof types === "function" ? types(item.id) : types) {
       const state = learner.states.get(cardId(item.id, type));
       cell.total++;
       if (state && state.phase !== "new") cell.started++;

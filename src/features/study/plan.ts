@@ -4,14 +4,14 @@
  */
 
 import type { FSRS } from "ts-fsrs";
-import type { Country } from "@/data/types";
+import type { Country, HistoricalEntity } from "@/data/types";
 import type { WorldData } from "@/data/world";
 import { type Budget, computeBudget, MAX_DUE_PER_DAY, secondsPerReview } from "@/engine/budget";
 import { isIntroduced, stageOf, unlockedNewCards } from "@/engine/cards";
 import { confusionScores, contrastCardId, contrastCards } from "@/engine/confusions";
 import { learningDay } from "@/engine/day";
 import { rollingMedian } from "@/engine/grading";
-import { groupCardTypes, groupReady } from "@/engine/groups";
+import { empireReady, groupCardTypes, groupReady } from "@/engine/groups";
 import { allocateNew } from "@/engine/modules";
 import { type CardState, retrievability } from "@/engine/scheduler";
 import { buildQueue, pickNewCards, type QueueItem, subregionOrder } from "@/engine/session";
@@ -23,6 +23,8 @@ import {
   cardId,
   GROUP_CARD_TYPES,
   type GroupCardType,
+  HISTORY_CARD_TYPES,
+  type HistoryCardType,
   LANDMARK_CARD_TYPES,
   type LandmarkCardType,
   PHYSICAL_CARD_TYPES,
@@ -71,6 +73,29 @@ export function isFeatureIntroduced(id: string, states: ReadonlyMap<CardId, unkn
 
 const isPhysicalType = (type: string): type is PhysicalCardType =>
   (PHYSICAL_CARD_TYPES as readonly string[]).includes(type);
+
+/** A history entity has started once any of its cards has been reviewed. */
+export function isHistoryIntroduced(id: string, states: ReadonlyMap<CardId, unknown>): boolean {
+  return HISTORY_CARD_TYPES.some((type) => states.has(cardId(id, type)));
+}
+
+const isHistoryType = (type: string): type is HistoryCardType =>
+  (HISTORY_CARD_TYPES as readonly string[]).includes(type);
+
+/**
+ * The cards a history entity has: one for a former name, the outline and (with at least two
+ * successors in scope) a member card for a dissolved state, the outline and era for an empire.
+ */
+export function historyCardTypes(
+  entity: HistoricalEntity,
+  inScope: (id: string) => boolean,
+): HistoryCardType[] {
+  if (entity.kind === "former_name") return ["former_name_to_country"];
+  if (entity.kind === "empire") return ["map_to_empire", "empire_to_era"];
+  return entity.successors.filter(inScope).length >= 2
+    ? ["map_to_dissolved_state", "dissolved_state_member"]
+    : ["map_to_dissolved_state"];
+}
 
 /**
  * A group as studied: its members in scope, and the subregion most of them share (first
@@ -148,6 +173,15 @@ export function planDay(input: {
   const groupsOn = settings.modules?.groups === true;
   const landmarksOn = settings.modules?.landmarks === true;
   const physicalOn = settings.modules?.physical === true;
+  const historyOn = settings.modules?.history === true;
+  /** Subregion of a history entity: its first introduced country in scope, else its first. */
+  const historySubregion = (id: string): string | undefined => {
+    const entity = historyOn ? world.historyById.get(id) : undefined;
+    if (!entity) return undefined;
+    const near = entity.countries.filter((c) => inScope.has(c));
+    const started = near.find((c) => isIntroduced(c, states));
+    return inScope.get(started ?? near[0] ?? "")?.subregion;
+  };
   /**
    * Subregion of a physical feature: its first country in scope that has been introduced,
    * else its first country in scope. Oceans with no country take the first introduced one.
@@ -198,7 +232,8 @@ export function planDay(input: {
         type === "city_to_map" ||
         isGroupType(type) ||
         isLandmarkType(type) ||
-        isPhysicalType(type)
+        isPhysicalType(type) ||
+        isHistoryType(type)
       ) {
         const subregion =
           type === "contrast"
@@ -209,7 +244,9 @@ export function planDay(input: {
                 ? landmarkSubregion(entityId)
                 : isPhysicalType(type)
                   ? featureSubregion(entityId)
-                  : citySubregion(entityId);
+                  : isHistoryType(type)
+                    ? historySubregion(entityId)
+                    : citySubregion(entityId);
         if (!subregion) return [];
         return [
           {
@@ -349,6 +386,34 @@ export function planDay(input: {
           }));
       })
     : [];
+  // History: a former name starts with its country, a dissolved state once half its
+  // successors are introduced, an empire once a third of the countries it covers are.
+  const historyCandidates = historyOn
+    ? world.history.flatMap((entity) => {
+        const covered = entity.countries.filter((c) => inScope.has(c));
+        const ready = covered.filter((c) => isIntroduced(c, states)).length;
+        const unlocked =
+          entity.kind === "former_name"
+            ? ready > 0
+            : entity.kind === "dissolved_state"
+              ? groupReady(ready, covered.length)
+              : empireReady(ready, covered.length);
+        const subregion = unlocked ? historySubregion(entity.id) : undefined;
+        if (!subregion) return [];
+        const introduced = isHistoryIntroduced(entity.id, states);
+        return historyCardTypes(entity, (c) => inScope.has(c))
+          .map((type) => cardId(entity.id, type))
+          .filter((id) => !states.has(id))
+          .map((id) => ({
+            cardId: id,
+            entityId: entity.id,
+            subregion,
+            isNew: true,
+            introduced,
+            stage: 1,
+          }));
+      })
+    : [];
   const weight = (id: string, fallback: number) => settings.moduleWeights?.[id] ?? fallback;
   const shares = allocateNew(newAllowance, [
     { id: "countries", weight: weight("countries", 3), available: candidates.length },
@@ -363,6 +428,11 @@ export function planDay(input: {
       id: "physical",
       weight: physicalOn ? weight("physical", 1) : 0,
       available: physicalCandidates.length,
+    },
+    {
+      id: "history",
+      weight: historyOn ? weight("history", 1) : 0,
+      available: historyCandidates.length,
     },
   ]);
 
@@ -387,6 +457,7 @@ export function planDay(input: {
     ...pickNewCards(groupCandidates, order, shares.get("groups") ?? 0),
     ...pickNewCards(landmarkCandidates, order, shares.get("landmarks") ?? 0),
     ...pickNewCards(physicalCandidates, order, shares.get("physical") ?? 0),
+    ...pickNewCards(historyCandidates, order, shares.get("history") ?? 0),
   ];
   const capped = [...due]
     .sort((a, b) => a.retrievability - b.retrievability)

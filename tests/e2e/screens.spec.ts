@@ -60,7 +60,8 @@ for (const theme of THEMES) {
         ["drill-empty", "/drill?region=none", "drill-empty"],
       ] as const) {
         await page.goto(url);
-        await expect(page.getByTestId(ready)).toBeVisible();
+        // A cold page load parses the whole world data first.
+        await expect(page.getByTestId(ready)).toBeVisible({ timeout: 15_000 });
         await shot(page, `${theme}-${locale}-${name}`);
         await noHorizontalScroll(page);
       }

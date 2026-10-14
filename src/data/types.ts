@@ -174,3 +174,58 @@ export type PhysicalFeature = {
 };
 
 export type PhysicalFile = { features: PhysicalFeature[] };
+
+export type HistoryKind = "former_name" | "dissolved_state" | "empire";
+
+type HistoryBase = {
+  /** Wikidata QID, or `former-<name>` for a renamed state with no item of its own. */
+  id: string;
+  names: L10n;
+  aliases: L10nList;
+  /** Content group and card order: a continent id. */
+  region: string;
+  /** ISO3 of the modern countries it covered or became, most first. Decides when cards start. */
+  countries: string[];
+  sourceUrl: string;
+};
+
+/** Drawn as `geometry`, clipped to land or to the union of the listed countries. */
+export type HistoryOutline = {
+  geometry: { type: "MultiPolygon"; coordinates: [number, number][][][] };
+  clip: "land" | string[] | null;
+  /** Year the outline shows. */
+  snapshotYear: number;
+  approximate: boolean;
+  /** [lon, lat] for the label. */
+  label: [number, number];
+};
+
+export type FormerName = HistoryBase & {
+  kind: "former_name";
+  currentCountry: string;
+  /** Last year the name was official, where that is one clear year. */
+  until: number | null;
+  /** Countries never offered as a wrong answer (Greece for Macedonia). */
+  exclude: string[];
+};
+
+export type DissolvedState = HistoryBase & {
+  kind: "dissolved_state";
+  /** Years; negative is BCE. */
+  period: [number, number];
+  /** Countries wholly or mostly inside it. */
+  successors: string[];
+  /** Countries partly inside it: never asked, never a wrong answer. */
+  partly: string[];
+  outline: HistoryOutline;
+};
+
+export type Empire = HistoryBase & {
+  kind: "empire";
+  period: [number, number];
+  outline: HistoryOutline;
+};
+
+export type HistoricalEntity = FormerName | DissolvedState | Empire;
+
+export type HistoryFile = { entities: HistoricalEntity[] };

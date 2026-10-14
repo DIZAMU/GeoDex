@@ -6,6 +6,8 @@ import type {
   Country,
   CountryGroup,
   GroupsFile,
+  HistoricalEntity,
+  HistoryFile,
   Landmark,
   LandmarksFile,
   PhysicalFeature,
@@ -50,6 +52,9 @@ export type WorldData = {
   /** Oceans, seas, rivers, ranges, deserts and lakes (the physical module), by QID. */
   physical: PhysicalFeature[];
   physicalById: Map<string, PhysicalFeature>;
+  /** Former names, dissolved states and empires (the history module), by id. */
+  history: HistoricalEntity[];
+  historyById: Map<string, HistoricalEntity>;
 };
 
 type LanguagesFile = {
@@ -67,6 +72,7 @@ export function assembleWorld(
   groupsFile: GroupsFile = { groups: [] },
   landmarks: LandmarksFile = { landmarks: [] },
   physical: PhysicalFile = { features: [] },
+  history: HistoryFile = { entities: [] },
 ): WorldData {
   const groups = resolveGroups(groupsFile, file.countries);
   return {
@@ -86,6 +92,8 @@ export function assembleWorld(
     landmarkById: new Map(landmarks.landmarks.map((l) => [l.id, l])),
     physical: physical.features,
     physicalById: new Map(physical.features.map((f) => [f.id, f])),
+    history: history.entities,
+    historyById: new Map(history.entities.map((e) => [e.id, e])),
   };
 }
 
@@ -123,18 +131,32 @@ export function loadWorld(): Promise<WorldData> {
     import("../../data/curated/groups.json"),
     import("../../data/landmarks.json"),
     import("../../data/physical.json"),
-  ]).then(([countries, topology, flags, languages, pairs, cities, groups, landmarks, physical]) =>
-    assembleWorld(
-      countries.default as unknown as CountriesFile,
-      topology.default as unknown as CountryTopology,
-      flags.default as unknown as FlagMeta,
-      languages.default as unknown as LanguagesFile,
-      pairs.default as unknown as { pairs: ConfusionPair[] },
-      cities.default as unknown as CitiesFile,
-      groups.default as unknown as GroupsFile,
-      landmarks.default as unknown as LandmarksFile,
-      physical.default as unknown as PhysicalFile,
-    ),
+    import("../../data/history.json"),
+  ]).then(
+    ([
+      countries,
+      topology,
+      flags,
+      languages,
+      pairs,
+      cities,
+      groups,
+      landmarks,
+      physical,
+      history,
+    ]) =>
+      assembleWorld(
+        countries.default as unknown as CountriesFile,
+        topology.default as unknown as CountryTopology,
+        flags.default as unknown as FlagMeta,
+        languages.default as unknown as LanguagesFile,
+        pairs.default as unknown as { pairs: ConfusionPair[] },
+        cities.default as unknown as CitiesFile,
+        groups.default as unknown as GroupsFile,
+        landmarks.default as unknown as LandmarksFile,
+        physical.default as unknown as PhysicalFile,
+        history.default as unknown as HistoryFile,
+      ),
   );
   return pending;
 }

@@ -1,0 +1,128 @@
+{
+  "group": "north_america",
+  "entities": [
+    {
+      "entityId": "Q1643555",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1643555.en.1",
+            "type": "anchor",
+            "text": "British Honduras is now Belize, on the Caribbean coast between Mexico and Guatemala."
+          },
+          {
+            "id": "Q1643555.en.2",
+            "type": "contrast",
+            "text": "British Honduras was never part of Honduras. Belize and Honduras do not even share a land border."
+          },
+          {
+            "id": "Q1643555.en.3",
+            "type": "etymology",
+            "text": "Belize shares its name with the Belize River and Belize City, the old colonial capital."
+          },
+          {
+            "id": "Q1643555.en.4",
+            "type": "story",
+            "text": "Picture a letter addressed to British Honduras: the postman walks right past Honduras and drops it in Belize."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1643555.nb.1",
+            "type": "anchor",
+            "text": "Britisk Honduras heter nå Belize, ved Det karibiske hav mellom Mexico og Guatemala."
+          },
+          {
+            "id": "Q1643555.nb.2",
+            "type": "contrast",
+            "text": "Britisk Honduras var aldri en del av Honduras. Belize og Honduras har ikke engang felles landegrense."
+          },
+          {
+            "id": "Q1643555.nb.3",
+            "type": "sound",
+            "text": "Belize høres ut som «be Lise»: be Lise tolke, for i Belize snakker de engelsk, ikke spansk som i Honduras."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1643555.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Belize lies on the Caribbean coast, bordering Mexico to the north and Guatemala to the west and south.",
+            "nb": "Belize ligger ved Det karibiske hav og grenser til Mexico i nord og Guatemala i vest og sør."
+          }
+        },
+        {
+          "id": "Q1643555.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Belize is the only country in Central America with English as its official language, a legacy of British rule.",
+            "nb": "Belize er det eneste landet i Mellom-Amerika med engelsk som offisielt språk, en arv fra britisk styre."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q2608489",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q2608489.en.1",
+            "type": "anchor",
+            "text": "The Aztec Empire covered central and southern Mexico, ruled from Tenochtitlan, where Mexico City stands today."
+          },
+          {
+            "id": "Q2608489.en.2",
+            "type": "etymology",
+            "text": "Mexico takes its name from the Mexica, the people at the heart of the Aztec Empire."
+          },
+          {
+            "id": "Q2608489.en.3",
+            "type": "story",
+            "text": "Picture a city on an island in a lake, tied to the shore by causeways: Tenochtitlan, now under Mexico City's streets."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q2608489.nb.1",
+            "type": "anchor",
+            "text": "Aztekerriket dekket det sentrale og sørlige Mexico og ble styrt fra Tenochtitlan, der Mexico by ligger i dag."
+          },
+          {
+            "id": "Q2608489.nb.2",
+            "type": "etymology",
+            "text": "Mexico har navnet sitt fra mexicaene, folket i sentrum av Aztekerriket."
+          },
+          {
+            "id": "Q2608489.nb.3",
+            "type": "story",
+            "text": "Se for deg en by på en øy i en innsjø, bundet til land med veier over vannet: Tenochtitlan, nå under gatene i Mexico by."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q2608489.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Aztec Empire reached from the Gulf of Mexico to the Pacific coast, but never took the Maya lands of Yucatán.",
+            "nb": "Aztekerriket nådde fra Mexicogolfen til stillehavskysten, men tok aldri mayaenes land på Yucatán."
+          }
+        },
+        {
+          "id": "Q2608489.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The empire was an alliance of three city-states: Tenochtitlan, Texcoco and Tlacopan.",
+            "nb": "Riket var en allianse av tre bystater: Tenochtitlan, Texcoco og Tlacopan."
+          }
+        }
+      ]
+    }
+  ]
+}

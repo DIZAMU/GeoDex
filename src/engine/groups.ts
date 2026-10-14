@@ -17,6 +17,11 @@ export function groupReady(introducedMembers: number, members: number): boolean 
   return members > 0 && introducedMembers >= Math.ceil(members / 2);
 }
 
+/** An empire starts once a third of the countries it covers are introduced, at least one. */
+export function empireReady(introduced: number, covered: number): boolean {
+  return covered > 0 && introduced >= Math.max(1, Math.ceil(covered / 3));
+}
+
 export type TapResult = {
   /** Members not tapped. */
   missed: string[];

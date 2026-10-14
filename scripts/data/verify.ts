@@ -12,6 +12,7 @@ const OUTPUTS = [
   "data/cities.json",
   "data/landmarks.json",
   "data/physical.json",
+  "data/history.json",
   "data/geo/countries-50m.json",
   "data/flags-meta.json",
   "data/name-mismatches.md",
@@ -26,6 +27,7 @@ function build(): Map<string, string> {
   execFileSync("node", ["scripts/data/build-cities.ts"], { stdio: "ignore" });
   execFileSync("node", ["scripts/data/build-landmarks.ts"], { stdio: "ignore" });
   execFileSync("node", ["scripts/data/build-physical.ts"], { stdio: "ignore" });
+  execFileSync("node", ["scripts/data/build-history.ts"], { stdio: "ignore" });
   return new Map(
     OUTPUTS.map((path) => [path, createHash("sha256").update(readFileSync(path)).digest("hex")]),
   );

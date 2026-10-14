@@ -55,7 +55,8 @@
     "groupStudy": "Study",
     "groups": "Groups of countries (after half their members)",
     "landmarks": "Landmarks (after their country)",
-    "physical": "Physical geography (after a country it touches)"
+    "physical": "Physical geography (after a country it touches)",
+    "history": "History (former names, dissolved states, empires)"
   },
   "nav": {
     "today": "Today",
@@ -116,7 +117,12 @@
     "landmark_to_country": "Which country is {{landmark}} in?",
     "landmark_to_map": "Place {{landmark}} on the map.",
     "feature_to_map": "Tap on the map: {{feature}}",
-    "map_to_feature": "What is {{thisKind}} called?"
+    "map_to_feature": "What is {{thisKind}} called?",
+    "former_name_to_country": "What is {{name}} called today?",
+    "map_to_dissolved_state": "Which state was this?",
+    "dissolved_state_member": "Which of these was part of {{name}}?",
+    "map_to_empire": "Which empire is this?",
+    "empire_to_era": "{{name}}: when did it exist?"
   },
   "answer": {
     "pinHelp": "Tap where the city is.",
@@ -269,7 +275,12 @@
     "landmark_to_country": "Landmark to country",
     "landmark_to_map": "Landmark on the map",
     "feature_to_map": "Feature on the map",
-    "map_to_feature": "Name the feature"
+    "map_to_feature": "Name the feature",
+    "former_name_to_country": "Former name",
+    "map_to_dissolved_state": "Name the dissolved state",
+    "dissolved_state_member": "Part of the dissolved state",
+    "map_to_empire": "Name the empire",
+    "empire_to_era": "Era of the empire"
   },
   "hookType": {
     "anchor": "Anchor",
@@ -291,7 +302,12 @@
     "flat": "Flat map",
     "view": "Map view",
     "globeLabel": "Globe: drag to turn, scroll or pinch to zoom, arrow keys to turn",
-    "legend": "Mastery"
+    "legend": "Mastery",
+    "timeline": "Borders over time",
+    "year": "Year",
+    "timelineHelp": "Outlines from the history module whose period includes the year. A view, not a quiz.",
+    "noOutlines": "No outline covers this year.",
+    "timelineShort": "Over time"
   },
   "entry": {
     "back": "Atlas",
@@ -309,7 +325,8 @@
     "wrong": "Wrong",
     "drill": "Drill {{region}}",
     "landmarks": "Landmarks",
-    "physical": "Physical geography"
+    "physical": "Physical geography",
+    "pastNames": "In history"
   },
   "stats": {
     "title": "Stats",
@@ -337,7 +354,8 @@
     "noAchievements": "None yet.",
     "drill": "Drill",
     "landmarks": "Landmarks",
-    "physical": "Physical geography"
+    "physical": "Physical geography",
+    "history": "History"
   },
   "streak": {
     "days_one": "{{count}}-day streak",
@@ -405,5 +423,21 @@
     },
     "countries": "Countries",
     "noCountries": "Borders no country"
+  },
+  "history": {
+    "kind": {
+      "former_name": "Former name",
+      "dissolved_state": "Dissolved state",
+      "empire": "Empire"
+    },
+    "snapshot": "Borders in {{year}}",
+    "approximate": "approximate",
+    "period": "{{from}} to {{to}}",
+    "bce": "{{year}} BCE",
+    "until": "Name used until {{year}}",
+    "nowCalled": "Now {{country}}",
+    "successors": "Became",
+    "partly": "Partly inside",
+    "existed": "Existed {{period}}"
   }
 }

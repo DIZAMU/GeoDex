@@ -364,3 +364,47 @@
   stroke-opacity: 1;
   stroke-dasharray: 3 2;
 }
+
+/* History outlines (dissolved states, empires), clipped to land or to their countries. */
+.world-map .map-outline {
+  fill: var(--foreground);
+  fill-opacity: 0.2;
+  stroke: var(--foreground);
+  stroke-opacity: 0.75;
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+.world-map .map-outline-selected {
+  fill-opacity: 0.7;
+  stroke-opacity: 1;
+  stroke-width: 1.5px;
+  animation: map-fill-in 420ms var(--ease-ui) both;
+}
+
+.world-map .map-outline-target {
+  fill: var(--primary);
+  fill-opacity: 0.85;
+  stroke-opacity: 1;
+  stroke-width: 1.5px;
+  animation: map-fill-in 420ms var(--ease-ui) both 120ms;
+}
+
+.world-map .map-outline-chosen {
+  fill: none;
+  stroke-width: 2px;
+  stroke-dasharray: 6 4;
+  stroke-opacity: 1;
+}
+
+.world-map .map-label-outline {
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .world-map .map-outline-selected,
+  .world-map .map-outline-target {
+    animation: none;
+  }
+}
