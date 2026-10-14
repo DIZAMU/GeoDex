@@ -79,3 +79,34 @@ export function labelQuery(values: string): string {
   OPTIONAL { ?item skos:altLabel ?alt FILTER(LANG(?alt) = "en" || LANG(?alt) = "nb") }
 }`;
 }
+
+/**
+ * City facts for candidate QIDs. Statements keep rank and qualifiers for the build. Countries
+ * come back as QIDs and are mapped to ISO3 through data/countries.json (a join on P298 here
+ * times out).
+ */
+export function cityQueries(values: string): Record<string, string> {
+  return {
+    labels: labelQuery(values),
+    country: `SELECT ?item ?country ?rank ?end WHERE {
+  VALUES ?item { ${values} }
+  ?item p:P17 ?st . ?st ps:P17 ?country ; wikibase:rank ?rank .
+  OPTIONAL { ?st pq:P582 ?end }
+}`,
+    coord: `SELECT ?item ?coord WHERE {
+  VALUES ?item { ${values} }
+  ?item wdt:P625 ?coord .
+}`,
+    population: `SELECT ?item ?pop ?rank ?time WHERE {
+  VALUES ?item { ${values} }
+  ?item p:P1082 ?st . ?st ps:P1082 ?pop ; wikibase:rank ?rank .
+  OPTIONAL { ?st pq:P585 ?time }
+}`,
+    capitalOf: `SELECT ?item ?of ?start ?end WHERE {
+  VALUES ?item { ${values} }
+  ?item p:P1376 ?st . ?st ps:P1376 ?of .
+  OPTIONAL { ?st pq:P580 ?start }
+  OPTIONAL { ?st pq:P582 ?end }
+}`,
+  };
+}
