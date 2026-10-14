@@ -157,17 +157,22 @@ export function useDailySession(
         usedHint: view.hint,
       };
       const stats = start.stats.get(view.question.mode);
-      const rating = grade({
-        correct: result.correct,
-        gaveUp: outcome.gaveUp || outcome.timedOut,
-        usedHint: outcome.usedHint,
-        typo: result.typo,
-        responseMs,
-        mode: view.question.mode,
-        inputSetting,
-        medianMs: stats?.median ?? null,
-        reviewsInMode: stats?.count ?? 0,
-      });
+      // Pins are graded by distance (PLAN.md 5.3); giving up or timing out is still Again.
+      const pinRating =
+        result.rating !== undefined && !outcome.gaveUp && !outcome.timedOut ? result.rating : null;
+      const rating =
+        pinRating ??
+        grade({
+          correct: result.correct,
+          gaveUp: outcome.gaveUp || outcome.timedOut,
+          usedHint: outcome.usedHint,
+          typo: result.typo,
+          responseMs,
+          mode: view.question.mode,
+          inputSetting,
+          medianMs: stats?.median ?? null,
+          reviewsInMode: stats?.count ?? 0,
+        });
       const moment = answerMoment({
         scheduler: learner.scheduler,
         before: states.current.get(view.item.cardId),

@@ -117,6 +117,14 @@ export function SettingsScreen() {
           onChange={(v) => set({ currencyAndLanguage: v === "on" })}
           testId="stage4"
         />
+        <Choice
+          label={t("settings.cities")}
+          value={s.modules.cities ? "on" : "off"}
+          options={["on", "off"] as const}
+          render={(v) => (v === "on" ? t("settings.on") : t("settings.off"))}
+          onChange={(v) => set({ modules: { ...s.modules, cities: v === "on" } })}
+          testId="module-cities"
+        />
         <Button
           variant="outline"
           className="self-start"

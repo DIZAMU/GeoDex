@@ -45,6 +45,7 @@
     "countdown": "Countdown",
     "countdownOff": "Off",
     "seconds": "{{count}} s",
+    "cities": "Famous cities (after their country)",
     "currencyLanguage": "Currency and language cards",
     "on": "On",
     "off": "Off",
@@ -93,6 +94,9 @@
     "statFlags": "Flags"
   },
   "q": {
+    "city_to_country": "Which country is {{city}} in?",
+    "city_to_map": "Place {{city}} on the map.",
+    "capitalOf": "Which is the capital of {{name}}?",
     "map_to_name": "Which country is this?",
     "name_to_map": "Find {{name}} on the map.",
     "country_to_capital": "What is the capital of {{name}}?",
@@ -104,6 +108,7 @@
     "contrast": "Which of these is {{name}}?"
   },
   "answer": {
+    "pinHelp": "Tap where the city is.",
     "placeholder": "Type your answer",
     "check": "Check",
     "giveUp": "Show answer",
@@ -113,6 +118,10 @@
     "label": "Your answer"
   },
   "feedback": {
+    "distance": "Your pin was {{distance}} from the city.",
+    "formerCapital": "Former capital",
+    "population": "Population",
+    "cityIn": "City in {{country}}",
     "correct": "Correct",
     "wrong": "Wrong",
     "youPicked": "You picked {{name}}.",
@@ -263,6 +272,7 @@
     "holds": "holds about {{days}} days",
     "neighbors": "Neighbors",
     "none": "None",
+    "cities": "Famous cities",
     "facts": "Facts you have seen",
     "noFacts": "None yet. Facts appear as you review.",
     "history": "Review history",
@@ -273,6 +283,7 @@
   },
   "stats": {
     "title": "Stats",
+    "cities": "Famous cities",
     "grid": "Skills by continent",
     "cell": "{{mastered}} mastered, {{started}} started, {{total}} cards",
     "gridHelp": "Share of cards mastered (21+ days).",

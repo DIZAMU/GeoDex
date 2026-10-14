@@ -2,7 +2,7 @@
 import { CheckIcon, XIcon } from "lucide-react";
 import { type FormEvent, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import type { Country } from "@/data/types";
+import type { City, Country } from "@/data/types";
 import type { WorldData } from "@/data/world";
 import type { Locale } from "@/i18n/locales";
 import { Button } from "@/ui/button";
@@ -40,9 +40,10 @@ export function PromptText({
   locale: Locale;
 }) {
   const { t } = useTranslation();
-  const country = world.byId.get(question.entityId);
+  const country = world.byId.get(question.countryId);
   if (!country) return null;
   const name = country.names[locale];
+  const city = world.cityById.get(question.entityId)?.names[locale] ?? "";
   const inName = inNameOf(country, locale);
   const capital = country.capitals.find((c) => c.roles.includes("primary"))?.names[locale] ?? "";
   const text = (() => {
@@ -64,7 +65,13 @@ export function PromptText({
       case "country_to_language":
         return t("q.country_to_language", { name, inName });
       case "contrast":
-        return t("q.contrast", { name });
+        return question.prompt.kind === "capitalOf"
+          ? t("q.capitalOf", { name, inName })
+          : t("q.contrast", { name });
+      case "city_to_country":
+        return t("q.city_to_country", { city });
+      case "city_to_map":
+        return t("q.city_to_map", { city });
     }
   })();
   return (
@@ -265,6 +272,56 @@ export function CountryCard({ country, locale }: { country: Country; locale: Loc
             .join(", ")}
         </p>
       </div>
+    </div>
+  );
+}
+
+/** Feedback for a city card: the city, its country and what makes it notable. */
+export function CityCard({
+  city,
+  country,
+  locale,
+  distanceKm,
+}: {
+  city: City;
+  country: Country;
+  locale: Locale;
+  distanceKm?: number;
+}) {
+  const { t } = useTranslation();
+  const other: Locale = locale === "en" ? "nb" : "en";
+  const number = new Intl.NumberFormat(locale);
+  const km = new Intl.NumberFormat(locale, {
+    style: "unit",
+    unit: "kilometer",
+    maximumFractionDigits: 0,
+  });
+  return (
+    <div className="surface flex flex-col gap-2 p-4" data-testid="city-card">
+      <p className="font-name text-2xl leading-tight tracking-tight" data-testid="answer-name">
+        {city.names[locale]}
+        {city.names[other] !== city.names[locale] ? (
+          <span className="ml-2 text-sm font-normal text-muted-foreground" lang={other}>
+            {city.names[other]}
+          </span>
+        ) : null}
+      </p>
+      <p className="flex items-center gap-2 text-muted-foreground">
+        <Flag iso2={country.iso2} alt="" className="w-7" />
+        {t("feedback.cityIn", {
+          country: country.names[locale],
+          inName: inNameOf(country, locale),
+        })}
+      </p>
+      <p className="text-sm text-muted-foreground tabular-nums">
+        {t("feedback.population")}: {number.format(city.population)}
+        {city.formerCapital ? ` · ${t("feedback.formerCapital")}` : ""}
+      </p>
+      {distanceKm !== undefined ? (
+        <p data-testid="pin-distance">
+          {t("feedback.distance", { distance: km.format(distanceKm) })}
+        </p>
+      ) : null}
     </div>
   );
 }
