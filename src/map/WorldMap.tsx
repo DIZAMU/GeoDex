@@ -454,7 +454,7 @@ export function WorldMap({
         height={height}
         role="img"
         aria-label={ariaLabel}
-        className="world-map block touch-none select-none"
+        className="world-map absolute inset-0 block touch-none select-none"
         data-turning={turning || undefined}
         onClick={handleClick}
         onPointerDown={onPointerDown}
