@@ -1,6 +1,8 @@
-import { ThumbsDownIcon } from "lucide-react";
+import { FlagIcon, ThumbsDownIcon } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { REPO_PUBLIC, REPO_URL } from "@/config";
 import type { Explanation } from "@/engine/explain/select";
+import { reportIssueUrl } from "@/engine/report";
 import { Button } from "@/ui/button";
 
 /**
@@ -11,12 +13,15 @@ export function ExplanationView({
   explanation,
   hidden = [],
   onNotHelpful,
+  cardId,
 }: {
   explanation: Explanation;
   hidden?: readonly string[];
   onNotHelpful?: (hookId: string) => void;
+  /** The card the facts were shown for; with a public repository, facts get a report link. */
+  cardId?: string;
 }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   if (explanation.blocks.length === 0) return null;
   return (
     <div
@@ -84,6 +89,30 @@ export function ExplanationView({
                   <span className="mr-2 text-sm text-foreground">{t("feedback.deeperLabel")}</span>
                 ) : null}
                 {block.text}
+                {REPO_PUBLIC && cardId ? (
+                  <a
+                    className="ml-2 inline-flex items-center gap-1 text-sm underline-offset-4 hover:underline"
+                    href={reportIssueUrl(REPO_URL, {
+                      snippetId: block.id,
+                      cardId,
+                      locale: i18n.language,
+                      text: block.text,
+                      title: t("report.title", { id: block.id }),
+                      body: t("report.body", {
+                        id: block.id,
+                        card: cardId,
+                        locale: i18n.language,
+                        text: block.text,
+                      }),
+                    })}
+                    target="_blank"
+                    rel="noreferrer"
+                    data-testid="report-fact"
+                  >
+                    <FlagIcon aria-hidden className="size-3.5" />
+                    {t("report.link")}
+                  </a>
+                ) : null}
               </p>
             );
         }

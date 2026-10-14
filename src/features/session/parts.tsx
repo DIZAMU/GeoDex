@@ -1,5 +1,5 @@
 /** Building blocks shared by the daily session and the placement test. */
-import { CheckIcon, XIcon } from "lucide-react";
+import { CheckIcon, ListIcon, XIcon } from "lucide-react";
 import { type FormEvent, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { groupNote } from "@/data/groupNotes";
@@ -12,6 +12,7 @@ import type {
   PhysicalFeature,
 } from "@/data/types";
 import type { WorldData } from "@/data/world";
+import { normalizeAnswer } from "@/engine/matching";
 import type { Locale } from "@/i18n/locales";
 import { Button } from "@/ui/button";
 import { Input } from "@/ui/input";
@@ -594,6 +595,75 @@ export function HistoryCard({
           ) : null}
         </>
       )}
+    </div>
+  );
+}
+
+/**
+ * The list alternative to map, pin and tap answers, for screen readers and keyboards
+ * (PLAN.md Phase 10): filter the names, then pick one, or toggle several for tap answers.
+ */
+export function ListAnswer({
+  options,
+  onPick,
+  picked,
+}: {
+  options: readonly { id: string; label: string }[];
+  onPick: (id: string) => void;
+  /** Tap answers: the ids picked so far; each pick toggles. */
+  picked?: ReadonlySet<string>;
+}) {
+  const { t } = useTranslation();
+  const [open, setOpen] = useState(false);
+  const [filter, setFilter] = useState("");
+  const wanted = normalizeAnswer(filter);
+  const shown = options
+    .filter((o) => wanted === "" || normalizeAnswer(o.label).includes(wanted))
+    .slice(0, 12);
+  return (
+    <div className="flex flex-col gap-2" data-testid="list-answer">
+      <Button
+        variant="ghost"
+        className="-ml-2 self-start text-muted-foreground"
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+        data-testid="list-answer-toggle"
+      >
+        <ListIcon aria-hidden />
+        {t("answer.list")}
+      </Button>
+      {open ? (
+        <>
+          <Input
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+            aria-label={t("answer.filter")}
+            placeholder={t("answer.filter")}
+            autoFocus
+            data-testid="list-answer-filter"
+          />
+          <ul className="flex flex-col gap-1" aria-live="polite">
+            {shown.length === 0 ? (
+              <li className="text-muted-foreground">{t("onboarding.noMatch")}</li>
+            ) : (
+              shown.map((o) => (
+                <li key={o.id}>
+                  <Button
+                    variant="outline"
+                    className="w-full justify-start"
+                    aria-pressed={picked ? picked.has(o.id) : undefined}
+                    onClick={() => onPick(o.id)}
+                    data-list-option={o.id}
+                  >
+                    {picked?.has(o.id) ? <CheckIcon aria-hidden /> : null}
+                    {o.label}
+                  </Button>
+                </li>
+              ))
+            )}
+          </ul>
+        </>
+      ) : null}
     </div>
   );
 }
