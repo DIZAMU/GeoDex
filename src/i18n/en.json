@@ -306,7 +306,8 @@
     "timeline": "Borders over time",
     "year": "Year",
     "timelineHelp": "Outlines from the history module whose period includes the year. A view, not a quiz.",
-    "noOutlines": "No outline covers this year."
+    "noOutlines": "No outline covers this year.",
+    "timelineShort": "Over time"
   },
   "entry": {
     "back": "Atlas",

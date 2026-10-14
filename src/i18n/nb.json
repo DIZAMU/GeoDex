@@ -306,7 +306,8 @@
     "timeline": "Grenser gjennom tiden",
     "year": "År",
     "timelineHelp": "Omriss fra historiemodulen der perioden omfatter året. Bare til å se på, ikke en quiz.",
-    "noOutlines": "Ingen omriss dekker dette året."
+    "noOutlines": "Ingen omriss dekker dette året.",
+    "timelineShort": "Over tid"
   },
   "entry": {
     "back": "Atlas",
