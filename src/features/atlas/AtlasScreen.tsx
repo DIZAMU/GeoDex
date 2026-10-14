@@ -1,4 +1,4 @@
-import { AwardIcon, DumbbellIcon, GlobeIcon, MapIcon } from "lucide-react";
+import { AwardIcon, DumbbellIcon, GlobeIcon, HourglassIcon, MapIcon } from "lucide-react";
 import { useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate, useSearchParams } from "react-router";
@@ -13,6 +13,7 @@ import { nameOf } from "../session/parts";
 import { scopedCountries } from "../study/plan";
 import { useProgress } from "../study/progress";
 import { type Learner, useLearner } from "../study/useLearner";
+import { Timeline } from "./Timeline";
 
 export const LEVELS = [0, 1, 2, 3, 4] as const;
 
@@ -53,6 +54,9 @@ function Atlas({ learner }: { learner: Learner }) {
   const raw = params.get("skill");
   const skill: Skill = isSkill(raw) ? raw : "location";
   const flat = params.get("view") === "flat";
+  const time = params.get("view") === "time";
+  const yearParam = Number(params.get("year"));
+  const year = Number.isFinite(yearParam) && params.has("year") ? yearParam : 117;
   const setParam = (key: string, value: string | null) => {
     const next = new URLSearchParams(params);
     if (value === null) next.delete(key);
@@ -104,34 +108,44 @@ function Atlas({ learner }: { learner: Learner }) {
             ))}
           </ToggleGroup>
         </div>
-        <div
-          className="surface aspect-[16/10] min-h-0 overflow-hidden lg:aspect-auto lg:flex-1"
-          data-testid="atlas-map"
-        >
-          {flat ? (
-            <WorldMap
-              countries={countries}
-              topology={learner.world.topology}
-              focus={{ kind: "world" }}
-              highlight={{ levels }}
-              selectable={selectable}
-              onSelect={(id) => navigate(`/atlas/${id}`, { viewTransition: true })}
-              labelFor={labelFor}
-              ariaLabel={t("map.label")}
-            />
-          ) : (
-            <GlobeMap
-              countries={countries}
-              topology={learner.world.topology}
-              levels={levels}
-              selectable={selectable}
-              onSelect={(id) => navigate(`/atlas/${id}`, { viewTransition: true })}
-              labelFor={labelFor}
-              ariaLabel={t("atlas.globeLabel")}
-              initialCenter={home?.centroid}
-            />
-          )}
-        </div>
+        {time ? (
+          <Timeline
+            world={learner.world}
+            countries={countries}
+            locale={locale}
+            year={year}
+            onYear={(y) => setParam("year", String(y))}
+          />
+        ) : (
+          <div
+            className="surface aspect-[16/10] min-h-0 overflow-hidden lg:aspect-auto lg:flex-1"
+            data-testid="atlas-map"
+          >
+            {flat ? (
+              <WorldMap
+                countries={countries}
+                topology={learner.world.topology}
+                focus={{ kind: "world" }}
+                highlight={{ levels }}
+                selectable={selectable}
+                onSelect={(id) => navigate(`/atlas/${id}`, { viewTransition: true })}
+                labelFor={labelFor}
+                ariaLabel={t("map.label")}
+              />
+            ) : (
+              <GlobeMap
+                countries={countries}
+                topology={learner.world.topology}
+                levels={levels}
+                selectable={selectable}
+                onSelect={(id) => navigate(`/atlas/${id}`, { viewTransition: true })}
+                labelFor={labelFor}
+                ariaLabel={t("atlas.globeLabel")}
+                initialCenter={home?.centroid}
+              />
+            )}
+          </div>
+        )}
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex flex-col gap-1">
             <p className="sr-only">{t("atlas.legend")}</p>
@@ -142,10 +156,10 @@ function Atlas({ learner }: { learner: Learner }) {
             variant="outline"
             spacing={0}
             size="sm"
-            value={flat ? "flat" : "globe"}
+            value={time ? "time" : flat ? "flat" : "globe"}
             aria-label={t("atlas.view")}
             onValueChange={(value) => {
-              if (value) setParam("view", value === "flat" ? "flat" : null);
+              if (value) setParam("view", value === "globe" ? null : value);
             }}
           >
             <ToggleGroupItem value="globe" data-testid="view-globe">
@@ -155,6 +169,10 @@ function Atlas({ learner }: { learner: Learner }) {
             <ToggleGroupItem value="flat" data-testid="view-flat">
               <MapIcon aria-hidden />
               {t("atlas.flat")}
+            </ToggleGroupItem>
+            <ToggleGroupItem value="time" data-testid="view-time">
+              <HourglassIcon aria-hidden />
+              {t("atlas.timeline")}
             </ToggleGroupItem>
           </ToggleGroup>
         </div>
