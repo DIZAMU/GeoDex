@@ -37,3 +37,41 @@ export function screenArea(projectedArea: number, k: number): number {
 
 /** Countries smaller than this on screen get a tappable marker (PLAN.md 8.4). */
 export const MARKER_AREA_PX = 30;
+
+/** Screen radius of a marker dot, and of its larger tap target. */
+export const MARKER_DOT_PX = 5;
+export const MARKER_HIT_PX = 22;
+
+/**
+ * Which country a tap means. A marker's visible dot wins, then the country shape under the
+ * pointer, then the nearest marker whose tap target contains the point. Without this order,
+ * the tap targets of small countries (Belgium, Denmark) cover their large neighbors.
+ */
+export function pickCountry(
+  point: readonly [number, number],
+  markers: readonly { id: string; x: number; y: number }[],
+  shapeId: string | null,
+): string | null {
+  let nearest: { id: string; d: number } | null = null;
+  for (const m of markers) {
+    const d = Math.hypot(m.x - point[0], m.y - point[1]);
+    if (!nearest || d < nearest.d) nearest = { id: m.id, d };
+  }
+  if (nearest && nearest.d <= MARKER_DOT_PX + 4) return nearest.id;
+  if (shapeId) return shapeId;
+  return nearest && nearest.d <= MARKER_HIT_PX ? nearest.id : null;
+}
+
+/** Degrees of longitude per screen pixel when a map of this projected width is dragged. */
+export function degreesPerPixel(sphereWidth: number, k: number): number {
+  return 360 / Math.max(1, sphereWidth * k);
+}
+
+/** Keeps every nth vertex of each ring (ends kept, small rings intact), for drawing while dragging. */
+export function decimateRing<T>(ring: readonly T[], n: number): T[] {
+  if (ring.length <= 8 || n <= 1) return [...ring];
+  const out = ring.filter((_, i) => i % n === 0);
+  const last = ring[ring.length - 1] as T;
+  if (out[out.length - 1] !== last) out.push(last);
+  return out;
+}

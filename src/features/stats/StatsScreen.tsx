@@ -127,12 +127,19 @@ function Stats({ learner }: { learner: Learner }) {
                         mastered: 0,
                       };
                       const share = cell.total ? cell.mastered / cell.total : 0;
-                      const level = cell.started === 0 ? 0 : Math.min(4, 1 + Math.floor(share * 4));
+                      // Color follows the number in the cell: the mastered share, nothing else.
+                      const level =
+                        cell.mastered === 0 ? 0 : Math.min(4, 1 + Math.floor(share * 4));
                       return (
                         <td
                           key={c}
                           className="rounded-md px-2 py-2 tabular-nums"
                           style={{ background: `var(--mastery-${level})` }}
+                          title={t("stats.cell", {
+                            mastered: number.format(cell.mastered),
+                            started: number.format(cell.started),
+                            total: number.format(cell.total),
+                          })}
                         >
                           <span className="rounded bg-card/85 px-1.5 py-0.5 text-foreground">
                             {percent.format(share)}

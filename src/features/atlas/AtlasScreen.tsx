@@ -104,6 +104,7 @@ function Atlas({ learner }: { learner: Learner }) {
             highlight={{ levels }}
             selectable={selectable}
             onSelect={(id) => navigate(`/atlas/${id}`, { viewTransition: true })}
+            spin
             labelFor={labelFor}
             ariaLabel={t("map.label")}
           />
