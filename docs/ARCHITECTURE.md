@@ -1,89 +1,71 @@
 # Architecture
 
-Skeleton. Filled in as each phase lands; the full write-up is a Phase 10 task.
-
-## Overview
-
-Local-first single-page app. IndexedDB (Dexie) is the source of truth on each device. Supabase, when configured, relays and backs up append-only event tables. Without Supabase environment variables the app runs fully local.
+GeoDex is a static, local-first PWA. There is no application server: the browser holds the learner's data, the build holds the world's data, and an optional Supabase project only stores and relays events. This document explains the main design choices and what they cost.
 
 ## Layers
 
-| Layer | Location | Notes |
+| Layer | Where | Rules |
 |---|---|---|
-| App shell and routing | `src/app/` | React Router, `createBrowserRouter` |
-| Features | `src/features/` | One folder per screen |
-| Engine | `src/engine/` | Pure logic, no React or Dexie imports, unit tested (Phase 2) |
-| Map | `src/map/` | d3-geo Equal Earth, SVG (Phase 2) |
-| Storage and sync | `src/db/` | Dexie schema; sync engine in Phase 4 |
-| i18n | `src/i18n/` | i18next, typed keys, en and nb with enforced key parity |
-| Themes | `src/themes/` | CSS tokens per `[data-theme]`, WCAG AA checked in tests |
-| UI primitives | `src/ui/` | shadcn components on Radix |
+| Pure engine | `src/engine/` | No React, no Dexie, no clock or randomness of its own. Scheduler, grading, budget, card unlocking, distractors, matching, session order, placement, streaks, achievements, stats, explanation selection, sync merge. Unit tested; CI fails below 90% line coverage. |
+| Study logic | `src/features/study/` | Turns world data, settings and card state into a day plan (`plan.ts`) and concrete questions (`questions.ts`). Pure functions over data, tested with the real data files. |
+| Storage | `src/db/` | Dexie over IndexedDB: settings, device settings, review events, hook votes, card state cache, sync cursors. |
+| Sync | `src/sync/` | Push and pull of events, settings by last write wins; behind a `SyncBackend` interface with an in-memory fake for tests. |
+| UI | `src/features/*`, `src/map/`, `src/ui/` | React 19, Tailwind, i18next. The map is SVG with d3-geo and d3-zoom. |
+| Data pipeline | `scripts/data/` | Fetch once into `data/raw` (gitignored), build deterministically into committed `data/*.json`. |
+| Content pipeline | `scripts/content/` | Templates compiled from Markdown, content linted against `content/VOICE.md`, `content/REVIEW.md` generated. |
 
-## Settings storage
+## Event-sourced, local-first
 
-- `settings` (synced, last write wins by `updatedAt`): locale today; more fields in Phase 2.
-- `deviceSettings` (never synced): device id and theme preference.
-- Theme and locale are mirrored to `localStorage` for the first paint only (`DECISIONS.md` 005).
+Every answer is a `ReviewEvent`: card id, time, rating, mode, response time, what was chosen, which snippets were shown. Events are append-only, locally and remotely; no code path updates or deletes one.
 
-## Event sourcing
+Card state (stability, difficulty, due date) is a cache. `replayAll` folds the events through the FSRS scheduler in time order and gives the same state on every device. The cache is rebuilt when events arrive out of order (sync), when scheduling settings change, and on load if it is missing.
 
-- Every answer is one immutable `reviewEvents` row, written when the learner continues (`responseMs` prompt to answer, `durationMs` prompt to continue).
-- `cardState` is a cache: `recordReview` applies one event; a late, older event replays that card; `rebuildCardStates` replays everything. FSRS fuzz is off, so replay is identical on every device.
-- Today, sessions and placement read the same pure plan (`src/features/study/plan.ts`): due cards, the time budget, new cards from home outward.
+Consequences:
 
-## Learning engine
+- **Sync cannot lose data.** Two devices that reviewed offline both push their events; both pull the other's; both replay. There is nothing to merge but a set union by event id. Only the settings row uses last write wins.
+- **Everything is derivable.** Streaks, achievements, the mastery atlas, stats, hook effectiveness and confusion pairs are computed from events, never stored.
+- **Reset without deletion.** "Reset progress" stores a time in the synced settings; replays and statistics read only events after it. The log stays intact.
+- **Cost:** a full replay is linear in the number of events. At a few hundred reviews a day that is fine for years; the cache makes normal use incremental.
 
-Pure modules in `src/engine/` (no React or Dexie, enforced by a test): matching, grading, scheduler, cards, budget, distractors, confusions, session, placement, day boundaries, seeded randomness, and the explanation engine in `src/engine/explain/`.
+The Supabase schema mirrors this: event tables allow insert and select only (row-level security, no update or delete policies), with a server sequence number per row so a device can pull "everything after N" without missing rows that commit late.
 
-## Sync
+## Determinism
 
-```
-device A (IndexedDB)                     Supabase (Postgres, RLS)                device B
-  reviewEvents synced=0 --push 500/batch--> review_events (id unique, server_seq) <--push--
-                         <--pull seq > lastPullSeq-500, dedupe by id-- ------pull-------->
-  settings (updatedAt) <------------- last write wins on user_settings ------------------>
-```
+The same inputs give the same output everywhere:
 
-- `src/sync/sync.ts` is the engine; `src/sync/backend.ts` defines the server it talks to, with an in-memory server for tests; `src/sync/supabase.ts` is the real one, loaded only when the `VITE_SUPABASE_*` variables are set.
-- Pushes are idempotent (insert, ignore duplicate ids). Pulls go by server sequence, never by client time, starting 500 back so rows that became visible late are still seen.
-- After new events arrive, the card state cache is rebuilt from all events; replay is deterministic, so devices converge (tested with two devices in random offline interleavings).
-- Sign-in uses an emailed code; the app never creates accounts.
-
-## Offline
-
-`vite-plugin-pwa` precaches the app shell, all data and content chunks, the map geometry, flags and fonts, so the app works offline after the first load and installs to the home screen.
+- **Seeded randomness only.** Distractor choice, option order, explanation selection and placement order use a seeded PRNG keyed by card id and review count. A question looks the same on laptop and phone, and tests can assert exact output.
+- **Deterministic data builds.** `pnpm data:verify` builds twice and requires byte-identical output. Fetches are cached in `data/raw`, and Natural Earth files are pinned to a release tag.
+- **No clock in the engine.** Functions take `now` and the day-start hour as arguments.
 
 ## Data pipeline
 
-```
-fetch (network, cached in data/raw)        build (offline, deterministic)
-  Wikidata SPARQL  ----------------\
-  Språkrådet state names ----------+---> build-countries.ts ---> data/countries.json
-  UN M49 table ---------------------+          ^                  data/geo/countries-50m.json
-  World Bank population -----------/           |                  data/*.md reports
-                                    data/curated/*.json
-  world-atlas, flag-icons (npm) ---------> build-flags.ts ------> public/flags, data/flags-meta.json
-```
+Sources: Wikidata (names in both languages, capitals with roles, currencies, coordinates, QIDs), Natural Earth (country, marine, river, lake and region geometry), Wikimedia Commons (landmark photos and licenses), Språkrådet (Norwegian country names), UN M49 (regions), World Bank (population).
 
-- Fetch and build are separate so the build runs offline and twice gives the same bytes (`pnpm data:verify`).
-- Curated files decide where Wikidata is noisy; every difference is written to a report for review.
-- Types for all generated data live in `src/data/types.ts`, shared by scripts and app.
+Wikidata is a starting point, not the truth. `data/curated/` holds the decisions it cannot make: which capital is primary, official languages, Norwegian names where the label differs from Språkrådet, which landmarks and features are in scope. Each build writes review reports for mismatches.
+
+Physical features and history outlines are simplified per kind, given a label point inside the shape, and linked to the countries they touch. That link decides when their cards start: a river after a country it crosses, a dissolved state after half its successors, an empire after a third of its countries.
+
+Ids never change once shipped: ISO 3166-1 alpha-3 for countries, Wikidata QIDs for everything else. If an entity disappears from the data, its cards are skipped and its events kept.
+
+At runtime the data is fetched as JSON files and precached by the service worker, so the app works offline after the first load.
 
 ## Explanation engine
 
-```
-content/templates/<locale>/<moment>.md --compile-templates.ts--> src/generated/templates.json
-content/entities/countries/<subregion>.json (hooks, capital hooks, flag notes, facts)
-content/confusions.json (contrast text per look-alike pair)
-                     |
-answer -> moment (correct, correct_hard, wrong, lapse, leech, mastered; introduce on the intro panel)
-       -> slots (target, chosen, home, user; locale-aware numbers, compass, neighbors)
-       -> selection: eligible templates, recent views dropped, hooks weighted by what works
-          for this learner, unseen facts first, seeded by card id and review count
-       -> blocks (template, contrast, hook, fact), at most 60 words; snippet ids on the event
-```
+Feedback is chosen per answer from static content, never generated at runtime:
 
-- `src/engine/explain/`: template syntax and the `when` grammar (hand-written, no eval), slots, selection and hook effectiveness. Pure and tested; its files use `.ts` imports so the content scripts run them under Node.
-- `scripts/content/`: the template compiler (runs before `dev`, `build`, `typecheck` and `test`), the linter that enforces the YAML rules in `content/VOICE.md` in both locales, and the generator for `content/REVIEW.md`.
-- "Not helpful" writes an append-only `hookVoteEvents` row; it hides that hook for that card and counts as a failure for its hook type.
-- Contrast cards (`A|B:contrast`) appear after two confusions in 90 days when contrast text exists for the pair.
+1. **Moment**: first introduction, correct, wrong, wrong with a known confusion, leech, mastered.
+2. **Template** for the moment, in the learner's language, with slots filled from data (area, population, distance to the home country) and formatted with `Intl` for the locale.
+3. **Hook**: one memory hook, weighted towards the hook types that have worked for this learner (the next review after a hook counts as a success or failure; "Not helpful" counts as a failure) and away from ones seen recently.
+4. **Fact** or **contrast** text: facts by tier as the card matures; contrast text when the learner picked a known confusion.
+
+Content is written per language, not translated, and linted for the voice rules (no filler, no praise, no dashes, length limits). Every fact stays in `content/REVIEW.md` until the author verifies it.
+
+## Trade-offs
+
+- **Static content over generation.** Explanations cannot adapt beyond what was written, but they are free, offline, reviewable and identical across devices.
+- **Equal Earth over Mercator.** Honest areas; the cost is that small countries are tiny at world zoom, handled with tap markers and a zoom that frames the question.
+- **No in-browser FSRS optimization.** The available optimizer needs cross-origin isolation, which would block the landmark photos in Safari (DECISIONS.md 039). Default FSRS-6 parameters apply.
+- **Hand-drawn history outlines.** No permissively licensed dataset of empire extents exists; outlines are approximate and say so (DECISIONS.md 037).
+- **Detailed map on phones.** The 1:50m world map keeps small countries recognisable but costs about half a second of drawing on a throttled phone, the main reason mobile Lighthouse performance is 64.
+
+Every decision that deviates from or fills a gap in the plan is recorded in `DECISIONS.md`.

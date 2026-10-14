@@ -368,7 +368,7 @@
 /* History outlines (dissolved states, empires), clipped to land or to their countries. */
 .world-map .map-outline {
   fill: var(--foreground);
-  fill-opacity: 0.2;
+  fill-opacity: 0.32;
   stroke: var(--foreground);
   stroke-opacity: 0.75;
   stroke-width: 1px;

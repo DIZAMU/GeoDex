@@ -46,7 +46,7 @@ export function Timeline({
   const labelFor = useCallback((id: string) => nameOf(world, id, locale), [world, locale]);
   return (
     <div className="flex min-h-0 flex-1 flex-col gap-3" data-testid="timeline">
-      <div className="surface relative aspect-[16/10] min-h-0 overflow-hidden lg:aspect-auto lg:min-h-[24rem] lg:flex-1">
+      <div className="surface relative aspect-[16/10] min-h-0 overflow-hidden lg:aspect-auto lg:min-h-[14rem] lg:flex-1">
         <WorldMap
           countries={countries}
           topology={world.topology}
@@ -80,7 +80,7 @@ export function Timeline({
         <p data-testid="timeline-empty">{t("atlas.noOutlines")}</p>
       ) : (
         <ul
-          className="surface shrink-0 divide-y divide-border lg:max-h-44 lg:overflow-y-auto"
+          className="surface shrink-0 divide-y divide-border lg:max-h-36 lg:overflow-y-auto"
           data-testid="timeline-list"
           // Scrolls on wide screens, so it takes focus for keyboard scrolling.
           // biome-ignore lint/a11y/noNoninteractiveTabindex: a scrollable region must be focusable (WCAG 2.1.1)

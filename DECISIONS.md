@@ -229,3 +229,10 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 - **Context:** the author asked for a "reset progress" button. Review events are append-only and never deleted, locally or remotely (CONTRIBUTING.md invariant 1), and synced devices would bring deleted events back anyway.
 - **Options:** (a) delete the events and the card cache, against the invariant; (b) store the reset time in the synced settings and replay only the events after it.
 - **Decision:** (b). `progressResetAt` sits in the settings row, so it syncs by last write wins like the rest. Card state is rebuilt from events after that time (invariant 2 still holds: events plus settings), and progress, streak, stats and achievements read the same filtered events. The placement test runs again. Earlier events stay in the log, in exports and on the server.
+
+## 039. No in-browser FSRS parameter optimization in v1
+
+- **Context:** PLAN.md Phase 10 asks for FSRS parameter optimization "only if feasible in the browser". ts-fsrs has a scheduler but no optimizer.
+- **Checked:** `fsrs-browser` 6.6.0 (BSD-3-Clause) runs the fsrs-rs optimizer as WebAssembly. Its trainer uses a WebAssembly thread pool (`initThreadPool`), which needs `SharedArrayBuffer`, which browsers only allow on cross-origin isolated pages (COOP and COEP headers). COEP `require-corp` blocks the Wikimedia Commons landmark photos, which are served without a Cross-Origin-Resource-Policy header, and Safari does not support the `credentialless` mode that would let them through.
+- **Options:** (a) cross-origin isolate the app and proxy or drop the landmark photos; (b) keep the default FSRS-6 parameters, which ts-fsrs ships trained on a large review corpus, and keep the `fsrsParams` setting so parameters trained elsewhere can be set later.
+- **Decision:** (b). A single learner reaches the review count an optimizer needs (about a thousand reviews) only after weeks, and the default parameters already adapt each card through its own stability and difficulty. Revisit if Safari ships COEP `credentialless`.
