@@ -1,0 +1,861 @@
+{
+  "group": "oceania",
+  "entities": [
+    {
+      "entityId": "Q134905",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q134905.en.1",
+            "type": "anchor",
+            "text": "K'gari lies off the coast of Queensland in eastern Australia, north of Brisbane."
+          },
+          {
+            "id": "Q134905.en.2",
+            "type": "contrast",
+            "text": "K'gari is an island made almost entirely of sand, yet rainforest grows on it."
+          },
+          {
+            "id": "Q134905.en.3",
+            "type": "etymology",
+            "text": "K'gari is the island's name in the language of the Butchulla people; in English it was long called Fraser Island."
+          },
+          {
+            "id": "Q134905.en.4",
+            "type": "story",
+            "text": "Dingoes roam K'gari's beaches, and four-wheel drives use the long east beach as a highway."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q134905.nb.1",
+            "type": "anchor",
+            "text": "K'gari ligger utenfor kysten av Queensland øst i Australia, nord for Brisbane."
+          },
+          {
+            "id": "Q134905.nb.2",
+            "type": "contrast",
+            "text": "K'gari er en øy laget nesten bare av sand, men likevel vokser det regnskog der."
+          },
+          {
+            "id": "Q134905.nb.3",
+            "type": "etymology",
+            "text": "K'gari er øyas navn på språket til butchulla-folket. På engelsk het den lenge Fraser Island."
+          },
+          {
+            "id": "Q134905.nb.4",
+            "type": "story",
+            "text": "Dingoer streifer langs strendene på K'gari, og firehjulstrekkere bruker den lange østre stranden som motorvei."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q134905.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "K'gari is an island in Queensland, Australia.",
+            "nb": "K'gari er en øy i Queensland i Australia."
+          }
+        },
+        {
+          "id": "Q134905.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the largest sand island in the world.",
+            "nb": "Det er verdens største sandøy."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q189657",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q189657.en.1",
+            "type": "anchor",
+            "text": "Kakadu National Park lies in the Northern Territory of Australia, east of Darwin."
+          },
+          {
+            "id": "Q189657.en.2",
+            "type": "story",
+            "text": "Aboriginal people have painted on Kakadu's rock walls for tens of thousands of years, layer over layer."
+          },
+          {
+            "id": "Q189657.en.3",
+            "type": "contrast",
+            "text": "Kakadu is tropical wetland in Australia's far north; Uluru is red desert in the centre."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q189657.nb.1",
+            "type": "anchor",
+            "text": "Kakadu nasjonalpark ligger i Northern Territory i Australia, øst for Darwin."
+          },
+          {
+            "id": "Q189657.nb.2",
+            "type": "story",
+            "text": "Aboriginere har malt på fjellveggene i Kakadu i titusenvis av år, lag på lag."
+          },
+          {
+            "id": "Q189657.nb.3",
+            "type": "contrast",
+            "text": "Kakadu er tropisk våtmark helt nord i Australia. Uluru er rød ørken midt i landet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q189657.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Kakadu National Park is in the Northern Territory, Australia.",
+            "nb": "Kakadu nasjonalpark ligger i Northern Territory i Australia."
+          }
+        },
+        {
+          "id": "Q189657.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is jointly managed by its Aboriginal owners and the Australian government.",
+            "nb": "Den forvaltes sammen av de aboriginske eierne og den australske staten."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q279980",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q279980.en.1",
+            "type": "anchor",
+            "text": "Kata Tjuta rises from the desert of central Australia, west of Uluru in the same national park."
+          },
+          {
+            "id": "Q279980.en.2",
+            "type": "etymology",
+            "text": "Kata Tjuta means many heads in the local Pitjantjatjara language, after its many domes."
+          },
+          {
+            "id": "Q279980.en.3",
+            "type": "contrast",
+            "text": "Uluru is one single rock; Kata Tjuta, nearby, is a cluster of dozens of rounded domes."
+          },
+          {
+            "id": "Q279980.en.4",
+            "type": "shape",
+            "text": "Kata Tjuta is a family of giant red heads huddled together in the desert."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q279980.nb.1",
+            "type": "anchor",
+            "text": "Kata Tjuta reiser seg fra ørkenen midt i Australia, vest for Uluru i samme nasjonalpark."
+          },
+          {
+            "id": "Q279980.nb.2",
+            "type": "etymology",
+            "text": "Kata Tjuta betyr mange hoder på det lokale språket pitjantjatjara, etter de mange kuplene."
+          },
+          {
+            "id": "Q279980.nb.3",
+            "type": "contrast",
+            "text": "Uluru er én enkelt klippe. Kata Tjuta, like ved, er en klynge av mange runde kupler."
+          },
+          {
+            "id": "Q279980.nb.4",
+            "type": "shape",
+            "text": "Kata Tjuta er en familie av kjempestore røde hoder som står tett i tett i ørkenen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q279980.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Kata Tjuta is in the Northern Territory, Australia.",
+            "nb": "Kata Tjuta ligger i Northern Territory i Australia."
+          }
+        },
+        {
+          "id": "Q279980.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It lies in Uluru-Kata Tjuta National Park.",
+            "nb": "Den ligger i Uluru-Kata Tjuta nasjonalpark."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q33910",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q33910.en.1",
+            "type": "anchor",
+            "text": "Uluru rises from the flat red desert at the centre of Australia, southwest of Alice Springs."
+          },
+          {
+            "id": "Q33910.en.2",
+            "type": "shape",
+            "text": "Uluru is a giant red loaf of rock lying alone on a flat plate of desert."
+          },
+          {
+            "id": "Q33910.en.3",
+            "type": "story",
+            "text": "Uluru changes colour through the day and glows deep red at sunset."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q33910.nb.1",
+            "type": "anchor",
+            "text": "Uluru reiser seg fra den flate røde ørkenen midt i Australia, sørvest for Alice Springs."
+          },
+          {
+            "id": "Q33910.nb.2",
+            "type": "shape",
+            "text": "Uluru er et kjempestort rødt brød av stein som ligger alene på en flat ørkentallerken."
+          },
+          {
+            "id": "Q33910.nb.3",
+            "type": "story",
+            "text": "Uluru skifter farge gjennom dagen og gløder dypt rødt i solnedgangen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q33910.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Uluru is in the Northern Territory, Australia.",
+            "nb": "Uluru ligger i Northern Territory i Australia."
+          }
+        },
+        {
+          "id": "Q33910.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is sacred to the Anangu, its Aboriginal owners, and climbing it is no longer allowed.",
+            "nb": "Klippen er hellig for anangu-folket, de aboriginske eierne, og det er ikke lenger lov å klatre på den."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q45178",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q45178.en.1",
+            "type": "anchor",
+            "text": "The Sydney Opera House stands on Bennelong Point in Sydney Harbour, next to the Harbour Bridge."
+          },
+          {
+            "id": "Q45178.en.2",
+            "type": "shape",
+            "text": "The Sydney Opera House is a stack of white sails, or a pile of shells, leaning into the harbour."
+          },
+          {
+            "id": "Q45178.en.3",
+            "type": "story",
+            "text": "A Danish architect, Jørn Utzon, won the design contest for the Sydney Opera House and left before it was finished."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q45178.nb.1",
+            "type": "anchor",
+            "text": "Operahuset i Sydney står på Bennelong Point i Sydney Harbour, ved siden av Harbour Bridge."
+          },
+          {
+            "id": "Q45178.nb.2",
+            "type": "shape",
+            "text": "Operahuset i Sydney er en stabel med hvite seil, eller en haug med skjell, som lener seg mot havnen."
+          },
+          {
+            "id": "Q45178.nb.3",
+            "type": "story",
+            "text": "En dansk arkitekt, Jørn Utzon, vant arkitektkonkurransen for operahuset og dro før det sto ferdig."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q45178.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Sydney Opera House is in Sydney, Australia.",
+            "nb": "Operahuset i Sydney ligger i Sydney i Australia."
+          }
+        },
+        {
+          "id": "Q45178.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was designed by the Danish architect Jørn Utzon.",
+            "nb": "Det ble tegnet av den danske arkitekten Jørn Utzon."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q54495",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q54495.en.1",
+            "type": "anchor",
+            "text": "The Sydney Harbour Bridge crosses Sydney Harbour from the city centre to the North Shore."
+          },
+          {
+            "id": "Q54495.en.2",
+            "type": "etymology",
+            "text": "Sydneysiders call the Harbour Bridge the Coathanger, after the shape of its steel arch."
+          },
+          {
+            "id": "Q54495.en.3",
+            "type": "contrast",
+            "text": "The Harbour Bridge is the steel arch; the Opera House, with white sails, sits beside it on the water."
+          },
+          {
+            "id": "Q54495.en.4",
+            "type": "story",
+            "text": "Visitors climb over the top of the Harbour Bridge's arch in guided groups, clipped to a wire."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q54495.nb.1",
+            "type": "anchor",
+            "text": "Sydney Harbour Bridge krysser havnen i Sydney fra sentrum til North Shore."
+          },
+          {
+            "id": "Q54495.nb.2",
+            "type": "etymology",
+            "text": "Folk i Sydney kaller broen Kleshengeren, etter formen på stålbuen."
+          },
+          {
+            "id": "Q54495.nb.3",
+            "type": "contrast",
+            "text": "Harbour Bridge er stålbuen. Operahuset, med de hvite seilene, ligger ved siden av ved vannet."
+          },
+          {
+            "id": "Q54495.nb.4",
+            "type": "story",
+            "text": "Besøkende klatrer over toppen av buen på Harbour Bridge i guidede grupper, festet til en wire."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q54495.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Sydney Harbour Bridge is in Sydney, Australia.",
+            "nb": "Sydney Harbour Bridge ligger i Sydney i Australia."
+          }
+        },
+        {
+          "id": "Q54495.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is a steel arch bridge carrying road, rail and footpaths.",
+            "nb": "Det er en buebro av stål med vei, jernbane og gangvei."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q673418",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q673418.en.1",
+            "type": "anchor",
+            "text": "Bondi Beach lies on the Pacific coast of Sydney, east of the city centre."
+          },
+          {
+            "id": "Q673418.en.2",
+            "type": "story",
+            "text": "Bondi's lifeguards are so busy pulling swimmers out of rip currents that they got their own TV show."
+          },
+          {
+            "id": "Q673418.en.3",
+            "type": "shape",
+            "text": "Bondi Beach is a curved bite of golden sand cut out of Sydney's cliffs."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q673418.nb.1",
+            "type": "anchor",
+            "text": "Bondi Beach ligger ved Stillehavskysten av Sydney, øst for sentrum."
+          },
+          {
+            "id": "Q673418.nb.2",
+            "type": "story",
+            "text": "Livvaktene på Bondi har så mye å gjøre med å redde badende fra strømmer at de fikk sitt eget TV-program."
+          },
+          {
+            "id": "Q673418.nb.3",
+            "type": "shape",
+            "text": "Bondi Beach er et buet bitt av gyllen sand skåret ut av klippene i Sydney."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q673418.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Bondi Beach is in Sydney, Australia.",
+            "nb": "Bondi Beach ligger i Sydney i Australia."
+          }
+        },
+        {
+          "id": "Q673418.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It faces the Pacific Ocean.",
+            "nb": "Stranden vender mot Stillehavet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q7343",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q7343.en.1",
+            "type": "anchor",
+            "text": "The Great Barrier Reef runs along the coast of Queensland in northeast Australia, in the Coral Sea."
+          },
+          {
+            "id": "Q7343.en.2",
+            "type": "story",
+            "text": "The Great Barrier Reef is built by tiny coral animals, yet it is large enough to be seen from space."
+          },
+          {
+            "id": "Q7343.en.3",
+            "type": "contrast",
+            "text": "The Great Barrier Reef is not one reef but thousands of reefs and islands in a long chain."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q7343.nb.1",
+            "type": "anchor",
+            "text": "Great Barrier Reef går langs kysten av Queensland nordøst i Australia, i Korallhavet."
+          },
+          {
+            "id": "Q7343.nb.2",
+            "type": "story",
+            "text": "Great Barrier Reef er bygd av bitte små koralldyr, men er stort nok til å ses fra verdensrommet."
+          },
+          {
+            "id": "Q7343.nb.3",
+            "type": "contrast",
+            "text": "Great Barrier Reef er ikke ett rev, men tusenvis av rev og øyer i en lang kjede."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q7343.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Great Barrier Reef is off the coast of Queensland, Australia.",
+            "nb": "Great Barrier Reef ligger utenfor kysten av Queensland i Australia."
+          }
+        },
+        {
+          "id": "Q7343.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the world's largest coral reef system.",
+            "nb": "Det er verdens største korallrevsystem."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q187197",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q187197.en.1",
+            "type": "anchor",
+            "text": "Milford Sound cuts into the southwest coast of New Zealand's South Island, in Fiordland."
+          },
+          {
+            "id": "Q187197.en.2",
+            "type": "contrast",
+            "text": "Milford Sound is called a sound but is really a fjord, carved by glaciers."
+          },
+          {
+            "id": "Q187197.en.3",
+            "type": "shape",
+            "text": "Mitre Peak rises straight out of Milford Sound like a bishop's hat dropped in the water."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q187197.nb.1",
+            "type": "anchor",
+            "text": "Milford Sound skjærer seg inn i sørvestkysten av Sørøya i New Zealand, i Fiordland."
+          },
+          {
+            "id": "Q187197.nb.2",
+            "type": "contrast",
+            "text": "Milford Sound kalles et sund, men er egentlig en fjord gravd ut av isbreer."
+          },
+          {
+            "id": "Q187197.nb.3",
+            "type": "shape",
+            "text": "Mitre Peak reiser seg rett opp av Milford Sound som en bispelue som har falt i vannet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q187197.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Milford Sound is in Fiordland National Park, New Zealand.",
+            "nb": "Milford Sound ligger i Fiordland nasjonalpark i New Zealand."
+          }
+        },
+        {
+          "id": "Q187197.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its Māori name is Piopiotahi.",
+            "nb": "Det maoriske navnet er Piopiotahi."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q18924400",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q18924400.en.1",
+            "type": "anchor",
+            "text": "Hobbiton lies among farmland near Matamata on New Zealand's North Island, south of Auckland."
+          },
+          {
+            "id": "Q18924400.en.2",
+            "type": "story",
+            "text": "Hobbiton was built for the Lord of the Rings films and kept as a village of hobbit holes for visitors."
+          },
+          {
+            "id": "Q18924400.en.3",
+            "type": "shape",
+            "text": "Hobbiton is a green hill with round doors set into it, as if the hill had grown front doors."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q18924400.nb.1",
+            "type": "anchor",
+            "text": "Hobbiton ligger på et gårdsbruk ved Matamata på Nordøya i New Zealand, sør for Auckland."
+          },
+          {
+            "id": "Q18924400.nb.2",
+            "type": "story",
+            "text": "Hobbiton ble bygd til filmene om Ringenes herre og bevart som en landsby av hobbithull for besøkende."
+          },
+          {
+            "id": "Q18924400.nb.3",
+            "type": "shape",
+            "text": "Hobbiton er en grønn ås med runde dører, som om åsen hadde fått inngangsdører."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q18924400.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Hobbiton Movie Set is near Matamata, New Zealand.",
+            "nb": "Hobbiton Movie Set ligger ved Matamata i New Zealand."
+          }
+        },
+        {
+          "id": "Q18924400.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was built for the Lord of the Rings and Hobbit films.",
+            "nb": "Den ble bygd til filmene om Ringenes herre og Hobbiten."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q202845",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q202845.en.1",
+            "type": "anchor",
+            "text": "Tongariro National Park lies in the centre of New Zealand's North Island, south of Lake Taupō."
+          },
+          {
+            "id": "Q202845.en.2",
+            "type": "story",
+            "text": "The volcano Ngauruhoe in Tongariro played Mount Doom in the Lord of the Rings films."
+          },
+          {
+            "id": "Q202845.en.3",
+            "type": "contrast",
+            "text": "Tongariro is volcanoes on the North Island; Aoraki/Mount Cook is icy alpine peaks on the South Island."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q202845.nb.1",
+            "type": "anchor",
+            "text": "Tongariro nasjonalpark ligger midt på Nordøya i New Zealand, sør for Taupōsjøen."
+          },
+          {
+            "id": "Q202845.nb.2",
+            "type": "story",
+            "text": "Vulkanen Ngauruhoe i Tongariro spilte Dommedagsfjellet i filmene om Ringenes herre."
+          },
+          {
+            "id": "Q202845.nb.3",
+            "type": "contrast",
+            "text": "Tongariro er vulkaner på Nordøya. Mount Cook er isdekte alpetopper på Sørøya."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q202845.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Tongariro National Park is on the North Island of New Zealand.",
+            "nb": "Tongariro nasjonalpark ligger på Nordøya i New Zealand."
+          }
+        },
+        {
+          "id": "Q202845.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its volcanic peaks are sacred to the local Māori.",
+            "nb": "Vulkantoppene er hellige for de lokale maoriene."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q5059",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q5059.en.1",
+            "type": "anchor",
+            "text": "Mount Cook rises in the Southern Alps in the middle of New Zealand's South Island."
+          },
+          {
+            "id": "Q5059.en.2",
+            "type": "etymology",
+            "text": "Aoraki, its Māori name, is often explained as cloud piercer."
+          },
+          {
+            "id": "Q5059.en.3",
+            "type": "story",
+            "text": "Mount Cook is named after Captain James Cook, who sailed around New Zealand and mapped its coast."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q5059.nb.1",
+            "type": "anchor",
+            "text": "Mount Cook reiser seg i Sør-Alpene midt på Sørøya i New Zealand."
+          },
+          {
+            "id": "Q5059.nb.2",
+            "type": "etymology",
+            "text": "Aoraki, det maoriske navnet, forklares ofte som skygjennomboreren."
+          },
+          {
+            "id": "Q5059.nb.3",
+            "type": "story",
+            "text": "Mount Cook er oppkalt etter kaptein James Cook, som seilte rundt New Zealand og kartla kysten."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q5059.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Aoraki / Mount Cook is on the South Island of New Zealand.",
+            "nb": "Aoraki / Mount Cook ligger på Sørøya i New Zealand."
+          }
+        },
+        {
+          "id": "Q5059.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the highest mountain in New Zealand.",
+            "nb": "Det er New Zealands høyeste fjell."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q673150",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q673150.en.1",
+            "type": "anchor",
+            "text": "Franz Josef Glacier flows down from the Southern Alps on the west coast of New Zealand's South Island."
+          },
+          {
+            "id": "Q673150.en.2",
+            "type": "story",
+            "text": "Franz Josef Glacier comes down close to temperate rainforest, so ice and ferns sit side by side."
+          },
+          {
+            "id": "Q673150.en.3",
+            "type": "etymology",
+            "text": "The glacier is named after the Austrian emperor Franz Joseph."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q673150.nb.1",
+            "type": "anchor",
+            "text": "Franz Josef-breen renner ned fra Sør-Alpene på vestkysten av Sørøya i New Zealand."
+          },
+          {
+            "id": "Q673150.nb.2",
+            "type": "story",
+            "text": "Franz Josef-breen kommer helt ned mot tempererte regnskoger, så is og bregner står side om side."
+          },
+          {
+            "id": "Q673150.nb.3",
+            "type": "etymology",
+            "text": "Breen er oppkalt etter den østerrikske keiseren Frans Josef."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q673150.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Franz Josef Glacier is in Westland Tai Poutini National Park, New Zealand.",
+            "nb": "Franz Josef-breen ligger i Westland Tai Poutini nasjonalpark i New Zealand."
+          }
+        },
+        {
+          "id": "Q673150.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its Māori name is Kā Roimata o Hine Hukatere.",
+            "nb": "Det maoriske navnet er Kā Roimata o Hine Hukatere."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q722125",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q722125.en.1",
+            "type": "anchor",
+            "text": "The Sky Tower stands in central Auckland, New Zealand's largest city, on the North Island."
+          },
+          {
+            "id": "Q722125.en.2",
+            "type": "story",
+            "text": "Visitors to the Sky Tower can jump off it on a wire and drop most of the way to the street."
+          },
+          {
+            "id": "Q722125.en.3",
+            "type": "contrast",
+            "text": "The Sky Tower is in Auckland, not Wellington, which is New Zealand's capital."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q722125.nb.1",
+            "type": "anchor",
+            "text": "Sky Tower står midt i Auckland, New Zealands største by, på Nordøya."
+          },
+          {
+            "id": "Q722125.nb.2",
+            "type": "story",
+            "text": "Besøkende i Sky Tower kan hoppe utfor i en wire og falle nesten helt ned til gaten."
+          },
+          {
+            "id": "Q722125.nb.3",
+            "type": "contrast",
+            "text": "Sky Tower står i Auckland, ikke i Wellington, som er New Zealands hovedstad."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q722125.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Sky Tower is in Auckland, New Zealand.",
+            "nb": "Sky Tower står i Auckland i New Zealand."
+          }
+        },
+        {
+          "id": "Q722125.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the tallest free-standing structure in New Zealand.",
+            "nb": "Det er det høyeste frittstående byggverket i New Zealand."
+          }
+        }
+      ]
+    }
+  ]
+}

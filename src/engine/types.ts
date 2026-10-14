@@ -20,7 +20,19 @@ export type CityCardType = (typeof CITY_CARD_TYPES)[number];
  */
 export const GROUP_CARD_TYPES = ["group_to_map", "map_to_group", "group_member"] as const;
 export type GroupCardType = (typeof GROUP_CARD_TYPES)[number];
-export type CardType = CountryCardType | CityCardType | GroupCardType | "contrast";
+/** Landmarks (PLAN.md 5.3): name from the photo, which country, and where (pin). */
+export const LANDMARK_CARD_TYPES = [
+  "photo_to_name",
+  "landmark_to_country",
+  "landmark_to_map",
+] as const;
+export type LandmarkCardType = (typeof LANDMARK_CARD_TYPES)[number];
+export type CardType =
+  | CountryCardType
+  | CityCardType
+  | GroupCardType
+  | LandmarkCardType
+  | "contrast";
 
 /** `${entityId}:${cardType}`. Never changes once shipped. */
 export type CardId = string;

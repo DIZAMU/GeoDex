@@ -6,6 +6,8 @@ import type {
   Country,
   CountryGroup,
   GroupsFile,
+  Landmark,
+  LandmarksFile,
   Subregion,
 } from "./types";
 
@@ -40,6 +42,9 @@ export type WorldData = {
   /** Groups of countries (the groups module), by QID. */
   groups: CountryGroup[];
   groupById: Map<string, CountryGroup>;
+  /** Landmarks (the landmarks module), by QID. */
+  landmarks: Landmark[];
+  landmarkById: Map<string, Landmark>;
 };
 
 type LanguagesFile = {
@@ -55,6 +60,7 @@ export function assembleWorld(
   pairs: { pairs: ConfusionPair[] },
   cities: CitiesFile = { cities: [] },
   groupsFile: GroupsFile = { groups: [] },
+  landmarks: LandmarksFile = { landmarks: [] },
 ): WorldData {
   const groups = resolveGroups(groupsFile, file.countries);
   return {
@@ -70,6 +76,8 @@ export function assembleWorld(
     cityById: new Map(cities.cities.map((c) => [c.id, c])),
     groups,
     groupById: new Map(groups.map((g) => [g.id, g])),
+    landmarks: landmarks.landmarks,
+    landmarkById: new Map(landmarks.landmarks.map((l) => [l.id, l])),
   };
 }
 
@@ -105,7 +113,8 @@ export function loadWorld(): Promise<WorldData> {
     import("../../data/curated/confusion-pairs.json"),
     import("../../data/cities.json"),
     import("../../data/curated/groups.json"),
-  ]).then(([countries, topology, flags, languages, pairs, cities, groups]) =>
+    import("../../data/landmarks.json"),
+  ]).then(([countries, topology, flags, languages, pairs, cities, groups, landmarks]) =>
     assembleWorld(
       countries.default as unknown as CountriesFile,
       topology.default as unknown as CountryTopology,
@@ -114,6 +123,7 @@ export function loadWorld(): Promise<WorldData> {
       pairs.default as unknown as { pairs: ConfusionPair[] },
       cities.default as unknown as CitiesFile,
       groups.default as unknown as GroupsFile,
+      landmarks.default as unknown as LandmarksFile,
     ),
   );
   return pending;

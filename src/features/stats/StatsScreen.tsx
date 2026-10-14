@@ -7,7 +7,13 @@ import { isMastered, SKILL_IDS } from "@/engine/achievements";
 import { hookStats, hookWeight } from "@/engine/explain/select";
 import { HOOK_TYPES } from "@/engine/explain/types";
 import { activity, forecast, leeches, recognitionOnly, retention, skillGrid } from "@/engine/stats";
-import { CITY_CARD_TYPES, cardId, parseCardId } from "@/engine/types";
+import {
+  type CardType,
+  CITY_CARD_TYPES,
+  cardId,
+  LANDMARK_CARD_TYPES,
+  parseCardId,
+} from "@/engine/types";
 import { isLocale, type Locale } from "@/i18n/locales";
 import { Loader } from "@/ui/loader";
 import { nameOf } from "../session/parts";
@@ -64,7 +70,8 @@ function Stats({ learner }: { learner: Learner }) {
     return {
       countries,
       grid: skillGrid(countries, learner.states),
-      cityGrid: cityGrid(learner, countries),
+      cityGrid: moduleGrid(learner, countries, learner.world.cities, CITY_CARD_TYPES),
+      landmarkGrid: moduleGrid(learner, countries, learner.world.landmarks, LANDMARK_CARD_TYPES),
       retention: retention(learner.events, now, dsh),
       forecast: forecast(states, now, dsh),
       activity: activity(learner.events, now, dsh),
@@ -124,6 +131,9 @@ function Stats({ learner }: { learner: Learner }) {
                   })),
                   ...(learner.settings.modules.cities
                     ? [{ key: "cities", label: t("stats.cities"), row: data.cityGrid }]
+                    : []),
+                  ...(learner.settings.modules.landmarks
+                    ? [{ key: "landmarks", label: t("stats.landmarks"), row: data.landmarkGrid }]
                     : []),
                 ].map(({ key, label, row }) => (
                   <tr key={key}>
@@ -400,19 +410,21 @@ function Heatmap({ days, locale }: { days: { start: number; count: number }[]; l
   );
 }
 
-/** Cities per continent, like a skill row: two cards per city, mastered at 21+ days. */
-function cityGrid(
+/** A module's items per continent, like a skill row: every card counts, mastered at 21+ days. */
+function moduleGrid(
   learner: Learner,
   countries: readonly { id: string; continent: string }[],
+  items: readonly { id: string; countryId: string }[],
+  types: readonly CardType[],
 ): Map<string, { total: number; started: number; mastered: number }> {
   const continentOf = new Map(countries.map((c) => [c.id, c.continent]));
   const grid = new Map<string, { total: number; started: number; mastered: number }>();
-  for (const city of learner.world.cities) {
-    const continent = continentOf.get(city.countryId);
+  for (const item of items) {
+    const continent = continentOf.get(item.countryId);
     if (!continent) continue;
     const cell = grid.get(continent) ?? { total: 0, started: 0, mastered: 0 };
-    for (const type of CITY_CARD_TYPES) {
-      const state = learner.states.get(cardId(city.id, type));
+    for (const type of types) {
+      const state = learner.states.get(cardId(item.id, type));
       cell.total++;
       if (state && state.phase !== "new") cell.started++;
       if (isMastered(state)) cell.mastered++;
