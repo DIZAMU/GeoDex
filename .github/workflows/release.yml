@@ -23,10 +23,11 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
       # GitHub cannot order tags like phase-10.2 against phase-9, so they become semantic
-      # versions: phase-N is v0.N.0 and phase-N.M is v0.N.M (DECISIONS.md 040). The release
-      # keeps its title, notes and date; only its tag changes. Runs once: later there is
-      # nothing left to rename.
-      - name: Rename phase tags to versions
+      # versions: phase-N is v0.N.0 and phase-N.M is v0.N.M (DECISIONS.md 040). This token
+      # may not create tags on older commits (their workflow files differ from main's), so
+      # the author pushes the v0 tags once (releases/README.md); this step then moves each
+      # release onto its new tag and removes the old one. It never fails the job.
+      - name: Move releases onto version tags
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -36,13 +37,16 @@ jobs:
             minor="0"
             if [ "$num" != "$major" ]; then minor="${num#*.}"; fi
             new="v0.${major}.${minor}"
-            sha="$(git rev-list -n 1 "refs/tags/$old")"
-            # The Releases API creates the new tag. A git push of a tag on an older commit is
-            # refused: its workflow files differ from main's, and the token may not change
-            # workflows.
-            gh release edit "$old" --tag "$new" --target "$sha"
-            gh api -X DELETE "repos/${GITHUB_REPOSITORY}/git/refs/tags/${old}"
-            echo "renamed $old to $new"
+            if ! git rev-parse -q --verify "refs/tags/${new}" >/dev/null; then
+              echo "::notice::$old stays until the $new tag is pushed"
+              continue
+            fi
+            if gh release edit "$old" --tag "$new"; then
+              gh api -X DELETE "repos/${GITHUB_REPOSITORY}/git/refs/tags/${old}" || echo "::warning::could not delete tag $old"
+              echo "moved $old to $new"
+            else
+              echo "::warning::could not move $old to $new"
+            fi
           done
       - name: Create missing releases
         env:
@@ -52,6 +56,16 @@ jobs:
             tag="$(basename "$notes" .md)"
             if gh release view "$tag" >/dev/null 2>&1; then
               echo "$tag exists"
+              continue
+            fi
+            # A release still under its old phase tag is not published twice.
+            version="${tag#v0.}"
+            major="${version%%.*}"
+            minor="${version#*.}"
+            legacy="phase-${major}"
+            if [ "$minor" != "0" ]; then legacy="phase-${major}.${minor}"; fi
+            if gh release view "$legacy" >/dev/null 2>&1; then
+              echo "$tag is still published as $legacy"
               continue
             fi
             title="$(head -n 1 "$notes" | sed 's/^# //')"
