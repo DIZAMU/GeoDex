@@ -42,15 +42,16 @@ export function PromptText({
 }) {
   const { t } = useTranslation();
   const country = world.byId.get(question.countryId);
-  if (!country) return null;
+  const feature = question.featureId ? world.physicalById.get(question.featureId) : undefined;
+  // Every card is about a country except physical ones, which may border none (Southern Ocean).
+  if (!country && !feature) return null;
   const group = question.groupId ? world.groupById.get(question.groupId) : undefined;
   const phrase = group?.phrase[locale] ?? "";
-  const name = country.names[locale];
+  const name = country?.names[locale] ?? "";
   const city = world.cityById.get(question.entityId)?.names[locale] ?? "";
   const landmark = world.landmarkById.get(question.entityId);
-  const feature = question.featureId ? world.physicalById.get(question.featureId) : undefined;
-  const inName = inNameOf(country, locale);
-  const capital = country.capitals.find((c) => c.roles.includes("primary"))?.names[locale] ?? "";
+  const inName = country ? inNameOf(country, locale) : "";
+  const capital = country?.capitals.find((c) => c.roles.includes("primary"))?.names[locale] ?? "";
   const text = (() => {
     switch (question.type) {
       case "map_to_name":
@@ -105,7 +106,7 @@ export function PromptText({
       {question.prompt.kind === "photo" && landmark ? (
         <LandmarkPhoto landmark={landmark} alt={t("photo.altPrompt")} />
       ) : null}
-      {question.prompt.kind === "flag" ? (
+      {question.prompt.kind === "flag" && country ? (
         <Flag
           iso2={country.iso2}
           alt={t("flag.alt")}

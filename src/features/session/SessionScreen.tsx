@@ -17,6 +17,7 @@ import {
   checkTaps,
   checkTyped,
   featureView,
+  type MapView,
   type Question,
   type StudyContext,
   scopedMembers,
@@ -266,7 +267,11 @@ function Panel({
 }) {
   const { t } = useTranslation();
   const focusOnMount = useFocusOnMount<HTMLButtonElement>();
-  const country = learner.world.byId.get(view.question.countryId);
+  // Physical cards may border no country in scope (the Southern Ocean). Their panel never
+  // shows country details, so any country stands in to keep the shared code simple.
+  const country =
+    learner.world.byId.get(view.question.countryId) ??
+    (view.question.featureId ? learner.world.countries[0] : undefined);
   if (!country) return null;
   const city = learner.world.cityById.get(view.question.entityId);
   const landmark = learner.world.landmarkById.get(view.question.entityId);
@@ -542,7 +547,7 @@ function mapState(
     if (q.prompt.kind === "map") {
       const v = q.prompt.view;
       return {
-        focus: v.kind === "world" ? { kind: "world" } : { kind: "countries", ids: v.ids },
+        focus: v,
         highlight: { selected: id },
         animate: true,
       };
@@ -550,7 +555,7 @@ function mapState(
     if (q.answer.kind === "pin") {
       const v = q.answer.view;
       return {
-        focus: v.kind === "world" ? { kind: "world" } : { kind: "countries", ids: v.ids },
+        focus: v,
         highlight: {},
         animate: true,
       };
@@ -558,7 +563,7 @@ function mapState(
     if (q.answer.kind === "map") {
       const v = q.answer.view;
       return {
-        focus: v.kind === "world" ? { kind: "world" } : { kind: "countries", ids: v.ids },
+        focus: v,
         highlight: {},
         animate: true,
       };
@@ -643,8 +648,7 @@ function groupMapState(
   picked: ReadonlySet<string>,
 ): { focus: MapFocus; highlight: MapHighlight; animate: boolean; padding?: number } {
   const q = view.question;
-  const toFocus = (v: { kind: "world" } | { kind: "countries"; ids: string[] }): MapFocus =>
-    v.kind === "world" ? { kind: "world" } : { kind: "countries", ids: v.ids };
+  const toFocus = (v: MapView): MapFocus => v;
   if (view.kind !== "feedback") {
     if (q.prompt.kind === "groupMap")
       return {
@@ -688,8 +692,7 @@ function featureMapState(
 ): { focus: MapFocus; highlight: MapHighlight; animate: boolean; padding?: number } {
   const q = view.question;
   const id = q.featureId ?? "";
-  const toFocus = (v: { kind: "world" } | { kind: "countries"; ids: string[] }): MapFocus =>
-    v.kind === "world" ? { kind: "world" } : { kind: "countries", ids: v.ids };
+  const toFocus = (v: MapView): MapFocus => v;
   if (view.kind !== "feedback") {
     if (q.prompt.kind === "featureMap")
       return { focus: toFocus(q.prompt.view), highlight: { selected: id }, animate: true };

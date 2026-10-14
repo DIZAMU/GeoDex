@@ -339,3 +339,28 @@
     animation: none;
   }
 }
+
+/* Tap dots for physical features too thin to tap at the current zoom (lakes, thin ranges). */
+.world-map .map-feature-dot {
+  fill: var(--map-ocean);
+  stroke: var(--foreground);
+  stroke-opacity: 0.6;
+  stroke-width: 1.5px;
+  pointer-events: none;
+}
+.world-map .map-feature-dot-selected {
+  fill: var(--foreground);
+  stroke: var(--background);
+  stroke-opacity: 1;
+}
+.world-map .map-feature-dot-target {
+  fill: var(--primary);
+  stroke: var(--foreground);
+  stroke-opacity: 1;
+}
+.world-map .map-feature-dot-chosen {
+  fill: none;
+  stroke: var(--foreground);
+  stroke-opacity: 1;
+  stroke-dasharray: 3 2;
+}

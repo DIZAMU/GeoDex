@@ -2,7 +2,7 @@
  * Turns a card into a concrete question: what to show, how to answer, and how to check it
  * (PLAN.md 5.3, 5.4). Pure: same inputs, same question.
  */
-import type { Country } from "@/data/types";
+import type { Country, PhysicalFeature } from "@/data/types";
 import type { WorldData } from "@/data/world";
 import {
   type CountryFacts,
@@ -29,7 +29,11 @@ import {
 } from "@/engine/types";
 import type { Locale } from "@/i18n/locales";
 
-export type MapView = { kind: "world" } | { kind: "countries"; ids: string[] };
+/** What a map shows: the world, a set of countries, or a [west, south, east, north] box. */
+export type MapView =
+  | { kind: "world" }
+  | { kind: "countries"; ids: string[] }
+  | { kind: "box"; box: [number, number, number, number] };
 
 export type Prompt =
   | { kind: "map"; countryId: string; view: MapView }
@@ -687,8 +691,35 @@ function landmarkQuestion(
 }
 
 /**
- * The map area for a physical feature at a stability band: new shows the countries it
- * touches, middle their continent, strong the whole world. Oceans always show the world.
+ * A new feature card frames the feature itself with room around it: its bounding box,
+ * widened to at least MIN_SPAN degrees so a small lake still shows its surroundings.
+ */
+const MIN_SPAN: [number, number] = [18, 11];
+const boxCache = new WeakMap<object, MapView>();
+export function featureBox(feature: PhysicalFeature): MapView {
+  const cached = boxCache.get(feature);
+  if (cached) return cached;
+  const points =
+    feature.geometry.type === "MultiPolygon"
+      ? feature.geometry.coordinates.flat(2)
+      : feature.geometry.coordinates.flat();
+  const lons = points.map((p) => p[0]);
+  const lats = points.map((p) => p[1]);
+  let [w, e, s, n] = [Math.min(...lons), Math.max(...lons), Math.min(...lats), Math.max(...lats)];
+  const [cx, cy] = [(w + e) / 2, (s + n) / 2];
+  const halfX = Math.max((e - w) / 2, MIN_SPAN[0] / 2) * 1.15;
+  const halfY = Math.max((n - s) / 2, MIN_SPAN[1] / 2) * 1.15;
+  [w, e, s, n] = [cx - halfX, cx + halfX, Math.max(-85, cy - halfY), Math.min(85, cy + halfY)];
+  // A feature spanning more than half the world (or the date line) is shown whole.
+  const view: MapView = e - w > 180 ? { kind: "world" } : { kind: "box", box: [w, s, e, n] };
+  boxCache.set(feature, view);
+  return view;
+}
+
+/**
+ * The map area for a physical feature at a stability band: new frames the feature, middle
+ * the continents of the countries it touches, strong the whole world. Oceans always show
+ * the world.
  */
 export function featureView(
   ctx: Pick<StudyContext, "world" | "scope">,
@@ -698,9 +729,9 @@ export function featureView(
   const feature = ctx.world.physicalById.get(featureId);
   const inScope = (id: string) => ctx.world.byId.has(id) && (!ctx.scope || ctx.scope.has(id));
   const near = (feature?.countries ?? []).filter(inScope);
-  if (!feature || feature.kind === "ocean" || near.length === 0 || level === "strong")
-    return { kind: "world" };
-  if (level === "new") return { kind: "countries", ids: near };
+  if (!feature || feature.kind === "ocean" || level === "strong") return { kind: "world" };
+  if (level === "new") return featureBox(feature);
+  if (near.length === 0) return { kind: "world" };
   const continents = new Set(near.map((id) => ctx.world.byId.get(id)?.continent));
   return {
     kind: "countries",
