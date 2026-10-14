@@ -1,0 +1,2890 @@
+{
+  "landmarks": [
+    {
+      "id": "Q12495",
+      "names": {
+        "en": "Burj Khalifa",
+        "nb": "Burj Khalifa"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ARE",
+      "lat": 25.1972,
+      "lon": 55.2742,
+      "image": {
+        "file": "Dubai skyline 2015 (crop).jpg",
+        "author": "Tim.Reckmann",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dubai_skyline_2015_(crop).jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Dubai_skyline_2015_%28crop%29.jpg/960px-Dubai_skyline_2015_%28crop%29.jpg",
+        "width": 960,
+        "height": 726
+      }
+    },
+    {
+      "id": "Q695604",
+      "names": {
+        "en": "Sheikh Zayed Mosque",
+        "nb": "Sheikh Zayed Mosque"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ARE",
+      "lat": 24.412,
+      "lon": 54.474,
+      "image": {
+        "file": "Sheikh Zayed Mosque Silhouette.jpg",
+        "author": "PotatoWitch",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sheikh_Zayed_Mosque_Silhouette.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Sheikh_Zayed_Mosque_Silhouette.jpg/960px-Sheikh_Zayed_Mosque_Silhouette.jpg",
+        "width": 960,
+        "height": 540
+      }
+    },
+    {
+      "id": "Q367943",
+      "names": {
+        "en": "Perito Moreno Glacier",
+        "nb": "Perito Moreno Glacier"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ARG",
+      "lat": -50.4932,
+      "lon": -73.128,
+      "image": {
+        "file": "Perito Moreno Glacier 2023.jpg",
+        "author": "Fernando",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Perito_Moreno_Glacier_2023.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Perito_Moreno_Glacier_2023.jpg/960px-Perito_Moreno_Glacier_2023.jpg",
+        "width": 960,
+        "height": 411
+      }
+    },
+    {
+      "id": "Q39739",
+      "names": {
+        "en": "Aconcagua",
+        "nb": "Aconcagua"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ARG",
+      "lat": -32.6531,
+      "lon": -70.0117,
+      "image": {
+        "file": "Aconcagua2016.jpg",
+        "author": "Bjørn Christian Tørrissen",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aconcagua2016.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Aconcagua2016.jpg/960px-Aconcagua2016.jpg",
+        "width": 960,
+        "height": 530
+      }
+    },
+    {
+      "id": "Q134905",
+      "names": {
+        "en": "K'gari",
+        "nb": "Fraser Island"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "AUS",
+      "lat": -25.24,
+      "lon": 153.15,
+      "image": {
+        "file": "Fraser Island view from Indian Head.jpg",
+        "author": "Unknown author",
+        "license": "Public domain",
+        "licenseUrl": null,
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fraser_Island_view_from_Indian_Head.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Fraser_Island_view_from_Indian_Head.jpg/960px-Fraser_Island_view_from_Indian_Head.jpg",
+        "width": 960,
+        "height": 720
+      }
+    },
+    {
+      "id": "Q189657",
+      "names": {
+        "en": "Kakadu National Park",
+        "nb": "Kakadu nasjonalpark"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "AUS",
+      "lat": -13.0055,
+      "lon": 132.5195,
+      "image": {
+        "file": ".00 323. Rock paintings in Australia.jpg",
+        "author": "W. Bulach",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:.00_323._Rock_paintings_in_Australia.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/.00_323._Rock_paintings_in_Australia.jpg/960px-.00_323._Rock_paintings_in_Australia.jpg",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q279980",
+      "names": {
+        "en": "Kata Tjuta",
+        "nb": "Kata Tjuta"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "AUS",
+      "lat": -25.3,
+      "lon": 130.7593,
+      "image": {
+        "file": "Kata Tjuta Australia.jpg",
+        "author": "Barbara Stuparek-Püller",
+        "license": "CC BY-SA 2.0 at",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/at/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kata_Tjuta_Australia.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Kata_Tjuta_Australia.jpg/960px-Kata_Tjuta_Australia.jpg",
+        "width": 960,
+        "height": 720
+      }
+    },
+    {
+      "id": "Q33910",
+      "names": {
+        "en": "Uluru",
+        "nb": "Uluru"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "AUS",
+      "lat": -25.345,
+      "lon": 131.0361,
+      "image": {
+        "file": "Sunset at Uluru on July 30, 2005.jpg",
+        "author": "Thomas Schoch",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sunset_at_Uluru_on_July_30,_2005.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Sunset_at_Uluru_on_July_30%2C_2005.jpg/960px-Sunset_at_Uluru_on_July_30%2C_2005.jpg",
+        "width": 960,
+        "height": 720
+      }
+    },
+    {
+      "id": "Q45178",
+      "names": {
+        "en": "Sydney Opera House",
+        "nb": "Operahuset i Sydney"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "AUS",
+      "lat": -33.8571,
+      "lon": 151.2149,
+      "image": {
+        "file": "Sydney Opera House Sails.jpg",
+        "author": "No machine-readable author provided. Roybb95~commonswiki assumed (based on copyright claims).",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sydney_Opera_House_Sails.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Sydney_Opera_House_Sails.jpg/960px-Sydney_Opera_House_Sails.jpg",
+        "width": 960,
+        "height": 635
+      }
+    },
+    {
+      "id": "Q54495",
+      "names": {
+        "en": "Sydney Harbour Bridge",
+        "nb": "Sydney Harbour Bridge"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "AUS",
+      "lat": -33.8522,
+      "lon": 151.2107,
+      "image": {
+        "file": "Sydney harbour bridge new south wales.jpg",
+        "author": "Adam.J.W.C.",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sydney_harbour_bridge_new_south_wales.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Sydney_harbour_bridge_new_south_wales.jpg/960px-Sydney_harbour_bridge_new_south_wales.jpg",
+        "width": 960,
+        "height": 552
+      }
+    },
+    {
+      "id": "Q673418",
+      "names": {
+        "en": "Bondi Beach",
+        "nb": "Bondi Beach"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "AUS",
+      "lat": -33.8911,
+      "lon": 151.2742,
+      "image": {
+        "file": "2022-10-22 Bondi Beach.jpg",
+        "author": "Maksym Kozlenko",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2022-10-22_Bondi_Beach.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/2022-10-22_Bondi_Beach.jpg/960px-2022-10-22_Bondi_Beach.jpg",
+        "width": 960,
+        "height": 502
+      }
+    },
+    {
+      "id": "Q7343",
+      "names": {
+        "en": "Great Barrier Reef",
+        "nb": "Great Barrier Reef"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "AUS",
+      "lat": -16.4,
+      "lon": 145.8,
+      "image": {
+        "file": "GreatBarrierReef-EO.JPG",
+        "author": "NASA, by MISR",
+        "license": "Public domain",
+        "licenseUrl": null,
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:GreatBarrierReef-EO.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/GreatBarrierReef-EO.JPG",
+        "width": 960,
+        "height": 960
+      }
+    },
+    {
+      "id": "Q76122",
+      "names": {
+        "en": "Salar de Uyuni",
+        "nb": "Salar de Uyuni"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "BOL",
+      "lat": -20.3333,
+      "lon": -67.7,
+      "image": {
+        "file": "Salar de Uyuni - panoramio (10).jpg",
+        "author": "Pavel Špindler",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Salar_de_Uyuni_-_panoramio_(10).jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Salar_de_Uyuni_-_panoramio_%2810%29.jpg/960px-Salar_de_Uyuni_-_panoramio_%2810%29.jpg",
+        "width": 960,
+        "height": 639
+      }
+    },
+    {
+      "id": "Q210722",
+      "names": {
+        "en": "Sugarloaf Mountain",
+        "nb": "Sukkertoppen"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "BRA",
+      "lat": -22.9494,
+      "lon": -43.1567,
+      "image": {
+        "file": "Vista do Morro Dona Marta.jpg",
+        "author": "Ccarelo",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vista_do_Morro_Dona_Marta.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Vista_do_Morro_Dona_Marta.jpg/960px-Vista_do_Morro_Dona_Marta.jpg",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q79961",
+      "names": {
+        "en": "Christ the Redeemer",
+        "nb": "Kristusstatuen"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "BRA",
+      "lat": -22.9519,
+      "lon": -43.2105,
+      "image": {
+        "file": "Christ the Redeemer - Cristo Redentor.jpg",
+        "author": "Arne Müseler",
+        "license": "CC BY-SA 3.0 de",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Christ_the_Redeemer_-_Cristo_Redentor.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Christ_the_Redeemer_-_Cristo_Redentor.jpg/960px-Christ_the_Redeemer_-_Cristo_Redentor.jpg",
+        "width": 960,
+        "height": 1439
+      }
+    },
+    {
+      "id": "Q1072342",
+      "names": {
+        "en": "Moraine Lake",
+        "nb": "Moraine Lake"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "CAN",
+      "lat": 51.3225,
+      "lon": -116.1856,
+      "image": {
+        "file": "Moraine Lake 17092005.jpg",
+        "author": "Gorgo",
+        "license": "Public domain",
+        "licenseUrl": null,
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Moraine_Lake_17092005.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Moraine_Lake_17092005.jpg/960px-Moraine_Lake_17092005.jpg",
+        "width": 960,
+        "height": 720
+      }
+    },
+    {
+      "id": "Q134883",
+      "names": {
+        "en": "CN Tower",
+        "nb": "CN Tower"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "CAN",
+      "lat": 43.6428,
+      "lon": -79.3871,
+      "image": {
+        "file": "CN Tower from Puente de Luz, Toronto, Ontario, 2025-08-25 01.jpg",
+        "author": "Chris Woodrich",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:CN_Tower_from_Puente_de_Luz,_Toronto,_Ontario,_2025-08-25_01.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/CN_Tower_from_Puente_de_Luz%2C_Toronto%2C_Ontario%2C_2025-08-25_01.jpg/960px-CN_Tower_from_Puente_de_Luz%2C_Toronto%2C_Ontario%2C_2025-08-25_01.jpg",
+        "width": 960,
+        "height": 2446
+      }
+    },
+    {
+      "id": "Q745964",
+      "names": {
+        "en": "Château Frontenac",
+        "nb": "Château Frontenac"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "CAN",
+      "lat": 46.8118,
+      "lon": -71.2054,
+      "image": {
+        "file": "Château Frontenac01.jpg",
+        "author": "Bernard Gagnon",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_Frontenac01.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Ch%C3%A2teau_Frontenac01.jpg/960px-Ch%C3%A2teau_Frontenac01.jpg",
+        "width": 960,
+        "height": 695
+      }
+    },
+    {
+      "id": "Q14452",
+      "names": {
+        "en": "Easter Island",
+        "nb": "Påskeøya"
+      },
+      "aliases": {
+        "en": [
+          "Rapa Nui",
+          "Moai"
+        ],
+        "nb": [
+          "Rapa Nui",
+          "Moai"
+        ]
+      },
+      "countryId": "CHL",
+      "lat": -27.12,
+      "lon": -109.35,
+      "image": {
+        "file": "Ahu Tongariki.jpg",
+        "author": "Rivi",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ahu_Tongariki.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Ahu_Tongariki.jpg/960px-Ahu_Tongariki.jpg",
+        "width": 960,
+        "height": 638
+      }
+    },
+    {
+      "id": "Q47141",
+      "names": {
+        "en": "Atacama Desert",
+        "nb": "Atacama"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "CHL",
+      "lat": -24.5,
+      "lon": -69.25,
+      "image": {
+        "file": "El Valle de la Luna (Chile).jpg",
+        "author": "CARLOS TEIXIDOR CADENAS",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:El_Valle_de_la_Luna_(Chile).jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/El_Valle_de_la_Luna_%28Chile%29.jpg/960px-El_Valle_de_la_Luna_%28Chile%29.jpg",
+        "width": 960,
+        "height": 720
+      }
+    },
+    {
+      "id": "Q901646",
+      "names": {
+        "en": "Torres del Paine National Park",
+        "nb": "Torres del Paine National Park"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "CHL",
+      "lat": -50.9831,
+      "lon": -72.9664,
+      "image": {
+        "file": "Torres del Paine, Laguna Azul 09.jpg",
+        "author": "LBM1948",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Torres_del_Paine,_Laguna_Azul_09.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Torres_del_Paine%2C_Laguna_Azul_09.jpg/960px-Torres_del_Paine%2C_Laguna_Azul_09.jpg",
+        "width": 960,
+        "height": 638
+      }
+    },
+    {
+      "id": "Q12501",
+      "names": {
+        "en": "Great Wall of China",
+        "nb": "Den kinesiske mur"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "CHN",
+      "lat": 40.4314,
+      "lon": 116.5644,
+      "image": {
+        "file": "The Great Wall of China at Jinshanling-edit.jpg",
+        "author": "Severin.stalder",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Great_Wall_of_China_at_Jinshanling-edit.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/960px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg",
+        "width": 960,
+        "height": 638
+      }
+    },
+    {
+      "id": "Q47672",
+      "names": {
+        "en": "Terracotta Army",
+        "nb": "Terrakottahæren"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "CHN",
+      "lat": 34.385,
+      "lon": 109.2731,
+      "image": {
+        "file": "51714-Terracota-Army.jpg",
+        "author": "xiquinhosilva",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:51714-Terracota-Army.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/51714-Terracota-Army.jpg/960px-51714-Terracota-Army.jpg",
+        "width": 960,
+        "height": 636
+      }
+    },
+    {
+      "id": "Q71229",
+      "names": {
+        "en": "Potala Palace",
+        "nb": "Potalapalasset"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "CHN",
+      "lat": 29.6578,
+      "lon": 91.1169,
+      "image": {
+        "file": "Potala.jpg",
+        "author": "Ondřej Žváček",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Potala.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Potala.jpg/960px-Potala.jpg",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q80290",
+      "names": {
+        "en": "Forbidden City",
+        "nb": "Den forbudte by"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "CHN",
+      "lat": 39.9158,
+      "lon": 116.3908,
+      "image": {
+        "file": "Hall of Supreme Harmony (20241127120000).jpg",
+        "author": "N509FZ",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hall_of_Supreme_Harmony_(20241127120000).jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Hall_of_Supreme_Harmony_%2820241127120000%29.jpg/960px-Hall_of_Supreme_Harmony_%2820241127120000%29.jpg",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q4152",
+      "names": {
+        "en": "Neuschwanstein Castle",
+        "nb": "Neuschwanstein"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "DEU",
+      "lat": 47.5575,
+      "lon": 10.7494,
+      "image": {
+        "file": "Neuschwanstein Castle 2024-02.jpg",
+        "author": "Wilfredor",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Neuschwanstein_Castle_2024-02.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Neuschwanstein_Castle_2024-02.jpg/960px-Neuschwanstein_Castle_2024-02.jpg",
+        "width": 960,
+        "height": 654
+      }
+    },
+    {
+      "id": "Q82425",
+      "names": {
+        "en": "Brandenburg Gate",
+        "nb": "Brandenburger Tor"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "DEU",
+      "lat": 52.5163,
+      "lon": 13.3777,
+      "image": {
+        "file": "Brandenburger Tor morgens.jpg",
+        "author": "Thomas Wolf , www.foto-tw.de",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brandenburger_Tor_morgens.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Brandenburger_Tor_morgens.jpg/960px-Brandenburger_Tor_morgens.jpg",
+        "width": 960,
+        "height": 641
+      }
+    },
+    {
+      "id": "Q214619",
+      "names": {
+        "en": "The Little Mermaid",
+        "nb": "Den lille havfrue"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "DNK",
+      "lat": 55.6929,
+      "lon": 12.5993,
+      "image": {
+        "file": "Petite sirène de Copenhague (conforme à la loi danoise).JPG",
+        "author": "Benoît Prieur",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Petite_sir%C3%A8ne_de_Copenhague_(conforme_%C3%A0_la_loi_danoise).JPG",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Petite_sir%C3%A8ne_de_Copenhague_%28conforme_%C3%A0_la_loi_danoise%29.JPG/960px-Petite_sir%C3%A8ne_de_Copenhague_%28conforme_%C3%A0_la_loi_danoise%29.JPG",
+        "width": 960,
+        "height": 824
+      }
+    },
+    {
+      "id": "Q14081",
+      "names": {
+        "en": "Chimborazo",
+        "nb": "Chimborazo"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ECU",
+      "lat": -1.4692,
+      "lon": -78.8175,
+      "image": {
+        "file": "Volcán Chimborazo desde Riobamba.jpg",
+        "author": "Eduardo Navas",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Volc%C3%A1n_Chimborazo_desde_Riobamba.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Volc%C3%A1n_Chimborazo_desde_Riobamba.jpg/960px-Volc%C3%A1n_Chimborazo_desde_Riobamba.jpg",
+        "width": 960,
+        "height": 561
+      }
+    },
+    {
+      "id": "Q181476",
+      "names": {
+        "en": "Cotopaxi volcano",
+        "nb": "Cotopaxi"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ECU",
+      "lat": -0.6806,
+      "lon": -78.4378,
+      "image": {
+        "file": "Vólcan Cotopaxi.jpg",
+        "author": "camilogaleano.com",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:V%C3%B3lcan_Cotopaxi.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/V%C3%B3lcan_Cotopaxi.jpg/960px-V%C3%B3lcan_Cotopaxi.jpg",
+        "width": 960,
+        "height": 624
+      }
+    },
+    {
+      "id": "Q38095",
+      "names": {
+        "en": "Galapagos Islands",
+        "nb": "Galápagosøyene"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ECU",
+      "lat": -0.6667,
+      "lon": -90.55,
+      "image": {
+        "file": "Bartoleme Island.jpg",
+        "author": "Pete from USA",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bartoleme_Island.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Bartoleme_Island.jpg/960px-Bartoleme_Island.jpg",
+        "width": 960,
+        "height": 720
+      }
+    },
+    {
+      "id": "Q130958",
+      "names": {
+        "en": "The Great Sphinx",
+        "nb": "Sfinksen i Giza"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "EGY",
+      "lat": 29.9753,
+      "lon": 31.1377,
+      "image": {
+        "file": "Great Sphinx of Giza May 2015.JPG",
+        "author": "MusikAnimal",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great_Sphinx_of_Giza_May_2015.JPG",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Great_Sphinx_of_Giza_May_2015.JPG/960px-Great_Sphinx_of_Giza_May_2015.JPG",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q133423",
+      "names": {
+        "en": "Valley of the Kings",
+        "nb": "Kongenes dal"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "EGY",
+      "lat": 25.7403,
+      "lon": 32.6024,
+      "image": {
+        "file": "Luxor, Tal der Könige (1995, 860x605).jpg",
+        "author": "Fotograf/Photographer: Peter J. Bubenik (1995)",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luxor,_Tal_der_K%C3%B6nige_(1995,_860x605).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Luxor%2C_Tal_der_K%C3%B6nige_%281995%2C_860x605%29.jpg",
+        "width": 960,
+        "height": 675
+      }
+    },
+    {
+      "id": "Q134140",
+      "names": {
+        "en": "Abu Simbel",
+        "nb": "Abu Simbel"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "EGY",
+      "lat": 22.3369,
+      "lon": 31.6256,
+      "image": {
+        "file": "Großer Tempel (Abu Simbel) 31.jpg",
+        "author": "Olaf Tausch",
+        "license": "Public domain",
+        "licenseUrl": null,
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gro%C3%9Fer_Tempel_(Abu_Simbel)_31.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Gro%C3%9Fer_Tempel_%28Abu_Simbel%29_31.jpg/960px-Gro%C3%9Fer_Tempel_%28Abu_Simbel%29_31.jpg",
+        "width": 960,
+        "height": 720
+      }
+    },
+    {
+      "id": "Q37200",
+      "names": {
+        "en": "Great Pyramid of Giza",
+        "nb": "Kheopspyramiden"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "EGY",
+      "lat": 29.9792,
+      "lon": 31.1342,
+      "image": {
+        "file": "Kheops-Pyramid.jpg",
+        "author": "Nina",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kheops-Pyramid.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Kheops-Pyramid.jpg/960px-Kheops-Pyramid.jpg",
+        "width": 960,
+        "height": 590
+      }
+    },
+    {
+      "id": "Q522862",
+      "names": {
+        "en": "Karnak Temple Complex",
+        "nb": "Karnak"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "EGY",
+      "lat": 25.7183,
+      "lon": 32.6583,
+      "image": {
+        "file": "Luxor, Egypt, Karnak.jpg",
+        "author": "Vyacheslav Argenberg",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luxor,_Egypt,_Karnak.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Luxor%2C_Egypt%2C_Karnak.jpg/960px-Luxor%2C_Egypt%2C_Karnak.jpg",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q47476",
+      "names": {
+        "en": "Alhambra",
+        "nb": "Alhambra"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ESP",
+      "lat": 37.1763,
+      "lon": -3.5882,
+      "image": {
+        "file": "Alhambra detail.jpg",
+        "author": "Jebulon",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alhambra_detail.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Alhambra_detail.jpg/960px-Alhambra_detail.jpg",
+        "width": 960,
+        "height": 651
+      }
+    },
+    {
+      "id": "Q48435",
+      "names": {
+        "en": "Basilica and Expiatory Church of the Holy Family",
+        "nb": "Sagrada Família"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ESP",
+      "lat": 41.4037,
+      "lon": 2.1743,
+      "image": {
+        "file": "SF maig 2026.jpg",
+        "author": "Canaan",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:SF_maig_2026.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/SF_maig_2026.jpg/960px-SF_maig_2026.jpg",
+        "width": 960,
+        "height": 663
+      }
+    },
+    {
+      "id": "Q642979",
+      "names": {
+        "en": "Monolithic churches in Lalibela",
+        "nb": "Kirkene i Lalibela"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ETH",
+      "lat": 12.0294,
+      "lon": 39.0404,
+      "image": {
+        "file": "Lalibela, san giorgio, esterno 07.jpg",
+        "author": "Sailko",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lalibela,_san_giorgio,_esterno_07.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Lalibela%2C_san_giorgio%2C_esterno_07.jpg/960px-Lalibela%2C_san_giorgio%2C_esterno_07.jpg",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q20892",
+      "names": {
+        "en": "Le Mont Saint-Michel",
+        "nb": "Mont-Saint-Michel"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "FRA",
+      "lat": 48.6358,
+      "lon": -1.5103,
+      "image": {
+        "file": "Mont St Michel 3, Brittany, France - July 2011.jpg",
+        "author": "Diliff",
+        "license": "Public domain",
+        "licenseUrl": null,
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mont_St_Michel_3,_Brittany,_France_-_July_2011.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Mont_St_Michel_3%2C_Brittany%2C_France_-_July_2011.jpg/960px-Mont_St_Michel_3%2C_Brittany%2C_France_-_July_2011.jpg",
+        "width": 960,
+        "height": 681
+      }
+    },
+    {
+      "id": "Q243",
+      "names": {
+        "en": "Eiffel Tower",
+        "nb": "Eiffeltårnet"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "FRA",
+      "lat": 48.8583,
+      "lon": 2.2945,
+      "image": {
+        "file": "Tour Eiffel Wikimedia Commons.jpg",
+        "author": "Benh LIEU SONG",
+        "license": "Public domain",
+        "licenseUrl": null,
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg/960px-Tour_Eiffel_Wikimedia_Commons.jpg",
+        "width": 960,
+        "height": 1777
+      }
+    },
+    {
+      "id": "Q2946",
+      "names": {
+        "en": "Palace of Versailles",
+        "nb": "Slottet i Versailles"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "FRA",
+      "lat": 48.8047,
+      "lon": 2.1203,
+      "image": {
+        "file": "Vue aérienne du domaine de Versailles par ToucanWings - Creative Commons By Sa 3.0 - 083.jpg",
+        "author": "ToucanWings",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vue_a%C3%A9rienne_du_domaine_de_Versailles_par_ToucanWings_-_Creative_Commons_By_Sa_3.0_-_083.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Vue_a%C3%A9rienne_du_domaine_de_Versailles_par_ToucanWings_-_Creative_Commons_By_Sa_3.0_-_083.jpg/960px-Vue_a%C3%A9rienne_du_domaine_de_Versailles_par_ToucanWings_-_Creative_Commons_By_Sa_3.0_-_083.jpg",
+        "width": 960,
+        "height": 720
+      }
+    },
+    {
+      "id": "Q2981",
+      "names": {
+        "en": "Notre-Dame de Paris",
+        "nb": "Notre-Dame de Paris"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "FRA",
+      "lat": 48.853,
+      "lon": 2.3498,
+      "image": {
+        "file": "Notre-Dame de Paris 2013-07-24.jpg",
+        "author": "P e z i",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Notre-Dame_de_Paris_2013-07-24.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Notre-Dame_de_Paris_2013-07-24.jpg/960px-Notre-Dame_de_Paris_2013-07-24.jpg",
+        "width": 960,
+        "height": 1296
+      }
+    },
+    {
+      "id": "Q64436",
+      "names": {
+        "en": "Arc de Triomphe",
+        "nb": "Triumfbuen"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "FRA",
+      "lat": 48.8738,
+      "lon": 2.295,
+      "image": {
+        "file": "Arc de Triomphe - Août 2026.jpg",
+        "author": "ZeusUpsistos",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arc_de_Triomphe_-_Ao%C3%BBt_2026.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Arc_de_Triomphe_-_Ao%C3%BBt_2026.jpg/960px-Arc_de_Triomphe_-_Ao%C3%BBt_2026.jpg",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q212065",
+      "names": {
+        "en": "Edinburgh Castle",
+        "nb": "Edinburgh Castle"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "GBR",
+      "lat": 55.9487,
+      "lon": -3.2007,
+      "image": {
+        "file": "Edinburgh Castle from the Grassmarket.jpg",
+        "author": "Stephencdickson",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edinburgh_Castle_from_the_Grassmarket.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Edinburgh_Castle_from_the_Grassmarket.jpg/960px-Edinburgh_Castle_from_the_Grassmarket.jpg",
+        "width": 960,
+        "height": 639
+      }
+    },
+    {
+      "id": "Q39671",
+      "names": {
+        "en": "Stonehenge",
+        "nb": "Stonehenge"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "GBR",
+      "lat": 51.1789,
+      "lon": -1.8261,
+      "image": {
+        "file": "Stonehenge Total.jpg",
+        "author": "Stefan Kühn",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stonehenge_Total.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Stonehenge_Total.jpg/960px-Stonehenge_Total.jpg",
+        "width": 960,
+        "height": 720
+      }
+    },
+    {
+      "id": "Q41225",
+      "names": {
+        "en": "Big Ben",
+        "nb": "Big Ben"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "GBR",
+      "lat": 51.5007,
+      "lon": -0.1246,
+      "image": {
+        "file": "Elizabeth Tower and the north front of the Palace of Westminster, London.jpg",
+        "author": "Christian David",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elizabeth_Tower_and_the_north_front_of_the_Palace_of_Westminster,_London.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Elizabeth_Tower_and_the_north_front_of_the_Palace_of_Westminster%2C_London.jpg/960px-Elizabeth_Tower_and_the_north_front_of_the_Palace_of_Westminster%2C_London.jpg",
+        "width": 960,
+        "height": 1707
+      }
+    },
+    {
+      "id": "Q83125",
+      "names": {
+        "en": "Tower Bridge",
+        "nb": "Tower Bridge"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "GBR",
+      "lat": 51.5056,
+      "lon": -0.0753,
+      "image": {
+        "file": "London - London Tower Bridge - 140806 171049.jpg",
+        "author": "Barcex",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:London_-_London_Tower_Bridge_-_140806_171049.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/London_-_London_Tower_Bridge_-_140806_171049.jpg/960px-London_-_London_Tower_Bridge_-_140806_171049.jpg",
+        "width": 960,
+        "height": 540
+      }
+    },
+    {
+      "id": "Q131013",
+      "names": {
+        "en": "Acropolis of Athens",
+        "nb": "Akropolis"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "GRC",
+      "lat": 37.9717,
+      "lon": 23.7261,
+      "image": {
+        "file": "Attica 06-13 Athens 50 View from Philopappos - Acropolis Hill.jpg",
+        "author": "A.Savin",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Attica_06-13_Athens_50_View_from_Philopappos_-_Acropolis_Hill.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Attica_06-13_Athens_50_View_from_Philopappos_-_Acropolis_Hill.jpg/960px-Attica_06-13_Athens_50_View_from_Philopappos_-_Acropolis_Hill.jpg",
+        "width": 960,
+        "height": 600
+      }
+    },
+    {
+      "id": "Q3125051",
+      "names": {
+        "en": "Meteora",
+        "nb": "meteora"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "GRC",
+      "lat": 39.7125,
+      "lon": 21.6267,
+      "image": {
+        "file": "00 0541 Kloster Agía Triáda (Meteora) - Griechenland.jpg",
+        "author": "W. Bulach",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:00_0541_Kloster_Ag%C3%ADa_Tri%C3%A1da_(Meteora)_-_Griechenland.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/00_0541_Kloster_Ag%C3%ADa_Tri%C3%A1da_%28Meteora%29_-_Griechenland.jpg/960px-00_0541_Kloster_Ag%C3%ADa_Tri%C3%A1da_%28Meteora%29_-_Griechenland.jpg",
+        "width": 960,
+        "height": 1440
+      }
+    },
+    {
+      "id": "Q181172",
+      "names": {
+        "en": "Tikal",
+        "nb": "Tikal"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "GTM",
+      "lat": 17.2221,
+      "lon": -89.6236,
+      "image": {
+        "file": "Tikal 3.jpg",
+        "author": "Mundo Maya",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tikal_3.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Tikal_3.jpg/960px-Tikal_3.jpg",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q38120",
+      "names": {
+        "en": "Kaieteur Falls",
+        "nb": "Kaieteurfallet"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "GUY",
+      "lat": 5.1781,
+      "lon": -59.4823,
+      "image": {
+        "file": "GuyanaKaieteurFalls2004.jpg",
+        "author": "Sorenriise at English Wikipedia",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:GuyanaKaieteurFalls2004.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/GuyanaKaieteurFalls2004.jpg/960px-GuyanaKaieteurFalls2004.jpg",
+        "width": 960,
+        "height": 1198
+      }
+    },
+    {
+      "id": "Q189849",
+      "names": {
+        "en": "Plitvice Lakes National Park",
+        "nb": "Plitvicesjøene nasjonalpark"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "HRV",
+      "lat": 44.8804,
+      "lon": 15.616,
+      "image": {
+        "file": "Plitvice Lakes National Park (2).jpg",
+        "author": "Pablo BM from London, England",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plitvice_Lakes_National_Park_(2).jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Plitvice_Lakes_National_Park_%282%29.jpg/960px-Plitvice_Lakes_National_Park_%282%29.jpg",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q42798",
+      "names": {
+        "en": "Borobudur Temple",
+        "nb": "Borobudur"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "IDN",
+      "lat": -7.6079,
+      "lon": 110.2038,
+      "image": {
+        "file": "Borobudur-Nothwest-view.jpg",
+        "author": "Gunawan Kartapranata",
+        "license": "Public domain",
+        "licenseUrl": null,
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Borobudur-Nothwest-view.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Borobudur-Nothwest-view.jpg/960px-Borobudur-Nothwest-view.jpg",
+        "width": 960,
+        "height": 378
+      }
+    },
+    {
+      "id": "Q180422",
+      "names": {
+        "en": "Harmandir Sahib",
+        "nb": "Det gylne tempel"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "IND",
+      "lat": 31.62,
+      "lon": 74.8767,
+      "image": {
+        "file": "Hamandir Sahib (Golden Temple).jpg",
+        "author": "This picture has been taken by Oleg Yunakov . Contact e-mail: yunakov gmail.com . Image can be used in accordance with the terms of the СС-BY-SA license. Other photos can be seen here .",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hamandir_Sahib_(Golden_Temple).jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Hamandir_Sahib_%28Golden_Temple%29.jpg/960px-Hamandir_Sahib_%28Golden_Temple%29.jpg",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q9141",
+      "names": {
+        "en": "Taj Mahal",
+        "nb": "Taj Mahal"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "IND",
+      "lat": 27.175,
+      "lon": 78.0419,
+      "image": {
+        "file": "Taj Mahal, Agra, India edit3.jpg",
+        "author": "Taj_Mahal,_Agra,_India_edit2.jpg : Yann ; edited by King of Hearts derivative work: Jbarta ( talk )",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Taj_Mahal,_Agra,_India_edit3.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Taj_Mahal%2C_Agra%2C_India_edit3.jpg/960px-Taj_Mahal%2C_Agra%2C_India_edit3.jpg",
+        "width": 960,
+        "height": 664
+      }
+    },
+    {
+      "id": "Q239477",
+      "names": {
+        "en": "Cliffs of Moher",
+        "nb": "Cliffs of Moher"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "IRL",
+      "lat": 52.9361,
+      "lon": -9.4708,
+      "image": {
+        "file": "Ireland Cliffs of Moher BW 2025-09-11 14-27-51.jpg",
+        "author": "Berthold Werner",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ireland_Cliffs_of_Moher_BW_2025-09-11_14-27-51.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Ireland_Cliffs_of_Moher_BW_2025-09-11_14-27-51.jpg/960px-Ireland_Cliffs_of_Moher_BW_2025-09-11_14-27-51.jpg",
+        "width": 960,
+        "height": 540
+      }
+    },
+    {
+      "id": "Q129072",
+      "names": {
+        "en": "Persepolis",
+        "nb": "Persepolis"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "IRN",
+      "lat": 29.935,
+      "lon": 52.89,
+      "image": {
+        "file": "Gate of All Nations, Persepolis.jpg",
+        "author": "Alborzagros",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gate_of_All_Nations,_Persepolis.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Gate_of_All_Nations%2C_Persepolis.jpg",
+        "width": 960,
+        "height": 627
+      }
+    },
+    {
+      "id": "Q10285",
+      "names": {
+        "en": "Colosseum",
+        "nb": "Colosseum"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ITA",
+      "lat": 41.8903,
+      "lon": 12.4922,
+      "image": {
+        "file": "Colosseo 2020.jpg",
+        "author": "FeaturedPics",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Colosseo_2020.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/960px-Colosseo_2020.jpg",
+        "width": 960,
+        "height": 673
+      }
+    },
+    {
+      "id": "Q185382",
+      "names": {
+        "en": "Trevi Fountain",
+        "nb": "Trevifontenen"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ITA",
+      "lat": 41.9009,
+      "lon": 12.4833,
+      "image": {
+        "file": "Trevi Fountain - Roma.jpg",
+        "author": "NikonZ7II",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trevi_Fountain_-_Roma.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Trevi_Fountain_-_Roma.jpg/960px-Trevi_Fountain_-_Roma.jpg",
+        "width": 960,
+        "height": 521
+      }
+    },
+    {
+      "id": "Q39054",
+      "names": {
+        "en": "Leaning Tower of Pisa",
+        "nb": "Det skjeve tårn i Pisa"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ITA",
+      "lat": 43.723,
+      "lon": 10.3966,
+      "image": {
+        "file": "Campanile Dôme - Pise (IT52) - 2022-08-31 - 20.jpg",
+        "author": "Chabe01",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Campanile_D%C3%B4me_-_Pise_(IT52)_-_2022-08-31_-_20.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Campanile_D%C3%B4me_-_Pise_%28IT52%29_-_2022-08-31_-_20.jpg/960px-Campanile_D%C3%B4me_-_Pise_%28IT52%29_-_2022-08-31_-_20.jpg",
+        "width": 960,
+        "height": 2129
+      }
+    },
+    {
+      "id": "Q524",
+      "names": {
+        "en": "Mount Vesuvius",
+        "nb": "Vesuv"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ITA",
+      "lat": 40.8226,
+      "lon": 14.4292,
+      "image": {
+        "file": "Il cratere del Vulcano - panoramio.jpg",
+        "author": "pietro scerrato",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Il_cratere_del_Vulcano_-_panoramio.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Il_cratere_del_Vulcano_-_panoramio.jpg/960px-Il_cratere_del_Vulcano_-_panoramio.jpg",
+        "width": 960,
+        "height": 539
+      }
+    },
+    {
+      "id": "Q52505",
+      "names": {
+        "en": "Rialto Bridge",
+        "nb": "Rialtobroen"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ITA",
+      "lat": 45.438,
+      "lon": 12.3356,
+      "image": {
+        "file": "Rialto 2025 4.jpg",
+        "author": "kallerna",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rialto_2025_4.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Rialto_2025_4.jpg/960px-Rialto_2025_4.jpg",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q5788",
+      "names": {
+        "en": "Petra",
+        "nb": "Petra"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "JOR",
+      "lat": 30.3289,
+      "lon": 35.4403,
+      "image": {
+        "file": "The Treasury, Petra, Jordan5.jpg",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Treasury,_Petra,_Jordan5.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/The_Treasury%2C_Petra%2C_Jordan5.jpg/960px-The_Treasury%2C_Petra%2C_Jordan5.jpg",
+        "width": 960,
+        "height": 1586
+      }
+    },
+    {
+      "id": "Q39231",
+      "names": {
+        "en": "Mount Fuji",
+        "nb": "Fuji-san"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "JPN",
+      "lat": 35.3606,
+      "lon": 138.7275,
+      "image": {
+        "file": "Kodaki fuji frm shojinko refurb.jpg",
+        "author": "名古屋太郎, (edited by Hannes_24 )",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kodaki_fuji_frm_shojinko_refurb.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Kodaki_fuji_frm_shojinko_refurb.jpg/960px-Kodaki_fuji_frm_shojinko_refurb.jpg",
+        "width": 960,
+        "height": 642
+      }
+    },
+    {
+      "id": "Q714828",
+      "names": {
+        "en": "Fushimi Inari-taisha",
+        "nb": "Fushimi Inari-taisha"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "JPN",
+      "lat": 34.9672,
+      "lon": 135.7734,
+      "image": {
+        "file": "Fushimiinari-taisha, naihaiden-1.jpg",
+        "author": "Saigen Jiro",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fushimiinari-taisha,_naihaiden-1.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Fushimiinari-taisha%2C_naihaiden-1.jpg/960px-Fushimiinari-taisha%2C_naihaiden-1.jpg",
+        "width": 960,
+        "height": 636
+      }
+    },
+    {
+      "id": "Q172070",
+      "names": {
+        "en": "Mount Kenya",
+        "nb": "Mount Kenya"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "KEN",
+      "lat": -0.1,
+      "lon": 37.2,
+      "image": {
+        "file": "Mount kenya.JPG",
+        "author": "Ruud Zwart",
+        "license": "CC BY-SA 2.5 nl",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/nl/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mount_kenya.JPG",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Mount_kenya.JPG/960px-Mount_kenya.JPG",
+        "width": 960,
+        "height": 638
+      }
+    },
+    {
+      "id": "Q43473",
+      "names": {
+        "en": "Angkor Wat",
+        "nb": "Angkor Vat"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "KHM",
+      "lat": 13.4125,
+      "lon": 103.8667,
+      "image": {
+        "file": "Angkor wat temple.jpg",
+        "author": "The original uploader was Fuzheado at English Wikipedia .",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Angkor_wat_temple.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Angkor_wat_temple.jpg",
+        "width": 960,
+        "height": 720
+      }
+    },
+    {
+      "id": "Q272153",
+      "names": {
+        "en": "Sigiriya",
+        "nb": "Sigiriya"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "LKA",
+      "lat": 7.9569,
+      "lon": 80.7597,
+      "image": {
+        "file": "Beauty of Sigiriya by Binuka.jpg",
+        "author": "Binuka poojan",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beauty_of_Sigiriya_by_Binuka.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Beauty_of_Sigiriya_by_Binuka.jpg",
+        "width": 960,
+        "height": 639
+      }
+    },
+    {
+      "id": "Q309436",
+      "names": {
+        "en": "Aït Benhaddou",
+        "nb": "Ait-Ben-Haddou"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "MAR",
+      "lat": 31.05,
+      "lon": -7.1333,
+      "image": {
+        "file": "Ksar Aït Benhaddou, Marocco (أيت بن حدو، المغرب, ⴰⵢⵜ ⵃⴰⴷⴷⵓ).jpg",
+        "author": "Petar Milošević",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ksar_A%C3%AFt_Benhaddou,_Marocco_(%D8%A3%D9%8A%D8%AA_%D8%A8%D9%86_%D8%AD%D8%AF%D9%88%D8%8C_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8,_%E2%B4%B0%E2%B5%A2%E2%B5%9C_%E2%B5%83%E2%B4%B0%E2%B4%B7%E2%B4%B7%E2%B5%93).jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Ksar_A%C3%AFt_Benhaddou%2C_Marocco_%28%D8%A3%D9%8A%D8%AA_%D8%A8%D9%86_%D8%AD%D8%AF%D9%88%D8%8C_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8%2C_%E2%B4%B0%E2%B5%A2%E2%B5%9C_%E2%B5%83%E2%B4%B0%E2%B4%B7%E2%B4%B7%E2%B5%93%29.jpg/960px-Ksar_A%C3%AFt_Benhaddou%2C_Marocco_%28%D8%A3%D9%8A%D8%AA_%D8%A8%D9%86_%D8%AD%D8%AF%D9%88%D8%8C_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8%2C_%E2%B4%B0%E2%B5%A2%E2%B5%9C_%E2%B5%83%E2%B4%B0%E2%B4%B7%E2%B4%B7%E2%B5%93%29.jpg",
+        "width": 960,
+        "height": 594
+      }
+    },
+    {
+      "id": "Q41346",
+      "names": {
+        "en": "Hassan II Mosque",
+        "nb": "Hassan IIs moské"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "MAR",
+      "lat": 33.6073,
+      "lon": -7.6326,
+      "image": {
+        "file": "Sunshine on mosque Hassan II in Casablanca, Morocco - Flickr - Milamber's portfolio.jpg",
+        "author": "Milamber's portfolio",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sunshine_on_mosque_Hassan_II_in_Casablanca,_Morocco_-_Flickr_-_Milamber%27s_portfolio.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Sunshine_on_mosque_Hassan_II_in_Casablanca%2C_Morocco_-_Flickr_-_Milamber%27s_portfolio.jpg/960px-Sunshine_on_mosque_Hassan_II_in_Casablanca%2C_Morocco_-_Flickr_-_Milamber%27s_portfolio.jpg",
+        "width": 960,
+        "height": 638
+      }
+    },
+    {
+      "id": "Q676778",
+      "names": {
+        "en": "Chefchaouen",
+        "nb": "Chefchaouen"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "MAR",
+      "lat": 35.1688,
+      "lon": -5.2683,
+      "image": {
+        "file": "Chefcha'ouen City , Morocco.jpg",
+        "author": "Ismailbrk",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chefcha%27ouen_City_,_Morocco.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Chefcha%27ouen_City_%2C_Morocco.jpg/960px-Chefcha%27ouen_City_%2C_Morocco.jpg",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q788084",
+      "names": {
+        "en": "Avenue of the Baobabs",
+        "nb": "Avenue of the Baobabs"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "MDG",
+      "lat": -20.2508,
+      "lon": 44.4183,
+      "image": {
+        "file": "Baobab Avenue Morondava Madagascar - panoramio.jpg",
+        "author": "Hiroki Ogawa",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Baobab_Avenue_Morondava_Madagascar_-_panoramio.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Baobab_Avenue_Morondava_Madagascar_-_panoramio.jpg/960px-Baobab_Avenue_Morondava_Madagascar_-_panoramio.jpg",
+        "width": 960,
+        "height": 720
+      }
+    },
+    {
+      "id": "Q172613",
+      "names": {
+        "en": "Teotihuacan",
+        "nb": "Teotihuacán"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "MEX",
+      "lat": 19.6925,
+      "lon": -98.8439,
+      "image": {
+        "file": "ZA77 Teotihuacán edo de mex Herberto de la rosa.jpg",
+        "author": "Hdlrosa",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:ZA77_Teotihuac%C3%A1n_edo_de_mex_Herberto_de_la_rosa.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/ZA77_Teotihuac%C3%A1n_edo_de_mex_Herberto_de_la_rosa.jpg/960px-ZA77_Teotihuac%C3%A1n_edo_de_mex_Herberto_de_la_rosa.jpg",
+        "width": 960,
+        "height": 638
+      }
+    },
+    {
+      "id": "Q5859",
+      "names": {
+        "en": "Chichen Itza",
+        "nb": "Chichen Itza"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "MEX",
+      "lat": 20.6831,
+      "lon": -88.5686,
+      "image": {
+        "file": "Chichen Itza 3.jpg",
+        "author": "Daniel Schwen",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chichen_Itza_3.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Chichen_Itza_3.jpg/960px-Chichen_Itza_3.jpg",
+        "width": 960,
+        "height": 511
+      }
+    },
+    {
+      "id": "Q683632",
+      "names": {
+        "en": "Great Mosque of Djenné",
+        "nb": "Great Mosque of Djenné"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "MLI",
+      "lat": 13.9053,
+      "lon": -4.5556,
+      "image": {
+        "file": "Great Mosque of Djenné 1.jpg",
+        "author": "Andy Gilham",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great_Mosque_of_Djenn%C3%A9_1.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Great_Mosque_of_Djenn%C3%A9_1.jpg/960px-Great_Mosque_of_Djenn%C3%A9_1.jpg",
+        "width": 960,
+        "height": 720
+      }
+    },
+    {
+      "id": "Q29317",
+      "names": {
+        "en": "Bagan",
+        "nb": "Bagan"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "MMR",
+      "lat": 21.1725,
+      "lon": 94.86,
+      "image": {
+        "file": "Bagan, Myanmar, Htilominlo Temple and other Buddhist stupas in Bagan plain.jpg",
+        "author": "Vyacheslav Argenberg",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bagan,_Myanmar,_Htilominlo_Temple_and_other_Buddhist_stupas_in_Bagan_plain.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Bagan%2C_Myanmar%2C_Htilominlo_Temple_and_other_Buddhist_stupas_in_Bagan_plain.jpg/960px-Bagan%2C_Myanmar%2C_Htilominlo_Temple_and_other_Buddhist_stupas_in_Bagan_plain.jpg",
+        "width": 960,
+        "height": 540
+      }
+    },
+    {
+      "id": "Q464535",
+      "names": {
+        "en": "Shwedagon Pagoda",
+        "nb": "Shwedagon Pagoda"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "MMR",
+      "lat": 16.7983,
+      "lon": 96.1494,
+      "image": {
+        "file": "Yangon - Shwedagon Pagoda 03.jpg",
+        "author": "Stefan Fussan",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yangon_-_Shwedagon_Pagoda_03.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Yangon_-_Shwedagon_Pagoda_03.jpg/960px-Yangon_-_Shwedagon_Pagoda_03.jpg",
+        "width": 960,
+        "height": 623
+      }
+    },
+    {
+      "id": "Q83063",
+      "names": {
+        "en": "Petronas Towers",
+        "nb": "Petronas Towers"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "MYS",
+      "lat": 3.1578,
+      "lon": 101.7117,
+      "image": {
+        "file": "Kuala Lumpur - panoramio (18).jpg",
+        "author": "AwOiSoAk KaOsIoWa",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kuala_Lumpur_-_panoramio_(18).jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Kuala_Lumpur_-_panoramio_%2818%29.jpg/960px-Kuala_Lumpur_-_panoramio_%2818%29.jpg",
+        "width": 960,
+        "height": 1440
+      }
+    },
+    {
+      "id": "Q1932730",
+      "names": {
+        "en": "Sossusvlei",
+        "nb": "Sossusvlei"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "NAM",
+      "lat": -24.7398,
+      "lon": 15.2877,
+      "image": {
+        "file": "2011-02-09 066.JPG",
+        "author": "Anagoria",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2011-02-09_066.JPG",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/2011-02-09_066.JPG/960px-2011-02-09_066.JPG",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q193989",
+      "names": {
+        "en": "Geirangerfjord",
+        "nb": "Geirangerfjorden"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "NOR",
+      "lat": 62.0944,
+      "lon": 7.0806,
+      "image": {
+        "file": "00 2269 Geiranger - Norway.jpg",
+        "author": "W. Bulach",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:00_2269_Geiranger_-_Norway.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/00_2269_Geiranger_-_Norway.jpg/960px-00_2269_Geiranger_-_Norway.jpg",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q746223",
+      "names": {
+        "en": "Preikestolen",
+        "nb": "Preikestolen"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "NOR",
+      "lat": 58.9867,
+      "lon": 6.1875,
+      "image": {
+        "file": "Preikestolen Norge.jpg",
+        "author": "Stefan Krause, Germany",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Preikestolen_Norge.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Preikestolen_Norge.jpg/960px-Preikestolen_Norge.jpg",
+        "width": 960,
+        "height": 1344
+      }
+    },
+    {
+      "id": "Q187197",
+      "names": {
+        "en": "Milford Sound / Piopiotahi",
+        "nb": "Milford Sound"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "NZL",
+      "lat": -44.6167,
+      "lon": 167.8667,
+      "image": {
+        "file": "00 1371 New Zealand - Milford Sound.jpg",
+        "author": "W. Bulach",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:00_1371_New_Zealand_-_Milford_Sound.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/00_1371_New_Zealand_-_Milford_Sound.jpg/960px-00_1371_New_Zealand_-_Milford_Sound.jpg",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q18924400",
+      "names": {
+        "en": "Hobbiton Movie Set",
+        "nb": "Hobbiton Movie Set"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "NZL",
+      "lat": -37.8575,
+      "lon": 175.6797,
+      "image": {
+        "file": "Hobbit holes reflected in water.jpg",
+        "author": "Jackie.lck ( photos · photo sets )",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hobbit_holes_reflected_in_water.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Hobbit_holes_reflected_in_water.jpg/960px-Hobbit_holes_reflected_in_water.jpg",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q202845",
+      "names": {
+        "en": "Tongariro National Park",
+        "nb": "Tongariro nasjonalpark"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "NZL",
+      "lat": -39.2,
+      "lon": 175.5833,
+      "image": {
+        "file": "Tongariro Mahuia River n.jpg",
+        "author": "James Shook",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tongariro_Mahuia_River_n.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Tongariro_Mahuia_River_n.jpg",
+        "width": 960,
+        "height": 1444
+      }
+    },
+    {
+      "id": "Q5059",
+      "names": {
+        "en": "Aoraki / Mount Cook",
+        "nb": "Mount Cook"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "NZL",
+      "lat": -43.595,
+      "lon": 170.1419,
+      "image": {
+        "file": "00 0985 Mount Cook - New Zealand Alps.jpg",
+        "author": "W. Bulach",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:00_0985_Mount_Cook_-_New_Zealand_Alps.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/00_0985_Mount_Cook_-_New_Zealand_Alps.jpg/960px-00_0985_Mount_Cook_-_New_Zealand_Alps.jpg",
+        "width": 960,
+        "height": 651
+      }
+    },
+    {
+      "id": "Q673150",
+      "names": {
+        "en": "Franz Josef Glacier",
+        "nb": "Franz Josef Glacier"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "NZL",
+      "lat": -43.475,
+      "lon": 170.2,
+      "image": {
+        "file": "Franz Josef glacier.JPG",
+        "author": "en:user:dramatic",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Franz_Josef_glacier.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Franz_Josef_glacier.JPG",
+        "width": 960,
+        "height": 903
+      }
+    },
+    {
+      "id": "Q722125",
+      "names": {
+        "en": "Sky Tower",
+        "nb": "Sky Tower"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "NZL",
+      "lat": -36.8485,
+      "lon": 174.7623,
+      "image": {
+        "file": "Auckland Sky Tower closeup.jpg",
+        "author": "Orderinchaos",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Auckland_Sky_Tower_closeup.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Auckland_Sky_Tower_closeup.jpg",
+        "width": 960,
+        "height": 1280
+      }
+    },
+    {
+      "id": "Q7350",
+      "names": {
+        "en": "Panama Canal",
+        "nb": "Panamakanalen"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "PAN",
+      "lat": 9.12,
+      "lon": -79.75,
+      "image": {
+        "file": "Panama Canal Gatun Locks.jpg",
+        "author": "User:Stan Shebs",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panama_Canal_Gatun_Locks.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Panama_Canal_Gatun_Locks.jpg/960px-Panama_Canal_Gatun_Locks.jpg",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q2620036",
+      "names": {
+        "en": "Nazca Lines",
+        "nb": "Nazcalinjene"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "PER",
+      "lat": -14.6975,
+      "lon": -75.135,
+      "image": {
+        "file": "Líneas de Nazca, Nazca, Perú, 2015-07-29, DD 44.JPG",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:L%C3%ADneas_de_Nazca,_Nazca,_Per%C3%BA,_2015-07-29,_DD_44.JPG",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/L%C3%ADneas_de_Nazca%2C_Nazca%2C_Per%C3%BA%2C_2015-07-29%2C_DD_44.JPG/960px-L%C3%ADneas_de_Nazca%2C_Nazca%2C_Per%C3%BA%2C_2015-07-29%2C_DD_44.JPG",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q676203",
+      "names": {
+        "en": "Machu Picchu",
+        "nb": "Machu Picchu"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "PER",
+      "lat": -13.1633,
+      "lon": -72.5456,
+      "image": {
+        "file": "Machu Picchu, 2023 (012).jpg",
+        "author": "Draceane",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Machu_Picchu,_2023_(012).jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Machu_Picchu%2C_2023_%28012%29.jpg/960px-Machu_Picchu%2C_2023_%28012%29.jpg",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q129846",
+      "names": {
+        "en": "St. Basil's Cathedral",
+        "nb": "Vasilijkatedralen"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "RUS",
+      "lat": 55.7525,
+      "lon": 37.6231,
+      "image": {
+        "file": "00 0568 Saint Basil's Cathedral - Moscow.jpg",
+        "author": "W. Bulach",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:00_0568_Saint_Basil%27s_Cathedral_-_Moscow.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/00_0568_Saint_Basil%27s_Cathedral_-_Moscow.jpg/960px-00_0568_Saint_Basil%27s_Cathedral_-_Moscow.jpg",
+        "width": 960,
+        "height": 1440
+      }
+    },
+    {
+      "id": "Q244347",
+      "names": {
+        "en": "Gorée",
+        "nb": "Gorée"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "SEN",
+      "lat": 14.6669,
+      "lon": -17.3983,
+      "image": {
+        "file": "Senegal Gorée island harbor.jpg",
+        "author": "Serenade (Wikimedia Commons user)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Senegal_Gor%C3%A9e_island_harbor.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Senegal_Gor%C3%A9e_island_harbor.jpg",
+        "width": 960,
+        "height": 720
+      }
+    },
+    {
+      "id": "Q548679",
+      "names": {
+        "en": "Marina Bay Sands",
+        "nb": "Marina Bay Sands"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "SGP",
+      "lat": 1.2825,
+      "lon": 103.86,
+      "image": {
+        "file": "Marina Bay Sands Hotel 3 (31345110894).jpg",
+        "author": "Tony Hisgett from Birmingham, UK",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marina_Bay_Sands_Hotel_3_(31345110894).jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Marina_Bay_Sands_Hotel_3_%2831345110894%29.jpg/960px-Marina_Bay_Sands_Hotel_3_%2831345110894%29.jpg",
+        "width": 960,
+        "height": 596
+      }
+    },
+    {
+      "id": "Q724970",
+      "names": {
+        "en": "Wat Arun",
+        "nb": "Wat Arun"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "THA",
+      "lat": 13.7437,
+      "lon": 100.4889,
+      "image": {
+        "file": "Wat Arun from Chao Phraya River.jpg",
+        "author": "Diliff",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wat_Arun_from_Chao_Phraya_River.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Wat_Arun_from_Chao_Phraya_River.jpg/960px-Wat_Arun_from_Chao_Phraya_River.jpg",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q6343",
+      "names": {
+        "en": "Carthage",
+        "nb": "Kartago"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "TUN",
+      "lat": 36.847,
+      "lon": 10.3129,
+      "image": {
+        "file": "Tunisie Carthage Ruines 08.JPG",
+        "author": "Calips",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tunisie_Carthage_Ruines_08.JPG",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Tunisie_Carthage_Ruines_08.JPG/960px-Tunisie_Carthage_Ruines_08.JPG",
+        "width": 960,
+        "height": 638
+      }
+    },
+    {
+      "id": "Q12506",
+      "names": {
+        "en": "Hagia Sophia",
+        "nb": "Hagia Sofia"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "TUR",
+      "lat": 41.0083,
+      "lon": 28.98,
+      "image": {
+        "file": "Hagia Sophia Mars 2013.jpg",
+        "author": "Arild Vågen",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hagia_Sophia_Mars_2013.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Hagia_Sophia_Mars_2013.jpg/960px-Hagia_Sophia_Mars_2013.jpg",
+        "width": 960,
+        "height": 641
+      }
+    },
+    {
+      "id": "Q80541",
+      "names": {
+        "en": "Sultan Ahmed Mosque",
+        "nb": "Sultan Ahmed-moskeen"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "TUR",
+      "lat": 41.0054,
+      "lon": 28.9768,
+      "image": {
+        "file": "Exterior of Sultan Ahmed I Mosque in Istanbul, Turkey 002.jpg",
+        "author": "Moonik",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Exterior_of_Sultan_Ahmed_I_Mosque_in_Istanbul,_Turkey_002.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Exterior_of_Sultan_Ahmed_I_Mosque_in_Istanbul%2C_Turkey_002.jpg/960px-Exterior_of_Sultan_Ahmed_I_Mosque_in_Istanbul%2C_Turkey_002.jpg",
+        "width": 960,
+        "height": 627
+      }
+    },
+    {
+      "id": "Q11812902",
+      "names": {
+        "en": "Serengeti National Park",
+        "nb": "Serengeti nasjonalpark"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "TZA",
+      "lat": -2.4,
+      "lon": 34.6,
+      "image": {
+        "file": "Serengeti-Landscape-2012.JPG",
+        "author": "Bjørn Christian Tørrissen",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Serengeti-Landscape-2012.JPG",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Serengeti-Landscape-2012.JPG/960px-Serengeti-Landscape-2012.JPG",
+        "width": 960,
+        "height": 553
+      }
+    },
+    {
+      "id": "Q1217726",
+      "names": {
+        "en": "Ngorongoro Conservation Area",
+        "nb": "Ngorongoro naturvernområde"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "TZA",
+      "lat": -3.21,
+      "lon": 35.46,
+      "image": {
+        "file": "Ngorongo 1.jpg",
+        "author": "Jantjeerkamp at Dutch Wikipedia",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ngorongo_1.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Ngorongo_1.jpg/960px-Ngorongo_1.jpg",
+        "width": 960,
+        "height": 720
+      }
+    },
+    {
+      "id": "Q7296",
+      "names": {
+        "en": "Mount Kilimanjaro",
+        "nb": "Kilimanjaro"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "TZA",
+      "lat": -3.0667,
+      "lon": 37.3592,
+      "image": {
+        "file": "Mt. Kilimanjaro 12.2006.jpg",
+        "author": "Chris 73 (Wikimedia Commons user)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mt._Kilimanjaro_12.2006.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Mt._Kilimanjaro_12.2006.jpg/960px-Mt._Kilimanjaro_12.2006.jpg",
+        "width": 960,
+        "height": 720
+      }
+    },
+    {
+      "id": "Q11259",
+      "names": {
+        "en": "Times Square",
+        "nb": "Times Square"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "USA",
+      "lat": 40.7575,
+      "lon": -73.9858,
+      "image": {
+        "file": "New york times square-terabass.jpg",
+        "author": "Terabass",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:New_york_times_square-terabass.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/New_york_times_square-terabass.jpg/960px-New_york_times_square-terabass.jpg",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q118841",
+      "names": {
+        "en": "Grand Canyon",
+        "nb": "Grand Canyon"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "USA",
+      "lat": 36.0975,
+      "lon": -112.0953,
+      "image": {
+        "file": "Grand Canyon view from Pima Point 2010.jpg",
+        "author": "Chensiyuan",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grand_Canyon_view_from_Pima_Point_2010.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Grand_Canyon_view_from_Pima_Point_2010.jpg/960px-Grand_Canyon_view_from_Pima_Point_2010.jpg",
+        "width": 960,
+        "height": 1445
+      }
+    },
+    {
+      "id": "Q131354",
+      "names": {
+        "en": "Alcatraz Island",
+        "nb": "Alcatraz"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "USA",
+      "lat": 37.8267,
+      "lon": -122.4228,
+      "image": {
+        "file": "Alcatraz Island as seen from the East.jpg",
+        "author": "Frank Schulenburg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alcatraz_Island_as_seen_from_the_East.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Alcatraz_Island_as_seen_from_the_East.jpg/960px-Alcatraz_Island_as_seen_from_the_East.jpg",
+        "width": 960,
+        "height": 600
+      }
+    },
+    {
+      "id": "Q180376",
+      "names": {
+        "en": "Hollywood Sign",
+        "nb": "Hollywoodskiltet"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "USA",
+      "lat": 34.1341,
+      "lon": -118.3217,
+      "image": {
+        "file": "Hollywood Sign (Zuschnitt).jpg",
+        "author": "Thomas Wolf , www.foto-tw.de",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hollywood_Sign_(Zuschnitt).jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Hollywood_Sign_%28Zuschnitt%29.jpg/960px-Hollywood_Sign_%28Zuschnitt%29.jpg",
+        "width": 960,
+        "height": 600
+      }
+    },
+    {
+      "id": "Q192017",
+      "names": {
+        "en": "Monument Valley",
+        "nb": "Monument Valley"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "USA",
+      "lat": 36.9833,
+      "lon": -110.1,
+      "image": {
+        "file": "Monumentvalleyviewfromnorth.jpg",
+        "author": "Original uploader was Averette at en.wikipedia",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monumentvalleyviewfromnorth.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Monumentvalleyviewfromnorth.jpg/960px-Monumentvalleyviewfromnorth.jpg",
+        "width": 960,
+        "height": 720
+      }
+    },
+    {
+      "id": "Q2027162",
+      "names": {
+        "en": "Gateway Arch",
+        "nb": "Gateway Arch"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "USA",
+      "lat": 38.6246,
+      "lon": -90.185,
+      "image": {
+        "file": "St Louis Gateway Arch.jpg",
+        "author": "[ https://www.flickr.com/photos/11399912@N00 B0iwehijro2i0- ] `1l]] from Davis, CA, USA",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:St_Louis_Gateway_Arch.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/St_Louis_Gateway_Arch.jpg/960px-St_Louis_Gateway_Arch.jpg",
+        "width": 960,
+        "height": 744
+      }
+    },
+    {
+      "id": "Q35525",
+      "names": {
+        "en": "White House",
+        "nb": "Det hvite hus"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "USA",
+      "lat": 38.8978,
+      "lon": -77.0367,
+      "image": {
+        "file": "WhiteHouseSouthFacade.JPG",
+        "author": "This image or media was taken or created by Matt H. Wade . To see his entire portfolio, click here . @ thatmattwade This image is protected by copyright ! If you would like to use it, please read this first.",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:WhiteHouseSouthFacade.JPG",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/WhiteHouseSouthFacade.JPG/960px-WhiteHouseSouthFacade.JPG",
+        "width": 960,
+        "height": 711
+      }
+    },
+    {
+      "id": "Q44440",
+      "names": {
+        "en": "Golden Gate Bridge",
+        "nb": "Golden Gate Bridge"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "USA",
+      "lat": 37.8197,
+      "lon": -122.4786,
+      "image": {
+        "file": "GoldenGateBridge-001.jpg",
+        "author": "Rich Niewiroski Jr.",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:GoldenGateBridge-001.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/GoldenGateBridge-001.jpg/960px-GoldenGateBridge-001.jpg",
+        "width": 960,
+        "height": 720
+      }
+    },
+    {
+      "id": "Q5317",
+      "names": {
+        "en": "Space Needle",
+        "nb": "Space Needle"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "USA",
+      "lat": 47.6204,
+      "lon": -122.3491,
+      "image": {
+        "file": "Seattle, October 6, 2023 - 60.jpg",
+        "author": "Another Believer",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seattle,_October_6,_2023_-_60.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Seattle%2C_October_6%2C_2023_-_60.jpg/960px-Seattle%2C_October_6%2C_2023_-_60.jpg",
+        "width": 960,
+        "height": 1280
+      }
+    },
+    {
+      "id": "Q83497",
+      "names": {
+        "en": "Mount Rushmore",
+        "nb": "Mount Rushmore"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "USA",
+      "lat": 43.8789,
+      "lon": -103.4592,
+      "image": {
+        "file": "Mount Rushmore detail view (100MP).jpg",
+        "author": "Thomas Wolf , www.foto-tw.de",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mount_Rushmore_detail_view_(100MP).jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Mount_Rushmore_detail_view_%28100MP%29.jpg/960px-Mount_Rushmore_detail_view_%28100MP%29.jpg",
+        "width": 960,
+        "height": 653
+      }
+    },
+    {
+      "id": "Q9188",
+      "names": {
+        "en": "Empire State Building",
+        "nb": "Empire State Building"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "USA",
+      "lat": 40.7483,
+      "lon": -73.9856,
+      "image": {
+        "file": "Empire State Building (aerial view).jpg",
+        "author": "Sam Valadi",
+        "license": "Public domain",
+        "licenseUrl": null,
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Empire_State_Building_(aerial_view).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Empire_State_Building_%28aerial_view%29.jpg",
+        "width": 960,
+        "height": 1441
+      }
+    },
+    {
+      "id": "Q9202",
+      "names": {
+        "en": "Statue of Liberty",
+        "nb": "Frihetsgudinnen"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "USA",
+      "lat": 40.6892,
+      "lon": -74.0444,
+      "image": {
+        "file": "Statue of Liberty and a sightseeing boat, Liberty Island, New York.jpg",
+        "author": "Christian David",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Statue_of_Liberty_and_a_sightseeing_boat,_Liberty_Island,_New_York.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Statue_of_Liberty_and_a_sightseeing_boat%2C_Liberty_Island%2C_New_York.jpg/960px-Statue_of_Liberty_and_a_sightseeing_boat%2C_Liberty_Island%2C_New_York.jpg",
+        "width": 960,
+        "height": 640
+      }
+    },
+    {
+      "id": "Q1373583",
+      "names": {
+        "en": "Registan",
+        "nb": "Registan"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "UZB",
+      "lat": 39.6547,
+      "lon": 66.9756,
+      "image": {
+        "file": "Registan 01.jpg",
+        "author": "Bernard Gagnon",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Registan_01.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Registan_01.jpg/960px-Registan_01.jpg",
+        "width": 960,
+        "height": 428
+      }
+    },
+    {
+      "id": "Q12512",
+      "names": {
+        "en": "St. Peter's Basilica",
+        "nb": "Peterskirken"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "VAT",
+      "lat": 41.9022,
+      "lon": 12.4534,
+      "image": {
+        "file": "Basilica di San Pietro in Vaticano September 2015-1a.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg/960px-Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg",
+        "width": 960,
+        "height": 501
+      }
+    },
+    {
+      "id": "Q80299",
+      "names": {
+        "en": "Angel Falls",
+        "nb": "Angelfossen"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "VEN",
+      "lat": 5.9701,
+      "lon": -62.5362,
+      "image": {
+        "file": "SaltoAngel4.jpg",
+        "author": "Paulo Capiotti",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:SaltoAngel4.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/SaltoAngel4.jpg/960px-SaltoAngel4.jpg",
+        "width": 960,
+        "height": 1443
+      }
+    },
+    {
+      "id": "Q190128",
+      "names": {
+        "en": "Ha Long Bay",
+        "nb": "Hạ Long-bukten"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "VNM",
+      "lat": 20.9,
+      "lon": 107.2,
+      "image": {
+        "file": "Halong ensemble (colour corrected).jpg",
+        "author": "Thierry Borie colour adjusted by Lycaon",
+        "license": "Public domain",
+        "licenseUrl": null,
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Halong_ensemble_(colour_corrected).jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Halong_ensemble_%28colour_corrected%29.jpg/960px-Halong_ensemble_%28colour_corrected%29.jpg",
+        "width": 960,
+        "height": 720
+      }
+    },
+    {
+      "id": "Q192493",
+      "names": {
+        "en": "Robben Island",
+        "nb": "Robben Island"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ZAF",
+      "lat": -33.805,
+      "lon": 18.37,
+      "image": {
+        "file": "Robben Island - Cape Town, South Africa (3883849594).jpg",
+        "author": "South African Tourism from South Africa",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Robben_Island_-_Cape_Town,_South_Africa_(3883849594).jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Robben_Island_-_Cape_Town%2C_South_Africa_%283883849594%29.jpg/960px-Robben_Island_-_Cape_Town%2C_South_Africa_%283883849594%29.jpg",
+        "width": 960,
+        "height": 743
+      }
+    },
+    {
+      "id": "Q213360",
+      "names": {
+        "en": "Table Mountain",
+        "nb": "Taffelberget"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ZAF",
+      "lat": -33.9622,
+      "lon": 18.4135,
+      "image": {
+        "file": "Cape Town Table Mountain.jpg",
+        "author": "Matthiasmullie",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cape_Town_Table_Mountain.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Cape_Town_Table_Mountain.jpg/960px-Cape_Town_Table_Mountain.jpg",
+        "width": 960,
+        "height": 720
+      }
+    },
+    {
+      "id": "Q209217",
+      "names": {
+        "en": "Great Zimbabwe",
+        "nb": "Store Zimbabwe"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ZWE",
+      "lat": -20.27,
+      "lon": 30.933,
+      "image": {
+        "file": "Great-Zimbabwe-6.jpg",
+        "author": "PatrickVanM (Wikimedia Commons user)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great-Zimbabwe-6.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Great-Zimbabwe-6.jpg",
+        "width": 960,
+        "height": 653
+      }
+    }
+  ]
+}
