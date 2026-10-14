@@ -4,6 +4,25 @@ import { type BrowserContext, expect, type Page, test } from "@playwright/test";
 import { chooseThemeAndLocale, setUpLearner } from "./helpers";
 
 const PHOTO = readFileSync(join(import.meta.dirname, "fixtures", "landmark.jpg"));
+const read = (path: string) => JSON.parse(readFileSync(path, "utf8"));
+const LANDMARKS = read("data/landmarks.json").landmarks as {
+  names: { en: string; nb: string };
+  countryId: string;
+}[];
+const COUNTRIES = new Map(
+  (
+    read("data/countries.json").countries as { id: string; names: { en: string; nb: string } }[]
+  ).map((c) => [c.id, c.names]),
+);
+/** The country name, in the locale, of the landmark a prompt names. */
+function countryOfPrompt(prompt: string, locale: "en" | "nb"): string {
+  const landmark = LANDMARKS.filter((l) => prompt.includes(l.names[locale])).sort(
+    (a, b) => b.names[locale].length - a.names[locale].length,
+  )[0];
+  const name = landmark && COUNTRIES.get(landmark.countryId)?.[locale];
+  if (!name) throw new Error(`no landmark in "${prompt}"`);
+  return name;
+}
 
 /** Commons photos come from a local fixture: tests never depend on Wikimedia's servers. */
 async function servePhotos(context: BrowserContext, served: string[]) {
@@ -62,8 +81,17 @@ async function seedHistory(page: Page, cardIds: string[], daysAgo: number) {
   );
 }
 
-for (const locale of ["en", "nb"] as const) {
-  test(`landmarks (${locale}): photo, country and pin cards with credits`, async ({
+const RUNS = [
+  ["atlas", "en"],
+  ["atlas", "nb"],
+  ["minimal", "en"],
+  ["minimal", "nb"],
+  ["playful", "en"],
+  ["playful", "nb"],
+] as const;
+
+for (const [theme, locale] of RUNS) {
+  test(`landmarks (${theme}, ${locale}): photo, country and pin cards with credits`, async ({
     page,
     context,
   }) => {
@@ -71,7 +99,7 @@ for (const locale of ["en", "nb"] as const) {
     const served: string[] = [];
     await servePhotos(context, served);
     await setUpLearner(page, 2);
-    await chooseThemeAndLocale(page, "atlas", locale);
+    await chooseThemeAndLocale(page, theme, locale);
     await page.getByTestId("module-landmarks-on").click();
     // France known for days: its landmarks (Eiffel Tower, Mont-Saint-Michel...) can start.
     await seedHistory(page, ["FRA:map_to_name", "FRA:name_to_map"], 3);
@@ -82,7 +110,6 @@ for (const locale of ["en", "nb"] as const) {
     const photoRe = locale === "en" ? /What is this/ : /Hva er dette/;
     const countryRe = locale === "en" ? /Which country is .* in/ : /Hvilket land ligger .* i\?/;
     const pinRe = locale === "en" ? /Place .* on the map/ : /Plasser .* på kartet/;
-    const france = locale === "en" ? /France/ : /Frankrike/;
     const seen = { photo: false, country: false, pin: false };
     for (let i = 0; i < 160 && !(seen.photo && seen.country && seen.pin); i++) {
       const screen = page
@@ -119,15 +146,19 @@ for (const locale of ["en", "nb"] as const) {
         const alt = (await photo.locator("img").getAttribute("alt")) ?? "";
         const options = await page.getByTestId("choices").getByRole("button").allTextContents();
         for (const o of options) expect(alt).not.toContain(o.replace(/^\d/, ""));
-        await shot(page, `${locale}-photo-prompt`);
+        await shot(page, `${theme}-${locale}-photo-prompt`);
         await page.keyboard.press("1");
         await expect(page.getByTestId("landmark-card")).toBeVisible();
-        await shot(page, `${locale}-photo-feedback`);
+        await shot(page, `${theme}-${locale}-photo-feedback`);
         continue;
       }
       if (countryRe.test(prompt) && !seen.country) {
         seen.country = true;
-        await page.getByTestId("choices").getByRole("button", { name: france }).click();
+        const country = countryOfPrompt(prompt, locale);
+        await page
+          .getByTestId("choices")
+          .getByRole("button", { name: new RegExp(`^\\d\\s*${country}$`) })
+          .click({ timeout: 5000 });
         await expect(page.getByTestId("status")).toHaveAttribute("data-correct", "true");
         await expect(page.getByTestId("landmark-card")).toBeVisible();
         continue;
@@ -140,7 +171,7 @@ for (const locale of ["en", "nb"] as const) {
         await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
         await expect(page.getByTestId("pin-distance")).toBeVisible();
         await expect(page.getByTestId("landmark-card")).toBeVisible();
-        await shot(page, `${locale}-pin-feedback`);
+        await shot(page, `${theme}-${locale}-pin-feedback`);
         continue;
       }
       if (await page.getByTestId("choices").isVisible()) await page.keyboard.press("1");
