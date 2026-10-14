@@ -230,6 +230,8 @@
     "name_to_flag": "Navn til flagg",
     "country_to_currency": "Land til valuta",
     "country_to_language": "Land til språk",
+    "city_to_country": "By til land",
+    "city_to_map": "By på kartet",
     "contrast": "Skill dem"
   },
   "hookType": {

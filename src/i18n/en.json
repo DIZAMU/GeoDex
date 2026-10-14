@@ -230,6 +230,8 @@
     "name_to_flag": "Name to flag",
     "country_to_currency": "Country to currency",
     "country_to_language": "Country to language",
+    "city_to_country": "City to country",
+    "city_to_map": "City on the map",
     "contrast": "Tell apart"
   },
   "hookType": {
