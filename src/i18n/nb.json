@@ -439,5 +439,10 @@
     "successors": "Ble til",
     "partly": "Delvis innenfor",
     "existed": "Fantes {{period}}"
+  },
+  "report": {
+    "link": "Meld fra om feil",
+    "title": "Feil fakta: {{id}}",
+    "body": "Fakta {{id}} ({{locale}}), vist på kortet {{card}}:\n\n> {{text}}\n\nHva er feil, og en kilde for det riktige:\n"
   }
 }

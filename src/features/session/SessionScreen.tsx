@@ -455,6 +455,7 @@ function Panel({
         </p>
       ) : null}
       <ExplanationView
+        cardId={q.cardId}
         explanation={view.explanation}
         hidden={view.hidden}
         onNotHelpful={(id) => void s.notHelpful(id)}

@@ -439,5 +439,10 @@
     "successors": "Became",
     "partly": "Partly inside",
     "existed": "Existed {{period}}"
+  },
+  "report": {
+    "link": "Report a wrong fact",
+    "title": "Wrong fact: {{id}}",
+    "body": "Fact {{id}} ({{locale}}), shown on card {{card}}:\n\n> {{text}}\n\nWhat is wrong, and a source for the correct claim:\n"
   }
 }
