@@ -44,6 +44,11 @@ export type MapHighlight = {
   tinted?: ReadonlySet<string>;
   /** Mastery level 0 (unseen) to 4 (mastered) per country, drawn with the theme's ramp. */
   levels?: ReadonlyMap<string, number>;
+  /**
+   * Points such as a city and the learner's pin, [lon, lat]. A pin and a target are joined
+   * by a dashed line so the miss reads at a glance.
+   */
+  points?: readonly { at: [number, number]; kind: "target" | "pin"; label?: string }[];
 };
 
 export type WorldMapProps = {
@@ -54,6 +59,8 @@ export type WorldMapProps = {
   /** Countries that respond to clicks. Empty means the map is view-only. */
   selectable?: ReadonlySet<string>;
   onSelect?: (id: string) => void;
+  /** Pin answers: a tap anywhere reports its [lon, lat] instead of a country. */
+  onPin?: (at: [number, number]) => void;
   labelFor: (id: string) => string;
   ariaLabel: string;
   /** Animate focus changes (the answer fly-to). Off for prompts. */
@@ -143,6 +150,7 @@ export function WorldMap({
   highlight = {},
   selectable = new Set(),
   onSelect,
+  onPin,
   labelFor,
   ariaLabel,
   animate = false,
@@ -209,6 +217,7 @@ export function WorldMap({
         };
       });
     return {
+      projection,
       shapes,
       markerOnly,
       byId: new Map([...shapes, ...markerOnly].map((s) => [s.id, s])),
@@ -285,6 +294,13 @@ export function WorldMap({
       if (!svg) return;
       const rect = svg.getBoundingClientRect();
       const point: [number, number] = [event.clientX - rect.left, event.clientY - rect.top];
+      if (onPin) {
+        const g = geometryRef.current;
+        const t = transformRef.current;
+        const at = g?.projection.invert?.([(point[0] - t.x) / t.k, (point[1] - t.y) / t.k]);
+        if (at && Number.isFinite(at[0]) && Number.isFinite(at[1])) onPin([at[0], at[1]]);
+        return;
+      }
       // The country shape under the pointer, looking through marker tap targets above it.
       const under = document
         .elementsFromPoint(event.clientX, event.clientY)
@@ -301,8 +317,10 @@ export function WorldMap({
       const id = pickCountry(point, targets, shapeId);
       if (id) onSelect?.(id);
     },
-    [selectable, onSelect],
+    [selectable, onSelect, onPin],
   );
+  const transformRef = useRef(transform);
+  transformRef.current = transform;
 
   const markers = geometry
     ? [...geometry.shapes, ...geometry.markerOnly].filter(
@@ -332,6 +350,7 @@ export function WorldMap({
         role="img"
         aria-label={ariaLabel}
         className="world-map absolute inset-0 block touch-none select-none"
+        data-pin={onPin ? "true" : undefined}
         onClick={handleClick}
       >
         {geometry && (
@@ -422,6 +441,44 @@ export function WorldMap({
                   </g>
                 );
               })}
+              {(() => {
+                const projected = (highlight.points ?? []).flatMap((p) => {
+                  const xy = geometry.projection(p.at);
+                  return xy ? [{ ...p, xy: toScreen(xy as [number, number]) }] : [];
+                });
+                const pin = projected.find((p) => p.kind === "pin");
+                const target = projected.find((p) => p.kind === "target");
+                return (
+                  <g data-testid="map-points">
+                    {pin && target ? (
+                      <line
+                        x1={pin.xy[0]}
+                        y1={pin.xy[1]}
+                        x2={target.xy[0]}
+                        y2={target.xy[1]}
+                        className="map-pin-line"
+                      />
+                    ) : null}
+                    {projected.map((p) => (
+                      <g
+                        key={`${p.kind}-${p.at.join(",")}`}
+                        transform={`translate(${p.xy[0]},${p.xy[1]})`}
+                        data-point={p.kind}
+                      >
+                        <circle
+                          r={p.kind === "target" ? 7 : 6}
+                          className={`map-point map-point-${p.kind}`}
+                        />
+                        {p.label ? (
+                          <text y={-14} className="map-label" textAnchor="middle">
+                            {p.label}
+                          </text>
+                        ) : null}
+                      </g>
+                    ))}
+                  </g>
+                );
+              })()}
               {labels.map((id) => {
                 const shape = geometry.byId.get(id);
                 if (!shape) return null;
