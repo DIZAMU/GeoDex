@@ -37,9 +37,11 @@ jobs:
             if [ "$num" != "$major" ]; then minor="${num#*.}"; fi
             new="v0.${major}.${minor}"
             sha="$(git rev-list -n 1 "refs/tags/$old")"
-            git push origin "${sha}:refs/tags/${new}"
-            gh release edit "$old" --tag "$new"
-            git push origin ":refs/tags/${old}"
+            # The Releases API creates the new tag. A git push of a tag on an older commit is
+            # refused: its workflow files differ from main's, and the token may not change
+            # workflows.
+            gh release edit "$old" --tag "$new" --target "$sha"
+            gh api -X DELETE "repos/${GITHUB_REPOSITORY}/git/refs/tags/${old}"
             echo "renamed $old to $new"
           done
       - name: Create missing releases
