@@ -82,6 +82,10 @@ export function Timeline({
         <ul
           className="surface shrink-0 divide-y divide-border lg:max-h-44 lg:overflow-y-auto"
           data-testid="timeline-list"
+          // Scrolls on wide screens, so it takes focus for keyboard scrolling.
+          // biome-ignore lint/a11y/noNoninteractiveTabindex: a scrollable region must be focusable (WCAG 2.1.1)
+          tabIndex={0}
+          aria-label={t("atlas.timeline")}
         >
           {shown.map((e) => (
             <li

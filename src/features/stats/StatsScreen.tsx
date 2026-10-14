@@ -128,7 +128,8 @@ function Stats({ learner }: { learner: Learner }) {
       <div className="stagger grid grid-cols-[minmax(0,1fr)] gap-4 lg:grid-cols-3">
         <Panel title={t("stats.grid")} id="grid" className="lg:col-span-2">
           <p className="text-sm text-muted-foreground">{t("stats.gridHelp")}</p>
-          <div className="overflow-x-auto">
+          {/* biome-ignore lint/a11y/noNoninteractiveTabindex: a scrollable region must be focusable (WCAG 2.1.1) */}
+          <section className="overflow-x-auto" tabIndex={0} aria-label={t("stats.grid")}>
             <table className="w-full min-w-[32rem] border-separate border-spacing-1 text-sm">
               <thead>
                 <tr>
@@ -199,7 +200,7 @@ function Stats({ learner }: { learner: Learner }) {
                 ))}
               </tbody>
             </table>
-          </div>
+          </section>
         </Panel>
 
         <Panel title={t("stats.retention")} id="retention">
@@ -406,13 +407,19 @@ function Heatmap({ days, locale }: { days: { start: number; count: number }[]; l
   const offset = (new Date(days[0]?.start ?? 0).getDay() + 6) % 7;
   const reviewed = days.filter((d) => d.count > 0).length;
   // Narrow screens show the latest weeks first; older ones are a scroll away.
-  const scroller = useRef<HTMLDivElement>(null);
+  const scroller = useRef<HTMLElement>(null);
   useEffect(() => {
     const el = scroller.current;
     if (el) el.scrollLeft = el.scrollWidth;
   }, []);
   return (
-    <div ref={scroller} className="overflow-x-auto">
+    <section
+      ref={scroller}
+      className="overflow-x-auto"
+      // biome-ignore lint/a11y/noNoninteractiveTabindex: a scrollable region must be focusable (WCAG 2.1.1)
+      tabIndex={0}
+      aria-label={t("stats.activity")}
+    >
       <div
         role="img"
         aria-label={`${t("stats.activity")}: ${number.format(reviewed)}`}
@@ -434,7 +441,7 @@ function Heatmap({ days, locale }: { days: { start: number; count: number }[]; l
           );
         })}
       </div>
-    </div>
+    </section>
   );
 }
 
