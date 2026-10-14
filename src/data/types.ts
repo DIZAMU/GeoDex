@@ -124,3 +124,32 @@ export type CountryGroup = GroupBase & {
   sometimes: string[];
   m49: string | null;
 };
+
+/** A Commons photo with what its license requires us to show (PLAN.md 3). */
+export type LandmarkImage = {
+  /** Commons file name, without "File:". */
+  file: string;
+  /** Plain-text author as Commons credits it. */
+  author: string;
+  /** Short license name: "CC BY-SA 4.0", "Public domain". */
+  license: string;
+  licenseUrl: string | null;
+  /** The file's Commons page. */
+  sourceUrl: string;
+  /** A 960 px wide rendition on upload.wikimedia.org. */
+  url: string;
+  width: number;
+  height: number;
+};
+
+export type Landmark = {
+  id: string; // Wikidata QID
+  names: L10n;
+  aliases: L10nList;
+  countryId: string; // ISO3
+  lat: number;
+  lon: number;
+  image: LandmarkImage;
+};
+
+export type LandmarksFile = { landmarks: Landmark[] };
