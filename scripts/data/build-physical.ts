@@ -6,7 +6,7 @@
  * Fails on a feature with no geometry, no names, or no country.
  */
 import { readdirSync, readFileSync, writeFileSync } from "node:fs";
-import { geoBounds, geoContains, geoDistance } from "d3-geo";
+import { geoArea, geoBounds, geoContains, geoDistance } from "d3-geo";
 import type { Feature, Geometry } from "geojson";
 import { feature as topoFeature } from "topojson-client";
 import type { Topology } from "topojson-specification";
@@ -228,7 +228,13 @@ for (const c of curated.features) {
         poly.map((ring) => simplifyRing(ring, tolerance)).filter((r): r is Point[] => r !== null),
       )
       .filter((poly) => poly.length > 0)
-      .map((poly) => poly.map((ring) => ring.map(round2)));
+      .map((poly) => poly.map((ring) => ring.map(round2)))
+      // d3 reads ring winding: a part wound the other way would cover the rest of the globe.
+      .map((poly) =>
+        geoArea({ type: "Polygon", coordinates: poly }) > 2 * Math.PI
+          ? poly.map((ring) => [...ring].reverse())
+          : poly,
+      );
     geometry = { type: "MultiPolygon", coordinates: parts };
     const largest = [...parts].sort((a, b) => polygonArea(b[0] ?? []) - polygonArea(a[0] ?? []))[0];
     labelPoint = largest ? interiorPoint(largest) : [0, 0];

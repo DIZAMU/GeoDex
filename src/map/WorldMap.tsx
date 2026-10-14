@@ -11,7 +11,7 @@ import type { Feature, Geometry } from "geojson";
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { feature } from "topojson-client";
 import type { Topology } from "topojson-specification";
-import type { Country } from "@/data/types";
+import type { Country, PhysicalFeature } from "@/data/types";
 import type { CountryTopology } from "@/data/world";
 import {
   type Bounds,
@@ -75,7 +75,74 @@ export type WorldMapProps = {
   padding?: number;
   /** Pan and zoom with wheel, drag and pinch. Off for thumbnails inside scrolling pages. */
   interactive?: boolean;
+  /**
+   * Physical features to draw (oceans, seas, lakes, rivers, ranges, deserts). Highlights and
+   * labels take their ids like country ids.
+   */
+  physical?: readonly PhysicalFeature[];
+  /** Features that respond to taps. When set, a tap picks a feature, never a country. */
+  selectableFeatures?: ReadonlySet<string>;
 };
+
+/** Draw order, bottom to top. Taps hit the topmost: rivers, then lakes, land, seas, oceans. */
+const FEATURE_ORDER: PhysicalFeature["kind"][] = [
+  "ocean",
+  "sea",
+  "desert",
+  "mountain_range",
+  "lake",
+  "river",
+];
+
+type FeatureShape = {
+  id: string;
+  kind: PhysicalFeature["kind"];
+  d: string;
+  label: [number, number];
+};
+
+const Features = memo(function Features({
+  shapes,
+  selectable,
+  targets,
+  chosen,
+  selected,
+}: {
+  shapes: readonly FeatureShape[];
+  selectable: ReadonlySet<string>;
+  targets: ReadonlySet<string>;
+  chosen: ReadonlySet<string>;
+  selected: ReadonlySet<string>;
+}) {
+  return (
+    <g className="map-features">
+      {shapes.map((f) => {
+        const state = targets.has(f.id)
+          ? " map-feature-target"
+          : chosen.has(f.id)
+            ? " map-feature-chosen"
+            : selected.has(f.id)
+              ? " map-feature-selected"
+              : "";
+        const pick = selectable.has(f.id);
+        return (
+          <g key={f.id} data-kind={f.kind}>
+            <path
+              d={f.d}
+              className={`map-feature map-feature-${f.kind}${state}${pick ? " map-selectable" : ""}`}
+              data-feature={f.id}
+              data-testid={state ? `feature${state.replace(" map-feature", "")}` : undefined}
+            />
+            {f.kind === "river" && pick ? (
+              // Rivers are thin: a wide invisible stroke is their tap target (PLAN.md Phase 8).
+              <path d={f.d} className="map-feature-hit" data-feature={f.id} />
+            ) : null}
+          </g>
+        );
+      })}
+    </g>
+  );
+});
 
 /** bounds: the largest polygon only, so overseas parts and date-line wraps do not widen views. */
 type Shape = { id: string; d: string; centroid: [number, number]; area: number; bounds: Bounds };
@@ -101,6 +168,7 @@ function mainBounds(f: Feature<Geometry>, path: ReturnType<typeof geoPath>): Bou
 }
 
 const FLY_MS = 600;
+const EMPTY_SET: ReadonlySet<string> = new Set();
 
 function prefersReducedMotion(): boolean {
   return (
@@ -162,6 +230,8 @@ export function WorldMap({
   animate = false,
   padding = 0.12,
   interactive = true,
+  physical,
+  selectableFeatures,
 }: WorldMapProps) {
   const { ref: containerRef, width, height } = useSize<HTMLDivElement>();
   const svgRef = useRef<SVGSVGElement>(null);
@@ -222,16 +292,26 @@ export function WorldMap({
           ] as Bounds,
         };
       });
+    const featureShapes: FeatureShape[] = [...(physical ?? [])]
+      .sort((a, b) => FEATURE_ORDER.indexOf(a.kind) - FEATURE_ORDER.indexOf(b.kind))
+      .map((f) => ({
+        id: f.id,
+        kind: f.kind,
+        d: path(f.geometry as Geometry) ?? "",
+        label: (projection(f.label) ?? [0, 0]) as [number, number],
+      }));
     return {
       projection,
       shapes,
+      featureShapes,
+      featureById: new Map(featureShapes.map((f) => [f.id, f])),
       markerOnly,
       byId: new Map([...shapes, ...markerOnly].map((s) => [s.id, s])),
       outline: path({ type: "FeatureCollection", features: others }) ?? "",
       sphere: path({ type: "Sphere" }) ?? "",
       graticule: path(geoGraticule10()) ?? "",
     };
-  }, [features, countries, inScope, width, height]);
+  }, [features, countries, inScope, width, height, physical]);
   const geometryRef = useRef(geometry);
   geometryRef.current = geometry;
   const ready = geometry !== null;
@@ -307,6 +387,15 @@ export function WorldMap({
         if (at && Number.isFinite(at[0]) && Number.isFinite(at[1])) onPin([at[0], at[1]]);
         return;
       }
+      // Feature answers: the topmost tappable feature under the pointer, never a country.
+      if (selectableFeatures && selectableFeatures.size > 0) {
+        const hit = document
+          .elementsFromPoint(event.clientX, event.clientY)
+          .map((el) => el.getAttribute("data-feature"))
+          .find((id): id is string => id !== null && selectableFeatures.has(id));
+        if (hit) onSelect?.(hit);
+        return;
+      }
       // The country shape under the pointer, looking through marker tap targets above it.
       const under = document
         .elementsFromPoint(event.clientX, event.clientY)
@@ -323,7 +412,7 @@ export function WorldMap({
       const id = pickCountry(point, targets, shapeId);
       if (id) onSelect?.(id);
     },
-    [selectable, onSelect, onPin],
+    [selectable, onSelect, onPin, selectableFeatures],
   );
   const transformRef = useRef(transform);
   transformRef.current = transform;
@@ -387,6 +476,15 @@ export function WorldMap({
                   <path key={`fill-${id}`} d={geometry.byId.get(id)?.d} className="map-filled" />
                 ) : null,
               )}
+              {geometry.featureShapes.length > 0 ? (
+                <Features
+                  shapes={geometry.featureShapes}
+                  selectable={selectableFeatures ?? EMPTY_SET}
+                  targets={targets}
+                  chosen={chosen}
+                  selected={selected}
+                />
+              ) : null}
               {[...selected].map((id) =>
                 geometry.byId.get(id)?.d ? (
                   <path
@@ -501,6 +599,22 @@ export function WorldMap({
                 );
               })()}
               {labels.map((id) => {
+                const feature = geometry.featureById.get(id);
+                if (feature) {
+                  const [x, y] = toScreen(feature.label);
+                  return (
+                    <text
+                      key={id}
+                      x={x}
+                      y={y}
+                      className={`map-label map-label-feature${chosen.has(id) ? " map-label-chosen" : ""}`}
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                    >
+                      {labelFor(id)}
+                    </text>
+                  );
+                }
                 const shape = geometry.byId.get(id);
                 if (!shape) return null;
                 const [x, y] = toScreen(shape.centroid);

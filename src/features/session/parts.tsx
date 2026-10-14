@@ -3,7 +3,7 @@ import { CheckIcon, XIcon } from "lucide-react";
 import { type FormEvent, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { groupNote } from "@/data/groupNotes";
-import type { City, Country, CountryGroup, Landmark } from "@/data/types";
+import type { City, Country, CountryGroup, Landmark, PhysicalFeature } from "@/data/types";
 import type { WorldData } from "@/data/world";
 import type { Locale } from "@/i18n/locales";
 import { Button } from "@/ui/button";
@@ -12,7 +12,7 @@ import { cn } from "@/ui/utils";
 import type { Option, Question } from "../study/questions";
 
 export function nameOf(world: WorldData, id: string, locale: Locale): string {
-  return world.byId.get(id)?.names[locale] ?? id;
+  return world.byId.get(id)?.names[locale] ?? world.physicalById.get(id)?.names[locale] ?? id;
 }
 
 /** "i Laos" / "på Island" for Norwegian templates. English templates use the plain name. */
@@ -48,6 +48,7 @@ export function PromptText({
   const name = country.names[locale];
   const city = world.cityById.get(question.entityId)?.names[locale] ?? "";
   const landmark = world.landmarkById.get(question.entityId);
+  const feature = question.featureId ? world.physicalById.get(question.featureId) : undefined;
   const inName = inNameOf(country, locale);
   const capital = country.capitals.find((c) => c.roles.includes("primary"))?.names[locale] ?? "";
   const text = (() => {
@@ -82,6 +83,12 @@ export function PromptText({
         return t("q.landmark_to_country", { landmark: landmark?.names[locale] ?? "" });
       case "landmark_to_map":
         return t("q.landmark_to_map", { landmark: landmark?.names[locale] ?? "" });
+      case "feature_to_map":
+        return t("q.feature_to_map", { feature: feature?.names[locale] ?? "" });
+      case "map_to_feature":
+        return t("q.map_to_feature", {
+          thisKind: feature ? t(`physical.this.${feature.kind}`) : "",
+        });
       case "group_to_map":
         return t("q.group_to_map", { phrase });
       case "map_to_group":
@@ -433,6 +440,45 @@ export function LandmarkCard({
           {t("feedback.landmarkDistance", { distance: km.format(distanceKm) })}
         </p>
       ) : null}
+    </div>
+  );
+}
+
+/** Feedback for a physical feature: name, kind, and the countries it crosses or borders. */
+export function FeatureCard({
+  feature,
+  world,
+  locale,
+}: {
+  feature: PhysicalFeature;
+  world: WorldData;
+  locale: Locale;
+}) {
+  const { t } = useTranslation();
+  const other: Locale = locale === "en" ? "nb" : "en";
+  const list = new Intl.ListFormat(locale, { type: "conjunction" });
+  const countries = feature.countries
+    .filter((id) => world.byId.has(id))
+    .map((id) => nameOf(world, id, locale));
+  return (
+    <div className="surface flex flex-col gap-2 p-4" data-testid="feature-card">
+      <p
+        className="font-serif text-2xl leading-tight tracking-tight italic"
+        data-testid="answer-name"
+      >
+        {feature.names[locale]}
+        {feature.names[other] !== feature.names[locale] ? (
+          <span className="ml-2 text-sm font-normal text-muted-foreground" lang={other}>
+            {feature.names[other]}
+          </span>
+        ) : null}
+      </p>
+      <p className="text-sm text-muted-foreground">{t(`physical.kind.${feature.kind}`)}</p>
+      <p data-testid="feature-countries">
+        {countries.length > 0
+          ? `${t("physical.countries")}: ${list.format(countries)}`
+          : t("physical.noCountries")}
+      </p>
     </div>
   );
 }

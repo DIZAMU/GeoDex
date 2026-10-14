@@ -16,6 +16,7 @@ import {
   checkPin,
   checkTaps,
   checkTyped,
+  featureView,
   type Question,
   type StudyContext,
   scopedMembers,
@@ -26,6 +27,7 @@ import {
   ChoiceAnswer,
   CityCard,
   CountryCard,
+  FeatureCard,
   FlagAnswer,
   GroupCard,
   LandmarkCard,
@@ -135,6 +137,10 @@ export function Session({
     help: () => setHelp(true),
   });
 
+  const allFeatures = useMemo(
+    () => new Set(learner.world.physical.map((f) => f.id)),
+    [learner.world.physical],
+  );
   const labelFor = useCallback(
     (id: string) => nameOf(learner.world, id, locale),
     [learner.world, locale],
@@ -210,6 +216,12 @@ export function Session({
                 : undefined
             }
             labelFor={labelFor}
+            physical={view.question.featureId ? learner.world.physical : undefined}
+            selectableFeatures={
+              view.kind === "prompt" && view.question.answer.kind === "feature"
+                ? allFeatures
+                : undefined
+            }
             ariaLabel={t("map.label")}
             animate={animate}
             padding={padding}
@@ -258,6 +270,9 @@ function Panel({
   if (!country) return null;
   const city = learner.world.cityById.get(view.question.entityId);
   const landmark = learner.world.landmarkById.get(view.question.entityId);
+  const physical = view.question.featureId
+    ? learner.world.physicalById.get(view.question.featureId)
+    : undefined;
   const group = view.question.groupId
     ? learner.world.groupById.get(view.question.groupId)
     : undefined;
@@ -285,13 +300,15 @@ function Panel({
           ? (group?.names[locale] ?? "")
           : q.answerKind === "landmark"
             ? (landmark?.names[locale] ?? "")
-            : q.answerKind === "capital"
-              ? (country.capitals.find((c) => c.roles.includes("primary"))?.names[locale] ?? "")
-              : q.answerKind === "currency"
-                ? (country.currencies[0]?.names[locale] ?? "")
-                : q.answerKind === "language"
-                  ? (country.officialLanguages[0]?.names[locale] ?? "")
-                  : country.names[locale];
+            : q.answerKind === "feature"
+              ? (physical?.names[locale] ?? "")
+              : q.answerKind === "capital"
+                ? (country.capitals.find((c) => c.roles.includes("primary"))?.names[locale] ?? "")
+                : q.answerKind === "currency"
+                  ? (country.currencies[0]?.names[locale] ?? "")
+                  : q.answerKind === "language"
+                    ? (country.officialLanguages[0]?.names[locale] ?? "")
+                    : country.names[locale];
       return t("answer.hintStarts", {
         letter: target.charAt(0).toUpperCase(),
         count: target.replace(/\s/g, "").length,
@@ -329,7 +346,9 @@ function Panel({
                 ? landmark
                   ? t("answer.pinHelpLandmark")
                   : t("answer.pinHelp")
-                : t("answer.mapHelp")}
+                : answer.kind === "feature"
+                  ? t("answer.featureHelp")
+                  : t("answer.mapHelp")}
             </p>
             <Button
               variant="outline"
@@ -360,6 +379,7 @@ function Panel({
         ] ??
         learner.world.cityById.get(o.chosenId)?.names[locale] ??
         learner.world.landmarkById.get(o.chosenId)?.names[locale] ??
+        learner.world.physicalById.get(o.chosenId)?.names[locale] ??
         learner.world.languageNames[o.chosenId]?.[locale] ??
         learner.world.countries.flatMap((c) => c.currencies).find((c) => c.code === o.chosenId)
           ?.names[locale] ??
@@ -380,7 +400,9 @@ function Panel({
       {o.correct && o.typo && o.matched ? (
         <p>{t("feedback.spelling", { name: o.matched })}</p>
       ) : null}
-      {landmark ? (
+      {physical ? (
+        <FeatureCard feature={physical} world={learner.world} locale={locale} />
+      ) : landmark ? (
         <LandmarkCard
           landmark={landmark}
           country={country}
@@ -502,6 +524,7 @@ function mapState(
 ): { focus: MapFocus; highlight: MapHighlight; animate: boolean; padding?: number } {
   const q0 = view.question;
   if (q0.groupId) return groupMapState(view, learner, ctx, picked);
+  if (q0.featureId) return featureMapState(view, learner, ctx);
   const id = q0.countryId;
   const country = learner.world.byId.get(id);
   const neighbors = country?.neighbors.slice(0, 6) ?? [];
@@ -652,6 +675,35 @@ function groupMapState(
       tinted: new Set(sometimes),
       labels: members.length <= 8 ? members : [],
     },
+    animate: true,
+    padding: 0.12,
+  };
+}
+
+/** Physical cards: the feature highlighted or tappable, then the answer with the wrong pick. */
+function featureMapState(
+  view: Exclude<SessionView, { kind: "done" }>,
+  learner: Learner,
+  ctx: StudyContext | null,
+): { focus: MapFocus; highlight: MapHighlight; animate: boolean; padding?: number } {
+  const q = view.question;
+  const id = q.featureId ?? "";
+  const toFocus = (v: { kind: "world" } | { kind: "countries"; ids: string[] }): MapFocus =>
+    v.kind === "world" ? { kind: "world" } : { kind: "countries", ids: v.ids };
+  if (view.kind !== "feedback") {
+    if (q.prompt.kind === "featureMap")
+      return { focus: toFocus(q.prompt.view), highlight: { selected: id }, animate: true };
+    if (q.answer.kind === "feature")
+      return { focus: toFocus(q.answer.view), highlight: {}, animate: true };
+    return { focus: { kind: "world" }, highlight: {}, animate: true };
+  }
+  const o = view.outcome;
+  const wrong =
+    !o.correct && o.chosenId && learner.world.physicalById.has(o.chosenId) ? o.chosenId : null;
+  const focus = ctx ? toFocus(featureView(ctx, id, "new")) : ({ kind: "world" } as MapFocus);
+  return {
+    focus,
+    highlight: { target: id, chosen: wrong, labels: [id, ...(wrong ? [wrong] : [])] },
     animate: true,
     padding: 0.12,
   };
