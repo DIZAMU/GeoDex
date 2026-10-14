@@ -1,0 +1,310 @@
+{
+  "group": "south_america",
+  "entities": [
+    {
+      "entityId": "Q7646305",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q7646305.en.1",
+            "type": "anchor",
+            "text": "Dutch Guiana is now Suriname, the middle of the three Guianas on South America's north coast."
+          },
+          {
+            "id": "Q7646305.en.2",
+            "type": "contrast",
+            "text": "West to east: British Guiana became Guyana, Dutch Guiana became Suriname, French Guiana is still French."
+          },
+          {
+            "id": "Q7646305.en.3",
+            "type": "story",
+            "text": "Under one peace treaty, the English kept New Amsterdam (New York) and the Dutch kept Suriname."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q7646305.nb.1",
+            "type": "anchor",
+            "text": "Nederlandsk Guyana heter nå Surinam, den midterste av de tre Guyanaene på Sør-Amerikas nordkyst."
+          },
+          {
+            "id": "Q7646305.nb.2",
+            "type": "contrast",
+            "text": "Fra vest til øst: Britisk Guyana ble Guyana, Nederlandsk Guyana ble Surinam, Fransk Guyana er fortsatt fransk."
+          },
+          {
+            "id": "Q7646305.nb.3",
+            "type": "story",
+            "text": "Se for deg en nederlandsk vindmølle midt i regnskogen: landet der folk snakker nederlandsk, er Surinam."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q7646305.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Suriname lies between Guyana to the west and French Guiana to the east, with Brazil to the south.",
+            "nb": "Surinam ligger mellom Guyana i vest og Fransk Guyana i øst, med Brasil i sør."
+          }
+        },
+        {
+          "id": "Q7646305.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Dutch is the official language of Suriname, the only South American country where it is.",
+            "nb": "Nederlandsk er offisielt språk i Surinam, som det eneste landet i Sør-Amerika."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q918126",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q918126.en.1",
+            "type": "anchor",
+            "text": "British Guiana is now Guyana, the westernmost of the three Guianas, next to Venezuela."
+          },
+          {
+            "id": "Q918126.en.2",
+            "type": "etymology",
+            "text": "Guyana kept almost the whole old name: drop British, respell Guiana with a y."
+          },
+          {
+            "id": "Q918126.en.3",
+            "type": "story",
+            "text": "Picture a cricket match on the edge of the rainforest: Guyana is South America's English-speaking country."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q918126.nb.1",
+            "type": "anchor",
+            "text": "Britisk Guyana heter nå Guyana, den vestligste av de tre Guyanaene, ved Venezuela."
+          },
+          {
+            "id": "Q918126.nb.2",
+            "type": "etymology",
+            "text": "Bare «Britisk» falt bort: Britisk Guyana ble rett og slett Guyana."
+          },
+          {
+            "id": "Q918126.nb.3",
+            "type": "story",
+            "text": "Se for deg en cricketkamp i kanten av regnskogen: Guyana er det engelskspråklige landet i Sør-Amerika."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q918126.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Guyana borders Venezuela to the west, Brazil to the south and Suriname to the east.",
+            "nb": "Guyana grenser til Venezuela i vest, Brasil i sør og Surinam i øst."
+          }
+        },
+        {
+          "id": "Q918126.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "English is the official language of Guyana, the only South American country where it is.",
+            "nb": "Engelsk er offisielt språk i Guyana, som det eneste landet i Sør-Amerika."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q199821",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q199821.en.1",
+            "type": "anchor",
+            "text": "Gran Colombia joined today's Colombia, Venezuela, Ecuador and Panama in the northwest corner of South America."
+          },
+          {
+            "id": "Q199821.en.2",
+            "type": "etymology",
+            "text": "Gran Colombia called itself just Colombia. Historians added Gran (greater) to tell it apart from today's country."
+          },
+          {
+            "id": "Q199821.en.3",
+            "type": "story",
+            "text": "Picture Simón Bolívar cutting three flags from one bolt of yellow, blue and red: Colombia, Venezuela and Ecuador."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q199821.nb.1",
+            "type": "anchor",
+            "text": "Stor-Colombia samlet dagens Colombia, Venezuela, Ecuador og Panama i nordvesthjørnet av Sør-Amerika."
+          },
+          {
+            "id": "Q199821.nb.2",
+            "type": "etymology",
+            "text": "Stor-Colombia kalte seg bare Colombia. Historikere la til «Stor-» for å skille det fra dagens land."
+          },
+          {
+            "id": "Q199821.nb.3",
+            "type": "story",
+            "text": "Se for deg Simón Bolívar som klipper tre flagg av samme gule, blå og røde stoff: Colombia, Venezuela og Ecuador."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q199821.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Gran Colombia had coasts on both the Caribbean and the Pacific, joined at the Isthmus of Panama.",
+            "nb": "Stor-Colombia hadde kyst både mot Det karibiske hav og Stillehavet, bundet sammen ved Panamaeidet."
+          }
+        },
+        {
+          "id": "Q199821.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Simón Bolívar was Gran Colombia's first president.",
+            "nb": "Simón Bolívar var Stor-Colombias første president."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q28573",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q28573.en.1",
+            "type": "anchor",
+            "text": "The Inca Empire ran along the Andes from Ecuador through Peru and Bolivia to central Chile."
+          },
+          {
+            "id": "Q28573.en.2",
+            "type": "etymology",
+            "text": "The Incas called their empire Tawantinsuyu, the four parts together, in Quechua."
+          },
+          {
+            "id": "Q28573.en.3",
+            "type": "shape",
+            "text": "The Inca Empire is a long thin strip down the Andes, like a spine on South America's Pacific side."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q28573.nb.1",
+            "type": "anchor",
+            "text": "Inkariket fulgte Andesfjellene fra Ecuador gjennom Peru og Bolivia til midt i Chile."
+          },
+          {
+            "id": "Q28573.nb.2",
+            "type": "etymology",
+            "text": "Inkaene kalte riket Tawantinsuyu, «de fire delene sammen» på quechua."
+          },
+          {
+            "id": "Q28573.nb.3",
+            "type": "shape",
+            "text": "Inkariket er en lang, smal stripe ned Andes, som en ryggrad langs Sør-Amerikas stillehavsside."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q28573.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Inca capital was Cusco, high in the Andes of today's southern Peru.",
+            "nb": "Inkaenes hovedstad var Cusco, høyt i Andes i dagens sørlige Peru."
+          }
+        },
+        {
+          "id": "Q28573.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Incas had no alphabet. They kept records on knotted cords called khipu.",
+            "nb": "Inkaene hadde ikke noe alfabet. De førte regnskap med knyttede snorer kalt khipu."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q80702",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q80702.en.1",
+            "type": "anchor",
+            "text": "The Spanish Empire held most of Latin America, from Mexico to Argentina and Chile, plus the Philippines."
+          },
+          {
+            "id": "Q80702.en.2",
+            "type": "contrast",
+            "text": "Brazil was Portuguese, not Spanish, which is why South America's largest country speaks Portuguese."
+          },
+          {
+            "id": "Q80702.en.3",
+            "type": "story",
+            "text": "Picture a Spanish galleon sailing from Acapulco to Manila: the empire spanned the Pacific."
+          },
+          {
+            "id": "Q80702.en.4",
+            "type": "anchor",
+            "text": "The empire's era runs from Columbus reaching the Americas to Spain losing Cuba and the Philippines in the late 1800s."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q80702.nb.1",
+            "type": "anchor",
+            "text": "Det spanske imperiet omfattet det meste av Latin-Amerika, fra Mexico til Argentina og Chile, pluss Filippinene."
+          },
+          {
+            "id": "Q80702.nb.2",
+            "type": "contrast",
+            "text": "Brasil var portugisisk, ikke spansk. Derfor snakker Sør-Amerikas største land portugisisk."
+          },
+          {
+            "id": "Q80702.nb.3",
+            "type": "story",
+            "text": "Se for deg en spansk galeon som seiler fra Acapulco til Manila: imperiet strakte seg over Stillehavet."
+          },
+          {
+            "id": "Q80702.nb.4",
+            "type": "anchor",
+            "text": "Imperiet varte fra Columbus kom til Amerika til Spania mistet Cuba og Filippinene på slutten av 1800-tallet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q80702.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Spanish is spoken from Mexico to Chile and Argentina as a legacy of the Spanish Empire.",
+            "nb": "Spansk snakkes fra Mexico til Chile og Argentina som en arv fra Det spanske imperiet."
+          }
+        },
+        {
+          "id": "Q80702.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Spain lost Cuba, Puerto Rico and the Philippines in the Spanish-American War, its last major overseas colonies.",
+            "nb": "Spania mistet Cuba, Puerto Rico og Filippinene i den spansk-amerikanske krigen, de siste store koloniene oversjøisk."
+          }
+        }
+      ]
+    }
+  ]
+}
