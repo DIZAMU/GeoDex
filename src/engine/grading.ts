@@ -61,3 +61,13 @@ export function rollingMedian(values: readonly number[], window = 200): number |
     ? (sorted[mid] as number)
     : ((sorted[mid - 1] as number) + (sorted[mid] as number)) / 2;
 }
+
+/** Pin grading for cities (PLAN.md 5.3): distance in km to the rating. */
+export const PIN_GOOD_KM = 100;
+export const PIN_HARD_KM = 300;
+
+export function gradePin(distanceKm: number): { rating: Rating; correct: boolean } {
+  if (distanceKm <= PIN_GOOD_KM) return { rating: 3, correct: true };
+  if (distanceKm <= PIN_HARD_KM) return { rating: 2, correct: true };
+  return { rating: 1, correct: false };
+}

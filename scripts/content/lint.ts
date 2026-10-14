@@ -5,7 +5,7 @@
  */
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { parse } from "yaml";
-import type { CountriesFile } from "../../src/data/types.ts";
+import type { CitiesFile, CountriesFile } from "../../src/data/types.ts";
 import { parseTemplateFile } from "../../src/engine/explain/template.ts";
 import {
   type Confusion,
@@ -31,6 +31,7 @@ type Rules = {
   require_plain_hook_per_locale: boolean;
   min_capital_hooks_per_country_per_locale: number;
   min_facts_per_entity: number;
+  min_facts_per_city: number;
   facts_require_both_locales: boolean;
   template_ids_match_across_locales: boolean;
   no_duplicate_text: boolean;
@@ -83,7 +84,7 @@ function bodyText(tokens: readonly Token[]): string {
 }
 
 export function lintContent(
-  options: { root?: string; complete?: boolean; countriesPath?: string } = {},
+  options: { root?: string; complete?: boolean; countriesPath?: string; citiesPath?: string } = {},
 ): string[] {
   const root = options.root ?? "content";
   const rules = readRules(`${root}/VOICE.md`);
@@ -92,6 +93,11 @@ export function lintContent(
     readFileSync(options.countriesPath ?? "data/countries.json", "utf8"),
   ) as CountriesFile;
   const byId = new Map(countries.countries.map((c) => [c.id, c]));
+  const citiesPath = options.citiesPath ?? "data/cities.json";
+  const cities = existsSync(citiesPath)
+    ? (JSON.parse(readFileSync(citiesPath, "utf8")) as CitiesFile).cities
+    : [];
+  const cityById = new Map(cities.map((c) => [c.id, c]));
   const ids = new Set<string>();
   const texts: Record<Locale, Map<string, string>> = { en: new Map(), nb: new Map() };
   const seenEntities = new Set<string>();
@@ -112,82 +118,106 @@ export function lintContent(
     ids.add(id);
   };
 
-  const dir = `${root}/entities/countries`;
-  const files = existsSync(dir)
-    ? readdirSync(dir)
-        .filter((f) => f.endsWith(".json"))
-        .sort()
-    : [];
-  for (const file of files) {
-    const group = JSON.parse(readFileSync(`${dir}/${file}`, "utf8")) as ContentGroupFile;
-    if (`${group.group}.json` !== file)
-      errors.push(`${file}: group "${group.group}" does not match the file name`);
-    for (const e of group.entities) {
-      const at = `${file}:${e.entityId}`;
-      const country = byId.get(e.entityId);
-      if (!country) {
-        errors.push(`${at}: unknown entity`);
-        continue;
-      }
-      if (country.subregion !== group.group)
-        errors.push(`${at}: belongs in ${country.subregion}.json`);
-      if (seenEntities.has(e.entityId)) errors.push(`${at}: entity appears twice`);
-      seenEntities.add(e.entityId);
-
-      for (const locale of rules.locales) {
-        const hooks = e.hooks?.[locale] ?? [];
-        if (hooks.length < rules.min_hooks_per_entity_per_locale)
-          errors.push(
-            `${at} [${locale}]: ${hooks.length} hooks, need ${rules.min_hooks_per_entity_per_locale}`,
-          );
-        const types = new Set(hooks.map((h) => h.type));
-        if (types.size < rules.min_hook_types_per_entity_per_locale)
-          errors.push(
-            `${at} [${locale}]: ${types.size} hook types, need ${rules.min_hook_types_per_entity_per_locale}`,
-          );
-        if (
-          rules.require_plain_hook_per_locale &&
-          !hooks.some((h) => PLAIN_HOOK_TYPES.includes(h.type))
-        )
-          errors.push(`${at} [${locale}]: no plain hook (anchor, etymology or contrast)`);
-        for (const h of hooks) {
-          claimId(at, h.id);
-          if (!HOOK_TYPES.includes(h.type))
-            errors.push(`${at}:${h.id}: unknown hook type ${h.type}`);
-          check(`${at}:${h.id}`, h.text, locale, "hook");
+  // Countries are grouped by subregion; cities by the continent of their country.
+  const modules = [
+    {
+      name: "countries",
+      groupOf: (id: string) => byId.get(id)?.subregion,
+      minFacts: rules.min_facts_per_entity,
+      countryExtras: true,
+    },
+    {
+      name: "cities",
+      groupOf: (id: string) => {
+        const city = cityById.get(id);
+        return city ? byId.get(city.countryId)?.continent : undefined;
+      },
+      minFacts: rules.min_facts_per_city,
+      countryExtras: false,
+    },
+  ];
+  for (const module of modules) {
+    const dir = `${root}/entities/${module.name}`;
+    const files = existsSync(dir)
+      ? readdirSync(dir)
+          .filter((f) => f.endsWith(".json"))
+          .sort()
+      : [];
+    for (const file of files) {
+      const group = JSON.parse(readFileSync(`${dir}/${file}`, "utf8")) as ContentGroupFile;
+      if (`${group.group}.json` !== file)
+        errors.push(`${module.name}/${file}: group "${group.group}" does not match the file name`);
+      for (const e of group.entities) {
+        const at = `${module.name}/${file}:${e.entityId}`;
+        const expected = module.groupOf(e.entityId);
+        if (!expected) {
+          errors.push(`${at}: unknown entity`);
+          continue;
         }
-        const capitalHooks = e.capitalHooks?.[locale] ?? [];
-        if (capitalHooks.length < rules.min_capital_hooks_per_country_per_locale)
-          errors.push(
-            `${at} [${locale}]: ${capitalHooks.length} capital hooks, need ${rules.min_capital_hooks_per_country_per_locale}`,
-          );
-        for (const h of capitalHooks) {
-          claimId(at, h.id);
-          if (!HOOK_TYPES.includes(h.type))
-            errors.push(`${at}:${h.id}: unknown hook type ${h.type}`);
-          check(`${at}:${h.id}`, h.text, locale, "capital_hook");
-        }
-        if (e.flagNote) check(`${at}:flagNote`, e.flagNote[locale] ?? "", locale, "flag_note");
-      }
-      if (!e.flagNote) errors.push(`${at}: no flagNote`);
+        if (expected !== group.group) errors.push(`${at}: belongs in ${expected}.json`);
+        if (seenEntities.has(e.entityId)) errors.push(`${at}: entity appears twice`);
+        seenEntities.add(e.entityId);
 
-      if (e.facts.length < rules.min_facts_per_entity)
-        errors.push(`${at}: ${e.facts.length} facts, need ${rules.min_facts_per_entity}`);
-      for (const f of e.facts) {
-        claimId(at, f.id);
-        if (![1, 2, 3].includes(f.tier)) errors.push(`${at}:${f.id}: tier must be 1, 2 or 3`);
-        if (typeof f.verified !== "boolean")
-          errors.push(`${at}:${f.id}: verified must be true or false`);
         for (const locale of rules.locales) {
-          const text = f.text?.[locale] ?? "";
-          if (rules.facts_require_both_locales && !text)
-            errors.push(`${at}:${f.id} [${locale}]: missing text`);
-          else check(`${at}:${f.id}`, text, locale, "fact");
-          if (rules.digits_require_source && /\d/.test(text) && !f.sourceUrl)
-            errors.push(`${at}:${f.id} [${locale}]: digits need a sourceUrl`);
+          const hooks = e.hooks?.[locale] ?? [];
+          if (hooks.length < rules.min_hooks_per_entity_per_locale)
+            errors.push(
+              `${at} [${locale}]: ${hooks.length} hooks, need ${rules.min_hooks_per_entity_per_locale}`,
+            );
+          const types = new Set(hooks.map((h) => h.type));
+          if (types.size < rules.min_hook_types_per_entity_per_locale)
+            errors.push(
+              `${at} [${locale}]: ${types.size} hook types, need ${rules.min_hook_types_per_entity_per_locale}`,
+            );
+          if (
+            rules.require_plain_hook_per_locale &&
+            !hooks.some((h) => PLAIN_HOOK_TYPES.includes(h.type))
+          )
+            errors.push(`${at} [${locale}]: no plain hook (anchor, etymology or contrast)`);
+          for (const h of hooks) {
+            claimId(at, h.id);
+            if (!HOOK_TYPES.includes(h.type))
+              errors.push(`${at}:${h.id}: unknown hook type ${h.type}`);
+            check(`${at}:${h.id}`, h.text, locale, "hook");
+          }
+          const capitalHooks = e.capitalHooks?.[locale] ?? [];
+          if (!module.countryExtras) {
+            if (capitalHooks.length > 0 || e.flagNote)
+              errors.push(`${at}: capital hooks and flag notes are for countries only`);
+            continue;
+          }
+          if (capitalHooks.length < rules.min_capital_hooks_per_country_per_locale)
+            errors.push(
+              `${at} [${locale}]: ${capitalHooks.length} capital hooks, need ${rules.min_capital_hooks_per_country_per_locale}`,
+            );
+          for (const h of capitalHooks) {
+            claimId(at, h.id);
+            if (!HOOK_TYPES.includes(h.type))
+              errors.push(`${at}:${h.id}: unknown hook type ${h.type}`);
+            check(`${at}:${h.id}`, h.text, locale, "capital_hook");
+          }
+          if (e.flagNote) check(`${at}:flagNote`, e.flagNote[locale] ?? "", locale, "flag_note");
         }
-        if (f.sourceUrl && !/^https:\/\/\S+$/.test(f.sourceUrl))
-          errors.push(`${at}:${f.id}: sourceUrl must be an https URL`);
+        if (module.countryExtras && !e.flagNote) errors.push(`${at}: no flagNote`);
+
+        if (e.facts.length < module.minFacts)
+          errors.push(`${at}: ${e.facts.length} facts, need ${module.minFacts}`);
+        for (const f of e.facts) {
+          claimId(at, f.id);
+          if (![1, 2, 3].includes(f.tier)) errors.push(`${at}:${f.id}: tier must be 1, 2 or 3`);
+          if (typeof f.verified !== "boolean")
+            errors.push(`${at}:${f.id}: verified must be true or false`);
+          for (const locale of rules.locales) {
+            const text = f.text?.[locale] ?? "";
+            if (rules.facts_require_both_locales && !text)
+              errors.push(`${at}:${f.id} [${locale}]: missing text`);
+            else check(`${at}:${f.id}`, text, locale, "fact");
+            if (rules.digits_require_source && /\d/.test(text) && !f.sourceUrl)
+              errors.push(`${at}:${f.id} [${locale}]: digits need a sourceUrl`);
+          }
+          if (f.sourceUrl && !/^https:\/\/\S+$/.test(f.sourceUrl))
+            errors.push(`${at}:${f.id}: sourceUrl must be an https URL`);
+        }
       }
     }
   }
@@ -197,6 +227,8 @@ export function lintContent(
       if ((c.status === "un_member" || c.status === "un_observer") && !seenEntities.has(c.id))
         errors.push(`${c.id}: no content`);
     }
+    for (const c of cities)
+      if (!seenEntities.has(c.id)) errors.push(`${c.id} (${c.names.en}): no content`);
   }
 
   const confusionsPath = `${root}/confusions.json`;

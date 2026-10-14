@@ -1,0 +1,359 @@
+{
+  "group": "africa",
+  "entities": [
+    {
+      "entityId": "Q8673",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q8673.en.1",
+            "type": "anchor",
+            "text": "Lagos is on Nigeria's Atlantic coast in the far southwest, close to the border with Benin."
+          },
+          {
+            "id": "Q8673.en.2",
+            "type": "contrast",
+            "text": "Lagos is Nigeria's biggest city; the capital moved inland to Abuja, near the middle of the country."
+          },
+          {
+            "id": "Q8673.en.3",
+            "type": "etymology",
+            "text": "Lagos is Portuguese for lakes, after the lagoons along this part of Nigeria's coast."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q8673.nb.1",
+            "type": "anchor",
+            "text": "Lagos ligger på atlanterhavskysten helt sørvest i Nigeria, nær grensen til Benin."
+          },
+          {
+            "id": "Q8673.nb.2",
+            "type": "contrast",
+            "text": "Lagos er Nigerias største by; hovedstaden flyttet inn i landet til Abuja, nær midten av Nigeria."
+          },
+          {
+            "id": "Q8673.nb.3",
+            "type": "etymology",
+            "text": "Lagos er portugisisk for innsjøer, etter lagunene langs denne delen av kysten av Nigeria."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q8673.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Lagos was Nigeria's capital until the government moved to Abuja.",
+            "nb": "Lagos var Nigerias hovedstad til regjeringen flyttet til Abuja."
+          }
+        },
+        {
+          "id": "Q8673.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Much of Lagos is built on islands and along the shores of a lagoon.",
+            "nb": "Store deler av Lagos er bygd på øyer og langs bredden av en lagune."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q34647",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q34647.en.1",
+            "type": "anchor",
+            "text": "Johannesburg is inland in northeastern South Africa, on the high Highveld plateau, just south of Pretoria."
+          },
+          {
+            "id": "Q34647.en.2",
+            "type": "story",
+            "text": "Johannesburg began as a gold-rush camp after gold was found on the Witwatersrand ridge."
+          },
+          {
+            "id": "Q34647.en.3",
+            "type": "sound",
+            "text": "Johannesburg: a man named Johannes builds a castle, a burg, out of gold bars in South Africa."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q34647.nb.1",
+            "type": "anchor",
+            "text": "Johannesburg ligger inne i landet nordøst i Sør-Afrika, på høysletta Highveld, like sør for Pretoria."
+          },
+          {
+            "id": "Q34647.nb.2",
+            "type": "story",
+            "text": "Johannesburg begynte som en gullgraverleir etter at det ble funnet gull på åsen Witwatersrand."
+          },
+          {
+            "id": "Q34647.nb.3",
+            "type": "sound",
+            "text": "Johannesburg: Johannes bygger seg en borg av gullbarrer midt i Sør-Afrika."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q34647.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Johannesburg is South Africa's largest city, but none of its three capitals.",
+            "nb": "Johannesburg er Sør-Afrikas største by, men ingen av landets tre hovedsteder."
+          }
+        },
+        {
+          "id": "Q34647.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The city sits on the Witwatersrand, a ridge that held some of the world's richest gold deposits.",
+            "nb": "Byen ligger på Witwatersrand, en ås med noen av verdens rikeste gullforekomster."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q7903",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q7903.en.1",
+            "type": "anchor",
+            "text": "Casablanca is on Morocco's Atlantic coast, a short way southwest of Rabat."
+          },
+          {
+            "id": "Q7903.en.2",
+            "type": "contrast",
+            "text": "Casablanca is Morocco's biggest city and port, but the capital is Rabat, up the coast to the northeast."
+          },
+          {
+            "id": "Q7903.en.3",
+            "type": "etymology",
+            "text": "Casablanca is Spanish for white house; picture a white house on the Moroccan shore."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q7903.nb.1",
+            "type": "anchor",
+            "text": "Casablanca ligger på atlanterhavskysten av Marokko, et lite stykke sørvest for Rabat."
+          },
+          {
+            "id": "Q7903.nb.2",
+            "type": "contrast",
+            "text": "Casablanca er Marokkos største by og havn, men hovedstaden er Rabat, lenger nordøst langs kysten."
+          },
+          {
+            "id": "Q7903.nb.3",
+            "type": "etymology",
+            "text": "Casablanca betyr det hvite huset på spansk; se for deg et hvitt hus på stranden i Marokko."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q7903.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Morocco's capital is Rabat, not Casablanca.",
+            "nb": "Marokkos hovedstad er Rabat, ikke Casablanca."
+          }
+        },
+        {
+          "id": "Q7903.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Hassan II Mosque in Casablanca is built partly out over the Atlantic.",
+            "nb": "Hassan II-moskeen i Casablanca er delvis bygd ut over Atlanterhavet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q101625",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q101625.en.1",
+            "type": "anchor",
+            "text": "Marrakech is inland in central Morocco, at the foot of the High Atlas mountains."
+          },
+          {
+            "id": "Q101625.en.2",
+            "type": "etymology",
+            "text": "Morocco is named after Marrakech, once the capital of the kingdom that ruled the region."
+          },
+          {
+            "id": "Q101625.en.3",
+            "type": "story",
+            "text": "In Marrakech the square Jemaa el-Fnaa fills with snake charmers, storytellers and food stalls."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q101625.nb.1",
+            "type": "anchor",
+            "text": "Marrakech ligger inne i landet midt i Marokko, ved foten av Høye Atlas."
+          },
+          {
+            "id": "Q101625.nb.2",
+            "type": "etymology",
+            "text": "Navnet Marokko kommer fra Marrakech, som en gang var hovedstad i riket som styrte området."
+          },
+          {
+            "id": "Q101625.nb.3",
+            "type": "story",
+            "text": "På torget Jemaa el-Fnaa i Marrakech sitter slangetemmere og historiefortellere mellom matbodene."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q101625.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Marrakech is in Morocco, whose capital is Rabat on the coast.",
+            "nb": "Marrakech ligger i Marokko, der hovedstaden er Rabat ved kysten."
+          }
+        },
+        {
+          "id": "Q101625.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The square Jemaa el-Fnaa fills with food stalls every evening.",
+            "nb": "Torget Jemaa el-Fnaa fylles med matboder hver kveld."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1960",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1960.en.1",
+            "type": "anchor",
+            "text": "Dar es Salaam is on Tanzania's Indian Ocean coast, across the water from the island of Zanzibar."
+          },
+          {
+            "id": "Q1960.en.2",
+            "type": "contrast",
+            "text": "Dar es Salaam is Tanzania's largest city, but the official capital is Dodoma, in the centre of the country."
+          },
+          {
+            "id": "Q1960.en.3",
+            "type": "etymology",
+            "text": "Dar es Salaam is Arabic for house of peace, a calm harbour on the Tanzanian coast."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1960.nb.1",
+            "type": "anchor",
+            "text": "Dar es Salaam ligger på kysten av Tanzania mot Det indiske hav, rett over vannet fra øya Zanzibar."
+          },
+          {
+            "id": "Q1960.nb.2",
+            "type": "contrast",
+            "text": "Dar es Salaam er Tanzanias største by, men den offisielle hovedstaden er Dodoma, midt i landet."
+          },
+          {
+            "id": "Q1960.nb.3",
+            "type": "etymology",
+            "text": "Dar es Salaam er arabisk for fredens hus, en rolig havn på kysten av Tanzania."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1960.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Dar es Salaam was Tanzania's capital before Dodoma was made the official capital.",
+            "nb": "Dar es Salaam var Tanzanias hovedstad før Dodoma ble den offisielle hovedstaden."
+          }
+        },
+        {
+          "id": "Q1960.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Many ministries and embassies stayed in Dar es Salaam long after Dodoma became the capital.",
+            "nb": "Mange departementer og ambassader ble værende i Dar es Salaam lenge etter at Dodoma ble hovedstad."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1515",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1515.en.1",
+            "type": "anchor",
+            "text": "Abidjan is on the coast of Côte d'Ivoire, spread around the Ébrié Lagoon."
+          },
+          {
+            "id": "Q1515.en.2",
+            "type": "contrast",
+            "text": "Abidjan is Côte d'Ivoire's biggest city and seat of government; the official capital is Yamoussoukro, inland."
+          },
+          {
+            "id": "Q1515.en.3",
+            "type": "story",
+            "text": "Yamoussoukro became the capital because it was the home town of the first president, Houphouët-Boigny."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1515.nb.1",
+            "type": "anchor",
+            "text": "Abidjan ligger på kysten av Elfenbenskysten, spredt rundt Ébrié-lagunen."
+          },
+          {
+            "id": "Q1515.nb.2",
+            "type": "contrast",
+            "text": "Abidjan er Elfenbenskystens største by og regjeringssete; den offisielle hovedstaden er Yamoussoukro, inne i landet."
+          },
+          {
+            "id": "Q1515.nb.3",
+            "type": "story",
+            "text": "Yamoussoukro ble hovedstad fordi den var hjembyen til den første presidenten, Houphouët-Boigny."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1515.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Abidjan is the seat of government of Côte d'Ivoire; Yamoussoukro is the official capital.",
+            "nb": "Abidjan er regjeringssetet i Elfenbenskysten; Yamoussoukro er den offisielle hovedstaden."
+          }
+        },
+        {
+          "id": "Q1515.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Abidjan was the capital of Côte d'Ivoire before Yamoussoukro took over the title.",
+            "nb": "Abidjan var hovedstaden i Elfenbenskysten før Yamoussoukro overtok tittelen."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,418 @@
+{
+  "group": "europe",
+  "entities": [
+    {
+      "entityId": "Q1492",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1492.en.1",
+            "type": "anchor",
+            "text": "Barcelona is on Spain's Mediterranean coast in the northeast, south of the Pyrenees and France."
+          },
+          {
+            "id": "Q1492.en.2",
+            "type": "contrast",
+            "text": "Barcelona is Spain's second city; the capital is Madrid, in the middle of the country."
+          },
+          {
+            "id": "Q1492.en.3",
+            "type": "story",
+            "text": "Barcelona's Sagrada Família church has been under construction for well over a century."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1492.nb.1",
+            "type": "anchor",
+            "text": "Barcelona ligger ved Middelhavet nordøst i Spania, sør for Pyreneene og Frankrike."
+          },
+          {
+            "id": "Q1492.nb.2",
+            "type": "contrast",
+            "text": "Barcelona er Spanias nest største by; hovedstaden er Madrid, midt i landet."
+          },
+          {
+            "id": "Q1492.nb.3",
+            "type": "story",
+            "text": "Kirken Sagrada Família i Barcelona har vært under bygging i godt over hundre år."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1492.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Barcelona is the capital of Catalonia, a region of Spain with its own language, Catalan.",
+            "nb": "Barcelona er hovedstaden i Catalonia, en region i Spania med sitt eget språk, katalansk."
+          }
+        },
+        {
+          "id": "Q1492.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The architect Antoni Gaudí designed the Sagrada Família.",
+            "nb": "Arkitekten Antoni Gaudí tegnet Sagrada Família."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1726",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1726.en.1",
+            "type": "anchor",
+            "text": "Munich is in southern Germany, the capital of Bavaria, north of the Alps."
+          },
+          {
+            "id": "Q1726.en.2",
+            "type": "etymology",
+            "text": "Munich is named after the monks who settled there; a monk still stands on the city's coat of arms."
+          },
+          {
+            "id": "Q1726.en.3",
+            "type": "story",
+            "text": "Munich hosts Oktoberfest, a beer festival that mostly takes place in September."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1726.nb.1",
+            "type": "anchor",
+            "text": "München ligger sør i Tyskland, er hovedstad i Bayern og ligger nord for Alpene."
+          },
+          {
+            "id": "Q1726.nb.2",
+            "type": "etymology",
+            "text": "München har navnet sitt etter munkene som slo seg ned der; en munk står fortsatt i byvåpenet."
+          },
+          {
+            "id": "Q1726.nb.3",
+            "type": "story",
+            "text": "München arrangerer Oktoberfest, en ølfest som stort sett foregår i september."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1726.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Munich is the capital of Bavaria, Germany's largest state by area.",
+            "nb": "München er hovedstaden i Bayern, den største delstaten i Tyskland etter areal."
+          }
+        },
+        {
+          "id": "Q1726.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Munich is Germany's third-largest city, after Berlin and Hamburg.",
+            "nb": "München er Tysklands tredje største by, etter Berlin og Hamburg."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q490",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q490.en.1",
+            "type": "anchor",
+            "text": "Milan is in northern Italy on the flat Po plain, between the Alps and the river Po."
+          },
+          {
+            "id": "Q490.en.2",
+            "type": "contrast",
+            "text": "Milan is Italy's business capital, but the political capital is Rome, further south."
+          },
+          {
+            "id": "Q490.en.3",
+            "type": "story",
+            "text": "Leonardo da Vinci's Last Supper is painted on a wall of a convent in Milan."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q490.nb.1",
+            "type": "anchor",
+            "text": "Milano ligger nord i Italia på den flate Po-sletta, mellom Alpene og elva Po."
+          },
+          {
+            "id": "Q490.nb.2",
+            "type": "contrast",
+            "text": "Milano er Italias næringslivshovedstad, men hovedstaden er Roma, lenger sør."
+          },
+          {
+            "id": "Q490.nb.3",
+            "type": "story",
+            "text": "Leonardo da Vincis «Nattverden» er malt på veggen i et kloster i Milano."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q490.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Milan is the capital of the Lombardy region.",
+            "nb": "Milano er hovedstaden i regionen Lombardia."
+          }
+        },
+        {
+          "id": "Q490.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Milan's cathedral took nearly six centuries to complete.",
+            "nb": "Domkirken i Milano tok nesten seks hundre år å fullføre."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q641",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q641.en.1",
+            "type": "anchor",
+            "text": "Venice is in northeastern Italy, built on islands in a lagoon at the top of the Adriatic Sea."
+          },
+          {
+            "id": "Q641.en.2",
+            "type": "story",
+            "text": "In Venice the canals are the streets: people get around by boat or on foot, never by car."
+          },
+          {
+            "id": "Q641.en.3",
+            "type": "sound",
+            "text": "Venice: 'when is' the next bus? Never, in this Italian city the bus is a boat."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q641.nb.1",
+            "type": "anchor",
+            "text": "Venezia ligger nordøst i Italia, bygd på øyer i en lagune innerst i Adriaterhavet."
+          },
+          {
+            "id": "Q641.nb.2",
+            "type": "story",
+            "text": "I Venezia er kanalene gatene: folk ferdes med båt eller til fots, aldri med bil."
+          },
+          {
+            "id": "Q641.nb.3",
+            "type": "sound",
+            "text": "Venezia: vennene dine venter på bussen, men i denne italienske byen er bussen en båt."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q641.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Venice is the capital of the Veneto region of Italy.",
+            "nb": "Venezia er hovedstaden i regionen Veneto i Italia."
+          }
+        },
+        {
+          "id": "Q641.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The city stands on more than a hundred small islands linked by bridges.",
+            "nb": "Byen står på mer enn hundre små øyer som er bundet sammen av broer."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q656",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q656.en.1",
+            "type": "anchor",
+            "text": "Saint Petersburg is in northwestern Russia, at the eastern end of the Gulf of Finland."
+          },
+          {
+            "id": "Q656.en.2",
+            "type": "story",
+            "text": "Peter the Great built Saint Petersburg as Russia's window on Europe and made it the capital."
+          },
+          {
+            "id": "Q656.en.3",
+            "type": "contrast",
+            "text": "Saint Petersburg was Russia's capital for two centuries; today the capital is Moscow."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q656.nb.1",
+            "type": "anchor",
+            "text": "St. Petersburg ligger nordvest i Russland, innerst i Finskebukta."
+          },
+          {
+            "id": "Q656.nb.2",
+            "type": "story",
+            "text": "Peter den store bygde St. Petersburg som Russlands vindu mot Europa og gjorde byen til hovedstad."
+          },
+          {
+            "id": "Q656.nb.3",
+            "type": "contrast",
+            "text": "St. Petersburg var Russlands hovedstad i to hundre år; i dag er hovedstaden Moskva."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q656.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Saint Petersburg was called Leningrad for most of the Soviet period.",
+            "nb": "St. Petersburg het Leningrad i store deler av sovjettiden."
+          }
+        },
+        {
+          "id": "Q656.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Around midsummer the city has white nights, when it never gets fully dark.",
+            "nb": "Rundt midtsommer har byen hvite netter, når det aldri blir helt mørkt."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q71",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q71.en.1",
+            "type": "anchor",
+            "text": "Geneva is at the southwest tip of Switzerland, where the Rhône leaves Lake Geneva, almost surrounded by France."
+          },
+          {
+            "id": "Q71.en.2",
+            "type": "story",
+            "text": "Geneva hosts the European headquarters of the United Nations and the headquarters of the Red Cross."
+          },
+          {
+            "id": "Q71.en.3",
+            "type": "contrast",
+            "text": "Geneva is known worldwide, but Switzerland's capital is Bern."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q71.nb.1",
+            "type": "anchor",
+            "text": "Genève ligger helt sørvest i Sveits, der Rhône renner ut av Genfersjøen, nesten omgitt av Frankrike."
+          },
+          {
+            "id": "Q71.nb.2",
+            "type": "story",
+            "text": "Genève har FNs europeiske hovedkontor og hovedkvarteret til Røde Kors."
+          },
+          {
+            "id": "Q71.nb.3",
+            "type": "contrast",
+            "text": "Genève er kjent over hele verden, men Sveits' hovedstad er Bern."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q71.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Geneva is in the French-speaking part of Switzerland.",
+            "nb": "Genève ligger i den fransktalende delen av Sveits."
+          }
+        },
+        {
+          "id": "Q71.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Red Cross was founded in Geneva.",
+            "nb": "Røde Kors ble grunnlagt i Genève."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q72",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q72.en.1",
+            "type": "anchor",
+            "text": "Zurich is in northern Switzerland, at the north end of Lake Zurich."
+          },
+          {
+            "id": "Q72.en.2",
+            "type": "contrast",
+            "text": "Zurich is Switzerland's biggest city, but the capital is Bern, to the west of Zurich."
+          },
+          {
+            "id": "Q72.en.3",
+            "type": "sound",
+            "text": "Zurich: zoo rich, a zoo where the animals keep their savings in Swiss banks."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q72.nb.1",
+            "type": "anchor",
+            "text": "Zürich ligger nord i Sveits, ved nordenden av Zürichsjøen."
+          },
+          {
+            "id": "Q72.nb.2",
+            "type": "contrast",
+            "text": "Zürich er Sveits' største by, men hovedstaden er Bern, vest for Zürich."
+          },
+          {
+            "id": "Q72.nb.3",
+            "type": "sound",
+            "text": "Zürich: en sur, rik bankmann teller penger ved sjøen i Sveits."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q72.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Switzerland's capital is Bern, not Zurich.",
+            "nb": "Sveits' hovedstad er Bern, ikke Zürich."
+          }
+        },
+        {
+          "id": "Q72.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Zurich is in the German-speaking part of Switzerland.",
+            "nb": "Zürich ligger i den tysktalende delen av Sveits."
+          }
+        }
+      ]
+    }
+  ]
+}

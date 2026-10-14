@@ -9,7 +9,7 @@
 
 Spaced-repetition geography trainer. Local-first PWA, English and Norwegian.
 
-> Status: Phase 5 (progress, atlas, stats). See `PLAN.md`.
+> Status: Phase 6 (cities). See `PLAN.md`.
 
 ## Features (planned)
 

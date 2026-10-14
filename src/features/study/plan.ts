@@ -8,15 +8,18 @@ import type { Country } from "@/data/types";
 import type { WorldData } from "@/data/world";
 import { type Budget, computeBudget, MAX_DUE_PER_DAY, secondsPerReview } from "@/engine/budget";
 import { isIntroduced, stageOf, unlockedNewCards } from "@/engine/cards";
-import { confusionScores, contrastCards } from "@/engine/confusions";
+import { confusionScores, contrastCardId, contrastCards } from "@/engine/confusions";
 import { learningDay } from "@/engine/day";
 import { rollingMedian } from "@/engine/grading";
+import { allocateNew } from "@/engine/modules";
 import { type CardState, retrievability } from "@/engine/scheduler";
 import { buildQueue, pickNewCards, type QueueItem, subregionOrder } from "@/engine/session";
 import {
   type AnswerMode,
   type CardId,
+  CITY_CARD_TYPES,
   type CountryCardType,
+  cardId,
   parseCardId,
   type ReviewEventCore,
 } from "@/engine/types";
@@ -28,7 +31,15 @@ export type PlanSettings = {
   dayStartHour: number;
   currencyAndLanguage: boolean;
   scope: { partiallyRecognized: boolean };
+  /** Enabled modules and their share of new cards (PLAN.md 6.3). Countries are always on. */
+  modules?: Partial<Record<string, boolean>>;
+  moduleWeights?: Partial<Record<string, number>>;
 };
+
+/** A city has started once either of its cards has been reviewed. */
+export function isCityIntroduced(id: string, states: ReadonlyMap<CardId, unknown>): boolean {
+  return CITY_CARD_TYPES.some((type) => states.has(cardId(id, type)));
+}
 
 export type PlanEvent = ReviewEventCore & { durationMs: number };
 
@@ -64,27 +75,47 @@ export function planDay(input: {
   scheduler: FSRS;
   now: number;
   /** Written content. Contrast cards exist only for pairs with contrast text. */
-  content?: { confusion: (a: string, b: string) => unknown } | null;
+  content?: {
+    confusion: (a: string, b: string) => unknown;
+    confusions?: readonly { a: string; b: string; dimension: string }[];
+  } | null;
 }): DayPlan {
   const { world, settings, states, events, scheduler, now } = input;
   const hasContrast = (a: string, b: string) => Boolean(input.content?.confusion(a, b));
   const countries = scopedCountries(world, settings);
   const inScope = new Map(countries.map((c) => [c.id, c]));
   const day = learningDay(now, settings.dayStartHour);
+  const citiesOn = settings.modules?.cities === true;
+  /** Subregion of a city whose country is in scope, when the cities module is on. */
+  const citySubregion = (id: string) => {
+    const city = citiesOn ? world.cityById.get(id) : undefined;
+    return city ? inScope.get(city.countryId)?.subregion : undefined;
+  };
+  /**
+   * Subregion of a contrast pair that can be studied: two countries in scope, or a city and
+   * the capital it is mistaken for (cities module on). Pairs need contrast text.
+   */
+  const contrastSubregion = (pair: string): string | undefined => {
+    const [a, b] = pair.split("|");
+    if (!a || !b || !hasContrast(a, b)) return undefined;
+    const first = inScope.get(a);
+    if (first && inScope.has(b)) return first.subregion;
+    return citySubregion(a) ?? citySubregion(b);
+  };
 
   const due = [...states.values()]
     .filter((s) => s.due < day.end && s.phase !== "new")
     .flatMap((s) => {
       const { entityId, type } = parseCardId(s.cardId);
-      if (type === "contrast") {
-        const [a, b] = entityId.split("|");
-        const first = a ? inScope.get(a) : undefined;
-        if (!first || !b || !inScope.has(b) || !hasContrast(first.id, b)) return [];
+      if (type === "contrast" || type === "city_to_country" || type === "city_to_map") {
+        const subregion =
+          type === "contrast" ? contrastSubregion(entityId) : citySubregion(entityId);
+        if (!subregion) return [];
         return [
           {
             cardId: s.cardId,
             entityId,
-            subregion: first.subregion,
+            subregion,
             isNew: false,
             retrievability: retrievability(scheduler, s, now),
           },
@@ -138,19 +169,49 @@ export function planDay(input: {
       stage: stageOf(parseCardId(cardId).type as CountryCardType),
     }));
   });
-  // Contrast cards for pairs the learner keeps confusing (PLAN.md 6.7), ahead of new cards.
-  const contrasts = contrastCards(confusionScoresFor(world, events, now))
+  // Cities start once their country is introduced, both cards together (PLAN.md 5.3).
+  const cityCandidates = citiesOn
+    ? world.cities.flatMap((city) => {
+        const country = inScope.get(city.countryId);
+        if (!country || !isIntroduced(country.id, states)) return [];
+        const introduced = isCityIntroduced(city.id, states);
+        return CITY_CARD_TYPES.map((type) => cardId(city.id, type))
+          .filter((id) => !states.has(id))
+          .map((id) => ({
+            cardId: id,
+            entityId: city.id,
+            subregion: country.subregion,
+            isNew: true,
+            introduced,
+            stage: 1,
+          }));
+      })
+    : [];
+  const weight = (id: string, fallback: number) => settings.moduleWeights?.[id] ?? fallback;
+  const shares = allocateNew(newAllowance, [
+    { id: "countries", weight: weight("countries", 3), available: candidates.length },
+    { id: "cities", weight: citiesOn ? weight("cities", 1) : 0, available: cityCandidates.length },
+  ]);
+
+  // Contrast cards ahead of new cards (PLAN.md 6.7): pairs the learner keeps confusing, and
+  // each "not the capital" pair once its city has been studied (seeded from confusions.json).
+  const earned = contrastCards(confusionScoresFor(world, events, now));
+  const seeded = (input.content?.confusions ?? [])
+    .filter((c) => c.dimension === "not_capital" && isCityIntroduced(c.a, states))
+    .map((c) => contrastCardId(c.a, c.b));
+  const contrasts = [...new Set([...earned, ...seeded])]
     .filter((id) => !states.has(id))
     .flatMap((id) => {
-      const [a, b] = parseCardId(id).entityId.split("|");
-      const first = a ? inScope.get(a) : undefined;
-      if (!first || !b || !inScope.has(b) || !hasContrast(first.id, b)) return [];
-      return [
-        { cardId: id, entityId: `${first.id}|${b}`, subregion: first.subregion, isNew: true },
-      ];
+      const entityId = parseCardId(id).entityId;
+      const subregion = contrastSubregion(entityId);
+      return subregion ? [{ cardId: id, entityId, subregion, isNew: true }] : [];
     })
     .slice(0, MAX_NEW_CONTRAST_PER_DAY);
-  const fresh = [...contrasts, ...pickNewCards(candidates, order, newAllowance)];
+  const fresh = [
+    ...contrasts,
+    ...pickNewCards(candidates, order, shares.get("countries") ?? 0),
+    ...pickNewCards(cityCandidates, order, shares.get("cities") ?? 0),
+  ];
   const capped = [...due]
     .sort((a, b) => a.retrievability - b.retrievability)
     .slice(0, MAX_DUE_PER_DAY);

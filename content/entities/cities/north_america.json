@@ -1,0 +1,536 @@
+{
+  "group": "north_america",
+  "entities": [
+    {
+      "entityId": "Q172",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q172.en.1",
+            "type": "anchor",
+            "text": "Toronto is in southeastern Canada, on the north shore of Lake Ontario."
+          },
+          {
+            "id": "Q172.en.2",
+            "type": "contrast",
+            "text": "Toronto is Canada's biggest city, but the capital is Ottawa, northeast of Toronto on the Ontario and Quebec border."
+          },
+          {
+            "id": "Q172.en.3",
+            "type": "story",
+            "text": "Toronto's CN Tower was once the tallest free-standing structure in the world."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q172.nb.1",
+            "type": "anchor",
+            "text": "Toronto ligger sørøst i Canada, på nordbredden av Ontariosjøen."
+          },
+          {
+            "id": "Q172.nb.2",
+            "type": "contrast",
+            "text": "Toronto er Canadas største by, men hovedstaden er Ottawa, nordøst for Toronto ved grensen mellom Ontario og Québec."
+          },
+          {
+            "id": "Q172.nb.3",
+            "type": "story",
+            "text": "CN Tower i Toronto var en gang verdens høyeste frittstående byggverk."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q172.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "Canada's capital is Ottawa, not Toronto.",
+            "nb": "Canadas hovedstad er Ottawa, ikke Toronto."
+          }
+        },
+        {
+          "id": "Q172.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Toronto is the capital of the province of Ontario.",
+            "nb": "Toronto er hovedstaden i provinsen Ontario."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q24639",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q24639.en.1",
+            "type": "anchor",
+            "text": "Vancouver is on Canada's Pacific coast in British Columbia, just north of the border with the United States."
+          },
+          {
+            "id": "Q24639.en.2",
+            "type": "story",
+            "text": "Vancouver is named after George Vancouver, a British captain who charted this coast."
+          },
+          {
+            "id": "Q24639.en.3",
+            "type": "sound",
+            "text": "Vancouver: a van covered in snow parks between the mountains and the Pacific in western Canada."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q24639.nb.1",
+            "type": "anchor",
+            "text": "Vancouver ligger på stillehavskysten av Canada, i British Columbia, like nord for grensen til USA."
+          },
+          {
+            "id": "Q24639.nb.2",
+            "type": "story",
+            "text": "Vancouver er oppkalt etter George Vancouver, en britisk kaptein som kartla kysten."
+          },
+          {
+            "id": "Q24639.nb.3",
+            "type": "sound",
+            "text": "Vancouver: en varebil dekket av snø står parkert mellom fjellene og havet vest i Canada."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q24639.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The city of Vancouver is on the mainland; Vancouver Island lies across the strait.",
+            "nb": "Byen Vancouver ligger på fastlandet; Vancouver Island ligger på andre siden av stredet."
+          }
+        },
+        {
+          "id": "Q24639.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Vancouver is not the capital of British Columbia; Victoria, on Vancouver Island, is.",
+            "nb": "Vancouver er ikke hovedstaden i British Columbia; det er Victoria, på Vancouver Island."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q340",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q340.en.1",
+            "type": "anchor",
+            "text": "Montreal is in southeastern Canada, on an island in the St. Lawrence River in Quebec."
+          },
+          {
+            "id": "Q340.en.2",
+            "type": "etymology",
+            "text": "Montreal is named after Mount Royal, the hill in the middle of the city."
+          },
+          {
+            "id": "Q340.en.3",
+            "type": "contrast",
+            "text": "Montreal is the largest French-speaking city in the Americas; Canada's capital is Ottawa, to the west."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q340.nb.1",
+            "type": "anchor",
+            "text": "Montréal ligger sørøst i Canada, på en øy i Saint Lawrence-elva i Québec."
+          },
+          {
+            "id": "Q340.nb.2",
+            "type": "etymology",
+            "text": "Montréal har navnet sitt etter Mont Royal, åsen midt i byen."
+          },
+          {
+            "id": "Q340.nb.3",
+            "type": "contrast",
+            "text": "Montréal er den største fransktalende byen i Amerika; Canadas hovedstad er Ottawa, vest for Montréal."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q340.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Montreal is in the province of Quebec, where French is the official language.",
+            "nb": "Montréal ligger i provinsen Québec, der fransk er offisielt språk."
+          }
+        },
+        {
+          "id": "Q340.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Montreal has hosted the Summer Olympic Games.",
+            "nb": "Montréal har arrangert sommer-OL."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q60",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q60.en.1",
+            "type": "anchor",
+            "text": "New York sits at the mouth of the Hudson River on the US east coast, between Boston and Washington."
+          },
+          {
+            "id": "Q60.en.2",
+            "type": "contrast",
+            "text": "New York is the biggest city in the United States, but the capital is Washington, D.C., further south."
+          },
+          {
+            "id": "Q60.en.3",
+            "type": "story",
+            "text": "New York was briefly the first capital of the United States, where George Washington took office."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q60.nb.1",
+            "type": "anchor",
+            "text": "New York ligger ved munningen av Hudsonelva på østkysten av USA, mellom Boston og Washington."
+          },
+          {
+            "id": "Q60.nb.2",
+            "type": "contrast",
+            "text": "New York er USAs største by, men hovedstaden er Washington D.C., lenger sør."
+          },
+          {
+            "id": "Q60.nb.3",
+            "type": "story",
+            "text": "New York var en kort tid USAs første hovedstad, og der ble George Washington innsatt som president."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q60.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The United Nations has its headquarters in New York.",
+            "nb": "FN har hovedkvarteret sitt i New York."
+          }
+        },
+        {
+          "id": "Q60.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "New York City is not the capital of New York State; Albany is.",
+            "nb": "New York City er ikke hovedstaden i delstaten New York; det er Albany."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q65",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q65.en.1",
+            "type": "anchor",
+            "text": "Los Angeles is in southern California, on the Pacific coast of the United States, north of Mexico."
+          },
+          {
+            "id": "Q65.en.2",
+            "type": "etymology",
+            "text": "Los Angeles is Spanish for the angels."
+          },
+          {
+            "id": "Q65.en.3",
+            "type": "story",
+            "text": "Hollywood, the home of the American film industry, is a district of Los Angeles."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q65.nb.1",
+            "type": "anchor",
+            "text": "Los Angeles ligger sør i California, på stillehavskysten av USA, nord for Mexico."
+          },
+          {
+            "id": "Q65.nb.2",
+            "type": "etymology",
+            "text": "Los Angeles er spansk for englene."
+          },
+          {
+            "id": "Q65.nb.3",
+            "type": "story",
+            "text": "Hollywood, hjemmet til amerikansk filmindustri, er en bydel i Los Angeles."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q65.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Los Angeles is the second-largest city in the United States, after New York.",
+            "nb": "Los Angeles er den nest største byen i USA, etter New York."
+          }
+        },
+        {
+          "id": "Q65.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "California's capital is Sacramento, not Los Angeles.",
+            "nb": "Californias hovedstad er Sacramento, ikke Los Angeles."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1297",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1297.en.1",
+            "type": "anchor",
+            "text": "Chicago is in the US Midwest, in Illinois, on the southwest shore of Lake Michigan."
+          },
+          {
+            "id": "Q1297.en.2",
+            "type": "story",
+            "text": "Chicago rebuilt itself after a great fire and went on to raise some of the first skyscrapers."
+          },
+          {
+            "id": "Q1297.en.3",
+            "type": "sound",
+            "text": "Chicago: a sheikh drives a go-kart along the shore of Lake Michigan."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1297.nb.1",
+            "type": "anchor",
+            "text": "Chicago ligger i Midtvesten i USA, i Illinois, ved sørvestbredden av Michigansjøen."
+          },
+          {
+            "id": "Q1297.nb.2",
+            "type": "story",
+            "text": "Chicago bygde seg opp igjen etter en storbrann og fikk noen av de første skyskraperne."
+          },
+          {
+            "id": "Q1297.nb.3",
+            "type": "sound",
+            "text": "Chicago: «sjikk og go», du kjører gokart i dress langs Michigansjøen i USA."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1297.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Chicago is the third-largest city in the United States.",
+            "nb": "Chicago er den tredje største byen i USA."
+          }
+        },
+        {
+          "id": "Q1297.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The capital of Illinois is Springfield, not Chicago.",
+            "nb": "Hovedstaden i Illinois er Springfield, ikke Chicago."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q62",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q62.en.1",
+            "type": "anchor",
+            "text": "San Francisco is in northern California, on a peninsula between the Pacific and San Francisco Bay."
+          },
+          {
+            "id": "Q62.en.2",
+            "type": "story",
+            "text": "The Golden Gate Bridge spans the strait where San Francisco Bay meets the Pacific."
+          },
+          {
+            "id": "Q62.en.3",
+            "type": "etymology",
+            "text": "San Francisco is named after Saint Francis of Assisi."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q62.nb.1",
+            "type": "anchor",
+            "text": "San Francisco ligger nord i California, på en halvøy mellom Stillehavet og San Francisco-bukta."
+          },
+          {
+            "id": "Q62.nb.2",
+            "type": "story",
+            "text": "Golden Gate-broen går over stredet der San Francisco-bukta møter Stillehavet."
+          },
+          {
+            "id": "Q62.nb.3",
+            "type": "etymology",
+            "text": "San Francisco er oppkalt etter Frans av Assisi."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q62.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Alcatraz Island, a former prison, sits in San Francisco Bay.",
+            "nb": "Alcatraz, en tidligere fengselsøy, ligger i San Francisco-bukta."
+          }
+        },
+        {
+          "id": "Q62.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Silicon Valley lies just south of San Francisco.",
+            "nb": "Silicon Valley ligger like sør for San Francisco."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q23768",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q23768.en.1",
+            "type": "anchor",
+            "text": "Las Vegas is in the desert of southern Nevada, in the western United States, near California and Arizona."
+          },
+          {
+            "id": "Q23768.en.2",
+            "type": "etymology",
+            "text": "Las Vegas is Spanish for the meadows, after green patches fed by springs in the desert."
+          },
+          {
+            "id": "Q23768.en.3",
+            "type": "story",
+            "text": "Las Vegas grew from a railway stop into a city of casinos in the Nevada desert."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q23768.nb.1",
+            "type": "anchor",
+            "text": "Las Vegas ligger i ørkenen sør i Nevada, vest i USA, nær California og Arizona."
+          },
+          {
+            "id": "Q23768.nb.2",
+            "type": "etymology",
+            "text": "Las Vegas er spansk for engene, etter grønne flekker rundt kilder i ørkenen."
+          },
+          {
+            "id": "Q23768.nb.3",
+            "type": "story",
+            "text": "Las Vegas vokste fra en jernbanestopp til en by full av kasinoer i ørkenen i Nevada."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q23768.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Nevada's capital is Carson City, not Las Vegas.",
+            "nb": "Nevadas hovedstad er Carson City, ikke Las Vegas."
+          }
+        },
+        {
+          "id": "Q23768.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Hoover Dam on the Colorado River lies southeast of Las Vegas.",
+            "nb": "Hoover-demningen i Coloradoelva ligger sørøst for Las Vegas."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q8652",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q8652.en.1",
+            "type": "anchor",
+            "text": "Miami is at the southeastern tip of Florida, on the Atlantic coast of the United States."
+          },
+          {
+            "id": "Q8652.en.2",
+            "type": "story",
+            "text": "Miami is so close to the Caribbean that Cuba is only a short flight to the south."
+          },
+          {
+            "id": "Q8652.en.3",
+            "type": "sound",
+            "text": "Miami: my ami, my friend, waves from a pink beach in the bottom right corner of the United States."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q8652.nb.1",
+            "type": "anchor",
+            "text": "Miami ligger helt sørøst i Florida, på atlanterhavskysten av USA."
+          },
+          {
+            "id": "Q8652.nb.2",
+            "type": "story",
+            "text": "Miami ligger så nær Karibia at Cuba bare er en kort flytur unna mot sør."
+          },
+          {
+            "id": "Q8652.nb.3",
+            "type": "sound",
+            "text": "Miami: «mi ami», min venn, vinker fra en rosa strand nederst i høyre hjørne av USA."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q8652.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Florida's capital is Tallahassee, not Miami.",
+            "nb": "Floridas hovedstad er Tallahassee, ikke Miami."
+          }
+        },
+        {
+          "id": "Q8652.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Everglades wetlands lie west of Miami.",
+            "nb": "Våtmarkene i Everglades ligger vest for Miami."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "_comment": "The cities module (PLAN.md 5.1, scope narrowed by the author in DECISIONS.md 033): only world-famous cities that are not national capitals, plus every city commonly mistaken for its country's capital (content/confusions.json, dimension not_capital). Wikidata QIDs. names overrides Wikidata labels; aliases are other names a learner may know (Wikidata's alternative labels are too noisy to use); formerCapital lists former national capitals Wikidata does not mark.",
+  "cities": [
+    "Q60",
+    "Q65",
+    "Q1297",
+    "Q62",
+    "Q8652",
+    "Q23768",
+    "Q172",
+    "Q24639",
+    "Q340",
+    "Q8678",
+    "Q174",
+    "Q1492",
+    "Q490",
+    "Q641",
+    "Q1726",
+    "Q656",
+    "Q406",
+    "Q72",
+    "Q71",
+    "Q8686",
+    "Q8646",
+    "Q1156",
+    "Q612",
+    "Q35765",
+    "Q34600",
+    "Q1854",
+    "Q8660",
+    "Q35493",
+    "Q37995",
+    "Q8673",
+    "Q34647",
+    "Q7903",
+    "Q101625",
+    "Q1960",
+    "Q1515",
+    "Q3130",
+    "Q3141",
+    "Q37100"
+  ],
+  "names": {
+    "Q60": {
+      "en": "New York",
+      "nb": "New York"
+    }
+  },
+  "formerCapital": ["Q35493", "Q37995", "Q656", "Q8660"],
+  "aliases": {
+    "Q1156": {
+      "en": ["Bombay"],
+      "nb": ["Bombay"]
+    },
+    "Q1854": {
+      "en": ["Saigon"],
+      "nb": ["Saigon"]
+    },
+    "Q37995": {
+      "en": ["Rangoon"],
+      "nb": ["Rangoon"]
+    },
+    "Q35493": {
+      "en": ["Alma-Ata"],
+      "nb": ["Alma-Ata"]
+    },
+    "Q656": {
+      "en": ["St Petersburg", "Leningrad"],
+      "nb": ["Sankt Petersburg", "Leningrad"]
+    },
+    "Q101625": {
+      "en": ["Marrakesh"],
+      "nb": ["Marrakesh"]
+    },
+    "Q72": {
+      "en": ["Zürich"],
+      "nb": ["Zurich"]
+    },
+    "Q71": {
+      "en": ["Genève"],
+      "nb": ["Geneva", "Genf"]
+    },
+    "Q1726": {
+      "en": ["München"],
+      "nb": ["Munich"]
+    },
+    "Q490": {
+      "en": ["Milano"],
+      "nb": ["Milan"]
+    },
+    "Q641": {
+      "en": ["Venezia"],
+      "nb": ["Venice", "Venedig"]
+    },
+    "Q406": {
+      "en": ["Constantinople"],
+      "nb": ["Konstantinopel"]
+    },
+    "Q60": {
+      "en": ["New York City", "NYC"],
+      "nb": ["New York City"]
+    },
+    "Q65": {
+      "en": ["LA"],
+      "nb": ["LA"]
+    },
+    "Q8646": {
+      "en": [],
+      "nb": ["Hong Kong"]
+    },
+    "Q1960": {
+      "en": [],
+      "nb": ["Dar es Salaam"]
+    }
+  }
+}
