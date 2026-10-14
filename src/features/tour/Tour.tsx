@@ -52,7 +52,12 @@ export function Tour({ onDone }: { onDone: () => void }) {
     };
   }, [measure]);
 
-  const finish = useCallback(() => onDone(), [onDone]);
+  // Close at once; the stored "done" follows a moment later.
+  const [closed, setClosed] = useState(false);
+  const finish = useCallback(() => {
+    setClosed(true);
+    onDone();
+  }, [onDone]);
   const go = useCallback(
     (delta: number) => {
       const target = index + delta;
@@ -72,7 +77,7 @@ export function Tour({ onDone }: { onDone: () => void }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [go, finish]);
 
-  if (!step) return null;
+  if (!step || closed) return null;
 
   // The note sits below the element when there is room, else above; always on screen.
   const cardW = Math.min(CARD_W, viewport.w - 32);

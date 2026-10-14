@@ -59,8 +59,11 @@ for (const locale of ["en", "nb"] as const) {
     await expect(tour).toBeVisible();
     const visited: string[] = [];
     for (let i = 0; i < 10 && (await tour.count()) > 0; i++) {
-      visited.push((await tour.getAttribute("data-step")) ?? "");
+      const step = (await tour.getAttribute("data-step")) ?? "";
+      visited.push(step);
       await page.getByTestId("tour-next").click();
+      // Wait for the next step, or for the tour to close after the last one.
+      await expect(page.locator(`[data-testid="tour"][data-step="${step}"]`)).toHaveCount(0);
     }
     expect(visited).toEqual(["start", "input", "map", "atlas", "stats", "settings", "help"]);
     await expect(page.getByTestId("infobox")).toHaveAttribute("data-open", "true");
