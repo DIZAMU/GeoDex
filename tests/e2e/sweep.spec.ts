@@ -77,7 +77,7 @@ test("Atlas tabs, wheel zoom, spin, resize and theme change keep working", async
     await expect(page).toHaveURL(new RegExp(`skill=${skill}`));
   }
   await expect(page.getByTestId("skill-location")).toHaveAttribute("aria-checked", "true");
-  await expect(page.locator(".map-level").first()).toBeAttached();
+  await expect(page.getByTestId("globe")).toHaveAttribute("data-lambda", /.+/);
 
   const map = page.getByTestId("atlas-map");
   const box = await map.boundingBox();

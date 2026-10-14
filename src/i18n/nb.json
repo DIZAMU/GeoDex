@@ -248,6 +248,10 @@
     "mastered": "{{n}} av {{total}} mestret",
     "badge": "Merke oppnådd",
     "drill": "Øv på denne regionen",
+    "globe": "Globus",
+    "flat": "Flatt kart",
+    "view": "Kartvisning",
+    "globeLabel": "Globus: dra for å snu, rull eller knip for å zoome, piltaster for å snu",
     "legend": "Mestring"
   },
   "entry": {
