@@ -28,6 +28,7 @@ import {
   CountryCard,
   FlagAnswer,
   GroupCard,
+  LandmarkCard,
   nameOf,
   PromptText,
   StatusLine,
@@ -256,6 +257,7 @@ function Panel({
   const country = learner.world.byId.get(view.question.countryId);
   if (!country) return null;
   const city = learner.world.cityById.get(view.question.entityId);
+  const landmark = learner.world.landmarkById.get(view.question.entityId);
   const group = view.question.groupId
     ? learner.world.groupById.get(view.question.groupId)
     : undefined;
@@ -281,13 +283,15 @@ function Panel({
       const target =
         q.answerKind === "group"
           ? (group?.names[locale] ?? "")
-          : q.answerKind === "capital"
-            ? (country.capitals.find((c) => c.roles.includes("primary"))?.names[locale] ?? "")
-            : q.answerKind === "currency"
-              ? (country.currencies[0]?.names[locale] ?? "")
-              : q.answerKind === "language"
-                ? (country.officialLanguages[0]?.names[locale] ?? "")
-                : country.names[locale];
+          : q.answerKind === "landmark"
+            ? (landmark?.names[locale] ?? "")
+            : q.answerKind === "capital"
+              ? (country.capitals.find((c) => c.roles.includes("primary"))?.names[locale] ?? "")
+              : q.answerKind === "currency"
+                ? (country.currencies[0]?.names[locale] ?? "")
+                : q.answerKind === "language"
+                  ? (country.officialLanguages[0]?.names[locale] ?? "")
+                  : country.names[locale];
       return t("answer.hintStarts", {
         letter: target.charAt(0).toUpperCase(),
         count: target.replace(/\s/g, "").length,
@@ -321,7 +325,11 @@ function Panel({
         ) : (
           <div className="flex flex-col gap-3">
             <p className="text-muted-foreground">
-              {answer.kind === "pin" ? t("answer.pinHelp") : t("answer.mapHelp")}
+              {answer.kind === "pin"
+                ? landmark
+                  ? t("answer.pinHelpLandmark")
+                  : t("answer.pinHelp")
+                : t("answer.mapHelp")}
             </p>
             <Button
               variant="outline"
@@ -351,6 +359,7 @@ function Panel({
           locale
         ] ??
         learner.world.cityById.get(o.chosenId)?.names[locale] ??
+        learner.world.landmarkById.get(o.chosenId)?.names[locale] ??
         learner.world.languageNames[o.chosenId]?.[locale] ??
         learner.world.countries.flatMap((c) => c.currencies).find((c) => c.code === o.chosenId)
           ?.names[locale] ??
@@ -371,7 +380,14 @@ function Panel({
       {o.correct && o.typo && o.matched ? (
         <p>{t("feedback.spelling", { name: o.matched })}</p>
       ) : null}
-      {city && q.type !== "contrast" ? (
+      {landmark ? (
+        <LandmarkCard
+          landmark={landmark}
+          country={country}
+          locale={locale}
+          distanceKm={o.distanceKm}
+        />
+      ) : city && q.type !== "contrast" ? (
         <CityCard city={city} country={country} locale={locale} distanceKm={o.distanceKm} />
       ) : (
         <CountryCard country={country} locale={locale} />
@@ -490,6 +506,7 @@ function mapState(
   const country = learner.world.byId.get(id);
   const neighbors = country?.neighbors.slice(0, 6) ?? [];
   const city = learner.world.cityById.get(q0.entityId);
+  const landmark = learner.world.landmarkById.get(q0.entityId);
   if (view.kind === "intro") {
     return {
       focus: { kind: "countries", ids: [id, ...neighbors] },
@@ -524,6 +541,26 @@ function mapState(
       };
     }
     return { focus: { kind: "world" }, highlight: {}, animate: true };
+  }
+  // Landmark cards: the landmark on the map, and the learner's pin with the line to it.
+  if (landmark && country) {
+    const pinned = view.outcome.pinned;
+    return {
+      focus: { kind: "countries", ids: [id] },
+      highlight: {
+        target: id,
+        points: [
+          {
+            at: [landmark.lon, landmark.lat] as [number, number],
+            kind: "target" as const,
+            label: landmark.names[locale],
+          },
+          ...(pinned ? [{ at: pinned, kind: "pin" as const }] : []),
+        ],
+      },
+      animate: true,
+      padding: 0.3,
+    };
   }
   // City cards: the city on the map; a pin answer adds the pin and the line between them. A
   // not-the-capital card shows the capital and the city it is mistaken for.

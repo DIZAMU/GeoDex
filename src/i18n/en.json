@@ -53,7 +53,8 @@
     "rerunPlacement": "Rerun the placement test",
     "groupLook": "Language and look",
     "groupStudy": "Study",
-    "groups": "Groups of countries (after half their members)"
+    "groups": "Groups of countries (after half their members)",
+    "landmarks": "Landmarks (after their country)"
   },
   "nav": {
     "today": "Today",
@@ -109,7 +110,10 @@
     "contrast": "Which of these is {{name}}?",
     "group_to_map": "Tap every country that is {{phrase}}.",
     "map_to_group": "Which group of countries is highlighted?",
-    "group_member": "Which of these is {{phrase}}?"
+    "group_member": "Which of these is {{phrase}}?",
+    "photo_to_name": "What is this?",
+    "landmark_to_country": "Which country is {{landmark}} in?",
+    "landmark_to_map": "Place {{landmark}} on the map."
   },
   "answer": {
     "pinHelp": "Tap where the city is.",
@@ -122,7 +126,8 @@
     "label": "Your answer",
     "tapHelp": "Tap each country, then check. Tap again to remove one.",
     "tapCount_one": "{{count}} country selected",
-    "tapCount_other": "{{count}} countries selected"
+    "tapCount_other": "{{count}} countries selected",
+    "pinHelpLandmark": "Tap where it is."
   },
   "feedback": {
     "distance": "Your pin was {{distance}} from the city.",
@@ -146,7 +151,9 @@
     "contrastLabel": "Tell them apart",
     "deeperLabel": "Deeper cut",
     "missed": "Missed: {{names}}.",
-    "notInGroup": "Not in the group: {{names}}."
+    "notInGroup": "Not in the group: {{names}}.",
+    "landmarkIn": "Landmark in {{country}}",
+    "landmarkDistance": "Your pin was {{distance}} away."
   },
   "role": {
     "primary": "capital",
@@ -253,7 +260,10 @@
     "contrast": "Tell apart",
     "group_to_map": "Tap the members",
     "map_to_group": "Group on the map",
-    "group_member": "Member of the group"
+    "group_member": "Member of the group",
+    "photo_to_name": "Photo to name",
+    "landmark_to_country": "Landmark to country",
+    "landmark_to_map": "Landmark on the map"
   },
   "hookType": {
     "anchor": "Anchor",
@@ -291,7 +301,8 @@
     "noHistory": "Not reviewed yet.",
     "correct": "Correct",
     "wrong": "Wrong",
-    "drill": "Drill {{region}}"
+    "drill": "Drill {{region}}",
+    "landmarks": "Landmarks"
   },
   "stats": {
     "title": "Stats",
@@ -317,7 +328,8 @@
     "activity": "Last 365 days",
     "achievements": "Achievements",
     "noAchievements": "None yet.",
-    "drill": "Drill"
+    "drill": "Drill",
+    "landmarks": "Landmarks"
   },
   "streak": {
     "days_one": "{{count}}-day streak",
@@ -360,5 +372,10 @@
     "un_subregion": "UN subregion",
     "unNote": "A UN statistical region (M49). Everyday use can draw it differently.",
     "sometimesNote": "Countries some definitions include count neither for nor against you."
+  },
+  "photo": {
+    "credit": "Photo: {{author}}, {{license}}",
+    "altPrompt": "Photo of the place to name",
+    "alt": "Photo of {{name}}"
   }
 }

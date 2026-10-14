@@ -9,7 +9,8 @@ export default defineConfig({
     react(),
     tailwindcss(),
     // Installable and offline after the first load (PLAN.md 8.4): the app shell, data,
-    // geometry, content, flags and fonts are all precached.
+    // geometry, content, flags and fonts are all precached. Landmark photos from Commons are
+    // cached at runtime after their first view, never precached (PLAN.md Phase 7).
     VitePWA({
       registerType: "autoUpdate",
       injectRegister: "script-defer",
@@ -43,6 +44,18 @@ export default defineConfig({
         // Take over the open page at once, so the first visit is already offline-ready.
         clientsClaim: true,
         skipWaiting: true,
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/(upload|thumb)\.wikimedia\.org\//,
+            handler: "CacheFirst",
+            options: {
+              cacheName: "commons-photos",
+              expiration: { maxEntries: 300, maxAgeSeconds: 365 * 24 * 60 * 60 },
+              // Plain <img> requests are cross-origin without CORS, so responses are opaque.
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+        ],
       },
     }),
   ],
