@@ -70,10 +70,10 @@ limitations under the License.
 | World Bank, World Development Indicators, SP.POP.TOTL | Population | CC BY 4.0, The World Bank |
 | UN Statistics Division, M49 standard | Subregions and continents | Free to use with attribution: United Nations Statistics Division |
 | Språkrådet, "Navn på stater" | Norwegian country names (cross-check and preferred forms) | Copyright Språkrådet. Their lists are distributed under CC BY 4.0 via Språkbanken; credit: Språkrådet |
+| Wikimedia Commons, one photo per landmark (`data/landmarks.json`) | Landmark photos, loaded from Wikimedia at runtime and never bundled | Per image: public domain, CC0, CC BY or CC BY-SA only. Author, license and a link to the file page are stored with each photo and shown under it on every card. Photos are shown unmodified (scaled only). |
 
 ## Data (added in later phases)
 
-- Wikimedia Commons images (landmarks): per-image license, with author, license and URL stored and shown on each card. Only public domain, CC0, CC BY and CC BY-SA are accepted.
 - Historical border datasets: license to be verified before use (see `DECISIONS.md`).
 
 GeoDex does not use mledoze/countries or datasets derived from it (ODbL share-alike).
