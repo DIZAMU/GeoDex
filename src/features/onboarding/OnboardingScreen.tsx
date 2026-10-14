@@ -41,20 +41,40 @@ export function OnboardingScreen() {
         <p className="text-muted-foreground">{t("onboarding.homeHelp")}</p>
         <CountryPicker countries={countries} value={home} onChange={setHome} locale={locale} />
       </section>
-      <Button
-        size="lg"
-        className="self-start"
-        disabled={!home}
-        data-testid="start-placement"
-        onClick={async () => {
-          if (!home) return;
-          await updateSettings(db, { homeCountry: home });
-          await db.placementProgress.clear();
-          navigate("/placement", { viewTransition: true });
-        }}
-      >
-        {t("onboarding.start")}
-      </Button>
+      <section className="surface flex flex-col gap-4 p-5 md:p-7" data-testid="placement-offer">
+        <h2 className="font-name text-xl">{t("onboarding.placementTitle")}</h2>
+        <p className="text-muted-foreground">{t("onboarding.placementBody")}</p>
+        <div className="flex flex-wrap gap-3">
+          <Button
+            size="lg"
+            disabled={!home}
+            data-testid="start-placement"
+            onClick={async () => {
+              if (!home) return;
+              await updateSettings(db, { homeCountry: home });
+              await db.placementProgress.clear();
+              navigate("/placement", { viewTransition: true });
+            }}
+          >
+            {t("onboarding.takeTest")}
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            disabled={!home}
+            data-testid="start-from-zero"
+            onClick={async () => {
+              if (!home) return;
+              // Skipping the test counts as finishing it with nothing known yet.
+              await updateSettings(db, { homeCountry: home, placementCompletedAt: Date.now() });
+              await db.placementProgress.clear();
+              navigate("/", { viewTransition: true });
+            }}
+          >
+            {t("onboarding.fromZero")}
+          </Button>
+        </div>
+      </section>
     </div>
   );
 }
