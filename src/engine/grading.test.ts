@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { type GradeInput, grade, gradePin, rollingMedian } from "./grading";
+import { type GradeInput, grade, gradePin, LANDMARK_PIN, rollingMedian } from "./grading";
 
 const base: GradeInput = {
   correct: true,
@@ -60,5 +60,12 @@ describe("gradePin", () => {
     expect(gradePin(101)).toEqual({ rating: 2, correct: true });
     expect(gradePin(300)).toEqual({ rating: 2, correct: true });
     expect(gradePin(301)).toEqual({ rating: 1, correct: false });
+  });
+
+  it("is looser for landmarks: 150 km Good, 500 km Hard", () => {
+    expect(gradePin(150, LANDMARK_PIN)).toEqual({ rating: 3, correct: true });
+    expect(gradePin(151, LANDMARK_PIN)).toEqual({ rating: 2, correct: true });
+    expect(gradePin(500, LANDMARK_PIN)).toEqual({ rating: 2, correct: true });
+    expect(gradePin(501, LANDMARK_PIN)).toEqual({ rating: 1, correct: false });
   });
 });

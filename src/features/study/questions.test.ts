@@ -25,6 +25,7 @@ const world = assembleWorld(
   read("data/curated/confusion-pairs.json"),
   read("data/cities.json"),
   read("data/curated/groups.json"),
+  read("data/landmarks.json"),
 );
 const ctx: StudyContext = {
   world,
@@ -291,6 +292,52 @@ describe("group questions (DECISIONS.md 034)", () => {
           expect(q.groupId).toBe(g.id);
           expect(q.correctIds.length, g.id).toBeGreaterThan(0);
           if (q.answer.kind === "choice") expect(q.answer.options).toHaveLength(4);
+        }
+      }
+    }
+  });
+});
+
+describe("landmark questions (PLAN.md 5.3)", () => {
+  const EIFFEL = "Q243";
+
+  it("names a landmark from its photo, with other landmarks of the region as wrong names", () => {
+    const q = buildQuestion(ctx, `${EIFFEL}:photo_to_name`, undefined, "auto", "p");
+    expect(q.prompt).toEqual({ kind: "photo", landmarkId: EIFFEL, countryId: "FRA" });
+    if (q.answer.kind !== "choice") throw new Error("expected choice");
+    const ids = q.answer.options.map((o) => o.id);
+    expect(ids).toHaveLength(4);
+    expect(new Set(ids).size).toBe(4);
+    expect(ids).toContain(EIFFEL);
+    for (const id of ids) expect(world.landmarkById.has(id)).toBe(true);
+    const typed = buildQuestion(ctx, `${EIFFEL}:photo_to_name`, state(30), "auto", "p");
+    expect(checkTyped(typed, ctx.indexes, "Eiffeltårnet").correct).toBe(true);
+    expect(checkTyped(typed, ctx.indexes, "eifel tower").correct).toBe(true);
+  });
+
+  it("asks for the country, in either language when typed", () => {
+    const q = buildQuestion(ctx, `${EIFFEL}:landmark_to_country`, state(30), "auto", "c");
+    expect(q.answer.kind).toBe("typed");
+    expect(checkTyped(q, ctx.indexes, "Frankrike").correct).toBe(true);
+  });
+
+  it("grades landmark pins at 150 and 500 km", () => {
+    const q = buildQuestion(ctx, `${EIFFEL}:landmark_to_map`, undefined, "auto", "m");
+    expect(q.answer.kind).toBe("pin");
+    // Lyon is about 390 km from the Eiffel Tower: Hard for a landmark, Again for a city.
+    expect(checkPin(q, [4.83, 45.76])).toMatchObject({ correct: true, rating: 2 });
+    expect(checkPin(q, [2.35, 48.85]).rating).toBe(3);
+    expect(checkPin(q, [-3.7, 40.4]).rating).toBe(1);
+  });
+
+  it("builds every landmark card", () => {
+    for (const l of world.landmarks) {
+      for (const type of ["photo_to_name", "landmark_to_country", "landmark_to_map"]) {
+        for (const st of [undefined, state(30)]) {
+          const q = buildQuestion(ctx, `${l.id}:${type}`, st, "auto", "x");
+          expect(q.entityId).toBe(l.id);
+          if (q.answer.kind === "choice")
+            expect(new Set(q.answer.options.map((o) => o.id)).size).toBe(4);
         }
       }
     }

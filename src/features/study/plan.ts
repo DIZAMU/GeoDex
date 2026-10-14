@@ -23,6 +23,8 @@ import {
   cardId,
   GROUP_CARD_TYPES,
   type GroupCardType,
+  LANDMARK_CARD_TYPES,
+  type LandmarkCardType,
   parseCardId,
   type ReviewEventCore,
 } from "@/engine/types";
@@ -51,6 +53,14 @@ export function isGroupIntroduced(id: string, states: ReadonlyMap<CardId, unknow
 
 const isGroupType = (type: string): type is GroupCardType =>
   (GROUP_CARD_TYPES as readonly string[]).includes(type);
+
+/** A landmark has started once any of its cards has been reviewed. */
+export function isLandmarkIntroduced(id: string, states: ReadonlyMap<CardId, unknown>): boolean {
+  return LANDMARK_CARD_TYPES.some((type) => states.has(cardId(id, type)));
+}
+
+const isLandmarkType = (type: string): type is LandmarkCardType =>
+  (LANDMARK_CARD_TYPES as readonly string[]).includes(type);
 
 /**
  * A group as studied: its members in scope, and the subregion most of them share (first
@@ -126,6 +136,12 @@ export function planDay(input: {
   const day = learningDay(now, settings.dayStartHour);
   const citiesOn = settings.modules?.cities === true;
   const groupsOn = settings.modules?.groups === true;
+  const landmarksOn = settings.modules?.landmarks === true;
+  /** Subregion of a landmark whose country is in scope, when the landmarks module is on. */
+  const landmarkSubregion = (id: string) => {
+    const landmark = landmarksOn ? world.landmarkById.get(id) : undefined;
+    return landmark ? inScope.get(landmark.countryId)?.subregion : undefined;
+  };
   const groupSubregion = (id: string) =>
     groupsOn ? scopedGroup(world, inScope, id)?.subregion : undefined;
   /** Subregion of a city whose country is in scope, when the cities module is on. */
@@ -153,14 +169,17 @@ export function planDay(input: {
         type === "contrast" ||
         type === "city_to_country" ||
         type === "city_to_map" ||
-        isGroupType(type)
+        isGroupType(type) ||
+        isLandmarkType(type)
       ) {
         const subregion =
           type === "contrast"
             ? contrastSubregion(entityId)
             : isGroupType(type)
               ? groupSubregion(entityId)
-              : citySubregion(entityId);
+              : isLandmarkType(type)
+                ? landmarkSubregion(entityId)
+                : citySubregion(entityId);
         if (!subregion) return [];
         return [
           {
@@ -259,11 +278,34 @@ export function planDay(input: {
           }));
       })
     : [];
+  // Landmarks start once their country is introduced, all three cards together.
+  const landmarkCandidates = landmarksOn
+    ? world.landmarks.flatMap((landmark) => {
+        const country = inScope.get(landmark.countryId);
+        if (!country || !isIntroduced(country.id, states)) return [];
+        const introduced = isLandmarkIntroduced(landmark.id, states);
+        return LANDMARK_CARD_TYPES.map((type) => cardId(landmark.id, type))
+          .filter((id) => !states.has(id))
+          .map((id) => ({
+            cardId: id,
+            entityId: landmark.id,
+            subregion: country.subregion,
+            isNew: true,
+            introduced,
+            stage: 1,
+          }));
+      })
+    : [];
   const weight = (id: string, fallback: number) => settings.moduleWeights?.[id] ?? fallback;
   const shares = allocateNew(newAllowance, [
     { id: "countries", weight: weight("countries", 3), available: candidates.length },
     { id: "cities", weight: citiesOn ? weight("cities", 1) : 0, available: cityCandidates.length },
     { id: "groups", weight: groupsOn ? weight("groups", 1) : 0, available: groupCandidates.length },
+    {
+      id: "landmarks",
+      weight: landmarksOn ? weight("landmarks", 1) : 0,
+      available: landmarkCandidates.length,
+    },
   ]);
 
   // Contrast cards ahead of new cards (PLAN.md 6.7): pairs the learner keeps confusing, and
@@ -285,6 +327,7 @@ export function planDay(input: {
     ...pickNewCards(candidates, order, shares.get("countries") ?? 0),
     ...pickNewCards(cityCandidates, order, shares.get("cities") ?? 0),
     ...pickNewCards(groupCandidates, order, shares.get("groups") ?? 0),
+    ...pickNewCards(landmarkCandidates, order, shares.get("landmarks") ?? 0),
   ];
   const capped = [...due]
     .sort((a, b) => a.retrievability - b.retrievability)
