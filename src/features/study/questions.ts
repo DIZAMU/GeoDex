@@ -12,6 +12,7 @@ import {
 } from "@/engine/distractors";
 import { haversineKm } from "@/engine/geo";
 import { gradePin } from "@/engine/grading";
+import { gradeTaps, groupNameDistractors, pickFromPools, pickMember } from "@/engine/groups";
 import { type Answerable, buildIndex, matchAnswer } from "@/engine/matching";
 import { createRng, shuffle } from "@/engine/random";
 import type { CardState } from "@/engine/scheduler";
@@ -19,6 +20,7 @@ import {
   type AnswerMode,
   type CardType,
   type CountryCardType,
+  type GroupCardType,
   type InputSetting,
   parseCardId,
   type Rating,
@@ -35,7 +37,11 @@ export type Prompt =
   /** A city by name: "Which country is Sydney in?" or "Where is Sydney?". */
   | { kind: "city"; countryId: string; cityId: string; place: boolean }
   /** "Which is the capital of Australia?" for a city mistaken for the capital. */
-  | { kind: "capitalOf"; countryId: string };
+  | { kind: "capitalOf"; countryId: string }
+  /** A group by name: "Which of these is in the Balkans?", "Tap every country in it". */
+  | { kind: "group"; groupId: string }
+  /** A group shown on the map: its members highlighted inside `view`. */
+  | { kind: "groupMap"; groupId: string; ids: string[]; view: MapView };
 
 export type Option = { id: string; label: string; flag?: string };
 
@@ -45,16 +51,20 @@ export type AnswerFormat =
   | { kind: "typed" }
   | { kind: "map"; view: MapView; selectable?: string[] }
   /** Tap the spot on the map; graded by distance to `target` [lon, lat]. */
-  | { kind: "pin"; view: MapView; target: [number, number] };
+  | { kind: "pin"; view: MapView; target: [number, number] }
+  /** Tap every member, then check. `sometimes` taps are neither right nor wrong. */
+  | { kind: "taps"; view: MapView; members: string[]; sometimes: string[] };
 
-export type AnswerKind = "country" | "capital" | "currency" | "language";
+export type AnswerKind = "country" | "capital" | "currency" | "language" | "group";
 
 export type Question = {
   cardId: string;
   /** The entity asked about. For a contrast card, the one of the pair this review asks for. */
   entityId: string;
-  /** The country the card is about: the entity itself, or the country of a city. */
+  /** The country the card is about: the entity itself, the country of a city, or a group's first member. */
   countryId: string;
+  /** Group cards: the group asked about. */
+  groupId?: string;
   type: CardType;
   prompt: Prompt;
   answer: AnswerFormat;
@@ -75,6 +85,8 @@ export type StudyContext = {
   /** How a contrast pair is told apart, when contrast text exists for it. */
   contrastKind: (a: string, b: string) => "flag" | "place" | null;
   indexes: Indexes;
+  /** Countries in the learner's scope, for group members. Absent means every country. */
+  scope?: ReadonlySet<string>;
 };
 
 /** Typed-answer indexes, built once per world. */
@@ -111,11 +123,16 @@ export function buildIndexes(
     id,
     names: [n.en, n.nb],
   }));
+  const groups: Answerable[] = world.groups.map((g) => ({
+    id: g.id,
+    names: [g.names.en, g.names.nb, ...g.aliases.en, ...g.aliases.nb],
+  }));
   return {
     country: buildIndex(countries),
     capital: buildIndex(capitals),
     currency: buildIndex(currencies),
     language: buildIndex(languages),
+    group: buildIndex(groups),
   };
 }
 
@@ -163,6 +180,9 @@ export function buildQuestion(
   if (type === "contrast") return contrastQuestion(ctx, cardId, entityId, seed);
   if (type === "city_to_country" || type === "city_to_map") {
     return cityQuestion(ctx, cardId, entityId, type, state, inputSetting, seed);
+  }
+  if (type === "group_to_map" || type === "map_to_group" || type === "group_member") {
+    return groupQuestion(ctx, cardId, entityId, type, state, inputSetting, seed);
   }
   const country = ctx.world.byId.get(entityId);
   const facts = ctx.facts.get(entityId);
@@ -493,6 +513,158 @@ function cityQuestion(
   };
 }
 
+/** A group's members and "sometimes" members, limited to the learner's scope. */
+export function scopedMembers(
+  ctx: Pick<StudyContext, "world" | "scope">,
+  groupId: string,
+): { members: string[]; sometimes: string[] } {
+  const group = ctx.world.groupById.get(groupId);
+  const keep = (id: string) => ctx.world.byId.has(id) && (!ctx.scope || ctx.scope.has(id));
+  return {
+    members: (group?.members ?? []).filter(keep),
+    sometimes: (group?.sometimes ?? []).filter(keep),
+  };
+}
+
+/**
+ * The map area for a group: every country in its members' subregions and their neighbors,
+ * so the members are never the only shapes on screen.
+ */
+export function groupArea(ctx: Pick<StudyContext, "world" | "scope">, members: string[]): MapView {
+  const countries = ctx.world.countries.filter((c) => !ctx.scope || ctx.scope.has(c.id));
+  const subregions = new Set(members.map((id) => ctx.world.byId.get(id)?.subregion));
+  const near = new Set(members.flatMap((id) => ctx.world.byId.get(id)?.neighbors ?? []));
+  const ids = countries
+    .filter((c) => subregions.has(c.subregion) || near.has(c.id) || members.includes(c.id))
+    .map((c) => c.id);
+  return { kind: "countries", ids };
+}
+
+/**
+ * Group cards (DECISIONS.md 034): tap every member, name the highlighted group, or pick the
+ * member among countries outside it.
+ */
+function groupQuestion(
+  ctx: StudyContext,
+  cardId: string,
+  groupId: string,
+  type: GroupCardType,
+  state: CardState | undefined,
+  inputSetting: InputSetting,
+  seed: string,
+): Question {
+  const group = ctx.world.groupById.get(groupId);
+  const { members, sometimes } = scopedMembers(ctx, groupId);
+  if (!group || members.length === 0) throw new Error(`Unknown group ${groupId}`);
+  const rng = createRng(seed);
+  const level = band(state);
+  const firstReview = !state || state.reps === 0;
+  const textAsChoice =
+    inputSetting === "mc" ||
+    (inputSetting === "auto" && level === "new") ||
+    (inputSetting === "typing" && firstReview);
+  const area = groupArea(ctx, members);
+  const base = { cardId, entityId: groupId, countryId: members[0] ?? "", groupId, type };
+  const loc = ctx.locale;
+
+  if (type === "group_to_map") {
+    return {
+      ...base,
+      prompt: { kind: "group", groupId },
+      answer: { kind: "taps", view: area, members, sometimes },
+      answerKind: "country",
+      correctIds: members,
+      mode: "map",
+    };
+  }
+
+  if (type === "map_to_group") {
+    const prompt: Prompt = { kind: "groupMap", groupId, ids: members, view: area };
+    if (!textAsChoice) {
+      return {
+        ...base,
+        prompt,
+        answer: { kind: "typed" },
+        answerKind: "group",
+        correctIds: [groupId],
+        mode: "typed",
+      };
+    }
+    const studied = ctx.world.groups
+      .map((g) => ({ id: g.id, members: scopedMembers(ctx, g.id).members }))
+      .filter((g) => g.members.length >= 2);
+    const others = groupNameDistractors(
+      { id: groupId, members },
+      studied,
+      (id) => ctx.world.byId.get(id)?.continent,
+      3,
+      rng,
+    );
+    return {
+      ...base,
+      prompt,
+      answer: {
+        kind: "choice",
+        options: shuffle(
+          [groupId, ...others].map((id) => ({
+            id,
+            label: ctx.world.groupById.get(id)?.names[loc] ?? id,
+          })),
+          rng,
+        ),
+      },
+      answerKind: "group",
+      correctIds: [groupId],
+      mode: "mc",
+    };
+  }
+
+  const prompt: Prompt = { kind: "group", groupId };
+  if (!textAsChoice) {
+    return {
+      ...base,
+      prompt,
+      answer: { kind: "typed" },
+      answerKind: "country",
+      correctIds: members,
+      mode: "typed",
+    };
+  }
+  const member = pickMember(members, seed);
+  const countries = ctx.world.countries.filter((c) => !ctx.scope || ctx.scope.has(c.id));
+  const subregions = new Set(members.map((id) => ctx.world.byId.get(id)?.subregion));
+  const continents = new Set(members.map((id) => ctx.world.byId.get(id)?.continent));
+  const wrong = pickFromPools(
+    [
+      members.flatMap((id) => ctx.world.byId.get(id)?.neighbors ?? []),
+      countries.filter((c) => subregions.has(c.subregion)).map((c) => c.id),
+      countries.filter((c) => continents.has(c.continent)).map((c) => c.id),
+      countries.map((c) => c.id),
+    ].map((pool) => pool.filter((id) => !ctx.scope || ctx.scope.has(id))),
+    new Set([...members, ...sometimes]),
+    3,
+    rng,
+  );
+  return {
+    ...base,
+    countryId: member,
+    prompt,
+    answer: {
+      kind: "choice",
+      options: shuffle(
+        [member, ...wrong].map((id) => ({
+          id,
+          label: ctx.world.byId.get(id)?.names[loc] ?? id,
+        })),
+        rng,
+      ),
+    },
+    answerKind: "country",
+    correctIds: members,
+    mode: "mc",
+  };
+}
+
 const currencyCache = new WeakMap<WorldData, Map<string, { en: string; nb: string }>>();
 function currencyNames(world: WorldData) {
   let map = currencyCache.get(world);
@@ -529,6 +701,8 @@ export type CheckResult = {
   rating?: Rating;
   /** Pin answers: where the learner tapped, [lon, lat]. */
   pinned?: [number, number];
+  /** Tap answers: every country tapped, the members missed and the wrong taps. */
+  taps?: { tapped: string[]; missed: string[]; wrong: string[] };
 };
 
 /** Checks a chosen option id or clicked country. */
@@ -543,6 +717,21 @@ export function checkPin(question: Question, at: [number, number]): CheckResult 
   const distanceKm = Math.round(haversineKm(at[0], at[1], lon, lat));
   const { rating, correct } = gradePin(distanceKm);
   return { correct, typo: false, chosenId: null, distanceKm, rating, pinned: at };
+}
+
+/** Checks the countries tapped for a group: graded by misses and wrong taps. */
+export function checkTaps(question: Question, tapped: Iterable<string>): CheckResult {
+  if (question.answer.kind !== "taps") throw new Error("Not a tap question");
+  const list = [...new Set(tapped)].sort();
+  const { members, sometimes } = question.answer;
+  const { missed, wrong, rating, correct } = gradeTaps(members, sometimes, list);
+  return {
+    correct,
+    typo: false,
+    chosenId: wrong[0] ?? null,
+    rating,
+    taps: { tapped: list, missed, wrong },
+  };
 }
 
 /** Checks typed text against every accepted answer, in both languages. */

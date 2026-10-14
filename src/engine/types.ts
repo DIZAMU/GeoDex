@@ -14,7 +14,13 @@ export type CountryCardType = (typeof COUNTRY_CARD_TYPES)[number];
 /** Cities (PLAN.md 5.3): which country a city is in, and where it is (pin on the map). */
 export const CITY_CARD_TYPES = ["city_to_country", "city_to_map"] as const;
 export type CityCardType = (typeof CITY_CARD_TYPES)[number];
-export type CardType = CountryCardType | CityCardType | "contrast";
+/**
+ * Groups of countries (DECISIONS.md 034): tap every member, name the highlighted group, and
+ * pick the member among non-members.
+ */
+export const GROUP_CARD_TYPES = ["group_to_map", "map_to_group", "group_member"] as const;
+export type GroupCardType = (typeof GROUP_CARD_TYPES)[number];
+export type CardType = CountryCardType | CityCardType | GroupCardType | "contrast";
 
 /** `${entityId}:${cardType}`. Never changes once shipped. */
 export type CardId = string;

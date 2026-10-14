@@ -64,6 +64,30 @@ export function reviewMarkdown(
       lines.push(`### ${groupName(group.group)}`, "", ...rows, "");
     }
   }
+  const groupsPath = `${root}/groups.json`;
+  if (existsSync(groupsPath)) {
+    const { notes } = JSON.parse(readFileSync(groupsPath, "utf8")) as {
+      notes: Record<string, { text: { en: string; nb: string }; verified: boolean }>;
+    };
+    const groupNames = existsSync("data/curated/groups.json")
+      ? new Map(
+          (
+            JSON.parse(readFileSync("data/curated/groups.json", "utf8")) as {
+              groups: { id: string; names: { en: string } }[];
+            }
+          ).groups.map((g) => [g.id, g.names.en]),
+        )
+      : new Map<string, string>();
+    const rows = Object.entries(notes)
+      .filter(([, n]) => !n.verified)
+      .flatMap(([id, n]) => [
+        `- **${groupNames.get(id) ?? id}** \`${id}\``,
+        `  - en: ${n.text.en}`,
+        `  - nb: ${n.text.nb}`,
+      ]);
+    total += rows.length / 3;
+    if (rows.length > 0) lines.push("## Groups of countries", "", ...rows, "");
+  }
   lines.splice(4, 0, `${total} facts to review.`, "");
   return `${lines.join("\n").trimEnd()}\n`;
 }

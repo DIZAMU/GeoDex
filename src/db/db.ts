@@ -7,7 +7,7 @@ import type { ThemePreference } from "@/themes/themes";
 export const SETTINGS_ROW_ID = "user";
 export const DEVICE_ROW_ID = "device";
 
-export type ModuleId = "countries" | "cities" | "landmarks" | "physical" | "history";
+export type ModuleId = "countries" | "cities" | "groups" | "landmarks" | "physical" | "history";
 
 /** Synced settings. One row per user; last write wins by updatedAt (PLAN.md 5.5). */
 export type SettingsRow = {
@@ -39,8 +39,15 @@ export const DEFAULT_SETTINGS: SettingsValues = {
   fsrsParams: null,
   dayStartHour: 4,
   scope: { partiallyRecognized: false, territories: false },
-  modules: { countries: true, cities: false, landmarks: false, physical: false, history: false },
-  moduleWeights: { countries: 3, cities: 1, landmarks: 1, physical: 1, history: 1 },
+  modules: {
+    countries: true,
+    cities: false,
+    groups: false,
+    landmarks: false,
+    physical: false,
+    history: false,
+  },
+  moduleWeights: { countries: 3, cities: 1, groups: 1, landmarks: 1, physical: 1, history: 1 },
   currencyAndLanguage: true,
   countdownSeconds: 0,
   placementCompletedAt: null,

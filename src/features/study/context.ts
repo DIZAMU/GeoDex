@@ -11,6 +11,8 @@ export function useStudyContext(
   locale: Locale,
   scores: Map<string, number>,
   content?: ContentIndex | null,
+  /** Countries in the learner's scope (group members outside it are left out). */
+  scope?: ReadonlySet<string>,
 ): StudyContext | null {
   const base = useMemo(
     () =>
@@ -29,6 +31,7 @@ export function useStudyContext(
       locale,
       facts: base.facts,
       indexes: base.indexes,
+      scope,
       confusionsFor: (id: string) => confusionsFor(id, scores),
       curatedFor: (id: string, dimension: "name" | "flag" | "capital") =>
         world.confusionPairs
@@ -40,5 +43,5 @@ export function useStudyContext(
         return c.dimension === "flag" ? ("flag" as const) : ("place" as const);
       },
     };
-  }, [world, base, locale, scores, content]);
+  }, [world, base, locale, scores, content, scope]);
 }

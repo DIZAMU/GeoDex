@@ -1,5 +1,13 @@
 /** Loads the static world data once, as a separate chunk so the first screen stays light. */
-import type { CitiesFile, City, CountriesFile, Country, Subregion } from "./types";
+import type {
+  CitiesFile,
+  City,
+  CountriesFile,
+  Country,
+  CountryGroup,
+  GroupsFile,
+  Subregion,
+} from "./types";
 
 export type FlagMeta = Record<string, { file: string; colors: { color: string; share: number }[] }>;
 
@@ -29,6 +37,9 @@ export type WorldData = {
   /** Famous cities (the cities module), by QID. */
   cities: City[];
   cityById: Map<string, City>;
+  /** Groups of countries (the groups module), by QID. */
+  groups: CountryGroup[];
+  groupById: Map<string, CountryGroup>;
 };
 
 type LanguagesFile = {
@@ -43,7 +54,9 @@ export function assembleWorld(
   languages: LanguagesFile,
   pairs: { pairs: ConfusionPair[] },
   cities: CitiesFile = { cities: [] },
+  groupsFile: GroupsFile = { groups: [] },
 ): WorldData {
+  const groups = resolveGroups(groupsFile, file.countries);
   return {
     countries: file.countries,
     subregions: file.subregions,
@@ -55,7 +68,30 @@ export function assembleWorld(
     confusionPairs: pairs.pairs,
     cities: cities.cities,
     cityById: new Map(cities.cities.map((c) => [c.id, c])),
+    groups,
+    groupById: new Map(groups.map((g) => [g.id, g])),
   };
+}
+
+/** UN subregion groups take their members from the country data. */
+export function resolveGroups(file: GroupsFile, countries: readonly Country[]): CountryGroup[] {
+  return file.groups.map((g) => {
+    const { names, aliases, phrase, id, kind } = g;
+    if ("m49" in g) {
+      const members = countries.filter((c) => c.subregion === g.m49).map((c) => c.id);
+      return { id, kind, names, aliases, phrase, members, sometimes: [], m49: g.m49 };
+    }
+    return {
+      id,
+      kind,
+      names,
+      aliases,
+      phrase,
+      members: g.members,
+      sometimes: g.sometimes,
+      m49: null,
+    };
+  });
 }
 
 let pending: Promise<WorldData> | null = null;
@@ -68,7 +104,8 @@ export function loadWorld(): Promise<WorldData> {
     import("../../data/curated/official-languages.json"),
     import("../../data/curated/confusion-pairs.json"),
     import("../../data/cities.json"),
-  ]).then(([countries, topology, flags, languages, pairs, cities]) =>
+    import("../../data/curated/groups.json"),
+  ]).then(([countries, topology, flags, languages, pairs, cities, groups]) =>
     assembleWorld(
       countries.default as unknown as CountriesFile,
       topology.default as unknown as CountryTopology,
@@ -76,6 +113,7 @@ export function loadWorld(): Promise<WorldData> {
       languages.default as unknown as LanguagesFile,
       pairs.default as unknown as { pairs: ConfusionPair[] },
       cities.default as unknown as CitiesFile,
+      groups.default as unknown as GroupsFile,
     ),
   );
   return pending;

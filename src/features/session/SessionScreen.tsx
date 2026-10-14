@@ -11,7 +11,15 @@ import { Loader } from "@/ui/loader";
 import { useStudyContext } from "../study/context";
 import { confusionScoresFor, scopedCountries } from "../study/plan";
 import { computeProgress } from "../study/progress";
-import { checkChoice, checkPin, checkTyped, type StudyContext } from "../study/questions";
+import {
+  checkChoice,
+  checkPin,
+  checkTaps,
+  checkTyped,
+  type Question,
+  type StudyContext,
+  scopedMembers,
+} from "../study/questions";
 import { type Learner, useLearner } from "../study/useLearner";
 import { ExplanationView } from "./ExplanationView";
 import {
@@ -19,9 +27,11 @@ import {
   CityCard,
   CountryCard,
   FlagAnswer,
+  GroupCard,
   nameOf,
   PromptText,
   StatusLine,
+  TapAnswer,
   TypedAnswer,
   useSessionKeys,
 } from "./parts";
@@ -32,6 +42,7 @@ import { useCountdown } from "./useCountdown";
 import { type SessionKind, type SessionView, useDailySession } from "./useDailySession";
 
 const INPUTS: readonly InputSetting[] = ["auto", "mc", "typing"];
+const EMPTY: ReadonlySet<string> = new Set();
 
 export function SessionScreen() {
   const learner = useLearner();
@@ -58,7 +69,12 @@ export function Session({
   const navigate = useNavigate();
   // Confusion scores are fixed for the session, like the queue.
   const [scores] = useState(() => confusionScoresFor(learner.world, learner.events, Date.now()));
-  const ctx = useStudyContext(learner.world, locale, scores, learner.content);
+  const scoped = useMemo(
+    () => scopedCountries(learner.world, learner.settings),
+    [learner.world, learner.settings],
+  );
+  const selectable = useMemo(() => new Set(scoped.map((c) => c.id)), [scoped]);
+  const ctx = useStudyContext(learner.world, locale, scores, learner.content, selectable);
   const s = useDailySession(learner, ctx, input, locale, kind);
   // Achievements held at the start, so the summary can show what this session added.
   const [held] = useState(
@@ -73,6 +89,25 @@ export function Session({
     view?.kind === "prompt" ? view.question.cardId : null,
     () => s.answer({ correct: false, typo: false, chosenId: null }, { timedOut: true }),
   );
+
+  // Tap answers: the countries picked so far for the current card.
+  const [taps, setTaps] = useState<{ cardId: string; ids: ReadonlySet<string> }>({
+    cardId: "",
+    ids: new Set(),
+  });
+  const tapQuestion =
+    view?.kind === "prompt" && view.question.answer.kind === "taps" ? view.question : null;
+  const picked = tapQuestion && taps.cardId === tapQuestion.cardId ? taps.ids : EMPTY;
+  const toggleTap = (id: string) => {
+    if (!tapQuestion) return;
+    const next = new Set(picked);
+    if (next.has(id)) next.delete(id);
+    else next.add(id);
+    setTaps({ cardId: tapQuestion.cardId, ids: next });
+  };
+  const submitTaps = () => {
+    if (tapQuestion && picked.size > 0) s.answer(checkTaps(tapQuestion, picked));
+  };
 
   const options =
     view?.kind === "prompt" &&
@@ -90,18 +125,15 @@ export function Session({
         ? () => void s.proceed()
         : view?.kind === "intro"
           ? s.startPrompt
-          : undefined,
+          : tapQuestion
+            ? submitTaps
+            : undefined,
     hint: view?.kind === "prompt" && view.question.answer.kind === "typed" ? s.showHint : undefined,
     notHelpful: view?.kind === "feedback" ? () => void s.notHelpful() : undefined,
     end: () => void s.end(),
     help: () => setHelp(true),
   });
 
-  const scoped = useMemo(
-    () => scopedCountries(learner.world, learner.settings),
-    [learner.world, learner.settings],
-  );
-  const selectable = useMemo(() => new Set(scoped.map((c) => c.id)), [scoped]);
   const labelFor = useCallback(
     (id: string) => nameOf(learner.world, id, locale),
     [learner.world, locale],
@@ -124,13 +156,15 @@ export function Session({
     );
   }
 
-  const { focus, highlight, animate, padding } = mapState(view, learner, locale);
+  const { focus, highlight, animate, padding } = mapState(view, learner, locale, s.ctx, picked);
   const mapSelectable =
     view.kind === "prompt" && view.question.answer.kind === "map"
       ? view.question.answer.selectable
         ? new Set(view.question.answer.selectable)
         : selectable
-      : undefined;
+      : tapQuestion
+        ? selectable
+        : undefined;
 
   return (
     <>
@@ -164,7 +198,11 @@ export function Session({
             focus={focus}
             highlight={highlight}
             selectable={mapSelectable}
-            onSelect={(id) => view.kind === "prompt" && s.answer(checkChoice(view.question, id))}
+            onSelect={(id) =>
+              tapQuestion
+                ? toggleTap(id)
+                : view.kind === "prompt" && s.answer(checkChoice(view.question, id))
+            }
             onPin={
               view.kind === "prompt" && view.question.answer.kind === "pin"
                 ? (at) => s.answer(checkPin(view.question, at))
@@ -179,7 +217,15 @@ export function Session({
         panel={
           // Each new step rises in; the key restarts the entrance.
           <div key={`${view.kind}:${view.item.cardId}`} className="enter">
-            <Panel view={view} ctx={s.ctx} session={s} learner={learner} locale={locale} />
+            <Panel
+              view={view}
+              ctx={s.ctx}
+              session={s}
+              learner={learner}
+              locale={locale}
+              tapCount={picked.size}
+              onCheckTaps={submitTaps}
+            />
           </div>
         }
       />
@@ -194,18 +240,25 @@ function Panel({
   session: s,
   learner,
   locale,
+  tapCount,
+  onCheckTaps,
 }: {
   view: Exclude<SessionView, { kind: "done" }>;
   ctx: StudyContext;
   session: ReturnType<typeof useDailySession>;
   learner: Learner;
   locale: "en" | "nb";
+  tapCount: number;
+  onCheckTaps: () => void;
 }) {
   const { t } = useTranslation();
   const focusOnMount = useFocusOnMount<HTMLButtonElement>();
   const country = learner.world.byId.get(view.question.countryId);
   if (!country) return null;
   const city = learner.world.cityById.get(view.question.entityId);
+  const group = view.question.groupId
+    ? learner.world.groupById.get(view.question.groupId)
+    : undefined;
 
   if (view.kind === "intro") {
     return (
@@ -226,13 +279,15 @@ function Panel({
     const hintText = (() => {
       if (!view.hint) return null;
       const target =
-        q.answerKind === "capital"
-          ? (country.capitals.find((c) => c.roles.includes("primary"))?.names[locale] ?? "")
-          : q.answerKind === "currency"
-            ? (country.currencies[0]?.names[locale] ?? "")
-            : q.answerKind === "language"
-              ? (country.officialLanguages[0]?.names[locale] ?? "")
-              : country.names[locale];
+        q.answerKind === "group"
+          ? (group?.names[locale] ?? "")
+          : q.answerKind === "capital"
+            ? (country.capitals.find((c) => c.roles.includes("primary"))?.names[locale] ?? "")
+            : q.answerKind === "currency"
+              ? (country.currencies[0]?.names[locale] ?? "")
+              : q.answerKind === "language"
+                ? (country.officialLanguages[0]?.names[locale] ?? "")
+                : country.names[locale];
       return t("answer.hintStarts", {
         letter: target.charAt(0).toUpperCase(),
         count: target.replace(/\s/g, "").length,
@@ -245,6 +300,14 @@ function Panel({
           <ChoiceAnswer options={answer.options} onPick={(id) => s.answer(checkChoice(q, id))} />
         ) : answer.kind === "flags" ? (
           <FlagAnswer options={answer.options} onPick={(id) => s.answer(checkChoice(q, id))} />
+        ) : answer.kind === "taps" ? (
+          <TapAnswer
+            count={tapCount}
+            onCheck={onCheckTaps}
+            onGiveUp={() =>
+              s.answer({ correct: false, typo: false, chosenId: null }, { gaveUp: true })
+            }
+          />
         ) : answer.kind === "typed" ? (
           <TypedAnswer
             key={q.cardId}
@@ -278,6 +341,8 @@ function Panel({
 
   // Feedback (PLAN.md 7.1). Moment content arrives with the explanation engine in Phase 3.
   const o = view.outcome;
+  if (group)
+    return <GroupFeedback view={view} ctx={ctx} session={s} learner={learner} locale={locale} />;
   const chosenCountry = !o.correct && o.chosenId ? learner.world.byId.get(o.chosenId) : undefined;
   const chosenLabel =
     chosenCountry?.names[locale] ??
@@ -341,12 +406,86 @@ function Panel({
   );
 }
 
+/** A group's members and disputed members for a question, as studied. */
+function groupMembers(q: Question, ctx: StudyContext | null) {
+  if (q.answer.kind === "taps") return { members: q.answer.members, sometimes: q.answer.sometimes };
+  return ctx && q.groupId ? scopedMembers(ctx, q.groupId) : { members: [], sometimes: [] };
+}
+
+function GroupFeedback({
+  view,
+  ctx,
+  session: s,
+  learner,
+  locale,
+}: {
+  view: Extract<SessionView, { kind: "feedback" }>;
+  ctx: StudyContext;
+  session: ReturnType<typeof useDailySession>;
+  learner: Learner;
+  locale: "en" | "nb";
+}) {
+  const { t } = useTranslation();
+  const focusOnMount = useFocusOnMount<HTMLButtonElement>();
+  const q = view.question;
+  const o = view.outcome;
+  const group = q.groupId ? learner.world.groupById.get(q.groupId) : undefined;
+  if (!group) return null;
+  const { members, sometimes } = groupMembers(q, ctx);
+  const list = new Intl.ListFormat(locale, { type: "conjunction" });
+  const names = (ids: readonly string[]) =>
+    list.format(ids.map((id) => nameOf(learner.world, id, locale)));
+  const picked =
+    !o.correct && o.chosenId
+      ? (learner.world.groupById.get(o.chosenId)?.names[locale] ??
+        learner.world.byId.get(o.chosenId)?.names[locale])
+      : undefined;
+  return (
+    <div className="flex flex-col gap-5" data-testid="feedback">
+      <StatusLine correct={o.correct} />
+      {o.timedOut ? <p>{t("feedback.timeUp")}</p> : o.gaveUp ? <p>{t("feedback.gaveUp")}</p> : null}
+      {o.taps && o.taps.missed.length > 0 ? (
+        <p data-testid="taps-missed">{t("feedback.missed", { names: names(o.taps.missed) })}</p>
+      ) : null}
+      {o.taps && o.taps.wrong.length > 0 ? (
+        <p data-testid="taps-wrong">{t("feedback.notInGroup", { names: names(o.taps.wrong) })}</p>
+      ) : null}
+      {!o.taps && picked ? <p>{t("feedback.youPicked", { name: picked })}</p> : null}
+      {o.correct && o.typo && o.matched ? (
+        <p>{t("feedback.spelling", { name: o.matched })}</p>
+      ) : null}
+      <GroupCard
+        group={group}
+        members={members}
+        sometimes={sometimes}
+        world={learner.world}
+        locale={locale}
+      />
+      {q.type === "group_to_map" && sometimes.length > 0 ? (
+        <p className="text-sm text-muted-foreground">{t("group.sometimesNote")}</p>
+      ) : null}
+      <Button
+        size="lg"
+        className="self-start"
+        onClick={() => void s.proceed()}
+        ref={focusOnMount}
+        data-testid="continue"
+      >
+        {t("feedback.continue")}
+      </Button>
+    </div>
+  );
+}
+
 function mapState(
   view: Exclude<SessionView, { kind: "done" }>,
   learner: Learner,
   locale: "en" | "nb",
+  ctx: StudyContext | null,
+  picked: ReadonlySet<string>,
 ): { focus: MapFocus; highlight: MapHighlight; animate: boolean; padding?: number } {
   const q0 = view.question;
+  if (q0.groupId) return groupMapState(view, learner, ctx, picked);
   const id = q0.countryId;
   const country = learner.world.byId.get(id);
   const neighbors = country?.neighbors.slice(0, 6) ?? [];
@@ -433,5 +572,50 @@ function mapState(
     highlight: { target: id, chosen, labels: [id, ...neighbors] },
     animate: true,
     padding: chosen ? 0.12 : 0.32,
+  };
+}
+
+/** Group cards: the members on the map, the learner's taps, and wrong picks dashed. */
+function groupMapState(
+  view: Exclude<SessionView, { kind: "done" }>,
+  learner: Learner,
+  ctx: StudyContext | null,
+  picked: ReadonlySet<string>,
+): { focus: MapFocus; highlight: MapHighlight; animate: boolean; padding?: number } {
+  const q = view.question;
+  const toFocus = (v: { kind: "world" } | { kind: "countries"; ids: string[] }): MapFocus =>
+    v.kind === "world" ? { kind: "world" } : { kind: "countries", ids: v.ids };
+  if (view.kind !== "feedback") {
+    if (q.prompt.kind === "groupMap")
+      return {
+        focus: toFocus(q.prompt.view),
+        highlight: { selected: q.prompt.ids },
+        animate: true,
+      };
+    if (q.answer.kind === "taps")
+      return { focus: toFocus(q.answer.view), highlight: { selected: [...picked] }, animate: true };
+    return { focus: { kind: "world" }, highlight: {}, animate: true };
+  }
+  const { members, sometimes } = groupMembers(q, ctx);
+  const o = view.outcome;
+  const chosenGroup = o.chosenId ? learner.world.groupById.get(o.chosenId) : undefined;
+  const wrong = o.correct
+    ? (o.taps?.wrong ?? [])
+    : (o.taps?.wrong ??
+      (chosenGroup
+        ? chosenGroup.members.filter((id) => !members.includes(id) && learner.world.byId.has(id))
+        : o.chosenId && learner.world.byId.has(o.chosenId)
+          ? [o.chosenId]
+          : []));
+  return {
+    focus: { kind: "countries", ids: [...members, ...wrong] },
+    highlight: {
+      target: members,
+      chosen: wrong,
+      tinted: new Set(sometimes),
+      labels: members.length <= 8 ? members : [],
+    },
+    animate: true,
+    padding: 0.12,
   };
 }

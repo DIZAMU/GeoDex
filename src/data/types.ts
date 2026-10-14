@@ -95,3 +95,32 @@ export type City = {
 };
 
 export type CitiesFile = { cities: City[] };
+
+/**
+ * A named group of countries: a region (Scandinavia, the Balkans), an organization (EU,
+ * NATO) or a UN M49 subregion. See data/curated/groups.json.
+ */
+export type GroupKind = "region" | "organization" | "un_subregion";
+
+type GroupBase = {
+  id: string; // Wikidata QID
+  kind: GroupKind;
+  names: L10n;
+  aliases: L10nList;
+  /** Completes "Which of these is ...?": "in the Balkans", "a member of NATO". */
+  phrase: L10n;
+};
+
+/** As written in data/curated/groups.json: a UN subregion names its M49 code instead. */
+export type GroupSource = GroupBase &
+  ({ m49: string } | { members: string[]; sometimes: string[] });
+
+export type GroupsFile = { groups: GroupSource[] };
+
+export type CountryGroup = GroupBase & {
+  /** ISO3 of the countries every common definition includes. */
+  members: string[];
+  /** ISO3 of countries only some definitions include: never asked, never a wrong answer. */
+  sometimes: string[];
+  m49: string | null;
+};
