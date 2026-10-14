@@ -1,0 +1,182 @@
+{
+  "group": "oceania",
+  "entities": [
+    {
+      "entityId": "Q3130",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q3130.en.1",
+            "type": "anchor",
+            "text": "Sydney sits on Australia's southeast coast around a deep natural harbour, northeast of Melbourne."
+          },
+          {
+            "id": "Q3130.en.2",
+            "type": "contrast",
+            "text": "Sydney is Australia's biggest city but not its capital: Canberra is, inland to the southwest."
+          },
+          {
+            "id": "Q3130.en.3",
+            "type": "sound",
+            "text": "Sydney: a boy called Sid sits on the harbour bridge, dangling his feet over Australian water."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q3130.nb.1",
+            "type": "anchor",
+            "text": "Sydney ligger på sørøstkysten av Australia, rundt en dyp naturhavn, nordøst for Melbourne."
+          },
+          {
+            "id": "Q3130.nb.2",
+            "type": "contrast",
+            "text": "Sydney er Australias største by, men ikke hovedstaden. Det er Canberra, inne i landet mot sørvest."
+          },
+          {
+            "id": "Q3130.nb.3",
+            "type": "sound",
+            "text": "Sydney: «syd» betyr sør, og Sydney ligger så langt syd at kenguruene hopper rundt i gatene."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q3130.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Sydney is the capital of the Australian state of New South Wales.",
+            "nb": "Sydney er hovedstaden i delstaten New South Wales i Australia."
+          }
+        },
+        {
+          "id": "Q3130.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The city is named after Lord Sydney, a British Home Secretary.",
+            "nb": "Byen er oppkalt etter Lord Sydney, en britisk innenriksminister."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q3141",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q3141.en.1",
+            "type": "anchor",
+            "text": "Melbourne sits on Port Phillip Bay on Australia's south coast, with Tasmania across the Bass Strait."
+          },
+          {
+            "id": "Q3141.en.2",
+            "type": "story",
+            "text": "Australia's parliament met in Melbourne until Canberra was built and ready."
+          },
+          {
+            "id": "Q3141.en.3",
+            "type": "sound",
+            "text": "Melbourne: a melon born on the beach rolls south until Australia runs out."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q3141.nb.1",
+            "type": "anchor",
+            "text": "Melbourne ligger ved Port Phillip Bay på sørkysten av Australia, med Tasmania over Bassstredet."
+          },
+          {
+            "id": "Q3141.nb.2",
+            "type": "story",
+            "text": "Australias nasjonalforsamling møttes i Melbourne til Canberra var bygd og klar."
+          },
+          {
+            "id": "Q3141.nb.3",
+            "type": "sound",
+            "text": "Melbourne: en bonde med en sekk mel går så langt sør i Australia at han står i havet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q3141.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Melbourne is the capital of the Australian state of Victoria.",
+            "nb": "Melbourne er hovedstaden i delstaten Victoria i Australia."
+          }
+        },
+        {
+          "id": "Q3141.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Melbourne is named after Lord Melbourne, a British prime minister.",
+            "nb": "Melbourne er oppkalt etter Lord Melbourne, en britisk statsminister."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q37100",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q37100.en.1",
+            "type": "anchor",
+            "text": "Auckland is on New Zealand's North Island, on a narrow neck of land between two harbours."
+          },
+          {
+            "id": "Q37100.en.2",
+            "type": "contrast",
+            "text": "Auckland is New Zealand's biggest city, but the capital is Wellington, at the south end of the North Island."
+          },
+          {
+            "id": "Q37100.en.3",
+            "type": "sound",
+            "text": "Auckland: orc land, where an orc guards the narrow strip of New Zealand between two seas."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q37100.nb.1",
+            "type": "anchor",
+            "text": "Auckland ligger på Nordøya i New Zealand, på et smalt eid mellom to havner."
+          },
+          {
+            "id": "Q37100.nb.2",
+            "type": "contrast",
+            "text": "Auckland er New Zealands største by, men hovedstaden er Wellington, helt sør på Nordøya."
+          },
+          {
+            "id": "Q37100.nb.3",
+            "type": "sound",
+            "text": "Auckland høres ut som «åkerland»: grønne åkre mellom gamle vulkaner på Nordøya i New Zealand."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q37100.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Auckland was New Zealand's capital before the government moved to Wellington.",
+            "nb": "Auckland var New Zealands hovedstad før regjeringen flyttet til Wellington."
+          }
+        },
+        {
+          "id": "Q37100.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Auckland is built on a volcanic field with dozens of small volcanic cones.",
+            "nb": "Auckland er bygd på et vulkanfelt med flere titalls små vulkankjegler."
+          }
+        }
+      ]
+    }
+  ]
+}
