@@ -2,12 +2,14 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { assembleWorld } from "@/data/world";
+import { contrastCardId } from "@/engine/confusions";
 import type { CardState } from "@/engine/scheduler";
 import {
   band,
   buildIndexes,
   buildQuestion,
   checkChoice,
+  checkPin,
   checkTyped,
   countryFacts,
   type StudyContext,
@@ -20,6 +22,7 @@ const world = assembleWorld(
   read("data/flags-meta.json"),
   read("data/curated/official-languages.json"),
   read("data/curated/confusion-pairs.json"),
+  read("data/cities.json"),
 );
 const ctx: StudyContext = {
   world,
@@ -162,5 +165,58 @@ describe("contrast cards", () => {
       ),
     );
     expect([...asked].sort()).toEqual(["SVK", "SVN"]);
+  });
+});
+
+describe("cities (PLAN.md Phase 6)", () => {
+  const confusions = read("content/confusions.json").confusions as {
+    a: string;
+    b: string;
+    dimension: string;
+  }[];
+  const notCapital = confusions.filter((c) => c.dimension === "not_capital");
+
+  it("every seeded not-the-capital pair produces a working contrast card", () => {
+    expect(notCapital.length).toBeGreaterThanOrEqual(17);
+    for (const pair of notCapital) {
+      const id = contrastCardId(pair.a, pair.b);
+      for (const seed of ["s1", "s2"]) {
+        const q = buildQuestion(ctx, id, undefined, "auto", seed);
+        const city = world.cityById.get(pair.a);
+        expect(q.prompt).toEqual({ kind: "capitalOf", countryId: city?.countryId });
+        expect(q.answer.kind).toBe("choice");
+        const ids = q.answer.kind === "choice" ? q.answer.options.map((o) => o.id).sort() : [];
+        expect(ids).toEqual([pair.a, pair.b].sort());
+        expect(checkChoice(q, pair.b).correct, `${pair.b} is the capital`).toBe(true);
+        expect(checkChoice(q, pair.a).correct).toBe(false);
+      }
+    }
+  });
+
+  it("asks which country a city is in, with neighbors as distractors, then typed", () => {
+    const fresh = buildQuestion(ctx, "Q3130:city_to_country", undefined, "auto", "s");
+    expect(fresh.prompt).toMatchObject({ kind: "city", cityId: "Q3130", place: false });
+    expect(fresh.countryId).toBe("AUS");
+    expect(fresh.answer.kind).toBe("choice");
+    expect(checkChoice(fresh, "AUS").correct).toBe(true);
+    const later = buildQuestion(ctx, "Q3130:city_to_country", state(10), "auto", "s");
+    expect(later.answer.kind).toBe("typed");
+    expect(checkTyped(later, ctx.indexes, "Australia").correct).toBe(true);
+    expect(checkTyped(later, ctx.indexes, "Austria").correct).toBe(false);
+  });
+
+  it("grades a pin by distance and widens the map as the city becomes known", () => {
+    const q = buildQuestion(ctx, "Q3130:city_to_map", undefined, "auto", "s");
+    expect(q.mode).toBe("pin");
+    expect(q.answer).toMatchObject({ kind: "pin", view: { kind: "countries" } });
+    const sydney = world.cityById.get("Q3130");
+    if (!sydney) throw new Error("no Sydney");
+    expect(checkPin(q, [sydney.lon, sydney.lat])).toMatchObject({ correct: true, rating: 3 });
+    // Canberra is about 250 km away: right area, graded Hard.
+    expect(checkPin(q, [149.13, -35.28])).toMatchObject({ correct: true, rating: 2 });
+    // Melbourne is over 700 km away.
+    expect(checkPin(q, [144.96, -37.81])).toMatchObject({ correct: false, rating: 1 });
+    const strong = buildQuestion(ctx, "Q3130:city_to_map", state(30), "auto", "s");
+    expect(strong.answer).toMatchObject({ kind: "pin", view: { kind: "world" } });
   });
 });
