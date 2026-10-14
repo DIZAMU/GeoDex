@@ -1,5 +1,5 @@
 // @vitest-environment node
-import { mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
+import { copyFileSync, mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -71,5 +71,23 @@ describe("content linter", () => {
 
   it("passes the committed content, with content for every country in scope", () => {
     expect(lintContent({ complete: true })).toEqual([]);
+  });
+
+  it("checks group notes: both languages, voice rules, no unsourced digits", () => {
+    const root = mkdtempSync(join(tmpdir(), "groups-"));
+    copyFileSync("content/VOICE.md", join(root, "VOICE.md"));
+    writeFileSync(
+      join(root, "groups.json"),
+      JSON.stringify({
+        notes: {
+          Q1: { text: { en: "Seven members since 2024.", nb: "" }, verified: false },
+          Q2: { text: { en: "Fine line.", nb: "Fin linje." }, verified: false },
+        },
+      }),
+    );
+    const errors = lintContent({ root });
+    expect(errors.some((e) => e.startsWith("groups:Q1 [en]: digits"))).toBe(true);
+    expect(errors.some((e) => e.startsWith("groups:Q1 [nb]"))).toBe(true);
+    expect(errors.some((e) => e.startsWith("groups:Q2"))).toBe(false);
   });
 });

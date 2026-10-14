@@ -246,6 +246,25 @@ export function lintContent(
     }
   }
 
+  // Group notes (DECISIONS.md 034): one fact-sized line per group, both locales, no digits.
+  const groupsPath = `${root}/groups.json`;
+  if (existsSync(groupsPath)) {
+    const { notes } = JSON.parse(readFileSync(groupsPath, "utf8")) as {
+      notes: Record<string, { text: Record<Locale, string>; verified: boolean }>;
+    };
+    for (const [id, note] of Object.entries(notes)) {
+      const at = `groups:${id}`;
+      if (!/^Q\d+$/.test(id)) errors.push(`${at}: id must be a Wikidata QID`);
+      if (typeof note.verified !== "boolean") errors.push(`${at}: verified must be true or false`);
+      for (const locale of rules.locales) {
+        const text = note.text?.[locale] ?? "";
+        check(at, text, locale, "fact");
+        if (rules.digits_require_source && /\d/.test(text))
+          errors.push(`${at} [${locale}]: digits need a sourceUrl`);
+      }
+    }
+  }
+
   const preposition = new RegExp(rules.hardcoded_nb_preposition);
   for (const locale of rules.locales) {
     const tdir = `${root}/templates/${locale}`;
