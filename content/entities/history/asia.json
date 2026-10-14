@@ -1,0 +1,999 @@
+{
+  "group": "asia",
+  "entities": [
+    {
+      "entityId": "former-burma",
+      "hooks": {
+        "en": [
+          {
+            "id": "former-burma.en.1",
+            "type": "anchor",
+            "text": "Burma is Myanmar: the country between Bangladesh and Thailand, on the Bay of Bengal."
+          },
+          {
+            "id": "former-burma.en.2",
+            "type": "etymology",
+            "text": "Burma and Myanmar both come from the name of the Bamar, the largest ethnic group in the country."
+          },
+          {
+            "id": "former-burma.en.3",
+            "type": "sound",
+            "text": "Bur-ma, My-an-mar: both end in a \"ma\" sound, like one name wearing a longer coat."
+          }
+        ],
+        "nb": [
+          {
+            "id": "former-burma.nb.1",
+            "type": "anchor",
+            "text": "Burma er dagens Myanmar, landet mellom Bangladesh og Thailand ved Bengalbukta."
+          },
+          {
+            "id": "former-burma.nb.2",
+            "type": "etymology",
+            "text": "Både Burma og Myanmar kommer av navnet på bamarfolket, den største folkegruppen i landet."
+          },
+          {
+            "id": "former-burma.nb.3",
+            "type": "sound",
+            "text": "Burma: et bur med en mår inni som roper «Myanmar» hver gang du går forbi."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "former-burma.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Myanmar borders Bangladesh, India, China, Laos and Thailand.",
+            "nb": "Myanmar grenser til Bangladesh, India, Kina, Laos og Thailand."
+          }
+        },
+        {
+          "id": "former-burma.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The military government changed the English name from Burma to Myanmar, and some governments kept saying Burma for years.",
+            "nb": "Militærregjeringen endret det engelske navnet fra Burma til Myanmar, og noen land holdt fast ved Burma i mange år."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "former-ceylon",
+      "hooks": {
+        "en": [
+          {
+            "id": "former-ceylon.en.1",
+            "type": "anchor",
+            "text": "Ceylon is Sri Lanka, the island just south of India."
+          },
+          {
+            "id": "former-ceylon.en.2",
+            "type": "shape",
+            "text": "Ceylon hangs below India like a teardrop falling off the subcontinent."
+          },
+          {
+            "id": "former-ceylon.en.3",
+            "type": "story",
+            "text": "Ceylon tea kept the old name on the box long after the island became Sri Lanka."
+          }
+        ],
+        "nb": [
+          {
+            "id": "former-ceylon.nb.1",
+            "type": "anchor",
+            "text": "Ceylon er dagens Sri Lanka, øya rett sør for India."
+          },
+          {
+            "id": "former-ceylon.nb.2",
+            "type": "shape",
+            "text": "Ceylon henger under India som en tåre som drypper ut i havet."
+          },
+          {
+            "id": "former-ceylon.nb.3",
+            "type": "story",
+            "text": "Ceylon-te står fortsatt på tepakkene, selv om øya har hett Sri Lanka lenge."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "former-ceylon.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Sri Lanka lies in the Indian Ocean, separated from India by the Palk Strait.",
+            "nb": "Sri Lanka ligger i Indiahavet, skilt fra India av Palkstredet."
+          }
+        },
+        {
+          "id": "former-ceylon.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Ceylon was the name under British rule, and the country kept it for its first years of independence.",
+            "nb": "Ceylon var navnet under britisk styre, og landet beholdt det de første årene som selvstendig stat."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "former-kampuchea",
+      "hooks": {
+        "en": [
+          {
+            "id": "former-kampuchea.en.1",
+            "type": "anchor",
+            "text": "Kampuchea is Cambodia, the country between Thailand, Laos and Vietnam."
+          },
+          {
+            "id": "former-kampuchea.en.2",
+            "type": "etymology",
+            "text": "Kampuchea is the Khmer name of the country. Cambodia is the same word, reshaped through French."
+          },
+          {
+            "id": "former-kampuchea.en.3",
+            "type": "sound",
+            "text": "Kampuchea starts like \"camp\": pitch a tent beside Angkor Wat, in Cambodia."
+          }
+        ],
+        "nb": [
+          {
+            "id": "former-kampuchea.nb.1",
+            "type": "anchor",
+            "text": "Kampuchea er dagens Kambodsja, mellom Thailand, Laos og Vietnam."
+          },
+          {
+            "id": "former-kampuchea.nb.2",
+            "type": "etymology",
+            "text": "Kampuchea er landets navn på khmer. Kambodsja er det samme ordet, omformet via fransk."
+          },
+          {
+            "id": "former-kampuchea.nb.3",
+            "type": "sound",
+            "text": "Kampu-chea og Kambo-dsja begynner begge med «kam», som en kam som grer tårnene på Angkor Wat."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "former-kampuchea.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Cambodia has a coast on the Gulf of Thailand.",
+            "nb": "Kambodsja har kyst mot Thailandbukta."
+          }
+        },
+        {
+          "id": "former-kampuchea.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Kampuchea was the official name under the Khmer Rouge and under the government that followed it.",
+            "nb": "Kampuchea var det offisielle navnet under De røde khmerer og under regjeringen som fulgte etter."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "former-persia",
+      "hooks": {
+        "en": [
+          {
+            "id": "former-persia.en.1",
+            "type": "anchor",
+            "text": "Persia is Iran, between Iraq and Afghanistan, from the Caspian Sea down to the Persian Gulf."
+          },
+          {
+            "id": "former-persia.en.2",
+            "type": "etymology",
+            "text": "Persia comes from the Greek name for the province of Pars (Fars). Iranians have long called their country Iran."
+          },
+          {
+            "id": "former-persia.en.3",
+            "type": "story",
+            "text": "Persian cats, Persian rugs, the Persian Gulf: the old name survives on everything except the country, Iran."
+          }
+        ],
+        "nb": [
+          {
+            "id": "former-persia.nb.1",
+            "type": "anchor",
+            "text": "Persia er dagens Iran, mellom Irak og Afghanistan, fra Det kaspiske hav til Persiabukta."
+          },
+          {
+            "id": "former-persia.nb.2",
+            "type": "etymology",
+            "text": "Persia kommer fra grekernes navn på provinsen Pars (Fars). Iranerne selv har lenge kalt landet Iran."
+          },
+          {
+            "id": "former-persia.nb.3",
+            "type": "story",
+            "text": "Perserkatter, persiske tepper, Persiabukta: det gamle navnet lever videre på alt unntatt landet, Iran."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "former-persia.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Iran has coasts on both the Caspian Sea and the Persian Gulf.",
+            "nb": "Iran har kyst både mot Det kaspiske hav og mot Persiabukta."
+          }
+        },
+        {
+          "id": "former-persia.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Persian, also called Farsi, is the main language of Iran.",
+            "nb": "Persisk, også kalt farsi, er hovedspråket i Iran."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1081620",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1081620.en.1",
+            "type": "anchor",
+            "text": "Siam is Thailand, between Myanmar, Laos and Cambodia."
+          },
+          {
+            "id": "Q1081620.en.2",
+            "type": "etymology",
+            "text": "Thailand means land of the Thai: the country was renamed after its own people."
+          },
+          {
+            "id": "Q1081620.en.3",
+            "type": "story",
+            "text": "Siamese cats and Siamese twins carry the old name. The twins Chang and Eng were born in Siam, today's Thailand."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1081620.nb.1",
+            "type": "anchor",
+            "text": "Siam er dagens Thailand, mellom Myanmar, Laos og Kambodsja."
+          },
+          {
+            "id": "Q1081620.nb.2",
+            "type": "etymology",
+            "text": "Thailand betyr «thaienes land»: landet fikk navn etter folket selv."
+          },
+          {
+            "id": "Q1081620.nb.3",
+            "type": "story",
+            "text": "Siameserkatter og siamesiske tvillinger bærer det gamle navnet. Tvillingene Chang og Eng ble født i Siam, nå Thailand."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1081620.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Thailand borders Myanmar, Laos, Cambodia and Malaysia.",
+            "nb": "Thailand grenser til Myanmar, Laos, Kambodsja og Malaysia."
+          }
+        },
+        {
+          "id": "Q1081620.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Thailand was never colonized by a European power.",
+            "nb": "Thailand ble aldri kolonisert av en europeisk makt."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1121819",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1121819.en.1",
+            "type": "etymology",
+            "text": "Transjordan means \"across the Jordan\": the land east of the Jordan River."
+          },
+          {
+            "id": "Q1121819.en.2",
+            "type": "anchor",
+            "text": "Transjordan is Jordan, east of the Jordan River and the Dead Sea."
+          },
+          {
+            "id": "Q1121819.en.3",
+            "type": "story",
+            "text": "Drop the \"Trans\" and Jordan is left: the country only lost its prefix."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1121819.nb.1",
+            "type": "etymology",
+            "text": "Transjordan betyr «på andre siden av Jordan»: landet øst for Jordanelva."
+          },
+          {
+            "id": "Q1121819.nb.2",
+            "type": "anchor",
+            "text": "Transjordan er dagens Jordan, øst for Jordanelva og Dødehavet."
+          },
+          {
+            "id": "Q1121819.nb.3",
+            "type": "story",
+            "text": "Klipp av «Trans», så står Jordan igjen: landet mistet bare forstavelsen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1121819.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Jordan's only coast is a short stretch on the Gulf of Aqaba, an arm of the Red Sea.",
+            "nb": "Jordans eneste kyst er en kort strekning ved Akababukta, en arm av Rødehavet."
+          }
+        },
+        {
+          "id": "Q1121819.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Transjordan was a British mandate territory before it became an independent kingdom.",
+            "nb": "Transjordan var et britisk mandatområde før det ble et selvstendig kongerike."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q188161",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q188161.en.1",
+            "type": "anchor",
+            "text": "The Dutch East Indies is Indonesia, the island chain from Sumatra to western New Guinea."
+          },
+          {
+            "id": "Q188161.en.2",
+            "type": "etymology",
+            "text": "Indonesia is Greek for \"Indian islands\": the same idea as East Indies, minus the Dutch."
+          },
+          {
+            "id": "Q188161.en.3",
+            "type": "story",
+            "text": "Picture a Dutch clog floating east past India until it runs aground on Java: the Dutch East Indies, now Indonesia."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q188161.nb.1",
+            "type": "anchor",
+            "text": "Nederlandsk Øst-India er dagens Indonesia, øyriket fra Sumatra til vestlige Ny-Guinea."
+          },
+          {
+            "id": "Q188161.nb.2",
+            "type": "etymology",
+            "text": "Indonesia er gresk for «indiske øyer»: samme idé som Øst-India, bare uten Nederland."
+          },
+          {
+            "id": "Q188161.nb.3",
+            "type": "story",
+            "text": "Se for deg en tresko som flyter østover forbi India til den går på grunn ved Java: Nederlandsk Øst-India, nå Indonesia."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q188161.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Indonesia stretches across the equator, from the Indian Ocean to the Pacific.",
+            "nb": "Indonesia strekker seg over ekvator, fra Indiahavet til Stillehavet."
+          }
+        },
+        {
+          "id": "Q188161.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Jakarta, the capital of Indonesia, was called Batavia under Dutch rule.",
+            "nb": "Jakarta, hovedstaden i Indonesia, het Batavia under nederlandsk styre."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q842931",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q842931.en.1",
+            "type": "anchor",
+            "text": "East Pakistan is Bangladesh, on the Bay of Bengal, almost surrounded by India."
+          },
+          {
+            "id": "Q842931.en.2",
+            "type": "etymology",
+            "text": "Bangladesh means \"country of Bengal\", the land of the Bengali speakers."
+          },
+          {
+            "id": "Q842931.en.3",
+            "type": "story",
+            "text": "Pakistan was a pair of bookends with India as the books between them. The eastern bookend became Bangladesh."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q842931.nb.1",
+            "type": "anchor",
+            "text": "Øst-Pakistan er dagens Bangladesh, ved Bengalbukta, nesten omringet av India."
+          },
+          {
+            "id": "Q842931.nb.2",
+            "type": "etymology",
+            "text": "Bangladesh betyr «Bengals land», landet til de bengalsktalende."
+          },
+          {
+            "id": "Q842931.nb.3",
+            "type": "story",
+            "text": "Pakistan var to bokstøtter med India som bøkene imellom. Den østlige støtten ble Bangladesh."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q842931.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Bangladesh borders India on almost all sides and Myanmar in the southeast.",
+            "nb": "Bangladesh grenser til India nesten hele veien rundt og til Myanmar i sørøst."
+          }
+        },
+        {
+          "id": "Q842931.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "East and West Pakistan were separated by India, with no land link between them.",
+            "nb": "Øst- og Vest-Pakistan var skilt av India, uten noen landforbindelse mellom seg."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q15180",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q15180.en.1",
+            "type": "anchor",
+            "text": "The Soviet Union stretched from the Baltic Sea to the Pacific, with Moscow as its capital."
+          },
+          {
+            "id": "Q15180.en.2",
+            "type": "contrast",
+            "text": "The Soviet outline is Russia plus a western and southern fringe: the Baltics, Ukraine, Belarus, the Caucasus and Central Asia."
+          },
+          {
+            "id": "Q15180.en.3",
+            "type": "story",
+            "text": "Picture a matryoshka doll labeled USSR: open it and fifteen smaller dolls fall out, Russia the biggest."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q15180.nb.1",
+            "type": "anchor",
+            "text": "Sovjetunionen strakte seg fra Østersjøen til Stillehavet, med Moskva som hovedstad."
+          },
+          {
+            "id": "Q15180.nb.2",
+            "type": "contrast",
+            "text": "Omrisset av Sovjetunionen er Russland pluss en kant i vest og sør: Baltikum, Ukraina, Belarus, Kaukasus og Sentral-Asia."
+          },
+          {
+            "id": "Q15180.nb.3",
+            "type": "story",
+            "text": "Tenk deg en babusjkadukke merket USSR: åpne den, og femten mindre dukker ramler ut, Russland størst."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q15180.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Soviet Union was the largest country in the world by area.",
+            "nb": "Sovjetunionen var verdens største land etter areal."
+          }
+        },
+        {
+          "id": "Q15180.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "USSR stands for Union of Soviet Socialist Republics. Each of its republics became a separate country.",
+            "nb": "USSR står for Unionen av sosialistiske sovjetrepublikker. Hver av republikkene ble et eget land."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q12557",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q12557.en.1",
+            "type": "anchor",
+            "text": "The Mongol Empire spread from Mongolia across China, Central Asia and Iran into eastern Europe."
+          },
+          {
+            "id": "Q12557.en.2",
+            "type": "story",
+            "text": "Genghis Khan founded it in the 13th century. His grandson Kublai Khan ruled China from Beijing."
+          },
+          {
+            "id": "Q12557.en.3",
+            "type": "story",
+            "text": "Picture one rider galloping from the Yellow Sea to the Black Sea without leaving Mongol land: that is the 1200s."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q12557.nb.1",
+            "type": "anchor",
+            "text": "Mongolriket bredte seg fra Mongolia over Kina, Sentral-Asia og Iran inn i Øst-Europa."
+          },
+          {
+            "id": "Q12557.nb.2",
+            "type": "story",
+            "text": "Djengis khan grunnla riket på 1200-tallet. Barnebarnet Khubilai khan styrte Kina fra Beijing."
+          },
+          {
+            "id": "Q12557.nb.3",
+            "type": "story",
+            "text": "Tenk deg en rytter som galopperer fra Gulehavet til Svartehavet uten å forlate mongolsk land: det er 1200-tallet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q12557.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "It was the largest contiguous land empire in history.",
+            "nb": "Det var det største sammenhengende landriket i historien."
+          }
+        },
+        {
+          "id": "Q12557.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The empire later split into separate khanates, among them the Golden Horde and the Yuan dynasty in China.",
+            "nb": "Riket delte seg senere i egne khanater, blant dem Den gylne horde og Yuan-dynastiet i Kina."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q201705",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q201705.en.1",
+            "type": "anchor",
+            "text": "The Khmer Empire was centered on Angkor in today's Cambodia and reached into Thailand, Laos and Vietnam."
+          },
+          {
+            "id": "Q201705.en.2",
+            "type": "anchor",
+            "text": "Khmer kings ruled from Angkor from around the 9th century to the 15th."
+          },
+          {
+            "id": "Q201705.en.3",
+            "type": "story",
+            "text": "Angkor Wat, the temple on Cambodia's flag, was built by Khmer kings when the empire was at its largest."
+          },
+          {
+            "id": "Q201705.en.4",
+            "type": "shape",
+            "text": "The Khmer outline is Cambodia wearing a wide hat: the brim covers much of Thailand and southern Vietnam."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q201705.nb.1",
+            "type": "anchor",
+            "text": "Khmerriket hadde sentrum i Angkor i dagens Kambodsja og nådde inn i Thailand, Laos og Vietnam."
+          },
+          {
+            "id": "Q201705.nb.2",
+            "type": "anchor",
+            "text": "Khmerkongene styrte fra Angkor fra rundt 800-tallet til 1400-tallet."
+          },
+          {
+            "id": "Q201705.nb.3",
+            "type": "story",
+            "text": "Angkor Wat, tempelet i Kambodsjas flagg, ble bygd av khmerkonger da riket var på sitt største."
+          },
+          {
+            "id": "Q201705.nb.4",
+            "type": "shape",
+            "text": "Omrisset er Kambodsja med en vid hatt: bremmen dekker store deler av Thailand og Sør-Vietnam."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q201705.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Its capital, Angkor, lay near the Tonle Sap lake in northwest Cambodia.",
+            "nb": "Hovedstaden Angkor lå ved innsjøen Tonle Sap nordvest i Kambodsja."
+          }
+        },
+        {
+          "id": "Q201705.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Angkor Wat was built as a Hindu temple and later became a Buddhist one.",
+            "nb": "Angkor Wat ble bygd som et hinduistisk tempel og ble senere buddhistisk."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q33296",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q33296.en.1",
+            "type": "anchor",
+            "text": "The Mughal Empire covered most of the Indian subcontinent, from the Afghan border to Bengal."
+          },
+          {
+            "id": "Q33296.en.2",
+            "type": "etymology",
+            "text": "Mogul, as in media mogul, comes from the name of these rulers of India."
+          },
+          {
+            "id": "Q33296.en.3",
+            "type": "story",
+            "text": "The Mughal emperor Shah Jahan built the Taj Mahal as a tomb for his wife."
+          },
+          {
+            "id": "Q33296.en.4",
+            "type": "anchor",
+            "text": "The Mughals ruled India from the 1500s until the British took over in the 1800s."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q33296.nb.1",
+            "type": "anchor",
+            "text": "Mogulriket dekket det meste av det indiske subkontinentet, fra grensen mot Afghanistan til Bengal."
+          },
+          {
+            "id": "Q33296.nb.2",
+            "type": "etymology",
+            "text": "Mogul, som i «mediemogul», kommer fra navnet på disse herskerne i India."
+          },
+          {
+            "id": "Q33296.nb.3",
+            "type": "story",
+            "text": "Mogulkeiseren Shah Jahan bygde Taj Mahal som gravmæle for kona si."
+          },
+          {
+            "id": "Q33296.nb.4",
+            "type": "anchor",
+            "text": "Mogulene styrte India fra 1500-tallet til britene tok over på 1800-tallet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q33296.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Its heartland was the Ganges plain of northern India, around Delhi and Agra.",
+            "nb": "Kjerneområdet var Gangessletta nord i India, rundt Delhi og Agra."
+          }
+        },
+        {
+          "id": "Q33296.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Babur, the first Mughal emperor, came from Central Asia and descended from both Timur and Genghis Khan.",
+            "nb": "Babur, den første mogulkeiseren, kom fra Sentral-Asia og nedstammet fra både Timur og Djengis khan."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q389688",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q389688.en.1",
+            "type": "anchor",
+            "text": "The Achaemenid Empire was the first Persian Empire: centered on today's Iran, it reached from Egypt to the Indus."
+          },
+          {
+            "id": "Q389688.en.2",
+            "type": "story",
+            "text": "Alexander the Great ended it in the 300s BC, when he took the Persian capital Persepolis."
+          },
+          {
+            "id": "Q389688.en.3",
+            "type": "sound",
+            "text": "Achaemenid: \"aching men\" trudging the Royal Road from Susa in Iran to Sardis in Turkey."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q389688.nb.1",
+            "type": "anchor",
+            "text": "Akamenideriket var det første perserriket: med sentrum i dagens Iran nådde det fra Egypt til Indus."
+          },
+          {
+            "id": "Q389688.nb.2",
+            "type": "story",
+            "text": "Aleksander den store gjorde slutt på riket på 300-tallet f.Kr., da han inntok Persepolis."
+          },
+          {
+            "id": "Q389688.nb.3",
+            "type": "sound",
+            "text": "Akamenide: «Ak, amen», sukker budbæreren som har ridd kongeveien fra Susa i Iran til Sardes i Tyrkia."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q389688.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Its ceremonial capital, Persepolis, lies in southern Iran, near Shiraz.",
+            "nb": "Seremonihovedstaden Persepolis ligger sør i Iran, nær Shiraz."
+          }
+        },
+        {
+          "id": "Q389688.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Cyrus the Great founded it, and Darius the Great divided it into provinces called satrapies.",
+            "nb": "Kyros den store grunnla riket, og Dareios den store delte det inn i provinser kalt satrapier."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q62943",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q62943.en.1",
+            "type": "anchor",
+            "text": "The Maurya Empire covered most of the Indian subcontinent, plus today's Pakistan and parts of Afghanistan."
+          },
+          {
+            "id": "Q62943.en.2",
+            "type": "contrast",
+            "text": "The Mauryas ruled India in the 300s and 200s BC. The Mughals ruled the same land almost two thousand years later."
+          },
+          {
+            "id": "Q62943.en.3",
+            "type": "story",
+            "text": "Emperor Ashoka turned to Buddhism after his conquest of Kalinga, on India's east coast."
+          },
+          {
+            "id": "Q62943.en.4",
+            "type": "sound",
+            "text": "Maurya sounds like \"more ya\": each Maurya king wanted more of India, until they held almost all of it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q62943.nb.1",
+            "type": "anchor",
+            "text": "Mauryariket dekket det meste av det indiske subkontinentet, pluss dagens Pakistan og deler av Afghanistan."
+          },
+          {
+            "id": "Q62943.nb.2",
+            "type": "contrast",
+            "text": "Mauryariket var før vår tidsregning. Mogulriket, på samme sted, kom nesten to tusen år senere."
+          },
+          {
+            "id": "Q62943.nb.3",
+            "type": "story",
+            "text": "Keiser Ashoka gikk over til buddhismen etter erobringen av Kalinga, på østkysten av India."
+          },
+          {
+            "id": "Q62943.nb.4",
+            "type": "sound",
+            "text": "Maurya: en maur som bærer et helt rike på ryggen, fra Afghanistan til Bengal."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q62943.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Its capital was Pataliputra, near today's Patna on the Ganges.",
+            "nb": "Hovedstaden var Pataliputra, nær dagens Patna ved Ganges."
+          }
+        },
+        {
+          "id": "Q62943.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Ashoka's lion capital from Sarnath is the national emblem of India.",
+            "nb": "Ashokas løvekapitél fra Sarnath er Indias nasjonalemblem."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q7209",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q7209.en.1",
+            "type": "anchor",
+            "text": "The Han dynasty ruled China from the Yellow Sea to the edge of Central Asia, and into today's North Korea."
+          },
+          {
+            "id": "Q7209.en.2",
+            "type": "etymology",
+            "text": "The Han Chinese, China's largest ethnic group, take their name from this dynasty."
+          },
+          {
+            "id": "Q7209.en.3",
+            "type": "story",
+            "text": "The Silk Road opened under the Han, when the envoy Zhang Qian traveled west for the emperor."
+          },
+          {
+            "id": "Q7209.en.4",
+            "type": "anchor",
+            "text": "Han China and the Roman Empire existed at the same time, at opposite ends of the Silk Road."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q7209.nb.1",
+            "type": "anchor",
+            "text": "Han-dynastiet styrte Kina fra Gulehavet til kanten av Sentral-Asia, og inn i dagens Nord-Korea."
+          },
+          {
+            "id": "Q7209.nb.2",
+            "type": "etymology",
+            "text": "Hankinesere, Kinas største folkegruppe, har navnet sitt fra dette dynastiet."
+          },
+          {
+            "id": "Q7209.nb.3",
+            "type": "story",
+            "text": "Silkeveien åpnet under Han, da utsendingen Zhang Qian reiste vestover for keiseren."
+          },
+          {
+            "id": "Q7209.nb.4",
+            "type": "anchor",
+            "text": "Han-Kina og Romerriket fantes samtidig, i hver sin ende av Silkeveien."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q7209.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Its capitals were Chang'an, today's Xi'an, and later Luoyang.",
+            "nb": "Hovedstedene var Chang'an, dagens Xi'an, og senere Luoyang."
+          }
+        },
+        {
+          "id": "Q7209.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Paper was invented in China during the Han dynasty.",
+            "nb": "Papiret ble oppfunnet i Kina under Han-dynastiet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q8733",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q8733.en.1",
+            "type": "anchor",
+            "text": "The Qing dynasty ruled China, Mongolia, Taiwan and Tibet, a larger area than China today."
+          },
+          {
+            "id": "Q8733.en.2",
+            "type": "story",
+            "text": "The Qing emperors were Manchus from the northeast who took Beijing and ruled all of China."
+          },
+          {
+            "id": "Q8733.en.3",
+            "type": "story",
+            "text": "Puyi, the last Qing emperor, took the throne as a toddler and ended up working as a gardener in Beijing."
+          },
+          {
+            "id": "Q8733.en.4",
+            "type": "contrast",
+            "text": "Han is an early Chinese dynasty, Qing the last one. Qing ended in the 20th century."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q8733.nb.1",
+            "type": "anchor",
+            "text": "Qing-dynastiet styrte Kina, Mongolia, Taiwan og Tibet, et større område enn dagens Kina."
+          },
+          {
+            "id": "Q8733.nb.2",
+            "type": "story",
+            "text": "Qing-keiserne var mandsjuer fra nordøst som inntok Beijing og overtok hele Kina."
+          },
+          {
+            "id": "Q8733.nb.3",
+            "type": "story",
+            "text": "Puyi, den siste Qing-keiseren, ble keiser som småbarn og endte som gartner i Beijing."
+          },
+          {
+            "id": "Q8733.nb.4",
+            "type": "contrast",
+            "text": "Han er et tidlig kinesisk dynasti, Qing det siste. Qing tok slutt på 1900-tallet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q8733.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Forbidden City in Beijing was the palace of the Qing emperors.",
+            "nb": "Den forbudte by i Beijing var palasset til Qing-keiserne."
+          }
+        },
+        {
+          "id": "Q8733.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Qing dynasty ended when China became a republic.",
+            "nb": "Qing-dynastiet tok slutt da Kina ble republikk."
+          }
+        }
+      ]
+    }
+  ]
+}
