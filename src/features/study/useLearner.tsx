@@ -13,6 +13,7 @@ import {
   type SettingsRow,
 } from "@/db/db";
 import { rebuildCardStates, schedulerFor } from "@/db/reviews";
+import { eventsSince } from "@/engine/reset";
 import type { CardState } from "@/engine/scheduler";
 import type { CardId } from "@/engine/types";
 
@@ -39,7 +40,13 @@ export function LearnerProvider({ children }: { children: ReactNode }) {
   const settings = useLiveQuery(() => db.settings.get(SETTINGS_ROW_ID), []);
   const device = useLiveQuery(() => db.deviceSettings.get(DEVICE_ROW_ID), []);
   const stateRows = useLiveQuery(() => db.cardState.toArray(), []);
-  const events = useLiveQuery(() => db.reviewEvents.toArray(), []);
+  const allEvents = useLiveQuery(() => db.reviewEvents.toArray(), []);
+  // Reviews before a progress reset stay in the log but no longer count.
+  const resetAt = settings?.progressResetAt;
+  const events = useMemo(
+    () => (allEvents ? eventsSince(allEvents, resetAt) : undefined),
+    [allEvents, resetAt],
+  );
   const votes = useLiveQuery(() => db.hookVoteEvents.toArray(), []);
   const [content, setContent] = useState<ContentIndex | null>(null);
   useEffect(() => {

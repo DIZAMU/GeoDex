@@ -223,3 +223,9 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 - **Borders over time:** with no verified year-by-year dataset, the Atlas explorer shows the outlines whose period contains the chosen year, each labelled with its own snapshot year. It is a view, not a quiz.
 - **Ids:** QIDs come from English Wikipedia titles via Wikidata sitelinks. Persia, Burma, Ceylon, Swaziland, Macedonia and Kampuchea are older names of states that still exist (or, for Kampuchea, of two successive regimes), with no Wikidata item of their own; they use `former-<name>` ids and cite the current country's item.
 - **Cards:** a former name starts once its current country is introduced; a dissolved state once half its successors are; an empire once a third of the countries it covers are. "Which of these was part of X?" asks only for dissolved states with at least two successors, and never offers a country that was partly inside (`partly`). "When did X exist?" offers only other empires' periods that do not overlap the answer.
+
+## 038. Reset progress without deleting events
+
+- **Context:** the author asked for a "reset progress" button. Review events are append-only and never deleted, locally or remotely (CLAUDE.md invariant 1), and synced devices would bring deleted events back anyway.
+- **Options:** (a) delete the events and the card cache, against the invariant; (b) store the reset time in the synced settings and replay only the events after it.
+- **Decision:** (b). `progressResetAt` sits in the settings row, so it syncs by last write wins like the rest. Card state is rebuilt from events after that time (invariant 2 still holds: events plus settings), and progress, streak, stats and achievements read the same filtered events. The placement test runs again. Earlier events stay in the log, in exports and on the server.

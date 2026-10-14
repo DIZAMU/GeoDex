@@ -1,7 +1,14 @@
 import Dexie from "dexie";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { createDb, type GeoDexDb, type ReviewEvent } from "./db";
-import { loadCardStates, rebuildCardStates, recordReview, schedulerFor } from "./reviews";
+import {
+  loadCardStates,
+  rebuildCardStates,
+  recordReview,
+  resetProgress,
+  schedulerFor,
+} from "./reviews";
+import { ensureSettings } from "./settings";
 
 let db: GeoDexDb;
 let counter = 0;
@@ -103,5 +110,28 @@ describe("schema v3", () => {
     expect(state?.phase).toBe("review");
     expect((state?.due ?? 0) - T0).toBeGreaterThanOrEqual(2 * 86_400_000);
     await upgraded.delete();
+  });
+});
+
+describe("reset progress", () => {
+  it("keeps every event, replays only the ones after the reset, and reruns placement", async () => {
+    await ensureSettings(db, "en");
+    await db.settings.update("user", { placementCompletedAt: T0 });
+    await recordReview(db, scheduler, review("NOR:map_to_name", T0, 3, "a"));
+    await recordReview(db, scheduler, review("SWE:map_to_name", T0 + 1000, 3, "b"));
+    await resetProgress(db, scheduler, T0 + 5000);
+    expect(await db.reviewEvents.count()).toBe(2);
+    expect((await loadCardStates(db)).size).toBe(0);
+    const settings = await db.settings.get("user");
+    expect(settings?.progressResetAt).toBe(T0 + 5000);
+    expect(settings?.placementCompletedAt).toBeNull();
+
+    await recordReview(db, scheduler, review("NOR:map_to_name", T0 + 9000, 3, "c"));
+    expect([...(await loadCardStates(db)).keys()]).toEqual(["NOR:map_to_name"]);
+    // A full rebuild agrees: only the review after the reset counts.
+    await rebuildCardStates(db, scheduler);
+    const states = await loadCardStates(db);
+    expect(states.size).toBe(1);
+    expect(states.get("NOR:map_to_name")?.reps).toBe(1);
   });
 });
