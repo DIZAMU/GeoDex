@@ -207,3 +207,25 @@
     animation: none;
   }
 }
+
+/* Pin answers: the learner's pin, the city, and the line between them. */
+.world-map .map-point {
+  stroke: var(--background);
+  stroke-width: 2px;
+}
+.world-map .map-point-target {
+  fill: var(--primary);
+  stroke: var(--foreground);
+}
+.world-map .map-point-pin {
+  fill: var(--foreground);
+}
+.world-map .map-pin-line {
+  stroke: var(--foreground);
+  stroke-width: 1.5px;
+  stroke-dasharray: 5 4;
+  pointer-events: none;
+}
+.world-map[data-pin="true"] {
+  cursor: crosshair;
+}
