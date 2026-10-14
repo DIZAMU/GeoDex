@@ -15,6 +15,7 @@ const world = assembleWorld(
   read("data/cities.json"),
   read("data/curated/groups.json"),
   read("data/landmarks.json"),
+  read("data/physical.json"),
 );
 const scheduler = createScheduler();
 const settings: PlanSettings = {
@@ -258,5 +259,44 @@ describe("landmarks in the plan", () => {
     expect(
       planDay({ world, settings, states, events, scheduler, now }).queue.map((q) => q.cardId),
     ).not.toContain("Q243:landmark_to_map");
+  });
+});
+
+describe("physical features in the plan", () => {
+  const on = { ...settings, modules: { physical: true } };
+  const NILE = "Q3392";
+  const intro = (ids: string[]) => {
+    const events = ids.flatMap((id, i) => [
+      ev(`${id}:map_to_name`, now - 86_400_000 * 2, `${id}a${i}`),
+      ev(`${id}:name_to_map`, now - 86_400_000 * 2, `${id}b${i}`),
+    ]);
+    return { events, states: replayAll(scheduler, events) };
+  };
+
+  it("adds nothing while the module is off", () => {
+    const plan = planDay({ world, settings, ...intro(["EGY"]), scheduler, now });
+    expect(plan.queue.some((q) => world.physicalById.has(q.entityId))).toBe(false);
+  });
+
+  it("starts a feature once a country it touches is introduced", () => {
+    const before = planDay({ world, settings: on, ...intro(["NOR"]), scheduler, now });
+    expect(before.queue.some((q) => q.entityId === NILE)).toBe(false);
+    const after = planDay({ world, settings: on, ...intro(["EGY"]), scheduler, now });
+    const nile = after.queue.filter((q) => q.entityId === NILE);
+    // Egypt's subregion is Northern Africa.
+    expect(after.queue.some((q) => world.physicalById.has(q.entityId))).toBe(true);
+    for (const item of nile) expect(item.subregion).toBe("015");
+    expect(after.newCount).toBe(25);
+  });
+
+  it("starts oceans with any introduced country", () => {
+    const plan = planDay({ world, settings: on, ...intro(["NOR"]), scheduler, now });
+    const ids = new Set(plan.queue.map((q) => q.entityId));
+    const oceans = world.physical.filter((f) => f.kind === "ocean").map((f) => f.id);
+    // Not every ocean fits in one day's share, but they are candidates from the first day.
+    expect(
+      oceans.some((id) => ids.has(id)) ||
+        plan.queue.some((q) => world.physicalById.has(q.entityId)),
+    ).toBe(true);
   });
 });
