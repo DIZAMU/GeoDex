@@ -1,0 +1,1244 @@
+{
+  "group": "africa",
+  "entities": [
+    {
+      "entityId": "Q130958",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q130958.en.1",
+            "type": "anchor",
+            "text": "The Great Sphinx lies on the Giza plateau at the edge of Cairo, Egypt, in front of the pyramids."
+          },
+          {
+            "id": "Q130958.en.2",
+            "type": "shape",
+            "text": "The Sphinx is a lion lying down with a pharaoh's head, guarding the pyramids behind it."
+          },
+          {
+            "id": "Q130958.en.3",
+            "type": "contrast",
+            "text": "The Sphinx is a carved lion with a human head; the Great Pyramid behind it is a tomb of stacked stone."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q130958.nb.1",
+            "type": "anchor",
+            "text": "Sfinksen ligger på Giza-platået i utkanten av Kairo i Egypt, foran pyramidene."
+          },
+          {
+            "id": "Q130958.nb.2",
+            "type": "shape",
+            "text": "Sfinksen er en liggende løve med faraohode, som vokter pyramidene bak seg."
+          },
+          {
+            "id": "Q130958.nb.3",
+            "type": "contrast",
+            "text": "Sfinksen er en uthogd løve med menneskehode. Den store pyramiden bak den er en grav av stablet stein."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q130958.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Great Sphinx is at Giza, near Cairo in Egypt.",
+            "nb": "Sfinksen ligger i Giza, ved Kairo i Egypt."
+          }
+        },
+        {
+          "id": "Q130958.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was carved from the limestone bedrock of the Giza plateau.",
+            "nb": "Den ble hugget ut av kalksteinsgrunnen på Giza-platået."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q133423",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q133423.en.1",
+            "type": "anchor",
+            "text": "The Valley of the Kings lies on the west bank of the Nile across from Luxor in southern Egypt."
+          },
+          {
+            "id": "Q133423.en.2",
+            "type": "story",
+            "text": "Pharaohs were buried in hidden rock tombs here, and Tutankhamun's tomb was found almost untouched."
+          },
+          {
+            "id": "Q133423.en.3",
+            "type": "contrast",
+            "text": "The Valley of the Kings is on the Nile's west bank, the side of sunset and the dead; Karnak is on the east bank."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q133423.nb.1",
+            "type": "anchor",
+            "text": "Kongenes dal ligger på vestbredden av Nilen, rett overfor Luxor sør i Egypt."
+          },
+          {
+            "id": "Q133423.nb.2",
+            "type": "story",
+            "text": "Faraoer ble gravlagt i skjulte fjellgraver her, og Tutankhamons grav ble funnet nesten urørt."
+          },
+          {
+            "id": "Q133423.nb.3",
+            "type": "contrast",
+            "text": "Kongenes dal ligger på Nilens vestbredd, solnedgangens og de dødes side. Karnak ligger på østbredden."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q133423.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Valley of the Kings is near Luxor in Egypt.",
+            "nb": "Kongenes dal ligger ved Luxor i Egypt."
+          }
+        },
+        {
+          "id": "Q133423.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The tomb of Tutankhamun was discovered there.",
+            "nb": "Graven til Tutankhamon ble funnet der."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q134140",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q134140.en.1",
+            "type": "anchor",
+            "text": "Abu Simbel stands on the shore of Lake Nasser in far southern Egypt, near the border with Sudan."
+          },
+          {
+            "id": "Q134140.en.2",
+            "type": "story",
+            "text": "Abu Simbel was cut into blocks and moved uphill so the rising water behind the Aswan High Dam would not drown it."
+          },
+          {
+            "id": "Q134140.en.3",
+            "type": "shape",
+            "text": "Abu Simbel is a cliff with four giant seated Ramesses statues, all wearing the same face."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q134140.nb.1",
+            "type": "anchor",
+            "text": "Abu Simbel står ved Nassersjøen helt sør i Egypt, nær grensen mot Sudan."
+          },
+          {
+            "id": "Q134140.nb.2",
+            "type": "story",
+            "text": "Abu Simbel ble skåret i blokker og flyttet høyere opp, så vannet bak Aswan-demningen ikke skulle drukne det."
+          },
+          {
+            "id": "Q134140.nb.3",
+            "type": "shape",
+            "text": "Abu Simbel er en klippe med fire kjempestore sittende Ramses-statuer, alle med samme ansikt."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q134140.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Abu Simbel is in southern Egypt, near the border with Sudan.",
+            "nb": "Abu Simbel ligger sør i Egypt, nær grensen mot Sudan."
+          }
+        },
+        {
+          "id": "Q134140.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its temples were built by the pharaoh Ramesses II.",
+            "nb": "Templene ble bygd av faraoen Ramses II."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q37200",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q37200.en.1",
+            "type": "anchor",
+            "text": "The Great Pyramid stands on the Giza plateau at the western edge of Cairo, Egypt."
+          },
+          {
+            "id": "Q37200.en.2",
+            "type": "story",
+            "text": "The Great Pyramid was built as the tomb of the pharaoh Khufu, called Cheops by the Greeks."
+          },
+          {
+            "id": "Q37200.en.3",
+            "type": "contrast",
+            "text": "The Great Pyramid is the only one of the Seven Wonders of the Ancient World still standing."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q37200.nb.1",
+            "type": "anchor",
+            "text": "Den store pyramiden står på Giza-platået i vestkanten av Kairo i Egypt."
+          },
+          {
+            "id": "Q37200.nb.2",
+            "type": "story",
+            "text": "Den store pyramiden ble bygd som grav for faraoen Khufu, som grekerne kalte Kheops."
+          },
+          {
+            "id": "Q37200.nb.3",
+            "type": "contrast",
+            "text": "Den store pyramiden er det eneste av antikkens sju underverker som fortsatt står."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q37200.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Great Pyramid of Giza is near Cairo, Egypt.",
+            "nb": "Den store pyramiden i Giza ligger ved Kairo i Egypt."
+          }
+        },
+        {
+          "id": "Q37200.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the largest of the three pyramids at Giza.",
+            "nb": "Den er den største av de tre pyramidene i Giza."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q522862",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q522862.en.1",
+            "type": "anchor",
+            "text": "Karnak lies on the east bank of the Nile at Luxor in southern Egypt."
+          },
+          {
+            "id": "Q522862.en.2",
+            "type": "shape",
+            "text": "Karnak's great hall is a stone forest: rows of columns so fat that several people cannot reach around one."
+          },
+          {
+            "id": "Q522862.en.3",
+            "type": "story",
+            "text": "Pharaoh after pharaoh added to Karnak, so the temple grew for about two thousand years."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q522862.nb.1",
+            "type": "anchor",
+            "text": "Karnak ligger på østbredden av Nilen ved Luxor sør i Egypt."
+          },
+          {
+            "id": "Q522862.nb.2",
+            "type": "shape",
+            "text": "Den store salen i Karnak er en skog av stein: rader av søyler så tykke at flere personer ikke rekker rundt én."
+          },
+          {
+            "id": "Q522862.nb.3",
+            "type": "story",
+            "text": "Farao etter farao bygde på Karnak, så tempelet vokste i rundt to tusen år."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q522862.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Karnak is in Luxor, Egypt.",
+            "nb": "Karnak ligger i Luxor i Egypt."
+          }
+        },
+        {
+          "id": "Q522862.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its main temple was dedicated to the god Amun.",
+            "nb": "Hovedtempelet var viet guden Amon."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q642979",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q642979.en.1",
+            "type": "anchor",
+            "text": "Lalibela's churches stand in the highlands of northern Ethiopia, in the Amhara region."
+          },
+          {
+            "id": "Q642979.en.2",
+            "type": "shape",
+            "text": "Lalibela's churches are carved downward into the rock, so you look down into them from the ground."
+          },
+          {
+            "id": "Q642979.en.3",
+            "type": "story",
+            "text": "King Lalibela ordered a New Jerusalem carved out of solid rock so pilgrims would not need to travel to the Holy Land."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q642979.nb.1",
+            "type": "anchor",
+            "text": "Kirkene i Lalibela ligger i høylandet nord i Etiopia, i Amhara-regionen."
+          },
+          {
+            "id": "Q642979.nb.2",
+            "type": "shape",
+            "text": "Kirkene i Lalibela er hugget nedover i fjellet, så du ser ned på dem fra bakken."
+          },
+          {
+            "id": "Q642979.nb.3",
+            "type": "story",
+            "text": "Kong Lalibela lot et nytt Jerusalem hugge ut av fjellet, så pilegrimer slapp å reise til Det hellige land."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q642979.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The rock-hewn churches are in Lalibela, in northern Ethiopia.",
+            "nb": "Fjellkirkene ligger i Lalibela nord i Etiopia."
+          }
+        },
+        {
+          "id": "Q642979.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Each church was carved out of a single block of rock.",
+            "nb": "Hver kirke ble hugget ut av én enkelt fjellblokk."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q172070",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q172070.en.1",
+            "type": "anchor",
+            "text": "Mount Kenya stands in central Kenya, north of Nairobi, almost exactly on the equator."
+          },
+          {
+            "id": "Q172070.en.2",
+            "type": "etymology",
+            "text": "The country of Kenya is named after this mountain."
+          },
+          {
+            "id": "Q172070.en.3",
+            "type": "contrast",
+            "text": "Mount Kenya is in Kenya; Kilimanjaro, the higher mountain, is just across the border in Tanzania."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q172070.nb.1",
+            "type": "anchor",
+            "text": "Mount Kenya ligger midt i Kenya, nord for Nairobi, nesten akkurat på ekvator."
+          },
+          {
+            "id": "Q172070.nb.2",
+            "type": "etymology",
+            "text": "Landet Kenya har fått navnet sitt fra dette fjellet."
+          },
+          {
+            "id": "Q172070.nb.3",
+            "type": "contrast",
+            "text": "Mount Kenya ligger i Kenya. Kilimanjaro, det høyere fjellet, ligger like over grensen i Tanzania."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q172070.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Mount Kenya is in central Kenya.",
+            "nb": "Mount Kenya ligger midt i Kenya."
+          }
+        },
+        {
+          "id": "Q172070.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the highest mountain in Kenya.",
+            "nb": "Det er Kenyas høyeste fjell."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q309436",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q309436.en.1",
+            "type": "anchor",
+            "text": "Aït Benhaddou stands on a hillside in southern Morocco, on the old caravan route from the Sahara to Marrakesh."
+          },
+          {
+            "id": "Q309436.en.2",
+            "type": "shape",
+            "text": "Aït Benhaddou is a hill made of mud-brick castles stacked one above another, the colour of the desert."
+          },
+          {
+            "id": "Q309436.en.3",
+            "type": "story",
+            "text": "Aït Benhaddou has been a film set so often that it has played Jerusalem, Rome and Egypt."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q309436.nb.1",
+            "type": "anchor",
+            "text": "Ait-Ben-Haddou ligger i en åsside sør i Marokko, på den gamle karavaneruten fra Sahara til Marrakech."
+          },
+          {
+            "id": "Q309436.nb.2",
+            "type": "shape",
+            "text": "Ait-Ben-Haddou er en ås av leirborger stablet over hverandre, i samme farge som ørkenen."
+          },
+          {
+            "id": "Q309436.nb.3",
+            "type": "story",
+            "text": "Ait-Ben-Haddou har vært filmkulisse så ofte at stedet har spilt både Jerusalem, Roma og Egypt."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q309436.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Aït Benhaddou is in southern Morocco.",
+            "nb": "Ait-Ben-Haddou ligger sør i Marokko."
+          }
+        },
+        {
+          "id": "Q309436.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is a fortified village built of mud brick.",
+            "nb": "Det er en befestet landsby bygd av soltørket leire."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q41346",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q41346.en.1",
+            "type": "anchor",
+            "text": "The Hassan II Mosque stands on the Atlantic shore of Casablanca, Morocco."
+          },
+          {
+            "id": "Q41346.en.2",
+            "type": "story",
+            "text": "Part of the Hassan II Mosque is built out over the ocean, so the Atlantic washes beneath it."
+          },
+          {
+            "id": "Q41346.en.3",
+            "type": "shape",
+            "text": "The Hassan II Mosque has a minaret like a tiled rocket standing on the edge of the sea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q41346.nb.1",
+            "type": "anchor",
+            "text": "Hassan IIs moské står ved Atlanterhavet i Casablanca i Marokko."
+          },
+          {
+            "id": "Q41346.nb.2",
+            "type": "story",
+            "text": "En del av Hassan IIs moské er bygd ut over havet, så Atlanterhavet skyller under den."
+          },
+          {
+            "id": "Q41346.nb.3",
+            "type": "shape",
+            "text": "Hassan IIs moské har en minaret som en flislagt rakett ytterst ved havkanten."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q41346.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Hassan II Mosque is in Casablanca, Morocco.",
+            "nb": "Hassan IIs moské ligger i Casablanca i Marokko."
+          }
+        },
+        {
+          "id": "Q41346.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its minaret is among the tallest in the world.",
+            "nb": "Minareten er blant de høyeste i verden."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q676778",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q676778.en.1",
+            "type": "anchor",
+            "text": "Chefchaouen lies in the Rif Mountains of northern Morocco, inland from Tangier."
+          },
+          {
+            "id": "Q676778.en.2",
+            "type": "shape",
+            "text": "Chefchaouen is a town dipped in blue paint, walls, steps and doors alike."
+          },
+          {
+            "id": "Q676778.en.3",
+            "type": "contrast",
+            "text": "Chefchaouen is the blue town in Morocco's north; Marrakesh, far south, is the red one."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q676778.nb.1",
+            "type": "anchor",
+            "text": "Chefchaouen ligger i Rif-fjellene nord i Marokko, inne i landet fra Tanger."
+          },
+          {
+            "id": "Q676778.nb.2",
+            "type": "shape",
+            "text": "Chefchaouen er en by dyppet i blå maling, vegger, trapper og dører."
+          },
+          {
+            "id": "Q676778.nb.3",
+            "type": "contrast",
+            "text": "Chefchaouen er den blå byen nord i Marokko. Marrakech, langt sør, er den røde."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q676778.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Chefchaouen is in the Rif Mountains of northern Morocco.",
+            "nb": "Chefchaouen ligger i Rif-fjellene nord i Marokko."
+          }
+        },
+        {
+          "id": "Q676778.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The old town is known for its walls painted in shades of blue.",
+            "nb": "Gamlebyen er kjent for veggene som er malt i blåtoner."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q788084",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q788084.en.1",
+            "type": "anchor",
+            "text": "The Avenue of the Baobabs lines a dirt road near Morondava, on the west coast of Madagascar."
+          },
+          {
+            "id": "Q788084.en.2",
+            "type": "shape",
+            "text": "Baobabs look like trees planted upside down, with their roots waving in the air."
+          },
+          {
+            "id": "Q788084.en.3",
+            "type": "contrast",
+            "text": "Most baobab species grow only on Madagascar; the African mainland has mainly the common baobab."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q788084.nb.1",
+            "type": "anchor",
+            "text": "Avenue of the Baobabs står langs en grusvei ved Morondava, på vestkysten av Madagaskar."
+          },
+          {
+            "id": "Q788084.nb.2",
+            "type": "shape",
+            "text": "Baobabtrær ser ut som de er plantet opp ned, med røttene i været."
+          },
+          {
+            "id": "Q788084.nb.3",
+            "type": "contrast",
+            "text": "De fleste baobabartene vokser bare på Madagaskar. Fastlandet i Afrika har stort sett den vanlige baobaben."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q788084.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Avenue of the Baobabs is near Morondava, in western Madagascar.",
+            "nb": "Avenue of the Baobabs ligger ved Morondava vest på Madagaskar."
+          }
+        },
+        {
+          "id": "Q788084.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The trees are Grandidier's baobabs, a species found only in Madagascar.",
+            "nb": "Trærne er grandidierbaobab, en art som bare finnes på Madagaskar."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q683632",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q683632.en.1",
+            "type": "anchor",
+            "text": "The Great Mosque of Djenné stands in the town of Djenné in central Mali, in the inland delta of the Niger."
+          },
+          {
+            "id": "Q683632.en.2",
+            "type": "shape",
+            "text": "The Great Mosque of Djenné is a mud-brick castle bristling with wooden spikes like a giant pincushion."
+          },
+          {
+            "id": "Q683632.en.3",
+            "type": "story",
+            "text": "Every year the people of Djenné replaster their mosque with fresh mud in a town-wide festival."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q683632.nb.1",
+            "type": "anchor",
+            "text": "Den store moskeen i Djenné står i byen Djenné midt i Mali, i innlandsdeltaet til Niger-elven."
+          },
+          {
+            "id": "Q683632.nb.2",
+            "type": "shape",
+            "text": "Moskeen i Djenné er en borg av leire full av trepinner som stikker ut, som en kjempestor nålepute."
+          },
+          {
+            "id": "Q683632.nb.3",
+            "type": "story",
+            "text": "Hvert år pusser folket i Djenné moskeen med ny leire under en fest der hele byen deltar."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q683632.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Great Mosque of Djenné is in Mali.",
+            "nb": "Den store moskeen i Djenné ligger i Mali."
+          }
+        },
+        {
+          "id": "Q683632.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the largest mud-brick building in the world.",
+            "nb": "Det er verdens største bygning av soltørket leire."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1932730",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1932730.en.1",
+            "type": "anchor",
+            "text": "Sossusvlei lies in the Namib Desert in southwest Namibia, inland from the Atlantic coast."
+          },
+          {
+            "id": "Q1932730.en.2",
+            "type": "shape",
+            "text": "Sossusvlei is a sea of red dunes so high they look like orange mountains with knife-edge ridges."
+          },
+          {
+            "id": "Q1932730.en.3",
+            "type": "contrast",
+            "text": "Sossusvlei's dunes are in the Namib, on Africa's southwest coast, not in the Sahara."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1932730.nb.1",
+            "type": "anchor",
+            "text": "Sossusvlei ligger i Namibørkenen sørvest i Namibia, inne i landet fra Atlanterhavskysten."
+          },
+          {
+            "id": "Q1932730.nb.2",
+            "type": "shape",
+            "text": "Sossusvlei er et hav av røde sanddyner så høye at de ligner oransje fjell med knivskarpe rygger."
+          },
+          {
+            "id": "Q1932730.nb.3",
+            "type": "contrast",
+            "text": "Sanddynene i Sossusvlei ligger i Namib, på Afrikas sørvestkyst, ikke i Sahara."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1932730.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Sossusvlei is in the Namib Desert in Namibia.",
+            "nb": "Sossusvlei ligger i Namibørkenen i Namibia."
+          }
+        },
+        {
+          "id": "Q1932730.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is a salt and clay pan surrounded by high red dunes.",
+            "nb": "Det er en salt- og leirpanne omgitt av høye røde sanddyner."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q244347",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q244347.en.1",
+            "type": "anchor",
+            "text": "Gorée is a small island off Dakar, the capital of Senegal, at Africa's westernmost point."
+          },
+          {
+            "id": "Q244347.en.2",
+            "type": "story",
+            "text": "Gorée is a memorial to the Atlantic slave trade, and its House of Slaves is visited by heads of state."
+          },
+          {
+            "id": "Q244347.en.3",
+            "type": "contrast",
+            "text": "Gorée is the island just off Dakar; Senegal's long coast lies on the Atlantic, not the Mediterranean."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q244347.nb.1",
+            "type": "anchor",
+            "text": "Gorée er en liten øy utenfor Dakar, hovedstaden i Senegal, ved Afrikas vestligste punkt."
+          },
+          {
+            "id": "Q244347.nb.2",
+            "type": "story",
+            "text": "Gorée er et minnested for den atlantiske slavehandelen, og Slavehuset der besøkes av statsledere."
+          },
+          {
+            "id": "Q244347.nb.3",
+            "type": "contrast",
+            "text": "Gorée er øya like utenfor Dakar. Senegals lange kyst ligger mot Atlanterhavet, ikke Middelhavet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q244347.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Gorée is an island off Dakar, Senegal.",
+            "nb": "Gorée er en øy utenfor Dakar i Senegal."
+          }
+        },
+        {
+          "id": "Q244347.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is a World Heritage Site and a memorial to the Atlantic slave trade.",
+            "nb": "Øya står på verdensarvlisten og er et minnested for den atlantiske slavehandelen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q6343",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q6343.en.1",
+            "type": "anchor",
+            "text": "Carthage lies on the coast just northeast of Tunis, the capital of Tunisia."
+          },
+          {
+            "id": "Q6343.en.2",
+            "type": "story",
+            "text": "Carthage fought Rome in the Punic Wars, and Hannibal marched his elephants over the Alps from it."
+          },
+          {
+            "id": "Q6343.en.3",
+            "type": "etymology",
+            "text": "Carthage comes from the Phoenician for new city."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q6343.nb.1",
+            "type": "anchor",
+            "text": "Kartago ligger ved kysten like nordøst for Tunis, hovedstaden i Tunisia."
+          },
+          {
+            "id": "Q6343.nb.2",
+            "type": "story",
+            "text": "Kartago kjempet mot Roma i puniske kriger, og Hannibal tok elefantene sine over Alpene derfra."
+          },
+          {
+            "id": "Q6343.nb.3",
+            "type": "etymology",
+            "text": "Kartago kommer av det fønikiske ordet for ny by."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q6343.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Carthage is near Tunis, in Tunisia.",
+            "nb": "Kartago ligger ved Tunis i Tunisia."
+          }
+        },
+        {
+          "id": "Q6343.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was founded by Phoenicians from the city of Tyre.",
+            "nb": "Byen ble grunnlagt av fønikere fra byen Tyros."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q11812902",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q11812902.en.1",
+            "type": "anchor",
+            "text": "The Serengeti lies in northern Tanzania, east of Lake Victoria and next to Kenya's Masai Mara."
+          },
+          {
+            "id": "Q11812902.en.2",
+            "type": "story",
+            "text": "Every year more than a million wildebeest walk a great circle between the Serengeti and Kenya's Masai Mara."
+          },
+          {
+            "id": "Q11812902.en.3",
+            "type": "etymology",
+            "text": "Serengeti comes from the Maasai word for endless plains."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q11812902.nb.1",
+            "type": "anchor",
+            "text": "Serengeti ligger nord i Tanzania, øst for Victoriasjøen og inntil Masai Mara i Kenya."
+          },
+          {
+            "id": "Q11812902.nb.2",
+            "type": "story",
+            "text": "Hvert år vandrer mer enn en million gnuer i en stor ring mellom Serengeti og Masai Mara i Kenya."
+          },
+          {
+            "id": "Q11812902.nb.3",
+            "type": "etymology",
+            "text": "Serengeti kommer av maasai-ordet for endeløse sletter."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q11812902.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Serengeti National Park is in northern Tanzania.",
+            "nb": "Serengeti nasjonalpark ligger nord i Tanzania."
+          }
+        },
+        {
+          "id": "Q11812902.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is known for the yearly migration of wildebeest and zebras.",
+            "nb": "Den er kjent for den årlige vandringen av gnuer og sebraer."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1217726",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1217726.en.1",
+            "type": "anchor",
+            "text": "Ngorongoro lies in northern Tanzania, between the Serengeti and Arusha."
+          },
+          {
+            "id": "Q1217726.en.2",
+            "type": "shape",
+            "text": "The Ngorongoro Crater is a giant bowl with walls all around and lions, rhinos and zebras living on its floor."
+          },
+          {
+            "id": "Q1217726.en.3",
+            "type": "contrast",
+            "text": "Ngorongoro is a crater, a collapsed volcano; the Serengeti next door is open, flat plain."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1217726.nb.1",
+            "type": "anchor",
+            "text": "Ngorongoro ligger nord i Tanzania, mellom Serengeti og Arusha."
+          },
+          {
+            "id": "Q1217726.nb.2",
+            "type": "shape",
+            "text": "Ngorongoro-krateret er en kjempestor bolle med vegger rundt og løver, neshorn og sebraer på bunnen."
+          },
+          {
+            "id": "Q1217726.nb.3",
+            "type": "contrast",
+            "text": "Ngorongoro er et krater, en kollapset vulkan. Serengeti ved siden av er åpen, flat slette."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1217726.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Ngorongoro Conservation Area is in northern Tanzania.",
+            "nb": "Ngorongoro naturvernområde ligger nord i Tanzania."
+          }
+        },
+        {
+          "id": "Q1217726.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its centrepiece is a large volcanic caldera, the Ngorongoro Crater.",
+            "nb": "Hovedattraksjonen er en stor vulkansk kaldera, Ngorongoro-krateret."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q7296",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q7296.en.1",
+            "type": "anchor",
+            "text": "Kilimanjaro rises in northeast Tanzania, a few hours' drive south of the border with Kenya."
+          },
+          {
+            "id": "Q7296.en.2",
+            "type": "shape",
+            "text": "Kilimanjaro is a flat-topped volcano wearing a thin cap of ice, standing alone above the savanna."
+          },
+          {
+            "id": "Q7296.en.3",
+            "type": "contrast",
+            "text": "Kilimanjaro is a single free-standing volcano, not part of a mountain range."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q7296.nb.1",
+            "type": "anchor",
+            "text": "Kilimanjaro reiser seg nordøst i Tanzania, like sør for grensen mot Kenya."
+          },
+          {
+            "id": "Q7296.nb.2",
+            "type": "shape",
+            "text": "Kilimanjaro er en vulkan med flat topp og en tynn islue, som står alene over savannen."
+          },
+          {
+            "id": "Q7296.nb.3",
+            "type": "contrast",
+            "text": "Kilimanjaro er en frittstående vulkan, ikke en del av en fjellkjede."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q7296.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Mount Kilimanjaro is in Tanzania.",
+            "nb": "Kilimanjaro ligger i Tanzania."
+          }
+        },
+        {
+          "id": "Q7296.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the highest mountain in Africa.",
+            "nb": "Det er Afrikas høyeste fjell."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q192493",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q192493.en.1",
+            "type": "anchor",
+            "text": "Robben Island lies in Table Bay, off Cape Town in South Africa."
+          },
+          {
+            "id": "Q192493.en.2",
+            "type": "story",
+            "text": "Nelson Mandela spent most of his years in prison on Robben Island before he became president."
+          },
+          {
+            "id": "Q192493.en.3",
+            "type": "contrast",
+            "text": "Robben Island is the island out in the bay; Table Mountain is the flat-topped mountain behind Cape Town."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q192493.nb.1",
+            "type": "anchor",
+            "text": "Robben Island ligger i Table Bay, utenfor Cape Town i Sør-Afrika."
+          },
+          {
+            "id": "Q192493.nb.2",
+            "type": "story",
+            "text": "Nelson Mandela satt mesteparten av fengselsårene sine på Robben Island før han ble president."
+          },
+          {
+            "id": "Q192493.nb.3",
+            "type": "contrast",
+            "text": "Robben Island er øya ute i bukta. Taffelberget er det flate fjellet bak Cape Town."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q192493.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Robben Island is off Cape Town, South Africa.",
+            "nb": "Robben Island ligger utenfor Cape Town i Sør-Afrika."
+          }
+        },
+        {
+          "id": "Q192493.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is now a museum and a World Heritage Site.",
+            "nb": "Øya er nå et museum og står på verdensarvlisten."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q213360",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q213360.en.1",
+            "type": "anchor",
+            "text": "Table Mountain rises directly behind Cape Town, near the southwest tip of South Africa."
+          },
+          {
+            "id": "Q213360.en.2",
+            "type": "shape",
+            "text": "Table Mountain is a flat-topped mountain, and clouds spill over it like a tablecloth."
+          },
+          {
+            "id": "Q213360.en.3",
+            "type": "etymology",
+            "text": "Table Mountain is named for its flat top, as long as a table set for a giant's feast."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q213360.nb.1",
+            "type": "anchor",
+            "text": "Taffelberget reiser seg rett bak Cape Town, nær sørvestspissen av Sør-Afrika."
+          },
+          {
+            "id": "Q213360.nb.2",
+            "type": "shape",
+            "text": "Taffelberget har flat topp, og skyene velter over det som en duk på et bord."
+          },
+          {
+            "id": "Q213360.nb.3",
+            "type": "etymology",
+            "text": "Taffelberget har navn etter den flate toppen. Taffel er et gammelt ord for et dekket bord."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q213360.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Table Mountain is in Cape Town, South Africa.",
+            "nb": "Taffelberget ligger i Cape Town i Sør-Afrika."
+          }
+        },
+        {
+          "id": "Q213360.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The cloud that often covers its top is called the tablecloth.",
+            "nb": "Skyen som ofte dekker toppen, kalles duken."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q209217",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q209217.en.1",
+            "type": "anchor",
+            "text": "Great Zimbabwe lies in the southeast of Zimbabwe, near the town of Masvingo."
+          },
+          {
+            "id": "Q209217.en.2",
+            "type": "etymology",
+            "text": "Zimbabwe, the country, is named after these ruins: the word means stone houses in Shona."
+          },
+          {
+            "id": "Q209217.en.3",
+            "type": "shape",
+            "text": "Great Zimbabwe's Great Enclosure is a curving granite wall built without any mortar."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q209217.nb.1",
+            "type": "anchor",
+            "text": "Store Zimbabwe ligger sørøst i Zimbabwe, nær byen Masvingo."
+          },
+          {
+            "id": "Q209217.nb.2",
+            "type": "etymology",
+            "text": "Landet Zimbabwe har fått navnet sitt fra disse ruinene: ordet betyr steinhus på shona."
+          },
+          {
+            "id": "Q209217.nb.3",
+            "type": "shape",
+            "text": "Den store innhegningen i Store Zimbabwe er en buet mur av granitt bygd helt uten mørtel."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q209217.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Great Zimbabwe is in southeastern Zimbabwe.",
+            "nb": "Store Zimbabwe ligger sørøst i Zimbabwe."
+          }
+        },
+        {
+          "id": "Q209217.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was the capital of a medieval kingdom of the Shona people.",
+            "nb": "Det var hovedstaden i et middelalderrike til shonafolket."
+          }
+        }
+      ]
+    }
+  ]
+}
