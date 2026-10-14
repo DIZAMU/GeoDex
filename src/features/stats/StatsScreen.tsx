@@ -12,6 +12,7 @@ import {
   CITY_CARD_TYPES,
   cardId,
   LANDMARK_CARD_TYPES,
+  PHYSICAL_CARD_TYPES,
   parseCardId,
 } from "@/engine/types";
 import { isLocale, type Locale } from "@/i18n/locales";
@@ -72,6 +73,15 @@ function Stats({ learner }: { learner: Learner }) {
       grid: skillGrid(countries, learner.states),
       cityGrid: moduleGrid(learner, countries, learner.world.cities, CITY_CARD_TYPES),
       landmarkGrid: moduleGrid(learner, countries, learner.world.landmarks, LANDMARK_CARD_TYPES),
+      // A physical feature counts on the continent of the first country it touches.
+      physicalGrid: moduleGrid(
+        learner,
+        countries,
+        learner.world.physical.flatMap((f) =>
+          f.countries[0] ? [{ id: f.id, countryId: f.countries[0] }] : [],
+        ),
+        PHYSICAL_CARD_TYPES,
+      ),
       retention: retention(learner.events, now, dsh),
       forecast: forecast(states, now, dsh),
       activity: activity(learner.events, now, dsh),
@@ -134,6 +144,9 @@ function Stats({ learner }: { learner: Learner }) {
                     : []),
                   ...(learner.settings.modules.landmarks
                     ? [{ key: "landmarks", label: t("stats.landmarks"), row: data.landmarkGrid }]
+                    : []),
+                  ...(learner.settings.modules.physical
+                    ? [{ key: "physical", label: t("stats.physical"), row: data.physicalGrid }]
                     : []),
                 ].map(({ key, label, row }) => (
                   <tr key={key}>

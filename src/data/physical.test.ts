@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { readFileSync } from "node:fs";
-import { geoContains, geoDistance } from "d3-geo";
+import { geoArea, geoContains, geoDistance } from "d3-geo";
 import type { Feature, Geometry } from "geojson";
 import { describe, expect, it } from "vitest";
 import type { CountriesFile, PhysicalFile } from "./types";
@@ -41,6 +41,14 @@ describe("physical features (PLAN.md Phase 8)", () => {
       expect(f.names.nb.length, f.id).toBeGreaterThan(1);
       for (const c of f.countries) expect(countryIds.has(c), `${f.id} ${c}`).toBe(true);
       if (f.kind !== "ocean") expect(f.countries.length, f.id).toBeGreaterThan(0);
+    }
+  });
+
+  it("wind every polygon so d3 fills the feature, not the rest of the globe", () => {
+    for (const f of features) {
+      if (f.geometry.type !== "MultiPolygon") continue;
+      for (const part of f.geometry.coordinates)
+        expect(geoArea({ type: "Polygon", coordinates: part }), f.id).toBeLessThan(2 * Math.PI);
     }
   });
 
