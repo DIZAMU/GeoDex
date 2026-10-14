@@ -147,10 +147,15 @@ function Atlas({ learner }: { learner: Learner }) {
           </div>
         )}
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <div className="flex flex-col gap-1">
-            <p className="sr-only">{t("atlas.legend")}</p>
-            <LevelLegend />
-          </div>
+          {/* The mastery legend describes the mastery maps, not the timeline. */}
+          {time ? (
+            <span />
+          ) : (
+            <div className="flex flex-col gap-1">
+              <p className="sr-only">{t("atlas.legend")}</p>
+              <LevelLegend />
+            </div>
+          )}
           <ToggleGroup
             type="single"
             variant="outline"
