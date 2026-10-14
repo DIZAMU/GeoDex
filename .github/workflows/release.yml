@@ -1,0 +1,31 @@
+name: Release
+
+# Pushing a phase-* tag publishes a GitHub Release. The notes come from
+# releases/<tag>.md at the tagged commit; without that file, GitHub generates them.
+on:
+  push:
+    tags: ["phase-*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Publish release
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          notes="releases/${TAG}.md"
+          title="$(head -n 1 "$notes" 2>/dev/null | sed 's/^# //')"
+          if [ -f "$notes" ]; then
+            tail -n +3 "$notes" > body.md
+            gh release create "$TAG" --title "${title:-$TAG}" --notes-file body.md --verify-tag
+          else
+            gh release create "$TAG" --title "$TAG" --generate-notes --verify-tag
+          fi
