@@ -1,0 +1,767 @@
+{
+  "_comment": "Groups of countries (cards group_to_map, map_to_group, group_member). Ids are Wikidata QIDs. members: the countries every common definition includes; sometimes: countries some definitions include, never asked and never used as wrong answers. Organization members are current as of 2026-10 (checked against Wikidata P463; Wikidata holds Denmark's NATO membership on the Kingdom of Denmark item). un_subregion groups take their members from the UN M49 subregion in data/countries.json.",
+  "groups": [
+    {
+      "id": "Q21195",
+      "kind": "region",
+      "names": {
+        "en": "Scandinavia",
+        "nb": "Skandinavia"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "phrase": {
+        "en": "in Scandinavia",
+        "nb": "i Skandinavia"
+      },
+      "members": ["DNK", "NOR", "SWE"],
+      "sometimes": ["FIN", "ISL"]
+    },
+    {
+      "id": "Q52062",
+      "kind": "region",
+      "names": {
+        "en": "Nordic countries",
+        "nb": "Norden"
+      },
+      "aliases": {
+        "en": ["Nordics", "the Nordics", "Norden"],
+        "nb": ["Nordiske land", "De nordiske landene", "Nordens land"]
+      },
+      "phrase": {
+        "en": "one of the Nordic countries",
+        "nb": "i Norden"
+      },
+      "members": ["DNK", "FIN", "ISL", "NOR", "SWE"],
+      "sometimes": []
+    },
+    {
+      "id": "Q39731",
+      "kind": "region",
+      "names": {
+        "en": "Baltic states",
+        "nb": "Baltikum"
+      },
+      "aliases": {
+        "en": ["Baltics", "the Baltics", "Baltic countries"],
+        "nb": ["De baltiske statene", "Baltiske stater", "Baltiske land"]
+      },
+      "phrase": {
+        "en": "one of the Baltic states",
+        "nb": "i Baltikum"
+      },
+      "members": ["EST", "LTU", "LVA"],
+      "sometimes": []
+    },
+    {
+      "id": "Q13116",
+      "kind": "organization",
+      "names": {
+        "en": "Benelux",
+        "nb": "Benelux"
+      },
+      "aliases": {
+        "en": ["Benelux countries", "Low Countries"],
+        "nb": ["Beneluxlandene", "Benelux-landene"]
+      },
+      "phrase": {
+        "en": "one of the Benelux countries",
+        "nb": "et Benelux-land"
+      },
+      "members": ["BEL", "LUX", "NLD"],
+      "sometimes": []
+    },
+    {
+      "id": "Q12837",
+      "kind": "region",
+      "names": {
+        "en": "Iberian Peninsula",
+        "nb": "Den iberiske halvøy"
+      },
+      "aliases": {
+        "en": ["Iberia"],
+        "nb": ["Iberia", "Pyreneerhalvøya", "Iberiske halvøy"]
+      },
+      "phrase": {
+        "en": "on the Iberian Peninsula",
+        "nb": "på Den iberiske halvøy"
+      },
+      "members": ["AND", "ESP", "PRT"],
+      "sometimes": []
+    },
+    {
+      "id": "Q23522",
+      "kind": "region",
+      "names": {
+        "en": "Balkans",
+        "nb": "Balkan"
+      },
+      "aliases": {
+        "en": ["the Balkans", "Balkan Peninsula"],
+        "nb": ["Balkanhalvøya"]
+      },
+      "phrase": {
+        "en": "in the Balkans",
+        "nb": "på Balkan"
+      },
+      "members": ["ALB", "BGR", "BIH", "MKD", "MNE", "SRB", "XKX"],
+      "sometimes": ["GRC", "HRV", "ROU", "SVN", "TUR"]
+    },
+    {
+      "id": "Q200173",
+      "kind": "region",
+      "names": {
+        "en": "South Caucasus",
+        "nb": "Sør-Kaukasus"
+      },
+      "aliases": {
+        "en": ["Transcaucasia", "Caucasus"],
+        "nb": ["Transkaukasia", "Kaukasus"]
+      },
+      "phrase": {
+        "en": "in the South Caucasus",
+        "nb": "i Sør-Kaukasus"
+      },
+      "members": ["ARM", "AZE", "GEO"],
+      "sometimes": []
+    },
+    {
+      "id": "Q7204",
+      "kind": "region",
+      "names": {
+        "en": "Middle East",
+        "nb": "Midtøsten"
+      },
+      "aliases": {
+        "en": ["the Middle East", "Mideast"],
+        "nb": ["Det nære østen", "Nære Østen"]
+      },
+      "phrase": {
+        "en": "in the Middle East",
+        "nb": "i Midtøsten"
+      },
+      "members": [
+        "ARE",
+        "BHR",
+        "EGY",
+        "IRN",
+        "IRQ",
+        "ISR",
+        "JOR",
+        "KWT",
+        "LBN",
+        "OMN",
+        "PSE",
+        "QAT",
+        "SAU",
+        "SYR",
+        "TUR",
+        "YEM"
+      ],
+      "sometimes": ["AFG", "CYP", "LBY", "SDN"]
+    },
+    {
+      "id": "Q81483",
+      "kind": "region",
+      "names": {
+        "en": "Levant",
+        "nb": "Levanten"
+      },
+      "aliases": {
+        "en": ["the Levant"],
+        "nb": ["Levant"]
+      },
+      "phrase": {
+        "en": "in the Levant",
+        "nb": "i Levanten"
+      },
+      "members": ["ISR", "JOR", "LBN", "PSE", "SYR"],
+      "sometimes": ["CYP", "EGY", "IRQ", "TUR"]
+    },
+    {
+      "id": "Q28227",
+      "kind": "region",
+      "names": {
+        "en": "Maghreb",
+        "nb": "Maghreb"
+      },
+      "aliases": {
+        "en": ["the Maghreb"],
+        "nb": []
+      },
+      "phrase": {
+        "en": "in the Maghreb",
+        "nb": "i Maghreb"
+      },
+      "members": ["DZA", "MAR", "TUN"],
+      "sometimes": ["LBY", "MRT"]
+    },
+    {
+      "id": "Q40556",
+      "kind": "region",
+      "names": {
+        "en": "Horn of Africa",
+        "nb": "Afrikas horn"
+      },
+      "aliases": {
+        "en": ["the Horn of Africa"],
+        "nb": []
+      },
+      "phrase": {
+        "en": "on the Horn of Africa",
+        "nb": "på Afrikas horn"
+      },
+      "members": ["DJI", "ERI", "ETH", "SOM"],
+      "sometimes": []
+    },
+    {
+      "id": "Q31945",
+      "kind": "region",
+      "names": {
+        "en": "Arabian Peninsula",
+        "nb": "Den arabiske halvøy"
+      },
+      "aliases": {
+        "en": ["Arabia"],
+        "nb": ["Arabia", "Arabiske halvøy"]
+      },
+      "phrase": {
+        "en": "on the Arabian Peninsula",
+        "nb": "på Den arabiske halvøy"
+      },
+      "members": ["ARE", "BHR", "KWT", "OMN", "QAT", "SAU", "YEM"],
+      "sometimes": ["IRQ", "JOR"]
+    },
+    {
+      "id": "Q2218629",
+      "kind": "region",
+      "names": {
+        "en": "Arab Gulf states",
+        "nb": "Gulfstatene"
+      },
+      "aliases": {
+        "en": ["Gulf states", "GCC", "Gulf Cooperation Council"],
+        "nb": ["De arabiske gulfstatene", "Gulfstater", "GCC"]
+      },
+      "phrase": {
+        "en": "one of the Arab Gulf states",
+        "nb": "en av gulfstatene"
+      },
+      "members": ["ARE", "BHR", "KWT", "OMN", "QAT", "SAU"],
+      "sometimes": []
+    },
+    {
+      "id": "Q60140",
+      "kind": "region",
+      "names": {
+        "en": "Indian subcontinent",
+        "nb": "Det indiske subkontinent"
+      },
+      "aliases": {
+        "en": [],
+        "nb": ["Indiske subkontinent"]
+      },
+      "phrase": {
+        "en": "on the Indian subcontinent",
+        "nb": "på Det indiske subkontinent"
+      },
+      "members": ["BGD", "BTN", "IND", "LKA", "NPL", "PAK"],
+      "sometimes": ["MDV"]
+    },
+    {
+      "id": "Q43467",
+      "kind": "region",
+      "names": {
+        "en": "Indochina",
+        "nb": "Indokina"
+      },
+      "aliases": {
+        "en": ["Mainland Southeast Asia", "Indochinese Peninsula"],
+        "nb": ["Indokinahalvøya"]
+      },
+      "phrase": {
+        "en": "in Indochina",
+        "nb": "i Indokina"
+      },
+      "members": ["KHM", "LAO", "MMR", "THA", "VNM"],
+      "sometimes": ["MYS"]
+    },
+    {
+      "id": "Q483134",
+      "kind": "region",
+      "names": {
+        "en": "Korean Peninsula",
+        "nb": "Koreahalvøya"
+      },
+      "aliases": {
+        "en": ["Korea"],
+        "nb": ["Korea"]
+      },
+      "phrase": {
+        "en": "on the Korean Peninsula",
+        "nb": "på Koreahalvøya"
+      },
+      "members": ["KOR", "PRK"],
+      "sometimes": []
+    },
+    {
+      "id": "Q27611",
+      "kind": "region",
+      "names": {
+        "en": "Central America",
+        "nb": "Mellom-Amerika"
+      },
+      "aliases": {
+        "en": [],
+        "nb": ["Sentral-Amerika"]
+      },
+      "phrase": {
+        "en": "in Central America",
+        "nb": "i Mellom-Amerika"
+      },
+      "members": ["BLZ", "CRI", "GTM", "HND", "NIC", "PAN", "SLV"],
+      "sometimes": ["MEX"]
+    },
+    {
+      "id": "Q244323",
+      "kind": "organization",
+      "names": {
+        "en": "Visegrád Group",
+        "nb": "Visegrádgruppen"
+      },
+      "aliases": {
+        "en": ["Visegrad Group", "V4", "Visegrád Four"],
+        "nb": ["Visegradgruppen", "V4"]
+      },
+      "phrase": {
+        "en": "a member of the Visegrád Group",
+        "nb": "medlem av Visegrádgruppen"
+      },
+      "members": ["CZE", "HUN", "POL", "SVK"],
+      "sometimes": []
+    },
+    {
+      "id": "Q1764511",
+      "kind": "organization",
+      "names": {
+        "en": "G7",
+        "nb": "G7"
+      },
+      "aliases": {
+        "en": ["Group of Seven"],
+        "nb": []
+      },
+      "phrase": {
+        "en": "a member of the G7",
+        "nb": "medlem av G7"
+      },
+      "members": ["CAN", "DEU", "FRA", "GBR", "ITA", "JPN", "USA"],
+      "sometimes": []
+    },
+    {
+      "id": "Q458",
+      "kind": "organization",
+      "names": {
+        "en": "European Union",
+        "nb": "EU"
+      },
+      "aliases": {
+        "en": ["EU"],
+        "nb": ["Den europeiske union", "Europeiske union"]
+      },
+      "phrase": {
+        "en": "a member of the EU",
+        "nb": "medlem av EU"
+      },
+      "members": [
+        "AUT",
+        "BEL",
+        "BGR",
+        "CYP",
+        "CZE",
+        "DEU",
+        "DNK",
+        "ESP",
+        "EST",
+        "FIN",
+        "FRA",
+        "GRC",
+        "HRV",
+        "HUN",
+        "IRL",
+        "ITA",
+        "LTU",
+        "LUX",
+        "LVA",
+        "MLT",
+        "NLD",
+        "POL",
+        "PRT",
+        "ROU",
+        "SVK",
+        "SVN",
+        "SWE"
+      ],
+      "sometimes": []
+    },
+    {
+      "id": "Q7184",
+      "kind": "organization",
+      "names": {
+        "en": "NATO",
+        "nb": "NATO"
+      },
+      "aliases": {
+        "en": ["North Atlantic Treaty Organization"],
+        "nb": ["Atlanterhavspakten", "Nato"]
+      },
+      "phrase": {
+        "en": "a member of NATO",
+        "nb": "medlem av NATO"
+      },
+      "members": [
+        "ALB",
+        "BEL",
+        "BGR",
+        "CAN",
+        "CZE",
+        "DEU",
+        "DNK",
+        "ESP",
+        "EST",
+        "FIN",
+        "FRA",
+        "GBR",
+        "GRC",
+        "HRV",
+        "HUN",
+        "ISL",
+        "ITA",
+        "LTU",
+        "LUX",
+        "LVA",
+        "MKD",
+        "MNE",
+        "NLD",
+        "NOR",
+        "POL",
+        "PRT",
+        "ROU",
+        "SVK",
+        "SVN",
+        "SWE",
+        "TUR",
+        "USA"
+      ],
+      "sometimes": []
+    },
+    {
+      "id": "Q4412",
+      "kind": "un_subregion",
+      "names": {
+        "en": "Western Africa",
+        "nb": "Vest-Afrika"
+      },
+      "aliases": {
+        "en": ["West Africa"],
+        "nb": []
+      },
+      "phrase": {
+        "en": "in Western Africa",
+        "nb": "i Vest-Afrika"
+      },
+      "m49": "011"
+    },
+    {
+      "id": "Q27407",
+      "kind": "un_subregion",
+      "names": {
+        "en": "Eastern Africa",
+        "nb": "Øst-Afrika"
+      },
+      "aliases": {
+        "en": ["East Africa"],
+        "nb": []
+      },
+      "phrase": {
+        "en": "in Eastern Africa",
+        "nb": "i Øst-Afrika"
+      },
+      "m49": "014"
+    },
+    {
+      "id": "Q27381",
+      "kind": "un_subregion",
+      "names": {
+        "en": "Northern Africa",
+        "nb": "Nord-Afrika"
+      },
+      "aliases": {
+        "en": ["North Africa"],
+        "nb": []
+      },
+      "phrase": {
+        "en": "in Northern Africa",
+        "nb": "i Nord-Afrika"
+      },
+      "m49": "015"
+    },
+    {
+      "id": "Q27433",
+      "kind": "un_subregion",
+      "names": {
+        "en": "Middle Africa",
+        "nb": "Sentral-Afrika"
+      },
+      "aliases": {
+        "en": ["Central Africa"],
+        "nb": []
+      },
+      "phrase": {
+        "en": "in Middle Africa",
+        "nb": "i Sentral-Afrika"
+      },
+      "m49": "017"
+    },
+    {
+      "id": "Q27394",
+      "kind": "un_subregion",
+      "names": {
+        "en": "Southern Africa",
+        "nb": "Det sørlige Afrika"
+      },
+      "aliases": {
+        "en": [],
+        "nb": ["Sørlige Afrika"]
+      },
+      "phrase": {
+        "en": "in Southern Africa",
+        "nb": "i det sørlige Afrika"
+      },
+      "m49": "018"
+    },
+    {
+      "id": "Q664609",
+      "kind": "un_subregion",
+      "names": {
+        "en": "Caribbean",
+        "nb": "Karibia"
+      },
+      "aliases": {
+        "en": ["the Caribbean"],
+        "nb": []
+      },
+      "phrase": {
+        "en": "in the Caribbean",
+        "nb": "i Karibia"
+      },
+      "m49": "029"
+    },
+    {
+      "id": "Q27231",
+      "kind": "un_subregion",
+      "names": {
+        "en": "Eastern Asia",
+        "nb": "Øst-Asia"
+      },
+      "aliases": {
+        "en": ["East Asia"],
+        "nb": []
+      },
+      "phrase": {
+        "en": "in Eastern Asia",
+        "nb": "i Øst-Asia"
+      },
+      "m49": "030"
+    },
+    {
+      "id": "Q771405",
+      "kind": "un_subregion",
+      "names": {
+        "en": "Southern Asia",
+        "nb": "Sør-Asia"
+      },
+      "aliases": {
+        "en": ["South Asia"],
+        "nb": []
+      },
+      "phrase": {
+        "en": "in Southern Asia",
+        "nb": "i Sør-Asia"
+      },
+      "m49": "034"
+    },
+    {
+      "id": "Q11708",
+      "kind": "un_subregion",
+      "names": {
+        "en": "South-eastern Asia",
+        "nb": "Sørøst-Asia"
+      },
+      "aliases": {
+        "en": ["Southeast Asia", "South East Asia"],
+        "nb": []
+      },
+      "phrase": {
+        "en": "in South-eastern Asia",
+        "nb": "i Sørøst-Asia"
+      },
+      "m49": "035"
+    },
+    {
+      "id": "Q27449",
+      "kind": "un_subregion",
+      "names": {
+        "en": "Southern Europe",
+        "nb": "Sør-Europa"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "phrase": {
+        "en": "in Southern Europe",
+        "nb": "i Sør-Europa"
+      },
+      "m49": "039"
+    },
+    {
+      "id": "Q37394",
+      "kind": "un_subregion",
+      "names": {
+        "en": "Melanesia",
+        "nb": "Melanesia"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "phrase": {
+        "en": "in Melanesia",
+        "nb": "i Melanesia"
+      },
+      "m49": "054"
+    },
+    {
+      "id": "Q3359409",
+      "kind": "un_subregion",
+      "names": {
+        "en": "Micronesia",
+        "nb": "Mikronesia"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "phrase": {
+        "en": "in Micronesia",
+        "nb": "i Mikronesia"
+      },
+      "m49": "057"
+    },
+    {
+      "id": "Q35942",
+      "kind": "un_subregion",
+      "names": {
+        "en": "Polynesia",
+        "nb": "Polynesia"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "phrase": {
+        "en": "in Polynesia",
+        "nb": "i Polynesia"
+      },
+      "m49": "061"
+    },
+    {
+      "id": "Q27275",
+      "kind": "un_subregion",
+      "names": {
+        "en": "Central Asia",
+        "nb": "Sentral-Asia"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "phrase": {
+        "en": "in Central Asia",
+        "nb": "i Sentral-Asia"
+      },
+      "m49": "143"
+    },
+    {
+      "id": "Q27293",
+      "kind": "un_subregion",
+      "names": {
+        "en": "Western Asia",
+        "nb": "Vest-Asia"
+      },
+      "aliases": {
+        "en": ["West Asia"],
+        "nb": []
+      },
+      "phrase": {
+        "en": "in Western Asia",
+        "nb": "i Vest-Asia"
+      },
+      "m49": "145"
+    },
+    {
+      "id": "Q27468",
+      "kind": "un_subregion",
+      "names": {
+        "en": "Eastern Europe",
+        "nb": "Øst-Europa"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "phrase": {
+        "en": "in Eastern Europe",
+        "nb": "i Øst-Europa"
+      },
+      "m49": "151"
+    },
+    {
+      "id": "Q27479",
+      "kind": "un_subregion",
+      "names": {
+        "en": "Northern Europe",
+        "nb": "Nord-Europa"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "phrase": {
+        "en": "in Northern Europe",
+        "nb": "i Nord-Europa"
+      },
+      "m49": "154"
+    },
+    {
+      "id": "Q27496",
+      "kind": "un_subregion",
+      "names": {
+        "en": "Western Europe",
+        "nb": "Vest-Europa"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "phrase": {
+        "en": "in Western Europe",
+        "nb": "i Vest-Europa"
+      },
+      "m49": "155"
+    }
+  ]
+}

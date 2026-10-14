@@ -2,7 +2,8 @@
 import { CheckIcon, XIcon } from "lucide-react";
 import { type FormEvent, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import type { City, Country } from "@/data/types";
+import { groupNote } from "@/data/groupNotes";
+import type { City, Country, CountryGroup } from "@/data/types";
 import type { WorldData } from "@/data/world";
 import type { Locale } from "@/i18n/locales";
 import { Button } from "@/ui/button";
@@ -42,6 +43,8 @@ export function PromptText({
   const { t } = useTranslation();
   const country = world.byId.get(question.countryId);
   if (!country) return null;
+  const group = question.groupId ? world.groupById.get(question.groupId) : undefined;
+  const phrase = group?.phrase[locale] ?? "";
   const name = country.names[locale];
   const city = world.cityById.get(question.entityId)?.names[locale] ?? "";
   const inName = inNameOf(country, locale);
@@ -72,6 +75,12 @@ export function PromptText({
         return t("q.city_to_country", { city });
       case "city_to_map":
         return t("q.city_to_map", { city });
+      case "group_to_map":
+        return t("q.group_to_map", { phrase });
+      case "map_to_group":
+        return t("q.map_to_group");
+      case "group_member":
+        return t("q.group_member", { phrase });
     }
   })();
   return (
@@ -322,6 +331,78 @@ export function CityCard({
           {t("feedback.distance", { distance: km.format(distanceKm) })}
         </p>
       ) : null}
+    </div>
+  );
+}
+
+/** Tap answers: how many countries are picked, then check (Enter) or show the answer. */
+export function TapAnswer({
+  count,
+  onCheck,
+  onGiveUp,
+}: {
+  count: number;
+  onCheck: () => void;
+  onGiveUp: () => void;
+}) {
+  const { t } = useTranslation();
+  return (
+    <div className="flex flex-col gap-3" data-testid="tap-answer">
+      <p className="text-muted-foreground">{t("answer.tapHelp")}</p>
+      <p className="tabular-nums" data-testid="tap-count" aria-live="polite">
+        {t("answer.tapCount", { count })}
+      </p>
+      <div className="flex flex-wrap gap-2">
+        <Button onClick={onCheck} disabled={count === 0} data-testid="tap-check">
+          {t("answer.check")}
+        </Button>
+        <Button variant="outline" onClick={onGiveUp} data-testid="give-up">
+          {t("answer.giveUp")}
+        </Button>
+      </div>
+    </div>
+  );
+}
+
+/** Feedback for a group card: the group, its countries, the disputed ones, and its note. */
+export function GroupCard({
+  group,
+  members,
+  sometimes,
+  world,
+  locale,
+}: {
+  group: CountryGroup;
+  members: readonly string[];
+  sometimes: readonly string[];
+  world: WorldData;
+  locale: Locale;
+}) {
+  const { t } = useTranslation();
+  const other: Locale = locale === "en" ? "nb" : "en";
+  const names = (ids: readonly string[]) => ids.map((id) => nameOf(world, id, locale)).sort();
+  const list = new Intl.ListFormat(locale, { type: "conjunction" });
+  const note = group.kind === "un_subregion" ? t("group.unNote") : groupNote(group.id)?.[locale];
+  return (
+    <div className="surface flex flex-col gap-2 p-4" data-testid="group-card">
+      <p className="font-name text-2xl leading-tight tracking-tight" data-testid="answer-name">
+        {group.names[locale]}
+        {group.names[other] !== group.names[locale] ? (
+          <span className="ml-2 text-sm font-normal text-muted-foreground" lang={other}>
+            {group.names[other]}
+          </span>
+        ) : null}
+      </p>
+      <p className="text-sm text-muted-foreground">{t(`group.${group.kind}`)}</p>
+      <p data-testid="group-members">
+        {t("group.countries")}: {list.format(names(members))}
+      </p>
+      {sometimes.length > 0 ? (
+        <p className="text-muted-foreground" data-testid="group-sometimes">
+          {t("group.sometimes")}: {list.format(names(sometimes))}
+        </p>
+      ) : null}
+      {note ? <p>{note}</p> : null}
     </div>
   );
 }

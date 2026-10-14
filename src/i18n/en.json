@@ -52,7 +52,8 @@
     "homeCountry": "Home country",
     "rerunPlacement": "Rerun the placement test",
     "groupLook": "Language and look",
-    "groupStudy": "Study"
+    "groupStudy": "Study",
+    "groups": "Groups of countries (after half their members)"
   },
   "nav": {
     "today": "Today",
@@ -105,7 +106,10 @@
     "name_to_flag": "Which is the flag of {{name}}?",
     "country_to_currency": "Which currency is used in {{name}}?",
     "country_to_language": "Which is an official language of {{name}}?",
-    "contrast": "Which of these is {{name}}?"
+    "contrast": "Which of these is {{name}}?",
+    "group_to_map": "Tap every country that is {{phrase}}.",
+    "map_to_group": "Which group of countries is highlighted?",
+    "group_member": "Which of these is {{phrase}}?"
   },
   "answer": {
     "pinHelp": "Tap where the city is.",
@@ -115,7 +119,10 @@
     "hint": "Hint",
     "hintStarts": "Starts with {{letter}}, {{count}} letters",
     "mapHelp": "Click or tap the country.",
-    "label": "Your answer"
+    "label": "Your answer",
+    "tapHelp": "Tap each country, then check. Tap again to remove one.",
+    "tapCount_one": "{{count}} country selected",
+    "tapCount_other": "{{count}} countries selected"
   },
   "feedback": {
     "distance": "Your pin was {{distance}} from the city.",
@@ -137,7 +144,9 @@
     "notHelpful": "Not helpful",
     "hookHidden": "Hidden for this card.",
     "contrastLabel": "Tell them apart",
-    "deeperLabel": "Deeper cut"
+    "deeperLabel": "Deeper cut",
+    "missed": "Missed: {{names}}.",
+    "notInGroup": "Not in the group: {{names}}."
   },
   "role": {
     "primary": "capital",
@@ -241,7 +250,10 @@
     "country_to_language": "Country to language",
     "city_to_country": "City to country",
     "city_to_map": "City on the map",
-    "contrast": "Tell apart"
+    "contrast": "Tell apart",
+    "group_to_map": "Tap the members",
+    "map_to_group": "Group on the map",
+    "group_member": "Member of the group"
   },
   "hookType": {
     "anchor": "Anchor",
@@ -339,5 +351,14 @@
     "title": "Something went wrong",
     "body": "This screen failed to load. Your progress is saved on this device; reload to continue.",
     "reload": "Reload"
+  },
+  "group": {
+    "countries": "Countries",
+    "sometimes": "Sometimes counted",
+    "region": "Region",
+    "organization": "Organization",
+    "un_subregion": "UN subregion",
+    "unNote": "A UN statistical region (M49). Everyday use can draw it differently.",
+    "sometimesNote": "Countries some definitions include count neither for nor against you."
   }
 }
