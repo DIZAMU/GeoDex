@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import { db, type SettingsRow } from "@/db/db";
 import { resetProgress } from "@/db/reviews";
-import { updateSettings } from "@/db/settings";
+import { setTourDone, updateSettings } from "@/db/settings";
 import { LanguageSwitcher } from "@/i18n/LanguageSwitcher";
 import { isLocale } from "@/i18n/locales";
 import { ThemeSwitcher } from "@/themes/ThemeSwitcher";
@@ -167,6 +167,17 @@ export function SettingsScreen() {
           }}
         >
           {t("settings.rerunPlacement")}
+        </Button>
+        <Button
+          variant="outline"
+          className="self-start"
+          data-testid="welcome-again"
+          onClick={async () => {
+            await setTourDone(db, null);
+            navigate("/welcome", { viewTransition: true });
+          }}
+        >
+          {t("settings.welcomeAgain")}
         </Button>
       </Group>
       <Group title={t("reset.title")}>

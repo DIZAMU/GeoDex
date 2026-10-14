@@ -38,6 +38,18 @@ export async function setLastInputMode(db: GeoDexDb, lastInputMode: InputSetting
   await db.deviceSettings.update(DEVICE_ROW_ID, { lastInputMode });
 }
 
+/** Finishes the guided tour on this device; null shows it again. */
+export async function setTourDone(db: GeoDexDb, at: number | null): Promise<void> {
+  await ensureDeviceSettings(db);
+  await db.deviceSettings.update(DEVICE_ROW_ID, { tourDoneAt: at });
+}
+
+/** Remembers whether the learner opened or closed the Today info box. */
+export async function setInfoboxOpen(db: GeoDexDb, open: boolean | null): Promise<void> {
+  await ensureDeviceSettings(db);
+  await db.deviceSettings.update(DEVICE_ROW_ID, { infoboxOpen: open });
+}
+
 /** Asks the browser to keep IndexedDB through storage pressure, once per device. */
 export async function requestPersistentStorage(db: GeoDexDb): Promise<void> {
   const device = await ensureDeviceSettings(db);

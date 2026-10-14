@@ -1,12 +1,13 @@
 import {
   BarChart3Icon,
   CalendarCheckIcon,
+  CircleHelpIcon,
   type LucideIcon,
   MapIcon,
   SettingsIcon,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { Link, NavLink, Outlet } from "react-router";
+import { Link, NavLink, Outlet, useLocation } from "react-router";
 import { cn } from "@/ui/utils";
 import lockup from "../../assets/brand/svg/geodex-lockup.svg";
 import lockupOnDark from "../../assets/brand/svg/geodex-lockup-on-dark.svg";
@@ -16,14 +17,18 @@ function NavItem({
   label,
   icon: Icon,
   end = false,
+  tour,
 }: {
   to: string;
   label: string;
   icon: LucideIcon;
   end?: boolean;
+  /** Anchor for the guided tour. */
+  tour?: string;
 }) {
   return (
     <NavLink
+      data-tour={tour}
       to={to}
       end={end}
       viewTransition
@@ -46,6 +51,7 @@ function NavItem({
 /** Shell for the quiet screens (Today, Atlas, Stats, Settings). Session screens use the full viewport. */
 export function AppLayout() {
   const { t } = useTranslation();
+  const { pathname } = useLocation();
   return (
     <div className="min-h-dvh">
       <header className="sticky top-0 z-20 [view-transition-name:site-header] border-b border-border/60 bg-background/70 backdrop-blur-xl">
@@ -57,15 +63,29 @@ export function AppLayout() {
           </Link>
           <nav className="flex gap-1">
             <NavItem to="/" end label={t("nav.today")} icon={CalendarCheckIcon} />
-            <NavItem to="/atlas" label={t("nav.atlas")} icon={MapIcon} />
-            <NavItem to="/stats" label={t("nav.stats")} icon={BarChart3Icon} />
-            <NavItem to="/settings" label={t("nav.settings")} icon={SettingsIcon} />
+            <NavItem to="/atlas" label={t("nav.atlas")} icon={MapIcon} tour="atlas" />
+            <NavItem to="/stats" label={t("nav.stats")} icon={BarChart3Icon} tour="stats" />
+            <NavItem to="/settings" label={t("nav.settings")} icon={SettingsIcon} tour="settings" />
           </nav>
         </div>
       </header>
       <main>
         <Outlet />
       </main>
+      {/* Help is one tap away on every screen (PLAN.md 11.1). */}
+      {pathname === "/help" ? null : (
+        <Link
+          to="/help"
+          viewTransition
+          aria-label={t("help.button")}
+          title={t("help.button")}
+          data-testid="help-button"
+          data-tour="help"
+          className="fixed right-4 bottom-4 z-30 flex size-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[var(--elevation-hover)] transition-transform duration-200 ease-(--ease-ui) outline-none hover:scale-105 focus-visible:ring-3 focus-visible:ring-ring/50 motion-reduce:hover:scale-100 md:right-6 md:bottom-6"
+        >
+          <CircleHelpIcon aria-hidden className="size-7" />
+        </Link>
+      )}
     </div>
   );
 }
