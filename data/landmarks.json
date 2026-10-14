@@ -100,11 +100,15 @@
       "id": "Q134905",
       "names": {
         "en": "K'gari",
-        "nb": "Fraser Island"
+        "nb": "K'gari"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Fraser Island"
+        ],
+        "nb": [
+          "Fraser Island"
+        ]
       },
       "countryId": "AUS",
       "lat": -25.24,
@@ -319,8 +323,12 @@
         "nb": "Sukkertoppen"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Pão de Açúcar"
+        ],
+        "nb": [
+          "Pão de Açúcar"
+        ]
       },
       "countryId": "BRA",
       "lat": -22.9494,
@@ -343,8 +351,12 @@
         "nb": "Kristusstatuen"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Cristo Redentor"
+        ],
+        "nb": [
+          "Cristo Redentor"
+        ]
       },
       "countryId": "BRA",
       "lat": -22.9519,
@@ -661,8 +673,12 @@
         "nb": "Den lille havfrue"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Little Mermaid"
+        ],
+        "nb": [
+          "Lille havfrue"
+        ]
       },
       "countryId": "DNK",
       "lat": 55.6929,
@@ -705,7 +721,7 @@
     {
       "id": "Q181476",
       "names": {
-        "en": "Cotopaxi volcano",
+        "en": "Cotopaxi",
         "nb": "Cotopaxi"
       },
       "aliases": {
@@ -729,7 +745,7 @@
     {
       "id": "Q38095",
       "names": {
-        "en": "Galapagos Islands",
+        "en": "Galápagos Islands",
         "nb": "Galápagosøyene"
       },
       "aliases": {
@@ -753,7 +769,7 @@
     {
       "id": "Q130958",
       "names": {
-        "en": "The Great Sphinx",
+        "en": "Great Sphinx of Giza",
         "nb": "Sfinksen i Giza"
       },
       "aliases": {
@@ -829,8 +845,14 @@
         "nb": "Kheopspyramiden"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Pyramid of Khufu",
+          "Pyramid of Cheops"
+        ],
+        "nb": [
+          "Den store pyramiden",
+          "Keopspyramiden"
+        ]
       },
       "countryId": "EGY",
       "lat": 29.9792,
@@ -849,12 +871,16 @@
     {
       "id": "Q522862",
       "names": {
-        "en": "Karnak Temple Complex",
+        "en": "Karnak",
         "nb": "Karnak"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Karnak Temple"
+        ],
+        "nb": [
+          "Karnak-tempelet"
+        ]
       },
       "countryId": "EGY",
       "lat": 25.7183,
@@ -897,12 +923,16 @@
     {
       "id": "Q48435",
       "names": {
-        "en": "Basilica and Expiatory Church of the Holy Family",
+        "en": "Sagrada Família",
         "nb": "Sagrada Família"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Basilica of the Holy Family"
+        ],
+        "nb": [
+          "Sagrada Familia"
+        ]
       },
       "countryId": "ESP",
       "lat": 41.4037,
@@ -921,7 +951,7 @@
     {
       "id": "Q642979",
       "names": {
-        "en": "Monolithic churches in Lalibela",
+        "en": "Rock-hewn churches of Lalibela",
         "nb": "Kirkene i Lalibela"
       },
       "aliases": {
@@ -945,12 +975,16 @@
     {
       "id": "Q20892",
       "names": {
-        "en": "Le Mont Saint-Michel",
+        "en": "Mont-Saint-Michel",
         "nb": "Mont-Saint-Michel"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Mont Saint-Michel"
+        ],
+        "nb": [
+          "Mont Saint-Michel"
+        ]
       },
       "countryId": "FRA",
       "lat": 48.6358,
@@ -997,8 +1031,12 @@
         "nb": "Slottet i Versailles"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Versailles"
+        ],
+        "nb": [
+          "Versailles"
+        ]
       },
       "countryId": "FRA",
       "lat": 48.8047,
@@ -1117,8 +1155,12 @@
         "nb": "Big Ben"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Elizabeth Tower"
+        ],
+        "nb": [
+          "Elizabeth Tower"
+        ]
       },
       "countryId": "GBR",
       "lat": 51.5007,
@@ -1165,8 +1207,12 @@
         "nb": "Akropolis"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Acropolis"
+        ],
+        "nb": [
+          "Akropolis i Athen"
+        ]
       },
       "countryId": "GRC",
       "lat": 37.9717,
@@ -1186,7 +1232,7 @@
       "id": "Q3125051",
       "names": {
         "en": "Meteora",
-        "nb": "meteora"
+        "nb": "Meteora"
       },
       "aliases": {
         "en": [],
@@ -1281,7 +1327,7 @@
     {
       "id": "Q42798",
       "names": {
-        "en": "Borobudur Temple",
+        "en": "Borobudur",
         "nb": "Borobudur"
       },
       "aliases": {
@@ -1305,12 +1351,16 @@
     {
       "id": "Q180422",
       "names": {
-        "en": "Harmandir Sahib",
+        "en": "Golden Temple",
         "nb": "Det gylne tempel"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Harmandir Sahib"
+        ],
+        "nb": [
+          "Harmandir Sahib"
+        ]
       },
       "countryId": "IND",
       "lat": 31.62,
@@ -1549,8 +1599,15 @@
         "nb": "Fuji-san"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Fuji",
+          "Fujiyama"
+        ],
+        "nb": [
+          "Fuji",
+          "Fujiyama",
+          "Fujifjellet"
+        ]
       },
       "countryId": "JPN",
       "lat": 35.3606,
@@ -1621,8 +1678,12 @@
         "nb": "Angkor Vat"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Angkor Vat"
+        ],
+        "nb": [
+          "Angkor Wat"
+        ]
       },
       "countryId": "KHM",
       "lat": 13.4125,
@@ -1977,12 +2038,16 @@
     {
       "id": "Q187197",
       "names": {
-        "en": "Milford Sound / Piopiotahi",
+        "en": "Milford Sound",
         "nb": "Milford Sound"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Piopiotahi"
+        ],
+        "nb": [
+          "Piopiotahi"
+        ]
       },
       "countryId": "NZL",
       "lat": -44.6167,
@@ -2049,12 +2114,16 @@
     {
       "id": "Q5059",
       "names": {
-        "en": "Aoraki / Mount Cook",
+        "en": "Mount Cook",
         "nb": "Mount Cook"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Aoraki"
+        ],
+        "nb": [
+          "Aoraki"
+        ]
       },
       "countryId": "NZL",
       "lat": -43.595,
@@ -2149,8 +2218,12 @@
         "nb": "Nazcalinjene"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Nasca Lines"
+        ],
+        "nb": [
+          "Nascalinjene"
+        ]
       },
       "countryId": "PER",
       "lat": -14.6975,
@@ -2197,8 +2270,12 @@
         "nb": "Vasilijkatedralen"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Saint Basil's Cathedral"
+        ],
+        "nb": [
+          "Basilkatedralen"
+        ]
       },
       "countryId": "RUS",
       "lat": 55.7525,
@@ -2317,8 +2394,14 @@
         "nb": "Hagia Sofia"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Ayasofya",
+          "Hagia Sofia"
+        ],
+        "nb": [
+          "Hagia Sophia",
+          "Ayasofya"
+        ]
       },
       "countryId": "TUR",
       "lat": 41.0083,
@@ -2341,8 +2424,13 @@
         "nb": "Sultan Ahmed-moskeen"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Blue Mosque"
+        ],
+        "nb": [
+          "Den blå moské",
+          "Blå moské"
+        ]
       },
       "countryId": "TUR",
       "lat": 41.0054,
@@ -2413,8 +2501,12 @@
         "nb": "Kilimanjaro"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Kilimanjaro"
+        ],
+        "nb": [
+          "Kilimanjarofjellet"
+        ]
       },
       "countryId": "TZA",
       "lat": -3.0667,
@@ -2749,8 +2841,12 @@
         "nb": "Peterskirken"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Saint Peter's Basilica"
+        ],
+        "nb": [
+          "Peterskirken i Roma"
+        ]
       },
       "countryId": "VAT",
       "lat": 41.9022,
@@ -2797,8 +2893,13 @@
         "nb": "Hạ Long-bukten"
       },
       "aliases": {
-        "en": [],
-        "nb": []
+        "en": [
+          "Halong Bay"
+        ],
+        "nb": [
+          "Ha Long-bukten",
+          "Halongbukten"
+        ]
       },
       "countryId": "VNM",
       "lat": 20.9,

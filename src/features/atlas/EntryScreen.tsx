@@ -3,7 +3,14 @@ import { useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, Navigate, useParams } from "react-router";
 import type { Country } from "@/data/types";
-import { CITY_CARD_TYPES, COUNTRY_CARD_TYPES, cardId, parseCardId } from "@/engine/types";
+import {
+  type CardType,
+  CITY_CARD_TYPES,
+  COUNTRY_CARD_TYPES,
+  cardId,
+  LANDMARK_CARD_TYPES,
+  parseCardId,
+} from "@/engine/types";
 import { isLocale, type Locale } from "@/i18n/locales";
 import { WorldMap } from "@/map/WorldMap";
 import { Button } from "@/ui/button";
@@ -52,6 +59,7 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
   }, [events, learner.content, country.id]);
   const region = learner.world.subregions.find((s) => s.id === country.subregion);
   const cities = learner.world.cities.filter((c) => c.countryId === country.id);
+  const landmarks = learner.world.landmarks.filter((l) => l.countryId === country.id);
   const date = new Intl.DateTimeFormat(locale, { day: "numeric", month: "short" });
   const number = new Intl.NumberFormat(locale);
   const list = new Intl.ListFormat(locale, { type: "conjunction" });
@@ -216,41 +224,22 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
             )}
           </section>
 
-          {cities.length > 0 ? (
-            <section aria-labelledby="cities-title" className="flex flex-col gap-3">
-              <h2 id="cities-title" className="font-name text-lg">
-                {t("entry.cities")}
-              </h2>
-              <ul className="surface divide-y divide-border" data-testid="entry-cities">
-                {cities.map((city) => {
-                  // A city's level is its weaker card, like a country's skill.
-                  const level = Math.min(
-                    ...CITY_CARD_TYPES.map((type) =>
-                      cardLevel(learner.states.get(cardId(city.id, type))),
-                    ),
-                  );
-                  return (
-                    <li
-                      key={city.id}
-                      className="flex items-center justify-between gap-4 px-4 py-2.5"
-                    >
-                      <span className="flex items-center gap-3">
-                        <span
-                          aria-hidden
-                          className="size-3 rounded-sm border border-border"
-                          style={{ background: `var(--mastery-${level})` }}
-                        />
-                        {city.names[locale]}
-                      </span>
-                      <span className="text-sm text-muted-foreground">
-                        {t(`level.${level as 0 | 1 | 2 | 3 | 4}`)}
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
-            </section>
-          ) : null}
+          <ModuleList
+            id="cities"
+            title={t("entry.cities")}
+            items={cities}
+            types={CITY_CARD_TYPES}
+            learner={learner}
+            locale={locale}
+          />
+          <ModuleList
+            id="landmarks"
+            title={t("entry.landmarks")}
+            items={landmarks}
+            types={LANDMARK_CARD_TYPES}
+            learner={learner}
+            locale={locale}
+          />
 
           <section aria-labelledby="facts-title" className="flex flex-col gap-3">
             <h2 id="facts-title" className="font-name text-lg">
@@ -289,5 +278,54 @@ function Fact({ label, value }: { label: string; value: string }) {
       <dt className="text-sm text-muted-foreground">{label}</dt>
       <dd>{value}</dd>
     </div>
+  );
+}
+
+/** A country's cities or landmarks with the learner's level for each (its weaker card). */
+function ModuleList({
+  id,
+  title,
+  items,
+  types,
+  learner,
+  locale,
+}: {
+  id: string;
+  title: string;
+  items: readonly { id: string; names: { en: string; nb: string } }[];
+  types: readonly CardType[];
+  learner: Learner;
+  locale: "en" | "nb";
+}) {
+  const { t } = useTranslation();
+  if (items.length === 0) return null;
+  return (
+    <section aria-labelledby={`${id}-title`} className="flex flex-col gap-3">
+      <h2 id={`${id}-title`} className="font-name text-lg">
+        {title}
+      </h2>
+      <ul className="surface divide-y divide-border" data-testid={`entry-${id}`}>
+        {items.map((item) => {
+          const level = Math.min(
+            ...types.map((type) => cardLevel(learner.states.get(cardId(item.id, type)))),
+          );
+          return (
+            <li key={item.id} className="flex items-center justify-between gap-4 px-4 py-2.5">
+              <span className="flex items-center gap-3">
+                <span
+                  aria-hidden
+                  className="size-3 rounded-sm border border-border"
+                  style={{ background: `var(--mastery-${level})` }}
+                />
+                {item.names[locale]}
+              </span>
+              <span className="text-sm text-muted-foreground">
+                {t(`level.${level as 0 | 1 | 2 | 3 | 4}`)}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
   );
 }

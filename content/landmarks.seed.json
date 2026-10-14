@@ -131,18 +131,149 @@
     "Q14452": "Ahu Tongariki.jpg"
   },
   "names": {
+    "Q130958": {
+      "en": "Great Sphinx of Giza"
+    },
+    "Q134905": {
+      "nb": "K'gari"
+    },
     "Q14452": {
       "en": "Easter Island",
       "nb": "Påskeøya"
     },
+    "Q180422": {
+      "en": "Golden Temple"
+    },
+    "Q181476": {
+      "en": "Cotopaxi"
+    },
+    "Q187197": {
+      "en": "Milford Sound"
+    },
+    "Q20892": {
+      "en": "Mont-Saint-Michel"
+    },
     "Q213360": {
       "nb": "Taffelberget"
+    },
+    "Q3125051": {
+      "nb": "Meteora"
+    },
+    "Q38095": {
+      "en": "Galápagos Islands"
+    },
+    "Q42798": {
+      "en": "Borobudur"
+    },
+    "Q48435": {
+      "en": "Sagrada Família"
+    },
+    "Q5059": {
+      "en": "Mount Cook"
+    },
+    "Q522862": {
+      "en": "Karnak"
+    },
+    "Q642979": {
+      "en": "Rock-hewn churches of Lalibela"
     }
   },
   "aliases": {
+    "Q12506": {
+      "en": ["Ayasofya", "Hagia Sofia"],
+      "nb": ["Hagia Sophia", "Ayasofya"]
+    },
+    "Q12512": {
+      "en": ["Saint Peter's Basilica"],
+      "nb": ["Peterskirken i Roma"]
+    },
+    "Q129846": {
+      "en": ["Saint Basil's Cathedral"],
+      "nb": ["Basilkatedralen"]
+    },
+    "Q131013": {
+      "en": ["Acropolis"],
+      "nb": ["Akropolis i Athen"]
+    },
+    "Q134905": {
+      "en": ["Fraser Island"],
+      "nb": ["Fraser Island"]
+    },
     "Q14452": {
       "en": ["Rapa Nui", "Moai"],
       "nb": ["Rapa Nui", "Moai"]
+    },
+    "Q180422": {
+      "en": ["Harmandir Sahib"],
+      "nb": ["Harmandir Sahib"]
+    },
+    "Q187197": {
+      "en": ["Piopiotahi"],
+      "nb": ["Piopiotahi"]
+    },
+    "Q190128": {
+      "en": ["Halong Bay"],
+      "nb": ["Ha Long-bukten", "Halongbukten"]
+    },
+    "Q20892": {
+      "en": ["Mont Saint-Michel"],
+      "nb": ["Mont Saint-Michel"]
+    },
+    "Q210722": {
+      "en": ["Pão de Açúcar"],
+      "nb": ["Pão de Açúcar"]
+    },
+    "Q214619": {
+      "en": ["Little Mermaid"],
+      "nb": ["Lille havfrue"]
+    },
+    "Q2620036": {
+      "en": ["Nasca Lines"],
+      "nb": ["Nascalinjene"]
+    },
+    "Q2946": {
+      "en": ["Versailles"],
+      "nb": ["Versailles"]
+    },
+    "Q37200": {
+      "en": ["Pyramid of Khufu", "Pyramid of Cheops"],
+      "nb": ["Den store pyramiden", "Keopspyramiden"]
+    },
+    "Q39231": {
+      "en": ["Fuji", "Fujiyama"],
+      "nb": ["Fuji", "Fujiyama", "Fujifjellet"]
+    },
+    "Q41225": {
+      "en": ["Elizabeth Tower"],
+      "nb": ["Elizabeth Tower"]
+    },
+    "Q43473": {
+      "en": ["Angkor Vat"],
+      "nb": ["Angkor Wat"]
+    },
+    "Q48435": {
+      "en": ["Basilica of the Holy Family"],
+      "nb": ["Sagrada Familia"]
+    },
+    "Q5059": {
+      "en": ["Aoraki"],
+      "nb": ["Aoraki"]
+    },
+    "Q522862": {
+      "en": ["Karnak Temple"],
+      "nb": ["Karnak-tempelet"]
+    },
+    "Q7296": {
+      "en": ["Kilimanjaro"],
+      "nb": ["Kilimanjarofjellet"]
+    },
+    "Q79961": {
+      "en": ["Cristo Redentor"],
+      "nb": ["Cristo Redentor"]
+    },
+    "Q80541": {
+      "en": ["Blue Mosque"],
+      "nb": ["Den blå moské", "Blå moské"]
     }
   },
   "credit": {

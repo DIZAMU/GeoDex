@@ -3,7 +3,7 @@ import { CheckIcon, XIcon } from "lucide-react";
 import { type FormEvent, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { groupNote } from "@/data/groupNotes";
-import type { City, Country, CountryGroup } from "@/data/types";
+import type { City, Country, CountryGroup, Landmark } from "@/data/types";
 import type { WorldData } from "@/data/world";
 import type { Locale } from "@/i18n/locales";
 import { Button } from "@/ui/button";
@@ -47,6 +47,7 @@ export function PromptText({
   const phrase = group?.phrase[locale] ?? "";
   const name = country.names[locale];
   const city = world.cityById.get(question.entityId)?.names[locale] ?? "";
+  const landmark = world.landmarkById.get(question.entityId);
   const inName = inNameOf(country, locale);
   const capital = country.capitals.find((c) => c.roles.includes("primary"))?.names[locale] ?? "";
   const text = (() => {
@@ -75,6 +76,12 @@ export function PromptText({
         return t("q.city_to_country", { city });
       case "city_to_map":
         return t("q.city_to_map", { city });
+      case "photo_to_name":
+        return t("q.photo_to_name");
+      case "landmark_to_country":
+        return t("q.landmark_to_country", { landmark: landmark?.names[locale] ?? "" });
+      case "landmark_to_map":
+        return t("q.landmark_to_map", { landmark: landmark?.names[locale] ?? "" });
       case "group_to_map":
         return t("q.group_to_map", { phrase });
       case "map_to_group":
@@ -88,6 +95,9 @@ export function PromptText({
       <h2 className="font-name text-xl tracking-tight lg:text-3xl" data-testid="prompt">
         {text}
       </h2>
+      {question.prompt.kind === "photo" && landmark ? (
+        <LandmarkPhoto landmark={landmark} alt={t("photo.altPrompt")} />
+      ) : null}
       {question.prompt.kind === "flag" ? (
         <Flag
           iso2={country.iso2}
@@ -329,6 +339,98 @@ export function CityCard({
       {distanceKm !== undefined ? (
         <p data-testid="pin-distance">
           {t("feedback.distance", { distance: km.format(distanceKm) })}
+        </p>
+      ) : null}
+    </div>
+  );
+}
+
+/**
+ * A landmark's Commons photo with its credit (author, license, link to the file page), as
+ * the license requires (PLAN.md 3). The browser caches it at runtime for offline use.
+ */
+export function LandmarkPhoto({
+  landmark,
+  alt,
+  className,
+}: {
+  landmark: Landmark;
+  alt: string;
+  className?: string;
+}) {
+  const { t } = useTranslation();
+  const { image } = landmark;
+  return (
+    <figure className={cn("flex flex-col gap-1.5", className)} data-testid="landmark-photo">
+      <img
+        src={image.url}
+        alt={alt}
+        width={image.width}
+        height={image.height}
+        className="max-h-[38vh] w-full rounded-lg border border-border bg-muted object-contain shadow-[var(--elevation)] lg:max-h-[42vh]"
+        draggable={false}
+        referrerPolicy="no-referrer"
+      />
+      <figcaption className="text-xs text-muted-foreground" data-testid="photo-credit">
+        <a
+          href={image.sourceUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-border underline-offset-2 hover:text-foreground"
+        >
+          {t("photo.credit", { author: image.author, license: image.license })}
+        </a>
+      </figcaption>
+    </figure>
+  );
+}
+
+/** Feedback for a landmark card: name, country, photo with credit, and the pin distance. */
+export function LandmarkCard({
+  landmark,
+  country,
+  locale,
+  distanceKm,
+}: {
+  landmark: Landmark;
+  country: Country;
+  locale: Locale;
+  distanceKm?: number;
+}) {
+  const { t } = useTranslation();
+  const other: Locale = locale === "en" ? "nb" : "en";
+  const km = new Intl.NumberFormat(locale, {
+    style: "unit",
+    unit: "kilometer",
+    maximumFractionDigits: 0,
+  });
+  return (
+    <div className="surface flex flex-col gap-3 p-4" data-testid="landmark-card">
+      <div className="flex flex-col gap-1">
+        <p className="font-name text-2xl leading-tight tracking-tight" data-testid="answer-name">
+          {landmark.names[locale]}
+          {landmark.names[other] !== landmark.names[locale] ? (
+            <span className="ml-2 text-sm font-normal text-muted-foreground" lang={other}>
+              {landmark.names[other]}
+            </span>
+          ) : null}
+        </p>
+        <p className="flex items-center gap-2 text-muted-foreground">
+          <Flag iso2={country.iso2} alt="" className="w-7" />
+          {t("feedback.landmarkIn", {
+            country: country.names[locale],
+            inName: inNameOf(country, locale),
+          })}
+        </p>
+      </div>
+      <LandmarkPhoto
+        landmark={landmark}
+        alt={t("photo.alt", { name: landmark.names[locale] })}
+        className="[&_img]:max-h-40 lg:[&_img]:max-h-56"
+      />
+      {distanceKm !== undefined ? (
+        <p data-testid="pin-distance">
+          {t("feedback.landmarkDistance", { distance: km.format(distanceKm) })}
         </p>
       ) : null}
     </div>
