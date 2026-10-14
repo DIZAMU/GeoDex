@@ -1,0 +1,654 @@
+{
+  "group": "north_america",
+  "entities": [
+    {
+      "entityId": "Q1247",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1247.en.1",
+            "type": "anchor",
+            "text": "The Caribbean Sea lies south of Cuba and Hispaniola and north of Venezuela and Colombia."
+          },
+          {
+            "id": "Q1247.en.2",
+            "type": "shape",
+            "text": "The Caribbean is a sea fenced off by a long arc of islands curving from Cuba to Trinidad."
+          },
+          {
+            "id": "Q1247.en.3",
+            "type": "contrast",
+            "text": "The Caribbean Sea is south of Cuba; the Gulf of Mexico is northwest of it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1247.nb.1",
+            "type": "anchor",
+            "text": "Det karibiske hav ligger sør for Cuba og Hispaniola og nord for Venezuela og Colombia."
+          },
+          {
+            "id": "Q1247.nb.2",
+            "type": "shape",
+            "text": "Det karibiske hav er et hav inngjerdet av en lang bue av øyer fra Cuba til Trinidad."
+          },
+          {
+            "id": "Q1247.nb.3",
+            "type": "contrast",
+            "text": "Det karibiske hav ligger sør for Cuba. Mexicogolfen ligger nordvest for øya."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1247.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Caribbean Sea is part of the Atlantic Ocean.",
+            "nb": "Det karibiske hav er en del av Atlanterhavet."
+          }
+        },
+        {
+          "id": "Q1247.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Panama Canal links it to the Pacific.",
+            "nb": "Panamakanalen forbinder det med Stillehavet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q12630",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q12630.en.1",
+            "type": "anchor",
+            "text": "The Gulf of Mexico is ringed by the United States to the north, Mexico to the west and south, and Cuba to the east."
+          },
+          {
+            "id": "Q12630.en.2",
+            "type": "shape",
+            "text": "The Gulf of Mexico is a round basin almost closed off by Florida and the Yucatán Peninsula."
+          },
+          {
+            "id": "Q12630.en.3",
+            "type": "story",
+            "text": "The Gulf Stream begins where warm water leaves the Gulf of Mexico past Florida."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q12630.nb.1",
+            "type": "anchor",
+            "text": "Mexicogolfen er omgitt av USA i nord, Mexico i vest og sør, og Cuba i øst."
+          },
+          {
+            "id": "Q12630.nb.2",
+            "type": "shape",
+            "text": "Mexicogolfen er et rundt basseng nesten lukket av Florida og Yucatánhalvøya."
+          },
+          {
+            "id": "Q12630.nb.3",
+            "type": "story",
+            "text": "Golfstrømmen starter der varmt vann strømmer ut av Mexicogolfen forbi Florida."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q12630.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Gulf of Mexico is bordered by the United States, Mexico and Cuba.",
+            "nb": "Mexicogolfen grenser til USA, Mexico og Cuba."
+          }
+        },
+        {
+          "id": "Q12630.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Mississippi River empties into it.",
+            "nb": "Mississippi munner ut i den."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q3040",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q3040.en.1",
+            "type": "anchor",
+            "text": "Hudson Bay cuts deep into northern Canada, east of Manitoba and north of Ontario."
+          },
+          {
+            "id": "Q3040.en.2",
+            "type": "shape",
+            "text": "Hudson Bay is a giant bite taken out of the middle of Canada."
+          },
+          {
+            "id": "Q3040.en.3",
+            "type": "story",
+            "text": "Polar bears wait on the shore of Hudson Bay at Churchill for the bay to freeze so they can hunt seals."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q3040.nb.1",
+            "type": "anchor",
+            "text": "Hudsonbukta skjærer seg dypt inn i Nord-Canada, øst for Manitoba og nord for Ontario."
+          },
+          {
+            "id": "Q3040.nb.2",
+            "type": "shape",
+            "text": "Hudsonbukta er et kjempebitt tatt ut av midten av Canada."
+          },
+          {
+            "id": "Q3040.nb.3",
+            "type": "story",
+            "text": "Isbjørner venter ved Hudsonbukta i Churchill på at bukta skal fryse, så de kan jakte på sel."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q3040.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Hudson Bay is entirely within Canada.",
+            "nb": "Hudsonbukta ligger helt i Canada."
+          }
+        },
+        {
+          "id": "Q3040.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It freezes over for much of the year.",
+            "nb": "Den fryser til store deler av året."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1066",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1066.en.1",
+            "type": "anchor",
+            "text": "Lake Superior is the northernmost and westernmost of the Great Lakes, between Ontario in Canada and the US."
+          },
+          {
+            "id": "Q1066.en.2",
+            "type": "contrast",
+            "text": "Lake Superior is the largest of the Great Lakes and the largest freshwater lake in the world by area."
+          },
+          {
+            "id": "Q1066.en.3",
+            "type": "story",
+            "text": "Lake Superior holds enough water to cover all of North and South America a few dozen centimetres deep."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1066.nb.1",
+            "type": "anchor",
+            "text": "Lake Superior er den nordligste og vestligste av De store sjøene, mellom Ontario i Canada og USA."
+          },
+          {
+            "id": "Q1066.nb.2",
+            "type": "contrast",
+            "text": "Lake Superior er den største av De store sjøene og verdens største ferskvannssjø i areal."
+          },
+          {
+            "id": "Q1066.nb.3",
+            "type": "story",
+            "text": "Lake Superior har nok vann til å dekke hele Nord- og Sør-Amerika med noen titalls centimeter."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1066.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Lake Superior is shared by Canada and the United States.",
+            "nb": "Lake Superior deles av Canada og USA."
+          }
+        },
+        {
+          "id": "Q1066.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the largest freshwater lake in the world by surface area.",
+            "nb": "Det er verdens største ferskvannssjø målt i areal."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1169",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1169.en.1",
+            "type": "anchor",
+            "text": "Lake Michigan lies wholly in the United States, with Chicago on its southwest shore."
+          },
+          {
+            "id": "Q1169.en.2",
+            "type": "contrast",
+            "text": "Lake Michigan is the only Great Lake entirely in the United States; the others touch Canada."
+          },
+          {
+            "id": "Q1169.en.3",
+            "type": "shape",
+            "text": "Lake Michigan is a long tongue of water hanging down from the Great Lakes into the American Midwest."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1169.nb.1",
+            "type": "anchor",
+            "text": "Michigansjøen ligger helt i USA, med Chicago ved sørvestbredden."
+          },
+          {
+            "id": "Q1169.nb.2",
+            "type": "contrast",
+            "text": "Michigansjøen er den eneste av De store sjøene som ligger helt i USA. De andre grenser til Canada."
+          },
+          {
+            "id": "Q1169.nb.3",
+            "type": "shape",
+            "text": "Michigansjøen er en lang tunge av vann som henger ned fra De store sjøene inn i Midtvesten."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1169.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Lake Michigan lies entirely within the United States.",
+            "nb": "Michigansjøen ligger helt i USA."
+          }
+        },
+        {
+          "id": "Q1169.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is joined to Lake Huron through the Straits of Mackinac.",
+            "nb": "Den henger sammen med Huronsjøen gjennom Mackinacstredet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1383",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1383.en.1",
+            "type": "anchor",
+            "text": "Lake Huron lies between Michigan in the US and Ontario in Canada, east of Lake Michigan."
+          },
+          {
+            "id": "Q1383.en.2",
+            "type": "story",
+            "text": "Lake Huron holds Manitoulin Island, the largest island in any freshwater lake."
+          },
+          {
+            "id": "Q1383.en.3",
+            "type": "contrast",
+            "text": "Huron touches both Canada and the US; its twin Lake Michigan lies wholly in the US."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1383.nb.1",
+            "type": "anchor",
+            "text": "Huronsjøen ligger mellom Michigan i USA og Ontario i Canada, øst for Michigansjøen."
+          },
+          {
+            "id": "Q1383.nb.2",
+            "type": "story",
+            "text": "I Huronsjøen ligger Manitoulin, den største øya i noen ferskvannssjø."
+          },
+          {
+            "id": "Q1383.nb.3",
+            "type": "contrast",
+            "text": "Huron grenser til både Canada og USA. Tvillingen Michigansjøen ligger helt i USA."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1383.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Lake Huron is shared by Canada and the United States.",
+            "nb": "Huronsjøen deles av Canada og USA."
+          }
+        },
+        {
+          "id": "Q1383.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Georgian Bay is its large eastern arm in Ontario.",
+            "nb": "Georgian Bay er den store østlige armen i Ontario."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1497",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1497.en.1",
+            "type": "anchor",
+            "text": "The Mississippi flows south through the middle of the United States from Minnesota to the Gulf of Mexico."
+          },
+          {
+            "id": "Q1497.en.2",
+            "type": "story",
+            "text": "Mark Twain piloted steamboats on the Mississippi and wrote Huckleberry Finn about a raft trip down it."
+          },
+          {
+            "id": "Q1497.en.3",
+            "type": "contrast",
+            "text": "The Mississippi runs north to south through the US; the Missouri joins it from the west near St. Louis."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1497.nb.1",
+            "type": "anchor",
+            "text": "Mississippi renner sørover midt gjennom USA fra Minnesota til Mexicogolfen."
+          },
+          {
+            "id": "Q1497.nb.2",
+            "type": "story",
+            "text": "Mark Twain var los på dampbåter på Mississippi og skrev Huckleberry Finn om en flåtetur nedover den."
+          },
+          {
+            "id": "Q1497.nb.3",
+            "type": "contrast",
+            "text": "Mississippi renner fra nord til sør gjennom USA. Missouri møter den fra vest ved St. Louis."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1497.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Mississippi flows entirely within the United States.",
+            "nb": "Mississippi renner bare gjennom USA."
+          }
+        },
+        {
+          "id": "Q1497.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It ends in a large delta south of New Orleans.",
+            "nb": "Den ender i et stort delta sør for New Orleans."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q5463",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q5463.en.1",
+            "type": "anchor",
+            "text": "The Rocky Mountains run from northern Canada south through the western United States to New Mexico."
+          },
+          {
+            "id": "Q5463.en.2",
+            "type": "story",
+            "text": "The Continental Divide runs along the Rockies: rain on one side flows to the Pacific, on the other to the Atlantic."
+          },
+          {
+            "id": "Q5463.en.3",
+            "type": "contrast",
+            "text": "The Rockies are the high young range of the West; the Appalachians in the East are older and lower."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q5463.nb.1",
+            "type": "anchor",
+            "text": "Rocky Mountains går fra Nord-Canada sørover gjennom det vestlige USA til New Mexico."
+          },
+          {
+            "id": "Q5463.nb.2",
+            "type": "story",
+            "text": "Det kontinentale vannskillet går langs Rocky Mountains: regn på den ene siden renner til Stillehavet, på den andre til Atlanterhavet."
+          },
+          {
+            "id": "Q5463.nb.3",
+            "type": "contrast",
+            "text": "Rocky Mountains er den høye, unge fjellkjeden i vest. Appalachene i øst er eldre og lavere."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q5463.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Rocky Mountains run through Canada and the United States.",
+            "nb": "Rocky Mountains går gjennom Canada og USA."
+          }
+        },
+        {
+          "id": "Q5463.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Mount Elbert in Colorado is their highest peak.",
+            "nb": "Mount Elbert i Colorado er den høyeste toppen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q93332",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q93332.en.1",
+            "type": "anchor",
+            "text": "The Appalachian Mountains run down eastern North America, from Newfoundland in Canada to Alabama."
+          },
+          {
+            "id": "Q93332.en.2",
+            "type": "story",
+            "text": "The Appalachian Trail lets hikers walk the length of the range, a trek that takes months."
+          },
+          {
+            "id": "Q93332.en.3",
+            "type": "shape",
+            "text": "The Appalachians are worn-down old mountains, rounded like a rumpled blanket along the US East Coast."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q93332.nb.1",
+            "type": "anchor",
+            "text": "Appalachene går nedover det østlige Nord-Amerika, fra Newfoundland i Canada til Alabama."
+          },
+          {
+            "id": "Q93332.nb.2",
+            "type": "story",
+            "text": "Appalachian Trail lar fotturister gå hele fjellkjeden, en tur som tar måneder."
+          },
+          {
+            "id": "Q93332.nb.3",
+            "type": "shape",
+            "text": "Appalachene er nedslitte gamle fjell, avrundet som et krøllete teppe langs østkysten av USA."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q93332.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Appalachians run through the United States and Canada.",
+            "nb": "Appalachene går gjennom USA og Canada."
+          }
+        },
+        {
+          "id": "Q93332.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "They are among the oldest mountains on Earth.",
+            "nb": "De er blant de eldste fjellene på jorden."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q189429",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q189429.en.1",
+            "type": "anchor",
+            "text": "The Sonoran Desert covers southern Arizona, southeastern California and Sonora in northwest Mexico."
+          },
+          {
+            "id": "Q189429.en.2",
+            "type": "story",
+            "text": "The saguaro, the tall cactus with raised arms from every cartoon Western, grows wild only in the Sonoran Desert."
+          },
+          {
+            "id": "Q189429.en.3",
+            "type": "contrast",
+            "text": "The Sonoran Desert is west of the Sierra Madre; the Chihuahuan Desert is east of it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q189429.nb.1",
+            "type": "anchor",
+            "text": "Sonoraørkenen dekker sørlige Arizona, sørøstlige California og Sonora nordvest i Mexico."
+          },
+          {
+            "id": "Q189429.nb.2",
+            "type": "story",
+            "text": "Saguarokaktusen, den høye kaktusen med armene i været fra alle tegnede westernfilmer, vokser vilt bare i Sonoraørkenen."
+          },
+          {
+            "id": "Q189429.nb.3",
+            "type": "contrast",
+            "text": "Sonoraørkenen ligger vest for Sierra Madre. Chihuahuaørkenen ligger øst for den."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q189429.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Sonoran Desert lies in the United States and Mexico.",
+            "nb": "Sonoraørkenen ligger i USA og Mexico."
+          }
+        },
+        {
+          "id": "Q189429.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is home to the saguaro cactus.",
+            "nb": "Der vokser saguarokaktusen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q855658",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q855658.en.1",
+            "type": "anchor",
+            "text": "The Chihuahuan Desert lies in northern Mexico and reaches into Texas and New Mexico."
+          },
+          {
+            "id": "Q855658.en.2",
+            "type": "contrast",
+            "text": "The Chihuahuan Desert is the eastern of the two big North American deserts, east of the Sonoran."
+          },
+          {
+            "id": "Q855658.en.3",
+            "type": "story",
+            "text": "The Rio Grande crosses the Chihuahuan Desert along the border between Mexico and Texas."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q855658.nb.1",
+            "type": "anchor",
+            "text": "Chihuahuaørkenen ligger nord i Mexico og når inn i Texas og New Mexico."
+          },
+          {
+            "id": "Q855658.nb.2",
+            "type": "contrast",
+            "text": "Chihuahuaørkenen er den østlige av de to store ørkenene i Nord-Amerika, øst for Sonoraørkenen."
+          },
+          {
+            "id": "Q855658.nb.3",
+            "type": "story",
+            "text": "Rio Grande krysser Chihuahuaørkenen langs grensen mellom Mexico og Texas."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q855658.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Chihuahuan Desert lies in Mexico and the United States.",
+            "nb": "Chihuahuaørkenen ligger i Mexico og USA."
+          }
+        },
+        {
+          "id": "Q855658.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is named after the Mexican state of Chihuahua.",
+            "nb": "Den har navn etter den meksikanske delstaten Chihuahua."
+          }
+        }
+      ]
+    }
+  ]
+}

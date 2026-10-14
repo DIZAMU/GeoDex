@@ -1,0 +1,831 @@
+{
+  "group": "africa",
+  "entities": [
+    {
+      "entityId": "Q41430",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q41430.en.1",
+            "type": "anchor",
+            "text": "The Gulf of Guinea is the bend in Africa's west coast, south of Ghana, Nigeria and Cameroon."
+          },
+          {
+            "id": "Q41430.en.2",
+            "type": "story",
+            "text": "The equator and the prime meridian cross in the Gulf of Guinea, at the point where latitude and longitude are both zero."
+          },
+          {
+            "id": "Q41430.en.3",
+            "type": "shape",
+            "text": "The Gulf of Guinea is the armpit of West Africa, where the coast turns from east to south."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q41430.nb.1",
+            "type": "anchor",
+            "text": "Guineabukta er knekken i Afrikas vestkyst, sør for Ghana, Nigeria og Kamerun."
+          },
+          {
+            "id": "Q41430.nb.2",
+            "type": "story",
+            "text": "Ekvator og nullmeridianen krysser hverandre i Guineabukta, der både bredde og lengde er null."
+          },
+          {
+            "id": "Q41430.nb.3",
+            "type": "shape",
+            "text": "Guineabukta er armhulen til Vest-Afrika, der kysten svinger fra øst til sør."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q41430.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Gulf of Guinea is part of the Atlantic Ocean, off West and Central Africa.",
+            "nb": "Guineabukta er en del av Atlanterhavet, utenfor Vest- og Sentral-Afrika."
+          }
+        },
+        {
+          "id": "Q41430.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Niger River empties into it.",
+            "nb": "Nigerelven munner ut i den."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q125309",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q125309.en.1",
+            "type": "anchor",
+            "text": "Lake Chad lies where Chad, Cameroon, Niger and Nigeria meet, on the southern edge of the Sahara."
+          },
+          {
+            "id": "Q125309.en.2",
+            "type": "story",
+            "text": "Lake Chad has shrunk to a small part of its size of a few decades ago, as droughts and farming drained it."
+          },
+          {
+            "id": "Q125309.en.3",
+            "type": "etymology",
+            "text": "The country of Chad is named after the lake."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q125309.nb.1",
+            "type": "anchor",
+            "text": "Tsjadsjøen ligger der Tsjad, Kamerun, Niger og Nigeria møtes, i sørkanten av Sahara."
+          },
+          {
+            "id": "Q125309.nb.2",
+            "type": "story",
+            "text": "Tsjadsjøen har krympet til en liten del av størrelsen for noen tiår siden, fordi tørke og jordbruk har tappet den."
+          },
+          {
+            "id": "Q125309.nb.3",
+            "type": "etymology",
+            "text": "Landet Tsjad har fått navnet sitt fra innsjøen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q125309.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Lake Chad is shared by Chad, Cameroon, Niger and Nigeria.",
+            "nb": "Tsjadsjøen deles av Tsjad, Kamerun, Niger og Nigeria."
+          }
+        },
+        {
+          "id": "Q125309.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its area changes greatly between wet and dry seasons.",
+            "nb": "Arealet endrer seg mye mellom regntid og tørketid."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q5505",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q5505.en.1",
+            "type": "anchor",
+            "text": "Lake Victoria lies in East Africa, shared by Uganda, Kenya and Tanzania."
+          },
+          {
+            "id": "Q5505.en.2",
+            "type": "story",
+            "text": "The White Nile flows out of Lake Victoria at Jinja in Uganda."
+          },
+          {
+            "id": "Q5505.en.3",
+            "type": "contrast",
+            "text": "Lake Victoria is Africa's largest lake by area; Tanganyika, to its southwest, is the deeper one."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q5505.nb.1",
+            "type": "anchor",
+            "text": "Victoriasjøen ligger i Øst-Afrika og deles av Uganda, Kenya og Tanzania."
+          },
+          {
+            "id": "Q5505.nb.2",
+            "type": "story",
+            "text": "Den hvite Nilen renner ut av Victoriasjøen ved Jinja i Uganda."
+          },
+          {
+            "id": "Q5505.nb.3",
+            "type": "contrast",
+            "text": "Victoriasjøen er Afrikas største innsjø i areal. Tanganyika, sørvest for den, er den dypeste."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q5505.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Lake Victoria is the largest lake in Africa.",
+            "nb": "Victoriasjøen er Afrikas største innsjø."
+          }
+        },
+        {
+          "id": "Q5505.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was named after Queen Victoria by a British explorer.",
+            "nb": "Den ble oppkalt etter dronning Victoria av en britisk oppdagelsesreisende."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q5511",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q5511.en.1",
+            "type": "anchor",
+            "text": "Lake Tanganyika lies in the Great Rift Valley between Tanzania and the Democratic Republic of the Congo."
+          },
+          {
+            "id": "Q5511.en.2",
+            "type": "shape",
+            "text": "Lake Tanganyika is a long thin blade of water lying north to south along the rift."
+          },
+          {
+            "id": "Q5511.en.3",
+            "type": "contrast",
+            "text": "Tanganyika is the long, deep lake of the rift; Victoria, to its northeast, is wide and shallow."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q5511.nb.1",
+            "type": "anchor",
+            "text": "Tanganyikasjøen ligger i Riftdalen mellom Tanzania og Den demokratiske republikken Kongo."
+          },
+          {
+            "id": "Q5511.nb.2",
+            "type": "shape",
+            "text": "Tanganyikasjøen er et langt tynt knivblad av vann fra nord til sør langs riften."
+          },
+          {
+            "id": "Q5511.nb.3",
+            "type": "contrast",
+            "text": "Tanganyika er den lange, dype innsjøen i riften. Victoria, nordøst for den, er bred og grunn."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q5511.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Lake Tanganyika is shared by Tanzania, the DR Congo, Burundi and Zambia.",
+            "nb": "Tanganyikasjøen deles av Tanzania, DR Kongo, Burundi og Zambia."
+          }
+        },
+        {
+          "id": "Q5511.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the second-deepest lake in the world, after Baikal.",
+            "nb": "Den er verdens nest dypeste innsjø, etter Bajkal."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q5532",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q5532.en.1",
+            "type": "anchor",
+            "text": "Lake Malawi runs down the east side of Malawi, with Mozambique and Tanzania on its far shore."
+          },
+          {
+            "id": "Q5532.en.2",
+            "type": "story",
+            "text": "Lake Malawi holds hundreds of species of brightly coloured cichlid fish found nowhere else."
+          },
+          {
+            "id": "Q5532.en.3",
+            "type": "shape",
+            "text": "Lake Malawi is a long narrow lake that fills most of the length of Malawi."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q5532.nb.1",
+            "type": "anchor",
+            "text": "Malawisjøen går langs østsiden av Malawi, med Mosambik og Tanzania på den andre bredden."
+          },
+          {
+            "id": "Q5532.nb.2",
+            "type": "story",
+            "text": "Malawisjøen har hundrevis av arter fargerike ciklider som ikke finnes noe annet sted."
+          },
+          {
+            "id": "Q5532.nb.3",
+            "type": "shape",
+            "text": "Malawisjøen er en lang smal innsjø som fyller det meste av lengden av Malawi."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q5532.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Lake Malawi is shared by Malawi, Mozambique and Tanzania.",
+            "nb": "Malawisjøen deles av Malawi, Mosambik og Tanzania."
+          }
+        },
+        {
+          "id": "Q5532.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It lies at the southern end of the East African Rift.",
+            "nb": "Den ligger i sørenden av Den østafrikanske riften."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q3392",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q3392.en.1",
+            "type": "anchor",
+            "text": "The Nile flows north from East Africa through Sudan and Egypt to the Mediterranean."
+          },
+          {
+            "id": "Q3392.en.2",
+            "type": "story",
+            "text": "Ancient Egypt lived on a green ribbon along the Nile, with desert on both sides."
+          },
+          {
+            "id": "Q3392.en.3",
+            "type": "contrast",
+            "text": "The Nile flows north, unlike most of Africa's great rivers, which flow west or east."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q3392.nb.1",
+            "type": "anchor",
+            "text": "Nilen renner nordover fra Øst-Afrika gjennom Sudan og Egypt til Middelhavet."
+          },
+          {
+            "id": "Q3392.nb.2",
+            "type": "story",
+            "text": "Oldtidens Egypt levde på et grønt bånd langs Nilen, med ørken på begge sider."
+          },
+          {
+            "id": "Q3392.nb.3",
+            "type": "contrast",
+            "text": "Nilen renner nordover, i motsetning til de fleste store elvene i Afrika, som renner vestover eller østover."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q3392.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Nile is usually named the longest river in the world.",
+            "nb": "Nilen kalles vanligvis verdens lengste elv."
+          }
+        },
+        {
+          "id": "Q3392.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The White Nile and the Blue Nile meet at Khartoum.",
+            "nb": "Den hvite og Den blå Nilen møtes ved Khartoum."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q3503",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q3503.en.1",
+            "type": "anchor",
+            "text": "The Congo River curves through central Africa and reaches the Atlantic between Angola and the DR Congo."
+          },
+          {
+            "id": "Q3503.en.2",
+            "type": "story",
+            "text": "The Congo crosses the equator twice on its great arc through the rainforest."
+          },
+          {
+            "id": "Q3503.en.3",
+            "type": "contrast",
+            "text": "The Congo is Africa's deepest river and carries more water than any other African river."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q3503.nb.1",
+            "type": "anchor",
+            "text": "Kongo svinger gjennom Sentral-Afrika og når Atlanterhavet mellom Angola og DR Kongo."
+          },
+          {
+            "id": "Q3503.nb.2",
+            "type": "story",
+            "text": "Kongo krysser ekvator to ganger på den store buen gjennom regnskogen."
+          },
+          {
+            "id": "Q3503.nb.3",
+            "type": "contrast",
+            "text": "Kongo er Afrikas dypeste elv og fører mer vann enn noen annen elv i Afrika."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q3503.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Congo forms part of the border between the DR Congo and the Republic of the Congo.",
+            "nb": "Kongo danner en del av grensen mellom DR Kongo og Republikken Kongo."
+          }
+        },
+        {
+          "id": "Q3503.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Kinshasa and Brazzaville face each other across it.",
+            "nb": "Kinshasa og Brazzaville ligger overfor hverandre på hver sin bredd."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q3542",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q3542.en.1",
+            "type": "anchor",
+            "text": "The Niger flows from Guinea northeast into Mali, then bends southeast through Niger and Nigeria to the sea."
+          },
+          {
+            "id": "Q3542.en.2",
+            "type": "shape",
+            "text": "The Niger runs in a great boomerang, first toward the Sahara and then back down to the Gulf of Guinea."
+          },
+          {
+            "id": "Q3542.en.3",
+            "type": "story",
+            "text": "The Niger passes Timbuktu, the old desert trading city at the top of its bend."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q3542.nb.1",
+            "type": "anchor",
+            "text": "Niger renner fra Guinea nordøstover inn i Mali og bøyer så av sørøstover gjennom Niger og Nigeria til havet."
+          },
+          {
+            "id": "Q3542.nb.2",
+            "type": "shape",
+            "text": "Niger går i en stor bumerang, først mot Sahara og så tilbake ned til Guineabukta."
+          },
+          {
+            "id": "Q3542.nb.3",
+            "type": "story",
+            "text": "Niger passerer Timbuktu, den gamle handelsbyen i ørkenen øverst i buen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q3542.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Niger flows through Guinea, Mali, Niger, Benin's border and Nigeria.",
+            "nb": "Niger renner gjennom Guinea, Mali, Niger, langs grensen mot Benin og gjennom Nigeria."
+          }
+        },
+        {
+          "id": "Q3542.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Both Niger and Nigeria are named after the river.",
+            "nb": "Både Niger og Nigeria har navn etter elven."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q43106",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q43106.en.1",
+            "type": "anchor",
+            "text": "The Zambezi flows east across southern Africa from Zambia, along Zimbabwe's border and through Mozambique to the Indian Ocean."
+          },
+          {
+            "id": "Q43106.en.2",
+            "type": "story",
+            "text": "The Zambezi drops over Victoria Falls on the border of Zambia and Zimbabwe."
+          },
+          {
+            "id": "Q43106.en.3",
+            "type": "contrast",
+            "text": "The Zambezi flows east to the Indian Ocean; the Congo, to its north, flows west to the Atlantic."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q43106.nb.1",
+            "type": "anchor",
+            "text": "Zambezi renner østover over det sørlige Afrika fra Zambia, langs grensen mot Zimbabwe og gjennom Mosambik til Indiahavet."
+          },
+          {
+            "id": "Q43106.nb.2",
+            "type": "story",
+            "text": "Zambezi stuper utfor Victoriafallene på grensen mellom Zambia og Zimbabwe."
+          },
+          {
+            "id": "Q43106.nb.3",
+            "type": "contrast",
+            "text": "Zambezi renner østover til Indiahavet. Kongo, nord for den, renner vestover til Atlanterhavet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q43106.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Zambezi forms the border between Zambia and Zimbabwe for much of its course.",
+            "nb": "Zambezi danner grensen mellom Zambia og Zimbabwe på en lang strekning."
+          }
+        },
+        {
+          "id": "Q43106.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Kariba and Cahora Bassa dams are built on it.",
+            "nb": "Kariba- og Cahora Bassa-demningene er bygd på den."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q130135",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q130135.en.1",
+            "type": "anchor",
+            "text": "The Atlas Mountains run across northwest Africa through Morocco, Algeria and Tunisia."
+          },
+          {
+            "id": "Q130135.en.2",
+            "type": "contrast",
+            "text": "The Atlas is a wall between the Mediterranean coast to the north and the Sahara to the south."
+          },
+          {
+            "id": "Q130135.en.3",
+            "type": "etymology",
+            "text": "The Atlas Mountains share their name with Atlas, the Titan who held up the sky."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q130135.nb.1",
+            "type": "anchor",
+            "text": "Atlasfjellene går over Nordvest-Afrika gjennom Marokko, Algerie og Tunisia."
+          },
+          {
+            "id": "Q130135.nb.2",
+            "type": "contrast",
+            "text": "Atlas er en mur mellom middelhavskysten i nord og Sahara i sør."
+          },
+          {
+            "id": "Q130135.nb.3",
+            "type": "etymology",
+            "text": "Atlasfjellene har samme navn som Atlas, titanen som holdt himmelen oppe."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q130135.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Atlas Mountains run through Morocco, Algeria and Tunisia.",
+            "nb": "Atlasfjellene går gjennom Marokko, Algerie og Tunisia."
+          }
+        },
+        {
+          "id": "Q130135.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Toubkal in Morocco is the highest peak.",
+            "nb": "Toubkal i Marokko er den høyeste toppen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q183295",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q183295.en.1",
+            "type": "anchor",
+            "text": "The Drakensberg runs along eastern South Africa and around the borders of Lesotho."
+          },
+          {
+            "id": "Q183295.en.2",
+            "type": "etymology",
+            "text": "Drakensberg is Afrikaans for dragon mountain."
+          },
+          {
+            "id": "Q183295.en.3",
+            "type": "story",
+            "text": "Lesotho sits so high on the Drakensberg that its lowest point is higher than that of any other country."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q183295.nb.1",
+            "type": "anchor",
+            "text": "Drakensberg går langs det østlige Sør-Afrika og rundt grensene til Lesotho."
+          },
+          {
+            "id": "Q183295.nb.2",
+            "type": "etymology",
+            "text": "Drakensberg er afrikaans for drakefjellet."
+          },
+          {
+            "id": "Q183295.nb.3",
+            "type": "story",
+            "text": "Lesotho ligger så høyt i Drakensberg at landets laveste punkt er høyere enn i noe annet land."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q183295.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Drakensberg lies in South Africa and Lesotho.",
+            "nb": "Drakensberg ligger i Sør-Afrika og Lesotho."
+          }
+        },
+        {
+          "id": "Q183295.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the highest mountain range in southern Africa.",
+            "nb": "Det er den høyeste fjellkjeden i det sørlige Afrika."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q131377",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q131377.en.1",
+            "type": "anchor",
+            "text": "The Namib runs along the Atlantic coast of Namibia, from southern Angola to South Africa."
+          },
+          {
+            "id": "Q131377.en.2",
+            "type": "story",
+            "text": "Cold sea fog rolls in over the Namib, and beetles drink by catching droplets on their backs."
+          },
+          {
+            "id": "Q131377.en.3",
+            "type": "contrast",
+            "text": "The Namib is a coastal desert facing the Atlantic; the Kalahari lies inland, east of it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q131377.nb.1",
+            "type": "anchor",
+            "text": "Namibørkenen går langs atlanterhavskysten av Namibia, fra Sør-Angola til Sør-Afrika."
+          },
+          {
+            "id": "Q131377.nb.2",
+            "type": "story",
+            "text": "Kald havtåke ruller inn over Namib, og biller drikker ved å fange dråper på ryggen."
+          },
+          {
+            "id": "Q131377.nb.3",
+            "type": "contrast",
+            "text": "Namib er en kystørken mot Atlanterhavet. Kalahari ligger inne i landet, øst for den."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q131377.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Namib Desert lies along the coast of Namibia, reaching into Angola and South Africa.",
+            "nb": "Namibørkenen ligger langs kysten av Namibia og når inn i Angola og Sør-Afrika."
+          }
+        },
+        {
+          "id": "Q131377.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is often called the oldest desert in the world.",
+            "nb": "Den kalles ofte verdens eldste ørken."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q47700",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q47700.en.1",
+            "type": "anchor",
+            "text": "The Kalahari covers most of Botswana and reaches into Namibia and South Africa."
+          },
+          {
+            "id": "Q47700.en.2",
+            "type": "contrast",
+            "text": "The Kalahari gets more rain than a true desert, so grass and thorn trees cover much of it."
+          },
+          {
+            "id": "Q47700.en.3",
+            "type": "story",
+            "text": "The Okavango River runs into the Kalahari and spreads out into a vast inland delta instead of reaching the sea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q47700.nb.1",
+            "type": "anchor",
+            "text": "Kalahari dekker det meste av Botswana og når inn i Namibia og Sør-Afrika."
+          },
+          {
+            "id": "Q47700.nb.2",
+            "type": "contrast",
+            "text": "Kalahari får mer regn enn en ekte ørken, så gress og tornetrær dekker store deler."
+          },
+          {
+            "id": "Q47700.nb.3",
+            "type": "story",
+            "text": "Okavango-elven renner inn i Kalahari og sprer seg ut i et enormt innlandsdelta i stedet for å nå havet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q47700.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Kalahari lies in Botswana, Namibia and South Africa.",
+            "nb": "Kalahari ligger i Botswana, Namibia og Sør-Afrika."
+          }
+        },
+        {
+          "id": "Q47700.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Okavango Delta lies on its northern edge.",
+            "nb": "Okavangodeltaet ligger i nordkanten av den."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q6583",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q6583.en.1",
+            "type": "anchor",
+            "text": "The Sahara covers most of northern Africa, from the Atlantic to the Red Sea."
+          },
+          {
+            "id": "Q6583.en.2",
+            "type": "contrast",
+            "text": "The Sahara is mostly rock and gravel; sand dunes cover only part of it."
+          },
+          {
+            "id": "Q6583.en.3",
+            "type": "etymology",
+            "text": "Sahara comes from the Arabic word for desert, so the Sahara Desert means the desert desert."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q6583.nb.1",
+            "type": "anchor",
+            "text": "Sahara dekker det meste av Nord-Afrika, fra Atlanterhavet til Rødehavet."
+          },
+          {
+            "id": "Q6583.nb.2",
+            "type": "contrast",
+            "text": "Sahara er mest stein og grus. Sanddyner dekker bare en del av den."
+          },
+          {
+            "id": "Q6583.nb.3",
+            "type": "etymology",
+            "text": "Sahara kommer av det arabiske ordet for ørken, så Saharaørkenen betyr ørkenørkenen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q6583.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Sahara is the largest hot desert in the world.",
+            "nb": "Sahara er verdens største varme ørken."
+          }
+        },
+        {
+          "id": "Q6583.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It covers parts of more than ten countries.",
+            "nb": "Den dekker deler av mer enn ti land."
+          }
+        }
+      ]
+    }
+  ]
+}

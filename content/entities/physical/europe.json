@@ -1,0 +1,1067 @@
+{
+  "group": "europe",
+  "entities": [
+    {
+      "entityId": "Q13924",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q13924.en.1",
+            "type": "anchor",
+            "text": "The Adriatic Sea lies between Italy and the Balkan coast of Slovenia, Croatia, Montenegro and Albania."
+          },
+          {
+            "id": "Q13924.en.2",
+            "type": "shape",
+            "text": "The Adriatic is the long bathtub between the boot of Italy and the Balkans."
+          },
+          {
+            "id": "Q13924.en.3",
+            "type": "contrast",
+            "text": "The Adriatic is east of Italy; the Tyrrhenian Sea is on Italy's west side."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q13924.nb.1",
+            "type": "anchor",
+            "text": "Adriaterhavet ligger mellom Italia og Balkan-kysten med Slovenia, Kroatia, Montenegro og Albania."
+          },
+          {
+            "id": "Q13924.nb.2",
+            "type": "shape",
+            "text": "Adriaterhavet er det lange badekaret mellom støvelen Italia og Balkan."
+          },
+          {
+            "id": "Q13924.nb.3",
+            "type": "contrast",
+            "text": "Adriaterhavet ligger øst for Italia. Tyrrenhavet ligger på vestsiden."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q13924.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Adriatic Sea is an arm of the Mediterranean between Italy and the Balkans.",
+            "nb": "Adriaterhavet er en arm av Middelhavet mellom Italia og Balkan."
+          }
+        },
+        {
+          "id": "Q13924.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Venice lies on its northern shore.",
+            "nb": "Venezia ligger ved nordkysten."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q166",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q166.en.1",
+            "type": "anchor",
+            "text": "The Black Sea lies between Ukraine and Russia to the north and Turkey to the south."
+          },
+          {
+            "id": "Q166.en.2",
+            "type": "story",
+            "text": "The Black Sea's deep water holds almost no oxygen, so old wooden shipwrecks on its floor barely rot."
+          },
+          {
+            "id": "Q166.en.3",
+            "type": "contrast",
+            "text": "The Black Sea connects to the Mediterranean through the Bosporus at Istanbul; the Caspian has no outlet at all."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q166.nb.1",
+            "type": "anchor",
+            "text": "Svartehavet ligger mellom Ukraina og Russland i nord og Tyrkia i sør."
+          },
+          {
+            "id": "Q166.nb.2",
+            "type": "story",
+            "text": "Dypvannet i Svartehavet har nesten ikke oksygen, så gamle treskipsvrak på bunnen råtner knapt."
+          },
+          {
+            "id": "Q166.nb.3",
+            "type": "contrast",
+            "text": "Svartehavet er forbundet med Middelhavet gjennom Bosporos ved Istanbul. Det kaspiske hav har ikke noe utløp."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q166.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Black Sea is bordered by Ukraine, Russia, Georgia, Turkey, Bulgaria and Romania.",
+            "nb": "Svartehavet grenser til Ukraina, Russland, Georgia, Tyrkia, Bulgaria og Romania."
+          }
+        },
+        {
+          "id": "Q166.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is connected to the Mediterranean through the Bosporus and the Dardanelles.",
+            "nb": "Det er forbundet med Middelhavet gjennom Bosporos og Dardanellene."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1693",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1693.en.1",
+            "type": "anchor",
+            "text": "The North Sea lies between Great Britain and Norway, Denmark, Germany and the Netherlands."
+          },
+          {
+            "id": "Q1693.en.2",
+            "type": "story",
+            "text": "Oil and gas under the North Sea paid for much of Norway's sovereign wealth fund."
+          },
+          {
+            "id": "Q1693.en.3",
+            "type": "contrast",
+            "text": "The North Sea is west of Denmark; the Baltic Sea is east of it, reached through narrow straits."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1693.nb.1",
+            "type": "anchor",
+            "text": "Nordsjøen ligger mellom Storbritannia og Norge, Danmark, Tyskland og Nederland."
+          },
+          {
+            "id": "Q1693.nb.2",
+            "type": "story",
+            "text": "Olje og gass under Nordsjøen betalte for mye av det norske oljefondet."
+          },
+          {
+            "id": "Q1693.nb.3",
+            "type": "contrast",
+            "text": "Nordsjøen ligger vest for Danmark. Østersjøen ligger øst for landet, bak trange sund."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1693.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The North Sea is part of the Atlantic Ocean, between Great Britain and mainland Europe.",
+            "nb": "Nordsjøen er en del av Atlanterhavet, mellom Storbritannia og fastlands-Europa."
+          }
+        },
+        {
+          "id": "Q1693.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It has large oil and gas fields.",
+            "nb": "Havet har store olje- og gassfelt."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q45823",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q45823.en.1",
+            "type": "anchor",
+            "text": "The Barents Sea lies north of Norway and northwest Russia, south of Svalbard."
+          },
+          {
+            "id": "Q45823.en.2",
+            "type": "story",
+            "text": "The Gulf Stream's last warmth keeps the southern Barents Sea ice-free, so the port of Murmansk stays open in winter."
+          },
+          {
+            "id": "Q45823.en.3",
+            "type": "etymology",
+            "text": "The Barents Sea is named after Willem Barentsz, a Dutch navigator who explored the Arctic."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q45823.nb.1",
+            "type": "anchor",
+            "text": "Barentshavet ligger nord for Norge og Nordvest-Russland, sør for Svalbard."
+          },
+          {
+            "id": "Q45823.nb.2",
+            "type": "story",
+            "text": "De siste restene av Golfstrømmen holder sørlige Barentshavet isfritt, så havnen i Murmansk er åpen om vinteren."
+          },
+          {
+            "id": "Q45823.nb.3",
+            "type": "etymology",
+            "text": "Barentshavet er oppkalt etter Willem Barentsz, en nederlandsk sjøfarer som utforsket Arktis."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q45823.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Barents Sea is part of the Arctic Ocean, north of Norway and Russia.",
+            "nb": "Barentshavet er en del av Polhavet, nord for Norge og Russland."
+          }
+        },
+        {
+          "id": "Q45823.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its southern part stays ice-free all year.",
+            "nb": "Den sørlige delen er isfri hele året."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q4918",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q4918.en.1",
+            "type": "anchor",
+            "text": "The Mediterranean lies between Europe to the north, Africa to the south and Asia to the east."
+          },
+          {
+            "id": "Q4918.en.2",
+            "type": "etymology",
+            "text": "Mediterranean means in the middle of the land, from Latin medius and terra."
+          },
+          {
+            "id": "Q4918.en.3",
+            "type": "story",
+            "text": "The Mediterranean nearly dried out millions of years ago, when the Strait of Gibraltar closed."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q4918.nb.1",
+            "type": "anchor",
+            "text": "Middelhavet ligger mellom Europa i nord, Afrika i sør og Asia i øst."
+          },
+          {
+            "id": "Q4918.nb.2",
+            "type": "etymology",
+            "text": "Middelhavet betyr havet midt mellom landene, og det latinske navnet betyr midt i landet."
+          },
+          {
+            "id": "Q4918.nb.3",
+            "type": "story",
+            "text": "Middelhavet tørket nesten ut for millioner av år siden, da Gibraltarstredet ble stengt."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q4918.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Mediterranean connects to the Atlantic through the Strait of Gibraltar.",
+            "nb": "Middelhavet er forbundet med Atlanterhavet gjennom Gibraltarstredet."
+          }
+        },
+        {
+          "id": "Q4918.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Suez Canal links it to the Red Sea.",
+            "nb": "Suezkanalen forbinder det med Rødehavet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q545",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q545.en.1",
+            "type": "anchor",
+            "text": "The Baltic Sea is ringed by Sweden, Finland, Russia, the Baltic states, Poland, Germany and Denmark."
+          },
+          {
+            "id": "Q545.en.2",
+            "type": "contrast",
+            "text": "The Baltic is brackish, much less salty than the North Sea, because so many rivers pour into it."
+          },
+          {
+            "id": "Q545.en.3",
+            "type": "shape",
+            "text": "The Baltic looks like a figure with an arm reaching north between Sweden and Finland, the Gulf of Bothnia."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q545.nb.1",
+            "type": "anchor",
+            "text": "Østersjøen er omgitt av Sverige, Finland, Russland, Baltikum, Polen, Tyskland og Danmark."
+          },
+          {
+            "id": "Q545.nb.2",
+            "type": "contrast",
+            "text": "Østersjøen er brakkvann, langt mindre salt enn Nordsjøen, fordi så mange elver renner ut i den."
+          },
+          {
+            "id": "Q545.nb.3",
+            "type": "shape",
+            "text": "Østersjøen ser ut som en figur med en arm som strekker seg nordover mellom Sverige og Finland, Bottenviken."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q545.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Baltic Sea is connected to the North Sea through the Danish straits.",
+            "nb": "Østersjøen er forbundet med Nordsjøen gjennom de danske sundene."
+          }
+        },
+        {
+          "id": "Q545.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its water is brackish, a mix of fresh and salt water.",
+            "nb": "Vannet er brakkvann, en blanding av ferskvann og saltvann."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q15288",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q15288.en.1",
+            "type": "anchor",
+            "text": "Lake Ladoga lies in northwest Russia, northeast of Saint Petersburg, near the Finnish border."
+          },
+          {
+            "id": "Q15288.en.2",
+            "type": "story",
+            "text": "During the siege of Leningrad, supplies crossed frozen Lake Ladoga on an ice road."
+          },
+          {
+            "id": "Q15288.en.3",
+            "type": "contrast",
+            "text": "Ladoga is the largest lake wholly in Europe; the Caspian, larger, lies on the edge between Europe and Asia."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q15288.nb.1",
+            "type": "anchor",
+            "text": "Ladogasjøen ligger nordvest i Russland, nordøst for St. Petersburg, nær grensen mot Finland."
+          },
+          {
+            "id": "Q15288.nb.2",
+            "type": "story",
+            "text": "Under beleiringen av Leningrad ble forsyninger fraktet over islagte Ladogasjøen på en isvei."
+          },
+          {
+            "id": "Q15288.nb.3",
+            "type": "contrast",
+            "text": "Ladoga er den største innsjøen helt i Europa. Det kaspiske hav, som er større, ligger på grensen mellom Europa og Asia."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q15288.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Lake Ladoga is in northwest Russia.",
+            "nb": "Ladogasjøen ligger nordvest i Russland."
+          }
+        },
+        {
+          "id": "Q15288.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the largest lake entirely in Europe.",
+            "nb": "Det er den største innsjøen som ligger helt i Europa."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1471",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1471.en.1",
+            "type": "anchor",
+            "text": "The Seine flows northwest through Paris and reaches the English Channel at Le Havre."
+          },
+          {
+            "id": "Q1471.en.2",
+            "type": "story",
+            "text": "The Seine runs through the middle of Paris, past Notre-Dame on its island and under the bridges to the Eiffel Tower."
+          },
+          {
+            "id": "Q1471.en.3",
+            "type": "contrast",
+            "text": "The Seine runs north to the Channel; the Loire, longer, runs west to the Atlantic."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1471.nb.1",
+            "type": "anchor",
+            "text": "Seine renner nordvestover gjennom Paris og når Den engelske kanal ved Le Havre."
+          },
+          {
+            "id": "Q1471.nb.2",
+            "type": "story",
+            "text": "Seine renner midt gjennom Paris, forbi Notre-Dame på øya og under broene til Eiffeltårnet."
+          },
+          {
+            "id": "Q1471.nb.3",
+            "type": "contrast",
+            "text": "Seine renner nordover til Kanalen. Loire, som er lengre, renner vestover til Atlanterhavet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1471.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Seine flows through Paris, France.",
+            "nb": "Seine renner gjennom Paris i Frankrike."
+          }
+        },
+        {
+          "id": "Q1471.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It ends in the English Channel.",
+            "nb": "Den munner ut i Den engelske kanal."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1653",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1653.en.1",
+            "type": "anchor",
+            "text": "The Danube flows east from Germany's Black Forest to the Black Sea on the Romanian coast."
+          },
+          {
+            "id": "Q1653.en.2",
+            "type": "story",
+            "text": "The Danube runs through four capitals: Vienna, Bratislava, Budapest and Belgrade."
+          },
+          {
+            "id": "Q1653.en.3",
+            "type": "shape",
+            "text": "The Danube is a long thread stitching central Europe together from west to east."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1653.nb.1",
+            "type": "anchor",
+            "text": "Donau renner østover fra Schwarzwald i Tyskland til Svartehavet på kysten av Romania."
+          },
+          {
+            "id": "Q1653.nb.2",
+            "type": "story",
+            "text": "Donau renner gjennom fire hovedsteder: Wien, Bratislava, Budapest og Beograd."
+          },
+          {
+            "id": "Q1653.nb.3",
+            "type": "shape",
+            "text": "Donau er en lang tråd som syr Mellom-Europa sammen fra vest til øst."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1653.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Danube flows through more countries than any other river.",
+            "nb": "Donau renner gjennom flere land enn noen annen elv."
+          }
+        },
+        {
+          "id": "Q1653.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It ends in a delta on the Black Sea.",
+            "nb": "Den ender i et delta ved Svartehavet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q19686",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q19686.en.1",
+            "type": "anchor",
+            "text": "The Thames flows east through southern England and through London to the North Sea."
+          },
+          {
+            "id": "Q19686.en.2",
+            "type": "story",
+            "text": "The Thames is tidal in London, so the river at Westminster rises and falls twice a day."
+          },
+          {
+            "id": "Q19686.en.3",
+            "type": "contrast",
+            "text": "The Thames runs east to the North Sea; the Seine across the Channel runs west to it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q19686.nb.1",
+            "type": "anchor",
+            "text": "Themsen renner østover gjennom Sør-England og gjennom London til Nordsjøen."
+          },
+          {
+            "id": "Q19686.nb.2",
+            "type": "story",
+            "text": "Themsen har tidevann i London, så elven ved Westminster stiger og synker to ganger om dagen."
+          },
+          {
+            "id": "Q19686.nb.3",
+            "type": "contrast",
+            "text": "Themsen renner østover mot Nordsjøen. Seine på andre siden av Kanalen renner vestover mot den."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q19686.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Thames flows through London, England.",
+            "nb": "Themsen renner gjennom London i England."
+          }
+        },
+        {
+          "id": "Q19686.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Thames Barrier protects London from flooding by storm tides.",
+            "nb": "Thames Barrier beskytter London mot flom ved stormflo."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q584",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q584.en.1",
+            "type": "anchor",
+            "text": "The Rhine flows north from the Swiss Alps along the French and German border to the North Sea in the Netherlands."
+          },
+          {
+            "id": "Q584.en.2",
+            "type": "story",
+            "text": "The Rhine passes the Lorelei rock, where legend says a siren lured boatmen onto the cliffs."
+          },
+          {
+            "id": "Q584.en.3",
+            "type": "contrast",
+            "text": "The Rhine runs north to the North Sea; the Danube, starting nearby, runs east to the Black Sea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q584.nb.1",
+            "type": "anchor",
+            "text": "Rhinen renner nordover fra de sveitsiske Alpene langs grensen mellom Frankrike og Tyskland til Nordsjøen i Nederland."
+          },
+          {
+            "id": "Q584.nb.2",
+            "type": "story",
+            "text": "Rhinen passerer Loreley-klippen, der en sirene ifølge sagnet lokket båtfolk inn mot fjellet."
+          },
+          {
+            "id": "Q584.nb.3",
+            "type": "contrast",
+            "text": "Rhinen renner nordover til Nordsjøen. Donau, som starter like ved, renner østover til Svartehavet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q584.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Rhine flows through Switzerland, Germany and the Netherlands.",
+            "nb": "Rhinen renner gjennom Sveits, Tyskland og Nederland."
+          }
+        },
+        {
+          "id": "Q584.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Rotterdam, at its mouth, is the largest port in Europe.",
+            "nb": "Rotterdam, ved munningen, er Europas største havn."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q626",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q626.en.1",
+            "type": "anchor",
+            "text": "The Volga flows through western Russia, from north of Moscow south to the Caspian Sea."
+          },
+          {
+            "id": "Q626.en.2",
+            "type": "contrast",
+            "text": "The Volga is Europe's longest river and ends in the Caspian Sea, not in an ocean."
+          },
+          {
+            "id": "Q626.en.3",
+            "type": "story",
+            "text": "Russians call the Volga Mother Volga, and many songs are written about it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q626.nb.1",
+            "type": "anchor",
+            "text": "Volga renner gjennom det vestlige Russland, fra nord for Moskva sørover til Det kaspiske hav."
+          },
+          {
+            "id": "Q626.nb.2",
+            "type": "contrast",
+            "text": "Volga er Europas lengste elv og ender i Det kaspiske hav, ikke i et verdenshav."
+          },
+          {
+            "id": "Q626.nb.3",
+            "type": "story",
+            "text": "Russere kaller elven Mor Volga, og mange sanger er skrevet om den."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q626.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Volga is the longest river in Europe.",
+            "nb": "Volga er Europas lengste elv."
+          }
+        },
+        {
+          "id": "Q626.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It flows into the Caspian Sea.",
+            "nb": "Den renner ut i Det kaspiske hav."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q12431",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q12431.en.1",
+            "type": "anchor",
+            "text": "The Pyrenees run between France and Spain, from the Bay of Biscay to the Mediterranean."
+          },
+          {
+            "id": "Q12431.en.2",
+            "type": "shape",
+            "text": "The Pyrenees are a stone wall across the neck of the Iberian Peninsula."
+          },
+          {
+            "id": "Q12431.en.3",
+            "type": "story",
+            "text": "Tiny Andorra sits high in the Pyrenees, squeezed between France and Spain."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q12431.nb.1",
+            "type": "anchor",
+            "text": "Pyreneene går mellom Frankrike og Spania, fra Biscayabukta til Middelhavet."
+          },
+          {
+            "id": "Q12431.nb.2",
+            "type": "shape",
+            "text": "Pyreneene er en steinmur tvers over halsen på Den iberiske halvøy."
+          },
+          {
+            "id": "Q12431.nb.3",
+            "type": "story",
+            "text": "Lille Andorra ligger høyt oppe i Pyreneene, klemt mellom Frankrike og Spania."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q12431.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Pyrenees form much of the border between France and Spain.",
+            "nb": "Pyreneene utgjør mye av grensen mellom Frankrike og Spania."
+          }
+        },
+        {
+          "id": "Q12431.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Andorra lies in the eastern Pyrenees.",
+            "nb": "Andorra ligger i de østlige Pyreneene."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1286",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1286.en.1",
+            "type": "anchor",
+            "text": "The Alps curve across Europe from France through Switzerland, Italy and Austria to Slovenia."
+          },
+          {
+            "id": "Q1286.en.2",
+            "type": "shape",
+            "text": "The Alps are a crescent of snowy peaks bent around the north of Italy."
+          },
+          {
+            "id": "Q1286.en.3",
+            "type": "story",
+            "text": "Hannibal took war elephants across the Alps to attack Rome from the north."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1286.nb.1",
+            "type": "anchor",
+            "text": "Alpene bøyer seg over Europa fra Frankrike gjennom Sveits, Italia og Østerrike til Slovenia."
+          },
+          {
+            "id": "Q1286.nb.2",
+            "type": "shape",
+            "text": "Alpene er en halvmåne av snødekte topper bøyd rundt Nord-Italia."
+          },
+          {
+            "id": "Q1286.nb.3",
+            "type": "story",
+            "text": "Hannibal tok krigselefanter over Alpene for å angripe Roma fra nord."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1286.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Alps are the highest mountain range lying wholly in Europe.",
+            "nb": "Alpene er den høyeste fjellkjeden som ligger helt i Europa."
+          }
+        },
+        {
+          "id": "Q1286.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Mont Blanc, on the border of France and Italy, is the highest peak.",
+            "nb": "Mont Blanc, på grensen mellom Frankrike og Italia, er den høyeste toppen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1288",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1288.en.1",
+            "type": "anchor",
+            "text": "The Carpathians arc from Slovakia and Poland through Ukraine into Romania."
+          },
+          {
+            "id": "Q1288.en.2",
+            "type": "shape",
+            "text": "The Carpathians bend in a big backwards C around the plain of Hungary and Transylvania."
+          },
+          {
+            "id": "Q1288.en.3",
+            "type": "story",
+            "text": "Transylvania, home of the Dracula legend, lies inside the curve of the Carpathians."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1288.nb.1",
+            "type": "anchor",
+            "text": "Karpatene bøyer seg fra Slovakia og Polen gjennom Ukraina og inn i Romania."
+          },
+          {
+            "id": "Q1288.nb.2",
+            "type": "shape",
+            "text": "Karpatene bøyer seg i en stor baklengs C rundt Ungarnsletten og Transilvania."
+          },
+          {
+            "id": "Q1288.nb.3",
+            "type": "story",
+            "text": "Transilvania, hjemstedet til Dracula-sagnet, ligger innenfor buen av Karpatene."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1288.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Carpathians run through Slovakia, Poland, Ukraine and Romania, among others.",
+            "nb": "Karpatene går gjennom blant annet Slovakia, Polen, Ukraina og Romania."
+          }
+        },
+        {
+          "id": "Q1288.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The largest part of the range lies in Romania.",
+            "nb": "Den største delen av fjellkjeden ligger i Romania."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q186547",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q186547.en.1",
+            "type": "anchor",
+            "text": "The Scandinavian Mountains run along the Scandinavian Peninsula, forming much of the border of Norway and Sweden."
+          },
+          {
+            "id": "Q186547.en.2",
+            "type": "story",
+            "text": "Glaciers cut down into the Scandinavian Mountains and carved Norway's fjords where they met the sea."
+          },
+          {
+            "id": "Q186547.en.3",
+            "type": "contrast",
+            "text": "The Scandinavian Mountains rise steeply on the Norwegian side and slope gently into Sweden."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q186547.nb.1",
+            "type": "anchor",
+            "text": "Den skandinaviske fjellkjeden går langs Den skandinaviske halvøy og utgjør mye av grensen mellom Norge og Sverige."
+          },
+          {
+            "id": "Q186547.nb.2",
+            "type": "story",
+            "text": "Isbreer skar seg ned i fjellkjeden og laget de norske fjordene der de møtte havet."
+          },
+          {
+            "id": "Q186547.nb.3",
+            "type": "contrast",
+            "text": "Fjellkjeden stiger bratt på norsk side og heller slakt ned mot Sverige."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q186547.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Scandinavian Mountains run through Norway and Sweden.",
+            "nb": "Den skandinaviske fjellkjeden går gjennom Norge og Sverige."
+          }
+        },
+        {
+          "id": "Q186547.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Galdhøpiggen in Norway is the highest peak.",
+            "nb": "Galdhøpiggen i Norge er den høyeste toppen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q35600",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q35600.en.1",
+            "type": "anchor",
+            "text": "The Ural Mountains run north to south through western Russia, from the Arctic toward Kazakhstan."
+          },
+          {
+            "id": "Q35600.en.2",
+            "type": "contrast",
+            "text": "The Urals are the usual dividing line between Europe and Asia."
+          },
+          {
+            "id": "Q35600.en.3",
+            "type": "shape",
+            "text": "The Urals are a long seam running down Russia, stitching Europe to Asia."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q35600.nb.1",
+            "type": "anchor",
+            "text": "Uralfjellene går fra nord til sør gjennom det vestlige Russland, fra Arktis mot Kasakhstan."
+          },
+          {
+            "id": "Q35600.nb.2",
+            "type": "contrast",
+            "text": "Uralfjellene regnes vanligvis som grensen mellom Europa og Asia."
+          },
+          {
+            "id": "Q35600.nb.3",
+            "type": "shape",
+            "text": "Uralfjellene er en lang søm ned gjennom Russland som syr Europa fast til Asia."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q35600.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Ural Mountains are in Russia, with their southern end reaching Kazakhstan.",
+            "nb": "Uralfjellene ligger i Russland, og sørenden når inn i Kasakhstan."
+          }
+        },
+        {
+          "id": "Q35600.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "They are one of the oldest mountain ranges on Earth.",
+            "nb": "De er en av de eldste fjellkjedene på jorden."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q5477",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q5477.en.1",
+            "type": "anchor",
+            "text": "The Caucasus Mountains stretch from the Black Sea to the Caspian Sea, between Russia to the north and Georgia and Azerbaijan to the south."
+          },
+          {
+            "id": "Q5477.en.2",
+            "type": "story",
+            "text": "Elbrus in the Caucasus is often counted as Europe's highest mountain, higher than Mont Blanc."
+          },
+          {
+            "id": "Q5477.en.3",
+            "type": "shape",
+            "text": "The Caucasus is a stone bar laid across the gap between two seas."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q5477.nb.1",
+            "type": "anchor",
+            "text": "Kaukasus strekker seg fra Svartehavet til Det kaspiske hav, mellom Russland i nord og Georgia og Aserbajdsjan i sør."
+          },
+          {
+            "id": "Q5477.nb.2",
+            "type": "story",
+            "text": "Elbrus i Kaukasus regnes ofte som Europas høyeste fjell, høyere enn Mont Blanc."
+          },
+          {
+            "id": "Q5477.nb.3",
+            "type": "shape",
+            "text": "Kaukasus er en steinbom lagt tvers over åpningen mellom to hav."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q5477.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Caucasus Mountains lie between the Black Sea and the Caspian Sea.",
+            "nb": "Kaukasus ligger mellom Svartehavet og Det kaspiske hav."
+          }
+        },
+        {
+          "id": "Q5477.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Mount Elbrus, in Russia, is the highest peak.",
+            "nb": "Elbrus, i Russland, er den høyeste toppen."
+          }
+        }
+      ]
+    }
+  ]
+}
