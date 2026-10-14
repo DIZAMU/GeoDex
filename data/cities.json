@@ -1,0 +1,715 @@
+{
+  "cities": [
+    {
+      "id": "Q612",
+      "names": {
+        "en": "Dubai",
+        "nb": "Dubai"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ARE",
+      "lat": 25.2697,
+      "lon": 55.3094,
+      "population": 3944751,
+      "populationYear": 2025,
+      "formerCapital": false
+    },
+    {
+      "id": "Q3130",
+      "names": {
+        "en": "Sydney",
+        "nb": "Sydney"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "AUS",
+      "lat": -33.8678,
+      "lon": 151.21,
+      "population": 5450496,
+      "populationYear": 2023,
+      "formerCapital": false
+    },
+    {
+      "id": "Q3141",
+      "names": {
+        "en": "Melbourne",
+        "nb": "Melbourne"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "AUS",
+      "lat": -37.8142,
+      "lon": 144.9631,
+      "population": 5350705,
+      "populationYear": 2024,
+      "formerCapital": true
+    },
+    {
+      "id": "Q174",
+      "names": {
+        "en": "São Paulo",
+        "nb": "São Paulo"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "BRA",
+      "lat": -23.5504,
+      "lon": -46.6339,
+      "population": 11451999,
+      "populationYear": 2022,
+      "formerCapital": false
+    },
+    {
+      "id": "Q8678",
+      "names": {
+        "en": "Rio de Janeiro",
+        "nb": "Rio de Janeiro"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "BRA",
+      "lat": -22.9111,
+      "lon": -43.2056,
+      "population": 6211223,
+      "populationYear": 2022,
+      "formerCapital": true
+    },
+    {
+      "id": "Q172",
+      "names": {
+        "en": "Toronto",
+        "nb": "Toronto"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "CAN",
+      "lat": 43.6703,
+      "lon": -79.3867,
+      "population": 2794356,
+      "populationYear": 2021,
+      "formerCapital": false
+    },
+    {
+      "id": "Q24639",
+      "names": {
+        "en": "Vancouver",
+        "nb": "Vancouver"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "CAN",
+      "lat": 49.2608,
+      "lon": -123.1139,
+      "population": 662248,
+      "populationYear": 2021,
+      "formerCapital": false
+    },
+    {
+      "id": "Q340",
+      "names": {
+        "en": "Montreal",
+        "nb": "Montréal"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "CAN",
+      "lat": 45.5033,
+      "lon": -73.5868,
+      "population": 1895211,
+      "populationYear": 2024,
+      "formerCapital": false
+    },
+    {
+      "id": "Q71",
+      "names": {
+        "en": "Geneva",
+        "nb": "Genève"
+      },
+      "aliases": {
+        "en": [
+          "Genève"
+        ],
+        "nb": [
+          "Geneva",
+          "Genf"
+        ]
+      },
+      "countryId": "CHE",
+      "lat": 46.2,
+      "lon": 6.15,
+      "population": 209061,
+      "populationYear": 2024,
+      "formerCapital": false
+    },
+    {
+      "id": "Q72",
+      "names": {
+        "en": "Zurich",
+        "nb": "Zürich"
+      },
+      "aliases": {
+        "en": [
+          "Zürich"
+        ],
+        "nb": [
+          "Zurich"
+        ]
+      },
+      "countryId": "CHE",
+      "lat": 47.3744,
+      "lon": 8.5411,
+      "population": 452421,
+      "populationYear": 2025,
+      "formerCapital": false
+    },
+    {
+      "id": "Q8646",
+      "names": {
+        "en": "Hong Kong",
+        "nb": "Hongkong"
+      },
+      "aliases": {
+        "en": [],
+        "nb": [
+          "Hong Kong"
+        ]
+      },
+      "countryId": "CHN",
+      "lat": 22.2783,
+      "lon": 114.1586,
+      "population": 7413070,
+      "populationYear": 2021,
+      "formerCapital": false
+    },
+    {
+      "id": "Q8686",
+      "names": {
+        "en": "Shanghai",
+        "nb": "Shanghai"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "CHN",
+      "lat": 31.2325,
+      "lon": 121.4692,
+      "population": 24870895,
+      "populationYear": 2020,
+      "formerCapital": false
+    },
+    {
+      "id": "Q1515",
+      "names": {
+        "en": "Abidjan",
+        "nb": "Abidjan"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "CIV",
+      "lat": 5.3364,
+      "lon": -4.0267,
+      "population": 5616633,
+      "populationYear": 2021,
+      "formerCapital": true
+    },
+    {
+      "id": "Q1726",
+      "names": {
+        "en": "Munich",
+        "nb": "München"
+      },
+      "aliases": {
+        "en": [
+          "München"
+        ],
+        "nb": [
+          "Munich"
+        ]
+      },
+      "countryId": "DEU",
+      "lat": 48.1375,
+      "lon": 11.575,
+      "population": 1505036,
+      "populationYear": 2025,
+      "formerCapital": false
+    },
+    {
+      "id": "Q1492",
+      "names": {
+        "en": "Barcelona",
+        "nb": "Barcelona"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ESP",
+      "lat": 41.3825,
+      "lon": 2.1769,
+      "population": 1731649,
+      "populationYear": 2025,
+      "formerCapital": false
+    },
+    {
+      "id": "Q1156",
+      "names": {
+        "en": "Mumbai",
+        "nb": "Mumbai"
+      },
+      "aliases": {
+        "en": [
+          "Bombay"
+        ],
+        "nb": [
+          "Bombay"
+        ]
+      },
+      "countryId": "IND",
+      "lat": 19.0758,
+      "lon": 72.8775,
+      "population": 15414288,
+      "populationYear": 2018,
+      "formerCapital": false
+    },
+    {
+      "id": "Q490",
+      "names": {
+        "en": "Milan",
+        "nb": "Milano"
+      },
+      "aliases": {
+        "en": [
+          "Milano"
+        ],
+        "nb": [
+          "Milan"
+        ]
+      },
+      "countryId": "ITA",
+      "lat": 45.4669,
+      "lon": 9.19,
+      "population": 1354196,
+      "populationYear": 2023,
+      "formerCapital": false
+    },
+    {
+      "id": "Q641",
+      "names": {
+        "en": "Venice",
+        "nb": "Venezia"
+      },
+      "aliases": {
+        "en": [
+          "Venezia"
+        ],
+        "nb": [
+          "Venice",
+          "Venedig"
+        ]
+      },
+      "countryId": "ITA",
+      "lat": 45.4397,
+      "lon": 12.3319,
+      "population": 250369,
+      "populationYear": 2023,
+      "formerCapital": false
+    },
+    {
+      "id": "Q34600",
+      "names": {
+        "en": "Kyoto",
+        "nb": "Kyoto"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "JPN",
+      "lat": 35.0116,
+      "lon": 135.7681,
+      "population": 1463723,
+      "populationYear": 2020,
+      "formerCapital": true
+    },
+    {
+      "id": "Q35765",
+      "names": {
+        "en": "Osaka",
+        "nb": "Osaka"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "JPN",
+      "lat": 34.6938,
+      "lon": 135.5021,
+      "population": 2751862,
+      "populationYear": 2021,
+      "formerCapital": true
+    },
+    {
+      "id": "Q35493",
+      "names": {
+        "en": "Almaty",
+        "nb": "Almaty"
+      },
+      "aliases": {
+        "en": [
+          "Alma-Ata"
+        ],
+        "nb": [
+          "Alma-Ata"
+        ]
+      },
+      "countryId": "KAZ",
+      "lat": 43.24,
+      "lon": 76.915,
+      "population": 2228675,
+      "populationYear": 2024,
+      "formerCapital": true
+    },
+    {
+      "id": "Q101625",
+      "names": {
+        "en": "Marrakech",
+        "nb": "Marrakech"
+      },
+      "aliases": {
+        "en": [
+          "Marrakesh"
+        ],
+        "nb": [
+          "Marrakesh"
+        ]
+      },
+      "countryId": "MAR",
+      "lat": 31.6295,
+      "lon": -7.9811,
+      "population": 1002697,
+      "populationYear": 2024,
+      "formerCapital": false
+    },
+    {
+      "id": "Q7903",
+      "names": {
+        "en": "Casablanca",
+        "nb": "Casablanca"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "MAR",
+      "lat": 33.5992,
+      "lon": -7.62,
+      "population": 3215935,
+      "populationYear": 2024,
+      "formerCapital": false
+    },
+    {
+      "id": "Q37995",
+      "names": {
+        "en": "Yangon",
+        "nb": "Yangon"
+      },
+      "aliases": {
+        "en": [
+          "Rangoon"
+        ],
+        "nb": [
+          "Rangoon"
+        ]
+      },
+      "countryId": "MMR",
+      "lat": 16.795,
+      "lon": 96.16,
+      "population": 6874000,
+      "populationYear": 2022,
+      "formerCapital": true
+    },
+    {
+      "id": "Q8673",
+      "names": {
+        "en": "Lagos",
+        "nb": "Lagos"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "NGA",
+      "lat": 6.4561,
+      "lon": 3.3936,
+      "population": 15070000,
+      "populationYear": 2022,
+      "formerCapital": true
+    },
+    {
+      "id": "Q37100",
+      "names": {
+        "en": "Auckland",
+        "nb": "Auckland"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "NZL",
+      "lat": -36.8492,
+      "lon": 174.7653,
+      "population": 1470100,
+      "populationYear": 2020,
+      "formerCapital": true
+    },
+    {
+      "id": "Q8660",
+      "names": {
+        "en": "Karachi",
+        "nb": "Karachi"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "PAK",
+      "lat": 24.86,
+      "lon": 67.01,
+      "population": 14910352,
+      "populationYear": 2017,
+      "formerCapital": true
+    },
+    {
+      "id": "Q656",
+      "names": {
+        "en": "Saint Petersburg",
+        "nb": "St. Petersburg"
+      },
+      "aliases": {
+        "en": [
+          "St Petersburg",
+          "Leningrad"
+        ],
+        "nb": [
+          "Sankt Petersburg",
+          "Leningrad"
+        ]
+      },
+      "countryId": "RUS",
+      "lat": 59.95,
+      "lon": 30.3167,
+      "population": 5652922,
+      "populationYear": 2025,
+      "formerCapital": false
+    },
+    {
+      "id": "Q406",
+      "names": {
+        "en": "Istanbul",
+        "nb": "Istanbul"
+      },
+      "aliases": {
+        "en": [
+          "Constantinople"
+        ],
+        "nb": [
+          "Konstantinopel"
+        ]
+      },
+      "countryId": "TUR",
+      "lat": 41.01,
+      "lon": 28.9603,
+      "population": 15655924,
+      "populationYear": 2023,
+      "formerCapital": false
+    },
+    {
+      "id": "Q1960",
+      "names": {
+        "en": "Dar es Salaam",
+        "nb": "Dar-es-Salaam"
+      },
+      "aliases": {
+        "en": [],
+        "nb": [
+          "Dar es Salaam"
+        ]
+      },
+      "countryId": "TZA",
+      "lat": -6.8161,
+      "lon": 39.2803,
+      "population": 4715000,
+      "populationYear": 2016,
+      "formerCapital": true
+    },
+    {
+      "id": "Q1297",
+      "names": {
+        "en": "Chicago",
+        "nb": "Chicago"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "USA",
+      "lat": 41.8819,
+      "lon": -87.6278,
+      "population": 2746388,
+      "populationYear": 2020,
+      "formerCapital": false
+    },
+    {
+      "id": "Q23768",
+      "names": {
+        "en": "Las Vegas",
+        "nb": "Las Vegas"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "USA",
+      "lat": 36.1672,
+      "lon": -115.1486,
+      "population": 641903,
+      "populationYear": 2020,
+      "formerCapital": false
+    },
+    {
+      "id": "Q60",
+      "names": {
+        "en": "New York",
+        "nb": "New York"
+      },
+      "aliases": {
+        "en": [
+          "New York City",
+          "NYC"
+        ],
+        "nb": [
+          "New York City"
+        ]
+      },
+      "countryId": "USA",
+      "lat": 40.7128,
+      "lon": -74.0061,
+      "population": 8804190,
+      "populationYear": 2020,
+      "formerCapital": true
+    },
+    {
+      "id": "Q62",
+      "names": {
+        "en": "San Francisco",
+        "nb": "San Francisco"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "USA",
+      "lat": 37.775,
+      "lon": -122.4194,
+      "population": 873965,
+      "populationYear": 2020,
+      "formerCapital": false
+    },
+    {
+      "id": "Q65",
+      "names": {
+        "en": "Los Angeles",
+        "nb": "Los Angeles"
+      },
+      "aliases": {
+        "en": [
+          "LA"
+        ],
+        "nb": [
+          "LA"
+        ]
+      },
+      "countryId": "USA",
+      "lat": 34.0522,
+      "lon": -118.2437,
+      "population": 3898747,
+      "populationYear": 2020,
+      "formerCapital": false
+    },
+    {
+      "id": "Q8652",
+      "names": {
+        "en": "Miami",
+        "nb": "Miami"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "USA",
+      "lat": 25.7742,
+      "lon": -80.1936,
+      "population": 442241,
+      "populationYear": 2020,
+      "formerCapital": false
+    },
+    {
+      "id": "Q1854",
+      "names": {
+        "en": "Ho Chi Minh City",
+        "nb": "Ho Chi Minh-byen"
+      },
+      "aliases": {
+        "en": [
+          "Saigon"
+        ],
+        "nb": [
+          "Saigon"
+        ]
+      },
+      "countryId": "VNM",
+      "lat": 10.7756,
+      "lon": 106.7019,
+      "population": 14002598,
+      "populationYear": 2024,
+      "formerCapital": false
+    },
+    {
+      "id": "Q34647",
+      "names": {
+        "en": "Johannesburg",
+        "nb": "Johannesburg"
+      },
+      "aliases": {
+        "en": [],
+        "nb": []
+      },
+      "countryId": "ZAF",
+      "lat": -26.2044,
+      "lon": 28.0416,
+      "population": 4803262,
+      "populationYear": 2022,
+      "formerCapital": false
+    }
+  ]
+}
