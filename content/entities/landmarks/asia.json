@@ -1,0 +1,1421 @@
+{
+  "group": "asia",
+  "entities": [
+    {
+      "entityId": "Q12495",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q12495.en.1",
+            "type": "anchor",
+            "text": "Burj Khalifa rises from downtown Dubai in the United Arab Emirates, on the Persian Gulf coast."
+          },
+          {
+            "id": "Q12495.en.2",
+            "type": "shape",
+            "text": "Burj Khalifa is a silver needle so tall it pokes above the desert haze over Dubai."
+          },
+          {
+            "id": "Q12495.en.3",
+            "type": "story",
+            "text": "Burj Khalifa was to be named Burj Dubai, but took the name of Abu Dhabi's ruler, whose emirate helped fund it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q12495.nb.1",
+            "type": "anchor",
+            "text": "Burj Khalifa reiser seg i sentrum av Dubai i De forente arabiske emirater, ved Persiabukta."
+          },
+          {
+            "id": "Q12495.nb.2",
+            "type": "shape",
+            "text": "Burj Khalifa er en sølvnål så høy at den stikker opp over ørkendisen over Dubai."
+          },
+          {
+            "id": "Q12495.nb.3",
+            "type": "story",
+            "text": "Burj Khalifa skulle hete Burj Dubai, men fikk navnet til herskeren i Abu Dhabi, som hjalp til med pengene."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q12495.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Burj Khalifa is in Dubai, in the United Arab Emirates.",
+            "nb": "Burj Khalifa står i Dubai i De forente arabiske emirater."
+          }
+        },
+        {
+          "id": "Q12495.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It has been the world's tallest building since it opened.",
+            "nb": "Den har vært verdens høyeste bygning siden den åpnet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q695604",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q695604.en.1",
+            "type": "anchor",
+            "text": "The Sheikh Zayed Mosque stands in Abu Dhabi, the capital of the United Arab Emirates, not in Dubai."
+          },
+          {
+            "id": "Q695604.en.2",
+            "type": "shape",
+            "text": "The Sheikh Zayed Mosque is a field of white domes like a flock of snow-white tents on the sand."
+          },
+          {
+            "id": "Q695604.en.3",
+            "type": "story",
+            "text": "Sheikh Zayed, founder of the Emirates, is buried beside the mosque that carries his name."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q695604.nb.1",
+            "type": "anchor",
+            "text": "Sheikh Zayed-moskeen står i Abu Dhabi, hovedstaden i De forente arabiske emirater, ikke i Dubai."
+          },
+          {
+            "id": "Q695604.nb.2",
+            "type": "shape",
+            "text": "Sheikh Zayed-moskeen er et hav av hvite kupler, som snøhvite telt i sanden."
+          },
+          {
+            "id": "Q695604.nb.3",
+            "type": "story",
+            "text": "Sjeik Zayed, grunnleggeren av Emiratene, er gravlagt ved moskeen som bærer navnet hans."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q695604.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Sheikh Zayed Grand Mosque is in Abu Dhabi, the capital of the United Arab Emirates.",
+            "nb": "Sheikh Zayed-moskeen ligger i Abu Dhabi, hovedstaden i De forente arabiske emirater."
+          }
+        },
+        {
+          "id": "Q695604.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is named after Sheikh Zayed bin Sultan Al Nahyan, the first president of the United Arab Emirates.",
+            "nb": "Den er oppkalt etter sjeik Zayed bin Sultan Al Nahyan, den første presidenten i De forente arabiske emirater."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q12501",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q12501.en.1",
+            "type": "anchor",
+            "text": "The Great Wall runs across northern China, and its best-known stretches lie just north of Beijing."
+          },
+          {
+            "id": "Q12501.en.2",
+            "type": "contrast",
+            "text": "The Great Wall is not visible to the naked eye from the Moon, a myth that refuses to die."
+          },
+          {
+            "id": "Q12501.en.3",
+            "type": "story",
+            "text": "Chinese dynasties built and rebuilt the Great Wall over centuries to keep raiders from the northern steppe out."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q12501.nb.1",
+            "type": "anchor",
+            "text": "Den kinesiske mur går tvers over Nord-Kina, og de mest kjente delene ligger like nord for Beijing."
+          },
+          {
+            "id": "Q12501.nb.2",
+            "type": "contrast",
+            "text": "Den kinesiske mur kan ikke ses med det blotte øye fra månen, selv om myten lever videre."
+          },
+          {
+            "id": "Q12501.nb.3",
+            "type": "story",
+            "text": "Kinesiske dynastier bygde og bygde om muren i flere hundre år for å holde ryttere fra steppene i nord ute."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q12501.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Great Wall stretches across northern China.",
+            "nb": "Den kinesiske mur strekker seg over Nord-Kina."
+          }
+        },
+        {
+          "id": "Q12501.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is not one wall but many walls built by different dynasties.",
+            "nb": "Den er ikke én mur, men mange murer bygd av ulike dynastier."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q47672",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q47672.en.1",
+            "type": "anchor",
+            "text": "The Terracotta Army stands in pits outside Xi'an, in Shaanxi province in central China."
+          },
+          {
+            "id": "Q47672.en.2",
+            "type": "story",
+            "text": "Farmers digging a well near Xi'an broke into the buried army, thousands of clay soldiers guarding a dead emperor."
+          },
+          {
+            "id": "Q47672.en.3",
+            "type": "contrast",
+            "text": "The Terracotta Army is near Xi'an in central China, far west of Beijing and the Great Wall's famous stretches."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q47672.nb.1",
+            "type": "anchor",
+            "text": "Terrakottahæren står i groper utenfor Xi'an, i provinsen Shaanxi midt i Kina."
+          },
+          {
+            "id": "Q47672.nb.2",
+            "type": "story",
+            "text": "Bønder som gravde en brønn ved Xi'an, traff den begravde hæren: tusenvis av leirsoldater som vokter en død keiser."
+          },
+          {
+            "id": "Q47672.nb.3",
+            "type": "contrast",
+            "text": "Terrakottahæren ligger ved Xi'an midt i Kina, langt vest for Beijing og de kjente delene av muren."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q47672.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Terracotta Army is near Xi'an in Shaanxi province, China.",
+            "nb": "Terrakottahæren ligger ved Xi'an i provinsen Shaanxi i Kina."
+          }
+        },
+        {
+          "id": "Q47672.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The clay figures were buried with Qin Shi Huang, the first emperor of a unified China.",
+            "nb": "Leirfigurene ble gravlagt sammen med Qin Shi Huang, den første keiseren av et samlet Kina."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q71229",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q71229.en.1",
+            "type": "anchor",
+            "text": "The Potala Palace stands on a hill in Lhasa, high on the Tibetan Plateau in western China."
+          },
+          {
+            "id": "Q71229.en.2",
+            "type": "story",
+            "text": "The Potala Palace was the winter home of the Dalai Lama until he fled Tibet."
+          },
+          {
+            "id": "Q71229.en.3",
+            "type": "shape",
+            "text": "The Potala Palace is a white and red wall of a building climbing the hill like a fortress staircase."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q71229.nb.1",
+            "type": "anchor",
+            "text": "Potalapalasset står på en høyde i Lhasa, høyt oppe på Tibetplatået vest i Kina."
+          },
+          {
+            "id": "Q71229.nb.2",
+            "type": "story",
+            "text": "Potalapalasset var Dalai Lamas vinterbolig fram til han flyktet fra Tibet."
+          },
+          {
+            "id": "Q71229.nb.3",
+            "type": "shape",
+            "text": "Potalapalasset er en hvit og rød vegg av en bygning som klatrer opp åsen som en festningstrapp."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q71229.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Potala Palace is in Lhasa, Tibet, in China.",
+            "nb": "Potalapalasset ligger i Lhasa i Tibet, i Kina."
+          }
+        },
+        {
+          "id": "Q71229.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was the main residence of the Dalai Lamas for centuries.",
+            "nb": "Det var hovedboligen til dalai lamaene i flere hundre år."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q80290",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q80290.en.1",
+            "type": "anchor",
+            "text": "The Forbidden City lies in the centre of Beijing, just north of Tiananmen Square."
+          },
+          {
+            "id": "Q80290.en.2",
+            "type": "etymology",
+            "text": "It was called forbidden because ordinary people could not enter without the emperor's permission."
+          },
+          {
+            "id": "Q80290.en.3",
+            "type": "shape",
+            "text": "The Forbidden City is a walled box of golden roofs, with a moat around it like a picture frame."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q80290.nb.1",
+            "type": "anchor",
+            "text": "Den forbudte by ligger midt i Beijing, like nord for Den himmelske freds plass."
+          },
+          {
+            "id": "Q80290.nb.2",
+            "type": "etymology",
+            "text": "Den ble kalt forbudt fordi vanlige folk ikke fikk gå inn uten keiserens tillatelse."
+          },
+          {
+            "id": "Q80290.nb.3",
+            "type": "shape",
+            "text": "Den forbudte by er en innmurt boks med gylne tak og en vollgrav rundt som en bilderamme."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q80290.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Forbidden City is in Beijing, the capital of China.",
+            "nb": "Den forbudte by ligger i Beijing, hovedstaden i Kina."
+          }
+        },
+        {
+          "id": "Q80290.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was the palace of Chinese emperors and is now the Palace Museum.",
+            "nb": "Den var palasset til de kinesiske keiserne og er nå Palassmuseet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q42798",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q42798.en.1",
+            "type": "anchor",
+            "text": "Borobudur stands on the island of Java in Indonesia, northwest of Yogyakarta."
+          },
+          {
+            "id": "Q42798.en.2",
+            "type": "shape",
+            "text": "Borobudur is a stepped stone pyramid topped with rows of stone bells, each hiding a Buddha."
+          },
+          {
+            "id": "Q42798.en.3",
+            "type": "story",
+            "text": "Borobudur lay hidden under volcanic ash and jungle for centuries before it was cleared."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q42798.nb.1",
+            "type": "anchor",
+            "text": "Borobudur står på øya Java i Indonesia, nordvest for Yogyakarta."
+          },
+          {
+            "id": "Q42798.nb.2",
+            "type": "shape",
+            "text": "Borobudur er en trappet steinpyramide med rader av steinklokker på toppen, hver med en Buddha inni."
+          },
+          {
+            "id": "Q42798.nb.3",
+            "type": "story",
+            "text": "Borobudur lå skjult under vulkansk aske og jungel i flere hundre år før det ble ryddet fram."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q42798.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Borobudur is on the island of Java in Indonesia.",
+            "nb": "Borobudur ligger på øya Java i Indonesia."
+          }
+        },
+        {
+          "id": "Q42798.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is a Buddhist temple, the largest in the world.",
+            "nb": "Det er et buddhistisk tempel, det største i verden."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q180422",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q180422.en.1",
+            "type": "anchor",
+            "text": "The Golden Temple stands in Amritsar in Punjab, northwest India, near the border with Pakistan."
+          },
+          {
+            "id": "Q180422.en.2",
+            "type": "story",
+            "text": "The Golden Temple's free kitchen serves a meal to anyone who comes, whatever their faith."
+          },
+          {
+            "id": "Q180422.en.3",
+            "type": "shape",
+            "text": "The Golden Temple is a gold box floating in the middle of a square pool."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q180422.nb.1",
+            "type": "anchor",
+            "text": "Det gylne tempel står i Amritsar i Punjab nordvest i India, nær grensen mot Pakistan."
+          },
+          {
+            "id": "Q180422.nb.2",
+            "type": "story",
+            "text": "Det gylne tempels gratiskjøkken serverer et måltid til alle som kommer, uansett tro."
+          },
+          {
+            "id": "Q180422.nb.3",
+            "type": "shape",
+            "text": "Det gylne tempel er en gullboks som flyter midt i et firkantet basseng."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q180422.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Golden Temple is in Amritsar, in the Indian state of Punjab.",
+            "nb": "Det gylne tempel ligger i Amritsar i delstaten Punjab i India."
+          }
+        },
+        {
+          "id": "Q180422.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the holiest site of Sikhism.",
+            "nb": "Det er det helligste stedet i sikhismen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q9141",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q9141.en.1",
+            "type": "anchor",
+            "text": "The Taj Mahal stands on the bank of the Yamuna river in Agra, northern India, south of Delhi."
+          },
+          {
+            "id": "Q9141.en.2",
+            "type": "story",
+            "text": "Mughal emperor Shah Jahan built the Taj Mahal as a tomb for his wife Mumtaz Mahal."
+          },
+          {
+            "id": "Q9141.en.3",
+            "type": "shape",
+            "text": "The Taj Mahal is a white onion dome with four minarets standing guard at the corners."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q9141.nb.1",
+            "type": "anchor",
+            "text": "Taj Mahal står ved elven Yamuna i Agra nord i India, sør for Delhi."
+          },
+          {
+            "id": "Q9141.nb.2",
+            "type": "story",
+            "text": "Mogulkeiseren Shah Jahan bygde Taj Mahal som gravmæle for kona si, Mumtaz Mahal."
+          },
+          {
+            "id": "Q9141.nb.3",
+            "type": "shape",
+            "text": "Taj Mahal er en hvit løkkuppel med fire minareter som står vakt i hjørnene."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q9141.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Taj Mahal is in Agra, in the Indian state of Uttar Pradesh.",
+            "nb": "Taj Mahal ligger i Agra i delstaten Uttar Pradesh i India."
+          }
+        },
+        {
+          "id": "Q9141.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is a marble mausoleum built for Mumtaz Mahal, wife of the emperor Shah Jahan.",
+            "nb": "Det er et mausoleum i marmor bygd for Mumtaz Mahal, kona til keiser Shah Jahan."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q129072",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q129072.en.1",
+            "type": "anchor",
+            "text": "Persepolis lies in the dry hills of Fars province in southern Iran, northeast of Shiraz."
+          },
+          {
+            "id": "Q129072.en.2",
+            "type": "etymology",
+            "text": "Persepolis is Greek for the city of the Persians."
+          },
+          {
+            "id": "Q129072.en.3",
+            "type": "story",
+            "text": "Alexander the Great burned Persepolis, the ceremonial capital of the Persian kings he had defeated."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q129072.nb.1",
+            "type": "anchor",
+            "text": "Persepolis ligger i de tørre åsene i provinsen Fars sør i Iran, nordøst for Shiraz."
+          },
+          {
+            "id": "Q129072.nb.2",
+            "type": "etymology",
+            "text": "Persepolis er gresk for persernes by."
+          },
+          {
+            "id": "Q129072.nb.3",
+            "type": "story",
+            "text": "Aleksander den store brente Persepolis, seremonihovedstaden til de persiske kongene han hadde slått."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q129072.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Persepolis is in Fars province in southern Iran.",
+            "nb": "Persepolis ligger i provinsen Fars sør i Iran."
+          }
+        },
+        {
+          "id": "Q129072.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was a ceremonial capital of the Achaemenid Persian Empire.",
+            "nb": "Den var en seremonihovedstad i det akamenidiske perserriket."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q5788",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q5788.en.1",
+            "type": "anchor",
+            "text": "Petra lies in the desert of southern Jordan, between the Dead Sea and the Gulf of Aqaba."
+          },
+          {
+            "id": "Q5788.en.2",
+            "type": "shape",
+            "text": "Petra's Treasury is a temple front carved straight into a pink cliff, at the end of a narrow canyon."
+          },
+          {
+            "id": "Q5788.en.3",
+            "type": "story",
+            "text": "Petra was the rock-cut city of the Nabataeans, who grew rich on the caravan trade in incense."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q5788.nb.1",
+            "type": "anchor",
+            "text": "Petra ligger i ørkenen sør i Jordan, mellom Dødehavet og Akababukta."
+          },
+          {
+            "id": "Q5788.nb.2",
+            "type": "shape",
+            "text": "Skattkammeret i Petra er en tempelfasade hugget rett inn i en rosa klippe, innerst i en smal kløft."
+          },
+          {
+            "id": "Q5788.nb.3",
+            "type": "story",
+            "text": "Petra var nabateernes by hugget i fjell, og de ble rike på karavanehandel med røkelse."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q5788.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Petra is in southern Jordan.",
+            "nb": "Petra ligger sør i Jordan."
+          }
+        },
+        {
+          "id": "Q5788.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its name comes from the Greek word for rock.",
+            "nb": "Navnet kommer av det greske ordet for klippe."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q39231",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q39231.en.1",
+            "type": "anchor",
+            "text": "Mount Fuji rises on the island of Honshu in Japan, southwest of Tokyo."
+          },
+          {
+            "id": "Q39231.en.2",
+            "type": "shape",
+            "text": "Mount Fuji is the cone a child draws when asked for a volcano, with snow poured over the top."
+          },
+          {
+            "id": "Q39231.en.3",
+            "type": "contrast",
+            "text": "Fuji is the volcano with the snow cap; Fushimi Inari, with its orange gates, is a shrine in Kyoto."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q39231.nb.1",
+            "type": "anchor",
+            "text": "Fuji reiser seg på øya Honshu i Japan, sørvest for Tokyo."
+          },
+          {
+            "id": "Q39231.nb.2",
+            "type": "shape",
+            "text": "Fuji er kjeglen et barn tegner når det blir bedt om en vulkan, med snø helt over toppen."
+          },
+          {
+            "id": "Q39231.nb.3",
+            "type": "contrast",
+            "text": "Fuji er vulkanen med snøtopp. Fushimi Inari, med de oransje portene, er en helligdom i Kyoto."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q39231.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Mount Fuji is on the island of Honshu, Japan.",
+            "nb": "Fuji ligger på øya Honshu i Japan."
+          }
+        },
+        {
+          "id": "Q39231.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the highest mountain in Japan and an active volcano.",
+            "nb": "Det er Japans høyeste fjell og en aktiv vulkan."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q714828",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q714828.en.1",
+            "type": "anchor",
+            "text": "Fushimi Inari-taisha is a shrine on the southeast edge of Kyoto in Japan."
+          },
+          {
+            "id": "Q714828.en.2",
+            "type": "shape",
+            "text": "Fushimi Inari is a tunnel made of orange gates, one after another, winding up a wooded hill."
+          },
+          {
+            "id": "Q714828.en.3",
+            "type": "story",
+            "text": "Each orange gate at Fushimi Inari was donated by a person or business hoping for luck in trade."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q714828.nb.1",
+            "type": "anchor",
+            "text": "Fushimi Inari-taisha er en helligdom i sørøstkanten av Kyoto i Japan."
+          },
+          {
+            "id": "Q714828.nb.2",
+            "type": "shape",
+            "text": "Fushimi Inari er en tunnel av oransje porter, den ene etter den andre, som snor seg opp en skogkledd ås."
+          },
+          {
+            "id": "Q714828.nb.3",
+            "type": "story",
+            "text": "Hver oransje port ved Fushimi Inari er gitt av en person eller en bedrift som håper på hell i handelen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q714828.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Fushimi Inari-taisha is in Kyoto, Japan.",
+            "nb": "Fushimi Inari-taisha ligger i Kyoto i Japan."
+          }
+        },
+        {
+          "id": "Q714828.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is a Shinto shrine to Inari, the god of rice.",
+            "nb": "Det er en shintohelligdom for Inari, risens gud."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q43473",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q43473.en.1",
+            "type": "anchor",
+            "text": "Angkor Wat stands near Siem Reap in northwest Cambodia, north of the lake Tonlé Sap."
+          },
+          {
+            "id": "Q43473.en.2",
+            "type": "shape",
+            "text": "Angkor Wat is five stone lotus buds on a temple island, surrounded by a moat as wide as a river."
+          },
+          {
+            "id": "Q43473.en.3",
+            "type": "story",
+            "text": "Angkor Wat is drawn in white in the middle of Cambodia's flag, so the country flies its temple."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q43473.nb.1",
+            "type": "anchor",
+            "text": "Angkor Vat står ved Siem Reap nordvest i Kambodsja, nord for innsjøen Tonlé Sap."
+          },
+          {
+            "id": "Q43473.nb.2",
+            "type": "shape",
+            "text": "Angkor Vat er fem lotusknopper av stein på en tempeløy, omgitt av en vollgrav bred som en elv."
+          },
+          {
+            "id": "Q43473.nb.3",
+            "type": "story",
+            "text": "Angkor Vat er tegnet i hvitt midt på Kambodsjas flagg, så landet heiser tempelet sitt."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q43473.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Angkor Wat is near Siem Reap in Cambodia.",
+            "nb": "Angkor Vat ligger ved Siem Reap i Kambodsja."
+          }
+        },
+        {
+          "id": "Q43473.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was built as a Hindu temple and later became a Buddhist one.",
+            "nb": "Det ble bygd som et hindutempel og ble senere buddhistisk."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q272153",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q272153.en.1",
+            "type": "anchor",
+            "text": "Sigiriya rises from the jungle in central Sri Lanka, north of the city of Kandy."
+          },
+          {
+            "id": "Q272153.en.2",
+            "type": "shape",
+            "text": "Sigiriya is a giant stone loaf sticking out of the forest, with a palace on top."
+          },
+          {
+            "id": "Q272153.en.3",
+            "type": "etymology",
+            "text": "Sigiriya means lion rock: visitors climb between two giant stone lion paws."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q272153.nb.1",
+            "type": "anchor",
+            "text": "Sigiriya reiser seg fra jungelen midt på Sri Lanka, nord for byen Kandy."
+          },
+          {
+            "id": "Q272153.nb.2",
+            "type": "shape",
+            "text": "Sigiriya er et kjempestort steinbrød som stikker opp av skogen, med et palass på toppen."
+          },
+          {
+            "id": "Q272153.nb.3",
+            "type": "etymology",
+            "text": "Sigiriya betyr løveklippen: besøkende klatrer opp mellom to kjempestore løvelabber av stein."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q272153.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Sigiriya is in the Central Province of Sri Lanka.",
+            "nb": "Sigiriya ligger i Sentralprovinsen på Sri Lanka."
+          }
+        },
+        {
+          "id": "Q272153.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "A king built a fortress palace on top of the rock.",
+            "nb": "En konge bygde et festningspalass på toppen av klippen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q29317",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q29317.en.1",
+            "type": "anchor",
+            "text": "Bagan lies on the Irrawaddy river in central Myanmar, southwest of Mandalay."
+          },
+          {
+            "id": "Q29317.en.2",
+            "type": "shape",
+            "text": "Bagan is a plain dotted with thousands of brick temples, like chess pieces left on a dusty board."
+          },
+          {
+            "id": "Q29317.en.3",
+            "type": "contrast",
+            "text": "Bagan is a plain full of temples in central Myanmar; Shwedagon is one golden pagoda in Yangon."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q29317.nb.1",
+            "type": "anchor",
+            "text": "Bagan ligger ved elven Irrawaddy midt i Myanmar, sørvest for Mandalay."
+          },
+          {
+            "id": "Q29317.nb.2",
+            "type": "shape",
+            "text": "Bagan er en slette full av tusenvis av teglsteinstempler, som sjakkbrikker glemt på et støvete brett."
+          },
+          {
+            "id": "Q29317.nb.3",
+            "type": "contrast",
+            "text": "Bagan er en slette full av templer midt i Myanmar. Shwedagon er én gyllen pagode i Yangon."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q29317.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Bagan is in the Mandalay Region of central Myanmar.",
+            "nb": "Bagan ligger i Mandalay-regionen midt i Myanmar."
+          }
+        },
+        {
+          "id": "Q29317.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was the capital of the Pagan Kingdom, which built most of its temples.",
+            "nb": "Det var hovedstaden i Pagan-riket, som bygde de fleste templene."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q464535",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q464535.en.1",
+            "type": "anchor",
+            "text": "The Shwedagon Pagoda stands on a hill in Yangon, Myanmar's largest city."
+          },
+          {
+            "id": "Q464535.en.2",
+            "type": "shape",
+            "text": "Shwedagon is a giant golden bell with a spire, glowing over Yangon."
+          },
+          {
+            "id": "Q464535.en.3",
+            "type": "etymology",
+            "text": "Shwe means gold in Burmese, and the pagoda is covered in it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q464535.nb.1",
+            "type": "anchor",
+            "text": "Shwedagon-pagoden står på en høyde i Yangon, Myanmars største by."
+          },
+          {
+            "id": "Q464535.nb.2",
+            "type": "shape",
+            "text": "Shwedagon er en kjempestor gyllen klokke med et spir, som gløder over Yangon."
+          },
+          {
+            "id": "Q464535.nb.3",
+            "type": "etymology",
+            "text": "Shwe betyr gull på burmesisk, og pagoden er dekket av det."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q464535.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Shwedagon Pagoda is in Yangon, Myanmar.",
+            "nb": "Shwedagon-pagoden ligger i Yangon i Myanmar."
+          }
+        },
+        {
+          "id": "Q464535.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its stupa is covered with gold plates and gold leaf.",
+            "nb": "Stupaen er dekket med gullplater og bladgull."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q83063",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q83063.en.1",
+            "type": "anchor",
+            "text": "The Petronas Towers rise in the centre of Kuala Lumpur, the capital of Malaysia."
+          },
+          {
+            "id": "Q83063.en.2",
+            "type": "shape",
+            "text": "The Petronas Towers are two silver corncobs holding hands through a skybridge."
+          },
+          {
+            "id": "Q83063.en.3",
+            "type": "contrast",
+            "text": "Petronas is two linked towers in Kuala Lumpur; Marina Bay Sands, three towers with a ship on top, is in Singapore."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q83063.nb.1",
+            "type": "anchor",
+            "text": "Petronas Towers reiser seg midt i Kuala Lumpur, hovedstaden i Malaysia."
+          },
+          {
+            "id": "Q83063.nb.2",
+            "type": "shape",
+            "text": "Petronas Towers er to maiskolber i sølv som holder hender gjennom en gangbro i luften."
+          },
+          {
+            "id": "Q83063.nb.3",
+            "type": "contrast",
+            "text": "Petronas er to tårn med bro i Kuala Lumpur. Marina Bay Sands, tre tårn med et skip på toppen, er i Singapore."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q83063.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Petronas Towers are in Kuala Lumpur, Malaysia.",
+            "nb": "Petronas Towers står i Kuala Lumpur i Malaysia."
+          }
+        },
+        {
+          "id": "Q83063.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "They were the world's tallest buildings when they were finished.",
+            "nb": "De var verdens høyeste bygninger da de sto ferdige."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q548679",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q548679.en.1",
+            "type": "anchor",
+            "text": "Marina Bay Sands stands on the waterfront of Singapore, at the southern tip of the Malay Peninsula."
+          },
+          {
+            "id": "Q548679.en.2",
+            "type": "shape",
+            "text": "Marina Bay Sands is three towers holding a long ship on their shoulders, with a pool on deck."
+          },
+          {
+            "id": "Q548679.en.3",
+            "type": "story",
+            "text": "Marina Bay Sands has a swimming pool on its roof that runs between all three towers."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q548679.nb.1",
+            "type": "anchor",
+            "text": "Marina Bay Sands står ved vannkanten i Singapore, på sørspissen av Malakkahalvøya."
+          },
+          {
+            "id": "Q548679.nb.2",
+            "type": "shape",
+            "text": "Marina Bay Sands er tre tårn som bærer et langt skip på skuldrene, med basseng på dekk."
+          },
+          {
+            "id": "Q548679.nb.3",
+            "type": "story",
+            "text": "Marina Bay Sands har et svømmebasseng på taket som går over alle de tre tårnene."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q548679.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Marina Bay Sands is in Singapore.",
+            "nb": "Marina Bay Sands ligger i Singapore."
+          }
+        },
+        {
+          "id": "Q548679.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is a hotel and casino resort with a park on top of its three towers.",
+            "nb": "Det er et hotell og kasino med en park på toppen av de tre tårnene."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q724970",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q724970.en.1",
+            "type": "anchor",
+            "text": "Wat Arun stands on the west bank of the Chao Phraya river in Bangkok, Thailand."
+          },
+          {
+            "id": "Q724970.en.2",
+            "type": "etymology",
+            "text": "Wat Arun means temple of the dawn, after Aruna, the Hindu god of the dawn."
+          },
+          {
+            "id": "Q724970.en.3",
+            "type": "shape",
+            "text": "Wat Arun is a steep spire studded with broken porcelain, like a tower covered in smashed teacups."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q724970.nb.1",
+            "type": "anchor",
+            "text": "Wat Arun står på vestbredden av elven Chao Phraya i Bangkok i Thailand."
+          },
+          {
+            "id": "Q724970.nb.2",
+            "type": "etymology",
+            "text": "Wat Arun betyr morgengryets tempel, etter Aruna, morgengryets gud i hinduismen."
+          },
+          {
+            "id": "Q724970.nb.3",
+            "type": "shape",
+            "text": "Wat Arun er et bratt spir dekket med knust porselen, som et tårn kledd med knuste tekopper."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q724970.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Wat Arun is in Bangkok, the capital of Thailand.",
+            "nb": "Wat Arun ligger i Bangkok, hovedstaden i Thailand."
+          }
+        },
+        {
+          "id": "Q724970.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its central tower is decorated with pieces of coloured porcelain.",
+            "nb": "Det midterste tårnet er pyntet med biter av farget porselen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q12506",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q12506.en.1",
+            "type": "anchor",
+            "text": "Hagia Sophia stands in Istanbul, Turkey, on the European side, facing the Blue Mosque."
+          },
+          {
+            "id": "Q12506.en.2",
+            "type": "etymology",
+            "text": "Hagia Sophia is Greek for holy wisdom."
+          },
+          {
+            "id": "Q12506.en.3",
+            "type": "story",
+            "text": "Hagia Sophia has been a cathedral, a mosque, a museum and a mosque again."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q12506.nb.1",
+            "type": "anchor",
+            "text": "Hagia Sofia står i Istanbul i Tyrkia, på europasiden, rett overfor Den blå moské."
+          },
+          {
+            "id": "Q12506.nb.2",
+            "type": "etymology",
+            "text": "Hagia Sofia er gresk for den hellige visdom."
+          },
+          {
+            "id": "Q12506.nb.3",
+            "type": "story",
+            "text": "Hagia Sofia har vært katedral, moské, museum og moské igjen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q12506.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Hagia Sophia is in Istanbul, Turkey.",
+            "nb": "Hagia Sofia ligger i Istanbul i Tyrkia."
+          }
+        },
+        {
+          "id": "Q12506.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It was built as a cathedral under the Byzantine emperor Justinian.",
+            "nb": "Den ble bygd som katedral under den bysantinske keiseren Justinian."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q80541",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q80541.en.1",
+            "type": "anchor",
+            "text": "The Sultan Ahmed Mosque stands in Istanbul, Turkey, across a park from Hagia Sophia."
+          },
+          {
+            "id": "Q80541.en.2",
+            "type": "contrast",
+            "text": "The Blue Mosque has six minarets and was built as a mosque; Hagia Sophia, opposite, began as a church."
+          },
+          {
+            "id": "Q80541.en.3",
+            "type": "etymology",
+            "text": "It is called the Blue Mosque after the blue tiles that cover its walls inside."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q80541.nb.1",
+            "type": "anchor",
+            "text": "Sultan Ahmed-moskeen står i Istanbul i Tyrkia, på andre siden av en park fra Hagia Sofia."
+          },
+          {
+            "id": "Q80541.nb.2",
+            "type": "contrast",
+            "text": "Den blå moské har seks minareter og ble bygd som moské. Hagia Sofia, rett overfor, var først en kirke."
+          },
+          {
+            "id": "Q80541.nb.3",
+            "type": "etymology",
+            "text": "Den kalles Den blå moské etter de blå flisene som dekker veggene inne."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q80541.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Sultan Ahmed Mosque is in Istanbul, Turkey.",
+            "nb": "Sultan Ahmed-moskeen ligger i Istanbul i Tyrkia."
+          }
+        },
+        {
+          "id": "Q80541.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is known as the Blue Mosque for its blue tiles.",
+            "nb": "Den er kjent som Den blå moské på grunn av de blå flisene."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1373583",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1373583.en.1",
+            "type": "anchor",
+            "text": "The Registan is the central square of Samarkand, in eastern Uzbekistan."
+          },
+          {
+            "id": "Q1373583.en.2",
+            "type": "shape",
+            "text": "The Registan is three giant tiled gateways facing each other across one square, like a stage set."
+          },
+          {
+            "id": "Q1373583.en.3",
+            "type": "etymology",
+            "text": "Registan means sandy place in Persian."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1373583.nb.1",
+            "type": "anchor",
+            "text": "Registan er hovedtorget i Samarkand, øst i Usbekistan."
+          },
+          {
+            "id": "Q1373583.nb.2",
+            "type": "shape",
+            "text": "Registan er tre kjempestore flislagte porter som vender mot hverandre over én plass, som en teaterscene."
+          },
+          {
+            "id": "Q1373583.nb.3",
+            "type": "etymology",
+            "text": "Registan betyr sandplassen på persisk."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1373583.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Registan is in Samarkand, Uzbekistan.",
+            "nb": "Registan ligger i Samarkand i Usbekistan."
+          }
+        },
+        {
+          "id": "Q1373583.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Three madrasas, Islamic schools, frame the square.",
+            "nb": "Tre madrasaer, islamske skoler, rammer inn plassen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q190128",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q190128.en.1",
+            "type": "anchor",
+            "text": "Ha Long Bay lies in the Gulf of Tonkin in northern Vietnam, east of Hanoi."
+          },
+          {
+            "id": "Q190128.en.2",
+            "type": "etymology",
+            "text": "Ha Long means descending dragon: legend says a dragon dropped the islands into the sea."
+          },
+          {
+            "id": "Q190128.en.3",
+            "type": "shape",
+            "text": "Ha Long Bay is a crowd of limestone towers wading in green water, thousands of them."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q190128.nb.1",
+            "type": "anchor",
+            "text": "Ha Long-bukten ligger i Tonkinbukta nord i Vietnam, øst for Hanoi."
+          },
+          {
+            "id": "Q190128.nb.2",
+            "type": "etymology",
+            "text": "Ha Long betyr dragen som stiger ned. Ifølge sagnet slapp en drage øyene i havet."
+          },
+          {
+            "id": "Q190128.nb.3",
+            "type": "shape",
+            "text": "Ha Long-bukten er en forsamling av kalksteinstårn som vasser i grønt vann, tusenvis av dem."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q190128.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Ha Long Bay is in Quang Ninh province in northern Vietnam.",
+            "nb": "Ha Long-bukten ligger i provinsen Quang Ninh nord i Vietnam."
+          }
+        },
+        {
+          "id": "Q190128.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is dotted with limestone islands and islets.",
+            "nb": "Bukten er full av øyer og holmer av kalkstein."
+          }
+        }
+      ]
+    }
+  ]
+}
