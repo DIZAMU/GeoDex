@@ -1,31 +1,36 @@
 name: Release
 
-# Pushing a phase-* tag publishes a GitHub Release. The notes come from
-# releases/<tag>.md at the tagged commit; without that file, GitHub generates them.
+# Merging releases/<tag>.md into main publishes that release: the workflow creates the tag
+# on the merge commit and the GitHub Release with the file's notes. Releases that already
+# exist are left alone, so re-runs are safe.
 on:
   push:
-    tags: ["phase-*"]
+    branches: [main]
+    paths: ["releases/phase-*.md", ".github/workflows/release.yml"]
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
   release:
-    name: Publish release
+    name: Publish releases
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v5
-      - name: Create the release
+      - name: Create missing releases
         env:
           GH_TOKEN: ${{ github.token }}
-          TAG: ${{ github.ref_name }}
         run: |
-          notes="releases/${TAG}.md"
-          title="$(head -n 1 "$notes" 2>/dev/null | sed 's/^# //')"
-          if [ -f "$notes" ]; then
+          for notes in releases/phase-*.md; do
+            tag="$(basename "$notes" .md)"
+            if gh release view "$tag" >/dev/null 2>&1; then
+              echo "$tag exists"
+              continue
+            fi
+            title="$(head -n 1 "$notes" | sed 's/^# //')"
             tail -n +3 "$notes" > body.md
-            gh release create "$TAG" --title "${title:-$TAG}" --notes-file body.md --verify-tag
-          else
-            gh release create "$TAG" --title "$TAG" --generate-notes --verify-tag
-          fi
+            gh release create "$tag" --target "$GITHUB_SHA" --title "$title" --notes-file body.md
+            echo "published $tag"
+          done
