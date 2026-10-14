@@ -3,7 +3,14 @@ import { CheckIcon, XIcon } from "lucide-react";
 import { type FormEvent, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { groupNote } from "@/data/groupNotes";
-import type { City, Country, CountryGroup, Landmark, PhysicalFeature } from "@/data/types";
+import type {
+  City,
+  Country,
+  CountryGroup,
+  HistoricalEntity,
+  Landmark,
+  PhysicalFeature,
+} from "@/data/types";
 import type { WorldData } from "@/data/world";
 import type { Locale } from "@/i18n/locales";
 import { Button } from "@/ui/button";
@@ -11,8 +18,25 @@ import { Input } from "@/ui/input";
 import { cn } from "@/ui/utils";
 import type { Option, Question } from "../study/questions";
 
+type T = ReturnType<typeof useTranslation>["t"];
+
+/** A year as written in the active language: "27 BCE", "27 f.Kr.", "1453". */
+export function formatYear(year: number, t: T): string {
+  return year < 0 ? t("history.bce", { year: -year }) : String(year);
+}
+
+/** "27 BCE to 476" / "27 f.Kr. til 476". */
+export function formatPeriod(period: readonly [number, number], t: T): string {
+  return t("history.period", { from: formatYear(period[0], t), to: formatYear(period[1], t) });
+}
+
 export function nameOf(world: WorldData, id: string, locale: Locale): string {
-  return world.byId.get(id)?.names[locale] ?? world.physicalById.get(id)?.names[locale] ?? id;
+  return (
+    world.byId.get(id)?.names[locale] ??
+    world.physicalById.get(id)?.names[locale] ??
+    world.historyById.get(id)?.names[locale] ??
+    id
+  );
 }
 
 /** "i Laos" / "på Island" for Norwegian templates. English templates use the plain name. */
@@ -43,6 +67,7 @@ export function PromptText({
   const { t } = useTranslation();
   const country = world.byId.get(question.countryId);
   const feature = question.featureId ? world.physicalById.get(question.featureId) : undefined;
+  const past = question.historyId ? world.historyById.get(question.historyId) : undefined;
   // Every card is about a country except physical ones, which may border none (Southern Ocean).
   if (!country && !feature) return null;
   const group = question.groupId ? world.groupById.get(question.groupId) : undefined;
@@ -96,11 +121,22 @@ export function PromptText({
         return t("q.map_to_group");
       case "group_member":
         return t("q.group_member", { phrase });
+      case "former_name_to_country":
+      case "dissolved_state_member":
+      case "empire_to_era":
+        return t(`q.${question.type}`, { name: past?.names[locale] ?? "" });
+      case "map_to_dissolved_state":
+      case "map_to_empire":
+        return t(`q.${question.type}`);
     }
   })();
   return (
     <div className="flex flex-col gap-3 lg:gap-4">
-      <h2 className="font-name text-xl tracking-tight lg:text-3xl" data-testid="prompt">
+      <h2
+        className="font-name text-xl tracking-tight lg:text-3xl"
+        data-testid="prompt"
+        data-card={question.cardId}
+      >
         {text}
       </h2>
       {question.prompt.kind === "photo" && landmark ? (
@@ -126,6 +162,7 @@ export function ChoiceAnswer({
   onPick: (id: string) => void;
   disabled?: boolean;
 }) {
+  const { t } = useTranslation();
   return (
     <ol className="stagger flex flex-col gap-2.5" data-testid="choices">
       {options.map((option, index) => (
@@ -140,7 +177,7 @@ export function ChoiceAnswer({
             <kbd className="flex size-7 shrink-0 items-center justify-center rounded-md border border-border bg-card text-sm text-muted-foreground transition-colors duration-200 group-hover:border-primary/60 group-hover:text-foreground">
               {index + 1}
             </kbd>
-            <span>{option.label}</span>
+            <span>{option.period ? formatPeriod(option.period, t) : option.label}</span>
           </button>
         </li>
       ))}
@@ -480,6 +517,83 @@ export function FeatureCard({
           ? `${t("physical.countries")}: ${list.format(countries)}`
           : t("physical.noCountries")}
       </p>
+    </div>
+  );
+}
+
+/** The year an outline shows, and "approximate" where it is drawn by hand. */
+export function OutlineCaption({ entity }: { entity: HistoricalEntity }) {
+  const { t } = useTranslation();
+  if (entity.kind === "former_name") return null;
+  return (
+    <p
+      className="pointer-events-none absolute bottom-3 left-3 rounded-md bg-card/85 px-2.5 py-1 text-sm shadow-[var(--elevation)] backdrop-blur-sm"
+      data-testid="outline-caption"
+      data-history={entity.id}
+    >
+      <span data-testid="outline-year">
+        {t("history.snapshot", { year: formatYear(entity.outline.snapshotYear, t) })}
+      </span>
+      {entity.outline.approximate ? (
+        <span className="text-muted-foreground" data-testid="outline-approximate">
+          {" "}
+          ({t("history.approximate")})
+        </span>
+      ) : null}
+    </p>
+  );
+}
+
+/** Feedback for a history card: the name, what it was, when, and what it is now. */
+export function HistoryCard({
+  entity,
+  world,
+  locale,
+}: {
+  entity: HistoricalEntity;
+  world: WorldData;
+  locale: Locale;
+}) {
+  const { t } = useTranslation();
+  const other: Locale = locale === "en" ? "nb" : "en";
+  const list = new Intl.ListFormat(locale, { type: "conjunction" });
+  const names = (ids: readonly string[]) =>
+    list.format(ids.filter((id) => world.byId.has(id)).map((id) => nameOf(world, id, locale)));
+  return (
+    <div className="surface flex flex-col gap-2 p-4" data-testid="history-card">
+      <p className="font-name text-2xl leading-tight tracking-tight" data-testid="answer-name">
+        {entity.names[locale]}
+        {entity.names[other] !== entity.names[locale] ? (
+          <span className="ml-2 text-sm font-normal text-muted-foreground" lang={other}>
+            {entity.names[other]}
+          </span>
+        ) : null}
+      </p>
+      <p className="text-sm text-muted-foreground">{t(`history.kind.${entity.kind}`)}</p>
+      {entity.kind === "former_name" ? (
+        <>
+          <p data-testid="history-now">
+            {t("history.nowCalled", { country: nameOf(world, entity.currentCountry, locale) })}
+          </p>
+          {entity.until !== null ? <p>{t("history.until", { year: entity.until })}</p> : null}
+        </>
+      ) : (
+        <>
+          <p data-testid="history-period">
+            {t("history.existed", { period: formatPeriod(entity.period, t) })}
+          </p>
+          {entity.kind === "dissolved_state" ? (
+            <p data-testid="history-successors">
+              {t("history.successors")}: {names(entity.successors)}
+            </p>
+          ) : null}
+          {entity.kind === "dissolved_state" && entity.partly.length > 0 ? (
+            <p className="text-sm text-muted-foreground">
+              {t("history.partly")}: {names(entity.partly)}
+            </p>
+          ) : null}
+        </>
+      )}
     </div>
   );
 }
