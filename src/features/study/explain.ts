@@ -73,6 +73,8 @@ export function explain(input: {
         }
       : { moment: input.moment, blocks: [], snippetIds: [] };
   }
+  // Group cards teach with the group card itself: members and the group's note.
+  if (world.groupById.has(entityId)) return { moment: input.moment, blocks: [], snippetIds: [] };
   const target = world.byId.get(entityId);
   const chosen = chosenCountryId(world, input.chosenId ?? null);
   const cardEvents = history.events

@@ -11,6 +11,7 @@ import { isIntroduced, stageOf, unlockedNewCards } from "@/engine/cards";
 import { confusionScores, contrastCardId, contrastCards } from "@/engine/confusions";
 import { learningDay } from "@/engine/day";
 import { rollingMedian } from "@/engine/grading";
+import { groupCardTypes, groupReady } from "@/engine/groups";
 import { allocateNew } from "@/engine/modules";
 import { type CardState, retrievability } from "@/engine/scheduler";
 import { buildQueue, pickNewCards, type QueueItem, subregionOrder } from "@/engine/session";
@@ -20,6 +21,8 @@ import {
   CITY_CARD_TYPES,
   type CountryCardType,
   cardId,
+  GROUP_CARD_TYPES,
+  type GroupCardType,
   parseCardId,
   type ReviewEventCore,
 } from "@/engine/types";
@@ -39,6 +42,42 @@ export type PlanSettings = {
 /** A city has started once either of its cards has been reviewed. */
 export function isCityIntroduced(id: string, states: ReadonlyMap<CardId, unknown>): boolean {
   return CITY_CARD_TYPES.some((type) => states.has(cardId(id, type)));
+}
+
+/** A group has started once any of its cards has been reviewed. */
+export function isGroupIntroduced(id: string, states: ReadonlyMap<CardId, unknown>): boolean {
+  return GROUP_CARD_TYPES.some((type) => states.has(cardId(id, type)));
+}
+
+const isGroupType = (type: string): type is GroupCardType =>
+  (GROUP_CARD_TYPES as readonly string[]).includes(type);
+
+/**
+ * A group as studied: its members in scope, and the subregion most of them share (first
+ * listed wins a tie), which places its cards in the day's region order.
+ */
+export function scopedGroup(
+  world: WorldData,
+  inScope: ReadonlyMap<string, Country>,
+  id: string,
+): { members: string[]; subregion: string } | null {
+  const group = world.groupById.get(id);
+  const members = (group?.members ?? []).filter((m) => inScope.has(m));
+  if (members.length < 2) return null;
+  const counts = new Map<string, number>();
+  for (const m of members) {
+    const sub = inScope.get(m)?.subregion ?? "";
+    counts.set(sub, (counts.get(sub) ?? 0) + 1);
+  }
+  let subregion = "";
+  let best = 0;
+  for (const [sub, n] of counts) {
+    if (n > best) {
+      subregion = sub;
+      best = n;
+    }
+  }
+  return { members, subregion };
 }
 
 export type PlanEvent = ReviewEventCore & { durationMs: number };
@@ -86,6 +125,9 @@ export function planDay(input: {
   const inScope = new Map(countries.map((c) => [c.id, c]));
   const day = learningDay(now, settings.dayStartHour);
   const citiesOn = settings.modules?.cities === true;
+  const groupsOn = settings.modules?.groups === true;
+  const groupSubregion = (id: string) =>
+    groupsOn ? scopedGroup(world, inScope, id)?.subregion : undefined;
   /** Subregion of a city whose country is in scope, when the cities module is on. */
   const citySubregion = (id: string) => {
     const city = citiesOn ? world.cityById.get(id) : undefined;
@@ -107,9 +149,18 @@ export function planDay(input: {
     .filter((s) => s.due < day.end && s.phase !== "new")
     .flatMap((s) => {
       const { entityId, type } = parseCardId(s.cardId);
-      if (type === "contrast" || type === "city_to_country" || type === "city_to_map") {
+      if (
+        type === "contrast" ||
+        type === "city_to_country" ||
+        type === "city_to_map" ||
+        isGroupType(type)
+      ) {
         const subregion =
-          type === "contrast" ? contrastSubregion(entityId) : citySubregion(entityId);
+          type === "contrast"
+            ? contrastSubregion(entityId)
+            : isGroupType(type)
+              ? groupSubregion(entityId)
+              : citySubregion(entityId);
         if (!subregion) return [];
         return [
           {
@@ -187,10 +238,32 @@ export function planDay(input: {
           }));
       })
     : [];
+  // Groups start once half their members are introduced, all their cards together.
+  const groupCandidates = groupsOn
+    ? world.groups.flatMap((group) => {
+        const scoped = scopedGroup(world, inScope, group.id);
+        if (!scoped) return [];
+        const ready = scoped.members.filter((m) => isIntroduced(m, states)).length;
+        if (!groupReady(ready, scoped.members.length)) return [];
+        const introduced = isGroupIntroduced(group.id, states);
+        return groupCardTypes(scoped.members.length)
+          .map((type) => cardId(group.id, type))
+          .filter((id) => !states.has(id))
+          .map((id) => ({
+            cardId: id,
+            entityId: group.id,
+            subregion: scoped.subregion,
+            isNew: true,
+            introduced,
+            stage: 1,
+          }));
+      })
+    : [];
   const weight = (id: string, fallback: number) => settings.moduleWeights?.[id] ?? fallback;
   const shares = allocateNew(newAllowance, [
     { id: "countries", weight: weight("countries", 3), available: candidates.length },
     { id: "cities", weight: citiesOn ? weight("cities", 1) : 0, available: cityCandidates.length },
+    { id: "groups", weight: groupsOn ? weight("groups", 1) : 0, available: groupCandidates.length },
   ]);
 
   // Contrast cards ahead of new cards (PLAN.md 6.7): pairs the learner keeps confusing, and
@@ -211,6 +284,7 @@ export function planDay(input: {
     ...contrasts,
     ...pickNewCards(candidates, order, shares.get("countries") ?? 0),
     ...pickNewCards(cityCandidates, order, shares.get("cities") ?? 0),
+    ...pickNewCards(groupCandidates, order, shares.get("groups") ?? 0),
   ];
   const capped = [...due]
     .sort((a, b) => a.retrievability - b.retrievability)
