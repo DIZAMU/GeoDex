@@ -1,0 +1,654 @@
+{
+  "group": "asia",
+  "entities": [
+    {
+      "entityId": "Q406",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q406.en.1",
+            "type": "anchor",
+            "text": "Istanbul is in northwestern Türkiye, on both banks of the Bosphorus, the strait between Europe and Asia."
+          },
+          {
+            "id": "Q406.en.2",
+            "type": "contrast",
+            "text": "Istanbul is Türkiye's biggest city, but the capital is Ankara, in the middle of Anatolia."
+          },
+          {
+            "id": "Q406.en.3",
+            "type": "story",
+            "text": "Istanbul was Constantinople, capital of the Byzantine Empire and then the Ottoman Empire."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q406.nb.1",
+            "type": "anchor",
+            "text": "Istanbul ligger nordvest i Tyrkia, på begge sider av Bosporos, stredet mellom Europa og Asia."
+          },
+          {
+            "id": "Q406.nb.2",
+            "type": "contrast",
+            "text": "Istanbul er Tyrkias største by, men hovedstaden er Ankara, midt i Anatolia."
+          },
+          {
+            "id": "Q406.nb.3",
+            "type": "story",
+            "text": "Istanbul het Konstantinopel og var hovedstad i Det bysantinske riket og senere Det osmanske riket."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q406.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Istanbul lies on two continents, split by the Bosphorus.",
+            "nb": "Istanbul ligger på to kontinenter, delt av Bosporos."
+          }
+        },
+        {
+          "id": "Q406.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Türkiye moved its capital from Istanbul to Ankara when the republic was founded.",
+            "nb": "Tyrkia flyttet hovedstaden fra Istanbul til Ankara da republikken ble grunnlagt."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q612",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q612.en.1",
+            "type": "anchor",
+            "text": "Dubai is on the Persian Gulf coast of the United Arab Emirates, northeast of Abu Dhabi."
+          },
+          {
+            "id": "Q612.en.2",
+            "type": "contrast",
+            "text": "Dubai is the Emirates' best-known city, but the capital is Abu Dhabi, down the coast to the southwest."
+          },
+          {
+            "id": "Q612.en.3",
+            "type": "story",
+            "text": "Dubai's Burj Khalifa is the tallest building in the world, a needle rising out of the desert."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q612.nb.1",
+            "type": "anchor",
+            "text": "Dubai ligger ved Persiabukta i De forente arabiske emirater, nordøst for Abu Dhabi."
+          },
+          {
+            "id": "Q612.nb.2",
+            "type": "contrast",
+            "text": "Dubai er den mest kjente byen i Emiratene, men hovedstaden er Abu Dhabi, lenger sørvest langs kysten."
+          },
+          {
+            "id": "Q612.nb.3",
+            "type": "story",
+            "text": "Burj Khalifa i Dubai er verdens høyeste bygning, en nål som stikker opp av ørkenen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q612.f1",
+          "tier": 1,
+          "verified": true,
+          "text": {
+            "en": "The capital of the United Arab Emirates is Abu Dhabi, not Dubai.",
+            "nb": "Hovedstaden i De forente arabiske emirater er Abu Dhabi, ikke Dubai."
+          }
+        },
+        {
+          "id": "Q612.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Dubai is also the name of the emirate around the city, one of seven in the federation.",
+            "nb": "Dubai er også navnet på emiratet rundt byen, ett av sju i forbundet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q8646",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q8646.en.1",
+            "type": "anchor",
+            "text": "Hong Kong is on China's south coast, at the mouth of the Pearl River, next to Shenzhen."
+          },
+          {
+            "id": "Q8646.en.2",
+            "type": "story",
+            "text": "Hong Kong was British until it was handed back to China, and it kept its own currency and laws."
+          },
+          {
+            "id": "Q8646.en.3",
+            "type": "etymology",
+            "text": "Hong Kong means fragrant harbour."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q8646.nb.1",
+            "type": "anchor",
+            "text": "Hongkong ligger på sørkysten av Kina, ved munningen av Perleelven, rett ved Shenzhen."
+          },
+          {
+            "id": "Q8646.nb.2",
+            "type": "story",
+            "text": "Hongkong var britisk til den ble gitt tilbake til Kina, og beholdt egen valuta og egne lover."
+          },
+          {
+            "id": "Q8646.nb.3",
+            "type": "etymology",
+            "text": "Hongkong betyr den duftende havnen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q8646.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Hong Kong is a special administrative region of China.",
+            "nb": "Hongkong er en spesiell administrativ region i Kina."
+          }
+        },
+        {
+          "id": "Q8646.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Hong Kong uses its own currency, the Hong Kong dollar.",
+            "nb": "Hongkong bruker sin egen valuta, hongkongdollar."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q8686",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q8686.en.1",
+            "type": "anchor",
+            "text": "Shanghai is on China's east coast, where the Yangtze reaches the sea."
+          },
+          {
+            "id": "Q8686.en.2",
+            "type": "contrast",
+            "text": "Shanghai is China's financial centre, but the capital is Beijing, in the north."
+          },
+          {
+            "id": "Q8686.en.3",
+            "type": "etymology",
+            "text": "Shanghai means on the sea, fitting a city at the mouth of the Yangtze."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q8686.nb.1",
+            "type": "anchor",
+            "text": "Shanghai ligger på østkysten av Kina, der Yangtze renner ut i havet."
+          },
+          {
+            "id": "Q8686.nb.2",
+            "type": "contrast",
+            "text": "Shanghai er Kinas finanssentrum, men hovedstaden er Beijing, i nord."
+          },
+          {
+            "id": "Q8686.nb.3",
+            "type": "etymology",
+            "text": "Shanghai betyr «ved havet», og det passer for en by ved munningen av Yangtze."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q8686.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Shanghai has the busiest container port in the world.",
+            "nb": "Shanghai har verdens travleste containerhavn."
+          }
+        },
+        {
+          "id": "Q8686.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Shanghai is one of China's four municipalities that answer directly to the central government.",
+            "nb": "Shanghai er en av Kinas fire byer som er underlagt sentralregjeringen direkte."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1156",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1156.en.1",
+            "type": "anchor",
+            "text": "Mumbai is on India's west coast, on the Arabian Sea."
+          },
+          {
+            "id": "Q1156.en.2",
+            "type": "contrast",
+            "text": "Mumbai is India's financial centre and home of Bollywood, but the capital is New Delhi, in the north."
+          },
+          {
+            "id": "Q1156.en.3",
+            "type": "etymology",
+            "text": "Mumbai was called Bombay until the city took the name of the local goddess Mumba."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1156.nb.1",
+            "type": "anchor",
+            "text": "Mumbai ligger på vestkysten av India, ved Arabiahavet."
+          },
+          {
+            "id": "Q1156.nb.2",
+            "type": "contrast",
+            "text": "Mumbai er Indias finanssentrum og hjemmet til Bollywood, men hovedstaden er New Delhi, i nord."
+          },
+          {
+            "id": "Q1156.nb.3",
+            "type": "etymology",
+            "text": "Mumbai het Bombay til byen tok navnet etter den lokale gudinnen Mumba."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1156.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Mumbai is the capital of the Indian state of Maharashtra.",
+            "nb": "Mumbai er hovedstaden i delstaten Maharashtra i India."
+          }
+        },
+        {
+          "id": "Q1156.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The city's official name changed from Bombay to Mumbai.",
+            "nb": "Byens offisielle navn ble endret fra Bombay til Mumbai."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q34600",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q34600.en.1",
+            "type": "anchor",
+            "text": "Kyoto is on Honshu, Japan's main island, inland and northeast of Osaka."
+          },
+          {
+            "id": "Q34600.en.2",
+            "type": "story",
+            "text": "Kyoto was Japan's capital for more than a thousand years before the emperor moved to Tokyo."
+          },
+          {
+            "id": "Q34600.en.3",
+            "type": "contrast",
+            "text": "Kyoto and Tokyo share their syllables in reverse: Kyoto is the old capital, Tokyo the new."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q34600.nb.1",
+            "type": "anchor",
+            "text": "Kyoto ligger på Honshu, Japans hovedøy, inne i landet nordøst for Osaka."
+          },
+          {
+            "id": "Q34600.nb.2",
+            "type": "story",
+            "text": "Kyoto var Japans hovedstad i over tusen år før keiseren flyttet til Tokyo."
+          },
+          {
+            "id": "Q34600.nb.3",
+            "type": "contrast",
+            "text": "Kyoto og Tokyo har de samme stavelsene i motsatt rekkefølge: Kyoto er den gamle hovedstaden, Tokyo den nye."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q34600.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Kyoto was Japan's imperial capital until the emperor moved to Tokyo.",
+            "nb": "Kyoto var Japans keiserlige hovedstad til keiseren flyttet til Tokyo."
+          }
+        },
+        {
+          "id": "Q34600.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Kyoto has well over a thousand Buddhist temples and Shinto shrines.",
+            "nb": "Kyoto har godt over tusen buddhistiske templer og shintohelligdommer."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q35765",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q35765.en.1",
+            "type": "anchor",
+            "text": "Osaka is on Osaka Bay in western Japan, on the main island of Honshu, near Kyoto."
+          },
+          {
+            "id": "Q35765.en.2",
+            "type": "contrast",
+            "text": "Osaka is the largest city of western Japan; the capital is Tokyo, far to the east."
+          },
+          {
+            "id": "Q35765.en.3",
+            "type": "sound",
+            "text": "Osaka: oh, sake, says the chef, as a barrel of rice wine rolls down a street in Japan's food city."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q35765.nb.1",
+            "type": "anchor",
+            "text": "Osaka ligger ved Osakabukta vest i Japan, på hovedøya Honshu, nær Kyoto."
+          },
+          {
+            "id": "Q35765.nb.2",
+            "type": "contrast",
+            "text": "Osaka er den største byen vest i Japan; hovedstaden er Tokyo, langt mot øst."
+          },
+          {
+            "id": "Q35765.nb.3",
+            "type": "sound",
+            "text": "Osaka: «å, saken», sukker kokken og setter fram enda en tallerken i Japans matby."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q35765.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Osaka is known in Japan as the nation's kitchen, for its food culture.",
+            "nb": "Osaka er kjent i Japan som «nasjonens kjøkken», på grunn av matkulturen."
+          }
+        },
+        {
+          "id": "Q35765.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Osaka is the capital of Osaka Prefecture.",
+            "nb": "Osaka er hovedstaden i prefekturet Osaka."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q35493",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q35493.en.1",
+            "type": "anchor",
+            "text": "Almaty is in the far southeast of Kazakhstan, at the foot of mountains near Kyrgyzstan."
+          },
+          {
+            "id": "Q35493.en.2",
+            "type": "contrast",
+            "text": "Almaty is Kazakhstan's biggest city, but the capital moved north to Astana."
+          },
+          {
+            "id": "Q35493.en.3",
+            "type": "etymology",
+            "text": "Almaty comes from the Kazakh word for apple, and wild apples grow in the hills around it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q35493.nb.1",
+            "type": "anchor",
+            "text": "Almaty ligger helt sørøst i Kasakhstan, ved foten av fjellene nær Kirgisistan."
+          },
+          {
+            "id": "Q35493.nb.2",
+            "type": "contrast",
+            "text": "Almaty er Kasakhstans største by, men hovedstaden flyttet nordover til Astana."
+          },
+          {
+            "id": "Q35493.nb.3",
+            "type": "etymology",
+            "text": "Almaty kommer av det kasakhiske ordet for eple, og ville epletrær vokser i åsene rundt byen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q35493.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Almaty was Kazakhstan's capital until the government moved to Astana.",
+            "nb": "Almaty var Kasakhstans hovedstad til regjeringen flyttet til Astana."
+          }
+        },
+        {
+          "id": "Q35493.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The wild ancestors of the cultivated apple grow in the mountains near Almaty.",
+            "nb": "Villformen av det dyrkede eplet vokser i fjellene nær Almaty."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q37995",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q37995.en.1",
+            "type": "anchor",
+            "text": "Yangon is in southern Myanmar, near the coast where the Yangon River meets the Andaman Sea."
+          },
+          {
+            "id": "Q37995.en.2",
+            "type": "contrast",
+            "text": "Yangon is Myanmar's biggest city, but the government moved the capital north to Naypyidaw."
+          },
+          {
+            "id": "Q37995.en.3",
+            "type": "story",
+            "text": "The gold-covered Shwedagon Pagoda rises over Yangon."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q37995.nb.1",
+            "type": "anchor",
+            "text": "Yangon ligger sør i Myanmar, nær kysten der Yangon-elva møter Andamanhavet."
+          },
+          {
+            "id": "Q37995.nb.2",
+            "type": "contrast",
+            "text": "Yangon er Myanmars største by, men regjeringen flyttet hovedstaden nordover til Nay Pyi Taw."
+          },
+          {
+            "id": "Q37995.nb.3",
+            "type": "story",
+            "text": "Den gullkledde Shwedagon-pagoden ruver over Yangon."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q37995.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Yangon, once called Rangoon, was Myanmar's capital until the move to Naypyidaw.",
+            "nb": "Yangon, tidligere kalt Rangoon, var Myanmars hovedstad til flyttingen til Nay Pyi Taw."
+          }
+        },
+        {
+          "id": "Q37995.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Naypyidaw was built from scratch as a new capital.",
+            "nb": "Nay Pyi Taw ble bygd fra grunnen av som ny hovedstad."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q8660",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q8660.en.1",
+            "type": "anchor",
+            "text": "Karachi is on Pakistan's south coast, on the Arabian Sea, west of the Indus delta."
+          },
+          {
+            "id": "Q8660.en.2",
+            "type": "contrast",
+            "text": "Karachi is Pakistan's biggest city, but the capital is Islamabad, in the far north."
+          },
+          {
+            "id": "Q8660.en.3",
+            "type": "sound",
+            "text": "Karachi: a car stuffed with cash cruises along the Arabian Sea in southern Pakistan."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q8660.nb.1",
+            "type": "anchor",
+            "text": "Karachi ligger på sørkysten av Pakistan, ved Arabiahavet, vest for Indusdeltaet."
+          },
+          {
+            "id": "Q8660.nb.2",
+            "type": "contrast",
+            "text": "Karachi er Pakistans største by, men hovedstaden er Islamabad, langt nord i landet."
+          },
+          {
+            "id": "Q8660.nb.3",
+            "type": "sound",
+            "text": "Karachi: en karatemester trener på stranden ved Arabiahavet sør i Pakistan."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q8660.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Karachi was Pakistan's first capital, before Islamabad was built.",
+            "nb": "Karachi var Pakistans første hovedstad, før Islamabad ble bygd."
+          }
+        },
+        {
+          "id": "Q8660.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Karachi is Pakistan's main seaport.",
+            "nb": "Karachi er Pakistans viktigste havneby."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1854",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1854.en.1",
+            "type": "anchor",
+            "text": "Ho Chi Minh City is in southern Vietnam, close to the Mekong Delta."
+          },
+          {
+            "id": "Q1854.en.2",
+            "type": "contrast",
+            "text": "Ho Chi Minh City is Vietnam's biggest city, but the capital is Hanoi, in the north."
+          },
+          {
+            "id": "Q1854.en.3",
+            "type": "story",
+            "text": "Ho Chi Minh City was called Saigon and was the capital of South Vietnam until the country reunited."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1854.nb.1",
+            "type": "anchor",
+            "text": "Ho Chi Minh-byen ligger sør i Vietnam, nær Mekongdeltaet."
+          },
+          {
+            "id": "Q1854.nb.2",
+            "type": "contrast",
+            "text": "Ho Chi Minh-byen er Vietnams største by, men hovedstaden er Hanoi, i nord."
+          },
+          {
+            "id": "Q1854.nb.3",
+            "type": "story",
+            "text": "Ho Chi Minh-byen het Saigon og var hovedstad i Sør-Vietnam til landet ble samlet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1854.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The city was renamed after Ho Chi Minh, the leader of North Vietnam.",
+            "nb": "Byen fikk nytt navn etter Ho Chi Minh, lederen for Nord-Vietnam."
+          }
+        },
+        {
+          "id": "Q1854.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Many people in Vietnam still call the city Saigon.",
+            "nb": "Mange i Vietnam kaller fortsatt byen Saigon."
+          }
+        }
+      ]
+    }
+  ]
+}
