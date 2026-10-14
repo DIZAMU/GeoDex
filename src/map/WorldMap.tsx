@@ -8,10 +8,10 @@ import { select } from "d3-selection";
 import "d3-transition";
 import { type D3ZoomEvent, type ZoomBehavior, zoom, zoomIdentity } from "d3-zoom";
 import type { Feature, Geometry } from "geojson";
-import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { memo, type ReactNode, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { feature } from "topojson-client";
 import type { Topology } from "topojson-specification";
-import type { Country, PhysicalFeature } from "@/data/types";
+import type { Country, HistoricalEntity, PhysicalFeature } from "@/data/types";
 import type { CountryTopology } from "@/data/world";
 import {
   type Bounds,
@@ -86,7 +86,16 @@ export type WorldMapProps = {
   physical?: readonly PhysicalFeature[];
   /** Features that respond to taps. When set, a tap picks a feature, never a country. */
   selectableFeatures?: ReadonlySet<string>;
+  /**
+   * Dissolved states and empires to outline, clipped to land or to their countries.
+   * Highlights and labels take their ids like country ids.
+   */
+  history?: readonly HistoricalEntity[];
+  /** Drawn over the map's corner, such as the year an outline shows. */
+  caption?: ReactNode;
 };
+
+type OutlineShape = { id: string; d: string; clip: string | null; label: [number, number] };
 
 /** Draw order, bottom to top. Taps hit the topmost: rivers, then lakes, land, seas, oceans. */
 const FEATURE_ORDER: PhysicalFeature["kind"][] = [
@@ -241,6 +250,8 @@ export function WorldMap({
   interactive = true,
   physical,
   selectableFeatures,
+  history,
+  caption,
 }: WorldMapProps) {
   const { ref: containerRef, width, height } = useSize<HTMLDivElement>();
   const svgRef = useRef<SVGSVGElement>(null);
@@ -314,9 +325,34 @@ export function WorldMap({
           thickness: perimeter > 0 ? (2 * path.area(geo)) / perimeter : 0,
         };
       });
+    const countryD = new Map(shapes.map((sh) => [sh.id, sh.d]));
+    let land: string | null = null;
+    const outlineShapes: OutlineShape[] = (history ?? []).flatMap((e) => {
+      if (e.kind === "former_name") return [];
+      const { clip } = e.outline;
+      if (clip === "land" && land === null) {
+        const topo = topology as unknown as Topology;
+        land = path(feature(topo, topo.objects.land as never) as never) ?? "";
+      }
+      return [
+        {
+          id: e.id,
+          d: path(e.outline.geometry as Geometry) ?? "",
+          clip:
+            clip === null
+              ? null
+              : clip === "land"
+                ? land
+                : clip.map((id) => countryD.get(id) ?? "").join(""),
+          label: (projection(e.outline.label) ?? [0, 0]) as [number, number],
+        },
+      ];
+    });
     return {
       projection,
       shapes,
+      outlineShapes,
+      outlineById: new Map(outlineShapes.map((o) => [o.id, o])),
       featureShapes,
       featureById: new Map(featureShapes.map((f) => [f.id, f])),
       markerOnly,
@@ -325,7 +361,7 @@ export function WorldMap({
       sphere: path({ type: "Sphere" }) ?? "",
       graticule: path(geoGraticule10()) ?? "",
     };
-  }, [features, countries, inScope, width, height, physical]);
+  }, [features, countries, inScope, width, height, physical, history, topology]);
   const geometryRef = useRef(geometry);
   geometryRef.current = geometry;
   const ready = geometry !== null;
@@ -529,6 +565,32 @@ export function WorldMap({
                   <path key={`fill-${id}`} d={geometry.byId.get(id)?.d} className="map-filled" />
                 ) : null,
               )}
+              {geometry.outlineShapes.map((o) => {
+                const state = targets.has(o.id)
+                  ? "target"
+                  : chosen.has(o.id)
+                    ? "chosen"
+                    : selected.has(o.id)
+                      ? "selected"
+                      : "plain";
+                return (
+                  <g key={`outline-${o.id}`}>
+                    {o.clip !== null ? (
+                      <clipPath id={`clip-${o.id}`}>
+                        <path d={o.clip} />
+                      </clipPath>
+                    ) : null}
+                    <path
+                      d={o.d}
+                      className={`map-outline map-outline-${state}`}
+                      clipPath={o.clip !== null ? `url(#clip-${o.id})` : undefined}
+                      data-testid="history-outline"
+                      data-history={o.id}
+                      data-state={state}
+                    />
+                  </g>
+                );
+              })}
               {geometry.featureShapes.length > 0 ? (
                 <Features
                   shapes={geometry.featureShapes}
@@ -684,6 +746,22 @@ export function WorldMap({
                 );
               })()}
               {labels.map((id) => {
+                const outline = geometry.outlineById.get(id);
+                if (outline) {
+                  const [x, y] = toScreen(outline.label);
+                  return (
+                    <text
+                      key={id}
+                      x={x}
+                      y={y}
+                      className={`map-label map-label-outline${chosen.has(id) ? " map-label-chosen" : ""}`}
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                    >
+                      {labelFor(id)}
+                    </text>
+                  );
+                }
                 const feature = geometry.featureById.get(id);
                 if (feature) {
                   const [x, y] = toScreen(feature.label);
@@ -722,6 +800,7 @@ export function WorldMap({
       </svg>
       {/* Edge shading gives the map depth; it never takes clicks. */}
       <div aria-hidden className="map-vignette pointer-events-none absolute inset-0" />
+      {caption}
     </div>
   );
 }
