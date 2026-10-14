@@ -669,7 +669,7 @@ GeoDex/
 
 ## 10. Phases
 
-Every phase ends with typecheck, lint, tests and build green, and a commit tagged `phase-N`. Do not start phase N+1 until phase N's acceptance criteria pass.
+Every phase ends with typecheck, lint, tests and build green, and a release tagged `v0.N.0` (DECISIONS.md 040). Do not start phase N+1 until phase N's acceptance criteria pass.
 
 ### Phase 0: Scaffold
 - Vite + React + TS strict, Tailwind v4, shadcn init, Biome, Vitest, Playwright, React Router, Dexie, i18next (en + nb), Fontsource fonts.

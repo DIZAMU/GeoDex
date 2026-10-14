@@ -6,7 +6,7 @@ name: Release
 on:
   push:
     branches: [main]
-    paths: ["releases/phase-*.md", ".github/workflows/release.yml"]
+    paths: ["releases/v*.md", ".github/workflows/release.yml"]
   workflow_dispatch:
 
 permissions:
@@ -19,11 +19,34 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+      # GitHub cannot order tags like phase-10.2 against phase-9, so they become semantic
+      # versions: phase-N is v0.N.0 and phase-N.M is v0.N.M (DECISIONS.md 040). The release
+      # keeps its title, notes and date; only its tag changes. Runs once: later there is
+      # nothing left to rename.
+      - name: Rename phase tags to versions
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for old in $(gh release list --limit 200 --json tagName --jq '.[].tagName' | grep -E '^phase-[0-9]+(\.[0-9]+)?$' || true); do
+            num="${old#phase-}"
+            major="${num%%.*}"
+            minor="0"
+            if [ "$num" != "$major" ]; then minor="${num#*.}"; fi
+            new="v0.${major}.${minor}"
+            sha="$(git rev-list -n 1 "refs/tags/$old")"
+            git push origin "${sha}:refs/tags/${new}"
+            gh release edit "$old" --tag "$new"
+            git push origin ":refs/tags/${old}"
+            echo "renamed $old to $new"
+          done
       - name: Create missing releases
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          for notes in releases/phase-*.md; do
+          for notes in releases/v*.md; do
             tag="$(basename "$notes" .md)"
             if gh release view "$tag" >/dev/null 2>&1; then
               echo "$tag exists"
