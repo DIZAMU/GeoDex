@@ -9,6 +9,7 @@ import {
   COUNTRY_CARD_TYPES,
   cardId,
   LANDMARK_CARD_TYPES,
+  PHYSICAL_CARD_TYPES,
   parseCardId,
 } from "@/engine/types";
 import { isLocale, type Locale } from "@/i18n/locales";
@@ -60,6 +61,7 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
   const region = learner.world.subregions.find((s) => s.id === country.subregion);
   const cities = learner.world.cities.filter((c) => c.countryId === country.id);
   const landmarks = learner.world.landmarks.filter((l) => l.countryId === country.id);
+  const physical = learner.world.physical.filter((f) => f.countries.includes(country.id));
   const date = new Intl.DateTimeFormat(locale, { day: "numeric", month: "short" });
   const number = new Intl.NumberFormat(locale);
   const list = new Intl.ListFormat(locale, { type: "conjunction" });
@@ -237,6 +239,14 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
             title={t("entry.landmarks")}
             items={landmarks}
             types={LANDMARK_CARD_TYPES}
+            learner={learner}
+            locale={locale}
+          />
+          <ModuleList
+            id="physical"
+            title={t("entry.physical")}
+            items={physical}
+            types={PHYSICAL_CARD_TYPES}
             learner={learner}
             locale={locale}
           />

@@ -26,6 +26,7 @@ const world = assembleWorld(
   read("data/cities.json"),
   read("data/curated/groups.json"),
   read("data/landmarks.json"),
+  read("data/physical.json"),
 );
 const ctx: StudyContext = {
   world,
@@ -336,6 +337,59 @@ describe("landmark questions (PLAN.md 5.3)", () => {
         for (const st of [undefined, state(30)]) {
           const q = buildQuestion(ctx, `${l.id}:${type}`, st, "auto", "x");
           expect(q.entityId).toBe(l.id);
+          if (q.answer.kind === "choice")
+            expect(new Set(q.answer.options.map((o) => o.id)).size).toBe(4);
+        }
+      }
+    }
+  });
+});
+
+describe("physical questions (PLAN.md 5.3)", () => {
+  const NILE = "Q3392";
+
+  it("asks to tap the feature, framed on the feature itself while new", () => {
+    const q = buildQuestion(ctx, `${NILE}:feature_to_map`, undefined, "auto", "s");
+    expect(q.answer.kind).toBe("feature");
+    if (q.answer.kind !== "feature" || q.answer.view.kind !== "box") throw new Error("view");
+    const [w, s, e, n] = q.answer.view.box;
+    // The whole Nile, from Lake Victoria to the Mediterranean, with room around it.
+    expect(w).toBeLessThan(30);
+    expect(e).toBeGreaterThan(34);
+    expect(s).toBeLessThan(0);
+    expect(n).toBeGreaterThan(31);
+    expect(checkChoice(q, NILE).correct).toBe(true);
+    expect(checkChoice(q, "Q4918").correct).toBe(false);
+    const strong = buildQuestion(ctx, `${NILE}:feature_to_map`, state(30), "auto", "s");
+    if (strong.answer.kind === "feature") expect(strong.answer.view.kind).toBe("world");
+  });
+
+  it("names a highlighted feature with wrong names of the same kind", () => {
+    const q = buildQuestion(ctx, `${NILE}:map_to_feature`, undefined, "auto", "n");
+    if (q.answer.kind !== "choice") throw new Error("choice");
+    const kinds = q.answer.options.map((o) => world.physicalById.get(o.id)?.kind);
+    expect(kinds).toEqual(["river", "river", "river", "river"]);
+    const typed = buildQuestion(ctx, `${NILE}:map_to_feature`, state(30), "auto", "n");
+    expect(checkTyped(typed, ctx.indexes, "Nilen").correct).toBe(true);
+    expect(checkTyped(typed, ctx.indexes, "the nile").correct).toBe(true);
+  });
+
+  it("frames small features with room around them, and oceans on the whole world", () => {
+    const chad = buildQuestion(ctx, "Q125309:feature_to_map", undefined, "auto", "c");
+    if (chad.answer.kind !== "feature" || chad.answer.view.kind !== "box") throw new Error("view");
+    const [w, s, e, n] = chad.answer.view.box;
+    expect(e - w).toBeGreaterThanOrEqual(18);
+    expect(n - s).toBeGreaterThanOrEqual(11);
+    const ocean = buildQuestion(ctx, "Q97:feature_to_map", undefined, "auto", "o");
+    if (ocean.answer.kind === "feature") expect(ocean.answer.view.kind).toBe("world");
+  });
+
+  it("builds every physical card", () => {
+    for (const f of world.physical) {
+      for (const type of ["feature_to_map", "map_to_feature"]) {
+        for (const st of [undefined, state(30)]) {
+          const q = buildQuestion(ctx, `${f.id}:${type}`, st, "auto", "x");
+          expect(q.featureId).toBe(f.id);
           if (q.answer.kind === "choice")
             expect(new Set(q.answer.options.map((o) => o.id)).size).toBe(4);
         }

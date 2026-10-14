@@ -54,7 +54,8 @@
     "groupLook": "Language and look",
     "groupStudy": "Study",
     "groups": "Groups of countries (after half their members)",
-    "landmarks": "Landmarks (after their country)"
+    "landmarks": "Landmarks (after their country)",
+    "physical": "Physical geography (after a country it touches)"
   },
   "nav": {
     "today": "Today",
@@ -113,7 +114,9 @@
     "group_member": "Which of these is {{phrase}}?",
     "photo_to_name": "What is this?",
     "landmark_to_country": "Which country is {{landmark}} in?",
-    "landmark_to_map": "Place {{landmark}} on the map."
+    "landmark_to_map": "Place {{landmark}} on the map.",
+    "feature_to_map": "Tap on the map: {{feature}}",
+    "map_to_feature": "What is {{thisKind}} called?"
   },
   "answer": {
     "pinHelp": "Tap where the city is.",
@@ -127,7 +130,8 @@
     "tapHelp": "Tap each country, then check. Tap again to remove one.",
     "tapCount_one": "{{count}} country selected",
     "tapCount_other": "{{count}} countries selected",
-    "pinHelpLandmark": "Tap where it is."
+    "pinHelpLandmark": "Tap where it is.",
+    "featureHelp": "Tap it on the map."
   },
   "feedback": {
     "distance": "Your pin was {{distance}} from the city.",
@@ -263,7 +267,9 @@
     "group_member": "Member of the group",
     "photo_to_name": "Photo to name",
     "landmark_to_country": "Landmark to country",
-    "landmark_to_map": "Landmark on the map"
+    "landmark_to_map": "Landmark on the map",
+    "feature_to_map": "Feature on the map",
+    "map_to_feature": "Name the feature"
   },
   "hookType": {
     "anchor": "Anchor",
@@ -302,7 +308,8 @@
     "correct": "Correct",
     "wrong": "Wrong",
     "drill": "Drill {{region}}",
-    "landmarks": "Landmarks"
+    "landmarks": "Landmarks",
+    "physical": "Physical geography"
   },
   "stats": {
     "title": "Stats",
@@ -329,7 +336,8 @@
     "achievements": "Achievements",
     "noAchievements": "None yet.",
     "drill": "Drill",
-    "landmarks": "Landmarks"
+    "landmarks": "Landmarks",
+    "physical": "Physical geography"
   },
   "streak": {
     "days_one": "{{count}}-day streak",
@@ -377,5 +385,25 @@
     "credit": "Photo: {{author}}, {{license}}",
     "altPrompt": "Photo of the place to name",
     "alt": "Photo of {{name}}"
+  },
+  "physical": {
+    "kind": {
+      "ocean": "Ocean",
+      "sea": "Sea",
+      "river": "River",
+      "mountain_range": "Mountain range",
+      "desert": "Desert",
+      "lake": "Lake"
+    },
+    "this": {
+      "ocean": "this ocean",
+      "sea": "this sea",
+      "river": "this river",
+      "mountain_range": "this mountain range",
+      "desert": "this desert",
+      "lake": "this lake"
+    },
+    "countries": "Countries",
+    "noCountries": "Borders no country"
   }
 }

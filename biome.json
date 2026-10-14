@@ -14,6 +14,7 @@
       "!**/data/countries.json",
       "!**/data/cities.json",
       "!**/data/landmarks.json",
+      "!**/data/physical.json",
       "!**/data/geo",
       "!**/data/flags-meta.json",
       "!**/public/flags",

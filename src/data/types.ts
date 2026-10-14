@@ -153,3 +153,24 @@ export type Landmark = {
 };
 
 export type LandmarksFile = { landmarks: Landmark[] };
+
+/** Physical geography (PLAN.md Phase 8). */
+export type PhysicalKind = "ocean" | "sea" | "river" | "mountain_range" | "desert" | "lake";
+
+export type PhysicalFeature = {
+  id: string; // Wikidata QID
+  kind: PhysicalKind;
+  /** Content group and card order: a continent id, or "ocean". */
+  region: string;
+  names: L10n;
+  aliases: L10nList;
+  /** ISO3 of the countries it crosses or borders, most first. */
+  countries: string[];
+  /** [lon, lat] for the label, inside the shape (on the line for rivers). */
+  label: [number, number];
+  geometry:
+    | { type: "MultiPolygon"; coordinates: [number, number][][][] }
+    | { type: "MultiLineString"; coordinates: [number, number][][] };
+};
+
+export type PhysicalFile = { features: PhysicalFeature[] };

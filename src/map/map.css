@@ -229,3 +229,138 @@
 .world-map[data-pin="true"] {
   cursor: crosshair;
 }
+
+/*
+ * Physical features (PLAN.md Phase 8). Water reads as a deeper ocean tone, land features as
+ * a tint over the countries; rivers are lines. The accent stays reserved for answers.
+ */
+.world-map .map-feature {
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+  transition:
+    fill-opacity 160ms,
+    stroke-opacity 160ms;
+}
+.world-map .map-feature-ocean,
+.world-map .map-feature-sea {
+  fill: var(--map-graticule);
+  fill-opacity: 0.25;
+  stroke: var(--map-border);
+  stroke-opacity: 0.35;
+  stroke-width: 0.5px;
+}
+.world-map .map-feature-lake {
+  fill: var(--map-ocean);
+  stroke: var(--map-border);
+  stroke-width: 0.6px;
+}
+.world-map .map-feature-desert,
+.world-map .map-feature-mountain_range {
+  fill: var(--foreground);
+  fill-opacity: 0.1;
+  stroke: var(--foreground);
+  stroke-opacity: 0.25;
+  stroke-width: 0.6px;
+}
+.world-map .map-feature-mountain_range {
+  stroke-dasharray: 3 2;
+}
+.world-map .map-feature-river {
+  fill: none;
+  stroke: var(--map-ocean);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.world-map .map-feature.map-selectable {
+  pointer-events: visiblePainted;
+}
+.world-map .map-feature-hit {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 16px;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  pointer-events: stroke;
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .world-map .map-feature.map-selectable:hover,
+  .world-map g:has(> .map-feature-hit:hover) > .map-feature {
+    fill-opacity: 0.45;
+    stroke-opacity: 0.9;
+  }
+  .world-map g:has(> .map-feature-hit:hover) > .map-feature-river {
+    stroke-width: 4px;
+  }
+}
+.world-map .map-feature-selected {
+  fill: var(--foreground);
+  fill-opacity: 0.55;
+  stroke: var(--foreground);
+  stroke-opacity: 1;
+  stroke-width: 1.5px;
+  animation: map-fill-in 420ms var(--ease-ui) both;
+}
+.world-map .map-feature-target {
+  fill: var(--primary);
+  fill-opacity: 0.75;
+  stroke: var(--foreground);
+  stroke-opacity: 1;
+  stroke-width: 1.5px;
+  animation: map-fill-in 420ms var(--ease-ui) both 120ms;
+}
+.world-map .map-feature-river.map-feature-selected,
+.world-map .map-feature-river.map-feature-target {
+  fill: none;
+  stroke-width: 4px;
+}
+.world-map .map-feature-river.map-feature-target {
+  stroke: var(--primary);
+}
+.world-map .map-feature-chosen {
+  fill: none;
+  stroke: var(--foreground);
+  stroke-opacity: 1;
+  stroke-width: 2px;
+  stroke-dasharray: 6 4;
+  animation: map-draw 700ms var(--ease-ui) both 150ms;
+}
+.world-map .map-label-feature {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 13px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .world-map .map-feature-selected,
+  .world-map .map-feature-target,
+  .world-map .map-feature-chosen {
+    animation: none;
+  }
+}
+
+/* Tap dots for physical features too thin to tap at the current zoom (lakes, thin ranges). */
+.world-map .map-feature-dot {
+  fill: var(--map-ocean);
+  stroke: var(--foreground);
+  stroke-opacity: 0.6;
+  stroke-width: 1.5px;
+  pointer-events: none;
+}
+.world-map .map-feature-dot-selected {
+  fill: var(--foreground);
+  stroke: var(--background);
+  stroke-opacity: 1;
+}
+.world-map .map-feature-dot-target {
+  fill: var(--primary);
+  stroke: var(--foreground);
+  stroke-opacity: 1;
+}
+.world-map .map-feature-dot-chosen {
+  fill: none;
+  stroke: var(--foreground);
+  stroke-opacity: 1;
+  stroke-dasharray: 3 2;
+}

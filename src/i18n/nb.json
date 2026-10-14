@@ -54,7 +54,8 @@
     "groupLook": "Språk og utseende",
     "groupStudy": "Øving",
     "groups": "Landgrupper (når halvparten av landene er startet)",
-    "landmarks": "Severdigheter (etter landet sitt)"
+    "landmarks": "Severdigheter (etter landet sitt)",
+    "physical": "Naturgeografi (etter et land den berører)"
   },
   "nav": {
     "today": "I dag",
@@ -113,7 +114,9 @@
     "group_member": "Hvilket av disse landene er {{phrase}}?",
     "photo_to_name": "Hva er dette?",
     "landmark_to_country": "Hvilket land ligger {{landmark}} i?",
-    "landmark_to_map": "Plasser {{landmark}} på kartet."
+    "landmark_to_map": "Plasser {{landmark}} på kartet.",
+    "feature_to_map": "Trykk på kartet: {{feature}}",
+    "map_to_feature": "Hva heter {{thisKind}}?"
   },
   "answer": {
     "pinHelp": "Trykk der byen ligger.",
@@ -127,7 +130,8 @@
     "tapHelp": "Trykk på hvert land, og sjekk til slutt. Trykk igjen for å fjerne et land.",
     "tapCount_one": "{{count}} land valgt",
     "tapCount_other": "{{count}} land valgt",
-    "pinHelpLandmark": "Trykk der det ligger."
+    "pinHelpLandmark": "Trykk der det ligger.",
+    "featureHelp": "Trykk på det på kartet."
   },
   "feedback": {
     "distance": "Nålen din var {{distance}} fra byen.",
@@ -263,7 +267,9 @@
     "group_member": "Medlem av gruppen",
     "photo_to_name": "Foto til navn",
     "landmark_to_country": "Severdighet til land",
-    "landmark_to_map": "Severdighet på kartet"
+    "landmark_to_map": "Severdighet på kartet",
+    "feature_to_map": "Naturformasjon på kartet",
+    "map_to_feature": "Navngi naturformasjonen"
   },
   "hookType": {
     "anchor": "Anker",
@@ -302,7 +308,8 @@
     "correct": "Riktig",
     "wrong": "Feil",
     "drill": "Øv på {{region}}",
-    "landmarks": "Severdigheter"
+    "landmarks": "Severdigheter",
+    "physical": "Naturgeografi"
   },
   "stats": {
     "title": "Statistikk",
@@ -329,7 +336,8 @@
     "achievements": "Merker",
     "noAchievements": "Ingen ennå.",
     "drill": "Øv",
-    "landmarks": "Severdigheter"
+    "landmarks": "Severdigheter",
+    "physical": "Naturgeografi"
   },
   "streak": {
     "days_one": "{{count}} dag på rad",
@@ -377,5 +385,25 @@
     "credit": "Foto: {{author}}, {{license}}",
     "altPrompt": "Foto av stedet du skal navngi",
     "alt": "Foto av {{name}}"
+  },
+  "physical": {
+    "kind": {
+      "ocean": "Hav",
+      "sea": "Hav",
+      "river": "Elv",
+      "mountain_range": "Fjellkjede",
+      "desert": "Ørken",
+      "lake": "Innsjø"
+    },
+    "this": {
+      "ocean": "dette havet",
+      "sea": "dette havet",
+      "river": "denne elven",
+      "mountain_range": "denne fjellkjeden",
+      "desert": "denne ørkenen",
+      "lake": "denne innsjøen"
+    },
+    "countries": "Land",
+    "noCountries": "Grenser ikke til noe land"
   }
 }

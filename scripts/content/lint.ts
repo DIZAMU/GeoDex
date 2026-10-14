@@ -5,7 +5,12 @@
  */
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { parse } from "yaml";
-import type { CitiesFile, CountriesFile, LandmarksFile } from "../../src/data/types.ts";
+import type {
+  CitiesFile,
+  CountriesFile,
+  LandmarksFile,
+  PhysicalFile,
+} from "../../src/data/types.ts";
 import { parseTemplateFile } from "../../src/engine/explain/template.ts";
 import {
   type Confusion,
@@ -90,6 +95,7 @@ export function lintContent(
     countriesPath?: string;
     citiesPath?: string;
     landmarksPath?: string;
+    physicalPath?: string;
   } = {},
 ): string[] {
   const root = options.root ?? "content";
@@ -109,6 +115,11 @@ export function lintContent(
     ? (JSON.parse(readFileSync(landmarksPath, "utf8")) as LandmarksFile).landmarks
     : [];
   const landmarkById = new Map(landmarks.map((l) => [l.id, l]));
+  const physicalPath = options.physicalPath ?? "data/physical.json";
+  const physical = existsSync(physicalPath)
+    ? (JSON.parse(readFileSync(physicalPath, "utf8")) as PhysicalFile).features
+    : [];
+  const physicalById = new Map(physical.map((f) => [f.id, f]));
   const ids = new Set<string>();
   const texts: Record<Locale, Map<string, string>> = { en: new Map(), nb: new Map() };
   const seenEntities = new Set<string>();
@@ -152,6 +163,13 @@ export function lintContent(
         const landmark = landmarkById.get(id);
         return landmark ? byId.get(landmark.countryId)?.continent : undefined;
       },
+      minFacts: rules.min_facts_per_city,
+      countryExtras: false,
+    },
+    {
+      // Physical features are grouped by region: a continent, or "ocean".
+      name: "physical",
+      groupOf: (id: string) => physicalById.get(id)?.region,
       minFacts: rules.min_facts_per_city,
       countryExtras: false,
     },
@@ -251,6 +269,8 @@ export function lintContent(
       if (!seenEntities.has(c.id)) errors.push(`${c.id} (${c.names.en}): no content`);
     for (const l of landmarks)
       if (!seenEntities.has(l.id)) errors.push(`${l.id} (${l.names.en}): no content`);
+    for (const f of physical)
+      if (!seenEntities.has(f.id)) errors.push(`${f.id} (${f.names.en}): no content`);
   }
 
   const confusionsPath = `${root}/confusions.json`;

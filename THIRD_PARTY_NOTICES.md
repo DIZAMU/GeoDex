@@ -65,6 +65,7 @@ limitations under the License.
 | Source | Used for | License |
 |---|---|---|
 | Natural Earth 4.1.0, Admin 0 countries 1:50m, via world-atlas 2.0.2 | Country geometry (`data/geo/`) | Natural Earth: public domain. world-atlas: ISC, Copyright 2013-2019 Michael Bostock |
+| Natural Earth 5.1.2, 1:50m marine polygons, rivers and lake centerlines, lakes, geography regions | Physical features (`data/physical.json`) | Public domain |
 | flag-icons 7.5.0 | Flag SVGs (`public/flags/`) | MIT, Copyright (c) 2013 Panayiotis Lipiridis |
 | Wikidata | Names, capitals, codes, area, borders cross-check | CC0 1.0 |
 | World Bank, World Development Indicators, SP.POP.TOTL | Population | CC BY 4.0, The World Bank |
