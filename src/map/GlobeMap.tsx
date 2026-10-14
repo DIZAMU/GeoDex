@@ -37,6 +37,10 @@ export type GlobeMapProps = {
   ariaLabel: string;
   /** [lon, lat] the globe faces first, such as the home country. */
   initialCenter?: readonly [number, number];
+  /** Turns the globe slowly on its own, in degrees a second, while nobody touches it. */
+  autoRotate?: number;
+  /** Illustration only: no small-country dots, no hover, no taps. */
+  decorative?: boolean;
 };
 
 type Shape = {
@@ -175,6 +179,8 @@ export function GlobeMap({
   labelFor,
   ariaLabel,
   initialCenter,
+  autoRotate,
+  decorative = false,
 }: GlobeMapProps) {
   const { ref: containerRef, width, height } = useSize<HTMLDivElement>();
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -342,7 +348,7 @@ export function GlobeMap({
 
     // Small countries get a dot, on the near side only.
     const next: { id: string; x: number; y: number }[] = [];
-    for (const s of shapes) {
+    for (const s of decorative ? [] : shapes) {
       if (s.area * r * r >= MARKER_AREA_PX) continue;
       projectPacked(new Float64Array(s.centroid), 0, basis, r, cx, cy, p);
       if (p.depth < 0.02) continue;
@@ -373,7 +379,7 @@ export function GlobeMap({
     container.dataset.lambda = rotation.lambda.toFixed(2);
     container.dataset.phi = rotation.phi.toFixed(2);
     container.dataset.zoom = k.toFixed(2);
-  }, [width, height, frameOf, shapes, others, graticule, levels, containerRef]);
+  }, [width, height, frameOf, shapes, others, graticule, levels, containerRef, decorative]);
 
   const schedule = useCallback(() => {
     if (!frame.current) frame.current = requestAnimationFrame(draw);
@@ -428,6 +434,7 @@ export function GlobeMap({
   /** The country at a screen point: a marker's dot, the shape under it, then a near marker. */
   const pick = useCallback(
     (x: number, y: number): string | null => {
+      if (decorative) return null;
       const { basis, r, cx, cy } = frameOf();
       const lonLat = invert(x, y, basis, r, cx, cy);
       let shapeId: string | null = null;
@@ -446,7 +453,7 @@ export function GlobeMap({
       const id = pickCountry([x, y], markers.current, shapeId);
       return id && (!selectable || selectable.has(id)) ? id : null;
     },
-    [frameOf, shapes, selectable],
+    [frameOf, shapes, selectable, decorative],
   );
 
   // Pointer input: one pointer turns the globe, two pinch to zoom, a still press taps.
@@ -464,6 +471,30 @@ export function GlobeMap({
     interval: number;
   } | null>(null);
   const inertia = useRef(0);
+
+  // Idle spin (the welcome page): pauses while a pointer is down or inertia runs, and never
+  // runs with reduced motion.
+  useEffect(() => {
+    if (!autoRotate) return;
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+    let id = 0;
+    let last = performance.now();
+    const step = (now: number) => {
+      const dt = Math.min(100, now - last);
+      last = now;
+      if (pointers.current.size === 0 && !inertia.current) {
+        const { rotation } = view.current;
+        view.current.rotation = normalize({
+          lambda: rotation.lambda + (autoRotate * dt) / 1000,
+          phi: rotation.phi,
+        });
+        touch();
+      }
+      id = requestAnimationFrame(step);
+    };
+    id = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(id);
+  }, [autoRotate, touch]);
 
   const stopInertia = () => {
     if (inertia.current) cancelAnimationFrame(inertia.current);
