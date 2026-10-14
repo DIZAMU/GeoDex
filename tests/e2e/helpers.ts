@@ -8,7 +8,7 @@ export async function chooseThemeAndLocale(page: Page, theme: string, locale: st
   await expect(page.locator("html")).toHaveAttribute("lang", locale);
 }
 
-/** Onboarding with Norway as home, a few placement answers, then finish early. */
+/** Welcome page, onboarding with Norway as home, a few placement answers, then finish early. */
 export async function setUpLearner(page: Page, placementAnswers = 4) {
   await page.goto("/");
   await page.getByTestId("setup").click();
@@ -26,6 +26,17 @@ export async function setUpLearner(page: Page, placementAnswers = 4) {
   await expect(page.getByTestId("placement-result")).toBeVisible();
   await page.getByTestId("to-today").click();
   await expect(page.getByTestId("summary")).toBeVisible();
+  await skipTour(page);
+}
+
+/** Closes the guided tour that opens once after setup (PLAN.md 11.1). */
+export async function skipTour(page: Page) {
+  const tour = page.getByTestId("tour");
+  await tour.waitFor({ state: "visible", timeout: 3000 }).catch(() => undefined);
+  if (await tour.isVisible()) {
+    await page.keyboard.press("Escape");
+    await expect(tour).toHaveCount(0);
+  }
 }
 
 type Screen = "intro" | "prompt" | "feedback";

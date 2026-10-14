@@ -66,6 +66,10 @@ export type DeviceSettingsRow = {
   theme: ThemePreference;
   lastInputMode: InputSetting;
   persistRequested: boolean;
+  /** When the guided tour was finished or skipped; null shows it once on Today. */
+  tourDoneAt?: number | null;
+  /** The Today info box: open or closed by the learner; null follows the first-week default. */
+  infoboxOpen?: boolean | null;
 };
 
 /**

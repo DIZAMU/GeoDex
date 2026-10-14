@@ -236,3 +236,8 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 - **Checked:** `fsrs-browser` 6.6.0 (BSD-3-Clause) runs the fsrs-rs optimizer as WebAssembly. Its trainer uses a WebAssembly thread pool (`initThreadPool`), which needs `SharedArrayBuffer`, which browsers only allow on cross-origin isolated pages (COOP and COEP headers). COEP `require-corp` blocks the Wikimedia Commons landmark photos, which are served without a Cross-Origin-Resource-Policy header, and Safari does not support the `credentialless` mode that would let them through.
 - **Options:** (a) cross-origin isolate the app and proxy or drop the landmark photos; (b) keep the default FSRS-6 parameters, which ts-fsrs ships trained on a large review corpus, and keep the `fsrsParams` setting so parameters trained elsewhere can be set later.
 - **Decision:** (b). A single learner reaches the review count an optimizer needs (about a thousand reviews) only after weeks, and the default parameters already adapt each card through its own stability and difficulty. Revisit if Safari ships COEP `credentialless`.
+
+## 040. Release tags are semantic versions
+
+- **Context:** GitHub orders releases by their tag as a version where it can parse one. `phase-10.1` and `phase-10.2` sorted between `phase-5.1` and `phase-5`, below the phases before them.
+- **Decision:** tags are semantic versions: phase N is `v0.N.0`, a follow-up release within a phase is `v0.N.M`, and the portfolio release is `v1.0.0`. Release titles keep their "Phase N" names. The release workflow renamed the existing `phase-*` tags once, keeping each release's title, notes and date. This replaces the `phase-N` tag names in decisions 008 and 010.

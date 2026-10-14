@@ -1,9 +1,9 @@
 import { ArrowRightIcon, FlameIcon, MapPinIcon } from "lucide-react";
 import { useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, useNavigate } from "react-router";
+import { Link, Navigate, useNavigate } from "react-router";
 import { db } from "@/db/db";
-import { setLastInputMode } from "@/db/settings";
+import { setLastInputMode, setTourDone } from "@/db/settings";
 import type { Streak } from "@/engine/streak";
 import { type InputSetting, parseCardId } from "@/engine/types";
 import { isLocale } from "@/i18n/locales";
@@ -16,12 +16,16 @@ import { nameOf } from "../session/parts";
 import { planDay, scopedCountries } from "../study/plan";
 import { useProgress } from "../study/progress";
 import { type Learner, useLearner } from "../study/useLearner";
+import { Tour } from "../tour/Tour";
+import { InfoBox } from "./InfoBox";
 
 const INPUTS: readonly InputSetting[] = ["auto", "mc", "typing"];
 
 export function TodayScreen() {
   const learner = useLearner();
   if (!learner) return <Loader />;
+  // A first-time visitor starts on the welcome page (PLAN.md 11.1).
+  if (!learner.settings.homeCountry) return <Navigate to="/welcome" replace />;
   return <Today learner={learner} />;
 }
 
@@ -61,6 +65,8 @@ function Today({ learner }: { learner: Learner }) {
           </h1>
         </div>
 
+        {needsSetup ? null : <InfoBox learner={learner} />}
+
         {needsSetup ? (
           <>
             <p className="max-w-[60ch] text-lg text-muted-foreground">{t("today.setupBody")}</p>
@@ -94,7 +100,7 @@ function Today({ learner }: { learner: Learner }) {
             ) : null}
             {region ? <RegionChip text={t("today.nextRegion", { name: region })} /> : null}
             <div className="flex flex-col gap-4 pt-2">
-              <fieldset className="flex flex-col gap-2">
+              <fieldset className="flex flex-col gap-2 self-start" data-tour="input">
                 <legend className="mb-2 text-sm text-muted-foreground">
                   {t("today.inputMode")}
                 </legend>
@@ -119,6 +125,7 @@ function Today({ learner }: { learner: Learner }) {
                 size="lg"
                 className="group h-14 self-stretch px-8 text-base sm:self-start"
                 data-testid="start"
+                data-tour="start"
                 onClick={() => navigate(`/session?input=${input}`, { viewTransition: true })}
               >
                 {t("today.start")}
@@ -137,6 +144,10 @@ function Today({ learner }: { learner: Learner }) {
       </section>
 
       <MapCard learner={learner} nextSubregion={plan?.nextSubregion ?? null} locale={locale} />
+      {/* The tour runs once, after setup, when Today has rendered its anchors. */}
+      {!needsSetup && learner.device.tourDoneAt == null ? (
+        <Tour onDone={() => void setTourDone(db, Date.now())} />
+      ) : null}
     </div>
   );
 }
@@ -209,7 +220,11 @@ function MapCard({
   const count = countries.filter((c) => started.has(c.id)).length;
 
   return (
-    <section className="surface enter flex flex-col overflow-hidden" aria-labelledby="map-title">
+    <section
+      className="surface enter flex flex-col overflow-hidden"
+      aria-labelledby="map-title"
+      data-tour="map"
+    >
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 px-5 pt-4 pb-3">
         <h2 id="map-title" className="font-name text-lg">
           {t("today.mapTitle")}

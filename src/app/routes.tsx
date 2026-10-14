@@ -2,12 +2,14 @@ import { Navigate, type RouteObject } from "react-router";
 import { AtlasScreen } from "@/features/atlas/AtlasScreen";
 import { EntryScreen } from "@/features/atlas/EntryScreen";
 import { DrillScreen } from "@/features/drill/DrillScreen";
+import { HelpScreen } from "@/features/help/HelpScreen";
 import { OnboardingScreen } from "@/features/onboarding/OnboardingScreen";
 import { PlacementScreen } from "@/features/placement/PlacementScreen";
 import { SessionScreen } from "@/features/session/SessionScreen";
 import { SettingsScreen } from "@/features/settings/SettingsScreen";
 import { StatsScreen } from "@/features/stats/StatsScreen";
 import { TodayScreen } from "@/features/today/TodayScreen";
+import { WelcomeScreen } from "@/features/welcome/WelcomeScreen";
 import { AppLayout } from "./AppLayout";
 import { RouteError } from "./RouteError";
 
@@ -24,9 +26,11 @@ export const routes: RouteObject[] = [
           { path: "atlas/:id", element: <EntryScreen /> },
           { path: "stats", element: <StatsScreen /> },
           { path: "settings", element: <SettingsScreen /> },
+          { path: "help", element: <HelpScreen /> },
           { path: "onboarding", element: <OnboardingScreen /> },
         ],
       },
+      { path: "/welcome", element: <WelcomeScreen /> },
       { path: "/placement", element: <PlacementScreen /> },
       { path: "/session", element: <SessionScreen /> },
       { path: "/drill", element: <DrillScreen /> },
