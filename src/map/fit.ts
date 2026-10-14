@@ -62,16 +62,32 @@ export function pickCountry(
   return nearest && nearest.d <= MARKER_HIT_PX ? nearest.id : null;
 }
 
-/** Degrees of longitude per screen pixel when a map of this projected width is dragged. */
-export function degreesPerPixel(sphereWidth: number, k: number): number {
-  return 360 / Math.max(1, sphereWidth * k);
-}
-
 /** Keeps every nth vertex of each ring (ends kept, small rings intact), for drawing while dragging. */
 export function decimateRing<T>(ring: readonly T[], n: number): T[] {
   if (ring.length <= 8 || n <= 1) return [...ring];
   const out = ring.filter((_, i) => i % n === 0);
   const last = ring[ring.length - 1] as T;
   if (out[out.length - 1] !== last) out.push(last);
+  return out;
+}
+
+/**
+ * Drops vertices closer than `tolerance` degrees to the last kept one (ends kept, at least
+ * four points so rings stay closed polygons). Cheap simplification for drawing in motion.
+ */
+export function simplifyRing<T extends readonly number[]>(
+  ring: readonly T[],
+  tolerance: number,
+): T[] {
+  if (ring.length <= 8) return [...ring];
+  const out: T[] = [ring[0] as T];
+  for (let i = 1; i < ring.length - 1; i++) {
+    const p = ring[i] as T;
+    const q = out[out.length - 1] as T;
+    if (Math.abs((p[0] ?? 0) - (q[0] ?? 0)) + Math.abs((p[1] ?? 0) - (q[1] ?? 0)) >= tolerance)
+      out.push(p);
+  }
+  out.push(ring[ring.length - 1] as T);
+  while (out.length < 4) out.splice(out.length - 1, 0, ring[Math.floor(ring.length / 2)] as T);
   return out;
 }
