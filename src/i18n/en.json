@@ -317,5 +317,10 @@
     "region": "Drill: {{name}}",
     "pair": "Drill: {{a}} and {{b}}",
     "empty": "Nothing to drill here yet."
+  },
+  "error": {
+    "title": "Something went wrong",
+    "body": "This screen failed to load. Your progress is saved on this device; reload to continue.",
+    "reload": "Reload"
   }
 }
