@@ -15,9 +15,14 @@ import type { Country } from "@/data/types";
 import type { CountryTopology } from "@/data/world";
 import {
   type Bounds,
+  decimateRing,
+  degreesPerPixel,
   fitTransform,
   MARKER_AREA_PX,
+  MARKER_DOT_PX,
+  MARKER_HIT_PX,
   MAX_ZOOM,
+  pickCountry,
   screenArea,
   type Transform,
   unionBounds,
@@ -58,7 +63,35 @@ export type WorldMapProps = {
   padding?: number;
   /** Pan and zoom with wheel, drag and pinch. Off for thumbnails inside scrolling pages. */
   interactive?: boolean;
+  /**
+   * Dragging sideways turns the globe instead of sliding the picture, so any longitude can
+   * sit in the middle (the Pacific included). For world views such as the Atlas.
+   */
+  spin?: boolean;
 };
+
+/** Vertex step for the coarse geometry drawn while the globe turns. */
+const SPIN_DECIMATE = 6;
+
+function decimate(f: Feature<Geometry>): Feature<Geometry> {
+  const g = f.geometry;
+  if (g?.type === "Polygon") {
+    return {
+      ...f,
+      geometry: { ...g, coordinates: g.coordinates.map((r) => decimateRing(r, SPIN_DECIMATE)) },
+    };
+  }
+  if (g?.type === "MultiPolygon") {
+    return {
+      ...f,
+      geometry: {
+        ...g,
+        coordinates: g.coordinates.map((p) => p.map((r) => decimateRing(r, SPIN_DECIMATE))),
+      },
+    };
+  }
+  return f;
+}
 
 /** bounds: the largest polygon only, so overseas parts and date-line wraps do not widen views. */
 type Shape = { id: string; d: string; centroid: [number, number]; area: number; bounds: Bounds };
@@ -163,6 +196,7 @@ export function WorldMap({
   animate = false,
   padding = 0.12,
   interactive = true,
+  spin = false,
 }: WorldMapProps) {
   const { ref: containerRef, width, height } = useSize<HTMLDivElement>();
   const svgRef = useRef<SVGSVGElement>(null);
@@ -171,20 +205,30 @@ export function WorldMap({
   const frame = useRef<number | null>(null);
 
   const inScope = useMemo(() => new Set(countries.map((c) => c.id)), [countries]);
+  /** Central longitude offset, in degrees, when the globe has been turned. */
+  const [rotation, setRotation] = useState(0);
+  const [turning, setTurning] = useState(false);
+
+  const features = useMemo(() => {
+    const topo = topology as unknown as Topology;
+    const full = (
+      feature(topo, topo.objects.countries as never) as unknown as { features: Feature<Geometry>[] }
+    ).features;
+    return { full, coarse: spin ? full.map(decimate) : full };
+  }, [topology, spin]);
 
   const geometry = useMemo(() => {
     if (width === 0 || height === 0) return null;
-    const topo = topology as unknown as Topology;
-    const collection = feature(topo, topo.objects.countries as never) as unknown as {
-      features: Feature<Geometry>[];
-    };
-    const projection = geoEqualEarth().fitExtent(
-      [
-        [8, 8],
-        [width - 8, height - 8],
-      ],
-      { type: "Sphere" },
-    );
+    const collection = { features: turning ? features.coarse : features.full };
+    const projection = geoEqualEarth()
+      .rotate([rotation, 0])
+      .fitExtent(
+        [
+          [8, 8],
+          [width - 8, height - 8],
+        ],
+        { type: "Sphere" },
+      );
     const path = geoPath(projection).digits(1);
     const shapes: Shape[] = [];
     const others: Feature<Geometry>[] = [];
@@ -220,6 +264,7 @@ export function WorldMap({
           ] as Bounds,
         };
       });
+    const sphereBounds = path.bounds({ type: "Sphere" });
     return {
       shapes,
       markerOnly,
@@ -227,14 +272,25 @@ export function WorldMap({
       outline: path({ type: "FeatureCollection", features: others }) ?? "",
       sphere: path({ type: "Sphere" }) ?? "",
       graticule: path(geoGraticule10()) ?? "",
+      sphereWidth: sphereBounds[1][0] - sphereBounds[0][0],
     };
-  }, [topology, countries, inScope, width, height]);
+  }, [features, countries, inScope, width, height, rotation, turning]);
+  const geometryRef = useRef(geometry);
+  geometryRef.current = geometry;
+  const ready = geometry !== null;
 
   // Zoom behavior: wheel, drag and pinch, with the transform kept in React state per frame.
   useEffect(() => {
     const svg = svgRef.current;
     if (!svg || width === 0) return;
     const behavior = zoom<SVGSVGElement, unknown>()
+      // With spin, one-pointer drags turn the globe (below); zoom keeps wheel and pinch.
+      .filter((event: Event) =>
+        spin
+          ? event.type === "wheel" || ((event as TouchEvent).touches?.length ?? 0) > 1
+          : (!(event as MouseEvent).ctrlKey || event.type === "wheel") &&
+            !(event as MouseEvent).button,
+      )
       .scaleExtent([1, MAX_ZOOM])
       .translateExtent([
         [-width, -height],
@@ -251,7 +307,7 @@ export function WorldMap({
     return () => {
       select(svg).on(".zoom", null);
     };
-  }, [width, height, interactive]);
+  }, [width, height, interactive, spin]);
 
   // Focus: fit the requested countries, animated only for the answer moment. The key is a
   // string so a new array with the same ids does not refit the map.
@@ -259,7 +315,8 @@ export function WorldMap({
   useEffect(() => {
     const svg = svgRef.current;
     const behavior = zoomRef.current;
-    if (!svg || !behavior || !geometry) return;
+    const geometry = geometryRef.current;
+    if (!svg || !behavior || !geometry || !ready) return;
     let target: Transform = { k: 1, x: 0, y: 0 };
     const ids = focusKey === "" ? [] : focusKey.split(",");
     // In views of several countries, very wide ones (Russia, Canada) are left out so a
@@ -280,20 +337,95 @@ export function WorldMap({
     } else {
       selection.interrupt().call(behavior.transform, next);
     }
-  }, [focusKey, geometry, width, height, animate, padding]);
-
-  const handleClick = useCallback(
-    (event: React.MouseEvent<SVGSVGElement>) => {
-      const id = (event.target as Element).closest("[data-country]")?.getAttribute("data-country");
-      if (id && selectable.has(id)) onSelect?.(id);
-    },
-    [selectable, onSelect],
-  );
+  }, [focusKey, ready, width, height, animate, padding]);
 
   const toScreen = (point: [number, number]): [number, number] => [
     point[0] * transform.k + transform.x,
     point[1] * transform.k + transform.y,
   ];
+
+  // Sideways drags turn the globe; up and down pans. Applied once per frame.
+  const drag = useRef<{ id: number; x: number; y: number; moved: number } | null>(null);
+  const pending = useRef({ dx: 0, dy: 0, frame: 0 });
+  const suppressClick = useRef(false);
+  const onPointerDown = (event: React.PointerEvent<SVGSVGElement>) => {
+    if (!spin || !interactive) return;
+    // A second finger means a pinch: zoom takes over and the turn stops.
+    if (!event.isPrimary) {
+      drag.current = null;
+      return;
+    }
+    if (event.button !== 0) return;
+    drag.current = { id: event.pointerId, x: event.clientX, y: event.clientY, moved: 0 };
+  };
+  const onPointerMove = (event: React.PointerEvent<SVGSVGElement>) => {
+    const d = drag.current;
+    const svg = svgRef.current;
+    if (!d || d.id !== event.pointerId || !svg) return;
+    const dx = event.clientX - d.x;
+    const dy = event.clientY - d.y;
+    d.x = event.clientX;
+    d.y = event.clientY;
+    d.moved += Math.abs(dx) + Math.abs(dy);
+    if (d.moved < 4) return;
+    if (!turning) {
+      svg.setPointerCapture(event.pointerId);
+      setTurning(true);
+    }
+    pending.current.dx += dx;
+    pending.current.dy += dy;
+    if (pending.current.frame) return;
+    pending.current.frame = requestAnimationFrame(() => {
+      const { dx: px, dy: py } = pending.current;
+      pending.current = { dx: 0, dy: 0, frame: 0 };
+      const g = geometryRef.current;
+      const behavior = zoomRef.current;
+      if (!g || !behavior) return;
+      const k = transformRef.current.k;
+      setRotation((r) => ((r + px * degreesPerPixel(g.sphereWidth, k) + 540) % 360) - 180);
+      if (py !== 0) behavior.translateBy(select(svg), 0, py / k);
+    });
+  };
+  const endDrag = (event: React.PointerEvent<SVGSVGElement>) => {
+    const d = drag.current;
+    if (!d || d.id !== event.pointerId) return;
+    drag.current = null;
+    if (d.moved >= 4) {
+      suppressClick.current = true;
+      setTurning(false);
+    }
+  };
+  const transformRef = useRef(transform);
+  transformRef.current = transform;
+
+  const handleClick = useCallback(
+    (event: React.MouseEvent<SVGSVGElement>) => {
+      if (suppressClick.current) {
+        suppressClick.current = false;
+        return;
+      }
+      const svg = svgRef.current;
+      if (!svg) return;
+      const rect = svg.getBoundingClientRect();
+      const point: [number, number] = [event.clientX - rect.left, event.clientY - rect.top];
+      // The country shape under the pointer, looking through marker tap targets above it.
+      const under = document
+        .elementsFromPoint(event.clientX, event.clientY)
+        .find((el) => el.classList.contains("map-country"))
+        ?.getAttribute("data-country");
+      const shapeId = under && selectable.has(under) ? under : null;
+      const targets = [...svg.querySelectorAll<SVGGElement>("g[data-marker]")]
+        .map((el) => ({
+          id: el.dataset.country ?? "",
+          x: Number(el.dataset.x),
+          y: Number(el.dataset.y),
+        }))
+        .filter((m) => selectable.has(m.id));
+      const id = pickCountry(point, targets, shapeId);
+      if (id) onSelect?.(id);
+    },
+    [selectable, onSelect],
+  );
 
   const markers = geometry
     ? [...geometry.shapes, ...geometry.markerOnly].filter(
@@ -322,8 +454,13 @@ export function WorldMap({
         height={height}
         role="img"
         aria-label={ariaLabel}
-        className="world-map block touch-none select-none"
+        className="world-map absolute inset-0 block touch-none select-none"
+        data-turning={turning || undefined}
         onClick={handleClick}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={endDrag}
+        onPointerCancel={endDrag}
       >
         {geometry && (
           <>
@@ -388,10 +525,28 @@ export function WorldMap({
                       : m.id === highlight.selected
                         ? "map-marker-selected"
                         : "";
+                const level = highlight.levels?.get(m.id);
                 return (
-                  <g key={m.id} data-country={m.id} transform={`translate(${x},${y})`}>
-                    {selectable.has(m.id) ? <circle r={22} className="map-marker-hit" /> : null}
-                    <circle r={5} className={`map-marker ${state}`} />
+                  <g
+                    key={m.id}
+                    data-country={m.id}
+                    data-marker
+                    data-x={x}
+                    data-y={y}
+                    transform={`translate(${x},${y})`}
+                  >
+                    {selectable.has(m.id) ? (
+                      <circle r={MARKER_HIT_PX} className="map-marker-hit" />
+                    ) : null}
+                    <circle
+                      r={MARKER_DOT_PX}
+                      className={`map-marker ${state}`}
+                      style={
+                        state === "" && level !== undefined
+                          ? { fill: `var(--mastery-${level})` }
+                          : undefined
+                      }
+                    />
                   </g>
                 );
               })}
