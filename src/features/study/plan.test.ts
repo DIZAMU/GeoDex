@@ -16,6 +16,7 @@ const world = assembleWorld(
   read("data/curated/groups.json"),
   read("data/landmarks.json"),
   read("data/physical.json"),
+  read("data/history.json"),
 );
 const scheduler = createScheduler();
 const settings: PlanSettings = {
@@ -298,5 +299,53 @@ describe("physical features in the plan", () => {
       oceans.some((id) => ids.has(id)) ||
         plan.queue.some((q) => world.physicalById.has(q.entityId)),
     ).toBe(true);
+  });
+});
+
+describe("history in the plan", () => {
+  const on = { ...settings, modules: { history: true } };
+  const intro = (ids: string[]) => {
+    const events = ids.flatMap((id, i) => [
+      ev(`${id}:map_to_name`, now - 86_400_000 * 2, `${id}a${i}`),
+      ev(`${id}:name_to_map`, now - 86_400_000 * 2, `${id}b${i}`),
+    ]);
+    return { events, states: replayAll(scheduler, events) };
+  };
+  const has = (plan: { queue: { cardId: string }[] }, id: string) =>
+    plan.queue.some((q) => q.cardId === id);
+
+  it("adds nothing while the module is off", () => {
+    const plan = planDay({ world, settings, ...intro(["GHA"]), scheduler, now });
+    expect(plan.queue.some((q) => world.historyById.has(q.entityId))).toBe(false);
+  });
+
+  it("starts a former name with its country", () => {
+    const before = planDay({ world, settings: on, ...intro(["NOR"]), scheduler, now });
+    expect(has(before, "Q503623:former_name_to_country")).toBe(false);
+    const after = planDay({ world, settings: on, ...intro(["GHA"]), scheduler, now });
+    expect(has(after, "Q503623:former_name_to_country")).toBe(true);
+  });
+
+  it("starts a dissolved state once half its successors are introduced", () => {
+    const one = planDay({ world, settings: on, ...intro(["CZE"]), scheduler, now });
+    expect(has(one, "Q33946:map_to_dissolved_state")).toBe(true);
+    expect(has(one, "Q33946:dissolved_state_member")).toBe(true);
+    const yugo = planDay({ world, settings: on, ...intro(["SVN", "HRV"]), scheduler, now });
+    expect(has(yugo, "Q83286:map_to_dissolved_state")).toBe(false);
+  });
+
+  it("gives a dissolved state with one successor no member card", () => {
+    const plan = planDay({ world, settings: on, ...intro(["DEU"]), scheduler, now });
+    expect(has(plan, "Q16957:map_to_dissolved_state")).toBe(true);
+    expect(has(plan, "Q16957:dissolved_state_member")).toBe(false);
+  });
+
+  it("starts an empire once a third of its countries are introduced", () => {
+    const plan = planDay({ world, settings: on, ...intro(["PER"]), scheduler, now });
+    // The Inca outline covers five countries: Peru alone is not a third.
+    expect(has(plan, "Q28573:map_to_empire")).toBe(false);
+    const more = planDay({ world, settings: on, ...intro(["PER", "BOL"]), scheduler, now });
+    expect(has(more, "Q28573:map_to_empire")).toBe(true);
+    expect(has(more, "Q28573:empire_to_era")).toBe(true);
   });
 });

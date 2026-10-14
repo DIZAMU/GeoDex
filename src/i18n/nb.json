@@ -55,7 +55,8 @@
     "groupStudy": "Øving",
     "groups": "Landgrupper (når halvparten av landene er startet)",
     "landmarks": "Severdigheter (etter landet sitt)",
-    "physical": "Naturgeografi (etter et land den berører)"
+    "physical": "Naturgeografi (etter et land den berører)",
+    "history": "Historie (tidligere navn, oppløste stater, imperier)"
   },
   "nav": {
     "today": "I dag",
@@ -116,7 +117,12 @@
     "landmark_to_country": "Hvilket land ligger {{landmark}} i?",
     "landmark_to_map": "Plasser {{landmark}} på kartet.",
     "feature_to_map": "Trykk på kartet: {{feature}}",
-    "map_to_feature": "Hva heter {{thisKind}}?"
+    "map_to_feature": "Hva heter {{thisKind}}?",
+    "former_name_to_country": "Hva heter {{name}} i dag?",
+    "map_to_dissolved_state": "Hvilken stat var dette?",
+    "dissolved_state_member": "Hvilket av disse var en del av {{name}}?",
+    "map_to_empire": "Hvilket rike er dette?",
+    "empire_to_era": "{{name}}: når fantes det?"
   },
   "answer": {
     "pinHelp": "Trykk der byen ligger.",
@@ -269,7 +275,12 @@
     "landmark_to_country": "Severdighet til land",
     "landmark_to_map": "Severdighet på kartet",
     "feature_to_map": "Naturformasjon på kartet",
-    "map_to_feature": "Navngi naturformasjonen"
+    "map_to_feature": "Navngi naturformasjonen",
+    "former_name_to_country": "Tidligere navn",
+    "map_to_dissolved_state": "Navngi den oppløste staten",
+    "dissolved_state_member": "Del av den oppløste staten",
+    "map_to_empire": "Navngi riket",
+    "empire_to_era": "Rikets tid"
   },
   "hookType": {
     "anchor": "Anker",
@@ -291,7 +302,11 @@
     "flat": "Flatt kart",
     "view": "Kartvisning",
     "globeLabel": "Globus: dra for å snu, rull eller knip for å zoome, piltaster for å snu",
-    "legend": "Mestring"
+    "legend": "Mestring",
+    "timeline": "Grenser gjennom tiden",
+    "year": "År",
+    "timelineHelp": "Omriss fra historiemodulen der perioden omfatter året. Bare til å se på, ikke en quiz.",
+    "noOutlines": "Ingen omriss dekker dette året."
   },
   "entry": {
     "back": "Atlas",
@@ -309,7 +324,8 @@
     "wrong": "Feil",
     "drill": "Øv på {{region}}",
     "landmarks": "Severdigheter",
-    "physical": "Naturgeografi"
+    "physical": "Naturgeografi",
+    "pastNames": "I historien"
   },
   "stats": {
     "title": "Statistikk",
@@ -337,7 +353,8 @@
     "noAchievements": "Ingen ennå.",
     "drill": "Øv",
     "landmarks": "Severdigheter",
-    "physical": "Naturgeografi"
+    "physical": "Naturgeografi",
+    "history": "Historie"
   },
   "streak": {
     "days_one": "{{count}} dag på rad",
@@ -405,5 +422,21 @@
     },
     "countries": "Land",
     "noCountries": "Grenser ikke til noe land"
+  },
+  "history": {
+    "kind": {
+      "former_name": "Tidligere navn",
+      "dissolved_state": "Oppløst stat",
+      "empire": "Rike"
+    },
+    "snapshot": "Grenser i {{year}}",
+    "approximate": "omtrentlig",
+    "period": "{{from}} til {{to}}",
+    "bce": "{{year}} f.Kr.",
+    "until": "Navnet ble brukt til {{year}}",
+    "nowCalled": "Nå {{country}}",
+    "successors": "Ble til",
+    "partly": "Delvis innenfor",
+    "existed": "Fantes {{period}}"
   }
 }

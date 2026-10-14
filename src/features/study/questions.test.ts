@@ -27,6 +27,7 @@ const world = assembleWorld(
   read("data/curated/groups.json"),
   read("data/landmarks.json"),
   read("data/physical.json"),
+  read("data/history.json"),
 );
 const ctx: StudyContext = {
   world,
@@ -393,6 +394,87 @@ describe("physical questions (PLAN.md 5.3)", () => {
           if (q.answer.kind === "choice")
             expect(new Set(q.answer.options.map((o) => o.id)).size).toBe(4);
         }
+      }
+    }
+  });
+});
+
+describe("history questions (PLAN.md 5.3)", () => {
+  it("asks today's name for a former name, never offering an excluded country", () => {
+    const q = buildQuestion(ctx, "Q503623:former_name_to_country", undefined, "auto", "g");
+    expect(q.correctIds).toEqual(["GHA"]);
+    expect(q.answer.kind).toBe("choice");
+    for (let i = 0; i < 20; i++) {
+      const m = buildQuestion(
+        ctx,
+        "former-macedonia:former_name_to_country",
+        undefined,
+        "mc",
+        `${i}`,
+      );
+      if (m.answer.kind !== "choice") throw new Error("choice");
+      expect(m.answer.options.map((o) => o.id)).not.toContain("GRC");
+    }
+    const typed = buildQuestion(ctx, "Q503623:former_name_to_country", state(30), "auto", "g");
+    expect(typed.mode).toBe("typed");
+    expect(checkTyped(typed, ctx.indexes, "Ghana").correct).toBe(true);
+  });
+
+  it("asks for a member of a dissolved state, never offering a partly-inside country", () => {
+    for (let i = 0; i < 30; i++) {
+      const q = buildQuestion(ctx, "Q28513:dissolved_state_member", undefined, "auto", `${i}`);
+      if (q.answer.kind !== "choice") throw new Error("choice");
+      const ids = q.answer.options.map((o) => o.id);
+      const right = ids.filter((id) => q.correctIds.includes(id));
+      expect(right).toHaveLength(1);
+      for (const id of ["POL", "UKR", "ROU", "ITA", "SRB", "MNE"]) expect(ids).not.toContain(id);
+    }
+  });
+
+  it("names an outline among outlines of the same kind, framed on the outline", () => {
+    const q = buildQuestion(ctx, "Q33946:map_to_dissolved_state", undefined, "auto", "c");
+    if (q.prompt.kind !== "historyMap" || q.answer.kind !== "choice") throw new Error("shape");
+    expect(q.prompt.view.kind).toBe("box");
+    for (const o of q.answer.options)
+      expect(world.historyById.get(o.id)?.kind).toBe("dissolved_state");
+    const empire = buildQuestion(ctx, "Q2277:map_to_empire", state(30), "auto", "r");
+    expect(empire.mode).toBe("typed");
+    expect(checkTyped(empire, ctx.indexes, "Roman Empire").correct).toBe(true);
+    expect(checkTyped(empire, ctx.indexes, "romerriket").correct).toBe(true);
+  });
+
+  it("offers only eras that do not overlap the right one", () => {
+    const q = buildQuestion(ctx, "Q12560:empire_to_era", undefined, "auto", "o");
+    if (q.answer.kind !== "choice") throw new Error("choice");
+    expect(q.answer.options).toHaveLength(4);
+    const ottoman = [1299, 1922];
+    for (const o of q.answer.options) {
+      expect(o.period).toBeDefined();
+      if (o.id === "Q12560") continue;
+      const [a, b] = o.period ?? [0, 0];
+      expect(b < (ottoman[0] ?? 0) || a > (ottoman[1] ?? 0)).toBe(true);
+    }
+    expect(checkChoice(q, "Q12560").correct).toBe(true);
+  });
+
+  it("builds every history card", () => {
+    for (const e of world.history) {
+      const types =
+        e.kind === "former_name"
+          ? ["former_name_to_country"]
+          : e.kind === "empire"
+            ? ["map_to_empire", "empire_to_era"]
+            : ["map_to_dissolved_state", "dissolved_state_member"];
+      for (const type of types) {
+        if (
+          type === "dissolved_state_member" &&
+          e.kind === "dissolved_state" &&
+          e.successors.length < 2
+        )
+          continue;
+        const q = buildQuestion(ctx, `${e.id}:${type}`, undefined, "auto", "x");
+        expect(q.historyId).toBe(e.id);
+        if (q.answer.kind === "choice") expect(q.answer.options).toHaveLength(4);
       }
     }
   });

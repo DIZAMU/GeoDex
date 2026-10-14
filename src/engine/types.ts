@@ -30,12 +30,25 @@ export type LandmarkCardType = (typeof LANDMARK_CARD_TYPES)[number];
 /** Physical geography (PLAN.md 5.3): tap the feature, and name the highlighted feature. */
 export const PHYSICAL_CARD_TYPES = ["feature_to_map", "map_to_feature"] as const;
 export type PhysicalCardType = (typeof PHYSICAL_CARD_TYPES)[number];
+/**
+ * History (PLAN.md 5.3): a former name to today's country, name a dissolved state's or an
+ * empire's outline, a member of a dissolved state, and when an empire existed.
+ */
+export const HISTORY_CARD_TYPES = [
+  "former_name_to_country",
+  "map_to_dissolved_state",
+  "dissolved_state_member",
+  "map_to_empire",
+  "empire_to_era",
+] as const;
+export type HistoryCardType = (typeof HISTORY_CARD_TYPES)[number];
 export type CardType =
   | CountryCardType
   | CityCardType
   | GroupCardType
   | LandmarkCardType
   | PhysicalCardType
+  | HistoryCardType
   | "contrast";
 
 /** `${entityId}:${cardType}`. Never changes once shipped. */
