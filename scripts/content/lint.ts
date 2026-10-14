@@ -5,7 +5,7 @@
  */
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { parse } from "yaml";
-import type { CitiesFile, CountriesFile } from "../../src/data/types.ts";
+import type { CitiesFile, CountriesFile, LandmarksFile } from "../../src/data/types.ts";
 import { parseTemplateFile } from "../../src/engine/explain/template.ts";
 import {
   type Confusion,
@@ -84,7 +84,13 @@ function bodyText(tokens: readonly Token[]): string {
 }
 
 export function lintContent(
-  options: { root?: string; complete?: boolean; countriesPath?: string; citiesPath?: string } = {},
+  options: {
+    root?: string;
+    complete?: boolean;
+    countriesPath?: string;
+    citiesPath?: string;
+    landmarksPath?: string;
+  } = {},
 ): string[] {
   const root = options.root ?? "content";
   const rules = readRules(`${root}/VOICE.md`);
@@ -98,6 +104,11 @@ export function lintContent(
     ? (JSON.parse(readFileSync(citiesPath, "utf8")) as CitiesFile).cities
     : [];
   const cityById = new Map(cities.map((c) => [c.id, c]));
+  const landmarksPath = options.landmarksPath ?? "data/landmarks.json";
+  const landmarks = existsSync(landmarksPath)
+    ? (JSON.parse(readFileSync(landmarksPath, "utf8")) as LandmarksFile).landmarks
+    : [];
+  const landmarkById = new Map(landmarks.map((l) => [l.id, l]));
   const ids = new Set<string>();
   const texts: Record<Locale, Map<string, string>> = { en: new Map(), nb: new Map() };
   const seenEntities = new Set<string>();
@@ -131,6 +142,15 @@ export function lintContent(
       groupOf: (id: string) => {
         const city = cityById.get(id);
         return city ? byId.get(city.countryId)?.continent : undefined;
+      },
+      minFacts: rules.min_facts_per_city,
+      countryExtras: false,
+    },
+    {
+      name: "landmarks",
+      groupOf: (id: string) => {
+        const landmark = landmarkById.get(id);
+        return landmark ? byId.get(landmark.countryId)?.continent : undefined;
       },
       minFacts: rules.min_facts_per_city,
       countryExtras: false,
@@ -229,6 +249,8 @@ export function lintContent(
     }
     for (const c of cities)
       if (!seenEntities.has(c.id)) errors.push(`${c.id} (${c.names.en}): no content`);
+    for (const l of landmarks)
+      if (!seenEntities.has(l.id)) errors.push(`${l.id} (${l.names.en}): no content`);
   }
 
   const confusionsPath = `${root}/confusions.json`;
