@@ -137,7 +137,9 @@
     "tapCount_one": "{{count}} country selected",
     "tapCount_other": "{{count}} countries selected",
     "pinHelpLandmark": "Tap where it is.",
-    "featureHelp": "Tap it on the map."
+    "featureHelp": "Tap it on the map.",
+    "list": "Answer from a list",
+    "filter": "Filter names"
   },
   "feedback": {
     "distance": "Your pin was {{distance}} from the city.",
@@ -439,5 +441,18 @@
     "successors": "Became",
     "partly": "Partly inside",
     "existed": "Existed {{period}}"
+  },
+  "report": {
+    "link": "Report a wrong fact",
+    "title": "Wrong fact: {{id}}",
+    "body": "Fact {{id}} ({{locale}}), shown on card {{card}}:\n\n> {{text}}\n\nWhat is wrong, and a source for the correct claim:\n"
+  },
+  "reset": {
+    "title": "Reset progress",
+    "body": "Start over from the placement test. Your progress, streak and stats count only reviews from now on. Earlier reviews stay in your exports and synced history, so nothing is lost.",
+    "button": "Reset progress",
+    "confirm": "Reset all progress now? This cannot be undone in the app.",
+    "yes": "Reset",
+    "cancel": "Cancel"
   }
 }
