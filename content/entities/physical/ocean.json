@@ -1,0 +1,300 @@
+{
+  "group": "ocean",
+  "entities": [
+    {
+      "entityId": "Q97",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q97.en.1",
+            "type": "anchor",
+            "text": "The Atlantic Ocean lies between the Americas to the west and Europe and Africa to the east."
+          },
+          {
+            "id": "Q97.en.2",
+            "type": "shape",
+            "text": "The Atlantic is a long S-shaped channel, as if the Americas had been torn off Africa and Europe and pulled west."
+          },
+          {
+            "id": "Q97.en.3",
+            "type": "etymology",
+            "text": "The Atlantic is named after Atlas, the Titan of Greek myth who held up the sky."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q97.nb.1",
+            "type": "anchor",
+            "text": "Atlanterhavet ligger mellom Amerika i vest og Europa og Afrika i øst."
+          },
+          {
+            "id": "Q97.nb.2",
+            "type": "shape",
+            "text": "Atlanterhavet er en lang S-formet renne, som om Amerika ble revet løs fra Afrika og Europa og dratt vestover."
+          },
+          {
+            "id": "Q97.nb.3",
+            "type": "etymology",
+            "text": "Atlanterhavet er oppkalt etter Atlas, titanen i gresk mytologi som holdt himmelen oppe."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q97.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Atlantic is the second-largest ocean, after the Pacific.",
+            "nb": "Atlanterhavet er det nest største havet, etter Stillehavet."
+          }
+        },
+        {
+          "id": "Q97.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Mid-Atlantic Ridge runs down its middle, where the plates under it pull apart.",
+            "nb": "Den midtatlantiske ryggen går gjennom midten av havet, der platene under det glir fra hverandre."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q98",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q98.en.1",
+            "type": "anchor",
+            "text": "The Pacific Ocean stretches from Asia and Australia in the west to the Americas in the east."
+          },
+          {
+            "id": "Q98.en.2",
+            "type": "etymology",
+            "text": "Magellan called it the peaceful sea, Mar Pacífico, after a calm crossing."
+          },
+          {
+            "id": "Q98.en.3",
+            "type": "story",
+            "text": "Every continent could fit inside the Pacific with room to spare."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q98.nb.1",
+            "type": "anchor",
+            "text": "Stillehavet strekker seg fra Asia og Australia i vest til Amerika i øst."
+          },
+          {
+            "id": "Q98.nb.2",
+            "type": "etymology",
+            "text": "Magellan kalte det det fredelige havet, Mar Pacífico, etter en rolig overfart."
+          },
+          {
+            "id": "Q98.nb.3",
+            "type": "story",
+            "text": "Alle kontinentene kunne fått plass i Stillehavet, og det ville fortsatt vært plass til overs."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q98.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Pacific is the largest and deepest ocean.",
+            "nb": "Stillehavet er det største og dypeste havet."
+          }
+        },
+        {
+          "id": "Q98.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Mariana Trench, the deepest point in any ocean, lies in the western Pacific.",
+            "nb": "Marianergropen, det dypeste punktet i noe hav, ligger vest i Stillehavet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q1239",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q1239.en.1",
+            "type": "anchor",
+            "text": "The Indian Ocean lies south of India, between Africa in the west and Australia in the east."
+          },
+          {
+            "id": "Q1239.en.2",
+            "type": "contrast",
+            "text": "The Indian Ocean is closed to the north by Asia, unlike the Atlantic and Pacific, which reach the Arctic."
+          },
+          {
+            "id": "Q1239.en.3",
+            "type": "story",
+            "text": "Monsoon winds over the Indian Ocean flip direction with the seasons, and traders sailed with them for centuries."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q1239.nb.1",
+            "type": "anchor",
+            "text": "Indiahavet ligger sør for India, mellom Afrika i vest og Australia i øst."
+          },
+          {
+            "id": "Q1239.nb.2",
+            "type": "contrast",
+            "text": "Indiahavet er stengt av Asia i nord, i motsetning til Atlanterhavet og Stillehavet, som når Polhavet."
+          },
+          {
+            "id": "Q1239.nb.3",
+            "type": "story",
+            "text": "Monsunvindene over Indiahavet snur med årstidene, og handelsfolk seilte med dem i hundrevis av år."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q1239.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Indian Ocean is the third-largest ocean.",
+            "nb": "Indiahavet er det tredje største havet."
+          }
+        },
+        {
+          "id": "Q1239.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is bordered by Africa, Asia and Australia.",
+            "nb": "Det grenser til Afrika, Asia og Australia."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q788",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q788.en.1",
+            "type": "anchor",
+            "text": "The Arctic Ocean surrounds the North Pole, ringed by Russia, Canada, Greenland and Norway."
+          },
+          {
+            "id": "Q788.en.2",
+            "type": "shape",
+            "text": "The Arctic Ocean is a round pond at the top of the globe with continents standing around its rim."
+          },
+          {
+            "id": "Q788.en.3",
+            "type": "contrast",
+            "text": "The Arctic is an ocean surrounded by land; the Antarctic is land surrounded by ocean."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q788.nb.1",
+            "type": "anchor",
+            "text": "Polhavet ligger rundt Nordpolen, omgitt av Russland, Canada, Grønland og Norge."
+          },
+          {
+            "id": "Q788.nb.2",
+            "type": "shape",
+            "text": "Polhavet er en rund dam på toppen av jordkloden med kontinentene stående rundt kanten."
+          },
+          {
+            "id": "Q788.nb.3",
+            "type": "contrast",
+            "text": "Arktis er et hav omgitt av land. Antarktis er land omgitt av hav."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q788.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Arctic Ocean is the smallest and shallowest of the five oceans.",
+            "nb": "Polhavet er det minste og grunneste av de fem havene."
+          }
+        },
+        {
+          "id": "Q788.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Much of its surface is covered by sea ice, which shrinks in summer.",
+            "nb": "Store deler av overflaten er dekket av havis, som krymper om sommeren."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q7354",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q7354.en.1",
+            "type": "anchor",
+            "text": "The Southern Ocean circles Antarctica, south of the Atlantic, Indian and Pacific oceans."
+          },
+          {
+            "id": "Q7354.en.2",
+            "type": "shape",
+            "text": "The Southern Ocean is a ring of cold water wrapped around Antarctica like a moat around a castle."
+          },
+          {
+            "id": "Q7354.en.3",
+            "type": "story",
+            "text": "The Southern Ocean's current runs all the way round the globe with no land to stop it."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q7354.nb.1",
+            "type": "anchor",
+            "text": "Sørishavet ligger rundt Antarktis, sør for Atlanterhavet, Indiahavet og Stillehavet."
+          },
+          {
+            "id": "Q7354.nb.2",
+            "type": "shape",
+            "text": "Sørishavet er en ring av kaldt vann rundt Antarktis, som en vollgrav rundt et slott."
+          },
+          {
+            "id": "Q7354.nb.3",
+            "type": "story",
+            "text": "Strømmen i Sørishavet går hele veien rundt kloden uten noe land som stopper den."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q7354.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Southern Ocean surrounds Antarctica.",
+            "nb": "Sørishavet ligger rundt Antarktis."
+          }
+        },
+        {
+          "id": "Q7354.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Antarctic Circumpolar Current flows eastward around the continent.",
+            "nb": "Den antarktiske sirkumpolarstrømmen går østover rundt kontinentet."
+          }
+        }
+      ]
+    }
+  ]
+}

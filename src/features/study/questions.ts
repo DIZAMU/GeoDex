@@ -2,7 +2,7 @@
  * Turns a card into a concrete question: what to show, how to answer, and how to check it
  * (PLAN.md 5.3, 5.4). Pure: same inputs, same question.
  */
-import type { Country } from "@/data/types";
+import type { Country, PhysicalFeature } from "@/data/types";
 import type { WorldData } from "@/data/world";
 import {
   type CountryFacts,
@@ -23,12 +23,17 @@ import {
   type GroupCardType,
   type InputSetting,
   type LandmarkCardType,
+  type PhysicalCardType,
   parseCardId,
   type Rating,
 } from "@/engine/types";
 import type { Locale } from "@/i18n/locales";
 
-export type MapView = { kind: "world" } | { kind: "countries"; ids: string[] };
+/** What a map shows: the world, a set of countries, or a [west, south, east, north] box. */
+export type MapView =
+  | { kind: "world" }
+  | { kind: "countries"; ids: string[] }
+  | { kind: "box"; box: [number, number, number, number] };
 
 export type Prompt =
   | { kind: "map"; countryId: string; view: MapView }
@@ -45,6 +50,10 @@ export type Prompt =
   | { kind: "photo"; landmarkId: string; countryId: string }
   /** A landmark by name: "Which country is it in?" or "Where is it?". */
   | { kind: "landmark"; landmarkId: string; countryId: string; place: boolean }
+  /** A physical feature by name: "Tap on the map: Nile". */
+  | { kind: "feature"; featureId: string }
+  /** A physical feature highlighted on the map: "What is this river called?". */
+  | { kind: "featureMap"; featureId: string; view: MapView }
   /** A group shown on the map: its members highlighted inside `view`. */
   | { kind: "groupMap"; groupId: string; ids: string[]; view: MapView };
 
@@ -57,10 +66,19 @@ export type AnswerFormat =
   | { kind: "map"; view: MapView; selectable?: string[] }
   /** Tap the spot on the map; graded by distance to `target` [lon, lat]. */
   | { kind: "pin"; view: MapView; target: [number, number] }
+  /** Tap a physical feature: rivers, lakes, ranges, deserts, seas and oceans respond. */
+  | { kind: "feature"; view: MapView }
   /** Tap every member, then check. `sometimes` taps are neither right nor wrong. */
   | { kind: "taps"; view: MapView; members: string[]; sometimes: string[] };
 
-export type AnswerKind = "country" | "capital" | "currency" | "language" | "group" | "landmark";
+export type AnswerKind =
+  | "country"
+  | "capital"
+  | "currency"
+  | "language"
+  | "group"
+  | "landmark"
+  | "feature";
 
 export type Question = {
   cardId: string;
@@ -70,6 +88,8 @@ export type Question = {
   countryId: string;
   /** Group cards: the group asked about. */
   groupId?: string;
+  /** Physical cards: the feature asked about. */
+  featureId?: string;
   type: CardType;
   prompt: Prompt;
   answer: AnswerFormat;
@@ -143,6 +163,12 @@ export function buildIndexes(
     language: buildIndex(languages),
     group: buildIndex(groups),
     landmark: buildIndex(landmarks),
+    feature: buildIndex(
+      world.physical.map((f) => ({
+        id: f.id,
+        names: [f.names.en, f.names.nb, ...f.aliases.en, ...f.aliases.nb],
+      })),
+    ),
   };
 }
 
@@ -193,6 +219,9 @@ export function buildQuestion(
   }
   if (type === "photo_to_name" || type === "landmark_to_country" || type === "landmark_to_map") {
     return landmarkQuestion(ctx, cardId, entityId, type, state, inputSetting, seed);
+  }
+  if (type === "feature_to_map" || type === "map_to_feature") {
+    return physicalQuestion(ctx, cardId, entityId, type, state, inputSetting, seed);
   }
   if (type === "group_to_map" || type === "map_to_group" || type === "group_member") {
     return groupQuestion(ctx, cardId, entityId, type, state, inputSetting, seed);
@@ -657,6 +686,136 @@ function landmarkQuestion(
     },
     answerKind: "country",
     correctIds: [country.id],
+    mode: "mc",
+  };
+}
+
+/**
+ * A new feature card frames the feature itself with room around it: its bounding box,
+ * widened to at least MIN_SPAN degrees so a small lake still shows its surroundings.
+ */
+const MIN_SPAN: [number, number] = [18, 11];
+const boxCache = new WeakMap<object, MapView>();
+export function featureBox(feature: PhysicalFeature): MapView {
+  const cached = boxCache.get(feature);
+  if (cached) return cached;
+  const points =
+    feature.geometry.type === "MultiPolygon"
+      ? feature.geometry.coordinates.flat(2)
+      : feature.geometry.coordinates.flat();
+  const lons = points.map((p) => p[0]);
+  const lats = points.map((p) => p[1]);
+  let [w, e, s, n] = [Math.min(...lons), Math.max(...lons), Math.min(...lats), Math.max(...lats)];
+  const [cx, cy] = [(w + e) / 2, (s + n) / 2];
+  const halfX = Math.max((e - w) / 2, MIN_SPAN[0] / 2) * 1.15;
+  const halfY = Math.max((n - s) / 2, MIN_SPAN[1] / 2) * 1.15;
+  [w, e, s, n] = [cx - halfX, cx + halfX, Math.max(-85, cy - halfY), Math.min(85, cy + halfY)];
+  // A feature spanning more than half the world (or the date line) is shown whole.
+  const view: MapView = e - w > 180 ? { kind: "world" } : { kind: "box", box: [w, s, e, n] };
+  boxCache.set(feature, view);
+  return view;
+}
+
+/**
+ * The map area for a physical feature at a stability band: new frames the feature, middle
+ * the continents of the countries it touches, strong the whole world. Oceans always show
+ * the world.
+ */
+export function featureView(
+  ctx: Pick<StudyContext, "world" | "scope">,
+  featureId: string,
+  level: "new" | "middle" | "strong",
+): MapView {
+  const feature = ctx.world.physicalById.get(featureId);
+  const inScope = (id: string) => ctx.world.byId.has(id) && (!ctx.scope || ctx.scope.has(id));
+  const near = (feature?.countries ?? []).filter(inScope);
+  if (!feature || feature.kind === "ocean" || level === "strong") return { kind: "world" };
+  if (level === "new") return featureBox(feature);
+  if (near.length === 0) return { kind: "world" };
+  const continents = new Set(near.map((id) => ctx.world.byId.get(id)?.continent));
+  return {
+    kind: "countries",
+    ids: ctx.world.countries
+      .filter((c) => continents.has(c.continent) && inScope(c.id))
+      .map((c) => c.id),
+  };
+}
+
+/** Physical cards (PLAN.md 5.3): tap the feature, or name the highlighted one. */
+function physicalQuestion(
+  ctx: StudyContext,
+  cardId: string,
+  featureId: string,
+  type: PhysicalCardType,
+  state: CardState | undefined,
+  inputSetting: InputSetting,
+  seed: string,
+): Question {
+  const feature = ctx.world.physicalById.get(featureId);
+  if (!feature) throw new Error(`Unknown feature ${featureId}`);
+  const rng = createRng(seed);
+  const level = band(state);
+  const firstReview = !state || state.reps === 0;
+  const mapLevel = inputSetting === "mc" ? "new" : level;
+  const view = featureView(ctx, featureId, mapLevel);
+  const countryId =
+    feature.countries.find((c) => ctx.world.byId.has(c) && (!ctx.scope || ctx.scope.has(c))) ??
+    feature.countries[0] ??
+    "";
+  const base = { cardId, entityId: featureId, countryId, featureId, type };
+  if (type === "feature_to_map") {
+    return {
+      ...base,
+      prompt: { kind: "feature", featureId },
+      answer: { kind: "feature", view },
+      answerKind: "feature",
+      correctIds: [featureId],
+      mode: "map",
+    };
+  }
+  const prompt: Prompt = { kind: "featureMap", featureId, view };
+  const textAsChoice =
+    inputSetting === "mc" ||
+    (inputSetting === "auto" && level === "new") ||
+    (inputSetting === "typing" && firstReview);
+  if (!textAsChoice) {
+    return {
+      ...base,
+      prompt,
+      answer: { kind: "typed" },
+      answerKind: "feature",
+      correctIds: [featureId],
+      mode: "typed",
+    };
+  }
+  // Wrong names of the same kind first, nearby ones before the rest of the world.
+  const all = ctx.world.physical.filter((f) => f.id !== featureId);
+  const sameKind = all.filter((f) => f.kind === feature.kind);
+  const others = pickFromPools(
+    [
+      sameKind.filter((f) => f.region === feature.region).map((f) => f.id),
+      sameKind.map((f) => f.id),
+      all.map((f) => f.id),
+    ],
+    new Set([featureId]),
+    3,
+    rng,
+  );
+  return {
+    ...base,
+    prompt,
+    answer: {
+      kind: "choice",
+      options: shuffle(
+        [featureId, ...others].map((id) => ({
+          id,
+          label: ctx.world.physicalById.get(id)?.names[ctx.locale] ?? id,
+        })),
+        rng,
+      ),
+    },
+    answerKind: "feature",
+    correctIds: [featureId],
     mode: "mc",
   };
 }

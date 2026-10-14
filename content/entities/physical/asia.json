@@ -1,0 +1,1834 @@
+{
+  "group": "asia",
+  "entities": [
+    {
+      "entityId": "Q23406",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q23406.en.1",
+            "type": "anchor",
+            "text": "The Red Sea lies between Africa and the Arabian Peninsula, from Suez in the north to Yemen and Djibouti in the south."
+          },
+          {
+            "id": "Q23406.en.2",
+            "type": "shape",
+            "text": "The Red Sea is a long narrow slit, as if Africa and Arabia had been cut apart with a knife."
+          },
+          {
+            "id": "Q23406.en.3",
+            "type": "story",
+            "text": "The Red Sea is widening as Arabia drifts away from Africa, a few centimetres a year."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q23406.nb.1",
+            "type": "anchor",
+            "text": "Rødehavet ligger mellom Afrika og Den arabiske halvøy, fra Suez i nord til Jemen og Djibouti i sør."
+          },
+          {
+            "id": "Q23406.nb.2",
+            "type": "shape",
+            "text": "Rødehavet er en lang smal sprekk, som om Afrika og Arabia var skåret fra hverandre med kniv."
+          },
+          {
+            "id": "Q23406.nb.3",
+            "type": "story",
+            "text": "Rødehavet blir bredere fordi Arabia driver bort fra Afrika, noen centimeter i året."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q23406.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Red Sea separates Africa from the Arabian Peninsula.",
+            "nb": "Rødehavet skiller Afrika fra Den arabiske halvøy."
+          }
+        },
+        {
+          "id": "Q23406.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Suez Canal connects it to the Mediterranean.",
+            "nb": "Suezkanalen forbinder det med Middelhavet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q27092",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q27092.en.1",
+            "type": "anchor",
+            "text": "The Sea of Japan lies between Japan and the Asian mainland of Russia and the Korean Peninsula."
+          },
+          {
+            "id": "Q27092.en.2",
+            "type": "contrast",
+            "text": "The Sea of Japan is on Japan's west side; the open Pacific is on its east side."
+          },
+          {
+            "id": "Q27092.en.3",
+            "type": "story",
+            "text": "Korea calls it the East Sea, and maps in Korea use that name."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q27092.nb.1",
+            "type": "anchor",
+            "text": "Japanhavet ligger mellom Japan og fastlandet med Russland og Koreahalvøya."
+          },
+          {
+            "id": "Q27092.nb.2",
+            "type": "contrast",
+            "text": "Japanhavet ligger på vestsiden av Japan. Det åpne Stillehavet ligger på østsiden."
+          },
+          {
+            "id": "Q27092.nb.3",
+            "type": "story",
+            "text": "Korea kaller det Østhavet, og kart i Korea bruker det navnet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q27092.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Sea of Japan is bordered by Japan, Russia, North Korea and South Korea.",
+            "nb": "Japanhavet grenser til Japan, Russland, Nord-Korea og Sør-Korea."
+          }
+        },
+        {
+          "id": "Q27092.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its name is disputed: Korea calls it the East Sea.",
+            "nb": "Navnet er omstridt: Korea kaller det Østhavet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q34675",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q34675.en.1",
+            "type": "anchor",
+            "text": "The Persian Gulf lies between Iran to the north and the Arabian Peninsula to the south."
+          },
+          {
+            "id": "Q34675.en.2",
+            "type": "shape",
+            "text": "The Persian Gulf is a thumb of sea pushed in between Iran and Arabia, entered through the narrow Strait of Hormuz."
+          },
+          {
+            "id": "Q34675.en.3",
+            "type": "story",
+            "text": "A large share of the world's oil leaves the Persian Gulf by tanker through the Strait of Hormuz."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q34675.nb.1",
+            "type": "anchor",
+            "text": "Persiabukten ligger mellom Iran i nord og Den arabiske halvøy i sør."
+          },
+          {
+            "id": "Q34675.nb.2",
+            "type": "shape",
+            "text": "Persiabukten er en tommel av hav presset inn mellom Iran og Arabia, med inngang gjennom det smale Hormuzstredet."
+          },
+          {
+            "id": "Q34675.nb.3",
+            "type": "story",
+            "text": "En stor del av verdens olje forlater Persiabukten med tankskip gjennom Hormuzstredet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q34675.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Persian Gulf is bordered by Iran, Iraq, Kuwait, Saudi Arabia, Bahrain, Qatar and the United Arab Emirates.",
+            "nb": "Persiabukten grenser til Iran, Irak, Kuwait, Saudi-Arabia, Bahrain, Qatar og De forente arabiske emirater."
+          }
+        },
+        {
+          "id": "Q34675.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It connects to the Gulf of Oman through the Strait of Hormuz.",
+            "nb": "Den er forbundet med Omanbukta gjennom Hormuzstredet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q37660",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q37660.en.1",
+            "type": "anchor",
+            "text": "The South China Sea lies south of China, between Vietnam, the Philippines, Malaysia and Borneo."
+          },
+          {
+            "id": "Q37660.en.2",
+            "type": "contrast",
+            "text": "The South China Sea is south of China; the East China Sea lies between China and Japan."
+          },
+          {
+            "id": "Q37660.en.3",
+            "type": "story",
+            "text": "Several countries claim the tiny Spratly and Paracel islands in the South China Sea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q37660.nb.1",
+            "type": "anchor",
+            "text": "Sør-Kina-havet ligger sør for Kina, mellom Vietnam, Filippinene, Malaysia og Borneo."
+          },
+          {
+            "id": "Q37660.nb.2",
+            "type": "contrast",
+            "text": "Sør-Kina-havet ligger sør for Kina. Øst-Kina-havet ligger mellom Kina og Japan."
+          },
+          {
+            "id": "Q37660.nb.3",
+            "type": "story",
+            "text": "Flere land gjør krav på de små Spratly- og Paracel-øyene i Sør-Kina-havet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q37660.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The South China Sea is part of the Pacific Ocean.",
+            "nb": "Sør-Kina-havet er en del av Stillehavet."
+          }
+        },
+        {
+          "id": "Q37660.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is one of the busiest shipping routes in the world.",
+            "nb": "Det er en av verdens travleste skipsleder."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q38684",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q38684.en.1",
+            "type": "anchor",
+            "text": "The Bay of Bengal lies east of India, with Bangladesh to the north and Myanmar to the east."
+          },
+          {
+            "id": "Q38684.en.2",
+            "type": "shape",
+            "text": "The Bay of Bengal is a big triangle of sea pointing north into Bangladesh."
+          },
+          {
+            "id": "Q38684.en.3",
+            "type": "story",
+            "text": "The Ganges and the Brahmaputra pour into the Bay of Bengal through the largest delta on Earth."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q38684.nb.1",
+            "type": "anchor",
+            "text": "Bengalbukta ligger øst for India, med Bangladesh i nord og Myanmar i øst."
+          },
+          {
+            "id": "Q38684.nb.2",
+            "type": "shape",
+            "text": "Bengalbukta er en stor trekant av hav som peker nordover inn i Bangladesh."
+          },
+          {
+            "id": "Q38684.nb.3",
+            "type": "story",
+            "text": "Ganges og Brahmaputra renner ut i Bengalbukta gjennom verdens største delta."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q38684.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Bay of Bengal is the northeastern part of the Indian Ocean.",
+            "nb": "Bengalbukta er den nordøstlige delen av Indiahavet."
+          }
+        },
+        {
+          "id": "Q38684.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is bordered by India, Bangladesh, Myanmar and Sri Lanka.",
+            "nb": "Den grenser til India, Bangladesh, Myanmar og Sri Lanka."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q41602",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q41602.en.1",
+            "type": "anchor",
+            "text": "The Sea of Okhotsk lies off Russia's Pacific coast, closed off by Kamchatka, the Kuril Islands and Hokkaido."
+          },
+          {
+            "id": "Q41602.en.2",
+            "type": "shape",
+            "text": "The Sea of Okhotsk is a bowl of sea held by the arm of Kamchatka and a chain of islands."
+          },
+          {
+            "id": "Q41602.en.3",
+            "type": "story",
+            "text": "The Sea of Okhotsk freezes over in winter, far further south than most frozen seas."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q41602.nb.1",
+            "type": "anchor",
+            "text": "Okhotskhavet ligger utenfor Russlands stillehavskyst, stengt av Kamtsjatka, Kurilene og Hokkaido."
+          },
+          {
+            "id": "Q41602.nb.2",
+            "type": "shape",
+            "text": "Okhotskhavet er en bolle av hav holdt fast av armen Kamtsjatka og en kjede av øyer."
+          },
+          {
+            "id": "Q41602.nb.3",
+            "type": "story",
+            "text": "Okhotskhavet fryser til om vinteren, langt lenger sør enn de fleste islagte hav."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q41602.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Sea of Okhotsk is bordered by Russia and Japan.",
+            "nb": "Okhotskhavet grenser til Russland og Japan."
+          }
+        },
+        {
+          "id": "Q41602.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Much of it is covered by sea ice in winter.",
+            "nb": "Store deler er dekket av havis om vinteren."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q5484",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q5484.en.1",
+            "type": "anchor",
+            "text": "The Caspian Sea lies between the Caucasus and Central Asia, with Russia and Kazakhstan to the north and Iran to the south."
+          },
+          {
+            "id": "Q5484.en.2",
+            "type": "contrast",
+            "text": "The Caspian is called a sea but has no outlet to any ocean; it is the largest inland body of water on Earth."
+          },
+          {
+            "id": "Q5484.en.3",
+            "type": "shape",
+            "text": "The Caspian looks like a seahorse standing upright between Europe and Asia."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q5484.nb.1",
+            "type": "anchor",
+            "text": "Det kaspiske hav ligger mellom Kaukasus og Sentral-Asia, med Russland og Kasakhstan i nord og Iran i sør."
+          },
+          {
+            "id": "Q5484.nb.2",
+            "type": "contrast",
+            "text": "Det kaspiske hav kalles et hav, men har ikke utløp til noe verdenshav. Det er jordens største innsjø."
+          },
+          {
+            "id": "Q5484.nb.3",
+            "type": "shape",
+            "text": "Det kaspiske hav ser ut som en sjøhest som står oppreist mellom Europa og Asia."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q5484.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Caspian Sea is bordered by Russia, Kazakhstan, Turkmenistan, Iran and Azerbaijan.",
+            "nb": "Det kaspiske hav grenser til Russland, Kasakhstan, Turkmenistan, Iran og Aserbajdsjan."
+          }
+        },
+        {
+          "id": "Q5484.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Volga flows into it.",
+            "nb": "Volga renner ut i det."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q58705",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q58705.en.1",
+            "type": "anchor",
+            "text": "The Arabian Sea lies between Arabia in the west and India in the east, south of Pakistan and Iran."
+          },
+          {
+            "id": "Q58705.en.2",
+            "type": "contrast",
+            "text": "The Arabian Sea is west of India; the Bay of Bengal is east of it."
+          },
+          {
+            "id": "Q58705.en.3",
+            "type": "story",
+            "text": "The monsoon blows in from the Arabian Sea each summer and brings India its rain."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q58705.nb.1",
+            "type": "anchor",
+            "text": "Arabiahavet ligger mellom Arabia i vest og India i øst, sør for Pakistan og Iran."
+          },
+          {
+            "id": "Q58705.nb.2",
+            "type": "contrast",
+            "text": "Arabiahavet ligger vest for India. Bengalbukta ligger øst for landet."
+          },
+          {
+            "id": "Q58705.nb.3",
+            "type": "story",
+            "text": "Monsunen blåser inn fra Arabiahavet hver sommer og gir India regnet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q58705.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Arabian Sea is part of the Indian Ocean.",
+            "nb": "Arabiahavet er en del av Indiahavet."
+          }
+        },
+        {
+          "id": "Q58705.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Indus empties into it in Pakistan.",
+            "nb": "Indus munner ut i det i Pakistan."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q134485",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q134485.en.1",
+            "type": "anchor",
+            "text": "Lake Balkhash lies in eastern Kazakhstan, north of the Tian Shan."
+          },
+          {
+            "id": "Q134485.en.2",
+            "type": "story",
+            "text": "Lake Balkhash is fresh water in its western half and salty in its eastern half, joined by a narrow strait."
+          },
+          {
+            "id": "Q134485.en.3",
+            "type": "shape",
+            "text": "Lake Balkhash is a long thin crescent lying across the Kazakh steppe."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q134485.nb.1",
+            "type": "anchor",
+            "text": "Balkhasjsjøen ligger øst i Kasakhstan, nord for Tian Shan."
+          },
+          {
+            "id": "Q134485.nb.2",
+            "type": "story",
+            "text": "Balkhasjsjøen har ferskvann i den vestlige halvdelen og saltvann i den østlige, forbundet med et smalt sund."
+          },
+          {
+            "id": "Q134485.nb.3",
+            "type": "shape",
+            "text": "Balkhasjsjøen er en lang tynn halvmåne som ligger over den kasakhiske steppen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q134485.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Lake Balkhash is in Kazakhstan.",
+            "nb": "Balkhasjsjøen ligger i Kasakhstan."
+          }
+        },
+        {
+          "id": "Q134485.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It has no outlet to the sea.",
+            "nb": "Den har ikke utløp til havet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q23883",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q23883.en.1",
+            "type": "anchor",
+            "text": "The Dead Sea lies in the Jordan Rift Valley, between Jordan to the east and Israel and the West Bank to the west."
+          },
+          {
+            "id": "Q23883.en.2",
+            "type": "story",
+            "text": "The Dead Sea is so salty that swimmers float on it without trying, reading a newspaper if they like."
+          },
+          {
+            "id": "Q23883.en.3",
+            "type": "contrast",
+            "text": "The Dead Sea's shore is the lowest land on Earth, far below sea level."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q23883.nb.1",
+            "type": "anchor",
+            "text": "Dødehavet ligger i Jordandalen, mellom Jordan i øst og Israel og Vestbredden i vest."
+          },
+          {
+            "id": "Q23883.nb.2",
+            "type": "story",
+            "text": "Dødehavet er så salt at badende flyter uten å prøve, og kan lese avisen om de vil."
+          },
+          {
+            "id": "Q23883.nb.3",
+            "type": "contrast",
+            "text": "Strendene ved Dødehavet er det laveste landet på jorden, langt under havnivå."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q23883.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Dead Sea is bordered by Jordan, Israel and the West Bank.",
+            "nb": "Dødehavet grenser til Jordan, Israel og Vestbredden."
+          }
+        },
+        {
+          "id": "Q23883.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its shore is the lowest point on land on Earth.",
+            "nb": "Strendene er det laveste punktet på land på jorden."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q5513",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q5513.en.1",
+            "type": "anchor",
+            "text": "Lake Baikal lies in southern Siberia, Russia, just north of Mongolia."
+          },
+          {
+            "id": "Q5513.en.2",
+            "type": "contrast",
+            "text": "Baikal is the deepest lake in the world and holds more fresh water than all the Great Lakes together."
+          },
+          {
+            "id": "Q5513.en.3",
+            "type": "shape",
+            "text": "Lake Baikal is a long crescent moon of water lying in Siberia."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q5513.nb.1",
+            "type": "anchor",
+            "text": "Bajkalsjøen ligger sør i Sibir i Russland, like nord for Mongolia."
+          },
+          {
+            "id": "Q5513.nb.2",
+            "type": "contrast",
+            "text": "Bajkal er verdens dypeste innsjø og har mer ferskvann enn alle De store sjøene til sammen."
+          },
+          {
+            "id": "Q5513.nb.3",
+            "type": "shape",
+            "text": "Bajkalsjøen er en lang halvmåne av vann som ligger i Sibir."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q5513.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "Lake Baikal is in Siberia, Russia.",
+            "nb": "Bajkalsjøen ligger i Sibir i Russland."
+          }
+        },
+        {
+          "id": "Q5513.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the oldest and deepest lake in the world.",
+            "nb": "Det er verdens eldste og dypeste innsjø."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q34589",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q34589.en.1",
+            "type": "anchor",
+            "text": "The Euphrates rises in Turkey and flows southeast through Syria and Iraq to the Persian Gulf."
+          },
+          {
+            "id": "Q34589.en.2",
+            "type": "contrast",
+            "text": "The Euphrates is the western of the two rivers of Mesopotamia; the Tigris runs east of it."
+          },
+          {
+            "id": "Q34589.en.3",
+            "type": "story",
+            "text": "The Euphrates and the Tigris watered Mesopotamia, where some of the first cities were built."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q34589.nb.1",
+            "type": "anchor",
+            "text": "Eufrat har sine kilder i Tyrkia og renner sørøstover gjennom Syria og Irak til Persiabukten."
+          },
+          {
+            "id": "Q34589.nb.2",
+            "type": "contrast",
+            "text": "Eufrat er den vestlige av Mesopotamias to elver. Tigris renner øst for den."
+          },
+          {
+            "id": "Q34589.nb.3",
+            "type": "story",
+            "text": "Eufrat og Tigris vannet Mesopotamia, der noen av de første byene ble bygd."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q34589.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Euphrates flows through Turkey, Syria and Iraq.",
+            "nb": "Eufrat renner gjennom Tyrkia, Syria og Irak."
+          }
+        },
+        {
+          "id": "Q34589.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It joins the Tigris to form the Shatt al-Arab before reaching the Persian Gulf.",
+            "nb": "Den møter Tigris og danner Shatt al-Arab før den når Persiabukten."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q35591",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q35591.en.1",
+            "type": "anchor",
+            "text": "The Tigris rises in Turkey and flows southeast through Iraq past Mosul and Baghdad."
+          },
+          {
+            "id": "Q35591.en.2",
+            "type": "contrast",
+            "text": "The Tigris is the eastern river of Mesopotamia and runs through Baghdad; the Euphrates lies west of it."
+          },
+          {
+            "id": "Q35591.en.3",
+            "type": "story",
+            "text": "Baghdad was built on the Tigris, and the river still runs through the middle of the city."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q35591.nb.1",
+            "type": "anchor",
+            "text": "Tigris har sine kilder i Tyrkia og renner sørøstover gjennom Irak forbi Mosul og Bagdad."
+          },
+          {
+            "id": "Q35591.nb.2",
+            "type": "contrast",
+            "text": "Tigris er den østlige elven i Mesopotamia og renner gjennom Bagdad. Eufrat ligger vest for den."
+          },
+          {
+            "id": "Q35591.nb.3",
+            "type": "story",
+            "text": "Bagdad ble bygd ved Tigris, og elven renner fortsatt midt gjennom byen."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q35591.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Tigris flows through Turkey and Iraq, and forms part of the border with Syria.",
+            "nb": "Tigris renner gjennom Tyrkia og Irak og danner en del av grensen mot Syria."
+          }
+        },
+        {
+          "id": "Q35591.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Baghdad lies on the Tigris.",
+            "nb": "Bagdad ligger ved Tigris."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q41179",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q41179.en.1",
+            "type": "anchor",
+            "text": "The Mekong flows from Tibet south through China, along Laos and Thailand, then through Cambodia and Vietnam to the sea."
+          },
+          {
+            "id": "Q41179.en.2",
+            "type": "story",
+            "text": "Each rainy season the Mekong backs up so much that the Tonlé Sap river in Cambodia flows backwards."
+          },
+          {
+            "id": "Q41179.en.3",
+            "type": "shape",
+            "text": "The Mekong hangs down Southeast Asia like a long rope from the Himalayas."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q41179.nb.1",
+            "type": "anchor",
+            "text": "Mekong renner fra Tibet sørover gjennom Kina, langs Laos og Thailand, og gjennom Kambodsja og Vietnam til havet."
+          },
+          {
+            "id": "Q41179.nb.2",
+            "type": "story",
+            "text": "Hver regntid stiger Mekong så mye at elven Tonlé Sap i Kambodsja renner baklengs."
+          },
+          {
+            "id": "Q41179.nb.3",
+            "type": "shape",
+            "text": "Mekong henger ned gjennom Sørøst-Asia som et langt tau fra Himalaya."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q41179.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Mekong flows through China, Myanmar, Laos, Thailand, Cambodia and Vietnam.",
+            "nb": "Mekong renner gjennom Kina, Myanmar, Laos, Thailand, Kambodsja og Vietnam."
+          }
+        },
+        {
+          "id": "Q41179.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It ends in a large delta in southern Vietnam.",
+            "nb": "Den ender i et stort delta sør i Vietnam."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q46841",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q46841.en.1",
+            "type": "anchor",
+            "text": "The Lena flows north through eastern Siberia, past Yakutsk, to the Laptev Sea in the Arctic."
+          },
+          {
+            "id": "Q46841.en.2",
+            "type": "contrast",
+            "text": "The Lena is the easternmost of Siberia's three great rivers, east of the Ob and the Yenisei."
+          },
+          {
+            "id": "Q46841.en.3",
+            "type": "story",
+            "text": "The Lena freezes so hard in winter that its ice is used as a road."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q46841.nb.1",
+            "type": "anchor",
+            "text": "Lena renner nordover gjennom Øst-Sibir, forbi Jakutsk, til Laptevhavet i Arktis."
+          },
+          {
+            "id": "Q46841.nb.2",
+            "type": "contrast",
+            "text": "Lena er den østligste av Sibirs tre store elver, øst for Ob og Jenisej."
+          },
+          {
+            "id": "Q46841.nb.3",
+            "type": "story",
+            "text": "Lena fryser så hardt om vinteren at isen brukes som vei."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q46841.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Lena flows entirely through Russia.",
+            "nb": "Lena renner bare gjennom Russland."
+          }
+        },
+        {
+          "id": "Q46841.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It empties into the Laptev Sea, part of the Arctic Ocean.",
+            "nb": "Den munner ut i Laptevhavet, en del av Polhavet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q5089",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q5089.en.1",
+            "type": "anchor",
+            "text": "The Ganges flows from the Himalayas southeast across northern India into Bangladesh and the Bay of Bengal."
+          },
+          {
+            "id": "Q5089.en.2",
+            "type": "story",
+            "text": "Hindus treat the Ganges as a sacred river, and pilgrims bathe in it at Varanasi."
+          },
+          {
+            "id": "Q5089.en.3",
+            "type": "contrast",
+            "text": "The Ganges flows east to the Bay of Bengal; the Indus flows west and south to the Arabian Sea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q5089.nb.1",
+            "type": "anchor",
+            "text": "Ganges renner fra Himalaya sørøstover over Nord-India og inn i Bangladesh og Bengalbukta."
+          },
+          {
+            "id": "Q5089.nb.2",
+            "type": "story",
+            "text": "Hinduer regner Ganges som en hellig elv, og pilegrimer bader i den i Varanasi."
+          },
+          {
+            "id": "Q5089.nb.3",
+            "type": "contrast",
+            "text": "Ganges renner østover til Bengalbukta. Indus renner vestover og sørover til Arabiahavet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q5089.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Ganges flows through India and Bangladesh.",
+            "nb": "Ganges renner gjennom India og Bangladesh."
+          }
+        },
+        {
+          "id": "Q5089.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is sacred in Hinduism.",
+            "nb": "Den er hellig i hinduismen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q5413",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q5413.en.1",
+            "type": "anchor",
+            "text": "The Yangtze flows east across China from the Tibetan Plateau to the East China Sea at Shanghai."
+          },
+          {
+            "id": "Q5413.en.2",
+            "type": "story",
+            "text": "The Three Gorges Dam on the Yangtze is the largest power station in the world."
+          },
+          {
+            "id": "Q5413.en.3",
+            "type": "contrast",
+            "text": "The Yangtze runs through central China to Shanghai; the Yellow River runs further north."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q5413.nb.1",
+            "type": "anchor",
+            "text": "Yangtze renner østover gjennom Kina fra Tibetplatået til Øst-Kina-havet ved Shanghai."
+          },
+          {
+            "id": "Q5413.nb.2",
+            "type": "story",
+            "text": "De tre kløfters demning på Yangtze er verdens største kraftverk."
+          },
+          {
+            "id": "Q5413.nb.3",
+            "type": "contrast",
+            "text": "Yangtze renner gjennom Midt-Kina til Shanghai. Den gule elv renner lenger nord."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q5413.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Yangtze is the longest river in Asia.",
+            "nb": "Yangtze er Asias lengste elv."
+          }
+        },
+        {
+          "id": "Q5413.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It flows entirely within China.",
+            "nb": "Den renner bare gjennom Kina."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q6862",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q6862.en.1",
+            "type": "anchor",
+            "text": "The Amur flows east along the border between Russia and China to the Pacific."
+          },
+          {
+            "id": "Q6862.en.2",
+            "type": "contrast",
+            "text": "For much of its length the Amur is the border: Russia on the north bank, China on the south."
+          },
+          {
+            "id": "Q6862.en.3",
+            "type": "story",
+            "text": "China calls the Amur the Black Dragon River, after its dark water."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q6862.nb.1",
+            "type": "anchor",
+            "text": "Amur renner østover langs grensen mellom Russland og Kina til Stillehavet."
+          },
+          {
+            "id": "Q6862.nb.2",
+            "type": "contrast",
+            "text": "Store deler av løpet er Amur selve grensen: Russland på nordbredden, Kina på sørbredden."
+          },
+          {
+            "id": "Q6862.nb.3",
+            "type": "story",
+            "text": "Kina kaller Amur Den svarte drageelven, etter det mørke vannet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q6862.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Amur forms a long part of the border between Russia and China.",
+            "nb": "Amur utgjør en lang del av grensen mellom Russland og Kina."
+          }
+        },
+        {
+          "id": "Q6862.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It empties into the Strait of Tartary, off the Sea of Okhotsk.",
+            "nb": "Den munner ut i Tatarstredet, ved Okhotskhavet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q7348",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q7348.en.1",
+            "type": "anchor",
+            "text": "The Indus flows from Tibet west through Kashmir and then south through Pakistan to the Arabian Sea."
+          },
+          {
+            "id": "Q7348.en.2",
+            "type": "etymology",
+            "text": "India is named after the Indus river."
+          },
+          {
+            "id": "Q7348.en.3",
+            "type": "shape",
+            "text": "The Indus runs down Pakistan like a spine from the mountains to the sea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q7348.nb.1",
+            "type": "anchor",
+            "text": "Indus renner fra Tibet vestover gjennom Kashmir og så sørover gjennom Pakistan til Arabiahavet."
+          },
+          {
+            "id": "Q7348.nb.2",
+            "type": "etymology",
+            "text": "India har fått navnet sitt fra elven Indus."
+          },
+          {
+            "id": "Q7348.nb.3",
+            "type": "shape",
+            "text": "Indus går ned gjennom Pakistan som en ryggrad fra fjellene til havet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q7348.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Indus flows through China, India and Pakistan.",
+            "nb": "Indus renner gjennom Kina, India og Pakistan."
+          }
+        },
+        {
+          "id": "Q7348.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is the longest river in Pakistan.",
+            "nb": "Det er Pakistans lengste elv."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q7355",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q7355.en.1",
+            "type": "anchor",
+            "text": "The Yellow River flows across northern China in a great loop to the Bohai Sea."
+          },
+          {
+            "id": "Q7355.en.2",
+            "type": "etymology",
+            "text": "The Yellow River is named for the yellow silt it carries, washed from the loess plateau."
+          },
+          {
+            "id": "Q7355.en.3",
+            "type": "shape",
+            "text": "The Yellow River makes a huge upside-down U across northern China before heading to the sea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q7355.nb.1",
+            "type": "anchor",
+            "text": "Den gule elv renner over Nord-Kina i en stor sløyfe til Bohaihavet."
+          },
+          {
+            "id": "Q7355.nb.2",
+            "type": "etymology",
+            "text": "Den gule elv har navn etter det gule slammet den fører med seg fra løssplatået."
+          },
+          {
+            "id": "Q7355.nb.3",
+            "type": "shape",
+            "text": "Den gule elv lager en enorm opp-ned U over Nord-Kina før den går mot havet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q7355.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Yellow River flows entirely within China.",
+            "nb": "Den gule elv renner bare gjennom Kina."
+          }
+        },
+        {
+          "id": "Q7355.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Chinese civilisation grew up along its valley.",
+            "nb": "Den kinesiske sivilisasjonen vokste fram langs dalen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q78707",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q78707.en.1",
+            "type": "anchor",
+            "text": "The Yenisei flows north through central Siberia from Mongolia's border to the Kara Sea."
+          },
+          {
+            "id": "Q78707.en.2",
+            "type": "contrast",
+            "text": "The Yenisei is the middle one of Siberia's three great rivers: the Ob to the west, the Lena to the east."
+          },
+          {
+            "id": "Q78707.en.3",
+            "type": "story",
+            "text": "The Yenisei roughly divides the lowlands of western Siberia from the plateaus to the east."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q78707.nb.1",
+            "type": "anchor",
+            "text": "Jenisej renner nordover gjennom Midt-Sibir fra grensen mot Mongolia til Karahavet."
+          },
+          {
+            "id": "Q78707.nb.2",
+            "type": "contrast",
+            "text": "Jenisej er den midterste av Sibirs tre store elver: Ob i vest, Lena i øst."
+          },
+          {
+            "id": "Q78707.nb.3",
+            "type": "story",
+            "text": "Jenisej skiller omtrent lavlandet i Vest-Sibir fra platåene i øst."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q78707.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Yenisei flows through Russia, and its headwaters reach Mongolia.",
+            "nb": "Jenisej renner gjennom Russland, og kildene når Mongolia."
+          }
+        },
+        {
+          "id": "Q78707.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It empties into the Kara Sea in the Arctic Ocean.",
+            "nb": "Den munner ut i Karahavet i Polhavet."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q973",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q973.en.1",
+            "type": "anchor",
+            "text": "The Ob flows north through western Siberia to the Gulf of Ob in the Arctic Ocean."
+          },
+          {
+            "id": "Q973.en.2",
+            "type": "contrast",
+            "text": "The Ob is the westernmost of Siberia's three great rivers, west of the Yenisei and the Lena."
+          },
+          {
+            "id": "Q973.en.3",
+            "type": "shape",
+            "text": "The Ob ends in a long thin gulf like a finger poking into the Siberian coast."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q973.nb.1",
+            "type": "anchor",
+            "text": "Ob renner nordover gjennom Vest-Sibir til Obbukta i Polhavet."
+          },
+          {
+            "id": "Q973.nb.2",
+            "type": "contrast",
+            "text": "Ob er den vestligste av Sibirs tre store elver, vest for Jenisej og Lena."
+          },
+          {
+            "id": "Q973.nb.3",
+            "type": "shape",
+            "text": "Ob ender i en lang tynn bukt, som en finger som stikker inn i kysten av Sibir."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q973.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Ob flows through Russia.",
+            "nb": "Ob renner gjennom Russland."
+          }
+        },
+        {
+          "id": "Q973.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Its mouth, the Gulf of Ob, is one of the longest estuaries in the world.",
+            "nb": "Munningen, Obbukta, er en av verdens lengste elvemunninger."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q167021",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q167021.en.1",
+            "type": "anchor",
+            "text": "The Zagros Mountains run along western Iran, from the border with Turkey and Iraq to the Persian Gulf."
+          },
+          {
+            "id": "Q167021.en.2",
+            "type": "shape",
+            "text": "The Zagros are long parallel ridges, like a crumpled rug pushed up against Iran's western edge."
+          },
+          {
+            "id": "Q167021.en.3",
+            "type": "story",
+            "text": "The Zagros were pushed up as Arabia pressed into Asia, and the pressing has not stopped."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q167021.nb.1",
+            "type": "anchor",
+            "text": "Zagrosfjellene går langs det vestlige Iran, fra grensen mot Tyrkia og Irak til Persiabukten."
+          },
+          {
+            "id": "Q167021.nb.2",
+            "type": "shape",
+            "text": "Zagros er lange parallelle rygger, som et sammenkrøllet teppe skjøvet opp mot vestkanten av Iran."
+          },
+          {
+            "id": "Q167021.nb.3",
+            "type": "story",
+            "text": "Zagros ble presset opp da Arabia presset seg inn i Asia, og presset har ikke stoppet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q167021.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Zagros Mountains are mainly in Iran.",
+            "nb": "Zagrosfjellene ligger hovedsakelig i Iran."
+          }
+        },
+        {
+          "id": "Q167021.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Much of Iran's oil lies along their foothills.",
+            "nb": "Mye av Irans olje ligger langs foten av fjellene."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q5451",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q5451.en.1",
+            "type": "anchor",
+            "text": "The Himalayas run across the north of India, Nepal and Bhutan, with Tibet in China to the north."
+          },
+          {
+            "id": "Q5451.en.2",
+            "type": "story",
+            "text": "India crashed into Asia and pushed up the Himalayas, and they are still rising."
+          },
+          {
+            "id": "Q5451.en.3",
+            "type": "etymology",
+            "text": "Himalaya is Sanskrit for the home of snow."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q5451.nb.1",
+            "type": "anchor",
+            "text": "Himalaya går langs nordkanten av India, Nepal og Bhutan, med Tibet i Kina i nord."
+          },
+          {
+            "id": "Q5451.nb.2",
+            "type": "story",
+            "text": "India kolliderte med Asia og presset opp Himalaya, og fjellene stiger fortsatt."
+          },
+          {
+            "id": "Q5451.nb.3",
+            "type": "etymology",
+            "text": "Himalaya er sanskrit for snøens hjem."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q5451.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Himalayas include Mount Everest, the highest mountain on Earth.",
+            "nb": "Himalaya har Mount Everest, jordens høyeste fjell."
+          }
+        },
+        {
+          "id": "Q5451.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "They run through India, Nepal, Bhutan, China and Pakistan.",
+            "nb": "De går gjennom India, Nepal, Bhutan, Kina og Pakistan."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q5472",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q5472.en.1",
+            "type": "anchor",
+            "text": "The Hindu Kush runs through Afghanistan into northern Pakistan, west of the Himalayas."
+          },
+          {
+            "id": "Q5472.en.2",
+            "type": "contrast",
+            "text": "The Hindu Kush is west of the Himalayas, mostly in Afghanistan."
+          },
+          {
+            "id": "Q5472.en.3",
+            "type": "story",
+            "text": "Alexander the Great led his army over the Hindu Kush on the way to India."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q5472.nb.1",
+            "type": "anchor",
+            "text": "Hindu Kush går gjennom Afghanistan og inn i Nord-Pakistan, vest for Himalaya."
+          },
+          {
+            "id": "Q5472.nb.2",
+            "type": "contrast",
+            "text": "Hindu Kush ligger vest for Himalaya, mest i Afghanistan."
+          },
+          {
+            "id": "Q5472.nb.3",
+            "type": "story",
+            "text": "Aleksander den store førte hæren sin over Hindu Kush på vei til India."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q5472.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Hindu Kush is mainly in Afghanistan and Pakistan.",
+            "nb": "Hindu Kush ligger hovedsakelig i Afghanistan og Pakistan."
+          }
+        },
+        {
+          "id": "Q5472.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Tirich Mir in Pakistan is its highest peak.",
+            "nb": "Tirich Mir i Pakistan er den høyeste toppen."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q5474",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q5474.en.1",
+            "type": "anchor",
+            "text": "The Tian Shan runs through Kyrgyzstan and into western China, north of the Tarim Basin."
+          },
+          {
+            "id": "Q5474.en.2",
+            "type": "etymology",
+            "text": "Tian Shan is Chinese for the heavenly mountains."
+          },
+          {
+            "id": "Q5474.en.3",
+            "type": "shape",
+            "text": "The Tian Shan is a long wall between the Taklamakan desert to the south and the Kazakh steppe to the north."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q5474.nb.1",
+            "type": "anchor",
+            "text": "Tian Shan går gjennom Kirgisistan og inn i det vestlige Kina, nord for Tarimbassenget."
+          },
+          {
+            "id": "Q5474.nb.2",
+            "type": "etymology",
+            "text": "Tian Shan er kinesisk for de himmelske fjellene."
+          },
+          {
+            "id": "Q5474.nb.3",
+            "type": "shape",
+            "text": "Tian Shan er en lang mur mellom Taklamakan-ørkenen i sør og den kasakhiske steppen i nord."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q5474.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Tian Shan runs through China, Kyrgyzstan and Kazakhstan.",
+            "nb": "Tian Shan går gjennom Kina, Kirgisistan og Kasakhstan."
+          }
+        },
+        {
+          "id": "Q5474.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is one of the longest mountain ranges in Central Asia.",
+            "nb": "Den er en av de lengste fjellkjedene i Sentral-Asia."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q132956",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q132956.en.1",
+            "type": "anchor",
+            "text": "The Taklamakan Desert fills the Tarim Basin in western China, between the Tian Shan and the Kunlun Mountains."
+          },
+          {
+            "id": "Q132956.en.2",
+            "type": "story",
+            "text": "Silk Road caravans skirted around the Taklamakan along its edges rather than cross its shifting dunes."
+          },
+          {
+            "id": "Q132956.en.3",
+            "type": "contrast",
+            "text": "The Taklamakan is a sea of sand dunes; the Gobi to its east is mostly bare rock and gravel."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q132956.nb.1",
+            "type": "anchor",
+            "text": "Taklamakan fyller Tarimbassenget vest i Kina, mellom Tian Shan og Kunlunfjellene."
+          },
+          {
+            "id": "Q132956.nb.2",
+            "type": "story",
+            "text": "Karavanene på Silkeveien gikk rundt kantene av Taklamakan heller enn over de vandrende sanddynene."
+          },
+          {
+            "id": "Q132956.nb.3",
+            "type": "contrast",
+            "text": "Taklamakan er et hav av sanddyner. Gobi øst for den er mest bart fjell og grus."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q132956.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Taklamakan Desert is in Xinjiang, China.",
+            "nb": "Taklamakan ligger i Xinjiang i Kina."
+          }
+        },
+        {
+          "id": "Q132956.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is mostly shifting sand dunes.",
+            "nb": "Den består mest av vandrende sanddyner."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q172691",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q172691.en.1",
+            "type": "anchor",
+            "text": "The Thar Desert lies in northwest India and eastern Pakistan, west of the Aravalli hills."
+          },
+          {
+            "id": "Q172691.en.2",
+            "type": "story",
+            "text": "The Thar is one of the most crowded deserts on Earth, with towns and farms between its dunes."
+          },
+          {
+            "id": "Q172691.en.3",
+            "type": "contrast",
+            "text": "The Thar is the desert of India and Pakistan; the Rub' al Khali is in Arabia, across the sea."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q172691.nb.1",
+            "type": "anchor",
+            "text": "Tharørkenen ligger nordvest i India og øst i Pakistan, vest for Aravalli-åsene."
+          },
+          {
+            "id": "Q172691.nb.2",
+            "type": "story",
+            "text": "Thar er en av de tettest befolkede ørkenene på jorden, med byer og gårder mellom sanddynene."
+          },
+          {
+            "id": "Q172691.nb.3",
+            "type": "contrast",
+            "text": "Thar er ørkenen i India og Pakistan. Rub al Khali ligger i Arabia, på andre siden av havet."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q172691.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Thar Desert lies in India and Pakistan.",
+            "nb": "Tharørkenen ligger i India og Pakistan."
+          }
+        },
+        {
+          "id": "Q172691.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Most of it lies in the Indian state of Rajasthan.",
+            "nb": "Det meste ligger i den indiske delstaten Rajasthan."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q172702",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q172702.en.1",
+            "type": "anchor",
+            "text": "The Karakum Desert covers most of Turkmenistan, east of the Caspian Sea."
+          },
+          {
+            "id": "Q172702.en.2",
+            "type": "etymology",
+            "text": "Karakum means black sand in Turkic languages."
+          },
+          {
+            "id": "Q172702.en.3",
+            "type": "story",
+            "text": "A burning gas crater in the Karakum, the Darvaza crater, has been called the Door to Hell."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q172702.nb.1",
+            "type": "anchor",
+            "text": "Karakum dekker det meste av Turkmenistan, øst for Det kaspiske hav."
+          },
+          {
+            "id": "Q172702.nb.2",
+            "type": "etymology",
+            "text": "Karakum betyr svart sand på tyrkiske språk."
+          },
+          {
+            "id": "Q172702.nb.3",
+            "type": "story",
+            "text": "Et brennende gasskrater i Karakum, Darvaza-krateret, har fått navnet Helvetesporten."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q172702.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Karakum Desert is mainly in Turkmenistan.",
+            "nb": "Karakum ligger hovedsakelig i Turkmenistan."
+          }
+        },
+        {
+          "id": "Q172702.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "The Karakum Canal carries water across it from the Amu Darya.",
+            "nb": "Karakumkanalen fører vann over den fra Amu Darja."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q229269",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q229269.en.1",
+            "type": "anchor",
+            "text": "The Rub' al Khali covers the southern Arabian Peninsula, in Saudi Arabia, Oman, Yemen and the Emirates."
+          },
+          {
+            "id": "Q229269.en.2",
+            "type": "etymology",
+            "text": "Rub' al Khali means the empty quarter in Arabic."
+          },
+          {
+            "id": "Q229269.en.3",
+            "type": "shape",
+            "text": "The Rub' al Khali is an ocean of sand dunes filling the bottom of the Arabian Peninsula."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q229269.nb.1",
+            "type": "anchor",
+            "text": "Rub al Khali dekker den sørlige delen av Den arabiske halvøy, i Saudi-Arabia, Oman, Jemen og Emiratene."
+          },
+          {
+            "id": "Q229269.nb.2",
+            "type": "etymology",
+            "text": "Rub al Khali betyr den tomme fjerdedelen på arabisk."
+          },
+          {
+            "id": "Q229269.nb.3",
+            "type": "shape",
+            "text": "Rub al Khali er et hav av sanddyner som fyller bunnen av Den arabiske halvøy."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q229269.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Rub' al Khali is the largest continuous sand desert in the world.",
+            "nb": "Rub al Khali er verdens største sammenhengende sandørken."
+          }
+        },
+        {
+          "id": "Q229269.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "Most of it lies in Saudi Arabia.",
+            "nb": "Det meste ligger i Saudi-Arabia."
+          }
+        }
+      ]
+    },
+    {
+      "entityId": "Q42070",
+      "hooks": {
+        "en": [
+          {
+            "id": "Q42070.en.1",
+            "type": "anchor",
+            "text": "The Gobi Desert stretches across southern Mongolia and northern China."
+          },
+          {
+            "id": "Q42070.en.2",
+            "type": "story",
+            "text": "Explorers in the Gobi dug up whole nests of dinosaur eggs, and fossil hunters still comb its red cliffs."
+          },
+          {
+            "id": "Q42070.en.3",
+            "type": "contrast",
+            "text": "The Gobi is a cold desert, with freezing winters, unlike the hot Sahara."
+          }
+        ],
+        "nb": [
+          {
+            "id": "Q42070.nb.1",
+            "type": "anchor",
+            "text": "Gobiørkenen strekker seg over Sør-Mongolia og Nord-Kina."
+          },
+          {
+            "id": "Q42070.nb.2",
+            "type": "story",
+            "text": "Forskere i Gobi gravde fram hele reir med dinosauregg, og fossiljegere leter fortsatt i de røde klippene."
+          },
+          {
+            "id": "Q42070.nb.3",
+            "type": "contrast",
+            "text": "Gobi er en kald ørken med iskalde vintre, i motsetning til den varme Sahara."
+          }
+        ]
+      },
+      "facts": [
+        {
+          "id": "Q42070.f1",
+          "tier": 1,
+          "verified": false,
+          "text": {
+            "en": "The Gobi Desert lies in Mongolia and China.",
+            "nb": "Gobiørkenen ligger i Mongolia og Kina."
+          }
+        },
+        {
+          "id": "Q42070.f2",
+          "tier": 2,
+          "verified": false,
+          "text": {
+            "en": "It is a cold desert with frost and occasional snow.",
+            "nb": "Det er en kald ørken med frost og av og til snø."
+          }
+        }
+      ]
+    }
+  ]
+}

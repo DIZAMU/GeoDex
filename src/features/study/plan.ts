@@ -25,6 +25,8 @@ import {
   type GroupCardType,
   LANDMARK_CARD_TYPES,
   type LandmarkCardType,
+  PHYSICAL_CARD_TYPES,
+  type PhysicalCardType,
   parseCardId,
   type ReviewEventCore,
 } from "@/engine/types";
@@ -61,6 +63,14 @@ export function isLandmarkIntroduced(id: string, states: ReadonlyMap<CardId, unk
 
 const isLandmarkType = (type: string): type is LandmarkCardType =>
   (LANDMARK_CARD_TYPES as readonly string[]).includes(type);
+
+/** A physical feature has started once either of its cards has been reviewed. */
+export function isFeatureIntroduced(id: string, states: ReadonlyMap<CardId, unknown>): boolean {
+  return PHYSICAL_CARD_TYPES.some((type) => states.has(cardId(id, type)));
+}
+
+const isPhysicalType = (type: string): type is PhysicalCardType =>
+  (PHYSICAL_CARD_TYPES as readonly string[]).includes(type);
 
 /**
  * A group as studied: its members in scope, and the subregion most of them share (first
@@ -137,6 +147,23 @@ export function planDay(input: {
   const citiesOn = settings.modules?.cities === true;
   const groupsOn = settings.modules?.groups === true;
   const landmarksOn = settings.modules?.landmarks === true;
+  const physicalOn = settings.modules?.physical === true;
+  /**
+   * Subregion of a physical feature: its first country in scope that has been introduced,
+   * else its first country in scope. Oceans with no country take the first introduced one.
+   */
+  const featureSubregion = (id: string): string | undefined => {
+    const feature = physicalOn ? world.physicalById.get(id) : undefined;
+    if (!feature) return undefined;
+    const near = feature.countries.filter((c) => inScope.has(c));
+    const started = near.find((c) => isIntroduced(c, states));
+    const fallback =
+      near[0] ??
+      (feature.kind === "ocean"
+        ? countries.find((c) => isIntroduced(c.id, states))?.id
+        : undefined);
+    return inScope.get(started ?? fallback ?? "")?.subregion;
+  };
   /** Subregion of a landmark whose country is in scope, when the landmarks module is on. */
   const landmarkSubregion = (id: string) => {
     const landmark = landmarksOn ? world.landmarkById.get(id) : undefined;
@@ -170,7 +197,8 @@ export function planDay(input: {
         type === "city_to_country" ||
         type === "city_to_map" ||
         isGroupType(type) ||
-        isLandmarkType(type)
+        isLandmarkType(type) ||
+        isPhysicalType(type)
       ) {
         const subregion =
           type === "contrast"
@@ -179,7 +207,9 @@ export function planDay(input: {
               ? groupSubregion(entityId)
               : isLandmarkType(type)
                 ? landmarkSubregion(entityId)
-                : citySubregion(entityId);
+                : isPhysicalType(type)
+                  ? featureSubregion(entityId)
+                  : citySubregion(entityId);
         if (!subregion) return [];
         return [
           {
@@ -296,6 +326,29 @@ export function planDay(input: {
           }));
       })
     : [];
+  // Physical features start once a country they touch is introduced (oceans: any country).
+  const anyIntroduced = countries.some((c) => isIntroduced(c.id, states));
+  const physicalCandidates = physicalOn
+    ? world.physical.flatMap((feature) => {
+        const ready =
+          feature.kind === "ocean"
+            ? anyIntroduced
+            : feature.countries.some((c) => inScope.has(c) && isIntroduced(c, states));
+        const subregion = ready ? featureSubregion(feature.id) : undefined;
+        if (!subregion) return [];
+        const introduced = isFeatureIntroduced(feature.id, states);
+        return PHYSICAL_CARD_TYPES.map((type) => cardId(feature.id, type))
+          .filter((id) => !states.has(id))
+          .map((id) => ({
+            cardId: id,
+            entityId: feature.id,
+            subregion,
+            isNew: true,
+            introduced,
+            stage: 1,
+          }));
+      })
+    : [];
   const weight = (id: string, fallback: number) => settings.moduleWeights?.[id] ?? fallback;
   const shares = allocateNew(newAllowance, [
     { id: "countries", weight: weight("countries", 3), available: candidates.length },
@@ -305,6 +358,11 @@ export function planDay(input: {
       id: "landmarks",
       weight: landmarksOn ? weight("landmarks", 1) : 0,
       available: landmarkCandidates.length,
+    },
+    {
+      id: "physical",
+      weight: physicalOn ? weight("physical", 1) : 0,
+      available: physicalCandidates.length,
     },
   ]);
 
@@ -328,6 +386,7 @@ export function planDay(input: {
     ...pickNewCards(cityCandidates, order, shares.get("cities") ?? 0),
     ...pickNewCards(groupCandidates, order, shares.get("groups") ?? 0),
     ...pickNewCards(landmarkCandidates, order, shares.get("landmarks") ?? 0),
+    ...pickNewCards(physicalCandidates, order, shares.get("physical") ?? 0),
   ];
   const capped = [...due]
     .sort((a, b) => a.retrievability - b.retrievability)
