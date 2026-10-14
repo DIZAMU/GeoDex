@@ -247,3 +247,32 @@
     animation: none;
   }
 }
+
+/* The welcome page's globe sits on a soft glow in the theme's accent. */
+.welcome-glow {
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--primary) 28%, transparent),
+    transparent
+  );
+  filter: blur(18px);
+}
+
+/* The tour's spotlight ring pulses gently around the element it explains. */
+.tour-ring {
+  stroke: var(--primary);
+  stroke-width: 3;
+  animation: tour-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes tour-pulse {
+  50% {
+    stroke-opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-ring {
+    animation: none;
+  }
+}

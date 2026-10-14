@@ -56,7 +56,8 @@
     "groups": "Landgrupper (når halvparten av landene er startet)",
     "landmarks": "Severdigheter (etter landet sitt)",
     "physical": "Naturgeografi (etter et land den berører)",
-    "history": "Historie (tidligere navn, oppløste stater, imperier)"
+    "history": "Historie (tidligere navn, oppløste stater, imperier)",
+    "welcomeAgain": "Vis velkomstsiden og omvisningen igjen"
   },
   "nav": {
     "today": "I dag",
@@ -78,7 +79,11 @@
     "homeHelp": "Læringen starter med regionen, og forklaringer sammenligner med landet.",
     "search": "Søk etter land",
     "noMatch": "Ingen land passer. Sjekk stavemåten.",
-    "start": "Start plasseringstesten"
+    "start": "Start plasseringstesten",
+    "placementTitle": "Kan du allerede noen land?",
+    "placementBody": "En test på 5 minutter finner det du allerede kan, så du hopper over det. Du kan ta den senere fra Innstillinger.",
+    "takeTest": "Ta testen",
+    "fromZero": "Begynn fra null"
   },
   "placement": {
     "title": "Plasseringstest",
@@ -454,5 +459,192 @@
     "confirm": "Nullstille all fremgang nå? Dette kan ikke angres i appen.",
     "yes": "Nullstill",
     "cancel": "Avbryt"
+  },
+  "welcome": {
+    "eyebrow": "Gratis geografitrener",
+    "title": "Lær verden, og husk den.",
+    "lead": "GeoDex lærer deg alle land, hovedsteder og flagg, og mye mer, i korte økter hver dag. Den merker hva du blander, og tar fram hvert kort rett før du ville glemt det.",
+    "free": "Gratis. Ingen reklame, ingen konto, ingen sporing.",
+    "freeWhy": "Laget for å hjelpe folk å lære geografi. Det er ingenting å kjøpe.",
+    "start": "Begynn å lære",
+    "try": "Prøv 3 spørsmål",
+    "language": "Språk",
+    "topicsTitle": "Dette kan du lære",
+    "topics": {
+      "countries": {
+        "name": "Land",
+        "detail": "{{count}} på kartet"
+      },
+      "capitals": {
+        "name": "Hovedsteder",
+        "detail": "{{count}} hovedsteder"
+      },
+      "flags": {
+        "name": "Flagg",
+        "detail": "{{count}} flagg"
+      },
+      "currency": {
+        "name": "Valuta og språk",
+        "detail": "for hvert land"
+      },
+      "cities": {
+        "name": "Byer",
+        "detail": "{{count}} kjente byer"
+      },
+      "groups": {
+        "name": "Grupper",
+        "detail": "{{count}}, fra Skandinavia til EU"
+      },
+      "landmarks": {
+        "name": "Landemerker",
+        "detail": "{{count}} med bilder"
+      },
+      "physical": {
+        "name": "Naturgeografi",
+        "detail": "{{count}} hav, elver og fjellkjeder"
+      },
+      "history": {
+        "name": "Historie",
+        "detail": "{{count}} gamle navn, stater og riker"
+      }
+    },
+    "optional": "Valgfritt",
+    "getTitle": "Dette får du",
+    "get": {
+      "countries": "Plassere alle {{count}} land på et verdenskart",
+      "capitals": "Kunne alle hovedsteder og kjenne igjen alle flagg",
+      "currency": "Vite valuta og offisielle språk i hvert land",
+      "extras": "Om du vil: {{cities}} byer, {{landmarks}} landemerker, {{physical}} elver, hav og fjellkjeder, og {{history}} biter av historien"
+    },
+    "memoryTitle": "Kunnskap som varer",
+    "memoryBody": "Pugging forsvinner på noen dager. GeoDex bruker repetisjon med mellomrom: hvert kort kommer tilbake rett før du ville glemt det, og mellomrommet vokser hver gang du husker. Om et år kan du det fortsatt.",
+    "timeTitle": "Hvor lang tid det tar",
+    "timeBody": "Med omtrent {{minutes}} minutter om dagen møter du alle landkortene i løpet av omtrent {{weeks}} uker, og kan alle om omtrent {{months}} måneder.",
+    "timeAll": "Med alle emner slått på: omtrent {{months}} måneder.",
+    "howTitle": "Slik fungerer det",
+    "steps": {
+      "home": {
+        "title": "Velg hjemlandet ditt",
+        "body": "Sammenligninger bruker steder du kjenner. En valgfri test på 5 minutter hopper over det du allerede kan."
+      },
+      "daily": {
+        "title": "Øv noen minutter om dagen",
+        "body": "Svar på kartet, ved å velge eller ved å skrive. Spørsmålene blir vanskeligere når du blir bedre."
+      },
+      "fill": {
+        "title": "Se kartet fylles",
+        "body": "Hvert land du lærer farger atlaset ditt, og nivået ditt stiger mot 10."
+      }
+    },
+    "levelsTitle": "Nivåer fra 1 til 10",
+    "levelsBody": "Nivået viser hvor mye du husker, ikke hvor mye du har klikket. Det stiger når kortene sitter lenger, og synker hvis du glemmer.",
+    "levels": {
+      "1": "Akkurat begynt",
+      "3": "Lærer",
+      "5": "Sitter en uke",
+      "8": "Sitter tre uker",
+      "10": "Mestret"
+    },
+    "demoTitle": "Prøv 3 spørsmål",
+    "demoBody": "Ingenting lagres. Slik føles en økt.",
+    "demoProgress": "Spørsmål {{n}} av {{total}}",
+    "demoNext": "Neste spørsmål",
+    "demoDone": "Det er GeoDex. En ekte økt tilpasser seg deg: det du bommer på, kommer raskere tilbake.",
+    "demoAgain": "Prøv igjen",
+    "privacy": "Alt blir på enheten din med mindre du slår på synkronisering.",
+    "madeBy": "Laget av DIZAMU"
+  },
+  "infobox": {
+    "title": "Hva er GeoDex?",
+    "points": {
+      "what": "Korte økter hver dag lærer deg land, hovedsteder, flagg og mer.",
+      "when": "Kortene kommer tilbake rett før du ville glemt dem, så øv så mange dager du kan.",
+      "progress": "Kartet og nivåene viser hvor mye du kan."
+    },
+    "help": "Slik fungerer det",
+    "welcome": "Om GeoDex",
+    "open": "Vis",
+    "close": "Skjul"
+  },
+  "tour": {
+    "next": "Neste",
+    "back": "Tilbake",
+    "skip": "Hopp over",
+    "done": "Ferdig",
+    "progress": "{{n}} av {{total}}",
+    "label": "Omvisning",
+    "steps": {
+      "start": {
+        "title": "Start her",
+        "body": "En økt tar noen minutter. Dagens repetisjoner og nye kort står over knappen."
+      },
+      "input": {
+        "title": "Velg hvordan du svarer",
+        "body": "Auto begynner med alternativer og går over til skriving når du blir bedre. Velg selv om du vil."
+      },
+      "map": {
+        "title": "Kartet ditt",
+        "body": "Land du har begynt på, fylles inn. Den markerte regionen er neste."
+      },
+      "atlas": {
+        "title": "Atlas",
+        "body": "Alle land med nivået ditt i hver ferdighet, landsider og grenser gjennom tiden."
+      },
+      "stats": {
+        "title": "Statistikk",
+        "body": "Hva du husker, hva du blander, og hva som kommer."
+      },
+      "settings": {
+        "title": "Innstillinger",
+        "body": "Emner, tid per dag, språk, tema, synkronisering og sikkerhetskopi."
+      },
+      "help": {
+        "title": "Hjelp er alltid her",
+        "body": "Åpne den for et kart over appen, hvordan svar vurderes, eller for å se denne omvisningen igjen."
+      }
+    }
+  },
+  "help": {
+    "button": "Hjelp",
+    "title": "Hjelp",
+    "lead": "Hvor du finner hva, og hvordan GeoDex fungerer.",
+    "mapTitle": "Appen i korte trekk",
+    "nodes": {
+      "welcome": {
+        "name": "Velkommen",
+        "body": "Hva GeoDex er, og hva du kan lære."
+      },
+      "today": {
+        "name": "I dag",
+        "body": "Start en økt og se dagens oppgaver og rekken din."
+      },
+      "session": {
+        "name": "Økt",
+        "body": "Svar på spørsmål. Tilbakemeldingen forklarer hvert svar."
+      },
+      "atlas": {
+        "name": "Atlas",
+        "body": "Kartet ditt per ferdighet, landsider og grenser gjennom tiden."
+      },
+      "stats": {
+        "name": "Statistikk",
+        "body": "Hukommelse, prognose, forvekslinger og prestasjoner."
+      },
+      "settings": {
+        "name": "Innstillinger",
+        "body": "Emner, tid per dag, språk, tema, synkronisering og sikkerhetskopi."
+      }
+    },
+    "startsFrom": "starter fra I dag",
+    "gradingTitle": "Slik vurderes svarene",
+    "gradingBody": "Du vurderer aldri deg selv. Feil er feil. Et riktig svar teller som bra, som vanskelig etter et hint, en skrivefeil eller et tregt svar, eller som lett når du skriver eller trykker raskt.",
+    "harderTitle": "Hvorfor spørsmålene blir vanskeligere",
+    "harderBody": "Et nytt kort spør med alternativer på et nært kart. Når du husker det lenger, skriver du svaret, og kartet zoomer ut til kontinentet og så hele verden.",
+    "scheduleTitle": "Hvorfor kortene kommer tilbake",
+    "scheduleBody": "Hvert kort kommer tilbake rett før du ville glemt det. Bommer du, kommer det snart igjen; kan du det, blir mellomrommet lengre.",
+    "keysTitle": "Tastatur",
+    "keysBody": "I en økt: 1 til 4 velger, Enter sender og går videre, H viser et hint, Esc avslutter. Trykk ? for hele listen.",
+    "replayTour": "Se omvisningen igjen",
+    "showWelcome": "Vis velkomstsiden"
   }
 }

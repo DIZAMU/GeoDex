@@ -669,7 +669,7 @@ GeoDex/
 
 ## 10. Phases
 
-Every phase ends with typecheck, lint, tests and build green, and a commit tagged `phase-N`. Do not start phase N+1 until phase N's acceptance criteria pass.
+Every phase ends with typecheck, lint, tests and build green, and a release tagged `v0.N.0` (DECISIONS.md 040). Do not start phase N+1 until phase N's acceptance criteria pass.
 
 ### Phase 0: Scaffold
 - Vite + React + TS strict, Tailwind v4, shadcn init, Biome, Vitest, Playwright, React Router, Dexie, i18next (en + nb), Fontsource fonts.
@@ -770,6 +770,44 @@ Acceptance: every outline shows its snapshot year and an "approximate" label whe
 - Tag `v1.0.0`.
 
 There is no public demo, so the GIF and screenshots carry the portfolio role. Local-only mode already exists, so a visitor demo with no accounts is a small change later if wanted.
+
+### Phase 11: Guidance, short sessions and levels
+
+From a real user test: a first-time visitor did not understand what GeoDex is, what to do, or what they get out of it, and wanted shorter sessions with visible levels. Decisions made with the author (2026-10-14):
+
+- Audience: teens and adults. Habit, not compulsion: no hearts, no lost-streak guilt, no notifications.
+- The repository stays private; the report button stays hidden.
+
+**11.1 Front page and guidance** (first)
+- **Landing page** for new visitors (returning learners land on Today; reachable later from Help and Settings):
+  - Hero: what GeoDex is, in one sentence, and headline-level "Free. No ads, no account, no tracking", with one line on why (made to help people learn geography).
+  - Topic cards with icons and counts: countries, capitals, flags, currency and language, cities, groups, landmarks, physical geography, history.
+  - What you get: a concrete knowledge list with numbers ("place all 197 countries, name every capital..."), a plain long-term memory promise (spaced repetition explained in two lines, "you will still know this in a year"), and a time estimate ("about N minutes a day, roughly M months to master everything", computed from the daily setting).
+  - Visuals: the animated globe with topics lighting up, a 1 to 10 level path illustration, and a live mini demo of 3 varied questions (one map tap, one flag, one capital) with real feedback and a hook, not saved.
+  - How it works in 3 steps, and one Start button.
+- **Infobox on Today**: open by default for the learner's first week, then collapsed to one line ("What is GeoDex?") that expands on tap; state remembered.
+- **Placement offered, not forced**: after choosing a home country, "Already know some countries? A 5-minute test skips them" with Take the test or Start from zero.
+- **Interactive tour**: a spotlight walkthrough over the real screens after setup (Today, start a session, answer, feedback, Atlas, Stats, Settings, Help), skippable, replayable.
+- **Floating help button** on every screen (except during a session, where `?` keeps the shortcut overlay): opens Help.
+- **Help page** with the app map ("organisasjonskart"): a clickable diagram of Today, Session, Atlas, Stats and Settings and what each is for; plus short sections on how answers are graded and what levels mean, and "replay the tour".
+- Acceptance: a new visitor at 1440x900 and 390x844 sees what GeoDex is, that it is free, what they can learn and get, and how to start, without scrolling past the first screen for the first three; the tour visits every main screen; Help is one tap from every screen; e2e covers the first-visit path in both languages.
+
+**11.2 Session picker**
+- "Start session" opens a picker: length 5, 10 or 20 questions (remembered), and a focus: Mixed (default: everything due today), or one skill (location, capitals, flags, currency and language), one module (countries, cities, groups, landmarks, physical, history) or one region (continent or subregion).
+- The session holds exactly that many questions; the bar reads "3 of 10". Due cards come first, then new cards, both within the focus.
+- A focused session shows how many due cards wait outside the focus, so the schedule never silently starves.
+- Acceptance: each length and focus gives a session of that size and scope (unit tests on the queue builder, e2e on the picker).
+
+**11.3 Levels, XP and the overview**
+- **Memory level 1 to 10** for overall, each topic, each continent and each country: level = 1 + 9 x the weighted share of cards remembered (not started 0, started 0.2, holds a week 0.5, holds three weeks 0.8, mastered 1.0). It can go down when cards are forgotten. Shown with the next milestone ("18 cards to level 5").
+- **XP**, which only goes up: correct answers (more for typing and world-map formats than multiple choice), finished sessions (scaled by length), the daily goal and streak days, and memory level-ups. XP levels have named ranks in both languages (Tourist, Traveller, Explorer, Navigator, Cartographer...). XP is derived from events like everything else, never stored.
+- **Overview on Today**: level ring with the next milestone, the path to mastery (1 to 10 with your position), compact topic bars, XP level and streak, and a daily goal ring.
+- **Celebration** on a memory level-up or rank-up: a short animation, respecting reduced motion.
+- No gates: everything stays open; difficulty already rises as cards get stronger.
+- Acceptance: levels and XP are pure functions in `src/engine/` with tests; the overview is screenshot-reviewed in all themes and both languages.
+
+**11.4 Settings for goals**
+- Topics I want (the module toggles, regrouped), daily goal (sessions or minutes, used by the time estimate, the goal ring and the streak), default session length and focus, and "show the welcome and tour again".
 
 ---
 

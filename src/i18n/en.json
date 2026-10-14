@@ -56,7 +56,8 @@
     "groups": "Groups of countries (after half their members)",
     "landmarks": "Landmarks (after their country)",
     "physical": "Physical geography (after a country it touches)",
-    "history": "History (former names, dissolved states, empires)"
+    "history": "History (former names, dissolved states, empires)",
+    "welcomeAgain": "Show the welcome page and tour again"
   },
   "nav": {
     "today": "Today",
@@ -78,7 +79,11 @@
     "homeHelp": "Learning starts with its region, and explanations compare with it.",
     "search": "Search countries",
     "noMatch": "No country matches. Check the spelling.",
-    "start": "Start the placement test"
+    "start": "Start the placement test",
+    "placementTitle": "Already know some countries?",
+    "placementBody": "A 5-minute test finds what you already know, so you skip it. You can take it later from Settings.",
+    "takeTest": "Take the test",
+    "fromZero": "Start from zero"
   },
   "placement": {
     "title": "Placement test",
@@ -454,5 +459,192 @@
     "confirm": "Reset all progress now? This cannot be undone in the app.",
     "yes": "Reset",
     "cancel": "Cancel"
+  },
+  "welcome": {
+    "eyebrow": "Free geography trainer",
+    "title": "Learn the world, and keep it.",
+    "lead": "GeoDex teaches you every country, capital and flag, and much more, in short daily sessions. It notices what you mix up and brings each card back just before you would forget it.",
+    "free": "Free. No ads, no account, no tracking.",
+    "freeWhy": "Made to help people learn geography. There is nothing to buy.",
+    "start": "Start learning",
+    "try": "Try 3 questions",
+    "language": "Language",
+    "topicsTitle": "What you can learn",
+    "topics": {
+      "countries": {
+        "name": "Countries",
+        "detail": "{{count}} on the map"
+      },
+      "capitals": {
+        "name": "Capitals",
+        "detail": "{{count}} capitals"
+      },
+      "flags": {
+        "name": "Flags",
+        "detail": "{{count}} flags"
+      },
+      "currency": {
+        "name": "Currency and language",
+        "detail": "for every country"
+      },
+      "cities": {
+        "name": "Cities",
+        "detail": "{{count}} famous cities"
+      },
+      "groups": {
+        "name": "Groups",
+        "detail": "{{count}}, from Scandinavia to the EU"
+      },
+      "landmarks": {
+        "name": "Landmarks",
+        "detail": "{{count}} with photos"
+      },
+      "physical": {
+        "name": "Physical geography",
+        "detail": "{{count}} oceans, rivers and ranges"
+      },
+      "history": {
+        "name": "History",
+        "detail": "{{count}} old names, states and empires"
+      }
+    },
+    "optional": "Optional",
+    "getTitle": "What you get",
+    "get": {
+      "countries": "Place all {{count}} countries on a world map",
+      "capitals": "Name every capital and recognize every flag",
+      "currency": "Know each country's currency and official languages",
+      "extras": "If you want: {{cities}} cities, {{landmarks}} landmarks, {{physical}} rivers, seas and ranges, and {{history}} pieces of history"
+    },
+    "memoryTitle": "Knowledge that lasts",
+    "memoryBody": "Cramming fades within days. GeoDex uses spaced repetition: each card returns just before you would forget it, and the gap grows every time you remember. A year from now, you still know it.",
+    "timeTitle": "How long it takes",
+    "timeBody": "At about {{minutes}} minutes a day you meet every country card within about {{weeks}} weeks, and know them all in about {{months}} months.",
+    "timeAll": "With every topic switched on: about {{months}} months.",
+    "howTitle": "How it works",
+    "steps": {
+      "home": {
+        "title": "Pick your home country",
+        "body": "Comparisons use places you know. An optional 5-minute test skips what you already know."
+      },
+      "daily": {
+        "title": "Study a few minutes a day",
+        "body": "Answer on the map, by picking or by typing. Questions get harder as you get better."
+      },
+      "fill": {
+        "title": "Watch your map fill in",
+        "body": "Every country you learn colors your atlas, and your level climbs towards 10."
+      }
+    },
+    "levelsTitle": "Levels from 1 to 10",
+    "levelsBody": "Your level shows how much you remember, not how much you clicked. It rises as cards hold for longer, and slips if you forget.",
+    "levels": {
+      "1": "Just started",
+      "3": "Learning",
+      "5": "Holds a week",
+      "8": "Holds three weeks",
+      "10": "Mastered"
+    },
+    "demoTitle": "Try 3 questions",
+    "demoBody": "Nothing is saved. This is what a session feels like.",
+    "demoProgress": "Question {{n}} of {{total}}",
+    "demoNext": "Next question",
+    "demoDone": "That is GeoDex. A real session adapts to you: what you miss comes back sooner.",
+    "demoAgain": "Try again",
+    "privacy": "Everything stays on your device unless you turn on sync.",
+    "madeBy": "Made by DIZAMU"
+  },
+  "infobox": {
+    "title": "What is GeoDex?",
+    "points": {
+      "what": "Short daily sessions teach countries, capitals, flags and more.",
+      "when": "Cards come back just before you would forget them, so study on as many days as you can.",
+      "progress": "Your map and levels show how much you hold."
+    },
+    "help": "How it works",
+    "welcome": "About GeoDex",
+    "open": "Show",
+    "close": "Hide"
+  },
+  "tour": {
+    "next": "Next",
+    "back": "Back",
+    "skip": "Skip tour",
+    "done": "Done",
+    "progress": "{{n}} of {{total}}",
+    "label": "Guided tour",
+    "steps": {
+      "start": {
+        "title": "Start here",
+        "body": "A session takes a few minutes. Today's reviews and new cards are counted above the button."
+      },
+      "input": {
+        "title": "Choose how you answer",
+        "body": "Auto starts with choices and moves to typing as you get better. Pick one if you prefer."
+      },
+      "map": {
+        "title": "Your map",
+        "body": "Countries you have started fill in. The outlined region is next."
+      },
+      "atlas": {
+        "title": "Atlas",
+        "body": "Every country with your level in each skill, country pages, and borders over time."
+      },
+      "stats": {
+        "title": "Stats",
+        "body": "What you remember, what you mix up, and what is coming up."
+      },
+      "settings": {
+        "title": "Settings",
+        "body": "Topics, daily time, language, theme, sync and backup."
+      },
+      "help": {
+        "title": "Help is always here",
+        "body": "Open it for a map of the app, how grading works, or to replay this tour."
+      }
+    }
+  },
+  "help": {
+    "button": "Help",
+    "title": "Help",
+    "lead": "Where to go for what, and how GeoDex works.",
+    "mapTitle": "The app at a glance",
+    "nodes": {
+      "welcome": {
+        "name": "Welcome",
+        "body": "What GeoDex is and what you can learn."
+      },
+      "today": {
+        "name": "Today",
+        "body": "Start a session and see today's work and your streak."
+      },
+      "session": {
+        "name": "Session",
+        "body": "Answer questions. Feedback explains every answer."
+      },
+      "atlas": {
+        "name": "Atlas",
+        "body": "Your map per skill, country pages, borders over time."
+      },
+      "stats": {
+        "name": "Stats",
+        "body": "Retention, forecast, confusions and achievements."
+      },
+      "settings": {
+        "name": "Settings",
+        "body": "Topics, daily time, language, theme, sync and backup."
+      }
+    },
+    "startsFrom": "starts from Today",
+    "gradingTitle": "How answers are graded",
+    "gradingBody": "You never grade yourself. Wrong is wrong. A right answer counts as good, as hard after a hint, a typo or a slow answer, or as easy when you type or tap it fast.",
+    "harderTitle": "Why questions get harder",
+    "harderBody": "A new card asks with choices on a close map. As you remember it for longer, you type the answer and the map zooms out to the continent, then the world.",
+    "scheduleTitle": "Why cards come back",
+    "scheduleBody": "Each card returns just before you would forget it. Miss one and it comes back soon; know it and the gap grows.",
+    "keysTitle": "Keyboard",
+    "keysBody": "In a session: 1 to 4 choose, Enter submits and continues, H shows a hint, Esc ends. Press ? for the full list.",
+    "replayTour": "Replay the tour",
+    "showWelcome": "Show the welcome page"
   }
 }
