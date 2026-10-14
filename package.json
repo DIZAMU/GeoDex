@@ -26,7 +26,8 @@
     "data:verify": "node scripts/data/verify.ts",
     "content:compile": "node scripts/content/compile-templates.ts",
     "content:lint": "node scripts/content/lint.ts --complete",
-    "content:review": "node scripts/content/review.ts"
+    "content:review": "node scripts/content/review.ts",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@fontsource-variable/newsreader": "5.3.0",
@@ -72,6 +73,7 @@
     "@types/topojson-client": "3.1.5",
     "@types/topojson-specification": "1.0.5",
     "@vitejs/plugin-react": "6.1.2",
+    "@vitest/coverage-v8": "5.0.4",
     "fake-indexeddb": "6.2.5",
     "flag-icons": "7.5.0",
     "jsdom": "30.1.2",
