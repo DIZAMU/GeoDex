@@ -178,59 +178,72 @@ for (const [name, kinds] of SLICES) {
 }
 
 test("physical cards in every theme and language", async ({ page }) => {
-  test.setTimeout(300_000);
+  test.setTimeout(900_000);
   await setUpLearner(page, 2);
-  const NILE = FEATURES.find((f) => f.id === "Q3392") as Feature;
-  for (const theme of ["atlas", "minimal", "playful"] as const) {
-    for (const locale of ["en", "nb"] as const) {
-      await chooseThemeAndLocale(page, theme, locale);
-      await page.getByTestId("module-physical-on").click();
-      await seed(page, [
-        { cardId: "EGY:map_to_name", daysAgo: 5, rating: 3 },
-        { cardId: "EGY:name_to_map", daysAgo: 5, rating: 3 },
-        { cardId: `${NILE.id}:feature_to_map`, daysAgo: 2, rating: 1 },
-        { cardId: `${NILE.id}:map_to_feature`, daysAgo: 2, rating: 1 },
-      ]);
-      await page.goto("/session?input=mc");
-      const seen = { tap: false, name: false };
-      for (let i = 0; i < 80 && !(seen.tap && seen.name); i++) {
-        const screen = page
-          .locator('[data-testid="intro"], [data-testid="prompt"], [data-testid="feedback"]')
-          .first();
-        await expect(screen).toBeVisible();
-        if (!(await page.getByTestId("prompt").isVisible())) {
-          await page.keyboard.press("Enter");
-          await page.waitForTimeout(100);
-          continue;
-        }
-        const prompt = (await page.getByTestId("prompt").textContent()) ?? "";
-        if (prompt.includes(NILE.names[locale]) && !seen.tap) {
-          seen.tap = true;
-          await page.waitForTimeout(700);
-          await shot(page, `${theme}-${locale}-tap-prompt`);
-          const point = await tapPoint(page, NILE.id);
-          if (!point) throw new Error("no point on the Nile");
-          await page.mouse.click(point.x, point.y);
-          await expect(page.getByTestId("feature-card")).toBeVisible();
-          await shot(page, `${theme}-${locale}-tap-feedback`);
-          continue;
-        }
-        if ((await page.getByTestId("feature-selected").count()) > 0 && !seen.name) {
-          seen.name = true;
-          await page.waitForTimeout(500);
-          await shot(page, `${theme}-${locale}-name-prompt`);
-          await page.keyboard.press("1");
-          await expect(page.getByTestId("feature-card")).toBeVisible();
-          await shot(page, `${theme}-${locale}-name-feedback`);
-          continue;
-        }
-        if (await page.getByTestId("choices").isVisible()) await page.keyboard.press("1");
-        else if (await page.getByTestId("flag-choices").isVisible()) await page.keyboard.press("1");
-        else await page.getByTestId("give-up").click();
+  // Each round has its own river and country: reviews from one round reschedule its cards.
+  const rounds = [
+    ["atlas", "en", "Q3392", "EGY"],
+    ["atlas", "nb", "Q1653", "AUT"],
+    ["minimal", "en", "Q584", "DEU"],
+    ["minimal", "nb", "Q5089", "IND"],
+    ["playful", "en", "Q3783", "BRA"],
+    ["playful", "nb", "Q1497", "USA"],
+  ] as const;
+  for (const [theme, locale, featureId, countryId] of rounds) {
+    const feature = FEATURES.find((f) => f.id === featureId) as Feature;
+    await chooseThemeAndLocale(page, theme, locale);
+    await page.getByTestId("module-physical-on").click();
+    await seed(page, [
+      { cardId: `${countryId}:map_to_name`, daysAgo: 5, rating: 3 },
+      { cardId: `${countryId}:name_to_map`, daysAgo: 5, rating: 3 },
+      { cardId: `${feature.id}:feature_to_map`, daysAgo: 2, rating: 1 },
+      { cardId: `${feature.id}:map_to_feature`, daysAgo: 2, rating: 1 },
+    ]);
+    await page.goto("/session?input=mc");
+    const seen = { tap: false, name: false };
+    for (let i = 0; i < 80 && !(seen.tap && seen.name); i++) {
+      const screen = page
+        .locator('[data-testid="intro"], [data-testid="prompt"], [data-testid="feedback"]')
+        .first();
+      await expect(screen).toBeVisible();
+      if (!(await page.getByTestId("prompt").isVisible())) {
+        await page.keyboard.press("Enter");
+        await page.waitForTimeout(100);
+        continue;
       }
-      expect(seen, `${theme} ${locale}`).toEqual({ tap: true, name: true });
-      await page.keyboard.press("Escape");
+      const prompt = (await page.getByTestId("prompt").textContent()) ?? "";
+      if (prompt.endsWith(`: ${feature.names[locale]}`) && !seen.tap) {
+        seen.tap = true;
+        await page.waitForTimeout(700);
+        await shot(page, `${theme}-${locale}-tap-prompt`);
+        const point = await tapPoint(page, feature.id);
+        if (!point) throw new Error(`no point on ${feature.names.en}`);
+        await page.mouse.click(point.x, point.y);
+        await expect(page.getByTestId("feature-card")).toBeVisible();
+        await shot(page, `${theme}-${locale}-tap-feedback`);
+        continue;
+      }
+      if (
+        (await page
+          .getByTestId("feature-selected")
+          .getAttribute("data-feature")
+          .catch(() => null)) === feature.id &&
+        !seen.name
+      ) {
+        seen.name = true;
+        await page.waitForTimeout(500);
+        await shot(page, `${theme}-${locale}-name-prompt`);
+        await page.keyboard.press("1");
+        await expect(page.getByTestId("feature-card")).toBeVisible();
+        await shot(page, `${theme}-${locale}-name-feedback`);
+        continue;
+      }
+      if (await page.getByTestId("choices").isVisible()) await page.keyboard.press("1");
+      else if (await page.getByTestId("flag-choices").isVisible()) await page.keyboard.press("1");
+      else await page.getByTestId("give-up").click();
     }
+    expect(seen, `${theme} ${locale}`).toEqual({ tap: true, name: true });
+    await page.keyboard.press("Escape");
   }
 });
 

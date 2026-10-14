@@ -27,7 +27,11 @@ import {
 } from "./fit";
 import { useSize } from "./useSize";
 
-export type MapFocus = { kind: "world" } | { kind: "countries"; ids: readonly string[] };
+export type MapFocus =
+  | { kind: "world" }
+  | { kind: "countries"; ids: readonly string[] }
+  /** [west, south, east, north] in degrees, such as the area around a lake. */
+  | { kind: "box"; box: readonly [number, number, number, number] };
 
 /** One country, or several (the members of a group). */
 type Ids = string | readonly string[] | null;
@@ -99,7 +103,12 @@ type FeatureShape = {
   kind: PhysicalFeature["kind"];
   d: string;
   label: [number, number];
+  /** Typical width of the shape at zoom 1 (2 x area / perimeter); 0 for rivers. */
+  thickness: number;
 };
+
+/** Shapes thinner than this on screen get a tap dot, like small countries (PLAN.md 8.4). */
+const FEATURE_DOT_BELOW_PX = 12;
 
 const Features = memo(function Features({
   shapes,
@@ -294,12 +303,17 @@ export function WorldMap({
       });
     const featureShapes: FeatureShape[] = [...(physical ?? [])]
       .sort((a, b) => FEATURE_ORDER.indexOf(a.kind) - FEATURE_ORDER.indexOf(b.kind))
-      .map((f) => ({
-        id: f.id,
-        kind: f.kind,
-        d: path(f.geometry as Geometry) ?? "",
-        label: (projection(f.label) ?? [0, 0]) as [number, number],
-      }));
+      .map((f) => {
+        const geo = f.geometry as Geometry;
+        const perimeter = f.geometry.type === "MultiPolygon" ? path.measure(geo) : 0;
+        return {
+          id: f.id,
+          kind: f.kind,
+          d: path(geo) ?? "",
+          label: (projection(f.label) ?? [0, 0]) as [number, number],
+          thickness: perimeter > 0 ? (2 * path.area(geo)) / perimeter : 0,
+        };
+      });
     return {
       projection,
       shapes,
@@ -341,13 +355,52 @@ export function WorldMap({
 
   // Focus: fit the requested countries, animated only for the answer moment. The key is a
   // string so a new array with the same ids does not refit the map.
-  const focusKey = focus.kind === "world" ? "" : focus.ids.join(",");
+  const focusKey =
+    focus.kind === "world"
+      ? ""
+      : focus.kind === "box"
+        ? `box:${focus.box.join(",")}`
+        : focus.ids.join(",");
   useEffect(() => {
     const svg = svgRef.current;
     const behavior = zoomRef.current;
     const geometry = geometryRef.current;
     if (!svg || !behavior || !geometry || !ready) return;
     let target: Transform = { k: 1, x: 0, y: 0 };
+    if (focusKey.startsWith("box:")) {
+      // Project a grid over the box: Equal Earth bends its edges, so corners are not enough.
+      const [w, s, e, n] = focusKey.slice(4).split(",").map(Number) as [
+        number,
+        number,
+        number,
+        number,
+      ];
+      const points: [number, number][] = [];
+      for (let i = 0; i <= 6; i++)
+        for (let j = 0; j <= 6; j++) {
+          const p = geometry.projection([w + ((e - w) * i) / 6, s + ((n - s) * j) / 6]);
+          if (p) points.push(p as [number, number]);
+        }
+      const xs = points.map((p) => p[0]);
+      const ys = points.map((p) => p[1]);
+      target = fitTransform(
+        [
+          [Math.min(...xs), Math.min(...ys)],
+          [Math.max(...xs), Math.max(...ys)],
+        ],
+        width,
+        height,
+        padding,
+      );
+      const next = zoomIdentity.translate(target.x, target.y).scale(target.k);
+      const selection = select(svg);
+      if (animate && !prefersReducedMotion()) {
+        selection.transition().duration(FLY_MS).ease(themeEase).call(behavior.transform, next);
+      } else {
+        selection.interrupt().call(behavior.transform, next);
+      }
+      return;
+    }
     const ids = focusKey === "" ? [] : focusKey.split(",");
     // In views of several countries, very wide ones (Russia, Canada) are left out so a
     // region view stays on the region; their nearby parts show anyway.
@@ -520,6 +573,38 @@ export function WorldMap({
               )}
             </g>
             <g>
+              {geometry.featureShapes
+                .filter(
+                  (f) =>
+                    f.thickness > 0 &&
+                    f.thickness * transform.k < FEATURE_DOT_BELOW_PX &&
+                    (selectableFeatures?.has(f.id) ||
+                      targets.has(f.id) ||
+                      chosen.has(f.id) ||
+                      selected.has(f.id)),
+                )
+                .map((f) => {
+                  const [x, y] = toScreen(f.label);
+                  const state = targets.has(f.id)
+                    ? " map-feature-dot-target"
+                    : chosen.has(f.id)
+                      ? " map-feature-dot-chosen"
+                      : selected.has(f.id)
+                        ? " map-feature-dot-selected"
+                        : "";
+                  return (
+                    <g
+                      key={`dot-${f.id}`}
+                      transform={`translate(${x},${y})`}
+                      data-feature-dot={f.id}
+                    >
+                      {selectableFeatures?.has(f.id) ? (
+                        <circle r={MARKER_HIT_PX} className="map-marker-hit" data-feature={f.id} />
+                      ) : null}
+                      <circle r={MARKER_DOT_PX} className={`map-feature-dot${state}`} />
+                    </g>
+                  );
+                })}
               {markers.map((m) => {
                 const [x, y] = toScreen(m.centroid);
                 const state = targets.has(m.id)

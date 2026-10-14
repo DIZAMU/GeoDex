@@ -348,11 +348,16 @@ describe("landmark questions (PLAN.md 5.3)", () => {
 describe("physical questions (PLAN.md 5.3)", () => {
   const NILE = "Q3392";
 
-  it("asks to tap the feature, framed on the countries it touches while new", () => {
+  it("asks to tap the feature, framed on the feature itself while new", () => {
     const q = buildQuestion(ctx, `${NILE}:feature_to_map`, undefined, "auto", "s");
     expect(q.answer.kind).toBe("feature");
-    if (q.answer.kind !== "feature" || q.answer.view.kind !== "countries") throw new Error("view");
-    expect(q.answer.view.ids).toEqual(expect.arrayContaining(["EGY", "SDN"]));
+    if (q.answer.kind !== "feature" || q.answer.view.kind !== "box") throw new Error("view");
+    const [w, s, e, n] = q.answer.view.box;
+    // The whole Nile, from Lake Victoria to the Mediterranean, with room around it.
+    expect(w).toBeLessThan(30);
+    expect(e).toBeGreaterThan(34);
+    expect(s).toBeLessThan(0);
+    expect(n).toBeGreaterThan(31);
     expect(checkChoice(q, NILE).correct).toBe(true);
     expect(checkChoice(q, "Q4918").correct).toBe(false);
     const strong = buildQuestion(ctx, `${NILE}:feature_to_map`, state(30), "auto", "s");
@@ -367,6 +372,16 @@ describe("physical questions (PLAN.md 5.3)", () => {
     const typed = buildQuestion(ctx, `${NILE}:map_to_feature`, state(30), "auto", "n");
     expect(checkTyped(typed, ctx.indexes, "Nilen").correct).toBe(true);
     expect(checkTyped(typed, ctx.indexes, "the nile").correct).toBe(true);
+  });
+
+  it("frames small features with room around them, and oceans on the whole world", () => {
+    const chad = buildQuestion(ctx, "Q125309:feature_to_map", undefined, "auto", "c");
+    if (chad.answer.kind !== "feature" || chad.answer.view.kind !== "box") throw new Error("view");
+    const [w, s, e, n] = chad.answer.view.box;
+    expect(e - w).toBeGreaterThanOrEqual(18);
+    expect(n - s).toBeGreaterThanOrEqual(11);
+    const ocean = buildQuestion(ctx, "Q97:feature_to_map", undefined, "auto", "o");
+    if (ocean.answer.kind === "feature") expect(ocean.answer.view.kind).toBe("world");
   });
 
   it("builds every physical card", () => {
