@@ -203,3 +203,12 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
   - Wikidata's photo is replaced in `content/landmarks.seed.json` where its license is not allowed (the only Charles Bridge photo is Free Art License, so the Rialto Bridge took its place) or where it does not show the landmark (a satellite view of the Galápagos, a map of the Atacama). Two landmarks never share a photo (Banff used the Moraine Lake photo, so the Gateway Arch took its place). The moai item has no coordinates, so Easter Island stands in with the Ahu Tongariki photo.
   - Five Commons files have no machine-readable author. Their authors are read from the file pages and kept in the seed's `credit`.
 - **Commons rate limits:** the Commons API answers HTTP 429 from shared build machines. `fetch-landmarks.ts` asks for 50 files per request, one request at a time, and backs off on 429; raw answers are cached like every other fetch.
+
+## 036. Physical features: Natural Earth 1:50m, rivers by segment name
+
+- **Context:** PLAN.md Phase 8 asks for about 85 oceans, seas, rivers, ranges, deserts and lakes from Natural Earth.
+- **Choices:**
+  - 91 features in `data/curated/physical.json` by Wikidata QID: 5 oceans, 20 seas (gulfs and bays included), 25 rivers, 17 mountain ranges, 12 deserts, 12 lakes. The Atacama is left out because it is already a landmark (one QID, one entity).
+  - Marine polygons, lakes and geography regions carry a Wikidata id in Natural Earth, so they are matched by it; the north and south halves of the Atlantic and Pacific merge into one ocean each. Natural Earth's rivers have no Wikidata id and are split into segments named locally (Amazonas, Donau, Chang Jiang), so each river lists the segment names that make it up.
+  - The build simplifies each shape (tolerance by kind), places the label at the interior point farthest from the edge (on the line for rivers), and records the countries a feature crosses or borders. Those countries decide when its cards start, like cities and landmarks after their country. The Southern Ocean borders no country in scope; oceans start with the first country.
+  - The Caspian Sea is a sea here, as Natural Earth's marine layer has it.

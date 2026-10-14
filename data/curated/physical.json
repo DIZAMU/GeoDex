@@ -1,0 +1,674 @@
+{
+  "_comment": "The physical module (PLAN.md Phase 8): oceans, seas, rivers, mountain ranges, deserts and lakes, by Wikidata QID. Geometry comes from Natural Earth 1:50m: marine polygons, lakes and geography regions are matched by their wikidataid; rivers have no wikidataid there, so segments lists the Natural Earth river names that make up each river (local and upstream names included). region groups content and orders cards. names overrides Wikidata labels.",
+  "features": [
+    {
+      "id": "Q97",
+      "kind": "ocean",
+      "region": "ocean",
+      "source": "marine"
+    },
+    {
+      "id": "Q98",
+      "kind": "ocean",
+      "region": "ocean",
+      "source": "marine"
+    },
+    {
+      "id": "Q1239",
+      "kind": "ocean",
+      "region": "ocean",
+      "source": "marine"
+    },
+    {
+      "id": "Q788",
+      "kind": "ocean",
+      "region": "ocean",
+      "source": "marine"
+    },
+    {
+      "id": "Q7354",
+      "kind": "ocean",
+      "region": "ocean",
+      "source": "marine"
+    },
+    {
+      "id": "Q4918",
+      "kind": "sea",
+      "region": "europe",
+      "source": "marine"
+    },
+    {
+      "id": "Q1247",
+      "kind": "sea",
+      "region": "north_america",
+      "source": "marine"
+    },
+    {
+      "id": "Q166",
+      "kind": "sea",
+      "region": "europe",
+      "source": "marine"
+    },
+    {
+      "id": "Q23406",
+      "kind": "sea",
+      "region": "asia",
+      "source": "marine"
+    },
+    {
+      "id": "Q545",
+      "kind": "sea",
+      "region": "europe",
+      "source": "marine"
+    },
+    {
+      "id": "Q1693",
+      "kind": "sea",
+      "region": "europe",
+      "source": "marine"
+    },
+    {
+      "id": "Q45823",
+      "kind": "sea",
+      "region": "europe",
+      "source": "marine"
+    },
+    {
+      "id": "Q58705",
+      "kind": "sea",
+      "region": "asia",
+      "source": "marine"
+    },
+    {
+      "id": "Q38684",
+      "kind": "sea",
+      "region": "asia",
+      "source": "marine"
+    },
+    {
+      "id": "Q37660",
+      "kind": "sea",
+      "region": "asia",
+      "source": "marine"
+    },
+    {
+      "id": "Q27092",
+      "kind": "sea",
+      "region": "asia",
+      "source": "marine"
+    },
+    {
+      "id": "Q82931",
+      "kind": "sea",
+      "region": "oceania",
+      "source": "marine"
+    },
+    {
+      "id": "Q33254",
+      "kind": "sea",
+      "region": "oceania",
+      "source": "marine"
+    },
+    {
+      "id": "Q5484",
+      "kind": "sea",
+      "region": "asia",
+      "source": "marine"
+    },
+    {
+      "id": "Q12630",
+      "kind": "sea",
+      "region": "north_america",
+      "source": "marine"
+    },
+    {
+      "id": "Q34675",
+      "kind": "sea",
+      "region": "asia",
+      "source": "marine"
+    },
+    {
+      "id": "Q3040",
+      "kind": "sea",
+      "region": "north_america",
+      "source": "marine"
+    },
+    {
+      "id": "Q13924",
+      "kind": "sea",
+      "region": "europe",
+      "source": "marine"
+    },
+    {
+      "id": "Q41430",
+      "kind": "sea",
+      "region": "africa",
+      "source": "marine"
+    },
+    {
+      "id": "Q41602",
+      "kind": "sea",
+      "region": "asia",
+      "source": "marine"
+    },
+    {
+      "id": "Q3392",
+      "kind": "river",
+      "region": "africa",
+      "source": "rivers",
+      "segments": ["Nile", "El Bahr el Abyad", "Bahr el Jebel", "Albert Nile", "Victoria Nile"]
+    },
+    {
+      "id": "Q3783",
+      "kind": "river",
+      "region": "south_america",
+      "source": "rivers",
+      "segments": ["Amazonas"]
+    },
+    {
+      "id": "Q5413",
+      "kind": "river",
+      "region": "asia",
+      "source": "rivers",
+      "segments": ["Yangtze", "Chang Jiang", "Jinsha", "Tongtian", "Tuotuo"]
+    },
+    {
+      "id": "Q1497",
+      "kind": "river",
+      "region": "north_america",
+      "source": "rivers",
+      "segments": ["Mississippi"]
+    },
+    {
+      "id": "Q1653",
+      "kind": "river",
+      "region": "europe",
+      "source": "rivers",
+      "segments": ["Danube", "Donau"]
+    },
+    {
+      "id": "Q626",
+      "kind": "river",
+      "region": "europe",
+      "source": "rivers",
+      "segments": ["Volga"]
+    },
+    {
+      "id": "Q584",
+      "kind": "river",
+      "region": "europe",
+      "source": "rivers",
+      "segments": ["Rhine", "Rhein"]
+    },
+    {
+      "id": "Q19686",
+      "kind": "river",
+      "region": "europe",
+      "source": "rivers",
+      "segments": ["Thames"]
+    },
+    {
+      "id": "Q1471",
+      "kind": "river",
+      "region": "europe",
+      "source": "rivers",
+      "segments": ["Seine"]
+    },
+    {
+      "id": "Q3503",
+      "kind": "river",
+      "region": "africa",
+      "source": "rivers",
+      "segments": ["Congo", "Lualaba"]
+    },
+    {
+      "id": "Q3542",
+      "kind": "river",
+      "region": "africa",
+      "source": "rivers",
+      "segments": ["Niger"]
+    },
+    {
+      "id": "Q43106",
+      "kind": "river",
+      "region": "africa",
+      "source": "rivers",
+      "segments": ["Zambezi"]
+    },
+    {
+      "id": "Q41179",
+      "kind": "river",
+      "region": "asia",
+      "source": "rivers",
+      "segments": ["Mekong", "Lancang"]
+    },
+    {
+      "id": "Q5089",
+      "kind": "river",
+      "region": "asia",
+      "source": "rivers",
+      "segments": ["Ganges"]
+    },
+    {
+      "id": "Q7348",
+      "kind": "river",
+      "region": "asia",
+      "source": "rivers",
+      "segments": ["Indus"]
+    },
+    {
+      "id": "Q7355",
+      "kind": "river",
+      "region": "asia",
+      "source": "rivers",
+      "segments": ["Huang"]
+    },
+    {
+      "id": "Q46841",
+      "kind": "river",
+      "region": "asia",
+      "source": "rivers",
+      "segments": ["Lena"]
+    },
+    {
+      "id": "Q973",
+      "kind": "river",
+      "region": "asia",
+      "source": "rivers",
+      "segments": ["Ob"]
+    },
+    {
+      "id": "Q78707",
+      "kind": "river",
+      "region": "asia",
+      "source": "rivers",
+      "segments": ["Yenisey"]
+    },
+    {
+      "id": "Q6862",
+      "kind": "river",
+      "region": "asia",
+      "source": "rivers",
+      "segments": ["Amur", "Heilong Jiang"]
+    },
+    {
+      "id": "Q34589",
+      "kind": "river",
+      "region": "asia",
+      "source": "rivers",
+      "segments": ["Euphrates", "Al Furat", "Firat"]
+    },
+    {
+      "id": "Q35591",
+      "kind": "river",
+      "region": "asia",
+      "source": "rivers",
+      "segments": ["Tigris", "Dicle"]
+    },
+    {
+      "id": "Q183078",
+      "kind": "river",
+      "region": "oceania",
+      "source": "rivers",
+      "segments": ["Murray"]
+    },
+    {
+      "id": "Q127892",
+      "kind": "river",
+      "region": "south_america",
+      "source": "rivers",
+      "segments": ["Paraná"]
+    },
+    {
+      "id": "Q131792",
+      "kind": "river",
+      "region": "south_america",
+      "source": "rivers",
+      "segments": ["Orinoco"]
+    },
+    {
+      "id": "Q5451",
+      "kind": "mountain_range",
+      "region": "asia",
+      "source": "regions"
+    },
+    {
+      "id": "Q5456",
+      "kind": "mountain_range",
+      "region": "south_america",
+      "source": "regions"
+    },
+    {
+      "id": "Q5463",
+      "kind": "mountain_range",
+      "region": "north_america",
+      "source": "regions"
+    },
+    {
+      "id": "Q1286",
+      "kind": "mountain_range",
+      "region": "europe",
+      "source": "regions"
+    },
+    {
+      "id": "Q35600",
+      "kind": "mountain_range",
+      "region": "europe",
+      "source": "regions"
+    },
+    {
+      "id": "Q5477",
+      "kind": "mountain_range",
+      "region": "europe",
+      "source": "regions"
+    },
+    {
+      "id": "Q130135",
+      "kind": "mountain_range",
+      "region": "africa",
+      "source": "regions"
+    },
+    {
+      "id": "Q93332",
+      "kind": "mountain_range",
+      "region": "north_america",
+      "source": "regions"
+    },
+    {
+      "id": "Q192583",
+      "kind": "mountain_range",
+      "region": "oceania",
+      "source": "regions"
+    },
+    {
+      "id": "Q12431",
+      "kind": "mountain_range",
+      "region": "europe",
+      "source": "regions"
+    },
+    {
+      "id": "Q1288",
+      "kind": "mountain_range",
+      "region": "europe",
+      "source": "regions"
+    },
+    {
+      "id": "Q186547",
+      "kind": "mountain_range",
+      "region": "europe",
+      "source": "regions"
+    },
+    {
+      "id": "Q5474",
+      "kind": "mountain_range",
+      "region": "asia",
+      "source": "regions"
+    },
+    {
+      "id": "Q5472",
+      "kind": "mountain_range",
+      "region": "asia",
+      "source": "regions"
+    },
+    {
+      "id": "Q183295",
+      "kind": "mountain_range",
+      "region": "africa",
+      "source": "regions"
+    },
+    {
+      "id": "Q206650",
+      "kind": "mountain_range",
+      "region": "oceania",
+      "source": "regions"
+    },
+    {
+      "id": "Q167021",
+      "kind": "mountain_range",
+      "region": "asia",
+      "source": "regions"
+    },
+    {
+      "id": "Q6583",
+      "kind": "desert",
+      "region": "africa",
+      "source": "regions"
+    },
+    {
+      "id": "Q42070",
+      "kind": "desert",
+      "region": "asia",
+      "source": "regions"
+    },
+    {
+      "id": "Q47700",
+      "kind": "desert",
+      "region": "africa",
+      "source": "regions"
+    },
+    {
+      "id": "Q131377",
+      "kind": "desert",
+      "region": "africa",
+      "source": "regions"
+    },
+    {
+      "id": "Q229269",
+      "kind": "desert",
+      "region": "asia",
+      "source": "regions"
+    },
+    {
+      "id": "Q172691",
+      "kind": "desert",
+      "region": "asia",
+      "source": "regions"
+    },
+    {
+      "id": "Q132956",
+      "kind": "desert",
+      "region": "asia",
+      "source": "regions"
+    },
+    {
+      "id": "Q145165",
+      "kind": "desert",
+      "region": "oceania",
+      "source": "regions"
+    },
+    {
+      "id": "Q326896",
+      "kind": "desert",
+      "region": "oceania",
+      "source": "regions"
+    },
+    {
+      "id": "Q189429",
+      "kind": "desert",
+      "region": "north_america",
+      "source": "regions"
+    },
+    {
+      "id": "Q855658",
+      "kind": "desert",
+      "region": "north_america",
+      "source": "regions"
+    },
+    {
+      "id": "Q172702",
+      "kind": "desert",
+      "region": "asia",
+      "source": "regions"
+    },
+    {
+      "id": "Q5505",
+      "kind": "lake",
+      "region": "africa",
+      "source": "lakes"
+    },
+    {
+      "id": "Q5511",
+      "kind": "lake",
+      "region": "africa",
+      "source": "lakes"
+    },
+    {
+      "id": "Q5532",
+      "kind": "lake",
+      "region": "africa",
+      "source": "lakes"
+    },
+    {
+      "id": "Q5513",
+      "kind": "lake",
+      "region": "asia",
+      "source": "lakes"
+    },
+    {
+      "id": "Q1066",
+      "kind": "lake",
+      "region": "north_america",
+      "source": "lakes"
+    },
+    {
+      "id": "Q1169",
+      "kind": "lake",
+      "region": "north_america",
+      "source": "lakes"
+    },
+    {
+      "id": "Q1383",
+      "kind": "lake",
+      "region": "north_america",
+      "source": "lakes"
+    },
+    {
+      "id": "Q35342",
+      "kind": "lake",
+      "region": "south_america",
+      "source": "lakes"
+    },
+    {
+      "id": "Q15288",
+      "kind": "lake",
+      "region": "europe",
+      "source": "lakes"
+    },
+    {
+      "id": "Q125309",
+      "kind": "lake",
+      "region": "africa",
+      "source": "lakes"
+    },
+    {
+      "id": "Q23883",
+      "kind": "lake",
+      "region": "asia",
+      "source": "lakes"
+    },
+    {
+      "id": "Q134485",
+      "kind": "lake",
+      "region": "asia",
+      "source": "lakes"
+    }
+  ],
+  "names": {
+    "Q3503": {
+      "en": "Congo River"
+    },
+    "Q206650": {
+      "en": "Southern Alps"
+    },
+    "Q5474": {
+      "en": "Tian Shan"
+    },
+    "Q35342": {
+      "en": "Lake Titicaca"
+    },
+    "Q15288": {
+      "en": "Lake Ladoga",
+      "nb": "Ladogasjøen"
+    },
+    "Q131377": {
+      "en": "Namib Desert"
+    },
+    "Q132956": {
+      "en": "Taklamakan Desert"
+    }
+  },
+  "aliases": {
+    "Q7355": {
+      "en": ["Huang He"],
+      "nb": ["Den gule elv", "Gule elv"]
+    },
+    "Q5463": {
+      "en": ["Rockies"],
+      "nb": ["Klippefjellene"]
+    },
+    "Q93332": {
+      "en": ["Appalachians"],
+      "nb": ["Appalachian Mountains"]
+    },
+    "Q229269": {
+      "en": ["Empty Quarter", "Rub al Khali"],
+      "nb": ["Den tomme fjerdedel"]
+    },
+    "Q186547": {
+      "en": ["Scandes", "Kjølen"],
+      "nb": ["Kjølen", "Skandinaviske fjellkjede"]
+    },
+    "Q5451": {
+      "en": ["Himalaya"],
+      "nb": ["Himalayafjellene", "Himalayas"]
+    },
+    "Q5456": {
+      "en": ["Andes Mountains"],
+      "nb": ["Andesfjellene"]
+    },
+    "Q3392": {
+      "en": ["Nile River"],
+      "nb": ["Nil"]
+    },
+    "Q19686": {
+      "en": ["Thames"],
+      "nb": ["Thames"]
+    },
+    "Q1653": {
+      "en": ["Donau"],
+      "nb": ["Danube"]
+    },
+    "Q584": {
+      "en": ["Rhein"],
+      "nb": ["Rhinen", "Rhein"]
+    },
+    "Q78707": {
+      "en": ["Yenisey"],
+      "nb": ["Jenisei", "Yenisei"]
+    },
+    "Q5484": {
+      "en": ["Caspian"],
+      "nb": ["Kaspihavet"]
+    },
+    "Q37660": {
+      "en": [],
+      "nb": ["Sørkinahavet"]
+    },
+    "Q7354": {
+      "en": ["Antarctic Ocean"],
+      "nb": ["Sørhavet", "Antarktishavet"]
+    },
+    "Q788": {
+      "en": ["Arctic"],
+      "nb": ["Nordishavet", "Arktiske hav"]
+    },
+    "Q1066": {
+      "en": ["Superior"],
+      "nb": ["Øvre sjø"]
+    },
+    "Q12431": {
+      "en": [],
+      "nb": ["Pyreneene"]
+    }
+  }
+}
