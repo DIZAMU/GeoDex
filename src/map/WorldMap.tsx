@@ -29,13 +29,19 @@ import { useSize } from "./useSize";
 
 export type MapFocus = { kind: "world" } | { kind: "countries"; ids: readonly string[] };
 
+/** One country, or several (the members of a group). */
+type Ids = string | readonly string[] | null;
+
+const idSet = (ids: Ids | undefined): Set<string> =>
+  new Set(ids == null ? [] : typeof ids === "string" ? [ids] : ids);
+
 export type MapHighlight = {
   /** Filled with the accent: the answer. */
-  target?: string | null;
+  target?: Ids;
   /** Dashed outline and its own label: what the learner picked when wrong. */
-  chosen?: string | null;
+  chosen?: Ids;
   /** Shown as selected before submitting. */
-  selected?: string | null;
+  selected?: Ids;
   /** Countries that get a name label. */
   labels?: readonly string[];
   /** Countries shaded as known (placement result, mastery views). */
@@ -322,19 +328,17 @@ export function WorldMap({
   const transformRef = useRef(transform);
   transformRef.current = transform;
 
+  const targets = idSet(highlight.target);
+  const chosen = idSet(highlight.chosen);
+  const selected = idSet(highlight.selected);
   const markers = geometry
     ? [...geometry.shapes, ...geometry.markerOnly].filter(
         (s) =>
           (s.d === "" || screenArea(s.area, transform.k) < MARKER_AREA_PX) &&
-          (selectable.has(s.id) ||
-            s.id === highlight.target ||
-            s.id === highlight.chosen ||
-            s.id === highlight.selected),
+          (selectable.has(s.id) || targets.has(s.id) || chosen.has(s.id) || selected.has(s.id)),
       )
     : [];
-  const labels = [
-    ...new Set([...(highlight.labels ?? []), highlight.chosen].filter(Boolean) as string[]),
-  ];
+  const labels = [...new Set([...(highlight.labels ?? []), ...chosen])];
 
   return (
     <div
@@ -383,39 +387,50 @@ export function WorldMap({
                   <path key={`fill-${id}`} d={geometry.byId.get(id)?.d} className="map-filled" />
                 ) : null,
               )}
-              {highlight.selected && geometry.byId.get(highlight.selected)?.d ? (
-                <path
-                  d={geometry.byId.get(highlight.selected)?.d}
-                  className="map-selected"
-                  data-testid="map-selected"
-                />
-              ) : null}
-              {highlight.target && geometry.byId.get(highlight.target)?.d ? (
-                <path
-                  d={geometry.byId.get(highlight.target)?.d}
-                  className="map-target"
-                  data-testid="map-target"
-                />
-              ) : null}
-              {highlight.chosen && geometry.byId.get(highlight.chosen)?.d ? (
-                <path
-                  d={geometry.byId.get(highlight.chosen)?.d}
-                  className="map-chosen"
-                  data-testid="map-chosen"
-                />
-              ) : null}
+              {[...selected].map((id) =>
+                geometry.byId.get(id)?.d ? (
+                  <path
+                    key={`selected-${id}`}
+                    d={geometry.byId.get(id)?.d}
+                    className="map-selected"
+                    data-testid="map-selected"
+                    data-id={id}
+                  />
+                ) : null,
+              )}
+              {[...targets].map((id) =>
+                geometry.byId.get(id)?.d ? (
+                  <path
+                    key={`target-${id}`}
+                    d={geometry.byId.get(id)?.d}
+                    className="map-target"
+                    data-testid="map-target"
+                    data-id={id}
+                  />
+                ) : null,
+              )}
+              {[...chosen].map((id) =>
+                geometry.byId.get(id)?.d ? (
+                  <path
+                    key={`chosen-${id}`}
+                    d={geometry.byId.get(id)?.d}
+                    className="map-chosen"
+                    data-testid="map-chosen"
+                    data-id={id}
+                  />
+                ) : null,
+              )}
             </g>
             <g>
               {markers.map((m) => {
                 const [x, y] = toScreen(m.centroid);
-                const state =
-                  m.id === highlight.target
-                    ? "map-marker-target"
-                    : m.id === highlight.chosen
-                      ? "map-marker-chosen"
-                      : m.id === highlight.selected
-                        ? "map-marker-selected"
-                        : "";
+                const state = targets.has(m.id)
+                  ? "map-marker-target"
+                  : chosen.has(m.id)
+                    ? "map-marker-chosen"
+                    : selected.has(m.id)
+                      ? "map-marker-selected"
+                      : "";
                 const level = highlight.levels?.get(m.id);
                 return (
                   <g
@@ -494,7 +509,7 @@ export function WorldMap({
                     key={id}
                     x={x}
                     y={y}
-                    className={id === highlight.chosen ? "map-label map-label-chosen" : "map-label"}
+                    className={chosen.has(id) ? "map-label map-label-chosen" : "map-label"}
                     textAnchor="middle"
                     dominantBaseline="middle"
                   >
