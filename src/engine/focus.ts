@@ -10,7 +10,7 @@ export const SESSION_LENGTHS = [5, 10, 20] as const;
 export type SessionLength = (typeof SESSION_LENGTHS)[number];
 export const DEFAULT_SESSION_LENGTH: SessionLength = 10;
 
-export const SKILLS = ["map", "flags", "capitals", "facts"] as const;
+export const SKILLS = ["location", "capitals", "flags", "currency_language"] as const;
 export type Skill = (typeof SKILLS)[number];
 
 export const FOCUS_MODULES = [
@@ -27,6 +27,7 @@ export type Focus =
   | { kind: "mixed" }
   | { kind: "skill"; id: Skill }
   | { kind: "module"; id: FocusModule }
+  /** A continent id or a UN M49 subregion code. */
   | { kind: "region"; id: string };
 
 export const MIXED: Focus = { kind: "mixed" };
@@ -44,13 +45,17 @@ const MAP_TYPES: ReadonlySet<CardType> = new Set<CardType>([
   "map_to_empire",
 ]);
 
-/** The skill a card trains. Contrast cards mix skills and only come up in other focuses. */
+/**
+ * The skill a card trains: where a place is, capitals, flags, or currency and language. Other
+ * cards (a landmark's photo, a city's country, a former name, contrast pairs) train none of
+ * these and come up under their module, region or Mixed.
+ */
 export function cardSkill(type: CardType): Skill | null {
-  if (type === "contrast") return null;
-  if (MAP_TYPES.has(type)) return "map";
+  if (MAP_TYPES.has(type)) return "location";
   if (type === "flag_to_name" || type === "name_to_flag") return "flags";
   if (type === "country_to_capital" || type === "capital_to_country") return "capitals";
-  return "facts";
+  if (type === "country_to_currency" || type === "country_to_language") return "currency_language";
+  return null;
 }
 
 export function cardModule(type: CardType): FocusModule {
@@ -80,7 +85,7 @@ export function cardModule(type: CardType): FocusModule {
   }
 }
 
-/** `continentOf` maps a queue item's subregion to its continent id. */
+/** A region focus is a continent or one of its subregions. `continentOf` maps a queue item's subregion to its continent id. */
 export function matchesFocus(
   item: QueueItem,
   focus: Focus,
@@ -95,7 +100,7 @@ export function matchesFocus(
     case "module":
       return cardModule(type) === focus.id;
     case "region":
-      return continentOf(item.subregion) === focus.id;
+      return item.subregion === focus.id || continentOf(item.subregion) === focus.id;
   }
 }
 
@@ -110,7 +115,8 @@ export function parseFocus(key: string | null | undefined): Focus {
     return { kind, id: id as Skill };
   if (kind === "module" && (FOCUS_MODULES as readonly string[]).includes(id))
     return { kind, id: id as FocusModule };
-  if (kind === "region" && /^[a-z_]+$/.test(id)) return { kind, id };
+  // A continent id ("south_america") or a UN M49 subregion code ("154").
+  if (kind === "region" && /^([a-z_]+|\d{3})$/.test(id)) return { kind, id };
   return MIXED;
 }
 

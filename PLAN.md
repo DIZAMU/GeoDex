@@ -797,6 +797,7 @@ From a real user test: a first-time visitor did not understand what GeoDex is, w
 - The session holds exactly that many questions; the bar reads "3 of 10". Due cards come first, then new cards, both within the focus.
 - A focused session shows how many due cards wait outside the focus, so the schedule never silently starves.
 - Acceptance: each length and focus gives a session of that size and scope (unit tests on the queue builder, e2e on the picker).
+- Built: the focus slices today's plan (`src/engine/focus.ts`), so a focused session never adds work the plan did not schedule. Cards outside the four skills (a landmark photo, a city's country, a former name, contrast pairs) come up under their topic, region or Mixed. Learning steps that come back take the place of queue cards, so the length holds.
 
 **11.3 Levels, XP and the overview**
 - **Memory level 1 to 10** for overall, each topic, each continent and each country: level = 1 + 9 x the weighted share of cards remembered (not started 0, started 0.2, holds a week 0.5, holds three weeks 0.8, mastered 1.0). It can go down when cards are forgotten. Shown with the next milestone ("18 cards to level 5").

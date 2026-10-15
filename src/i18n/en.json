@@ -657,13 +657,8 @@
     "skills": "Skills",
     "modules": "Topics",
     "regions": "Continents",
+    "allOf": "All of {{name}}",
     "option": "{{name}} ({{count}})",
-    "skill": {
-      "map": "On the map",
-      "flags": "Flags",
-      "capitals": "Capitals",
-      "facts": "Names and facts"
-    },
     "module": {
       "countries": "Countries",
       "cities": "Famous cities",
