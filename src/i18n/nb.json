@@ -70,7 +70,10 @@
     "sessions_other": "{{count}} økter",
     "goalHelp": "Når du når målet, fylles ringen på I dag, du får XP, og dagen teller med i dager på rad, selv om det er repetisjoner igjen.",
     "sessionLength": "Øktlengde",
-    "sessionFocus": "Øktfokus"
+    "sessionFocus": "Øktfokus",
+    "levelProgress": "Veien til neste nivå",
+    "levelCards": "Kort som gjenstår",
+    "levelPercent": "Prosent"
   },
   "nav": {
     "today": "I dag",
@@ -720,7 +723,10 @@
     "goalSessionsLabel_one": "{{done}} av {{count}} økt fullført i dag",
     "goalSessionsLabel_other": "{{done}} av {{count}} økter fullført i dag",
     "ofSessions_one": "av {{goal}} økt",
-    "ofSessions_other": "av {{goal}} økter"
+    "ofSessions_other": "av {{goal}} økter",
+    "toNextPercent": "{{percent}} av veien til nivå {{level}}",
+    "showCards": "Vis kort som gjenstår",
+    "showPercent": "Vis som prosent"
   },
   "rank": {
     "tourist": "Turist",

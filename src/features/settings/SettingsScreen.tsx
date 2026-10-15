@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 import { CONTINENTS } from "@/data/types";
 import { db, type SettingsRow } from "@/db/db";
 import { resetProgress } from "@/db/reviews";
-import { setSessionPick, setTourDone, updateSettings } from "@/db/settings";
+import { setLevelProgress, setSessionPick, setTourDone, updateSettings } from "@/db/settings";
 import {
   FOCUS_MODULES,
   type Focus,
@@ -143,6 +143,14 @@ export function SettingsScreen() {
         ) : null}
         <p className="-mt-3 text-sm text-muted-foreground">{t("settings.goalHelp")}</p>
         <SessionDefaults learner={learner} />
+        <Choice
+          label={t("settings.levelProgress")}
+          value={learner.device.levelProgress === "percent" ? "percent" : "cards"}
+          options={["cards", "percent"] as const}
+          render={(v) => t(v === "cards" ? "settings.levelCards" : "settings.levelPercent")}
+          onChange={(v) => void setLevelProgress(db, v)}
+          testId="level-progress"
+        />
       </Group>
       <Group title={t("settings.groupTopics")}>
         <Choice
