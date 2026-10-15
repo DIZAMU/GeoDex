@@ -10,9 +10,7 @@ import {
 
 async function xpOnToday(page: Page): Promise<number> {
   await page.goto("/");
-  const text = (await page.getByTestId("xp").textContent()) ?? "";
-  const match = text.match(/([\d\s,.  ]+)\s*XP/);
-  return Number((match?.[1] ?? "0").replace(/[^\d]/g, ""));
+  return Number(await page.getByTestId("xp-total").getAttribute("data-xp"));
 }
 
 test("the overview shows level, next milestone, XP, goal and the path", async ({ page }) => {
@@ -86,5 +84,6 @@ test("a session that reaches a new rank celebrates it", async ({ page }) => {
   await expect(page.getByTestId("celebration")).toContainText("New rank: Traveller");
   await expect(page.getByTestId("summary-xp")).toHaveText(/^\+\d+ XP$/);
   const width = page.viewportSize()?.width;
+  await page.waitForTimeout(1500); // let the entrance and the sparks finish
   await page.screenshot({ path: `test-results/screens/celebration-${width}.png` });
 });

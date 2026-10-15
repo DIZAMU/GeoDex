@@ -690,7 +690,7 @@
     "title": "Fremgangen din",
     "level": "Nivå",
     "levelLabel": "Hukommelsesnivå {{level}} av 10",
-    "memory": "Hukommelsesnivå",
+    "memory": "Hukommelse",
     "toNext_one": "{{count}} kort til for nivå {{level}}",
     "toNext_other": "{{count}} kort til for nivå {{level}}",
     "top": "Toppnivå. Fortsett å repetere for å holde det.",

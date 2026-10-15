@@ -103,7 +103,7 @@ export function Overview({ learner }: { learner: Learner }) {
           </span>
         </Ring>
         <div className="flex min-w-0 flex-1 flex-col gap-1">
-          <p className="font-name text-lg">{t("overview.memory")}</p>
+          <p className="font-name text-lg break-words">{t("overview.memory")}</p>
           <p className="text-sm text-muted-foreground" data-testid="next-level">
             {overall.cardsToNext === null
               ? t("overview.top")
@@ -140,7 +140,11 @@ export function Overview({ learner }: { learner: Learner }) {
               {t("overview.xpLevel", { level: number.format(xp.level) })}
             </span>
           </span>
-          <span className="text-muted-foreground tabular-nums">
+          <span
+            className="text-muted-foreground tabular-nums"
+            data-testid="xp-total"
+            data-xp={xp.xp}
+          >
             {t("overview.xp", { xp: number.format(xp.xp) })}
           </span>
         </div>
