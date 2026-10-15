@@ -137,14 +137,16 @@ export type SessionState = {
   pending: { item: QueueItem; due: number }[];
   recent: QueueItem[];
   answered: number;
+  /** The session ends after this many answers; learning steps take the place of queue cards. */
+  limit: number;
 };
 
-export function startSession(queue: QueueItem[]): SessionState {
-  return { queue, pending: [], recent: [], answered: 0 };
+export function startSession(queue: QueueItem[], limit = Number.POSITIVE_INFINITY): SessionState {
+  return { queue, pending: [], recent: [], answered: 0, limit };
 }
 
 export function remaining(state: SessionState): number {
-  return state.queue.length + state.pending.length;
+  return Math.min(state.queue.length + state.pending.length, state.limit - state.answered);
 }
 
 /** The next card to show, and the state with it removed. Null when the session is done. */
@@ -152,6 +154,7 @@ export function nextItem(
   state: SessionState,
   now: number,
 ): { item: QueueItem; state: SessionState } | null {
+  if (state.answered >= state.limit) return null;
   const take = (from: "queue" | "pending", index: number) => {
     const queue = [...state.queue];
     const pending = [...state.pending];
