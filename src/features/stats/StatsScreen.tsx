@@ -18,6 +18,7 @@ import {
 import { isLocale, type Locale } from "@/i18n/locales";
 import { Loader } from "@/ui/loader";
 import { nameOf } from "../session/parts";
+import { useLevels } from "../study/levels";
 import { confusionScoresFor, historyCardTypes, scopedCountries } from "../study/plan";
 import { useProgress } from "../study/progress";
 import { type Learner, useLearner } from "../study/useLearner";
@@ -62,6 +63,7 @@ function Stats({ learner }: { learner: Learner }) {
   const { t, i18n } = useTranslation();
   const locale: Locale = isLocale(i18n.language) ? i18n.language : "en";
   const progress = useProgress(learner);
+  const levels = useLevels(learner);
   const dsh = learner.settings.dayStartHour;
   const data = useMemo(() => {
     const now = Date.now();
@@ -126,6 +128,35 @@ function Stats({ learner }: { learner: Learner }) {
       <h1 className="font-name text-3xl tracking-tight">{t("stats.title")}</h1>
 
       <div className="stagger grid grid-cols-[minmax(0,1fr)] gap-4 lg:grid-cols-3">
+        <Panel title={t("stats.levels")} id="levels">
+          <p className="text-sm text-muted-foreground">{t("stats.levelsHelp")}</p>
+          <ul className="flex flex-col gap-2.5">
+            {[
+              ...continents.flatMap((c) => {
+                const m = levels.byContinent.get(c);
+                return m ? [{ key: c, name: t(`continent.${c}`), m }] : [];
+              }),
+              ...[...levels.byModule]
+                .filter(([id, m]) => id !== "countries" && m.cards > 0)
+                .map(([id, m]) => ({ key: id, name: t(`picker.module.${id}`), m })),
+            ].map(({ key, name, m }) => (
+              <li key={key} className="flex flex-col gap-1" data-testid={`level-${key}`}>
+                <div className="flex items-baseline justify-between gap-2 text-sm">
+                  <span className="truncate">{name}</span>
+                  <span className="shrink-0 text-muted-foreground tabular-nums">
+                    {t("overview.levelShort", { level: m.level })}
+                  </span>
+                </div>
+                <div aria-hidden className="h-1.5 overflow-hidden rounded-full bg-muted">
+                  <div
+                    className="h-full rounded-full bg-primary/70"
+                    style={{ width: `${m.share * 100}%` }}
+                  />
+                </div>
+              </li>
+            ))}
+          </ul>
+        </Panel>
         <Panel title={t("stats.grid")} id="grid" className="lg:col-span-2">
           <p className="text-sm text-muted-foreground">{t("stats.gridHelp")}</p>
           {/* biome-ignore lint/a11y/noNoninteractiveTabindex: a scrollable region must be focusable (WCAG 2.1.1) */}
