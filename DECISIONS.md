@@ -241,3 +241,10 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 
 - **Context:** GitHub orders releases by their tag as a version where it can parse one. `phase-10.1` and `phase-10.2` sorted between `phase-5.1` and `phase-5`, below the phases before them.
 - **Decision:** tags are semantic versions: phase N is `v0.N.0`, a follow-up release within a phase is `v0.N.M`, and the portfolio release is `v1.0.0`. Release titles keep their "Phase N" names. The release workflow renamed the existing `phase-*` tags once, keeping each release's title, notes and date. This replaces the `phase-N` tag names in decisions 008 and 010.
+
+## 041. Memory levels, XP and ranks
+
+- **Context:** PLAN.md 11.3 asks for a memory level 1 to 10 that can fall, and XP that only rises and includes memory level-ups. XP is derived from events, never stored.
+- **Levels:** a card counts 0 not started, 0.2 started, 0.5 once its stability reaches 7 days, 0.8 at 21 days, and 1.0 at 62 days, the "mastered" point of the welcome page's time estimate (`MASTERED_AFTER_DAYS`). The Atlas and achievements keep their own 21-day "mastered", which marks a country's colour on the map, not its level. Contrast cards are left out: they appear and retire with confusions, so counting them would move a level for reasons the learner cannot see.
+- **Options for level-up XP:** (a) replay card states day by day to find each level first reached, which costs a full replay per render; (b) pay for card memory milestones instead: the first correct answer after a card held 7, 21 and 62 days.
+- **Decision:** (b). It is monotone, cheap, and rewards the same thing a level-up does. Other XP: 10 per correct multiple choice answer, 15 typed, map or pin, 5 placement; 2 per answer for a session of 5 or more (a run with no gap over 15 minutes); 10 per study day; 40 per day the daily time is met. XP levels need 50 x n x (n - 1) XP. Ranks: Tourist (1), Traveller (3), Explorer (5), Navigator (8), Cartographer (12), Geographer (17), Atlas keeper (23).
