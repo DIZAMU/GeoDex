@@ -31,6 +31,8 @@ export type SettingsRow = {
    * Absent on rows written before the reset existed.
    */
   progressResetAt?: number | null;
+  /** The daily goal kind (PLAN.md 11.4). Absent means minutes, using `dailyMinutes`. */
+  dailyGoal?: { kind: "minutes" } | { kind: "sessions"; sessions: number };
   updatedAt: number;
 };
 

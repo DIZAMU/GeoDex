@@ -18,7 +18,7 @@ import {
   LANDMARK_CARD_TYPES,
   PHYSICAL_CARD_TYPES,
 } from "@/engine/types";
-import { computeXp, goalToday, type XpLevel, xpLevel } from "@/engine/xp";
+import { computeXp, type DailyGoal, goalToday, type XpLevel, xpLevel } from "@/engine/xp";
 import { historyCardTypes, type PlanSettings, scopedCountries, scopedGroup } from "./plan";
 import type { Learner } from "./useLearner";
 
@@ -132,6 +132,16 @@ export function computeLevels(
   };
 }
 
+/** The learner's daily goal: sessions, or (by default) their daily time in minutes. */
+export function goalOf(settings: {
+  dailyMinutes: number;
+  dailyGoal?: { kind: "minutes" } | { kind: "sessions"; sessions: number };
+}): DailyGoal {
+  return settings.dailyGoal?.kind === "sessions"
+    ? { kind: "sessions", sessions: settings.dailyGoal.sessions }
+    : { kind: "minutes", minutes: settings.dailyMinutes };
+}
+
 export type LearnerLevels = Levels & {
   xp: XpLevel;
   goal: ReturnType<typeof goalToday>;
@@ -139,10 +149,7 @@ export type LearnerLevels = Levels & {
 
 export function learnerLevels(learner: Learner, now: number): LearnerLevels {
   const cards = courseCards(learner.world, learner.settings);
-  const options = {
-    dayStartHour: learner.settings.dayStartHour,
-    dailyGoalMinutes: learner.settings.dailyMinutes,
-  };
+  const options = { dayStartHour: learner.settings.dayStartHour, goal: goalOf(learner.settings) };
   return {
     ...computeLevels(cards, learner.states),
     xp: xpLevel(computeXp(learner.events, options).total),

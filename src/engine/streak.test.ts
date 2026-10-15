@@ -75,6 +75,22 @@ describe("streak", () => {
     expect(computeStreak(scheduler, many, BASE + 40 * DAY, 4).days[firstDue]?.counted).toBe(true);
   });
 
+  it("counts a day on which the daily goal was met, even with due cards left", () => {
+    const learn = ["A", "B", "C"].flatMap((c) => [
+      ev(0, `${c}:map_to_name`),
+      ev(0, `${c}:map_to_name`),
+    ]);
+    const base = computeStreak(scheduler, learn, BASE + 40 * DAY, 4);
+    const firstDue = base.days.findIndex((d, i) => i > 0 && d.due > 0);
+    const partial = [...learn, ev(firstDue, "A:map_to_name")];
+    const dayStart = base.days[firstDue]?.start ?? 0;
+    const s = computeStreak(scheduler, partial, BASE + 40 * DAY, 4, new Set([dayStart]));
+    expect(s.days[firstDue]?.counted).toBe(true);
+    // A goal with no scheduled review that day still does not count.
+    const empty = computeStreak(scheduler, learn, BASE + 40 * DAY, 4, new Set([dayStart]));
+    expect(empty.days[firstDue]?.counted).toBe(false);
+  });
+
   it("ignores drill and placement events, and records milestones", () => {
     const drill = [ev(0, "D:map_to_name", { scheduled: false })];
     expect(computeStreak(scheduler, drill, BASE, 4).current).toBe(0);

@@ -6,6 +6,8 @@ import { useMemo } from "react";
 import { type Achievement, computeAchievements, SKILLS, type Skill } from "@/engine/achievements";
 import type { CardState } from "@/engine/scheduler";
 import { computeStreak, type Streak } from "@/engine/streak";
+import { goalDays } from "@/engine/xp";
+import { goalOf } from "./levels";
 import { scopedCountries } from "./plan";
 import type { Learner } from "./useLearner";
 
@@ -47,6 +49,10 @@ export function computeProgress(learner: Learner, now: number): Progress {
     learner.events,
     now,
     learner.settings.dayStartHour,
+    goalDays(learner.events, {
+      dayStartHour: learner.settings.dayStartHour,
+      goal: goalOf(learner.settings),
+    }),
   );
   const achievements = computeAchievements({
     scheduler: learner.scheduler,
