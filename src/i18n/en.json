@@ -387,7 +387,10 @@
     "retention": "Correct: {{value}}",
     "tomorrow_one": "{{count}} card due tomorrow",
     "tomorrow_other": "{{count}} cards due tomorrow",
-    "newAchievements": "New achievements"
+    "newAchievements": "New achievements",
+    "xp": "+{{xp}} XP",
+    "levelUp": "Memory level {{level}}",
+    "rankUp": "New rank: {{rank}}"
   },
   "drill": {
     "title": "Drill",
