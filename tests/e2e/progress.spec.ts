@@ -47,6 +47,10 @@ async function capture(page: Page): Promise<Record<string, string>> {
   ] as const) {
     await page.goto(url);
     await expect(page.getByTestId(ready)).toBeVisible();
+    // Maps draw (with their labels) once they have measured their box; read the text after.
+    await page.waitForFunction(() =>
+      [...document.querySelectorAll("svg.world-map")].every((svg) => svg.querySelector("path")),
+    );
     await noHorizontalScroll(page);
     out[name] = await page.locator("main").innerText();
   }
