@@ -694,12 +694,16 @@
     "toNext_one": "{{count}} kort til for nivå {{level}}",
     "toNext_other": "{{count}} kort til for nivå {{level}}",
     "top": "Toppnivå. Fortsett å repetere for å holde det.",
-    "goalLabel": "{{minutes}} av {{goal}} minutter øvd i dag",
     "ofMinutes": "av {{goal}} min",
     "xpLevel": "XP-nivå {{level}}",
     "xp": "{{xp}} XP",
     "xpToNext": "{{xp}} XP til neste XP-nivå",
-    "levelShort": "Nivå {{level}}"
+    "levelShort": "Nivå {{level}}",
+    "goalMinutesLabel": "{{done}} av {{count}} minutter øvd i dag",
+    "goalSessionsLabel_one": "{{done}} av {{count}} økt fullført i dag",
+    "goalSessionsLabel_other": "{{done}} av {{count}} økter fullført i dag",
+    "ofSessions_one": "av {{goal}} økt",
+    "ofSessions_other": "av {{goal}} økter"
   },
   "rank": {
     "tourist": "Turist",
