@@ -1,0 +1,211 @@
+/**
+ * Session picker (PLAN.md 11.2): how many questions, and on what. The choice is remembered on
+ * this device. A focused session shows the reviews it leaves for later.
+ */
+import { ArrowRightIcon, ChevronDownIcon } from "lucide-react";
+import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
+import { CONTINENTS } from "@/data/types";
+import { db } from "@/db/db";
+import { setLastInputMode, setSessionPick } from "@/db/settings";
+import {
+  FOCUS_MODULES,
+  type Focus,
+  focusCounts,
+  focusKey,
+  MIXED,
+  parseFocus,
+  parseLength,
+  SESSION_LENGTHS,
+  SKILLS,
+  sliceSession,
+} from "@/engine/focus";
+import type { QueueItem } from "@/engine/session";
+import type { InputSetting } from "@/engine/types";
+import { Button } from "@/ui/button";
+import { ToggleGroup, ToggleGroupItem } from "@/ui/toggle-group";
+import { continentLookup } from "../study/plan";
+import type { Learner } from "../study/useLearner";
+
+const INPUTS: readonly InputSetting[] = ["auto", "mc", "typing"];
+
+export function SessionPicker({
+  learner,
+  queue,
+}: {
+  learner: Learner;
+  queue: readonly QueueItem[];
+}) {
+  const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
+  const number = new Intl.NumberFormat(i18n.language);
+  const continentOf = useMemo(() => continentLookup(learner.world), [learner.world]);
+  const length = parseLength(learner.device.sessionLength);
+  const input = learner.device.lastInputMode;
+
+  const groups = useMemo(() => {
+    const modules = FOCUS_MODULES.filter(
+      (m) => m === "countries" || learner.settings.modules?.[m] === true,
+    );
+    return [
+      { label: "skills", items: SKILLS.map((id): Focus => ({ kind: "skill", id })) },
+      // One module has nothing to pick between.
+      {
+        label: "modules",
+        items: modules.length > 1 ? modules.map((id): Focus => ({ kind: "module", id })) : [],
+      },
+      { label: "regions", items: CONTINENTS.map((id): Focus => ({ kind: "region", id })) },
+    ] as const;
+  }, [learner.settings.modules]);
+  const counts = useMemo(
+    () => focusCounts(queue, [MIXED, ...groups.flatMap((g) => g.items)], continentOf),
+    [queue, groups, continentOf],
+  );
+  // A remembered focus that is empty today (or no longer offered) falls back to Mixed.
+  const remembered = parseFocus(learner.device.sessionFocus);
+  const focus = (counts.get(focusKey(remembered)) ?? 0) > 0 ? remembered : MIXED;
+  const slice = useMemo(
+    () => sliceSession(queue, focus, length, continentOf),
+    [queue, focus, length, continentOf],
+  );
+
+  const name = (f: Focus): string => {
+    switch (f.kind) {
+      case "mixed":
+        return t("picker.mixed");
+      case "skill":
+        return t(`picker.skill.${f.id}`);
+      case "module":
+        return t(`picker.module.${f.id}`);
+      case "region":
+        return t(`continent.${f.id as (typeof CONTINENTS)[number]}`);
+    }
+  };
+  const pick = (next: { length?: number; focus?: Focus }) =>
+    void setSessionPick(db, {
+      sessionLength: next.length ?? length,
+      sessionFocus: focusKey(next.focus ?? focus),
+    });
+  const start = () => {
+    const params = new URLSearchParams({
+      input,
+      length: String(length),
+      focus: focusKey(focus),
+    });
+    navigate(`/session?${params}`, { viewTransition: true });
+  };
+
+  return (
+    <div className="flex flex-col gap-5 pt-2" data-testid="picker">
+      <div className="grid gap-4 sm:grid-cols-[auto_minmax(0,1fr)] sm:items-center sm:gap-x-6">
+        <span className="text-sm text-muted-foreground" id="picker-length">
+          {t("picker.length")}
+        </span>
+        <ToggleGroup
+          type="single"
+          variant="outline"
+          spacing={0}
+          value={String(length)}
+          aria-labelledby="picker-length"
+          className="self-start"
+          onValueChange={(value) => {
+            if (value) pick({ length: parseLength(value) });
+          }}
+        >
+          {SESSION_LENGTHS.map((n) => (
+            <ToggleGroupItem
+              key={n}
+              value={String(n)}
+              aria-label={t("picker.lengthOption", { count: n })}
+              className="min-w-14 tabular-nums"
+              data-testid={`length-${n}`}
+            >
+              {number.format(n)}
+            </ToggleGroupItem>
+          ))}
+        </ToggleGroup>
+
+        <label className="text-sm text-muted-foreground" htmlFor="picker-focus">
+          {t("picker.focus")}
+        </label>
+        <div className="relative max-w-sm">
+          <select
+            id="picker-focus"
+            data-testid="focus"
+            value={focusKey(focus)}
+            onChange={(e) => pick({ focus: parseFocus(e.target.value) })}
+            className="h-10 w-full appearance-none rounded-lg border border-border bg-card/60 py-2 pr-10 pl-3 text-sm shadow-xs outline-none transition-colors hover:bg-accent focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+          >
+            <option value="mixed">
+              {t("picker.option", {
+                name: name(MIXED),
+                count: number.format(counts.get("mixed") ?? 0),
+              })}
+            </option>
+            {groups.map((g) =>
+              g.items.length > 0 ? (
+                <optgroup key={g.label} label={t(`picker.${g.label}`)}>
+                  {g.items.map((f) => {
+                    const count = counts.get(focusKey(f)) ?? 0;
+                    return (
+                      <option key={focusKey(f)} value={focusKey(f)} disabled={count === 0}>
+                        {t("picker.option", { name: name(f), count: number.format(count) })}
+                      </option>
+                    );
+                  })}
+                </optgroup>
+              ) : null,
+            )}
+          </select>
+          <ChevronDownIcon
+            aria-hidden
+            className="pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2 text-muted-foreground"
+          />
+        </div>
+
+        <span className="text-sm text-muted-foreground" id="picker-input">
+          {t("today.inputMode")}
+        </span>
+        <ToggleGroup
+          type="single"
+          variant="outline"
+          spacing={0}
+          value={input}
+          aria-labelledby="picker-input"
+          className="self-start"
+          data-tour="input"
+          onValueChange={(value) => {
+            if (INPUTS.includes(value as InputSetting))
+              void setLastInputMode(db, value as InputSetting);
+          }}
+        >
+          {INPUTS.map((mode) => (
+            <ToggleGroupItem key={mode} value={mode} data-testid={`input-${mode}`}>
+              {t(`input.${mode}`)}
+            </ToggleGroupItem>
+          ))}
+        </ToggleGroup>
+      </div>
+
+      <div className="flex flex-col gap-2">
+        <Button
+          size="lg"
+          className="group h-14 self-stretch px-8 text-base sm:self-start"
+          data-testid="start"
+          data-tour="start"
+          disabled={slice.queue.length === 0}
+          onClick={start}
+        >
+          {t("picker.start", { count: slice.queue.length })}
+          <ArrowRightIcon className="transition-transform duration-200 group-hover:translate-x-0.5" />
+        </Button>
+        {slice.dueOutside > 0 ? (
+          <p className="text-sm text-muted-foreground" data-testid="outside">
+            {t("picker.outside", { count: slice.dueOutside })}
+          </p>
+        ) : null}
+      </div>
+    </div>
+  );
+}

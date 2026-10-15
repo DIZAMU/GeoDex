@@ -501,3 +501,9 @@ export function confusionScoresFor(world: WorldData, events: readonly PlanEvent[
     return chosen ? [target, chosen] : null;
   });
 }
+
+/** Continent of a subregion, for focusing a session on a continent (PLAN.md 11.2). */
+export function continentLookup(world: WorldData): (subregion: string) => string | undefined {
+  const map = new Map(world.subregions.map((s) => [s.id, s.continent as string]));
+  return (subregion) => map.get(subregion);
+}

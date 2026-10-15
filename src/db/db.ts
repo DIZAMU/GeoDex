@@ -70,6 +70,9 @@ export type DeviceSettingsRow = {
   tourDoneAt?: number | null;
   /** The Today info box: open or closed by the learner; null follows the first-week default. */
   infoboxOpen?: boolean | null;
+  /** The session picker's last length and focus (PLAN.md 11.2); null uses the defaults. */
+  sessionLength?: number | null;
+  sessionFocus?: string | null;
 };
 
 /**
