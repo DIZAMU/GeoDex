@@ -75,7 +75,7 @@ More in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 - Unit tests (Vitest) for all pure logic in `src/engine/`, with CI failing below 90% line coverage there (97% now). Data tests check every country, city, landmark, feature and outline.
 - End-to-end tests (Playwright) at 1440x900 and 390x844, in all three themes and both languages, including acceptance tests per phase: every physical feature is tappable at its default zoom, every history outline shows its year.
 - Lighthouse on the production build: desktop performance 89, accessibility 100, best practices 100, SEO 92; mobile (throttled) performance 64. The mobile score is held back by drawing the detailed world map on load.
-- Every fact a model wrote is listed in `content/REVIEW.md` until the author verifies it.
+- Every hand-written fact that is not yet verified is listed in `content/REVIEW.md` until the author checks it.
 
 ## Development
 
