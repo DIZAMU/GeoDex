@@ -83,7 +83,16 @@ export function useDailySession(
   }));
   const scheduled = kind.kind === "daily";
 
-  const session = useRef<SessionState>(startSession(start.queue, start.queue.length));
+  // A picked length is a promise: learning steps that come back take the place of queue
+  // cards. A bare link runs all of today, with learning steps on top, as before the picker.
+  const session = useRef<SessionState>(
+    startSession(
+      start.queue,
+      kind.kind === "daily" && !Number.isFinite(kind.length)
+        ? Number.POSITIVE_INFINITY
+        : start.queue.length,
+    ),
+  );
   const states = useRef(new Map(learner.states));
   const introduced = useRef(new Set<string>());
   /** Snippets shown on an intro panel, recorded with that card's first review. */

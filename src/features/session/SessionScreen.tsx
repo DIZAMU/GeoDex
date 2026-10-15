@@ -176,7 +176,11 @@ export function Session({
         correct={view.correct}
         held={held}
         drill={kind?.kind === "drill"}
-        again={kind?.kind === "daily" ? { length: kind.length, focus: kind.focus } : null}
+        again={
+          kind?.kind === "daily" && Number.isFinite(kind.length)
+            ? { length: kind.length, focus: kind.focus }
+            : null
+        }
       />
     );
   }
