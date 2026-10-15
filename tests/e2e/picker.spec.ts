@@ -29,6 +29,8 @@ test("a 5-question session holds exactly 5 and shows its position", async ({ pag
   await expect(page).toHaveURL(/length=5/);
 
   // Position moves only when the learner continues past feedback.
+  if ((await currentScreen(page)) === "intro") await page.keyboard.press("Enter");
+  await expect(page.getByTestId("prompt")).toBeVisible();
   await answerPrompt(page);
   await expect(page.getByTestId("left")).toHaveText("1 of 5");
   await page.keyboard.press("Enter");
