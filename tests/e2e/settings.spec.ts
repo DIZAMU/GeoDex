@@ -54,3 +54,40 @@ test("reset progress starts over but keeps every review in the export", async ({
   );
   expect(after).toEqual({ events: before, states: 0 });
 });
+
+test("goal settings reach Today: sessions goal, session defaults and the tour", async ({
+  page,
+}) => {
+  test.setTimeout(120_000);
+  await setUpLearner(page, 4);
+  await page.goto("/settings");
+  await page.getByTestId("goal-sessions").click();
+  await page.getByTestId("goal-sessions-2").click();
+  await page.getByTestId("default-length-20").click();
+  await page.getByTestId("default-focus").selectOption("skill:flags");
+  await expect(page.getByTestId("default-focus")).toHaveValue("skill:flags");
+  await page.screenshot({
+    path: `test-results/screens/settings-goals-${page.viewportSize()?.width}.png`,
+    fullPage: true,
+  });
+
+  await page.goto("/");
+  await expect(page.getByTestId("goal-ring")).toHaveAttribute(
+    "aria-label",
+    "0 of 2 sessions done today",
+  );
+  await expect(page.getByTestId("length-20")).toHaveAttribute("data-state", "on");
+  await expect(page.getByTestId("focus")).toHaveValue("skill:flags");
+
+  // Back to minutes: the ring follows the daily time.
+  await page.goto("/settings");
+  await page.getByTestId("goal-minutes").click();
+  await page.getByTestId("minutes-30").click();
+  await page.goto("/");
+  await expect(page.getByTestId("goal-ring")).toHaveAttribute("aria-label", /of 30 minutes/);
+
+  // The tour can be replayed from Settings.
+  await page.goto("/settings");
+  await page.getByTestId("tour-again").click();
+  await expect(page.getByTestId("tour")).toBeVisible();
+});
