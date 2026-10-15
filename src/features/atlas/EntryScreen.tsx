@@ -85,13 +85,13 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
         <section className="enter flex flex-col gap-6" aria-labelledby="entry-title">
-          <div className="flex items-start gap-5">
+          <div className="flex flex-wrap items-start gap-x-5 gap-y-3">
             <Flag
               iso2={country.iso2}
               alt={t("flag.of", { name: country.names[locale] })}
-              className="w-28 shrink-0 shadow-sm"
+              className="w-20 shrink-0 shadow-sm sm:w-28"
             />
-            <div className="flex min-w-0 flex-col gap-1">
+            <div className="flex min-w-0 flex-1 basis-40 flex-col gap-1">
               <h1 id="entry-title" className="font-name text-4xl leading-tight tracking-tight">
                 {country.names[locale]}
               </h1>
