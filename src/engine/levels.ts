@@ -42,7 +42,7 @@ export function memoryLevel(states: readonly (CardState | undefined)[]): MemoryL
   const steps = states.map(stepOf);
   const cards = steps.length;
   if (cards === 0) return { level: 1, share: 0, cards: 0, cardsToNext: null };
-  const points = steps.reduce((sum, s) => sum + STEP_WEIGHTS[s], 0);
+  const points = steps.reduce<number>((sum, s) => sum + STEP_WEIGHTS[s], 0);
   const share = points / cards;
   const level = levelForShare(share);
   if (level >= MAX_LEVEL) return { level, share, cards, cardsToNext: null };
