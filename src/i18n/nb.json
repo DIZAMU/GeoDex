@@ -364,7 +364,9 @@
     "drill": "Øv",
     "landmarks": "Severdigheter",
     "physical": "Naturgeografi",
-    "history": "Historie"
+    "history": "Historie",
+    "levels": "Nivåer",
+    "levelsHelp": "Hukommelsesnivå 1 til 10 per verdensdel og emne. Det synker når kort glemmes."
   },
   "streak": {
     "days_one": "{{count}} dag på rad",
@@ -578,11 +580,15 @@
     "steps": {
       "start": {
         "title": "Start her",
-        "body": "En økt tar noen minutter. Dagens repetisjoner og nye kort står over knappen."
+        "body": "Velg hvor mange spørsmål og hva du vil øve på, og start. En økt tar noen minutter."
       },
       "input": {
         "title": "Velg hvordan du svarer",
         "body": "Auto begynner med alternativer og går over til skriving når du blir bedre. Velg selv om du vil."
+      },
+      "overview": {
+        "title": "Nivået ditt",
+        "body": "Hukommelsesnivå 1 til 10 viser hvor mye du kan akkurat nå, og kan synke hvis du glemmer. XP og rangen din går bare opp. Den lille ringen er dagens mål."
       },
       "map": {
         "title": "Kartet ditt",
@@ -676,5 +682,29 @@
     "leftToday_other": "{{count}} kort til venter i dag.",
     "again_one": "{{count}} spørsmål til",
     "again_other": "{{count}} spørsmål til"
+  },
+  "overview": {
+    "title": "Fremgangen din",
+    "level": "Nivå",
+    "levelLabel": "Hukommelsesnivå {{level}} av 10",
+    "memory": "Hukommelsesnivå",
+    "toNext_one": "{{count}} kort til for nivå {{level}}",
+    "toNext_other": "{{count}} kort til for nivå {{level}}",
+    "top": "Toppnivå. Fortsett å repetere for å holde det.",
+    "goalLabel": "{{minutes}} av {{goal}} minutter øvd i dag",
+    "ofMinutes": "av {{goal}} min",
+    "xpLevel": "XP-nivå {{level}}",
+    "xp": "{{xp}} XP",
+    "xpToNext": "{{xp}} XP til neste XP-nivå",
+    "levelShort": "Nivå {{level}}"
+  },
+  "rank": {
+    "tourist": "Turist",
+    "traveller": "Reisende",
+    "explorer": "Oppdager",
+    "navigator": "Navigatør",
+    "cartographer": "Kartograf",
+    "geographer": "Geograf",
+    "atlasKeeper": "Atlasvokter"
   }
 }
