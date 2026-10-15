@@ -1,25 +1,23 @@
 import { ArrowRightIcon, FlameIcon, MapPinIcon } from "lucide-react";
 import { useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, Navigate, useNavigate } from "react-router";
+import { Link, Navigate } from "react-router";
 import { db } from "@/db/db";
-import { setLastInputMode, setTourDone } from "@/db/settings";
+import { setTourDone } from "@/db/settings";
 import type { Streak } from "@/engine/streak";
-import { type InputSetting, parseCardId } from "@/engine/types";
+import { parseCardId } from "@/engine/types";
 import { isLocale } from "@/i18n/locales";
 import { WorldMap } from "@/map/WorldMap";
 import { Button } from "@/ui/button";
 import { Loader } from "@/ui/loader";
 import { Stat } from "@/ui/stat";
-import { ToggleGroup, ToggleGroupItem } from "@/ui/toggle-group";
 import { nameOf } from "../session/parts";
 import { planDay, scopedCountries } from "../study/plan";
 import { useProgress } from "../study/progress";
 import { type Learner, useLearner } from "../study/useLearner";
 import { Tour } from "../tour/Tour";
 import { InfoBox } from "./InfoBox";
-
-const INPUTS: readonly InputSetting[] = ["auto", "mc", "typing"];
+import { SessionPicker } from "./SessionPicker";
 
 export function TodayScreen() {
   const learner = useLearner();
@@ -32,7 +30,6 @@ export function TodayScreen() {
 function Today({ learner }: { learner: Learner }) {
   const { t, i18n } = useTranslation();
   const locale = isLocale(i18n.language) ? i18n.language : "en";
-  const navigate = useNavigate();
   const { streak } = useProgress(learner);
   const plan = useMemo(
     () => (learner.settings.homeCountry ? planDay({ ...learner, now: Date.now() }) : null),
@@ -41,7 +38,6 @@ function Today({ learner }: { learner: Learner }) {
 
   const needsSetup =
     !learner.settings.homeCountry || learner.settings.placementCompletedAt === null;
-  const input = learner.device.lastInputMode;
   const region = plan?.nextSubregion
     ? learner.world.subregions.find((s) => s.id === plan.nextSubregion)?.names[locale]
     : null;
@@ -99,39 +95,7 @@ function Today({ learner }: { learner: Learner }) {
               <p className="text-muted-foreground">{t("today.paused")}</p>
             ) : null}
             {region ? <RegionChip text={t("today.nextRegion", { name: region })} /> : null}
-            <div className="flex flex-col gap-4 pt-2">
-              <fieldset className="flex flex-col gap-2 self-start" data-tour="input">
-                <legend className="mb-2 text-sm text-muted-foreground">
-                  {t("today.inputMode")}
-                </legend>
-                <ToggleGroup
-                  type="single"
-                  variant="outline"
-                  spacing={0}
-                  value={input}
-                  onValueChange={(value) => {
-                    if (INPUTS.includes(value as InputSetting))
-                      void setLastInputMode(db, value as InputSetting);
-                  }}
-                >
-                  {INPUTS.map((mode) => (
-                    <ToggleGroupItem key={mode} value={mode} data-testid={`input-${mode}`}>
-                      {t(`input.${mode}`)}
-                    </ToggleGroupItem>
-                  ))}
-                </ToggleGroup>
-              </fieldset>
-              <Button
-                size="lg"
-                className="group h-14 self-stretch px-8 text-base sm:self-start"
-                data-testid="start"
-                data-tour="start"
-                onClick={() => navigate(`/session?input=${input}`, { viewTransition: true })}
-              >
-                {t("today.start")}
-                <ArrowRightIcon className="transition-transform duration-200 group-hover:translate-x-0.5" />
-              </Button>
-            </div>
+            <SessionPicker learner={learner} queue={plan.queue} />
           </>
         ) : plan ? (
           <>

@@ -32,11 +32,35 @@ export async function setUpLearner(page: Page, placementAnswers = 4) {
 /** Closes the guided tour that opens once after setup (PLAN.md 11.1). */
 export async function skipTour(page: Page) {
   const tour = page.getByTestId("tour");
-  await tour.waitFor({ state: "visible", timeout: 3000 }).catch(() => undefined);
+  await tour.waitFor({ state: "visible", timeout: 10_000 }).catch(() => undefined);
   if (await tour.isVisible()) {
     await page.keyboard.press("Escape");
     await expect(tour).toHaveCount(0);
   }
+  // The tour closes at once and stores "done" a moment later; a full page load before that
+  // write lands would abort it and bring the tour back.
+  await expect
+    .poll(() =>
+      page.evaluate(
+        () =>
+          new Promise<boolean>((resolve) => {
+            const open = indexedDB.open("geodex");
+            open.onsuccess = () => {
+              const request = open.result
+                .transaction("deviceSettings")
+                .objectStore("deviceSettings")
+                .getAll();
+              request.onsuccess = () =>
+                resolve(
+                  (request.result as { tourDoneAt?: number | null }[]).some(
+                    (row) => row.tourDoneAt != null,
+                  ),
+                );
+            };
+          }),
+      ),
+    )
+    .toBe(true);
 }
 
 type Screen = "intro" | "prompt" | "feedback";

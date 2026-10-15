@@ -1,8 +1,9 @@
 import { XIcon } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate, useSearchParams } from "react-router";
+import { useLocation, useNavigate, useSearchParams } from "react-router";
 import type { HistoricalEntity } from "@/data/types";
+import { parseFocus, parseLength } from "@/engine/focus";
 import type { InputSetting } from "@/engine/types";
 import { isLocale } from "@/i18n/locales";
 import { type MapFocus, type MapHighlight, WorldMap } from "@/map/WorldMap";
@@ -57,12 +58,20 @@ const EMPTY: ReadonlySet<string> = new Set();
 export function SessionScreen() {
   const learner = useLearner();
   const [params] = useSearchParams();
+  const { key } = useLocation();
   const requested = params.get("input");
   const input = INPUTS.includes(requested as InputSetting)
     ? (requested as InputSetting)
     : (learner?.device.lastInputMode ?? "auto");
   if (!learner) return <Loader />;
-  return <Session learner={learner} input={input} />;
+  const kind: SessionKind = {
+    kind: "daily",
+    // The picker always sends a length; a bare /session link runs all of today's plan.
+    length: params.has("length") ? parseLength(params.get("length")) : Number.POSITIVE_INFINITY,
+    focus: parseFocus(params.get("focus")),
+  };
+  // Keyed by navigation, so "another round" starts a fresh session on the same route.
+  return <Session key={key} learner={learner} input={input} kind={kind} />;
 }
 
 export function Session({
@@ -77,6 +86,7 @@ export function Session({
   const { t, i18n } = useTranslation();
   const locale = isLocale(i18n.language) ? i18n.language : "en";
   const navigate = useNavigate();
+  const number = new Intl.NumberFormat(locale);
   // Confusion scores are fixed for the session, like the queue.
   const [scores] = useState(() => confusionScoresFor(learner.world, learner.events, Date.now()));
   const scoped = useMemo(
@@ -166,6 +176,11 @@ export function Session({
         correct={view.correct}
         held={held}
         drill={kind?.kind === "drill"}
+        again={
+          kind?.kind === "daily" && Number.isFinite(kind.length)
+            ? { length: kind.length, focus: kind.focus }
+            : null
+        }
       />
     );
   }
@@ -193,7 +208,14 @@ export function Session({
               <ProgressBar
                 done={s.reviewed}
                 total={s.total}
-                label={t("session.left", { count: s.left })}
+                label={t("session.positionLabel", {
+                  n: Math.min(s.total, s.reviewed + 1),
+                  total: s.total,
+                })}
+                text={t("session.position", {
+                  n: number.format(Math.min(s.total, s.reviewed + 1)),
+                  total: number.format(s.total),
+                })}
               />
             </div>
             {timeLeft !== null ? (

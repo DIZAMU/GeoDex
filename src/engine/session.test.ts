@@ -145,3 +145,24 @@ describe("new cards", () => {
     expect(picked.map((p) => p.cardId)).toEqual(["NOR:country_to_capital", "SWE:map_to_name"]);
   });
 });
+
+describe("session limit", () => {
+  const card = (id: string): QueueItem => ({
+    cardId: `${id}:map_to_name`,
+    entityId: id,
+    subregion: "154",
+    isNew: false,
+  });
+
+  it("ends after the limit even with cards left", () => {
+    let state = startSession([card("NOR"), card("SWE"), card("FIN")], 2);
+    expect(remaining(state)).toBe(2);
+    for (let i = 0; i < 2; i++) {
+      const next = nextItem(state, 0);
+      if (!next) throw new Error("expected a card");
+      state = afterAnswer(next.state, next.item, null, 0);
+    }
+    expect(remaining(state)).toBe(0);
+    expect(nextItem(state, 0)).toBeNull();
+  });
+});

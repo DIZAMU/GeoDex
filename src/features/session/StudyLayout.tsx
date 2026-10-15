@@ -32,10 +32,13 @@ export function ProgressBar({
   done,
   total,
   label,
+  text = label,
 }: {
   done: number;
   total: number;
   label: string;
+  /** Visible text; defaults to the label. */
+  text?: string;
 }) {
   const share = total > 0 ? Math.min(1, done / total) : 0;
   return (
@@ -54,7 +57,7 @@ export function ProgressBar({
         />
       </div>
       <span className="text-sm text-muted-foreground tabular-nums" data-testid="left">
-        {label}
+        {text}
       </span>
     </div>
   );
