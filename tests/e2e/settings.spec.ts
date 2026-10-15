@@ -64,8 +64,8 @@ test("goal settings reach Today: sessions goal, session defaults and the tour", 
   await page.getByTestId("goal-sessions").click();
   await page.getByTestId("goal-sessions-2").click();
   await page.getByTestId("default-length-20").click();
-  await page.getByTestId("default-focus").selectOption("skill:flags");
-  await expect(page.getByTestId("default-focus")).toHaveValue("skill:flags");
+  await page.getByTestId("default-focus").selectOption("region:europe");
+  await expect(page.getByTestId("default-focus")).toHaveValue("region:europe");
   await page.screenshot({
     path: `test-results/screens/settings-goals-${page.viewportSize()?.width}.png`,
     fullPage: true,
@@ -77,7 +77,7 @@ test("goal settings reach Today: sessions goal, session defaults and the tour", 
     "0 of 2 sessions done today",
   );
   await expect(page.getByTestId("length-20")).toHaveAttribute("data-state", "on");
-  await expect(page.getByTestId("focus")).toHaveValue("skill:flags");
+  await expect(page.getByTestId("focus")).toHaveValue("region:europe");
 
   // Back to minutes: the ring follows the daily time.
   await page.goto("/settings");
