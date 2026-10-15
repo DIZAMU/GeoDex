@@ -57,7 +57,20 @@
     "landmarks": "Landmarks (after their country)",
     "physical": "Physical geography (after a country it touches)",
     "history": "History (former names, dissolved states, empires)",
-    "welcomeAgain": "Show the welcome page and tour again"
+    "welcomeAgain": "Show the welcome page and tour again",
+    "groupGoals": "Your goals",
+    "groupTopics": "What you want to learn",
+    "groupGuide": "Guidance",
+    "dailyMinutesHelp": "How long you study on a normal day. It sets how many new cards you get and the time estimate.",
+    "goalKind": "Daily goal",
+    "goalMinutes": "Reach my daily time",
+    "goalSessions": "Finish sessions",
+    "sessionsPerDay": "Sessions a day",
+    "sessions_one": "{{count}} session",
+    "sessions_other": "{{count}} sessions",
+    "goalHelp": "Meeting your goal fills the ring on Today, earns XP and counts the day for your streak, even with reviews left.",
+    "sessionLength": "Session length",
+    "sessionFocus": "Session focus"
   },
   "nav": {
     "today": "Today",
@@ -694,12 +707,16 @@
     "toNext_one": "{{count}} more card to level {{level}}",
     "toNext_other": "{{count}} more cards to level {{level}}",
     "top": "Top level. Keep reviewing to hold it.",
-    "goalLabel": "{{minutes}} of {{goal}} minutes studied today",
     "ofMinutes": "of {{goal}} min",
     "xpLevel": "XP level {{level}}",
     "xp": "{{xp}} XP",
     "xpToNext": "{{xp}} XP to the next XP level",
-    "levelShort": "Level {{level}}"
+    "levelShort": "Level {{level}}",
+    "goalMinutesLabel": "{{done}} of {{count}} minutes studied today",
+    "goalSessionsLabel_one": "{{done}} of {{count}} session done today",
+    "goalSessionsLabel_other": "{{done}} of {{count}} sessions done today",
+    "ofSessions_one": "of {{goal}} session",
+    "ofSessions_other": "of {{goal}} sessions"
   },
   "rank": {
     "tourist": "Tourist",

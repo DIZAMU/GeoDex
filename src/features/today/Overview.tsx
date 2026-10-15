@@ -79,7 +79,8 @@ export function Overview({ learner }: { learner: Learner }) {
     FocusModule,
     MemoryLevel,
   ][];
-  const goalMinutes = Math.floor(goal.minutes);
+  const goalDone = Math.min(Math.floor(goal.done), goal.target);
+  const goalKey = goal.kind === "minutes" ? "Minutes" : "Sessions";
 
   return (
     <section
@@ -114,17 +115,17 @@ export function Overview({ learner }: { learner: Learner }) {
           </p>
         </div>
         <Ring
-          value={goal.goal > 0 ? goal.minutes / goal.goal : 0}
+          value={goal.target > 0 ? goal.done / goal.target : 0}
           size={72}
           stroke={6}
-          label={t("overview.goalLabel", { minutes: goalMinutes, goal: goal.goal })}
+          label={t(`overview.goal${goalKey}Label`, { done: goalDone, count: goal.target })}
           testId="goal-ring"
         >
           <span className="font-name text-lg leading-none tabular-nums">
-            {number.format(Math.min(goalMinutes, goal.goal))}
+            {number.format(goalDone)}
           </span>
           <span className="text-[0.65rem] text-muted-foreground">
-            {t("overview.ofMinutes", { goal: number.format(goal.goal) })}
+            {t(`overview.of${goalKey}`, { count: goal.target, goal: number.format(goal.target) })}
           </span>
         </Ring>
       </div>

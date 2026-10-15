@@ -57,7 +57,20 @@
     "landmarks": "Severdigheter (etter landet sitt)",
     "physical": "Naturgeografi (etter et land den berører)",
     "history": "Historie (tidligere navn, oppløste stater, imperier)",
-    "welcomeAgain": "Vis velkomstsiden og omvisningen igjen"
+    "welcomeAgain": "Vis velkomstsiden og omvisningen igjen",
+    "groupGoals": "Målene dine",
+    "groupTopics": "Hva du vil lære",
+    "groupGuide": "Veiledning",
+    "dailyMinutesHelp": "Hvor lenge du øver en vanlig dag. Det styrer hvor mange nye kort du får og tidsanslaget.",
+    "goalKind": "Dagsmål",
+    "goalMinutes": "Nå dagens tid",
+    "goalSessions": "Fullføre økter",
+    "sessionsPerDay": "Økter per dag",
+    "sessions_one": "{{count}} økt",
+    "sessions_other": "{{count}} økter",
+    "goalHelp": "Når du når målet, fylles ringen på I dag, du får XP, og dagen teller med i dager på rad, selv om det er repetisjoner igjen.",
+    "sessionLength": "Øktlengde",
+    "sessionFocus": "Øktfokus"
   },
   "nav": {
     "today": "I dag",
@@ -694,12 +707,16 @@
     "toNext_one": "{{count}} kort til for nivå {{level}}",
     "toNext_other": "{{count}} kort til for nivå {{level}}",
     "top": "Toppnivå. Fortsett å repetere for å holde det.",
-    "goalLabel": "{{minutes}} av {{goal}} minutter øvd i dag",
     "ofMinutes": "av {{goal}} min",
     "xpLevel": "XP-nivå {{level}}",
     "xp": "{{xp}} XP",
     "xpToNext": "{{xp}} XP til neste XP-nivå",
-    "levelShort": "Nivå {{level}}"
+    "levelShort": "Nivå {{level}}",
+    "goalMinutesLabel": "{{done}} av {{count}} minutter øvd i dag",
+    "goalSessionsLabel_one": "{{done}} av {{count}} økt fullført i dag",
+    "goalSessionsLabel_other": "{{done}} av {{count}} økter fullført i dag",
+    "ofSessions_one": "av {{goal}} økt",
+    "ofSessions_other": "av {{goal}} økter"
   },
   "rank": {
     "tourist": "Turist",

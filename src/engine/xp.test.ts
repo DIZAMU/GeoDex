@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 import { DAY_MS } from "./types";
 import {
   computeXp,
+  dayTotals,
+  goalDays,
   goalToday,
   MILESTONES,
   RANK_FROM,
@@ -14,7 +16,7 @@ import {
 
 // Noon local time keeps every event inside one learning day (day starts at 04:00).
 const T0 = new Date(2026, 0, 5, 12).getTime();
-const options = { dayStartHour: 4, dailyGoalMinutes: 10 };
+const options = { dayStartHour: 4, goal: { kind: "minutes", minutes: 10 } } as const;
 
 function ev(
   at: number,
@@ -120,8 +122,38 @@ describe("goalToday", () => {
       T0 + 1000,
       options,
     );
-    expect(g.minutes).toBeCloseTo(6);
-    expect(g.done).toBe(false);
+    expect(g.done).toBeCloseTo(6);
+    expect(g.target).toBe(10);
+    expect(g.met).toBe(false);
+  });
+});
+
+describe("a goal of sessions", () => {
+  const sessions = { dayStartHour: 4, goal: { kind: "sessions", sessions: 2 } } as const;
+  const run = (from: number, n: number) =>
+    Array.from({ length: n }, (_, i) => ev(from + i * 1000, `S${from}-${i}:x`));
+
+  it("counts finished sessions of five or more answers", () => {
+    const totals = dayTotals([...run(T0, 5), ...run(T0 + 3600_000, 4)], 4);
+    expect([...totals.values()][0]?.sessions).toBe(1);
+    expect(goalToday(run(T0, 5), T0 + 10_000, sessions)).toMatchObject({ done: 1, met: false });
+  });
+
+  it("is met by the second session of the day, and pays goal XP", () => {
+    const events = [...run(T0, 5), ...run(T0 + 3600_000, 6)];
+    expect(goalToday(events, T0 + 7200_000, sessions)).toMatchObject({ done: 2, met: true });
+    expect(computeXp(events, sessions).goals).toBe(40);
+    expect(goalDays(events, sessions).size).toBe(1);
+  });
+
+  it("files a session under the day it started", () => {
+    const lateNight = new Date(2026, 0, 6, 3, 58).getTime();
+    const totals = dayTotals(
+      run(lateNight, 6).map((e, i) => ({ ...e, reviewedAt: lateNight + i * 60_000 })),
+      4,
+    );
+    expect(totals.size).toBe(2);
+    expect([...totals.values()].map((t) => t.sessions)).toEqual([1, 0]);
   });
 });
 
