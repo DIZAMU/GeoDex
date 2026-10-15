@@ -10,6 +10,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { db, type ReviewEvent } from "@/db/db";
 import { recordReview } from "@/db/reviews";
 import type { Explanation } from "@/engine/explain/select";
+import { DEFAULT_SESSION_LENGTH, type Focus, MIXED, sliceSession } from "@/engine/focus";
 import { grade } from "@/engine/grading";
 import type { CardState } from "@/engine/scheduler";
 import {
@@ -24,7 +25,7 @@ import type { InputSetting, Rating } from "@/engine/types";
 import type { Locale } from "@/i18n/locales";
 import { requestSync } from "@/sync/SyncProvider";
 import { answerMoment, explain } from "../study/explain";
-import { modeStats, planDay } from "../study/plan";
+import { continentLookup, modeStats, planDay } from "../study/plan";
 import {
   buildQuestion,
   type CheckResult,
@@ -50,24 +51,48 @@ export type SessionView =
     }
   | { kind: "done"; reviewed: number; correct: number };
 
-/** A daily session follows today's plan; a drill works through a fixed queue. */
-export type SessionKind = { kind: "daily" } | { kind: "drill"; queue: QueueItem[] };
+/**
+ * A daily session takes `length` cards in the focus from today's plan (PLAN.md 11.2); a drill
+ * works through a fixed queue.
+ */
+export type SessionKind =
+  | { kind: "daily"; length: number; focus: Focus }
+  | { kind: "drill"; queue: QueueItem[] };
+
+const DAILY: SessionKind = { kind: "daily", length: DEFAULT_SESSION_LENGTH, focus: MIXED };
 
 export function useDailySession(
   learner: Learner,
   ctx: StudyContext | null,
   inputSetting: InputSetting,
   locale: Locale,
-  kind: SessionKind = { kind: "daily" },
+  kind: SessionKind = DAILY,
 ) {
   // Snapshot at start: the queue stays stable while the learner works through it.
   const [start] = useState(() => ({
-    queue: kind.kind === "drill" ? kind.queue : planDay({ ...learner, now: Date.now() }).queue,
+    queue:
+      kind.kind === "drill"
+        ? kind.queue
+        : sliceSession(
+            planDay({ ...learner, now: Date.now() }).queue,
+            kind.focus,
+            kind.length,
+            continentLookup(learner.world),
+          ).queue,
     stats: modeStats(learner.events),
   }));
   const scheduled = kind.kind === "daily";
 
-  const session = useRef<SessionState>(startSession(start.queue));
+  // A picked length is a promise: learning steps that come back take the place of queue
+  // cards. A bare link runs all of today, with learning steps on top, as before the picker.
+  const session = useRef<SessionState>(
+    startSession(
+      start.queue,
+      kind.kind === "daily" && !Number.isFinite(kind.length)
+        ? Number.POSITIVE_INFINITY
+        : start.queue.length,
+    ),
+  );
   const states = useRef(new Map(learner.states));
   const introduced = useRef(new Set<string>());
   /** Snippets shown on an intro panel, recorded with that card's first review. */

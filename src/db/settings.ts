@@ -50,6 +50,15 @@ export async function setInfoboxOpen(db: GeoDexDb, open: boolean | null): Promis
   await db.deviceSettings.update(DEVICE_ROW_ID, { infoboxOpen: open });
 }
 
+/** Remembers the session picker's length and focus on this device. */
+export async function setSessionPick(
+  db: GeoDexDb,
+  pick: { sessionLength: number; sessionFocus: string },
+): Promise<void> {
+  await ensureDeviceSettings(db);
+  await db.deviceSettings.update(DEVICE_ROW_ID, pick);
+}
+
 /** Asks the browser to keep IndexedDB through storage pressure, once per device. */
 export async function requestPersistentStorage(db: GeoDexDb): Promise<void> {
   const device = await ensureDeviceSettings(db);

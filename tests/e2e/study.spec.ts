@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { answerPrompt, currentScreen, noHorizontalScroll, setUpLearner } from "./helpers";
 
-test("placement test, then a 10-card session", async ({ page }) => {
+test("placement test, then a 10-question session", async ({ page }) => {
   test.setTimeout(120_000);
   await setUpLearner(page, 6);
   await noHorizontalScroll(page);
@@ -24,7 +24,7 @@ test("placement test, then a 10-card session", async ({ page }) => {
       await expect(page.getByTestId("feedback")).toBeHidden();
     }
   }
-  await page.getByRole("button", { name: "End session" }).click();
+  // The picker's default session holds 10 questions and ends on its own (PLAN.md 11.2).
   await expect(page.getByTestId("reviewed")).toHaveText("10 reviews");
 
   // Events survive a reload and today's counts reflect them.
