@@ -65,7 +65,16 @@ for (const locale of ["en", "nb"] as const) {
       // Wait for the next step, or for the tour to close after the last one.
       await expect(page.locator(`[data-testid="tour"][data-step="${step}"]`)).toHaveCount(0);
     }
-    expect(visited).toEqual(["start", "input", "map", "atlas", "stats", "settings", "help"]);
+    expect(visited).toEqual([
+      "start",
+      "input",
+      "overview",
+      "map",
+      "atlas",
+      "stats",
+      "settings",
+      "help",
+    ]);
     await expect(page.getByTestId("infobox")).toHaveAttribute("data-open", "true");
 
     // Help is one tap away on every screen, and shows the app map.

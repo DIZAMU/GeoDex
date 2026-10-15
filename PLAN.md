@@ -806,6 +806,7 @@ From a real user test: a first-time visitor did not understand what GeoDex is, w
 - **Celebration** on a memory level-up or rank-up: a short animation, respecting reduced motion.
 - No gates: everything stays open; difficulty already rises as cards get stronger.
 - Acceptance: levels and XP are pure functions in `src/engine/` with tests; the overview is screenshot-reviewed in all themes and both languages.
+- Built: `src/engine/levels.ts` and `src/engine/xp.ts` (DECISIONS.md 041). The overview sits above the map on Today; continent and topic levels are in Stats; each country page shows its level. The tour gained a step for the overview.
 
 **11.4 Settings for goals**
 - Topics I want (the module toggles, regrouped), daily goal (sessions or minutes, used by the time estimate, the goal ring and the streak), default session length and focus, and "show the welcome and tour again".
