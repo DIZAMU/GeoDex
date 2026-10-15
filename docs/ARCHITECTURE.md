@@ -6,7 +6,7 @@ GeoDex is a static, local-first PWA. There is no application server: the browser
 
 | Layer | Where | Rules |
 |---|---|---|
-| Pure engine | `src/engine/` | No React, no Dexie, no clock or randomness of its own. Scheduler, grading, budget, card unlocking, distractors, matching, session order, placement, streaks, achievements, stats, explanation selection, sync merge. Unit tested; CI fails below 90% line coverage. |
+| Pure engine | `src/engine/` | No React, no Dexie, no clock or randomness of its own. Scheduler, grading, budget, card unlocking, distractors, matching, session order, placement, session slices by length and focus, streaks and daily goals, memory levels and XP, achievements, stats, explanation selection, sync merge. Unit tested; CI fails below 90% line coverage. |
 | Study logic | `src/features/study/` | Turns world data, settings and card state into a day plan (`plan.ts`) and concrete questions (`questions.ts`). Pure functions over data, tested with the real data files. |
 | Storage | `src/db/` | Dexie over IndexedDB: settings, device settings, review events, hook votes, card state cache, sync cursors. |
 | Sync | `src/sync/` | Push and pull of events, settings by last write wins; behind a `SyncBackend` interface with an in-memory fake for tests. |
@@ -23,7 +23,7 @@ Card state (stability, difficulty, due date) is a cache. `replayAll` folds the e
 Consequences:
 
 - **Sync cannot lose data.** Two devices that reviewed offline both push their events; both pull the other's; both replay. There is nothing to merge but a set union by event id. Only the settings row uses last write wins.
-- **Everything is derivable.** Streaks, achievements, the mastery atlas, stats, hook effectiveness and confusion pairs are computed from events, never stored.
+- **Everything is derivable.** Streaks, daily goals, memory levels, XP, achievements, the mastery atlas, stats, hook effectiveness and confusion pairs are computed from events, never stored.
 - **Reset without deletion.** "Reset progress" stores a time in the synced settings; replays and statistics read only events after it. The log stays intact.
 - **Cost:** a full replay is linear in the number of events. At a few hundred reviews a day that is fine for years; the cache makes normal use incremental.
 

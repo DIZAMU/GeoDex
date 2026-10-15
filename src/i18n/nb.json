@@ -669,7 +669,11 @@
     "keysTitle": "Tastatur",
     "keysBody": "I en økt: 1 til 4 velger, Enter sender og går videre, H viser et hint, Esc avslutter. Trykk ? for hele listen.",
     "replayTour": "Se omvisningen igjen",
-    "showWelcome": "Vis velkomstsiden"
+    "showWelcome": "Vis velkomstsiden",
+    "xpTitle": "Nivåer og XP",
+    "xpBody": "Hukommelsesnivået, fra 1 til 10, viser hvor mye du kan akkurat nå, så det synker når du glemmer. XP går bare opp: riktige svar, fullførte økter, øvingsdager, dagsmålet ditt og kort som sitter i en uke, tre uker og to måneder. XP gir deg ranger, fra Turist til Atlasvokter.",
+    "goalTitle": "Dagsmålet ditt",
+    "goalBody": "Nå dagens tid eller fullfør et antall økter; velg i Innstillinger. Når du når målet, fylles ringen på I dag, du får XP, og dagen teller med i dager på rad selv om det er repetisjoner igjen."
   },
   "picker": {
     "length": "Lengde",

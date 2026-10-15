@@ -669,7 +669,11 @@
     "keysTitle": "Keyboard",
     "keysBody": "In a session: 1 to 4 choose, Enter submits and continues, H shows a hint, Esc ends. Press ? for the full list.",
     "replayTour": "Replay the tour",
-    "showWelcome": "Show the welcome page"
+    "showWelcome": "Show the welcome page",
+    "xpTitle": "Levels and XP",
+    "xpBody": "Your memory level, from 1 to 10, shows how much you hold right now, so it drops when you forget. XP only goes up: correct answers, finished sessions, study days, your daily goal, and cards that hold for a week, three weeks and two months. XP earns ranks, from Tourist to Atlas keeper.",
+    "goalTitle": "Your daily goal",
+    "goalBody": "Reach your daily time or finish a number of sessions; choose in Settings. Meeting it fills the ring on Today, earns XP, and counts the day for your streak even with reviews left."
   },
   "picker": {
     "length": "Length",
