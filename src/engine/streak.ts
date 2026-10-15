@@ -1,7 +1,8 @@
 /**
  * Streak (PLAN.md 6.10), derived from events. A learning day counts when the learner did at
  * least one scheduled review and either reviewed every card that was due at the start of the
- * day, or did 30+ scheduled reviews because the backlog was larger. Freezes: one per 7
+ * day, or did 30+ scheduled reviews because the backlog was larger, or met the daily goal
+ * (PLAN.md 11.4). Freezes: one per 7
  * counted days in a row, at most 2 held, used automatically on a missed day.
  */
 import type { FSRS } from "ts-fsrs";
@@ -48,6 +49,8 @@ export function computeStreak(
   events: readonly ReviewEventCore[],
   now: number,
   dayStartHour: number,
+  /** Learning days (by start) on which the daily goal was met. */
+  goalMetDays: ReadonlySet<number> = new Set(),
 ): Streak {
   const sorted = [...events].sort(compareEvents);
   const first = sorted.find(countsForStreak);
@@ -90,7 +93,8 @@ export function computeStreak(
       reviewed.add(e.cardId);
     }
     const allDueDone = [...dueAtStart].every((id) => reviewed.has(id));
-    const counted = reviews > 0 && (allDueDone || reviews >= STREAK_BACKLOG_REVIEWS);
+    const counted =
+      reviews > 0 && (allDueDone || reviews >= STREAK_BACKLOG_REVIEWS || goalMetDays.has(start));
     const isToday = start === today.start;
     let frozen = false;
     if (counted) {

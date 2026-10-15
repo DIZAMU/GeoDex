@@ -810,6 +810,7 @@ From a real user test: a first-time visitor did not understand what GeoDex is, w
 
 **11.4 Settings for goals**
 - Topics I want (the module toggles, regrouped), daily goal (sessions or minutes, used by the time estimate, the goal ring and the streak), default session length and focus, and "show the welcome and tour again".
+- Built: Settings groups into Your goals, What you want to learn, Study and Guidance. The goal is the daily time (default) or 1 to 3 finished sessions; the daily time still sets new cards and the estimate. A day on which the goal is met counts for the streak even with reviews left, and earns goal XP. Session defaults are the picker's remembered values.
 
 ---
 

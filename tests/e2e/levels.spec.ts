@@ -21,7 +21,10 @@ test("the overview shows level, next milestone, XP, goal and the path", async ({
   await expect(page.getByTestId("level")).toHaveText("1");
   await expect(page.getByTestId("next-level")).toHaveText(/more cards? to level 2/);
   await expect(page.getByTestId("xp")).toContainText("Tourist");
-  await expect(page.getByTestId("goal-ring")).toHaveAttribute("aria-label", /of \d+ minutes/);
+  await expect(page.getByTestId("goal-ring")).toHaveAttribute(
+    "aria-label",
+    /of \d+ minutes studied/,
+  );
   await expect(overview.getByTestId("level-path")).toBeVisible();
 
   // Country and continent levels.

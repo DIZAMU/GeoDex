@@ -1,9 +1,20 @@
+import { ChevronDownIcon } from "lucide-react";
 import { type ReactNode, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
+import { CONTINENTS } from "@/data/types";
 import { db, type SettingsRow } from "@/db/db";
 import { resetProgress } from "@/db/reviews";
-import { setTourDone, updateSettings } from "@/db/settings";
+import { setSessionPick, setTourDone, updateSettings } from "@/db/settings";
+import {
+  FOCUS_MODULES,
+  type Focus,
+  focusKey,
+  parseFocus,
+  parseLength,
+  SESSION_LENGTHS,
+  SKILLS,
+} from "@/engine/focus";
 import { LanguageSwitcher } from "@/i18n/LanguageSwitcher";
 import { isLocale } from "@/i18n/locales";
 import { ThemeSwitcher } from "@/themes/ThemeSwitcher";
@@ -18,6 +29,8 @@ import { SyncSection } from "./SyncSection";
 
 const MINUTES = [10, 15, 18, 20, 30] as const;
 const COUNTDOWNS = [0, 10, 15, 20] as const;
+const GOAL_SESSIONS = [1, 2, 3] as const;
+const MODULE_TOGGLES = ["cities", "groups", "landmarks", "physical", "history"] as const;
 
 function Choice<T extends string | number>({
   label,
@@ -79,6 +92,7 @@ export function SettingsScreen() {
   if (!learner) return <Loader />;
   const s = learner.settings;
   const set = (patch: Partial<SettingsRow>) => void updateSettings(db, patch);
+  const sessionsGoal = s.dailyGoal?.kind === "sessions" ? s.dailyGoal.sessions : null;
 
   return (
     <div className="stagger mx-auto flex w-full max-w-3xl flex-col gap-6 px-4 py-8 md:px-10 md:py-14">
@@ -87,7 +101,7 @@ export function SettingsScreen() {
         <LanguageSwitcher />
         <ThemeSwitcher />
       </Group>
-      <Group title={t("settings.groupStudy")}>
+      <Group title={t("settings.groupGoals")}>
         <Choice
           label={t("settings.dailyMinutes")}
           value={
@@ -100,6 +114,58 @@ export function SettingsScreen() {
           onChange={(dailyMinutes) => set({ dailyMinutes })}
           testId="minutes"
         />
+        <p className="-mt-3 text-sm text-muted-foreground">{t("settings.dailyMinutesHelp")}</p>
+        <Choice
+          label={t("settings.goalKind")}
+          value={sessionsGoal === null ? "minutes" : "sessions"}
+          options={["minutes", "sessions"] as const}
+          render={(v) => t(v === "minutes" ? "settings.goalMinutes" : "settings.goalSessions")}
+          onChange={(v) =>
+            set({
+              dailyGoal: v === "minutes" ? { kind: "minutes" } : { kind: "sessions", sessions: 1 },
+            })
+          }
+          testId="goal"
+        />
+        {sessionsGoal !== null ? (
+          <Choice
+            label={t("settings.sessionsPerDay")}
+            value={
+              GOAL_SESSIONS.includes(sessionsGoal as (typeof GOAL_SESSIONS)[number])
+                ? (sessionsGoal as (typeof GOAL_SESSIONS)[number])
+                : 1
+            }
+            options={GOAL_SESSIONS}
+            render={(n) => t("settings.sessions", { count: n })}
+            onChange={(sessions) => set({ dailyGoal: { kind: "sessions", sessions } })}
+            testId="goal-sessions"
+          />
+        ) : null}
+        <p className="-mt-3 text-sm text-muted-foreground">{t("settings.goalHelp")}</p>
+        <SessionDefaults learner={learner} />
+      </Group>
+      <Group title={t("settings.groupTopics")}>
+        <Choice
+          label={t("settings.currencyLanguage")}
+          value={s.currencyAndLanguage ? "on" : "off"}
+          options={["on", "off"] as const}
+          render={(v) => (v === "on" ? t("settings.on") : t("settings.off"))}
+          onChange={(v) => set({ currencyAndLanguage: v === "on" })}
+          testId="stage4"
+        />
+        {MODULE_TOGGLES.map((m) => (
+          <Choice
+            key={m}
+            label={t(`settings.${m}`)}
+            value={s.modules[m] ? "on" : "off"}
+            options={["on", "off"] as const}
+            render={(v) => (v === "on" ? t("settings.on") : t("settings.off"))}
+            onChange={(v) => set({ modules: { ...s.modules, [m]: v === "on" } })}
+            testId={`module-${m}`}
+          />
+        ))}
+      </Group>
+      <Group title={t("settings.groupStudy")}>
         <Choice
           label={t("settings.countdown")}
           value={s.countdownSeconds}
@@ -109,54 +175,6 @@ export function SettingsScreen() {
           }
           onChange={(countdownSeconds) => set({ countdownSeconds })}
           testId="countdown"
-        />
-        <Choice
-          label={t("settings.currencyLanguage")}
-          value={s.currencyAndLanguage ? "on" : "off"}
-          options={["on", "off"] as const}
-          render={(v) => (v === "on" ? t("settings.on") : t("settings.off"))}
-          onChange={(v) => set({ currencyAndLanguage: v === "on" })}
-          testId="stage4"
-        />
-        <Choice
-          label={t("settings.cities")}
-          value={s.modules.cities ? "on" : "off"}
-          options={["on", "off"] as const}
-          render={(v) => (v === "on" ? t("settings.on") : t("settings.off"))}
-          onChange={(v) => set({ modules: { ...s.modules, cities: v === "on" } })}
-          testId="module-cities"
-        />
-        <Choice
-          label={t("settings.groups")}
-          value={s.modules.groups ? "on" : "off"}
-          options={["on", "off"] as const}
-          render={(v) => (v === "on" ? t("settings.on") : t("settings.off"))}
-          onChange={(v) => set({ modules: { ...s.modules, groups: v === "on" } })}
-          testId="module-groups"
-        />
-        <Choice
-          label={t("settings.landmarks")}
-          value={s.modules.landmarks ? "on" : "off"}
-          options={["on", "off"] as const}
-          render={(v) => (v === "on" ? t("settings.on") : t("settings.off"))}
-          onChange={(v) => set({ modules: { ...s.modules, landmarks: v === "on" } })}
-          testId="module-landmarks"
-        />
-        <Choice
-          label={t("settings.physical")}
-          value={s.modules.physical ? "on" : "off"}
-          options={["on", "off"] as const}
-          render={(v) => (v === "on" ? t("settings.on") : t("settings.off"))}
-          onChange={(v) => set({ modules: { ...s.modules, physical: v === "on" } })}
-          testId="module-physical"
-        />
-        <Choice
-          label={t("settings.history")}
-          value={s.modules.history ? "on" : "off"}
-          options={["on", "off"] as const}
-          render={(v) => (v === "on" ? t("settings.on") : t("settings.off"))}
-          onChange={(v) => set({ modules: { ...s.modules, history: v === "on" } })}
-          testId="module-history"
         />
         <Button
           variant="outline"
@@ -168,17 +186,30 @@ export function SettingsScreen() {
         >
           {t("settings.rerunPlacement")}
         </Button>
-        <Button
-          variant="outline"
-          className="self-start"
-          data-testid="welcome-again"
-          onClick={async () => {
-            await setTourDone(db, null);
-            navigate("/welcome", { viewTransition: true });
-          }}
-        >
-          {t("settings.welcomeAgain")}
-        </Button>
+      </Group>
+      <Group title={t("settings.groupGuide")}>
+        <div className="flex flex-wrap gap-3">
+          <Button
+            variant="outline"
+            data-testid="welcome-again"
+            onClick={async () => {
+              await setTourDone(db, null);
+              navigate("/welcome", { viewTransition: true });
+            }}
+          >
+            {t("settings.welcomeAgain")}
+          </Button>
+          <Button
+            variant="outline"
+            data-testid="tour-again"
+            onClick={async () => {
+              await setTourDone(db, null);
+              navigate("/", { viewTransition: true });
+            }}
+          >
+            {t("help.replayTour")}
+          </Button>
+        </div>
       </Group>
       <Group title={t("reset.title")}>
         <ResetProgress learner={learner} />
@@ -237,5 +268,72 @@ function ResetProgress({ learner }: { learner: Learner }) {
         </Button>
       )}
     </div>
+  );
+}
+
+/** The session picker's defaults (PLAN.md 11.4): the same values Today remembers. */
+function SessionDefaults({ learner }: { learner: Learner }) {
+  const { t } = useTranslation();
+  const length = parseLength(learner.device.sessionLength);
+  const focus = parseFocus(learner.device.sessionFocus);
+  const save = (next: { length?: number; focus?: Focus }) =>
+    void setSessionPick(db, {
+      sessionLength: next.length ?? length,
+      sessionFocus: focusKey(next.focus ?? focus),
+    });
+  const modules = FOCUS_MODULES.filter(
+    (m) => m === "countries" || learner.settings.modules[m] === true,
+  );
+  return (
+    <>
+      <Choice
+        label={t("settings.sessionLength")}
+        value={length}
+        options={SESSION_LENGTHS}
+        render={(n) => t("picker.lengthOption", { count: n })}
+        onChange={(n) => save({ length: n })}
+        testId="default-length"
+      />
+      <label className="flex flex-col gap-2">
+        <span className="text-sm text-muted-foreground">{t("settings.sessionFocus")}</span>
+        <div className="relative max-w-sm">
+          <select
+            data-testid="default-focus"
+            value={focusKey(focus)}
+            onChange={(e) => save({ focus: parseFocus(e.target.value) })}
+            className="h-10 w-full appearance-none rounded-lg border border-border bg-card/60 py-2 pr-10 pl-3 text-sm shadow-xs outline-none transition-colors hover:bg-accent focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+          >
+            <option value="mixed">{t("picker.mixed")}</option>
+            <optgroup label={t("picker.skills")}>
+              {SKILLS.map((id) => (
+                <option key={id} value={`skill:${id}`}>
+                  {t(`skill.${id}`)}
+                </option>
+              ))}
+            </optgroup>
+            {modules.length > 1 ? (
+              <optgroup label={t("picker.modules")}>
+                {modules.map((id) => (
+                  <option key={id} value={`module:${id}`}>
+                    {t(`picker.module.${id}`)}
+                  </option>
+                ))}
+              </optgroup>
+            ) : null}
+            <optgroup label={t("picker.regions")}>
+              {CONTINENTS.map((id) => (
+                <option key={id} value={`region:${id}`}>
+                  {t(`continent.${id}`)}
+                </option>
+              ))}
+            </optgroup>
+          </select>
+          <ChevronDownIcon
+            aria-hidden
+            className="pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2 text-muted-foreground"
+          />
+        </div>
+      </label>
+    </>
   );
 }

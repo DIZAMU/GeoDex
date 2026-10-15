@@ -41,10 +41,71 @@ export type XpBreakdown = {
   total: number;
 };
 
-export function computeXp(
-  events: readonly XpEvent[],
-  options: { dayStartHour: number; dailyGoalMinutes: number },
-): XpBreakdown {
+/** The daily goal (PLAN.md 11.4): minutes of study, or finished sessions. */
+export type DailyGoal =
+  | { kind: "minutes"; minutes: number }
+  | { kind: "sessions"; sessions: number };
+
+export type DayTotal = { ms: number; sessions: number };
+
+type Options = { dayStartHour: number; goal: DailyGoal };
+
+/** Study time and finished sessions per learning day (keyed by its start). Placement is not study. */
+export function dayTotals(
+  events: readonly Pick<XpEvent, "reviewedAt" | "mode" | "durationMs">[],
+  dayStartHour: number,
+): Map<number, DayTotal> {
+  const sorted = events
+    .filter((e) => e.mode !== "placement")
+    .sort((a, b) => a.reviewedAt - b.reviewedAt);
+  const totals = new Map<number, DayTotal>();
+  const day = (at: number) => {
+    const key = learningDay(at, dayStartHour).start;
+    const total = totals.get(key) ?? { ms: 0, sessions: 0 };
+    totals.set(key, total);
+    return total;
+  };
+  let run = 0;
+  let runStart = 0;
+  let previous = Number.NEGATIVE_INFINITY;
+  const closeRun = () => {
+    // A session belongs to the day it started on.
+    if (run >= MIN_SESSION_ANSWERS) day(runStart).sessions++;
+    run = 0;
+  };
+  for (const e of sorted) {
+    if (e.reviewedAt - previous > SESSION_GAP_MS) {
+      closeRun();
+      runStart = e.reviewedAt;
+    }
+    run++;
+    previous = e.reviewedAt;
+    day(e.reviewedAt).ms += Math.max(0, e.durationMs);
+  }
+  closeRun();
+  return totals;
+}
+
+export function goalMet(total: DayTotal | undefined, goal: DailyGoal): boolean {
+  if (!total) return false;
+  return goal.kind === "minutes"
+    ? goal.minutes > 0 && total.ms >= goal.minutes * 60_000
+    : goal.sessions > 0 && total.sessions >= goal.sessions;
+}
+
+/** Learning days (by start) on which the daily goal was met, for XP and the streak. */
+export function goalDays(
+  events: readonly Pick<XpEvent, "reviewedAt" | "mode" | "durationMs">[],
+  options: Options,
+): Set<number> {
+  return new Set(
+    [...dayTotals(events, options.dayStartHour)]
+      .filter(([, total]) => goalMet(total, options.goal))
+      .map(([start]) => start),
+  );
+}
+
+export function computeXp(events: readonly XpEvent[], options: Options): XpBreakdown {
   const sorted = [...events].sort(
     (a, b) => a.reviewedAt - b.reviewedAt || a.cardId.localeCompare(b.cardId),
   );
@@ -53,7 +114,6 @@ export function computeXp(
   let milestones = 0;
   const lastSeen = new Map<string, number>();
   const reached = new Map<string, number>();
-  const dayTime = new Map<number, number>();
   let run = 0;
   let previous = Number.NEGATIVE_INFINITY;
   const closeRun = () => {
@@ -80,40 +140,37 @@ export function computeXp(
     if (e.reviewedAt - previous > SESSION_GAP_MS) closeRun();
     run++;
     previous = e.reviewedAt;
-    const day = learningDay(e.reviewedAt, options.dayStartHour).start;
-    dayTime.set(day, (dayTime.get(day) ?? 0) + Math.max(0, e.durationMs));
   }
   closeRun();
 
-  const goalMs = options.dailyGoalMinutes * 60_000;
-  const days = dayTime.size * XP_PER_DAY;
-  const goals = [...dayTime.values()].filter((ms) => goalMs > 0 && ms >= goalMs).length;
-  const goalXp = goals * XP_DAILY_GOAL;
+  const totals = dayTotals(events, options.dayStartHour);
+  const days = totals.size * XP_PER_DAY;
+  const goals = [...totals.values()].filter((t) => goalMet(t, options.goal)).length * XP_DAILY_GOAL;
   return {
     answers,
     sessions,
     days,
-    goals: goalXp,
+    goals,
     milestones,
-    total: answers + sessions + days + goalXp + milestones,
+    total: answers + sessions + days + goals + milestones,
   };
 }
 
-/** Today's study time against the daily goal, for the goal ring. */
+/** Today against the daily goal, for the goal ring: minutes or sessions done of the target. */
 export function goalToday(
   events: readonly Pick<XpEvent, "reviewedAt" | "mode" | "durationMs">[],
   now: number,
-  options: { dayStartHour: number; dailyGoalMinutes: number },
-): { minutes: number; goal: number; done: boolean } {
-  const { start, end } = learningDay(now, options.dayStartHour);
-  const ms = events
-    .filter((e) => e.mode !== "placement" && e.reviewedAt >= start && e.reviewedAt < end)
-    .reduce((sum, e) => sum + Math.max(0, e.durationMs), 0);
-  const minutes = ms / 60_000;
+  options: Options,
+): { kind: DailyGoal["kind"]; done: number; target: number; met: boolean } {
+  const total = dayTotals(events, options.dayStartHour).get(
+    learningDay(now, options.dayStartHour).start,
+  );
+  const { goal } = options;
   return {
-    minutes,
-    goal: options.dailyGoalMinutes,
-    done: options.dailyGoalMinutes > 0 && minutes >= options.dailyGoalMinutes,
+    kind: goal.kind,
+    done: goal.kind === "minutes" ? (total?.ms ?? 0) / 60_000 : (total?.sessions ?? 0),
+    target: goal.kind === "minutes" ? goal.minutes : goal.sessions,
+    met: goalMet(total, goal),
   };
 }
 
