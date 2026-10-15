@@ -364,7 +364,9 @@
     "drill": "Drill",
     "landmarks": "Landmarks",
     "physical": "Physical geography",
-    "history": "History"
+    "history": "History",
+    "levels": "Levels",
+    "levelsHelp": "Memory level 1 to 10 per continent and topic. It drops when cards are forgotten."
   },
   "streak": {
     "days_one": "{{count}}-day streak",
@@ -385,7 +387,10 @@
     "retention": "Correct: {{value}}",
     "tomorrow_one": "{{count}} card due tomorrow",
     "tomorrow_other": "{{count}} cards due tomorrow",
-    "newAchievements": "New achievements"
+    "newAchievements": "New achievements",
+    "xp": "+{{xp}} XP",
+    "levelUp": "Memory level {{level}}",
+    "rankUp": "New rank: {{rank}}"
   },
   "drill": {
     "title": "Drill",
@@ -578,11 +583,15 @@
     "steps": {
       "start": {
         "title": "Start here",
-        "body": "A session takes a few minutes. Today's reviews and new cards are counted above the button."
+        "body": "Pick how many questions and what to practise, then start. A session takes a few minutes."
       },
       "input": {
         "title": "Choose how you answer",
         "body": "Auto starts with choices and moves to typing as you get better. Pick one if you prefer."
+      },
+      "overview": {
+        "title": "Your level",
+        "body": "Memory level 1 to 10 shows how much you hold right now and can drop if you forget. XP and your rank only go up. The small ring is today's goal."
       },
       "map": {
         "title": "Your map",
@@ -676,5 +685,29 @@
     "leftToday_other": "{{count}} more cards wait today.",
     "again_one": "Another {{count}} question",
     "again_other": "Another {{count}} questions"
+  },
+  "overview": {
+    "title": "Your progress",
+    "level": "Level",
+    "levelLabel": "Memory level {{level}} of 10",
+    "memory": "Memory level",
+    "toNext_one": "{{count}} more card to level {{level}}",
+    "toNext_other": "{{count}} more cards to level {{level}}",
+    "top": "Top level. Keep reviewing to hold it.",
+    "goalLabel": "{{minutes}} of {{goal}} minutes studied today",
+    "ofMinutes": "of {{goal}} min",
+    "xpLevel": "XP level {{level}}",
+    "xp": "{{xp}} XP",
+    "xpToNext": "{{xp}} XP to the next XP level",
+    "levelShort": "Level {{level}}"
+  },
+  "rank": {
+    "tourist": "Tourist",
+    "traveller": "Traveller",
+    "explorer": "Explorer",
+    "navigator": "Navigator",
+    "cartographer": "Cartographer",
+    "geographer": "Geographer",
+    "atlasKeeper": "Atlas keeper"
   }
 }

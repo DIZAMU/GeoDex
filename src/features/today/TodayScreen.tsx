@@ -17,6 +17,7 @@ import { useProgress } from "../study/progress";
 import { type Learner, useLearner } from "../study/useLearner";
 import { Tour } from "../tour/Tour";
 import { InfoBox } from "./InfoBox";
+import { Overview } from "./Overview";
 import { SessionPicker } from "./SessionPicker";
 
 export function TodayScreen() {
@@ -107,7 +108,10 @@ function Today({ learner }: { learner: Learner }) {
         ) : null}
       </section>
 
-      <MapCard learner={learner} nextSubregion={plan?.nextSubregion ?? null} locale={locale} />
+      <div className="flex min-w-0 flex-col gap-6">
+        {needsSetup ? null : <Overview learner={learner} />}
+        <MapCard learner={learner} nextSubregion={plan?.nextSubregion ?? null} locale={locale} />
+      </div>
       {/* The tour runs once, after setup, when Today has rendered its anchors. */}
       {!needsSetup && learner.device.tourDoneAt == null ? (
         <Tour onDone={() => void setTourDone(db, Date.now())} />

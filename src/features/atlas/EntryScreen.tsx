@@ -17,9 +17,11 @@ import { WorldMap } from "@/map/WorldMap";
 import { Button } from "@/ui/button";
 import { Loader } from "@/ui/loader";
 import { Flag, nameOf } from "../session/parts";
+import { useLevels } from "../study/levels";
 import { historyCardTypes, scopedCountries } from "../study/plan";
 import { cardLevel } from "../study/progress";
 import { type Learner, useLearner } from "../study/useLearner";
+import { Ring } from "../today/Overview";
 
 /** Reviews shown in the history strip, newest last. */
 const HISTORY = 40;
@@ -45,6 +47,7 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
     (id: string) => nameOf(learner.world, id, locale),
     [learner.world, locale],
   );
+  const level = useLevels(learner).country(country.id);
   const events = useMemo(
     () =>
       learner.events
@@ -82,13 +85,13 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
         <section className="enter flex flex-col gap-6" aria-labelledby="entry-title">
-          <div className="flex items-start gap-5">
+          <div className="flex flex-wrap items-start gap-x-5 gap-y-3">
             <Flag
               iso2={country.iso2}
               alt={t("flag.of", { name: country.names[locale] })}
-              className="w-28 shrink-0 shadow-sm"
+              className="w-20 shrink-0 shadow-sm sm:w-28"
             />
-            <div className="flex min-w-0 flex-col gap-1">
+            <div className="flex min-w-0 flex-1 basis-40 flex-col gap-1">
               <h1 id="entry-title" className="font-name text-4xl leading-tight tracking-tight">
                 {country.names[locale]}
               </h1>
@@ -100,6 +103,18 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
               {region ? (
                 <p className="text-sm text-muted-foreground">{region.names[locale]}</p>
               ) : null}
+            </div>
+            <div className="ml-auto flex shrink-0 flex-col items-center gap-1">
+              <Ring
+                value={level.share}
+                size={64}
+                stroke={6}
+                label={t("overview.levelLabel", { level: level.level })}
+                testId="entry-level"
+              >
+                <span className="font-name text-xl leading-none tabular-nums">{level.level}</span>
+              </Ring>
+              <span className="text-xs text-muted-foreground">{t("overview.memory")}</span>
             </div>
           </div>
 

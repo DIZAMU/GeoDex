@@ -8,7 +8,16 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react
 import { useTranslation } from "react-i18next";
 import { Button } from "@/ui/button";
 
-export const TOUR_STEPS = ["start", "input", "map", "atlas", "stats", "settings", "help"] as const;
+export const TOUR_STEPS = [
+  "start",
+  "input",
+  "overview",
+  "map",
+  "atlas",
+  "stats",
+  "settings",
+  "help",
+] as const;
 type StepId = (typeof TOUR_STEPS)[number];
 
 type Box = { x: number; y: number; w: number; h: number };
