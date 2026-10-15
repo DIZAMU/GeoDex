@@ -24,7 +24,9 @@ A spaced-repetition geography trainer that learns what you confuse and explains 
 - **Equal Earth map**, so sizes look the way they are. Tap countries, drop pins for cities and landmarks, tap rivers and seas.
 - **Explanations chosen per answer** from static, reviewed content: memory hooks (anchors, shapes, name origins, sound-alikes, stories), facts and comparisons with your home country, in both languages.
 - **Learns your confusions**: two wrong answers between the same pair (Slovakia and Slovenia, Niger and Nigeria) earn a contrast card that teaches the difference.
-- **Placement test** so you never relearn what you already know.
+- **Free, with no account**: a welcome page with a three-question demo, an optional placement test so you never relearn what you already know, a short guided tour, and a Help page with a map of the app.
+- **Sessions you size**: 5, 10 or 20 questions, on everything due today or one skill, topic, continent or region. Due reviews come first, and a focused session says what waits outside it.
+- **Levels and XP**: a memory level from 1 to 10 overall and per topic, continent and country, which drops when you forget; XP and ranks (Tourist to Atlas keeper) that only rise; a daily goal in minutes or sessions that keeps your streak.
 - **Progress from your own review history**: a mastery atlas per skill, country pages, stats, streaks with freezes, achievements, and drills that never touch your schedule.
 - **Works offline**, including landmark photos you have seen. Optional sync between devices through your own free Supabase project. Export and import everything as JSON.
 - **Accessible**: every map, pin and tap answer can also be given from a list, by keyboard or screen reader. Lighthouse accessibility 100; axe finds no serious issues in any theme.
