@@ -57,7 +57,20 @@
     "landmarks": "Landmarks (after their country)",
     "physical": "Physical geography (after a country it touches)",
     "history": "History (former names, dissolved states, empires)",
-    "welcomeAgain": "Show the welcome page and tour again"
+    "welcomeAgain": "Show the welcome page and tour again",
+    "groupGoals": "Your goals",
+    "groupTopics": "What you want to learn",
+    "groupGuide": "Guidance",
+    "dailyMinutesHelp": "How long you study on a normal day. It sets how many new cards you get and the time estimate.",
+    "goalKind": "Daily goal",
+    "goalMinutes": "Reach my daily time",
+    "goalSessions": "Finish sessions",
+    "sessionsPerDay": "Sessions a day",
+    "sessions_one": "{{count}} session",
+    "sessions_other": "{{count}} sessions",
+    "goalHelp": "Meeting your goal fills the ring on Today, earns XP and counts the day for your streak, even with reviews left.",
+    "sessionLength": "Session length",
+    "sessionFocus": "Session focus"
   },
   "nav": {
     "today": "Today",
