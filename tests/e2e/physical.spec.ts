@@ -90,9 +90,16 @@ for (const [name, kinds] of SLICES) {
       i++
     ) {
       const screen = page
-        .locator('[data-testid="intro"], [data-testid="prompt"], [data-testid="feedback"]')
+        .locator(
+          '[data-testid="intro"], [data-testid="prompt"], [data-testid="feedback"], [data-testid="session-summary"]',
+        )
         .first();
       await expect(screen).toBeVisible();
+      // The day's budget can split the slice over more than one session.
+      if (await page.getByTestId("session-summary").isVisible()) {
+        await page.goto("/session?input=mc");
+        continue;
+      }
       if (await page.getByTestId("intro").isVisible()) {
         await page.keyboard.press("Enter");
         continue;
