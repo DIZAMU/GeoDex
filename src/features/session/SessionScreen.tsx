@@ -66,8 +66,9 @@ export function SessionScreen() {
   if (!learner) return <Loader />;
   const kind: SessionKind = {
     kind: "daily",
-    length: parseLength(params.get("length") ?? learner.device.sessionLength),
-    focus: parseFocus(params.get("focus") ?? learner.device.sessionFocus),
+    // The picker always sends a length; a bare /session link runs all of today's plan.
+    length: params.has("length") ? parseLength(params.get("length")) : Number.POSITIVE_INFINITY,
+    focus: parseFocus(params.get("focus")),
   };
   // Keyed by navigation, so "another round" starts a fresh session on the same route.
   return <Session key={key} learner={learner} input={input} kind={kind} />;
