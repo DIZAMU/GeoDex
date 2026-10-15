@@ -3,6 +3,8 @@
  * XP and rank, the daily goal, and a compact bar per topic.
  */
 import { useTranslation } from "react-i18next";
+import { db } from "@/db/db";
+import { setLevelProgress } from "@/db/settings";
 import type { FocusModule } from "@/engine/focus";
 import type { MemoryLevel } from "@/engine/levels";
 import { useLevels } from "../study/levels";
@@ -75,6 +77,12 @@ export function Overview({ learner }: { learner: Learner }) {
   const number = new Intl.NumberFormat(i18n.language);
   const levels = useLevels(learner);
   const { overall, xp, goal } = levels;
+  // The way to the next level, as cards or as a share; remembered on this device.
+  const showPercent = learner.device.levelProgress === "percent";
+  const percent = new Intl.NumberFormat(i18n.language, {
+    style: "percent",
+    maximumFractionDigits: 0,
+  });
   const modules = [...levels.byModule].filter(([, m]) => m.cards > 0) as [
     FocusModule,
     MemoryLevel,
@@ -92,7 +100,7 @@ export function Overview({ learner }: { learner: Learner }) {
       <h2 id="overview-title" className="sr-only">
         {t("overview.title")}
       </h2>
-      <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+      <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-4 sm:justify-start">
         <Ring
           value={withinLevel(overall)}
           label={t("overview.levelLabel", { level: overall.level })}
@@ -103,16 +111,33 @@ export function Overview({ learner }: { learner: Learner }) {
             {number.format(overall.level)}
           </span>
         </Ring>
-        <div className="flex min-w-0 flex-1 flex-col gap-1">
-          <p className="font-name text-lg break-words">{t("overview.memory")}</p>
-          <p className="text-sm text-muted-foreground" data-testid="next-level">
-            {overall.cardsToNext === null
-              ? t("overview.top")
-              : t("overview.toNext", {
-                  count: overall.cardsToNext,
-                  level: overall.level + 1,
-                })}
-          </p>
+        {/* On a phone the text drops below the two rings, so long words never break. */}
+        <div className="order-last flex min-w-0 basis-full flex-col gap-1 sm:order-none sm:flex-1 sm:basis-auto">
+          <p className="font-name text-lg">{t("overview.memory")}</p>
+          {overall.cardsToNext === null ? (
+            <p className="text-sm text-muted-foreground" data-testid="next-level">
+              {t("overview.top")}
+            </p>
+          ) : (
+            <button
+              type="button"
+              className="self-start rounded-sm text-left text-sm text-muted-foreground underline decoration-dotted underline-offset-4 hover:text-foreground focus-visible:outline-2 focus-visible:outline-ring"
+              data-testid="next-level"
+              data-show={showPercent ? "percent" : "cards"}
+              title={t(showPercent ? "overview.showCards" : "overview.showPercent")}
+              onClick={() => void setLevelProgress(db, showPercent ? "cards" : "percent")}
+            >
+              {showPercent
+                ? t("overview.toNextPercent", {
+                    percent: percent.format(withinLevel(overall)),
+                    level: overall.level + 1,
+                  })
+                : t("overview.toNext", {
+                    count: overall.cardsToNext,
+                    level: overall.level + 1,
+                  })}
+            </button>
+          )}
         </div>
         <Ring
           value={goal.target > 0 ? goal.done / goal.target : 0}
