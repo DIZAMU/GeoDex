@@ -11,6 +11,7 @@ import { Button } from "@/ui/button";
 import { useFocusOnMount } from "@/ui/focus";
 import { Loader } from "@/ui/loader";
 import { useStudyContext } from "../study/context";
+import { learnerLevels } from "../study/levels";
 import { confusionScoresFor, scopedCountries } from "../study/plan";
 import { computeProgress } from "../study/progress";
 import {
@@ -100,6 +101,11 @@ export function Session({
   const [held] = useState(
     () => new Set(computeProgress(learner, Date.now()).achievements.map((a) => a.id)),
   );
+  // Levels and XP at the start, so the summary can celebrate what this session moved.
+  const [before] = useState(() => {
+    const l = learnerLevels(learner, Date.now());
+    return { level: l.overall.level, xp: l.xp.xp, xpLevel: l.xp.level, rank: l.xp.rank };
+  });
   const [help, setHelp] = useState(false);
   const countdownSeconds = learner.settings.countdownSeconds;
   const view = s.view;
@@ -175,6 +181,7 @@ export function Session({
         reviewed={view.reviewed}
         correct={view.correct}
         held={held}
+        before={before}
         drill={kind?.kind === "drill"}
         again={
           kind?.kind === "daily" && Number.isFinite(kind.length)

@@ -276,3 +276,44 @@
     animation: none;
   }
 }
+
+/* Level-up and rank-up (PLAN.md 11.3): the badge pops and a ring of sparks spreads once. */
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spark {
+  from {
+    opacity: 1;
+    transform: rotate(var(--angle)) translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: rotate(var(--angle)) translateY(-56px) scale(0.4);
+  }
+}
+
+@utility celebrate-pop {
+  animation: pop 600ms var(--ease-ui) both;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@utility celebrate-spark {
+  animation: spark 900ms var(--ease-ui) 200ms both;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    opacity: 0;
+  }
+}

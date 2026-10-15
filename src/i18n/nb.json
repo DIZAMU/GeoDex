@@ -387,7 +387,10 @@
     "retention": "Riktige: {{value}}",
     "tomorrow_one": "{{count}} kort til repetisjon i morgen",
     "tomorrow_other": "{{count}} kort til repetisjon i morgen",
-    "newAchievements": "Nye merker"
+    "newAchievements": "Nye merker",
+    "xp": "+{{xp}} XP",
+    "levelUp": "Hukommelsesnivå {{level}}",
+    "rankUp": "Ny rang: {{rank}}"
   },
   "drill": {
     "title": "Øv",
