@@ -1,11 +1,13 @@
 import { AwardIcon } from "lucide-react";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { type Focus, focusKey, parseFocus, sliceSession } from "@/engine/focus";
 import { forecast } from "@/engine/stats";
 import { isLocale } from "@/i18n/locales";
 import { Button } from "@/ui/button";
 import { achievementLabel } from "../stats/labels";
+import { continentLookup, planDay } from "../study/plan";
 import { useProgress } from "../study/progress";
 import type { Learner } from "../study/useLearner";
 
@@ -19,12 +21,15 @@ export function SessionSummary({
   correct,
   held,
   drill,
+  again,
 }: {
   learner: Learner;
   reviewed: number;
   correct: number;
   held: ReadonlySet<string>;
   drill: boolean;
+  /** Another daily round in the same length and focus (PLAN.md 11.2). */
+  again?: { length: number; focus: Focus } | null;
 }) {
   const { t, i18n } = useTranslation();
   const locale = isLocale(i18n.language) ? i18n.language : "en";
@@ -36,6 +41,17 @@ export function SessionSummary({
       0,
     [learner.states, learner.settings.dayStartHour],
   );
+  // Today's plan after this session, for "another round" in the same focus.
+  const againLength = again?.length ?? 0;
+  const againFocus = again ? focusKey(again.focus) : null;
+  const next = useMemo(() => {
+    if (againFocus === null) return null;
+    const plan = planDay({ ...learner, now: Date.now() }).queue;
+    const focus = parseFocus(againFocus);
+    const slice = sliceSession(plan, focus, againLength, continentLookup(learner.world));
+    return slice.queue.length > 0 ? { slice, left: slice.available, focus: againFocus } : null;
+  }, [againFocus, againLength, learner]);
+  const navigate = useNavigate();
   const percent = new Intl.NumberFormat(locale, { style: "percent", maximumFractionDigits: 0 });
 
   return (
@@ -77,11 +93,34 @@ export function SessionSummary({
             </ul>
           </section>
         ) : null}
-        <Button asChild size="lg" className="self-start">
-          <Link to={drill ? "/atlas" : "/"} viewTransition>
-            {drill ? t("entry.back") : t("session.backToToday")}
-          </Link>
-        </Button>
+        {next ? (
+          <p className="text-muted-foreground" data-testid="summary-left">
+            {t("picker.leftToday", { count: next.left })}
+          </p>
+        ) : null}
+        <div className="flex flex-wrap gap-3">
+          {next ? (
+            <Button
+              size="lg"
+              data-testid="again"
+              onClick={() => {
+                const params = new URLSearchParams({
+                  input: learner.device.lastInputMode,
+                  length: String(againLength),
+                  focus: next.focus,
+                });
+                navigate(`/session?${params}`, { viewTransition: true });
+              }}
+            >
+              {t("picker.again", { count: next.slice.queue.length })}
+            </Button>
+          ) : null}
+          <Button asChild size="lg" variant={next ? "outline" : "default"}>
+            <Link to={drill ? "/atlas" : "/"} viewTransition>
+              {drill ? t("entry.back") : t("session.backToToday")}
+            </Link>
+          </Button>
+        </div>
       </div>
     </main>
   );

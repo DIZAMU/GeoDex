@@ -191,7 +191,9 @@
     "reviewed_one": "{{count}} repetisjon",
     "reviewed_other": "{{count}} repetisjoner",
     "backToToday": "Tilbake til i dag",
-    "countdown": "{{count}} sekunder igjen"
+    "countdown": "{{count}} sekunder igjen",
+    "position": "{{n}} av {{total}}",
+    "positionLabel": "Spørsmål {{n}} av {{total}}"
   },
   "shortcuts": {
     "title": "Tastatursnarveier",
@@ -646,5 +648,38 @@
     "keysBody": "I en økt: 1 til 4 velger, Enter sender og går videre, H viser et hint, Esc avslutter. Trykk ? for hele listen.",
     "replayTour": "Se omvisningen igjen",
     "showWelcome": "Vis velkomstsiden"
+  },
+  "picker": {
+    "length": "Lengde",
+    "lengthOption": "{{count}} spørsmål",
+    "focus": "Fokus",
+    "mixed": "Blandet: alt som venter i dag",
+    "skills": "Ferdigheter",
+    "modules": "Emner",
+    "regions": "Verdensdeler",
+    "option": "{{name}} ({{count}})",
+    "skill": {
+      "map": "På kartet",
+      "flags": "Flagg",
+      "capitals": "Hovedsteder",
+      "facts": "Navn og fakta"
+    },
+    "module": {
+      "countries": "Land",
+      "cities": "Kjente byer",
+      "groups": "Grupper av land",
+      "landmarks": "Landemerker",
+      "physical": "Naturgeografi",
+      "history": "Historie"
+    },
+    "start_one": "Start {{count}} spørsmål",
+    "start_other": "Start {{count}} spørsmål",
+    "outside_one": "{{count}} repetisjon utenfor dette fokuset venter på deg i en blandet økt.",
+    "outside_other": "{{count}} repetisjoner utenfor dette fokuset venter på deg i en blandet økt.",
+    "empty": "Ingenting i dette fokuset i dag. Velg et annet fokus eller Blandet.",
+    "leftToday_one": "{{count}} kort til venter i dag.",
+    "leftToday_other": "{{count}} kort til venter i dag.",
+    "again_one": "{{count}} spørsmål til",
+    "again_other": "{{count}} spørsmål til"
   }
 }

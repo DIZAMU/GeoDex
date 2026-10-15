@@ -191,7 +191,9 @@
     "reviewed_one": "{{count}} review",
     "reviewed_other": "{{count}} reviews",
     "backToToday": "Back to today",
-    "countdown": "{{count}} seconds left"
+    "countdown": "{{count}} seconds left",
+    "position": "{{n}} of {{total}}",
+    "positionLabel": "Question {{n}} of {{total}}"
   },
   "shortcuts": {
     "title": "Keyboard shortcuts",
@@ -646,5 +648,38 @@
     "keysBody": "In a session: 1 to 4 choose, Enter submits and continues, H shows a hint, Esc ends. Press ? for the full list.",
     "replayTour": "Replay the tour",
     "showWelcome": "Show the welcome page"
+  },
+  "picker": {
+    "length": "Length",
+    "lengthOption": "{{count}} questions",
+    "focus": "Focus",
+    "mixed": "Mixed: everything due today",
+    "skills": "Skills",
+    "modules": "Topics",
+    "regions": "Continents",
+    "option": "{{name}} ({{count}})",
+    "skill": {
+      "map": "On the map",
+      "flags": "Flags",
+      "capitals": "Capitals",
+      "facts": "Names and facts"
+    },
+    "module": {
+      "countries": "Countries",
+      "cities": "Famous cities",
+      "groups": "Groups of countries",
+      "landmarks": "Landmarks",
+      "physical": "Physical geography",
+      "history": "History"
+    },
+    "start_one": "Start {{count}} question",
+    "start_other": "Start {{count}} questions",
+    "outside_one": "{{count}} review due outside this focus waits for you in a mixed session.",
+    "outside_other": "{{count}} reviews due outside this focus wait for you in a mixed session.",
+    "empty": "Nothing in this focus today. Pick another focus or Mixed.",
+    "leftToday_one": "{{count}} more card waits today.",
+    "leftToday_other": "{{count}} more cards wait today.",
+    "again_one": "Another {{count}} question",
+    "again_other": "Another {{count}} questions"
   }
 }
