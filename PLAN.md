@@ -2,7 +2,7 @@
 
 Author: DIZAMU (sole author). Spaced-repetition geography trainer. Local-first web app (installable PWA), laptop-first, with Supabase sync to phone. Zero running cost, no paid APIs, English and Norwegian.
 
-Read `CLAUDE.md` for working rules. Read `content/VOICE.md` before writing any learner-facing text.
+Read `CONTRIBUTING.md` for working rules. Read `content/VOICE.md` before writing any learner-facing text.
 
 ---
 
@@ -544,7 +544,7 @@ Numbers in learner-facing text come from slots. Hand-written numbers require a `
 6. Missing Norwegian snippet: fall back to English for that snippet only. The linter makes this rare.
 
 ### 7.5 Customizing the voice
-VOICE.md is the single source for tone. A cloner can edit it and the templates, then regenerate content with their own Claude Code session. The linter enforces VOICE.md's machine-checkable section.
+VOICE.md is the single source for tone. A cloner can edit it and the templates, then rewrite the content to match. The linter enforces VOICE.md's machine-checkable section.
 
 ---
 
@@ -616,7 +616,7 @@ Copy: sentence case, active verbs, no praise filler. Errors say what happened an
 
 ```
 GeoDex/
-  CLAUDE.md
+  CONTRIBUTING.md
   PLAN.md
   DECISIONS.md               # deviations from the plan, ADR style
   LICENSE                    # PolyForm Noncommercial 1.0.0 + Required Notice
@@ -708,7 +708,7 @@ Acceptance: a real daily session works on the laptop, starting from a placement 
 ### Phase 3: Explanation engine and country content
 - Template compiler, slot resolver, `when` parser, selection (7.4), hook effectiveness and "Not helpful" (6.8).
 - Content linter (`scripts/content/lint.ts`) implementing VOICE.md's machine-checkable rules for both languages.
-- Write templates for both locales, then country content one subregion per batch, both languages per batch, following `CLAUDE.md`.
+- Write templates for both locales, then country content one subregion per batch, both languages per batch, following `CONTRIBUTING.md`.
 - Generate `content/REVIEW.md`.
 
 Tests: every template compiles in both locales with matching ids; every moment has >= 1 eligible template per card type per locale; slot edge cases (Monaco, Russia, target equals home, "på" countries); no variant repeats within the last 3 views; 10 simulated reviews of one card show >= 4 distinct snippet combinations.
@@ -816,8 +816,8 @@ From a real user test: a first-time visitor did not understand what GeoDex is, w
 
 ## 11. Risks
 
-- **Content volume:** ~670 entities, ~8 snippets each, two languages: roughly 10,000 snippets. This is the largest use of Claude Code in the project. Spread batches across sessions; English fallback per snippet keeps the app usable if Norwegian lags.
-- **Content accuracy:** LLM-written facts will contain errors. Numbers come from slots or carry a source; `REVIEW.md`; report button.
+- **Content volume:** ~670 entities, ~8 snippets each, two languages: roughly 10,000 snippets. This is the largest writing task in the project. Spread it over many batches; English fallback per snippet keeps the app usable if Norwegian lags.
+- **Content accuracy:** hand-written facts will contain errors. Numbers come from slots or carry a source; `REVIEW.md`; report button.
 - **History data:** availability and licensing uncertain (Phase 9).
 - **Volatile data:** currencies and capitals change. Store `asOf` dates; rerun `data:build` yearly.
 - **Official languages:** contested in some countries; the curated file is the source of truth and lists its sources.

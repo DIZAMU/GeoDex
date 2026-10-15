@@ -67,7 +67,7 @@ export function LearnerProvider({ children }: { children: ReactNode }) {
     [retention, params],
   );
 
-  // cardState is only a cache (CLAUDE.md invariant 2): if it is missing at load while events
+  // cardState is only a cache (CONTRIBUTING.md invariant 2): if it is missing at load while events
   // exist, rebuild it from the events instead of showing an empty learner. Checked once per
   // load: later, the two live queries update one after the other, and a fresh first review
   // would otherwise look like a missing cache for one render and remount the session.

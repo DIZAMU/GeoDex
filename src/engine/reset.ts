@@ -1,5 +1,5 @@
 /**
- * "Reset progress" without deleting anything (CLAUDE.md invariant 1): events stay in the
+ * "Reset progress" without deleting anything (CONTRIBUTING.md invariant 1): events stay in the
  * log, and every replay starts after the reset time kept in the synced settings.
  */
 export function eventsSince<T extends { reviewedAt: number }>(

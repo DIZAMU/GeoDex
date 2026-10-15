@@ -1,23 +1,22 @@
-# CLAUDE.md
+# Contributing to GeoDex
 
-GeoDex is a spaced-repetition geography trainer by DIZAMU (sole author). The full spec is in `PLAN.md`; section 0 lists decisions already made with the author, do not reopen them. The voice for all learner-facing text is in `content/VOICE.md`.
+GeoDex is a spaced-repetition geography trainer by DIZAMU. The full design is in `PLAN.md`; section 0 lists decisions already made, which are not reopened. The voice for all learner-facing text is in `content/VOICE.md`.
 
 ## How to work
 
-- Build one phase at a time, in `PLAN.md` order. Before coding a phase, restate its tasks and acceptance criteria in one short list, then build.
-- Do not start the next phase until every acceptance criterion of the current one passes.
-- Commit after each completed task with conventional commits: `feat:`, `fix:`, `data:`, `content:`, `test:`, `docs:`, `chore:`. The history is part of the portfolio: small, focused commits with clear messages.
-- If the plan conflicts with reality (a library lacks a feature, data is missing, a license blocks a dataset), write the problem and two options in `DECISIONS.md`, pick the safer one, and continue.
-- When unsure about a library API (ts-fsrs, Supabase, vite-plugin-pwa, d3-zoom, i18next), read the installed version's types in `node_modules` or its current docs. Do not guess from memory.
+- Build in `PLAN.md` order. Before starting a phase, restate its tasks and acceptance criteria in one short list.
+- A phase is done when every acceptance criterion passes.
+- Use conventional commits: `feat:`, `fix:`, `data:`, `content:`, `test:`, `docs:`, `chore:`. Keep commits small and focused, with clear messages.
+- When the plan conflicts with reality (a library lacks a feature, data is missing, a license blocks a dataset), write the problem and the options in `DECISIONS.md`, pick the safer one, and continue.
+- When unsure about a library API (ts-fsrs, Supabase, vite-plugin-pwa, d3-zoom, i18next), read the installed version's types in `node_modules` or its current docs.
 
-## Hard rules
+## Rules
 
-- The repo is `DIZAMU/GeoDex`, private. Never change its visibility, never add other remotes, never force-push `main`.
 - No dependency or service that costs money or needs an API key. The only external service is optional Supabase.
-- No LLM API calls from app code or scripts. All content is written by you during development and committed.
+- No AI or LLM calls from app code or scripts. All content is static and committed.
 - No runtime network requests except Supabase, same-origin assets, and Wikimedia Commons images for landmarks. No font CDNs, flag CDNs or tile servers.
 - TypeScript strict. No `any` without a comment explaining why.
-- Pure logic (scheduler, budget, grading, matching, distractors, session, placement, streak, achievements, stats, explanation selection, slots, sync merge) lives in `src/engine/` with no React or Dexie imports, and has unit tests.
+- Pure logic (scheduler, budget, grading, matching, distractors, session, placement, streak, achievements, stats, levels, XP, explanation selection, slots, sync merge) lives in `src/engine/` with no React or Dexie imports, and has unit tests.
 - Deterministic everywhere: seeded randomness only.
 - No em dashes or en dashes in any committed text: UI strings, content, templates, README, docs. The linter checks `content/`, `src/i18n/` and string literals in `src/`.
 
@@ -29,7 +28,7 @@ GeoDex is a spaced-repetition geography trainer by DIZAMU (sole author). The ful
 - Norwegian country phrases use `prepNb` ("i Laos", "på Island"). Never hardcode "i".
 - Typed answers accept both languages regardless of the UI language.
 
-## Invariants (never break)
+## Invariants
 
 1. Event tables (review events, hook votes) are append-only. Never update or delete an event, locally or remotely.
 2. `cardState` is a cache, fully rebuildable from events plus settings.
@@ -52,20 +51,20 @@ pnpm content:compile   # templates md -> src/generated/templates.json
 pnpm content:lint      # enforce VOICE.md rules, both locales
 ```
 
-## Definition of done (per task)
+## Definition of done
 
 - Typecheck, lint and unit tests pass.
 - New logic has tests.
-- UI tasks: Playwright screenshots at 1440x900 and 390x844, in all three themes and both languages, reviewed against `PLAN.md` section 8 before marking done.
+- UI changes: Playwright screenshots at 1440x900 and 390x844, in all three themes and both languages, reviewed against `PLAN.md` section 8.
 
-## Content process (Phase 3 onward)
+## Content
 
-1. Read `content/VOICE.md` in full before every batch, not only the first.
+1. Read `content/VOICE.md` in full before every batch.
 2. One group per batch (subregion for countries, continent for other modules), one commit per batch. Write both languages in the same batch.
 3. Hooks: write natively in each language. Do not translate English sound-alike or wordplay hooks into Norwegian; invent Norwegian ones that work in Norwegian.
 4. Facts: one claim, rendered faithfully in both languages.
-5. Numbers and dates come from `data/` via slots. A fact that must contain a hand-written number or date needs a `sourceUrl` you actually checked, and `verified: false` until the author confirms it.
-6. Never invent a source URL. If you cannot verify a fact, set `verified: false` or drop it.
+5. Numbers and dates come from `data/` via slots. A fact that must contain a hand-written number or date needs a `sourceUrl` that was actually checked, and `verified: false` until the author confirms it.
+6. Never invent a source URL. If a fact cannot be verified, set `verified: false` or drop it.
 7. If a well-known mnemonic or "fact" is false, do not use it.
 8. Run `pnpm content:lint` after each batch and fix every error before the next.
 9. Regenerate `content/REVIEW.md` after each batch (all `verified: false` facts, grouped by module and group).
@@ -78,3 +77,7 @@ pnpm content:lint      # enforce VOICE.md rules, both locales
 - UI copy: sentence case, active verbs, no praise filler. Errors state what happened and the fix.
 - Color never carries meaning alone. Mastery ramps are luminance-based, never red to green.
 - Keyboard shortcuts work on every session screen and are listed in the `?` overlay.
+
+## Releases
+
+Each release has a notes file `releases/<tag>.md`. Merging it into `main` publishes the GitHub release (`.github/workflows/release.yml`).

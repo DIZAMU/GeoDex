@@ -1,6 +1,6 @@
 /**
  * Review events and the card state cache. Events are append-only; card state is derived
- * from them and can be rebuilt at any time (CLAUDE.md invariants 1 and 2).
+ * from them and can be rebuilt at any time (CONTRIBUTING.md invariants 1 and 2).
  */
 import type { FSRS } from "ts-fsrs";
 import { eventsSince } from "@/engine/reset";

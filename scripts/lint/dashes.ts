@@ -1,4 +1,4 @@
-/** U+2013 en dash and U+2014 em dash, banned in committed text by CLAUDE.md. */
+/** U+2013 en dash and U+2014 em dash, banned in committed text by CONTRIBUTING.md. */
 export const EN_DASH = String.fromCodePoint(0x2013);
 export const EM_DASH = String.fromCodePoint(0x2014);
 
