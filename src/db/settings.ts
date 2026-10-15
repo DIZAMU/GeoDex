@@ -59,6 +59,15 @@ export async function setSessionPick(
   await db.deviceSettings.update(DEVICE_ROW_ID, pick);
 }
 
+/** Shows the way to the next level as cards or as a percentage, on this device. */
+export async function setLevelProgress(
+  db: GeoDexDb,
+  levelProgress: "cards" | "percent",
+): Promise<void> {
+  await ensureDeviceSettings(db);
+  await db.deviceSettings.update(DEVICE_ROW_ID, { levelProgress });
+}
+
 /** Asks the browser to keep IndexedDB through storage pressure, once per device. */
 export async function requestPersistentStorage(db: GeoDexDb): Promise<void> {
   const device = await ensureDeviceSettings(db);

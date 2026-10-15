@@ -75,6 +75,8 @@ export type DeviceSettingsRow = {
   /** The session picker's last length and focus (PLAN.md 11.2); null uses the defaults. */
   sessionLength?: number | null;
   sessionFocus?: string | null;
+  /** The way to the next memory level on Today: cards to go (default) or a percentage. */
+  levelProgress?: "cards" | "percent" | null;
 };
 
 /**

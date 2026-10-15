@@ -27,6 +27,16 @@ test("the overview shows level, next milestone, XP, goal and the path", async ({
   );
   await expect(overview.getByTestId("level-path")).toBeVisible();
 
+  // The way to the next level switches between cards and a percentage, and is remembered.
+  await page.getByTestId("next-level").click();
+  await expect(page.getByTestId("next-level")).toHaveText(/^\d+% of the way to level 2$/);
+  await page.reload();
+  await expect(page.getByTestId("next-level")).toHaveAttribute("data-show", "percent");
+  await page.goto("/settings");
+  await page.getByTestId("level-progress-cards").click();
+  await page.goto("/");
+  await expect(page.getByTestId("next-level")).toHaveText(/more cards? to level 2/);
+
   // Country and continent levels.
   await page.goto("/atlas/NOR");
   await expect(page.getByTestId("entry-level")).toHaveAttribute("aria-label", /Memory level \d+/);

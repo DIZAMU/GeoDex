@@ -70,7 +70,10 @@
     "sessions_other": "{{count}} sessions",
     "goalHelp": "Meeting your goal fills the ring on Today, earns XP and counts the day for your streak, even with reviews left.",
     "sessionLength": "Session length",
-    "sessionFocus": "Session focus"
+    "sessionFocus": "Session focus",
+    "levelProgress": "Way to the next level",
+    "levelCards": "Cards to go",
+    "levelPercent": "Percentage"
   },
   "nav": {
     "today": "Today",
@@ -720,7 +723,10 @@
     "goalSessionsLabel_one": "{{done}} of {{count}} session done today",
     "goalSessionsLabel_other": "{{done}} of {{count}} sessions done today",
     "ofSessions_one": "of {{goal}} session",
-    "ofSessions_other": "of {{goal}} sessions"
+    "ofSessions_other": "of {{goal}} sessions",
+    "toNextPercent": "{{percent}} of the way to level {{level}}",
+    "showCards": "Show cards to go",
+    "showPercent": "Show as a percentage"
   },
   "rank": {
     "tourist": "Tourist",
