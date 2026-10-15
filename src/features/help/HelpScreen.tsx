@@ -16,7 +16,9 @@ import {
   RefreshCwIcon,
   SettingsIcon,
   SparklesIcon,
+  TargetIcon,
   TrendingUpIcon,
+  TrophyIcon,
 } from "lucide-react";
 import type { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
@@ -95,6 +97,12 @@ export function HelpScreen() {
           </HelpCard>
           <HelpCard icon={KeyboardIcon} title={t("help.keysTitle")}>
             {t("help.keysBody")}
+          </HelpCard>
+          <HelpCard icon={TrophyIcon} title={t("help.xpTitle")}>
+            {t("help.xpBody")}
+          </HelpCard>
+          <HelpCard icon={TargetIcon} title={t("help.goalTitle")}>
+            {t("help.goalBody")}
           </HelpCard>
         </div>
       </section>
