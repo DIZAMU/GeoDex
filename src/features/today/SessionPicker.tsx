@@ -44,22 +44,54 @@ export function SessionPicker({
   const length = parseLength(learner.device.sessionLength);
   const input = learner.device.lastInputMode;
 
+  const locale = i18n.language === "nb" ? "nb" : "en";
   const groups = useMemo(() => {
     const modules = FOCUS_MODULES.filter(
       (m) => m === "countries" || learner.settings.modules?.[m] === true,
     );
+    const subregions = learner.world.subregions;
     return [
-      { label: "skills", items: SKILLS.map((id): Focus => ({ kind: "skill", id })) },
+      {
+        label: t("picker.skills"),
+        items: SKILLS.map((id) => ({
+          focus: { kind: "skill", id } as Focus,
+          name: t(`skill.${id}`),
+        })),
+      },
       // One module has nothing to pick between.
       {
-        label: "modules",
-        items: modules.length > 1 ? modules.map((id): Focus => ({ kind: "module", id })) : [],
+        label: t("picker.modules"),
+        items:
+          modules.length > 1
+            ? modules.map((id) => ({
+                focus: { kind: "module", id } as Focus,
+                name: t(`picker.module.${id}`),
+              }))
+            : [],
       },
-      { label: "regions", items: CONTINENTS.map((id): Focus => ({ kind: "region", id })) },
-    ] as const;
-  }, [learner.settings.modules]);
+      // Each continent, then its subregions (PLAN.md 11.2).
+      ...CONTINENTS.map((continent) => ({
+        label: t(`continent.${continent}`),
+        items: [
+          {
+            focus: { kind: "region", id: continent } as Focus,
+            name: t("picker.allOf", { name: t(`continent.${continent}`) }),
+          },
+          ...subregions
+            .filter((r) => r.continent === continent)
+            .map((r) => ({ focus: { kind: "region", id: r.id } as Focus, name: r.names[locale] }))
+            .sort((a, b) => a.name.localeCompare(b.name, locale)),
+        ],
+      })),
+    ];
+  }, [learner.settings.modules, learner.world.subregions, t, locale]);
   const counts = useMemo(
-    () => focusCounts(queue, [MIXED, ...groups.flatMap((g) => g.items)], continentOf),
+    () =>
+      focusCounts(
+        queue,
+        [MIXED, ...groups.flatMap((g) => g.items.map((i) => i.focus))],
+        continentOf,
+      ),
     [queue, groups, continentOf],
   );
   // A remembered focus that is empty today (or no longer offered) falls back to Mixed.
@@ -70,18 +102,6 @@ export function SessionPicker({
     [queue, focus, length, continentOf],
   );
 
-  const name = (f: Focus): string => {
-    switch (f.kind) {
-      case "mixed":
-        return t("picker.mixed");
-      case "skill":
-        return t(`picker.skill.${f.id}`);
-      case "module":
-        return t(`picker.module.${f.id}`);
-      case "region":
-        return t(`continent.${f.id as (typeof CONTINENTS)[number]}`);
-    }
-  };
   const pick = (next: { length?: number; focus?: Focus }) =>
     void setSessionPick(db, {
       sessionLength: next.length ?? length,
@@ -139,18 +159,20 @@ export function SessionPicker({
           >
             <option value="mixed">
               {t("picker.option", {
-                name: name(MIXED),
+                name: t("picker.mixed"),
                 count: number.format(counts.get("mixed") ?? 0),
               })}
             </option>
             {groups.map((g) =>
               g.items.length > 0 ? (
-                <optgroup key={g.label} label={t(`picker.${g.label}`)}>
-                  {g.items.map((f) => {
+                <optgroup key={g.label} label={g.label}>
+                  {g.items.map(({ focus: f, name }) => {
                     const count = counts.get(focusKey(f)) ?? 0;
+                    // Empty subregions stay out of the list; empty skills and continents show, disabled.
+                    if (count === 0 && f.kind === "region" && /^\d/.test(f.id)) return null;
                     return (
                       <option key={focusKey(f)} value={focusKey(f)} disabled={count === 0}>
-                        {t("picker.option", { name: name(f), count: number.format(count) })}
+                        {t("picker.option", { name, count: number.format(count) })}
                       </option>
                     );
                   })}

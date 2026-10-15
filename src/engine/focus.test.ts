@@ -30,10 +30,10 @@ describe("cardSkill and cardModule", () => {
       expect(cardSkill(t)).not.toBeNull();
       expect(cardModule(t)).toBe("countries");
     }
-    expect(cardSkill("name_to_map")).toBe("map");
+    expect(cardSkill("name_to_map")).toBe("location");
     expect(cardSkill("flag_to_name")).toBe("flags");
     expect(cardSkill("capital_to_country")).toBe("capitals");
-    expect(cardSkill("country_to_currency")).toBe("facts");
+    expect(cardSkill("country_to_language")).toBe("currency_language");
   });
 
   it("files module cards under their module", () => {
@@ -42,8 +42,10 @@ describe("cardSkill and cardModule", () => {
     expect(cardModule("photo_to_name")).toBe("landmarks");
     expect(cardModule("map_to_feature")).toBe("physical");
     expect(cardModule("group_member")).toBe("groups");
-    expect(cardSkill("city_to_map")).toBe("map");
-    expect(cardSkill("map_to_empire")).toBe("map");
+    expect(cardSkill("city_to_map")).toBe("location");
+    expect(cardSkill("map_to_empire")).toBe("location");
+    expect(cardSkill("photo_to_name")).toBeNull();
+    expect(cardSkill("empire_to_era")).toBeNull();
   });
 
   it("keeps contrast cards out of every skill", () => {
@@ -60,6 +62,7 @@ describe("focus keys", () => {
       { kind: "skill", id: "flags" },
       { kind: "module", id: "cities" },
       { kind: "region", id: "south_america" },
+      { kind: "region", id: "154" },
     ] as const) {
       expect(parseFocus(focusKey(f))).toEqual(f);
     }
@@ -138,6 +141,8 @@ describe("sliceSession", () => {
     expect(europe.queue.every((q) => q.subregion === "154")).toBe(true);
     expect(europe.available).toBe(5);
     expect(europe.dueOutside).toBe(1);
+    const east = sliceSession(plan, { kind: "region", id: "035" }, 20, continentOf);
+    expect(east.queue.map((q) => q.entityId).sort()).toEqual(["CHN", "JPN"]);
   });
 
   it("never repeats an entity back to back after slicing", () => {
@@ -155,11 +160,11 @@ describe("sliceSession", () => {
   it("counts cards per focus for the picker", () => {
     const counts = focusCounts(
       plan,
-      [MIXED, { kind: "skill", id: "map" }, { kind: "region", id: "africa" }],
+      [MIXED, { kind: "skill", id: "location" }, { kind: "region", id: "africa" }],
       continentOf,
     );
     expect(counts.get("mixed")).toBe(9);
-    expect(counts.get("skill:map")).toBe(3);
+    expect(counts.get("skill:location")).toBe(3);
     expect(counts.get("region:africa")).toBe(2);
   });
 });

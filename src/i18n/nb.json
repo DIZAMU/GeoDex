@@ -657,13 +657,8 @@
     "skills": "Ferdigheter",
     "modules": "Emner",
     "regions": "Verdensdeler",
+    "allOf": "Hele {{name}}",
     "option": "{{name}} ({{count}})",
-    "skill": {
-      "map": "På kartet",
-      "flags": "Flagg",
-      "capitals": "Hovedsteder",
-      "facts": "Navn og fakta"
-    },
     "module": {
       "countries": "Land",
       "cities": "Kjente byer",
