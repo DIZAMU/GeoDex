@@ -37,22 +37,12 @@
     "countdown": "Countdown",
     "countdownOff": "Off",
     "seconds": "{{count}} s",
-    "cities": "Famous cities (after their country)",
-    "currencyLanguage": "Currency and language cards",
-    "on": "On",
-    "off": "Off",
     "homeCountry": "Home country",
-    "rerunPlacement": "Rerun the placement test",
-    "groupLook": "Language and look",
+    "groupLook": "Language, look and sound",
     "groupStudy": "Study",
-    "groups": "Groups of countries (after half their members)",
-    "landmarks": "Landmarks (after their country)",
-    "physical": "Physical geography (after a country it touches)",
-    "history": "History (former names, dissolved states, empires)",
     "welcomeAgain": "Show the welcome page and tour again",
-    "groupGoals": "Your goals",
-    "groupTopics": "What you want to learn",
-    "groupGuide": "Guidance",
+    "groupTopics": "Topics",
+    "groupGuide": "Guide",
     "dailyMinutesHelp": "How long you study on a normal day. It sets how many new cards you get and the time estimate.",
     "goalKind": "Daily goal",
     "goalMinutes": "Reach my daily time",
@@ -69,7 +59,38 @@
     "sound": "Sound",
     "soundHelp": "A short tone after each answer and at the end of a session",
     "vibration": "Vibration",
-    "vibrationHelp": "A short buzz after each answer, on phones that support it"
+    "vibrationHelp": "A short buzz after each answer, on phones that support it",
+    "topic": {
+      "currencyLanguage": {
+        "label": "Currency and language",
+        "detail": "Which currency and official languages each country uses"
+      },
+      "cities": {
+        "label": "Famous cities",
+        "detail": "Big and well known cities, introduced after their country"
+      },
+      "groups": {
+        "label": "Groups of countries",
+        "detail": "Such as the Nordic countries or the EU, introduced after half their members"
+      },
+      "landmarks": {
+        "label": "Landmarks",
+        "detail": "Famous sights with a photo, introduced after their country"
+      },
+      "physical": {
+        "label": "Physical geography",
+        "detail": "Rivers, lakes, seas, mountains and deserts, introduced after a country they touch"
+      },
+      "history": {
+        "label": "History",
+        "detail": "Former names, dissolved states and empires"
+      }
+    },
+    "countdownHelp": "Time to answer each question. Off lets you think as long as you like.",
+    "sessionLengthHelp": "How many questions a session has when you press Start.",
+    "sessionFocusHelp": "What a session draws from first.",
+    "levelProgressHelp": "How Today shows the way to your next level.",
+    "homeCountryHelp": "New countries come from your own region first, then from regions further away."
   },
   "nav": {
     "today": "Today",
@@ -95,23 +116,6 @@
     "start": "Start",
     "chosen": "Home country: {{name}}",
     "choose": "Choose a home country to start"
-  },
-  "placement": {
-    "title": "Placement test",
-    "intro": "A short test of what you already know, region by region. Wrong answers are not held against you.",
-    "skip": "Skip this region",
-    "finish": "Finish now",
-    "answered": "{{count}} answered",
-    "region": "Region: {{name}}",
-    "resultTitle": "Placement result",
-    "countries": "Countries placed: {{count}}",
-    "capitals": "Capitals known: {{count}}",
-    "flags": "Flags known: {{count}}",
-    "startsWith": "Daily learning starts with {{region}}.",
-    "toToday": "Go to today",
-    "statCountries": "Countries",
-    "statCapitals": "Capitals",
-    "statFlags": "Flags"
   },
   "q": {
     "city_to_country": "Which country is {{city}} in?",
@@ -196,9 +200,7 @@
     "continue": "Test me"
   },
   "session": {
-    "left": "{{count}} left",
     "end": "End session",
-    "doneTitle": "Session done",
     "reviewed_one": "{{count}} review",
     "reviewed_other": "{{count}} reviews",
     "backToToday": "Back to today",
@@ -214,8 +216,7 @@
     "hint": "Show a hint",
     "notHelpful": "Mark a memory hook not helpful",
     "end": "End the session",
-    "help": "Show these shortcuts",
-    "close": "Close"
+    "help": "Show these shortcuts"
   },
   "map": {
     "label": "World map"
@@ -333,15 +334,15 @@
     "grid": "Skills by continent",
     "cell": "{{mastered}} mastered, {{started}} started, {{total}} cards",
     "gridHelp": "Share of cards mastered (21+ days).",
-    "retention": "Retention, last 30 days",
+    "retention": "Remembered, last 30 days",
     "retentionValue": "{{correct}} of {{total}} reviews correct",
     "target": "target {{value}}",
     "noRetention": "No reviews of known cards in the last 30 days.",
     "forecast": "Due in the next 30 days",
-    "confusions": "Top confusions",
+    "confusions": "Mixed up most",
     "noConfusions": "No confusions yet.",
-    "leeches": "Leeches",
-    "noLeeches": "No card has lapsed six times.",
+    "leeches": "Cards that keep slipping",
+    "noLeeches": "No card has slipped six times.",
     "hooks": "Hooks that work for you",
     "hookRate": "{{value}} remembered next time",
     "noHooks": "Not enough reviews after hooks yet.",
@@ -355,14 +356,23 @@
     "landmarks": "Landmarks",
     "physical": "Physical geography",
     "history": "History",
-    "levels": "Levels",
-    "levelsHelp": "Memory level 1 to 10 per continent and topic. It drops when cards are forgotten."
+    "levels": "By continent and topic",
+    "levelsHelp": "Memory level 1 to 10 for each. It drops when cards are forgotten.",
+    "levelTitle": "Level and XP",
+    "levelHelp": "XP only goes up. The memory level follows what you remember right now, so it can slip.",
+    "forecastWeek_one": "{{formatted}} card due in the next 7 days",
+    "forecastWeek_other": "{{formatted}} cards due in the next 7 days",
+    "confusionsHelp": "Pairs you have confused lately. Drill a pair to tell them apart.",
+    "pair": "{{a}} and {{b}}",
+    "leechesHelp": "Forgotten six times or more.",
+    "hooksHelp": "Kinds of memory hooks, by how often you remembered the card the next time."
   },
   "streak": {
     "days_one": "{{count}}-day streak",
     "days_other": "{{count}}-day streak",
     "none": "No streak yet",
-    "longest": "Longest {{count}}",
+    "longest_one": "Longest streak: {{count}} day",
+    "longest_other": "Longest streak: {{count}} days",
     "freezes_one": "{{count}} freeze in reserve",
     "freezes_other": "{{count}} freezes in reserve"
   },
@@ -374,18 +384,20 @@
     "streak": "{{count}}-day streak"
   },
   "summary": {
-    "retention": "Correct: {{value}}",
     "tomorrow_one": "{{count}} card due tomorrow",
     "tomorrow_other": "{{count}} cards due tomorrow",
     "newAchievements": "New achievements",
     "xp": "+{{xp}} XP",
     "levelUp": "Memory level {{level}}",
-    "rankUp": "New rank: {{rank}}"
+    "rankUp": "New rank: {{rank}}",
+    "right_one": "{{correct}} of {{total}} right",
+    "right_other": "{{correct}} of {{total}} right",
+    "misses": "To see again soon",
+    "mixedUp": "mixed up with {{name}}"
   },
   "drill": {
     "title": "Drill",
     "note": "Practice only: drill answers do not change your schedule or your streak.",
-    "region": "Drill: {{name}}",
     "pair": "Drill: {{a}} and {{b}}",
     "empty": "Nothing to drill here yet."
   },
@@ -637,14 +649,12 @@
     "again_other": "Another {{count}} questions"
   },
   "overview": {
-    "title": "Your progress",
     "level": "Level",
     "levelLabel": "Memory level {{level}} of 10",
     "memory": "Memory level",
     "toNext_one": "{{count}} more card to level {{level}}",
     "toNext_other": "{{count}} more cards to level {{level}}",
     "top": "Top level. Keep reviewing to hold it.",
-    "ofMinutes": "of {{goal}} min",
     "xpLevel": "XP level {{level}}",
     "xp": "{{xp}} XP",
     "xpToNext": "{{xp}} XP to the next XP level",
@@ -652,8 +662,6 @@
     "goalMinutesLabel": "{{done}} of {{count}} minutes studied today",
     "goalSessionsLabel_one": "{{done}} of {{count}} session done today",
     "goalSessionsLabel_other": "{{done}} of {{count}} sessions done today",
-    "ofSessions_one": "of {{goal}} session",
-    "ofSessions_other": "of {{goal}} sessions",
     "toNextPercent": "{{percent}} of the way to level {{level}}",
     "showCards": "Show cards to go",
     "showPercent": "Show as a percentage"

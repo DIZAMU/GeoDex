@@ -46,6 +46,11 @@ const TEXT_PAIRS: [string, string][] = [
   ["foreground", "map-ocean"],
   ["foreground", "map-land"],
   ["map-water-label", "map-ocean"],
+  ["on-mastery-0", "mastery-0"],
+  ["on-mastery-1", "mastery-1"],
+  ["on-mastery-2", "mastery-2"],
+  ["on-mastery-3", "mastery-3"],
+  ["on-mastery-4", "mastery-4"],
 ];
 
 const GRAPHIC_PAIRS: [string, string][] = [

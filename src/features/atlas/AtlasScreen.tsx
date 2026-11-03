@@ -1,4 +1,4 @@
-import { AwardIcon, DumbbellIcon, GlobeIcon, HourglassIcon, MapIcon } from "lucide-react";
+import { CheckIcon, DumbbellIcon, GlobeIcon, HourglassIcon, MapIcon } from "lucide-react";
 import { useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate, useSearchParams } from "react-router";
@@ -87,7 +87,7 @@ function Atlas({ learner }: { learner: Learner }) {
     <div className="mx-auto grid w-full max-w-6xl gap-6 px-4 py-6 md:px-10 lg:h-[calc(100dvh-4rem)] lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:py-8">
       <section aria-labelledby="atlas-title" className="enter flex min-h-0 flex-col gap-4">
         <div className="flex flex-wrap items-end justify-between gap-3">
-          <h1 id="atlas-title" className="font-name text-3xl tracking-tight">
+          <h1 id="atlas-title" className="text-3xl font-medium tracking-tight">
             {t("atlas.title")}
           </h1>
           <ToggleGroup
@@ -189,7 +189,7 @@ function Atlas({ learner }: { learner: Learner }) {
         className="enter flex min-h-0 flex-col gap-3"
         data-testid="atlas-regions"
       >
-        <h2 id="regions-title" className="font-name text-lg">
+        <h2 id="regions-title" className="text-lg font-medium">
           {t("atlas.regions")}
         </h2>
         <div className="surface min-h-0 flex-1 overflow-y-auto">
@@ -200,7 +200,7 @@ function Atlas({ learner }: { learner: Learner }) {
             if (subs.length === 0) return null;
             return (
               <div key={continent} className="border-b border-border last:border-b-0">
-                <h3 className="sticky top-0 bg-card/95 px-4 pt-3 pb-1 text-xs tracking-wide text-muted-foreground uppercase backdrop-blur">
+                <h3 className="sticky top-0 bg-card px-4 pt-3 pb-1 text-sm font-medium text-muted-foreground">
                   {t(`continent.${continent}`)}
                 </h3>
                 <ul>
@@ -218,8 +218,9 @@ function Atlas({ learner }: { learner: Learner }) {
                           <span className="flex items-center gap-1.5 truncate">
                             {s.names[locale]}
                             {badge ? (
-                              <AwardIcon
-                                className="size-4 shrink-0 text-primary"
+                              <CheckIcon
+                                className="size-4 shrink-0"
+                                strokeWidth={2.25}
                                 aria-label={t("atlas.badge")}
                               />
                             ) : null}

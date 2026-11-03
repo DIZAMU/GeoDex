@@ -1,4 +1,4 @@
-import { AwardIcon, DumbbellIcon } from "lucide-react";
+import { DumbbellIcon } from "lucide-react";
 import { useEffect, useMemo, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
@@ -17,11 +17,14 @@ import {
 } from "@/engine/types";
 import { isLocale, type Locale } from "@/i18n/locales";
 import { Loader } from "@/ui/loader";
+import { Meter } from "@/ui/meter";
 import { nameOf } from "../session/parts";
 import { useLevels } from "../study/levels";
 import { confusionScoresFor, historyCardTypes, scopedCountries } from "../study/plan";
 import { useProgress } from "../study/progress";
 import { type Learner, useLearner } from "../study/useLearner";
+import { withinLevel } from "../today/LevelLine";
+import { LevelPath } from "../welcome/LevelPath";
 import { achievementLabel } from "./labels";
 
 /** A hook type needs this many outcomes before its rate is shown. */
@@ -34,27 +37,34 @@ export function StatsScreen() {
   return <Stats learner={learner} />;
 }
 
-function Panel({
+/**
+ * One section of the report: the title and a line of help on the left on a wide screen, the
+ * content on the right. A hairline separates sections; nothing is boxed.
+ */
+function Section({
   title,
+  help,
   id,
-  className,
   children,
 }: {
   title: string;
+  help?: string;
   id: string;
-  className?: string;
   children: React.ReactNode;
 }) {
   return (
     <section
       aria-labelledby={`${id}-title`}
-      className={`surface flex min-w-0 flex-col gap-3 p-5 ${className ?? ""}`}
+      className="grid gap-3 border-t border-border py-6 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-10"
       data-testid={`stats-${id}`}
     >
-      <h2 id={`${id}-title`} className="font-name text-lg">
-        {title}
-      </h2>
-      {children}
+      <div className="flex flex-col gap-1">
+        <h2 id={`${id}-title`} className="text-lg font-medium">
+          {title}
+        </h2>
+        {help ? <p className="text-sm text-muted-foreground">{help}</p> : null}
+      </div>
+      <div className="flex min-w-0 flex-col gap-3">{children}</div>
     </section>
   );
 }
@@ -115,6 +125,7 @@ function Stats({ learner }: { learner: Learner }) {
   const total = data.retention.reduce((n, r) => n + r.total, 0);
   const correct = data.retention.reduce((n, r) => n + r.correct, 0);
   const forecastMax = Math.max(1, ...data.forecast.map((d) => d.count));
+  const week = data.forecast.slice(0, 7).reduce((n, d) => n + d.count, 0);
   const continents = CONTINENTS.filter((c) => data.countries.some((x) => x.continent === c));
   const hookRows = HOOK_TYPES.map((type) => {
     const s = data.hooks.get(type) ?? { successes: 0, failures: 0 };
@@ -122,310 +133,353 @@ function Stats({ learner }: { learner: Learner }) {
   })
     .filter((r) => r.n >= MIN_HOOK_OUTCOMES)
     .sort((a, b) => b.weight - a.weight);
+  const levelRows = [
+    ...continents.flatMap((c) => {
+      const m = levels.byContinent.get(c);
+      return m ? [{ key: c, name: t(`continent.${c}`), m }] : [];
+    }),
+    ...[...levels.byModule]
+      .filter(([id, m]) => id !== "countries" && m.cards > 0)
+      .map(([id, m]) => ({ key: id, name: t(`picker.module.${id}`), m })),
+  ];
+  const drillLink =
+    "flex size-11 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground";
 
   return (
-    <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-6 md:px-10 lg:py-8">
-      <h1 className="font-name text-3xl tracking-tight">{t("stats.title")}</h1>
+    <div className="mx-auto flex w-full max-w-6xl flex-col px-4 py-6 md:px-10 lg:py-8">
+      <h1 className="enter pb-6 text-3xl font-medium tracking-tight">{t("stats.title")}</h1>
 
-      <div className="stagger grid grid-cols-[minmax(0,1fr)] gap-4 lg:grid-cols-3">
-        <Panel title={t("stats.levels")} id="levels">
-          <p className="text-sm text-muted-foreground">{t("stats.levelsHelp")}</p>
-          <ul className="flex flex-col gap-2.5">
-            {[
-              ...continents.flatMap((c) => {
-                const m = levels.byContinent.get(c);
-                return m ? [{ key: c, name: t(`continent.${c}`), m }] : [];
-              }),
-              ...[...levels.byModule]
-                .filter(([id, m]) => id !== "countries" && m.cards > 0)
-                .map(([id, m]) => ({ key: id, name: t(`picker.module.${id}`), m })),
-            ].map(({ key, name, m }) => (
-              <li key={key} className="flex flex-col gap-1" data-testid={`level-${key}`}>
-                <div className="flex items-baseline justify-between gap-2 text-sm">
-                  <span className="truncate">{name}</span>
-                  <span className="shrink-0 text-muted-foreground tabular-nums">
-                    {t("overview.levelShort", { level: m.level })}
+      <Section title={t("stats.levelTitle")} help={t("stats.levelHelp")} id="level">
+        <LevelBreakdown learner={learner} />
+      </Section>
+
+      <Section title={t("stats.forecast")} id="forecast">
+        <p data-testid="forecast-week">
+          {t("stats.forecastWeek", { count: week, formatted: number.format(week) })}
+        </p>
+        <div className="flex h-28 items-end gap-0.5" aria-hidden>
+          {data.forecast.map((d, i) => (
+            <span
+              key={d.start}
+              title={`${date.format(d.start)}: ${number.format(d.count)}`}
+              className={`flex-1 rounded-t-sm ${i < 7 ? "bg-foreground" : "bg-muted-foreground/50"}`}
+              style={{ height: `${Math.max(2, (d.count / forecastMax) * 100)}%` }}
+            />
+          ))}
+        </div>
+        <ol className="sr-only">
+          {data.forecast.map((d) => (
+            <li key={d.start}>
+              {date.format(d.start)}: {number.format(d.count)}
+            </li>
+          ))}
+        </ol>
+        <div className="flex justify-between text-xs text-muted-foreground">
+          <span>{date.format(data.forecast[0]?.start ?? Date.now())}</span>
+          <span>{date.format(data.forecast.at(-1)?.start ?? Date.now())}</span>
+        </div>
+      </Section>
+
+      <Section title={t("stats.retention")} id="retention">
+        {total === 0 ? (
+          <p className="text-muted-foreground">{t("stats.noRetention")}</p>
+        ) : (
+          <>
+            <p className="text-3xl font-medium tabular-nums">{percent.format(correct / total)}</p>
+            <Meter
+              value={correct / total}
+              target={learner.settings.requestRetention}
+              className="max-w-md"
+            />
+            <p className="text-sm text-muted-foreground">
+              {t("stats.retentionValue", {
+                correct: number.format(correct),
+                total: number.format(total),
+              })}
+              {", "}
+              {t("stats.target", { value: percent.format(learner.settings.requestRetention) })}
+            </p>
+          </>
+        )}
+      </Section>
+
+      <Section title={t("stats.confusions")} help={t("stats.confusionsHelp")} id="confusions">
+        {data.confusions.length === 0 ? (
+          <p className="text-muted-foreground">{t("stats.noConfusions")}</p>
+        ) : (
+          <ul className="flex max-w-xl flex-col divide-y divide-border">
+            {data.confusions.map(([key]) => {
+              const [a = "", b = ""] = key.split("|");
+              return (
+                <li key={key} className="flex items-center justify-between gap-2 py-1">
+                  <span>{t("stats.pair", { a: name(a), b: name(b) })}</span>
+                  <Link
+                    to={`/drill?a=${a}&b=${b}`}
+                    viewTransition
+                    className={drillLink}
+                    aria-label={t("drill.pair", { a: name(a), b: name(b) })}
+                    title={t("stats.drill")}
+                  >
+                    <DumbbellIcon className="size-4" />
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+      </Section>
+
+      <Section title={t("stats.leeches")} help={t("stats.leechesHelp")} id="leeches">
+        {data.leeches.length === 0 ? (
+          <p className="text-muted-foreground">{t("stats.noLeeches")}</p>
+        ) : (
+          <ul className="flex max-w-xl flex-col divide-y divide-border">
+            {data.leeches.slice(0, 8).map((s) => {
+              const { entityId, type } = parseCardId(s.cardId);
+              return (
+                <li key={s.cardId} className="flex justify-between gap-2 py-2">
+                  <span>
+                    {entityId.includes("|")
+                      ? entityId.split("|").map(name).join(" / ")
+                      : name(entityId)}
                   </span>
-                </div>
-                <div aria-hidden className="h-1.5 overflow-hidden rounded-full bg-muted">
-                  <div
-                    className="h-full rounded-full bg-primary/70"
-                    style={{ width: `${m.share * 100}%` }}
-                  />
-                </div>
+                  <span className="text-sm text-muted-foreground">{t(`cardType.${type}`)}</span>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+      </Section>
+
+      <Section title={t("stats.recognition")} id="recognition">
+        {data.recognition.of === 0 ? (
+          <p className="text-muted-foreground">{t("stats.noRecognition")}</p>
+        ) : (
+          <>
+            <p className="max-w-[62ch]">
+              {t("stats.recognitionBody", {
+                n: number.format(data.recognition.count),
+                of: number.format(data.recognition.of),
+              })}
+            </p>
+            <ul className="flex flex-wrap gap-x-4 gap-y-1">
+              {data.recognition.ids.slice(0, 12).map((id) => (
+                <li key={id}>
+                  <Link
+                    to={`/atlas/${id}`}
+                    viewTransition
+                    className="underline decoration-border underline-offset-4 hover:decoration-foreground"
+                  >
+                    {name(id)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+      </Section>
+
+      <Section title={t("stats.levels")} help={t("stats.levelsHelp")} id="levels">
+        <ul className="grid gap-x-10 gap-y-3 sm:grid-cols-2">
+          {levelRows.map(({ key, name, m }) => (
+            <li key={key} className="flex flex-col gap-1.5" data-testid={`level-${key}`}>
+              <div className="flex items-baseline justify-between gap-2 text-sm">
+                <span className="truncate">{name}</span>
+                <span className="shrink-0 text-muted-foreground tabular-nums">
+                  {t("overview.levelShort", { level: m.level })}
+                </span>
+              </div>
+              <Meter value={m.share} />
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section title={t("stats.grid")} help={t("stats.gridHelp")} id="grid">
+        {/* biome-ignore lint/a11y/noNoninteractiveTabindex: a scrollable region must be focusable (WCAG 2.1.1) */}
+        <section className="overflow-x-auto" tabIndex={0} aria-label={t("stats.grid")}>
+          <table className="w-full min-w-[32rem] border-separate border-spacing-1 text-sm">
+            <thead>
+              <tr>
+                <th className="sr-only">{t("atlas.show")}</th>
+                {continents.map((c) => (
+                  <th
+                    key={c}
+                    scope="col"
+                    className="px-1 text-left font-normal text-muted-foreground"
+                  >
+                    {t(`continent.${c}`)}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ...SKILL_IDS.map((skill) => ({
+                  key: skill as string,
+                  label: t(`skill.${skill}`),
+                  row: data.grid.get(skill),
+                })),
+                ...(learner.settings.modules.cities
+                  ? [{ key: "cities", label: t("stats.cities"), row: data.cityGrid }]
+                  : []),
+                ...(learner.settings.modules.landmarks
+                  ? [{ key: "landmarks", label: t("stats.landmarks"), row: data.landmarkGrid }]
+                  : []),
+                ...(learner.settings.modules.physical
+                  ? [{ key: "physical", label: t("stats.physical"), row: data.physicalGrid }]
+                  : []),
+                ...(learner.settings.modules.history
+                  ? [{ key: "history", label: t("stats.history"), row: data.historyGrid }]
+                  : []),
+              ].map(({ key, label, row }) => (
+                <tr key={key}>
+                  <th scope="row" className="pr-2 text-left font-normal whitespace-nowrap">
+                    {label}
+                  </th>
+                  {continents.map((c) => {
+                    const cell = row?.get(c) ?? { total: 0, started: 0, mastered: 0 };
+                    const share = cell.total ? cell.mastered / cell.total : 0;
+                    // Color follows the number in the cell: the mastered share, nothing else.
+                    const level = cell.mastered === 0 ? 0 : Math.min(4, 1 + Math.floor(share * 4));
+                    return (
+                      <td
+                        key={c}
+                        className="rounded-md px-2 py-2 tabular-nums"
+                        style={{
+                          background: `var(--mastery-${level})`,
+                          color: `var(--on-mastery-${level})`,
+                        }}
+                        title={t("stats.cell", {
+                          mastered: number.format(cell.mastered),
+                          started: number.format(cell.started),
+                          total: number.format(cell.total),
+                        })}
+                      >
+                        {percent.format(share)}
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      </Section>
+
+      <Section title={t("stats.hooks")} help={t("stats.hooksHelp")} id="hooks">
+        {hookRows.length === 0 ? (
+          <p className="text-muted-foreground">{t("stats.noHooks")}</p>
+        ) : (
+          <ul className="flex max-w-xl flex-col gap-3">
+            {hookRows.map((r) => (
+              <li key={r.type} className="flex flex-col gap-1.5">
+                <span className="flex justify-between gap-2 text-sm">
+                  {t(`hookType.${r.type}`)}
+                  <span className="text-muted-foreground tabular-nums">
+                    {t("stats.hookRate", { value: percent.format(r.weight) })}
+                  </span>
+                </span>
+                <Meter value={r.weight} />
               </li>
             ))}
           </ul>
-        </Panel>
-        <Panel title={t("stats.grid")} id="grid" className="lg:col-span-2">
-          <p className="text-sm text-muted-foreground">{t("stats.gridHelp")}</p>
-          {/* biome-ignore lint/a11y/noNoninteractiveTabindex: a scrollable region must be focusable (WCAG 2.1.1) */}
-          <section className="overflow-x-auto" tabIndex={0} aria-label={t("stats.grid")}>
-            <table className="w-full min-w-[32rem] border-separate border-spacing-1 text-sm">
-              <thead>
-                <tr>
-                  <th className="sr-only">{t("atlas.show")}</th>
-                  {continents.map((c) => (
-                    <th
-                      key={c}
-                      scope="col"
-                      className="px-1 text-left font-normal text-muted-foreground"
-                    >
-                      {t(`continent.${c}`)}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ...SKILL_IDS.map((skill) => ({
-                    key: skill as string,
-                    label: t(`skill.${skill}`),
-                    row: data.grid.get(skill),
-                  })),
-                  ...(learner.settings.modules.cities
-                    ? [{ key: "cities", label: t("stats.cities"), row: data.cityGrid }]
-                    : []),
-                  ...(learner.settings.modules.landmarks
-                    ? [{ key: "landmarks", label: t("stats.landmarks"), row: data.landmarkGrid }]
-                    : []),
-                  ...(learner.settings.modules.physical
-                    ? [{ key: "physical", label: t("stats.physical"), row: data.physicalGrid }]
-                    : []),
-                  ...(learner.settings.modules.history
-                    ? [{ key: "history", label: t("stats.history"), row: data.historyGrid }]
-                    : []),
-                ].map(({ key, label, row }) => (
-                  <tr key={key}>
-                    <th scope="row" className="pr-2 text-left font-normal whitespace-nowrap">
-                      {label}
-                    </th>
-                    {continents.map((c) => {
-                      const cell = row?.get(c) ?? {
-                        total: 0,
-                        started: 0,
-                        mastered: 0,
-                      };
-                      const share = cell.total ? cell.mastered / cell.total : 0;
-                      // Color follows the number in the cell: the mastered share, nothing else.
-                      const level =
-                        cell.mastered === 0 ? 0 : Math.min(4, 1 + Math.floor(share * 4));
-                      return (
-                        <td
-                          key={c}
-                          className="rounded-md px-2 py-2 tabular-nums"
-                          style={{ background: `var(--mastery-${level})` }}
-                          title={t("stats.cell", {
-                            mastered: number.format(cell.mastered),
-                            started: number.format(cell.started),
-                            total: number.format(cell.total),
-                          })}
-                        >
-                          <span className="rounded bg-card/85 px-1.5 py-0.5 text-foreground">
-                            {percent.format(share)}
-                          </span>
-                        </td>
-                      );
-                    })}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </section>
-        </Panel>
+        )}
+      </Section>
 
-        <Panel title={t("stats.retention")} id="retention">
-          {total === 0 ? (
-            <p className="text-muted-foreground">{t("stats.noRetention")}</p>
-          ) : (
-            <>
-              <p className="font-name text-4xl tabular-nums">{percent.format(correct / total)}</p>
-              <p className="text-sm text-muted-foreground">
-                {t("stats.retentionValue", {
-                  correct: number.format(correct),
-                  total: number.format(total),
-                })}
-                {", "}
-                {t("stats.target", { value: percent.format(learner.settings.requestRetention) })}
-              </p>
-              <Meter value={correct / total} target={learner.settings.requestRetention} />
-            </>
-          )}
-        </Panel>
+      <Section title={t("stats.activity")} id="activity">
+        <Heatmap days={data.activity} locale={locale} />
+        <p className="text-sm text-muted-foreground">
+          {t("streak.longest", { count: progress.streak.longest })}
+        </p>
+      </Section>
 
-        <Panel title={t("stats.forecast")} id="forecast" className="lg:col-span-2">
-          <div className="flex h-32 items-end gap-0.5" aria-hidden>
-            {data.forecast.map((d) => (
-              <span
-                key={d.start}
-                title={`${date.format(d.start)}: ${number.format(d.count)}`}
-                className="flex-1 rounded-t-sm bg-primary/70"
-                style={{ height: `${Math.max(2, (d.count / forecastMax) * 100)}%` }}
-              />
-            ))}
-          </div>
-          <ol className="sr-only">
-            {data.forecast.map((d) => (
-              <li key={d.start}>
-                {date.format(d.start)}: {number.format(d.count)}
+      <Section title={t("stats.achievements")} id="achievements">
+        {progress.achievements.length === 0 ? (
+          <p className="text-muted-foreground">{t("stats.noAchievements")}</p>
+        ) : (
+          <ul className="grid gap-x-10 sm:grid-cols-2">
+            {[...progress.achievements].reverse().map((a) => (
+              <li
+                key={a.id}
+                className="flex items-baseline justify-between gap-3 border-b border-border py-2"
+              >
+                <span className="min-w-0">{achievementLabel(a, learner.world, locale, t)}</span>
+                <span className="shrink-0 text-sm text-muted-foreground">
+                  {date.format(a.earnedAt)}
+                </span>
               </li>
             ))}
-          </ol>
-          <div className="flex justify-between text-xs text-muted-foreground tabular-nums">
-            <span>{date.format(data.forecast[0]?.start ?? Date.now())}</span>
-            <span>{date.format(data.forecast.at(-1)?.start ?? Date.now())}</span>
-          </div>
-        </Panel>
-
-        <Panel title={t("stats.recognition")} id="recognition">
-          {data.recognition.of === 0 ? (
-            <p className="text-muted-foreground">{t("stats.noRecognition")}</p>
-          ) : (
-            <>
-              <p>
-                {t("stats.recognitionBody", {
-                  n: number.format(data.recognition.count),
-                  of: number.format(data.recognition.of),
-                })}
-              </p>
-              <ul className="flex flex-wrap gap-x-3 gap-y-1 text-sm">
-                {data.recognition.ids.slice(0, 12).map((id) => (
-                  <li key={id}>
-                    <Link
-                      to={`/atlas/${id}`}
-                      viewTransition
-                      className="underline decoration-border underline-offset-4 hover:decoration-primary"
-                    >
-                      {name(id)}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </>
-          )}
-        </Panel>
-
-        <Panel title={t("stats.confusions")} id="confusions">
-          {data.confusions.length === 0 ? (
-            <p className="text-muted-foreground">{t("stats.noConfusions")}</p>
-          ) : (
-            <ul className="flex flex-col divide-y divide-border">
-              {data.confusions.map(([key, score]) => {
-                const [a = "", b = ""] = key.split("|");
-                return (
-                  <li key={key} className="flex items-center justify-between gap-2 py-1.5">
-                    <span>
-                      {name(a)} / {name(b)}
-                      <span className="ml-2 text-sm text-muted-foreground tabular-nums">
-                        {number.format(score)}
-                      </span>
-                    </span>
-                    <Link
-                      to={`/drill?a=${a}&b=${b}`}
-                      viewTransition
-                      className="flex size-11 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground"
-                      aria-label={t("drill.pair", { a: name(a), b: name(b) })}
-                      title={t("stats.drill")}
-                    >
-                      <DumbbellIcon className="size-4" />
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          )}
-        </Panel>
-
-        <Panel title={t("stats.leeches")} id="leeches">
-          {data.leeches.length === 0 ? (
-            <p className="text-muted-foreground">{t("stats.noLeeches")}</p>
-          ) : (
-            <ul className="flex flex-col divide-y divide-border">
-              {data.leeches.slice(0, 8).map((s) => {
-                const { entityId, type } = parseCardId(s.cardId);
-                return (
-                  <li key={s.cardId} className="flex justify-between gap-2 py-1.5">
-                    <span>
-                      {entityId.includes("|")
-                        ? entityId.split("|").map(name).join(" / ")
-                        : name(entityId)}
-                    </span>
-                    <span className="text-sm text-muted-foreground">{t(`cardType.${type}`)}</span>
-                  </li>
-                );
-              })}
-            </ul>
-          )}
-        </Panel>
-
-        <Panel title={t("stats.hooks")} id="hooks">
-          {hookRows.length === 0 ? (
-            <p className="text-muted-foreground">{t("stats.noHooks")}</p>
-          ) : (
-            <ul className="flex flex-col gap-2">
-              {hookRows.map((r) => (
-                <li key={r.type} className="flex flex-col gap-1">
-                  <span className="flex justify-between gap-2 text-sm">
-                    {t(`hookType.${r.type}`)}
-                    <span className="text-muted-foreground tabular-nums">
-                      {t("stats.hookRate", { value: percent.format(r.weight) })}
-                    </span>
-                  </span>
-                  <Meter value={r.weight} />
-                </li>
-              ))}
-            </ul>
-          )}
-        </Panel>
-
-        <Panel title={t("stats.activity")} id="activity" className="lg:col-span-3">
-          <Heatmap days={data.activity} locale={locale} />
-          <p className="text-sm text-muted-foreground">
-            {t("streak.longest", { count: progress.streak.longest })}
-          </p>
-        </Panel>
-
-        <Panel title={t("stats.achievements")} id="achievements" className="lg:col-span-3">
-          {progress.achievements.length === 0 ? (
-            <p className="text-muted-foreground">{t("stats.noAchievements")}</p>
-          ) : (
-            <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-              {[...progress.achievements].reverse().map((a) => (
-                <li
-                  key={a.id}
-                  className="flex items-center gap-3 rounded-lg border border-border px-3 py-2"
-                >
-                  <AwardIcon aria-hidden className="size-5 shrink-0 text-primary" />
-                  <span className="flex min-w-0 flex-col">
-                    <span className="truncate">
-                      {achievementLabel(a, learner.world, locale, t)}
-                    </span>
-                    <span className="text-xs text-muted-foreground">{date.format(a.earnedAt)}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-          )}
-        </Panel>
-      </div>
+          </ul>
+        )}
+      </Section>
     </div>
   );
 }
 
-function Meter({ value, target }: { value: number; target?: number }) {
+/**
+ * The full level and XP picture, moved here from Today: the memory level with the way to the
+ * next one and the path to 10, then rank and XP with the way to the next XP level, then the
+ * daily goal.
+ */
+function LevelBreakdown({ learner }: { learner: Learner }) {
+  const { t, i18n } = useTranslation();
+  const number = new Intl.NumberFormat(i18n.language);
+  const percent = new Intl.NumberFormat(i18n.language, {
+    style: "percent",
+    maximumFractionDigits: 0,
+  });
+  const { overall, xp, goal } = useLevels(learner);
+  const showPercent = learner.device.levelProgress === "percent";
+  const within = withinLevel(overall);
+  const goalDone = Math.min(Math.floor(goal.done), goal.target);
+  const xpLeft = number.format(xp.span - xp.into);
   return (
-    <span aria-hidden className="relative block h-2 w-full overflow-hidden rounded-full bg-muted">
-      <span
-        className="absolute inset-y-0 left-0 rounded-full bg-primary"
-        style={{ width: `${value * 100}%` }}
-      />
-      {target !== undefined ? (
-        <span
-          className="absolute inset-y-0 w-0.5 bg-foreground"
-          style={{ left: `${target * 100}%` }}
+    <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-2">
+        <p className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+          <span className="text-3xl font-medium tabular-nums">
+            {t("overview.levelShort", { level: number.format(overall.level) })}
+          </span>
+          <span className="text-sm text-muted-foreground">
+            {overall.cardsToNext === null
+              ? t("overview.top")
+              : showPercent
+                ? t("overview.toNextPercent", {
+                    percent: percent.format(within),
+                    level: overall.level + 1,
+                  })
+                : t("overview.toNext", { count: overall.cardsToNext, level: overall.level + 1 })}
+          </span>
+        </p>
+        <Meter value={within} tall label={t("overview.levelLabel", { level: overall.level })} />
+      </div>
+      <LevelPath current={overall.level} />
+      <div className="flex flex-col gap-2" data-testid="stats-xp">
+        <p className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+          <span>
+            <span className="font-medium">{t(`rank.${xp.rank}`)}</span>
+            <span className="text-muted-foreground">
+              {", "}
+              {t("overview.xpLevel", { level: number.format(xp.level) })}
+            </span>
+          </span>
+          <span className="text-sm text-muted-foreground">
+            {t("overview.xp", { xp: number.format(xp.xp) })}
+          </span>
+        </p>
+        <Meter
+          value={xp.span > 0 ? xp.into / xp.span : 0}
+          label={t("overview.xpToNext", { xp: xpLeft })}
         />
-      ) : null}
-    </span>
+        <p className="text-sm text-muted-foreground">{t("overview.xpToNext", { xp: xpLeft })}</p>
+      </div>
+      <p className="text-sm text-muted-foreground">
+        {goal.kind === "minutes"
+          ? t("overview.goalMinutesLabel", { done: goalDone, count: goal.target })
+          : t("overview.goalSessionsLabel", { done: goalDone, count: goal.target })}
+      </p>
+    </div>
   );
 }
 

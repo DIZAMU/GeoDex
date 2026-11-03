@@ -106,6 +106,8 @@ export function Session({
     const l = learnerLevels(learner, Date.now());
     return { level: l.overall.level, xp: l.xp.xp, xpLevel: l.xp.level, rank: l.xp.rank };
   });
+  // When the session started, so the summary can list what slipped in it.
+  const [startedAt] = useState(() => Date.now());
   const [help, setHelp] = useState(false);
   const countdownSeconds = learner.settings.countdownSeconds;
   const view = s.view;
@@ -182,6 +184,7 @@ export function Session({
         correct={view.correct}
         held={held}
         before={before}
+        startedAt={startedAt}
         drill={kind?.kind === "drill"}
         again={
           kind?.kind === "daily" && Number.isFinite(kind.length)

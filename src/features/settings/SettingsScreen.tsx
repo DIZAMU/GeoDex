@@ -21,9 +21,10 @@ import {
   SESSION_LENGTHS,
   SKILLS,
 } from "@/engine/focus";
-import { LanguageSwitcher } from "@/i18n/LanguageSwitcher";
-import { isLocale } from "@/i18n/locales";
-import { ThemeSwitcher } from "@/themes/ThemeSwitcher";
+import { isLocale, LOCALES } from "@/i18n/locales";
+import { useLocale } from "@/i18n/useLocale";
+import { THEME_PREFERENCES } from "@/themes/themes";
+import { useTheme } from "@/themes/useTheme";
 import { Button } from "@/ui/button";
 import { Loader } from "@/ui/loader";
 import { Switch } from "@/ui/switch";
@@ -38,8 +39,41 @@ const COUNTDOWNS = [0, 10, 15, 20] as const;
 const GOAL_SESSIONS = [1, 2, 3] as const;
 const MODULE_TOGGLES = ["cities", "groups", "landmarks", "physical", "history"] as const;
 
+/**
+ * One setting: the label and what it changes on the left, the control on the right. On a
+ * phone the control drops below the label.
+ */
+function Row({
+  label,
+  help,
+  labelId,
+  inline = false,
+  children,
+}: {
+  label: string;
+  help?: string;
+  labelId: string;
+  /** Keep the control beside the label on a phone too (a switch is narrow enough). */
+  inline?: boolean;
+  children: ReactNode;
+}) {
+  return (
+    <div
+      className={`grid gap-x-8 gap-y-3 py-4 ${inline ? "grid-cols-[minmax(0,1fr)_auto] items-center" : "sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"}`}
+    >
+      <div className="flex min-w-0 flex-col gap-0.5">
+        <span id={labelId}>{label}</span>
+        {help ? <span className="text-sm text-muted-foreground">{help}</span> : null}
+      </div>
+      <div className="min-w-0">{children}</div>
+    </div>
+  );
+}
+
+/** A row whose control is one choice out of a few, shown as a segmented toggle. */
 function Choice<T extends string | number>({
   label,
+  help,
   value,
   options,
   render,
@@ -47,20 +81,22 @@ function Choice<T extends string | number>({
   testId,
 }: {
   label: string;
+  help?: string;
   value: T;
   options: readonly T[];
   render: (option: T) => string;
   onChange: (value: T) => void;
   testId: string;
 }) {
+  const id = `choice-${testId}`;
   return (
-    <fieldset className="flex flex-col gap-2">
-      <legend className="mb-2 text-sm text-muted-foreground">{label}</legend>
+    <Row label={label} help={help} labelId={id}>
       <ToggleGroup
         type="single"
         variant="outline"
         spacing={0}
         value={String(value)}
+        aria-labelledby={id}
         onValueChange={(next) => {
           const match = options.find((o) => String(o) === next);
           if (match !== undefined) onChange(match);
@@ -77,46 +113,48 @@ function Choice<T extends string | number>({
           </ToggleGroupItem>
         ))}
       </ToggleGroup>
-    </fieldset>
+    </Row>
   );
 }
 
-/** One setting with a switch: the label and its effect on the left, the switch on the right. */
+/** A row with a switch: on or off, with the effect spelled out next to it. */
 function SwitchRow({
   label,
-  detail,
+  help,
   checked,
   onChange,
   testId,
 }: {
   label: string;
-  detail: string;
+  help: string;
   checked: boolean;
   onChange: (checked: boolean) => void;
   testId: string;
 }) {
   const id = `switch-${testId}`;
   return (
-    <div className="flex items-center justify-between gap-4">
-      <div className="flex min-w-0 flex-col">
-        <span id={id}>{label}</span>
-        <span className="text-sm text-muted-foreground">{detail}</span>
-      </div>
+    <Row label={label} help={help} labelId={id} inline>
       <Switch
         checked={checked}
         onCheckedChange={onChange}
         aria-labelledby={id}
         data-testid={`${testId}-switch`}
       />
-    </div>
+    </Row>
   );
 }
 
-function Group({ title, children }: { title: string; children: ReactNode }) {
+function Group({ title, id, children }: { title: string; id: string; children: ReactNode }) {
   return (
-    <section className="surface flex flex-col gap-6 p-5 md:p-7">
-      <h2 className="font-name text-lg">{title}</h2>
-      {children}
+    <section
+      aria-labelledby={`${id}-title`}
+      className="flex flex-col gap-1"
+      data-testid={`settings-${id}`}
+    >
+      <h2 id={`${id}-title`} className="text-lg font-medium">
+        {title}
+      </h2>
+      <div className="flex flex-col divide-y divide-border border-y border-border">{children}</div>
     </section>
   );
 }
@@ -126,21 +164,21 @@ export function SettingsScreen() {
   const locale = isLocale(i18n.language) ? i18n.language : "en";
   const learner = useLearner();
   const navigate = useNavigate();
+  const { setLocale } = useLocale();
+  const { preference, setTheme } = useTheme();
   if (!learner) return <Loader />;
   const s = learner.settings;
   const set = (patch: Partial<SettingsRow>) => void updateSettings(db, patch);
   const sessionsGoal = s.dailyGoal?.kind === "sessions" ? s.dailyGoal.sessions : null;
 
   return (
-    <div className="stagger mx-auto flex w-full max-w-3xl flex-col gap-6 px-4 py-8 md:px-10 md:py-14">
-      <h1 className="font-name text-4xl tracking-tight">{t("settings.title")}</h1>
-      <Group title={t("settings.groupLook")}>
-        <LanguageSwitcher />
-        <ThemeSwitcher />
-      </Group>
-      <Group title={t("settings.groupGoals")}>
+    <div className="mx-auto flex w-full max-w-3xl flex-col gap-10 px-4 py-6 md:px-10 lg:py-8">
+      <h1 className="enter text-3xl font-medium tracking-tight">{t("settings.title")}</h1>
+
+      <Group title={t("settings.groupStudy")} id="study">
         <Choice
           label={t("settings.dailyMinutes")}
+          help={t("settings.dailyMinutesHelp")}
           value={
             MINUTES.includes(s.dailyMinutes as (typeof MINUTES)[number])
               ? (s.dailyMinutes as (typeof MINUTES)[number])
@@ -151,9 +189,9 @@ export function SettingsScreen() {
           onChange={(dailyMinutes) => set({ dailyMinutes })}
           testId="minutes"
         />
-        <p className="-mt-3 text-sm text-muted-foreground">{t("settings.dailyMinutesHelp")}</p>
         <Choice
           label={t("settings.goalKind")}
+          help={t("settings.goalHelp")}
           value={sessionsGoal === null ? "minutes" : "sessions"}
           options={["minutes", "sessions"] as const}
           render={(v) => t(v === "minutes" ? "settings.goalMinutes" : "settings.goalSessions")}
@@ -178,41 +216,10 @@ export function SettingsScreen() {
             testId="goal-sessions"
           />
         ) : null}
-        <p className="-mt-3 text-sm text-muted-foreground">{t("settings.goalHelp")}</p>
         <SessionDefaults learner={learner} />
         <Choice
-          label={t("settings.levelProgress")}
-          value={learner.device.levelProgress === "percent" ? "percent" : "cards"}
-          options={["cards", "percent"] as const}
-          render={(v) => t(v === "cards" ? "settings.levelCards" : "settings.levelPercent")}
-          onChange={(v) => void setLevelProgress(db, v)}
-          testId="level-progress"
-        />
-      </Group>
-      <Group title={t("settings.groupTopics")}>
-        <Choice
-          label={t("settings.currencyLanguage")}
-          value={s.currencyAndLanguage ? "on" : "off"}
-          options={["on", "off"] as const}
-          render={(v) => (v === "on" ? t("settings.on") : t("settings.off"))}
-          onChange={(v) => set({ currencyAndLanguage: v === "on" })}
-          testId="stage4"
-        />
-        {MODULE_TOGGLES.map((m) => (
-          <Choice
-            key={m}
-            label={t(`settings.${m}`)}
-            value={s.modules[m] ? "on" : "off"}
-            options={["on", "off"] as const}
-            render={(v) => (v === "on" ? t("settings.on") : t("settings.off"))}
-            onChange={(v) => set({ modules: { ...s.modules, [m]: v === "on" } })}
-            testId={`module-${m}`}
-          />
-        ))}
-      </Group>
-      <Group title={t("settings.groupStudy")}>
-        <Choice
           label={t("settings.countdown")}
+          help={t("settings.countdownHelp")}
           value={s.countdownSeconds}
           options={COUNTDOWNS}
           render={(n) =>
@@ -221,35 +228,92 @@ export function SettingsScreen() {
           onChange={(countdownSeconds) => set({ countdownSeconds })}
           testId="countdown"
         />
+      </Group>
+
+      <Group title={t("settings.groupTopics")} id="topics">
+        <SwitchRow
+          label={t("settings.topic.currencyLanguage.label")}
+          help={t("settings.topic.currencyLanguage.detail")}
+          checked={s.currencyAndLanguage}
+          onChange={(currencyAndLanguage) => set({ currencyAndLanguage })}
+          testId="stage4"
+        />
+        {MODULE_TOGGLES.map((m) => (
+          <SwitchRow
+            key={m}
+            label={t(`settings.topic.${m}.label`)}
+            help={t(`settings.topic.${m}.detail`)}
+            checked={s.modules[m] === true}
+            onChange={(on) => set({ modules: { ...s.modules, [m]: on } })}
+            testId={`module-${m}`}
+          />
+        ))}
+      </Group>
+
+      <Group title={t("settings.groupLook")} id="look">
+        <Choice
+          label={t("settings.language.label")}
+          value={locale}
+          options={LOCALES}
+          render={(l) => t(`settings.language.${l}`)}
+          onChange={setLocale}
+          testId="locale"
+        />
+        <Choice
+          label={t("settings.theme.label")}
+          value={preference}
+          options={THEME_PREFERENCES}
+          render={(p) => t(`settings.theme.${p}`)}
+          onChange={setTheme}
+          testId="theme"
+        />
         <SwitchRow
           label={t("settings.sound")}
-          detail={t("settings.soundHelp")}
+          help={t("settings.soundHelp")}
           checked={learner.device.soundOn !== false}
           onChange={(soundOn) => void setFeedbackPref(db, { soundOn })}
           testId="sound"
         />
         <SwitchRow
           label={t("settings.vibration")}
-          detail={t("settings.vibrationHelp")}
+          help={t("settings.vibrationHelp")}
           checked={learner.device.vibrationOn !== false}
           onChange={(vibrationOn) => void setFeedbackPref(db, { vibrationOn })}
           testId="vibration"
         />
+        <Choice
+          label={t("settings.levelProgress")}
+          help={t("settings.levelProgressHelp")}
+          value={learner.device.levelProgress === "percent" ? "percent" : "cards"}
+          options={["cards", "percent"] as const}
+          render={(v) => t(v === "cards" ? "settings.levelCards" : "settings.levelPercent")}
+          onChange={(v) => void setLevelProgress(db, v)}
+          testId="level-progress"
+        />
       </Group>
-      <Group title={t("settings.groupGuide")}>
-        <div className="flex flex-wrap gap-3">
+
+      <Group title={t("settings.homeCountry")} id="home">
+        <div className="flex flex-col gap-3 py-4">
+          <p className="text-sm text-muted-foreground">{t("settings.homeCountryHelp")}</p>
+          <CountryPicker
+            countries={scopedCountries(learner.world, s)}
+            value={s.homeCountry}
+            onChange={(homeCountry) => set({ homeCountry })}
+            locale={locale}
+          />
+        </div>
+      </Group>
+
+      <Group title={t("backup.title")} id="backup">
+        <div className="py-4">
+          <BackupSection learner={learner} />
+        </div>
+      </Group>
+
+      <Group title={t("settings.groupGuide")} id="guide">
+        <div className="flex flex-wrap gap-3 py-4">
           <Button
-            variant="outline"
-            data-testid="welcome-again"
-            onClick={async () => {
-              await setTourDone(db, null);
-              navigate("/welcome", { viewTransition: true });
-            }}
-          >
-            {t("settings.welcomeAgain")}
-          </Button>
-          <Button
-            variant="outline"
+            variant="secondary"
             data-testid="tour-again"
             onClick={async () => {
               await setTourDone(db, null);
@@ -258,21 +322,23 @@ export function SettingsScreen() {
           >
             {t("help.replayTour")}
           </Button>
+          <Button
+            variant="ghost"
+            data-testid="welcome-again"
+            onClick={async () => {
+              await setTourDone(db, null);
+              navigate("/welcome", { viewTransition: true });
+            }}
+          >
+            {t("settings.welcomeAgain")}
+          </Button>
         </div>
       </Group>
-      <Group title={t("reset.title")}>
-        <ResetProgress learner={learner} />
-      </Group>
-      <Group title={t("backup.title")}>
-        <BackupSection learner={learner} />
-      </Group>
-      <Group title={t("settings.homeCountry")}>
-        <CountryPicker
-          countries={scopedCountries(learner.world, s)}
-          value={s.homeCountry}
-          onChange={(homeCountry) => set({ homeCountry })}
-          locale={locale}
-        />
+
+      <Group title={t("reset.title")} id="reset">
+        <div className="py-4">
+          <ResetProgress learner={learner} />
+        </div>
       </Group>
     </div>
   );
@@ -334,20 +400,25 @@ function SessionDefaults({ learner }: { learner: Learner }) {
     <>
       <Choice
         label={t("settings.sessionLength")}
+        help={t("settings.sessionLengthHelp")}
         value={length}
         options={SESSION_LENGTHS}
         render={(n) => t("picker.lengthOption", { count: n })}
         onChange={(n) => save({ length: n })}
         testId="default-length"
       />
-      <label className="flex flex-col gap-2">
-        <span className="text-sm text-muted-foreground">{t("settings.sessionFocus")}</span>
-        <div className="relative max-w-sm">
+      <Row
+        label={t("settings.sessionFocus")}
+        help={t("settings.sessionFocusHelp")}
+        labelId="focus-label"
+      >
+        <div className="relative w-full sm:w-72">
           <select
             data-testid="default-focus"
+            aria-labelledby="focus-label"
             value={focusKey(focus)}
             onChange={(e) => save({ focus: parseFocus(e.target.value) })}
-            className="h-10 w-full appearance-none rounded-lg border border-border bg-card/60 py-2 pr-10 pl-3 text-sm shadow-xs outline-none transition-colors hover:bg-accent focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+            className="h-11 w-full appearance-none rounded-lg border border-input bg-background py-2 pr-10 pl-3 outline-none transition-colors hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             <option value="mixed">{t("picker.mixed")}</option>
             <optgroup label={t("picker.skills")}>
@@ -379,7 +450,7 @@ function SessionDefaults({ learner }: { learner: Learner }) {
             className="pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2 text-muted-foreground"
           />
         </div>
-      </label>
+      </Row>
     </>
   );
 }

@@ -132,7 +132,7 @@ export function Tour({ onDone }: { onDone: () => void }) {
         key={step}
       >
         <div className="flex items-start justify-between gap-3">
-          <h2 className="font-name text-xl" id="tour-title">
+          <h2 className="text-xl font-medium" id="tour-title">
             {t(`tour.steps.${step}.title`)}
           </h2>
           <button

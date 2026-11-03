@@ -659,7 +659,7 @@ export function GlobeMap({
       {hover ? (
         <div
           aria-hidden
-          className="pointer-events-none absolute z-10 rounded-md border border-border bg-popover px-2 py-1 text-sm text-popover-foreground shadow-[var(--elevation)]"
+          className="floating pointer-events-none absolute z-10 px-2 py-1 text-sm"
           style={{ left: hover.x + 14, top: hover.y + 14 }}
         >
           {labelFor(hover.id)}

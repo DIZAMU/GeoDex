@@ -1,6 +1,6 @@
-import { render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import { createMemoryRouter, RouterProvider } from "react-router";
-import { beforeAll, describe, expect, it } from "vitest";
+import { afterEach, beforeAll, describe, expect, it } from "vitest";
 import { db } from "@/db/db";
 import { ensureDeviceSettings, ensureSettings } from "@/db/settings";
 import { LearnerProvider } from "@/features/study/useLearner";
@@ -10,6 +10,9 @@ beforeAll(async () => {
   await ensureSettings(db, "en");
   await ensureDeviceSettings(db);
 });
+
+// Each test renders a whole app; unmount it so the next one sees only its own screen.
+afterEach(cleanup);
 
 describe("routes", () => {
   it("sends a new learner from Today to the welcome page, which says it is free", async () => {
@@ -54,9 +57,9 @@ describe("routes", () => {
       </LearnerProvider>,
     );
     expect(
-      await screen.findByRole("group", { name: "Appearance" }, { timeout: 10_000 }),
+      await screen.findByRole("radiogroup", { name: "Appearance" }, { timeout: 10_000 }),
     ).toBeInTheDocument();
-    expect(screen.getByRole("group", { name: "Language" })).toBeInTheDocument();
+    expect(screen.getByRole("radiogroup", { name: "Language" })).toBeInTheDocument();
     // No accounts: progress moves between browsers only through backup files.
     expect(screen.getByRole("button", { name: "Download backup" })).toBeInTheDocument();
     expect(screen.queryByText(/sign in/i)).not.toBeInTheDocument();

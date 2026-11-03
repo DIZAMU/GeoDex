@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { db } from "@/db/db";
 import { setLevelProgress } from "@/db/settings";
 import type { MemoryLevel } from "@/engine/levels";
+import { Meter } from "@/ui/meter";
 import { useLevels } from "../study/levels";
 import type { Learner } from "../study/useLearner";
 
@@ -65,20 +66,11 @@ export function LevelLine({ learner }: { learner: Learner }) {
           </button>
         )}
       </div>
-      <div
-        className="h-1.5 overflow-hidden rounded-full bg-muted"
-        role="progressbar"
-        aria-label={t("overview.levelLabel", { level: overall.level })}
-        aria-valuemin={0}
-        aria-valuemax={100}
-        aria-valuenow={Math.round(within * 100)}
-        data-testid="level-ring"
-      >
-        <div
-          className="h-full rounded-full bg-foreground transition-[width] duration-500 ease-(--ease-ui)"
-          style={{ width: `${within * 100}%` }}
-        />
-      </div>
+      <Meter
+        value={within}
+        label={t("overview.levelLabel", { level: overall.level })}
+        testId="level-ring"
+      />
       <p className="text-sm text-muted-foreground" data-testid="xp">
         <span className="text-foreground">{t(`rank.${xp.rank}`)}</span>
         {", "}

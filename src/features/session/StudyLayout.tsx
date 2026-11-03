@@ -15,12 +15,10 @@ export function StudyLayout({
 }) {
   return (
     <div className="flex h-dvh flex-col">
-      <div className="relative z-10 border-b border-border bg-background/80 backdrop-blur-xl">
-        {top}
-      </div>
+      <div className="relative z-10 border-b border-border bg-background">{top}</div>
       <div className="grid min-h-0 flex-1 grid-rows-[55%_1fr] lg:grid-cols-[2fr_1fr] lg:grid-rows-1">
         <section className="min-h-0">{map}</section>
-        <section className="relative min-h-0 overflow-y-auto border-t border-border bg-card/95 p-4 text-card-foreground shadow-[var(--elevation)] lg:border-t-0 lg:border-l lg:p-8">
+        <section className="relative min-h-0 overflow-y-auto border-t border-border bg-background p-4 text-foreground lg:border-t-0 lg:border-l lg:p-8">
           {panel}
         </section>
       </div>
@@ -44,7 +42,7 @@ export function ProgressBar({
   return (
     <div className="flex items-center gap-4 px-4 py-3">
       <div
-        className="h-2 flex-1 overflow-hidden rounded-full bg-muted"
+        className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted"
         role="progressbar"
         aria-valuemin={0}
         aria-valuemax={total}
@@ -52,7 +50,7 @@ export function ProgressBar({
         aria-label={label}
       >
         <div
-          className="h-full origin-left rounded-full bg-primary shadow-[0_0_12px_var(--primary)] transition-[width] duration-500 ease-(--ease-ui)"
+          className="h-full origin-left rounded-full bg-foreground transition-[width] duration-300 ease-(--ease-ui)"
           style={{ width: `${Math.max(share * 100, done > 0 ? 2 : 0)}%` }}
         />
       </div>
@@ -93,12 +91,12 @@ export function CountdownRing({
           fill="none"
           strokeWidth="3"
           strokeLinecap="round"
-          className="stroke-primary transition-[stroke-dashoffset] duration-1000 ease-linear"
+          className="stroke-foreground transition-[stroke-dashoffset] duration-1000 ease-linear"
           strokeDasharray={circumference}
           strokeDashoffset={circumference * (1 - share)}
         />
       </svg>
-      <span className="text-sm font-name tabular-nums" aria-hidden>
+      <span className="text-sm font-medium tabular-nums" aria-hidden>
         {left}
       </span>
     </span>

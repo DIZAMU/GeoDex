@@ -37,21 +37,11 @@
     "countdown": "Nedtelling",
     "countdownOff": "Av",
     "seconds": "{{count}} s",
-    "cities": "Kjente byer (etter landet sitt)",
-    "currencyLanguage": "Kort for valuta og språk",
-    "on": "På",
-    "off": "Av",
     "homeCountry": "Hjemland",
-    "rerunPlacement": "Ta plasseringstesten på nytt",
-    "groupLook": "Språk og utseende",
+    "groupLook": "Språk, utseende og lyd",
     "groupStudy": "Øving",
-    "groups": "Landgrupper (når halvparten av landene er startet)",
-    "landmarks": "Severdigheter (etter landet sitt)",
-    "physical": "Naturgeografi (etter et land den berører)",
-    "history": "Historie (tidligere navn, oppløste stater, imperier)",
     "welcomeAgain": "Vis velkomstsiden og omvisningen igjen",
-    "groupGoals": "Målene dine",
-    "groupTopics": "Hva du vil lære",
+    "groupTopics": "Emner",
     "groupGuide": "Veiledning",
     "dailyMinutesHelp": "Hvor lenge du øver en vanlig dag. Det styrer hvor mange nye kort du får og tidsanslaget.",
     "goalKind": "Dagsmål",
@@ -69,7 +59,38 @@
     "sound": "Lyd",
     "soundHelp": "En kort tone etter hvert svar og når en økt er ferdig",
     "vibration": "Vibrasjon",
-    "vibrationHelp": "En kort vibrasjon etter hvert svar, på telefoner som støtter det"
+    "vibrationHelp": "En kort vibrasjon etter hvert svar, på telefoner som støtter det",
+    "topic": {
+      "currencyLanguage": {
+        "label": "Valuta og språk",
+        "detail": "Hvilken valuta og hvilke offisielle språk hvert land bruker"
+      },
+      "cities": {
+        "label": "Kjente byer",
+        "detail": "Store og kjente byer, introdusert etter landet sitt"
+      },
+      "groups": {
+        "label": "Landgrupper",
+        "detail": "For eksempel Norden eller EU, introdusert når halvparten av landene er startet"
+      },
+      "landmarks": {
+        "label": "Severdigheter",
+        "detail": "Kjente severdigheter med bilde, introdusert etter landet sitt"
+      },
+      "physical": {
+        "label": "Naturgeografi",
+        "detail": "Elver, innsjøer, hav, fjell og ørkener, introdusert etter et land de berører"
+      },
+      "history": {
+        "label": "Historie",
+        "detail": "Tidligere navn, oppløste stater og imperier"
+      }
+    },
+    "countdownHelp": "Tid til å svare på hvert spørsmål. Av lar deg tenke så lenge du vil.",
+    "sessionLengthHelp": "Hvor mange spørsmål en økt har når du trykker Start.",
+    "sessionFocusHelp": "Hva en økt henter fra først.",
+    "levelProgressHelp": "Hvordan I dag viser veien til neste nivå.",
+    "homeCountryHelp": "Nye land kommer først fra din egen region, deretter fra regioner lenger unna."
   },
   "nav": {
     "today": "I dag",
@@ -95,23 +116,6 @@
     "start": "Start",
     "chosen": "Hjemland: {{name}}",
     "choose": "Velg et hjemland for å starte"
-  },
-  "placement": {
-    "title": "Plasseringstest",
-    "intro": "En kort test av det du allerede kan, region for region. Feil svar teller ikke mot deg.",
-    "skip": "Hopp over regionen",
-    "finish": "Avslutt nå",
-    "answered": "{{count}} besvart",
-    "region": "Region: {{name}}",
-    "resultTitle": "Resultat av plasseringstesten",
-    "countries": "Land plassert: {{count}}",
-    "capitals": "Hovedsteder du kan: {{count}}",
-    "flags": "Flagg du kan: {{count}}",
-    "startsWith": "Den daglige læringen starter med {{region}}.",
-    "toToday": "Gå til i dag",
-    "statCountries": "Land",
-    "statCapitals": "Hovedsteder",
-    "statFlags": "Flagg"
   },
   "q": {
     "city_to_country": "Hvilket land ligger {{city}} i?",
@@ -196,9 +200,7 @@
     "continue": "Test meg"
   },
   "session": {
-    "left": "{{count}} igjen",
     "end": "Avslutt økten",
-    "doneTitle": "Økten er ferdig",
     "reviewed_one": "{{count}} repetisjon",
     "reviewed_other": "{{count}} repetisjoner",
     "backToToday": "Tilbake til i dag",
@@ -214,8 +216,7 @@
     "hint": "Vis et hint",
     "notHelpful": "Merk et minnetriks som lite nyttig",
     "end": "Avslutt økten",
-    "help": "Vis disse snarveiene",
-    "close": "Lukk"
+    "help": "Vis disse snarveiene"
   },
   "map": {
     "label": "Verdenskart"
@@ -340,7 +341,7 @@
     "forecast": "Til repetisjon de neste 30 dagene",
     "confusions": "Oftest forvekslet",
     "noConfusions": "Ingen forvekslinger ennå.",
-    "leeches": "Igler",
+    "leeches": "Kort som stadig glipper",
     "noLeeches": "Ingen kort har glippet seks ganger.",
     "hooks": "Huskeregler som virker for deg",
     "hookRate": "{{value}} husket neste gang",
@@ -355,14 +356,23 @@
     "landmarks": "Severdigheter",
     "physical": "Naturgeografi",
     "history": "Historie",
-    "levels": "Nivåer",
-    "levelsHelp": "Hukommelsesnivå 1 til 10 per verdensdel og emne. Det synker når kort glemmes."
+    "levels": "Per verdensdel og emne",
+    "levelsHelp": "Hukommelsesnivå 1 til 10 for hver. Det synker når kort glemmes.",
+    "levelTitle": "Nivå og XP",
+    "levelHelp": "XP går bare opp. Hukommelsesnivået følger det du husker nå, så det kan synke.",
+    "forecastWeek_one": "{{formatted}} kort til repetisjon de neste 7 dagene",
+    "forecastWeek_other": "{{formatted}} kort til repetisjon de neste 7 dagene",
+    "confusionsHelp": "Par du har blandet sammen i det siste. Øv på et par for å skille dem.",
+    "pair": "{{a}} og {{b}}",
+    "leechesHelp": "Glemt seks ganger eller mer.",
+    "hooksHelp": "Typer huskeregler, etter hvor ofte du husket kortet neste gang."
   },
   "streak": {
     "days_one": "{{count}} dag på rad",
     "days_other": "{{count}} dager på rad",
     "none": "Ingen dager på rad ennå",
-    "longest": "Lengste {{count}}",
+    "longest_one": "Flest dager på rad: {{count}}",
+    "longest_other": "Flest dager på rad: {{count}}",
     "freezes_one": "{{count}} fridag i reserve",
     "freezes_other": "{{count}} fridager i reserve"
   },
@@ -374,18 +384,20 @@
     "streak": "{{count}} dager på rad"
   },
   "summary": {
-    "retention": "Riktige: {{value}}",
     "tomorrow_one": "{{count}} kort til repetisjon i morgen",
     "tomorrow_other": "{{count}} kort til repetisjon i morgen",
     "newAchievements": "Nye merker",
     "xp": "+{{xp}} XP",
     "levelUp": "Hukommelsesnivå {{level}}",
-    "rankUp": "Ny rang: {{rank}}"
+    "rankUp": "Ny rang: {{rank}}",
+    "right_one": "{{correct}} av {{total}} riktig",
+    "right_other": "{{correct}} av {{total}} riktige",
+    "misses": "Kommer snart igjen",
+    "mixedUp": "forvekslet med {{name}}"
   },
   "drill": {
     "title": "Øv",
     "note": "Bare øving: svarene endrer verken timeplanen eller rekken din.",
-    "region": "Øv: {{name}}",
     "pair": "Øv: {{a}} og {{b}}",
     "empty": "Ingenting å øve på her ennå."
   },
@@ -637,14 +649,12 @@
     "again_other": "{{count}} spørsmål til"
   },
   "overview": {
-    "title": "Fremgangen din",
     "level": "Nivå",
     "levelLabel": "Hukommelsesnivå {{level}} av 10",
     "memory": "Hukommelse",
     "toNext_one": "{{count}} kort til for nivå {{level}}",
     "toNext_other": "{{count}} kort til for nivå {{level}}",
     "top": "Toppnivå. Fortsett å repetere for å holde det.",
-    "ofMinutes": "av {{goal}} min",
     "xpLevel": "XP-nivå {{level}}",
     "xp": "{{xp}} XP",
     "xpToNext": "{{xp}} XP til neste XP-nivå",
@@ -652,8 +662,6 @@
     "goalMinutesLabel": "{{done}} av {{count}} minutter øvd i dag",
     "goalSessionsLabel_one": "{{done}} av {{count}} økt fullført i dag",
     "goalSessionsLabel_other": "{{done}} av {{count}} økter fullført i dag",
-    "ofSessions_one": "av {{goal}} økt",
-    "ofSessions_other": "av {{goal}} økter",
     "toNextPercent": "{{percent}} av veien til nivå {{level}}",
     "showCards": "Vis kort som gjenstår",
     "showPercent": "Vis som prosent"

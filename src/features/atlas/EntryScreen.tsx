@@ -3,6 +3,7 @@ import { useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, Navigate, useParams } from "react-router";
 import type { Country } from "@/data/types";
+import { haversineKm } from "@/engine/geo";
 import {
   type CardType,
   CITY_CARD_TYPES,
@@ -16,15 +17,17 @@ import { isLocale, type Locale } from "@/i18n/locales";
 import { WorldMap } from "@/map/WorldMap";
 import { Button } from "@/ui/button";
 import { Loader } from "@/ui/loader";
+import { Meter } from "@/ui/meter";
 import { Flag, nameOf } from "../session/parts";
 import { useLevels } from "../study/levels";
 import { historyCardTypes, scopedCountries } from "../study/plan";
 import { cardLevel } from "../study/progress";
 import { type Learner, useLearner } from "../study/useLearner";
-import { Ring } from "../today/Overview";
 
 /** Reviews shown in the history strip, newest last. */
 const HISTORY = 40;
+/** Neighbours farther than this, centre to centre, stay out of the country page's map frame. */
+const NEARBY_KM = 5000;
 
 export function EntryScreen() {
   const learner = useLearner();
@@ -48,6 +51,20 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
     [learner.world, locale],
   );
   const level = useLevels(learner).country(country.id);
+  // Neighbours across an ocean (France and Brazil, through French Guiana) would frame half
+  // the world; the map frames only those close to the country itself.
+  const nearby = useMemo(
+    () =>
+      country.neighbors.filter((id) => {
+        const n = learner.world.byId.get(id);
+        return (
+          n !== undefined &&
+          haversineKm(country.centroid[0], country.centroid[1], n.centroid[0], n.centroid[1]) <
+            NEARBY_KM
+        );
+      }),
+    [country, learner.world],
+  );
   const events = useMemo(
     () =>
       learner.events
@@ -89,10 +106,10 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
             <Flag
               iso2={country.iso2}
               alt={t("flag.of", { name: country.names[locale] })}
-              className="w-20 shrink-0 shadow-sm sm:w-28"
+              className="w-20 shrink-0 sm:w-28"
             />
             <div className="flex min-w-0 flex-1 basis-40 flex-col gap-1">
-              <h1 id="entry-title" className="font-name text-4xl leading-tight tracking-tight">
+              <h1 id="entry-title" className="text-3xl font-medium tracking-tight">
                 {country.names[locale]}
               </h1>
               {country.names[other] !== country.names[locale] ? (
@@ -104,21 +121,20 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
                 <p className="text-sm text-muted-foreground">{region.names[locale]}</p>
               ) : null}
             </div>
-            <div className="ml-auto flex shrink-0 flex-col items-center gap-1">
-              <Ring
+            <div className="flex w-full flex-col gap-1.5 sm:ml-auto sm:w-36">
+              <p className="flex items-baseline justify-between gap-2 text-sm">
+                <span className="text-muted-foreground">{t("overview.memory")}</span>
+                <span className="font-medium tabular-nums">{number.format(level.level)}</span>
+              </p>
+              <Meter
                 value={level.share}
-                size={64}
-                stroke={6}
                 label={t("overview.levelLabel", { level: level.level })}
                 testId="entry-level"
-              >
-                <span className="font-name text-xl leading-none tabular-nums">{level.level}</span>
-              </Ring>
-              <span className="text-xs text-muted-foreground">{t("overview.memory")}</span>
+              />
             </div>
           </div>
 
-          <dl className="surface grid gap-x-6 gap-y-3 p-5 sm:grid-cols-2">
+          <dl className="grid gap-x-6 gap-y-3 border-y border-border py-4 sm:grid-cols-2">
             <Fact
               label={country.capitals.length > 1 ? t("feedback.capitals") : t("feedback.capital")}
               value={list.format(
@@ -152,7 +168,7 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
                       key={n}
                       to={`/atlas/${n}`}
                       viewTransition
-                      className="underline decoration-border underline-offset-4 hover:decoration-primary"
+                      className="underline decoration-border underline-offset-4 hover:decoration-foreground"
                     >
                       {labelFor(n)}
                     </Link>
@@ -163,15 +179,15 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
           </dl>
 
           <section aria-labelledby="cards-title" className="flex flex-col gap-3">
-            <h2 id="cards-title" className="font-name text-lg">
+            <h2 id="cards-title" className="text-lg font-medium">
               {t("entry.cards")}
             </h2>
-            <ul className="surface divide-y divide-border" data-testid="entry-cards">
+            <ul className="divide-y divide-border border-y border-border" data-testid="entry-cards">
               {COUNTRY_CARD_TYPES.map((type) => {
                 const state = learner.states.get(cardId(country.id, type));
                 const level = cardLevel(state);
                 return (
-                  <li key={type} className="flex items-center justify-between gap-4 px-4 py-2.5">
+                  <li key={type} className="flex items-center justify-between gap-4 py-2.5">
                     <span className="flex items-center gap-3">
                       <span
                         aria-hidden
@@ -180,11 +196,11 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
                       />
                       {t(`cardType.${type}`)}
                     </span>
-                    <span className="text-right text-sm text-muted-foreground tabular-nums">
+                    <span className="text-right text-sm text-muted-foreground">
                       {t(`level.${level}`)}
                       {state && state.phase !== "new" ? (
                         <>
-                          {" · "}
+                          {", "}
                           {t("entry.due", { date: date.format(state.due) })}
                           {state.phase === "review"
                             ? `, ${t("entry.holds", { days: number.format(Math.round(state.stability)) })}`
@@ -204,7 +220,7 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
             <WorldMap
               countries={countries}
               topology={learner.world.topology}
-              focus={{ kind: "countries", ids: [country.id, ...country.neighbors] }}
+              focus={{ kind: "countries", ids: [country.id, ...nearby] }}
               highlight={{ target: country.id, labels: [country.id] }}
               labelFor={labelFor}
               ariaLabel={t("map.label")}
@@ -214,13 +230,13 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
           </div>
 
           <section aria-labelledby="history-title" className="flex flex-col gap-3">
-            <h2 id="history-title" className="font-name text-lg">
+            <h2 id="history-title" className="text-lg font-medium">
               {t("entry.history")}
             </h2>
             {recent.length === 0 ? (
               <p className="text-muted-foreground">{t("entry.noHistory")}</p>
             ) : (
-              <figure className="surface flex flex-col gap-2 p-4" data-testid="entry-history">
+              <figure className="flex flex-col gap-2" data-testid="entry-history">
                 {/* Correct is a tall bar, wrong a short one: height carries the meaning, not color. */}
                 <div className="flex h-10 items-end gap-0.5" aria-hidden>
                   {recent.map((e) => (
@@ -228,14 +244,14 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
                       key={e.id}
                       className={
                         e.correct
-                          ? "h-full flex-1 rounded-sm bg-primary"
+                          ? "h-full flex-1 rounded-sm bg-foreground"
                           : "h-1/4 flex-1 rounded-sm bg-muted-foreground/60"
                       }
                     />
                   ))}
                 </div>
-                <figcaption className="text-sm text-muted-foreground tabular-nums">
-                  {t("entry.correct")}: {number.format(correct)} · {t("entry.wrong")}:{" "}
+                <figcaption className="text-sm text-muted-foreground">
+                  {t("entry.correct")}: {number.format(correct)}, {t("entry.wrong")}:{" "}
                   {number.format(recent.length - correct)}
                 </figcaption>
               </figure>
@@ -279,15 +295,18 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
           />
 
           <section aria-labelledby="facts-title" className="flex flex-col gap-3">
-            <h2 id="facts-title" className="font-name text-lg">
+            <h2 id="facts-title" className="text-lg font-medium">
               {t("entry.facts")}
             </h2>
             {facts.length === 0 ? (
               <p className="text-muted-foreground">{t("entry.noFacts")}</p>
             ) : (
-              <ul className="flex flex-col gap-2" data-testid="entry-facts">
+              <ul
+                className="divide-y divide-border border-y border-border"
+                data-testid="entry-facts"
+              >
                 {facts.map((f) => (
-                  <li key={f.id} className="surface px-4 py-3">
+                  <li key={f.id} className="max-w-[62ch] py-3">
                     {f.text[locale]}
                   </li>
                 ))}
@@ -338,10 +357,10 @@ function ModuleList({
   if (items.length === 0) return null;
   return (
     <section aria-labelledby={`${id}-title`} className="flex flex-col gap-3">
-      <h2 id={`${id}-title`} className="font-name text-lg">
+      <h2 id={`${id}-title`} className="text-lg font-medium">
         {title}
       </h2>
-      <ul className="surface divide-y divide-border" data-testid={`entry-${id}`}>
+      <ul className="divide-y divide-border border-y border-border" data-testid={`entry-${id}`}>
         {items.map((item) => {
           const level = Math.min(
             ...(typeof types === "function" ? types(item.id) : types).map((type) =>
@@ -349,7 +368,7 @@ function ModuleList({
             ),
           );
           return (
-            <li key={item.id} className="flex items-center justify-between gap-4 px-4 py-2.5">
+            <li key={item.id} className="flex items-center justify-between gap-4 py-2.5">
               <span className="flex items-center gap-3">
                 <span
                   aria-hidden

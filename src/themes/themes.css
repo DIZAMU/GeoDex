@@ -45,6 +45,12 @@
   --mastery-2: #a8cfae;
   --mastery-3: #6fae7d;
   --mastery-4: #2f7a4c;
+  /* Text on each mastery step: ink while it holds 4.5:1, then paper. */
+  --on-mastery-0: #121c23;
+  --on-mastery-1: #121c23;
+  --on-mastery-2: #121c23;
+  --on-mastery-3: #121c23;
+  --on-mastery-4: #f7fbfc;
 }
 
 [data-theme="dark"] {
@@ -87,6 +93,11 @@
   --mastery-2: #2f6a4f;
   --mastery-3: #4a9466;
   --mastery-4: #7cc48f;
+  --on-mastery-0: #e6ecef;
+  --on-mastery-1: #e6ecef;
+  --on-mastery-2: #e6ecef;
+  --on-mastery-3: #0c1316;
+  --on-mastery-4: #0c1316;
 }
 
 /* Brand artwork: the dark disc on light paper, the light disc in dark mode. */
