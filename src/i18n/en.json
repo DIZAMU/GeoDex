@@ -28,11 +28,10 @@
   "settings": {
     "label": "Settings",
     "theme": {
-      "label": "Theme",
-      "atlas": "Atlas",
-      "minimal": "Minimal",
-      "playful": "Playful",
-      "auto": "Auto"
+      "label": "Appearance",
+      "light": "Light",
+      "dark": "Dark",
+      "auto": "Match device"
     },
     "language": {
       "label": "Language",
@@ -73,7 +72,11 @@
     "sessionFocus": "Session focus",
     "levelProgress": "Way to the next level",
     "levelCards": "Cards to go",
-    "levelPercent": "Percentage"
+    "levelPercent": "Percentage",
+    "sound": "Sound",
+    "soundHelp": "A short tone after each answer and at the end of a session",
+    "vibration": "Vibration",
+    "vibrationHelp": "A short buzz after each answer, on phones that support it"
   },
   "nav": {
     "today": "Today",

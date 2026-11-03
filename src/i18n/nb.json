@@ -28,11 +28,10 @@
   "settings": {
     "label": "Innstillinger",
     "theme": {
-      "label": "Tema",
-      "atlas": "Atlas",
-      "minimal": "Minimal",
-      "playful": "Leken",
-      "auto": "Automatisk"
+      "label": "Utseende",
+      "light": "Lyst",
+      "dark": "Mørkt",
+      "auto": "Som enheten"
     },
     "language": {
       "label": "Språk",
@@ -73,7 +72,11 @@
     "sessionFocus": "Øktfokus",
     "levelProgress": "Veien til neste nivå",
     "levelCards": "Kort som gjenstår",
-    "levelPercent": "Prosent"
+    "levelPercent": "Prosent",
+    "sound": "Lyd",
+    "soundHelp": "En kort tone etter hvert svar og når en økt er ferdig",
+    "vibration": "Vibrasjon",
+    "vibrationHelp": "En kort vibrasjon etter hvert svar, på telefoner som støtter det"
   },
   "nav": {
     "today": "I dag",

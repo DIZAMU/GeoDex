@@ -23,6 +23,7 @@ import {
 } from "@/engine/session";
 import type { InputSetting, Rating } from "@/engine/types";
 import type { Locale } from "@/i18n/locales";
+import { feedback } from "@/ui/feedback";
 import { answerMoment, explain } from "../study/explain";
 import { continentLookup, modeStats, planDay } from "../study/plan";
 import {
@@ -137,6 +138,7 @@ export function useDailySession(
     const next = nextItem(session.current, Date.now());
     if (!next) {
       setView({ kind: "done", reviewed: session.current.answered, correct: correct.current });
+      feedback("finish", learner.device);
       return;
     }
     session.current = next.state;
@@ -152,7 +154,7 @@ export function useDailySession(
     }
     shownAt.current = performance.now();
     setView({ kind: "prompt", item: next.item, question: q, hint: false });
-  }, [question, explainFor, scheduled]);
+  }, [question, explainFor, scheduled, learner.device]);
 
   useEffect(() => {
     if (view === null && ctx) advance();
@@ -218,8 +220,9 @@ export function useDailySession(
         explanation,
         hidden: [],
       });
+      feedback(result.correct ? "right" : "wrong", learner.device);
     },
-    [view, inputSetting, start.stats, learner.scheduler, explainFor],
+    [view, inputSetting, start.stats, learner.scheduler, learner.device, explainFor],
   );
 
   const writing = useRef(false);

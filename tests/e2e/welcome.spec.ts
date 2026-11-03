@@ -102,7 +102,7 @@ test("welcome, Today with the tour, and Help in every theme and language", async
         `${test.info().project.name}-guidance-${name}.png`,
       ),
     });
-  for (const theme of ["atlas", "minimal", "playful"] as const) {
+  for (const theme of ["light", "dark"] as const) {
     for (const locale of ["en", "nb"] as const) {
       await chooseThemeAndLocale(page, theme, locale);
       await page.goto("/welcome");

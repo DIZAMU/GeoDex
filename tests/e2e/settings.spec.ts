@@ -2,21 +2,29 @@ import { expect, test } from "@playwright/test";
 import { chooseThemeAndLocale, setUpLearner } from "./helpers";
 
 test("theme and language survive a reload without a flash", async ({ page }) => {
-  await chooseThemeAndLocale(page, "playful", "nb");
+  await chooseThemeAndLocale(page, "dark", "nb");
   await page.reload();
   const firstPaint = await page.evaluate(() => document.documentElement.dataset.theme);
-  expect(firstPaint).toBe("playful");
+  expect(firstPaint).toBe("dark");
   await expect(page.locator("html")).toHaveAttribute("lang", "nb");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Innstillinger");
 });
 
-test("auto follows the system color scheme", async ({ page }) => {
-  await page.emulateMedia({ colorScheme: "light" });
-  await page.goto("/settings");
-  await page.getByTestId("theme-auto").click();
-  await expect(page.locator("html")).toHaveAttribute("data-theme", "minimal");
+test("light is the default and Match device follows the system", async ({ page }) => {
   await page.emulateMedia({ colorScheme: "dark" });
-  await expect(page.locator("html")).toHaveAttribute("data-theme", "atlas");
+  await page.goto("/settings");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  await page.getByTestId("theme-auto").click();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await page.emulateMedia({ colorScheme: "light" });
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+});
+
+test("a 1.0 theme in storage opens in its 2.0 mode before first paint", async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem("geodex.theme", "atlas"));
+  await page.goto("/settings");
+  const firstPaint = await page.evaluate(() => document.documentElement.dataset.theme);
+  expect(firstPaint).toBe("dark");
 });
 
 const countEvents = (page: import("@playwright/test").Page) =>

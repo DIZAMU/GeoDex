@@ -84,7 +84,7 @@ for (const locale of ["en", "nb"] as const) {
   test(`groups (${locale}): tap Scandinavia, name a group, pick a member`, async ({ page }) => {
     test.setTimeout(300_000);
     await setUpLearner(page, 2);
-    await chooseThemeAndLocale(page, "atlas", locale);
+    await chooseThemeAndLocale(page, "dark", locale);
     await page.getByTestId("module-groups-on").click();
     // Norway and Sweden known for days: Scandinavia (half its members) can start.
     await seedHistory(

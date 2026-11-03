@@ -5,7 +5,13 @@ import { useNavigate } from "react-router";
 import { CONTINENTS } from "@/data/types";
 import { db, type SettingsRow } from "@/db/db";
 import { resetProgress } from "@/db/reviews";
-import { setLevelProgress, setSessionPick, setTourDone, updateSettings } from "@/db/settings";
+import {
+  setFeedbackPref,
+  setLevelProgress,
+  setSessionPick,
+  setTourDone,
+  updateSettings,
+} from "@/db/settings";
 import {
   FOCUS_MODULES,
   type Focus,
@@ -20,6 +26,7 @@ import { isLocale } from "@/i18n/locales";
 import { ThemeSwitcher } from "@/themes/ThemeSwitcher";
 import { Button } from "@/ui/button";
 import { Loader } from "@/ui/loader";
+import { Switch } from "@/ui/switch";
 import { ToggleGroup, ToggleGroupItem } from "@/ui/toggle-group";
 import { CountryPicker } from "../onboarding/CountryPicker";
 import { scopedCountries } from "../study/plan";
@@ -71,6 +78,37 @@ function Choice<T extends string | number>({
         ))}
       </ToggleGroup>
     </fieldset>
+  );
+}
+
+/** One setting with a switch: the label and its effect on the left, the switch on the right. */
+function SwitchRow({
+  label,
+  detail,
+  checked,
+  onChange,
+  testId,
+}: {
+  label: string;
+  detail: string;
+  checked: boolean;
+  onChange: (checked: boolean) => void;
+  testId: string;
+}) {
+  const id = `switch-${testId}`;
+  return (
+    <div className="flex items-center justify-between gap-4">
+      <div className="flex min-w-0 flex-col">
+        <span id={id}>{label}</span>
+        <span className="text-sm text-muted-foreground">{detail}</span>
+      </div>
+      <Switch
+        checked={checked}
+        onCheckedChange={onChange}
+        aria-labelledby={id}
+        data-testid={`${testId}-switch`}
+      />
+    </div>
   );
 }
 
@@ -182,6 +220,20 @@ export function SettingsScreen() {
           }
           onChange={(countdownSeconds) => set({ countdownSeconds })}
           testId="countdown"
+        />
+        <SwitchRow
+          label={t("settings.sound")}
+          detail={t("settings.soundHelp")}
+          checked={learner.device.soundOn !== false}
+          onChange={(soundOn) => void setFeedbackPref(db, { soundOn })}
+          testId="sound"
+        />
+        <SwitchRow
+          label={t("settings.vibration")}
+          detail={t("settings.vibrationHelp")}
+          checked={learner.device.vibrationOn !== false}
+          onChange={(vibrationOn) => void setFeedbackPref(db, { vibrationOn })}
+          testId="vibration"
         />
         <Button
           variant="outline"

@@ -40,7 +40,7 @@ function ToggleGroup({
       data-orientation={orientation}
       style={{ "--gap": spacing } as React.CSSProperties}
       className={cn(
-        "group/toggle-group flex w-fit flex-row items-center gap-[--spacing(var(--gap))] rounded-lg data-[size=sm]:rounded-[min(var(--radius-md),10px)] data-vertical:flex-col data-vertical:items-stretch data-[variant=outline]:data-[spacing=0]:gap-1 data-[variant=outline]:data-[spacing=0]:rounded-xl data-[variant=outline]:data-[spacing=0]:border data-[variant=outline]:data-[spacing=0]:border-border data-[variant=outline]:data-[spacing=0]:bg-background/60 data-[variant=outline]:data-[spacing=0]:p-1",
+        "group/toggle-group flex w-fit flex-row items-center gap-[--spacing(var(--gap))] rounded-lg data-[size=sm]:rounded-[min(var(--radius-md),10px)] data-vertical:flex-col data-vertical:items-stretch data-[variant=outline]:data-[spacing=0]:gap-1 data-[variant=outline]:data-[spacing=0]:rounded-lg data-[variant=outline]:data-[spacing=0]:bg-muted data-[variant=outline]:data-[spacing=0]:p-1",
         className,
       )}
       {...props}
@@ -68,7 +68,7 @@ function ToggleGroupItem({
       data-size={context.size || size}
       data-spacing={context.spacing}
       className={cn(
-        "shrink-0 focus:z-10 focus-visible:z-10 group-data-[spacing=0]/toggle-group:px-3 group-data-[spacing=0]/toggle-group:data-[variant=outline]:rounded-lg group-data-[spacing=0]/toggle-group:data-[variant=outline]:border-0",
+        "shrink-0 focus:z-10 focus-visible:z-10 group-data-[spacing=0]/toggle-group:px-3 group-data-[spacing=0]/toggle-group:data-[variant=outline]:rounded-md group-data-[spacing=0]/toggle-group:data-[variant=outline]:border-0",
         toggleVariants({
           variant: context.variant || variant,
           size: context.size || size,

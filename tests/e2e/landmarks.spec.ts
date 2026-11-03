@@ -81,12 +81,10 @@ async function seedHistory(page: Page, cardIds: string[], daysAgo: number) {
 }
 
 const RUNS = [
-  ["atlas", "en"],
-  ["atlas", "nb"],
-  ["minimal", "en"],
-  ["minimal", "nb"],
-  ["playful", "en"],
-  ["playful", "nb"],
+  ["dark", "en"],
+  ["dark", "nb"],
+  ["light", "en"],
+  ["light", "nb"],
 ] as const;
 
 for (const [theme, locale] of RUNS) {

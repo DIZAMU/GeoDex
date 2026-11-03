@@ -2,7 +2,7 @@ import Dexie, { type EntityTable } from "dexie";
 import { type CardState, createScheduler, replayAll } from "@/engine/scheduler";
 import type { AnswerMode, CardId, InputSetting, Rating } from "@/engine/types";
 import type { Locale } from "@/i18n/locales";
-import type { ThemePreference } from "@/themes/themes";
+import { normalizeThemePreference, type ThemePreference } from "@/themes/themes";
 
 export const SETTINGS_ROW_ID = "user";
 export const DEVICE_ROW_ID = "device";
@@ -79,6 +79,9 @@ export type DeviceSettingsRow = {
   levelProgress?: "cards" | "percent" | null;
   /** When a backup file was last downloaded from this browser; null or absent means never. */
   lastBackupAt?: number | null;
+  /** Answer tones and vibration; absent means on (docs/PLAN-2.0.md). */
+  soundOn?: boolean | null;
+  vibrationOn?: boolean | null;
 };
 
 /** One answer. Append-only: never updated or deleted. */
@@ -173,13 +176,23 @@ export function createDb(name = "geodex"): GeoDexDb {
       await tx.table("cardState").clear();
       await tx.table("cardState").bulkPut([...states.values()]);
     });
-  // v4 (2.0): no accounts and no sync, so the sync index and bookkeeping table go.
-  // Stored answers are untouched; old rows may still carry an unused `synced` field.
-  db.version(4).stores({
-    reviewEvents: "id, cardId, reviewedAt",
-    hookVoteEvents: "id, cardId",
-    syncMeta: null,
-  });
+  // v4 (2.0): no accounts and no sync, so the sync index and bookkeeping table go, and the
+  // three 1.0 themes become light or dark. Stored answers are untouched; old rows may still
+  // carry an unused `synced` field.
+  db.version(4)
+    .stores({
+      reviewEvents: "id, cardId, reviewedAt",
+      hookVoteEvents: "id, cardId",
+      syncMeta: null,
+    })
+    .upgrade(async (tx) => {
+      await tx
+        .table("deviceSettings")
+        .toCollection()
+        .modify((row: Partial<DeviceSettingsRow>) => {
+          row.theme = normalizeThemePreference(row.theme);
+        });
+    });
   return db;
 }
 

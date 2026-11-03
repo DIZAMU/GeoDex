@@ -12,10 +12,10 @@ const SCREENS = [
   ["/atlas?view=time&year=1820", "timeline-list"],
   ["/atlas/NOR", "entry-cards"],
   ["/stats", "stats-grid"],
-  ["/settings", "theme-atlas"],
+  ["/settings", "theme-light"],
 ] as const;
 
-for (const theme of ["atlas", "minimal", "playful"] as const) {
+for (const theme of ["light", "dark"] as const) {
   test(`no serious accessibility violations in the ${theme} theme`, async ({ page }) => {
     test.setTimeout(180_000);
     await setUpLearner(page, 2);

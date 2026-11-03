@@ -1,7 +1,8 @@
 import {
   DEFAULT_THEME_PREFERENCE,
-  isThemePreference,
+  normalizeThemePreference,
   resolveTheme,
+  THEME_COLOR,
   type ThemePreference,
 } from "./themes";
 
@@ -15,8 +16,7 @@ const DARK_QUERY = "(prefers-color-scheme: dark)";
 
 export function readThemeMirror(): ThemePreference {
   try {
-    const value = localStorage.getItem(THEME_MIRROR_KEY);
-    return isThemePreference(value) ? value : DEFAULT_THEME_PREFERENCE;
+    return normalizeThemePreference(localStorage.getItem(THEME_MIRROR_KEY));
   } catch {
     return DEFAULT_THEME_PREFERENCE;
   }
@@ -36,8 +36,10 @@ export function systemPrefersDark(): boolean {
 
 export function applyTheme(preference: ThemePreference): void {
   const root = document.documentElement;
-  root.dataset.theme = resolveTheme(preference, systemPrefersDark());
+  const theme = resolveTheme(preference, systemPrefersDark());
+  root.dataset.theme = theme;
   root.dataset.themePreference = preference;
+  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", THEME_COLOR[theme]);
   writeThemeMirror(preference);
 }
 

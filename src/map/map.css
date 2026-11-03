@@ -149,9 +149,9 @@
   text-decoration: underline dashed;
 }
 
-/* Depth at the edges of the map, tuned per theme. */
+/* Kept as a hook for map containers; no vignette in 2.0. */
 .map-vignette {
-  box-shadow: inset 0 0 80px 10px var(--map-shade);
+  box-shadow: none;
 }
 
 /*
@@ -326,11 +326,21 @@
   stroke-dasharray: 6 4;
   animation: map-draw 700ms var(--ease-ui) both 150ms;
 }
+/* Physical names follow the printed atlas: serif italic, water in blue, land features in ink. */
 .world-map .map-label-feature {
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 500;
   font-size: 13px;
+}
+.world-map
+  .map-label-feature:is(
+    [data-kind="ocean"],
+    [data-kind="sea"],
+    [data-kind="river"],
+    [data-kind="lake"]
+  ) {
+  fill: var(--map-water-label);
 }
 @media (prefers-reduced-motion: reduce) {
   .world-map .map-feature-selected,

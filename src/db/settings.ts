@@ -74,6 +74,15 @@ export async function setLastBackup(db: GeoDexDb, at: number): Promise<void> {
   await db.deviceSettings.update(DEVICE_ROW_ID, { lastBackupAt: at });
 }
 
+/** Turns answer tones or vibration on or off, on this device. */
+export async function setFeedbackPref(
+  db: GeoDexDb,
+  pref: { soundOn?: boolean; vibrationOn?: boolean },
+): Promise<void> {
+  await ensureDeviceSettings(db);
+  await db.deviceSettings.update(DEVICE_ROW_ID, pref);
+}
+
 /** Asks the browser to keep IndexedDB through storage pressure, once per device. */
 export async function requestPersistentStorage(db: GeoDexDb): Promise<void> {
   const device = await ensureDeviceSettings(db);

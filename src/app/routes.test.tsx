@@ -53,7 +53,7 @@ describe("routes", () => {
       </LearnerProvider>,
     );
     expect(
-      await screen.findByRole("group", { name: "Theme" }, { timeout: 10_000 }),
+      await screen.findByRole("group", { name: "Appearance" }, { timeout: 10_000 }),
     ).toBeInTheDocument();
     expect(screen.getByRole("group", { name: "Language" })).toBeInTheDocument();
     // No accounts: progress moves between browsers only through backup files.

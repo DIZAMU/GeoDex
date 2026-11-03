@@ -79,7 +79,7 @@ test("the picker fits and reads well on phone, in both languages", async ({ page
   test.setTimeout(120_000);
   await setUpLearner(page, 6);
   for (const locale of ["en", "nb"]) {
-    for (const theme of ["atlas", "minimal", "playful"]) {
+    for (const theme of ["light", "dark"]) {
       await chooseThemeAndLocale(page, theme, locale);
       await page.goto("/");
       await expect(page.getByTestId("picker")).toBeVisible();

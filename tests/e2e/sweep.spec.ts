@@ -27,7 +27,7 @@ test("every route renders in both languages without errors", async ({ page }) =>
   const errors = watchErrors(page);
   await setUpLearner(page, 4);
   for (const locale of ["en", "nb"] as const) {
-    await chooseThemeAndLocale(page, "atlas", locale);
+    await chooseThemeAndLocale(page, "dark", locale);
     for (const [url, ready] of [
       ["/", "streak"],
       ["/atlas", "atlas-regions"],
@@ -37,7 +37,7 @@ test("every route renders in both languages without errors", async ({ page }) =>
       ["/atlas/XKX", "entry-cards"],
       ["/atlas/TUV", "entry-cards"],
       ["/stats", "stats-grid"],
-      ["/settings", "theme-atlas"],
+      ["/settings", "theme-light"],
       ["/drill", "drill-empty"],
       ["/drill?region=nowhere", "drill-empty"],
       ["/drill?a=NOR&b=NOR", "drill-empty"],
@@ -93,7 +93,7 @@ test("Atlas tabs, wheel zoom, spin, resize and theme change keep working", async
   await expect(page.getByTestId("atlas-map")).toBeVisible();
   await noHorizontalScroll(page);
   await page.setViewportSize({ width: 1440, height: 900 });
-  await chooseThemeAndLocale(page, "playful", "nb");
+  await chooseThemeAndLocale(page, "light", "nb");
   await page.goto("/atlas");
   await expect(page.getByTestId("atlas-regions")).toBeVisible();
   expect(errors).toEqual([]);

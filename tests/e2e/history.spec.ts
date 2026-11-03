@@ -119,12 +119,12 @@ test("history cards and the timeline in every theme and language", async ({ page
   await setUpLearner(page, 2);
   // Each round has its own entities: reviews from one round reschedule its cards.
   const rounds = [
-    ["atlas", "en", ["Q2277:map_to_empire", "Q503623:former_name_to_country"], 117],
-    ["atlas", "nb", ["Q12560:empire_to_era", "Q28513:map_to_dissolved_state"], 1683],
-    ["minimal", "en", ["Q33946:dissolved_state_member", "Q8733:map_to_empire"], 1820],
-    ["minimal", "nb", ["Q28573:map_to_empire", "former-persia:former_name_to_country"], 1525],
-    ["playful", "en", ["Q15180:map_to_dissolved_state", "Q12557:empire_to_era"], 1279],
-    ["playful", "nb", ["Q16957:map_to_dissolved_state", "Q1081620:former_name_to_country"], 1989],
+    ["dark", "en", ["Q2277:map_to_empire", "Q503623:former_name_to_country"], 117],
+    ["dark", "nb", ["Q12560:empire_to_era", "Q28513:map_to_dissolved_state"], 1683],
+    ["light", "en", ["Q33946:dissolved_state_member", "Q8733:map_to_empire"], 1820],
+    ["light", "nb", ["Q28573:map_to_empire", "former-persia:former_name_to_country"], 1525],
+    ["light", "en", ["Q15180:map_to_dissolved_state", "Q12557:empire_to_era"], 1279],
+    ["light", "nb", ["Q16957:map_to_dissolved_state", "Q1081620:former_name_to_country"], 1989],
   ] as const;
   for (const [theme, locale, cards, year] of rounds) {
     await chooseThemeAndLocale(page, theme, locale);

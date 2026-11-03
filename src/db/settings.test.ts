@@ -26,17 +26,17 @@ describe("device settings", () => {
   it("creates defaults once and keeps the device id stable", async () => {
     const first = await ensureDeviceSettings(db);
     const second = await ensureDeviceSettings(db);
-    expect(first.theme).toBe("atlas");
+    expect(first.theme).toBe("light");
     expect(first.lastInputMode).toBe("auto");
     expect(first.deviceId).toMatch(/^[0-9a-f-]{36}$/);
     expect(second.deviceId).toBe(first.deviceId);
   });
 
   it("stores the theme preference and last input mode", async () => {
-    await setThemePreference(db, "playful");
+    await setThemePreference(db, "dark");
     await setLastInputMode(db, "typing");
     expect(await ensureDeviceSettings(db)).toMatchObject({
-      theme: "playful",
+      theme: "dark",
       lastInputMode: "typing",
     });
   });
@@ -83,7 +83,7 @@ describe("schema upgrade", () => {
       updatedAt: 5,
     });
     expect(await upgraded.deviceSettings.get("device")).toMatchObject({
-      theme: "minimal",
+      theme: "light",
       lastInputMode: "auto",
     });
     await upgraded.delete();

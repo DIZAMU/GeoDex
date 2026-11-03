@@ -44,7 +44,7 @@ test("the overview shows level, next milestone, XP, goal and the path", async ({
   await expect(page.getByTestId("level-europe")).toBeVisible();
 
   for (const locale of ["en", "nb"]) {
-    for (const theme of ["atlas", "minimal", "playful"]) {
+    for (const theme of ["light", "dark"]) {
       await chooseThemeAndLocale(page, theme, locale);
       await page.goto("/");
       await expect(page.getByTestId("overview")).toBeVisible();

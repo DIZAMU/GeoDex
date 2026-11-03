@@ -63,7 +63,7 @@ test("readme screenshots", async ({ browser }) => {
   const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
   const page = await context.newPage();
   await setUpLearner(page, 6);
-  for (const theme of ["atlas", "minimal", "playful"] as const) {
+  for (const theme of ["light", "dark"] as const) {
     await page.goto("/settings");
     await page.getByTestId(`theme-${theme}`).click();
     await page.goto("/session?input=mc");

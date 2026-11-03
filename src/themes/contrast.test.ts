@@ -41,6 +41,11 @@ const TEXT_PAIRS: [string, string][] = [
   ["accent-foreground", "accent"],
   ["destructive", "background"],
   ["destructive", "card"],
+  ["right", "background"],
+  ["right", "card"],
+  ["foreground", "map-ocean"],
+  ["foreground", "map-land"],
+  ["map-water-label", "map-ocean"],
 ];
 
 const GRAPHIC_PAIRS: [string, string][] = [
@@ -48,6 +53,8 @@ const GRAPHIC_PAIRS: [string, string][] = [
   ["ring", "card"],
   ["map-border", "map-ocean"],
   ["map-border", "map-land"],
+  ["input", "background"],
+  ["input", "card"],
 ];
 
 describe.each(THEMES)("%s theme", (theme) => {

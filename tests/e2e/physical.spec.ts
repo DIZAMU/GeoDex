@@ -151,12 +151,12 @@ test("physical cards in every theme and language", async ({ page }) => {
   await setUpLearner(page, 2);
   // Each round has its own river and country: reviews from one round reschedule its cards.
   const rounds = [
-    ["atlas", "en", "Q3392", "EGY"],
-    ["atlas", "nb", "Q1653", "AUT"],
-    ["minimal", "en", "Q584", "DEU"],
-    ["minimal", "nb", "Q5089", "IND"],
-    ["playful", "en", "Q3783", "BRA"],
-    ["playful", "nb", "Q1497", "USA"],
+    ["dark", "en", "Q3392", "EGY"],
+    ["dark", "nb", "Q1653", "AUT"],
+    ["light", "en", "Q584", "DEU"],
+    ["light", "nb", "Q5089", "IND"],
+    ["light", "en", "Q3783", "BRA"],
+    ["light", "nb", "Q1497", "USA"],
   ] as const;
   for (const [theme, locale, featureId, countryId] of rounds) {
     const feature = FEATURES.find((f) => f.id === featureId) as Feature;
