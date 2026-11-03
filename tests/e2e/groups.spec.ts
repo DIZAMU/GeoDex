@@ -1,6 +1,6 @@
 import { join } from "node:path";
 import { expect, type Page, test } from "@playwright/test";
-import { chooseThemeAndLocale, setUpLearner } from "./helpers";
+import { chooseThemeAndLocale, setUpLearner, turnOn } from "./helpers";
 
 async function shot(page: Page, name: string) {
   await page.waitForTimeout(700); // the map flies to the answer
@@ -83,9 +83,9 @@ async function pointIn(page: Page, id: string): Promise<{ x: number; y: number }
 for (const locale of ["en", "nb"] as const) {
   test(`groups (${locale}): tap Scandinavia, name a group, pick a member`, async ({ page }) => {
     test.setTimeout(300_000);
-    await setUpLearner(page, 2);
+    await setUpLearner(page);
     await chooseThemeAndLocale(page, "dark", locale);
-    await page.getByTestId("module-groups-on").click();
+    await turnOn(page, "module-groups-switch");
     // Norway and Sweden known for days: Scandinavia (half its members) can start.
     await seedHistory(
       page,

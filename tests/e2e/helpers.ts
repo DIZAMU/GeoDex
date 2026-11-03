@@ -8,23 +8,13 @@ export async function chooseThemeAndLocale(page: Page, theme: string, locale: st
   await expect(page.locator("html")).toHaveAttribute("lang", locale);
 }
 
-/** Welcome page, onboarding with Norway as home, a few placement answers, then finish early. */
-export async function setUpLearner(page: Page, placementAnswers = 4) {
+/** Welcome page, then setup with Norway as home, then Today with the tour skipped. */
+export async function setUpLearner(page: Page) {
   await page.goto("/");
   await page.getByTestId("setup").click();
   await page.getByTestId("country-search").fill("Norw");
   await page.locator('[data-country-option="NOR"]').click();
-  await page.getByTestId("start-placement").click();
-  await expect(page.getByTestId("placement")).toBeVisible();
-  for (let i = 0; i < placementAnswers; i++) {
-    await expect(page.getByTestId("prompt")).toBeVisible();
-    await page.keyboard.press(String((i % 4) + 1));
-    await expect(page.getByTestId("feedback")).toBeVisible();
-    await page.keyboard.press("Enter");
-  }
-  await page.getByTestId("finish-placement").click();
-  await expect(page.getByTestId("placement-result")).toBeVisible();
-  await page.getByTestId("to-today").click();
+  await page.getByTestId("start-learning").click();
   await expect(page.getByTestId("summary")).toBeVisible();
   await skipTour(page);
 }
@@ -144,4 +134,29 @@ export async function seed(
       }),
     { cards, noNewCards },
   );
+}
+
+/** Turns a Settings switch on; a click on one already on would turn it off. */
+export async function turnOn(page: Page, testId: string) {
+  const control = page.getByTestId(testId);
+  if ((await control.getAttribute("aria-checked")) !== "true") await control.click();
+  await expect(control).toHaveAttribute("aria-checked", "true");
+}
+
+/** Starts a session from Today, answers a few questions, and goes back to Today. */
+export async function studyAFew(page: Page, answers = 3) {
+  await page.goto("/");
+  await page.getByTestId("start").click();
+  for (let done = 0; done < answers; ) {
+    const screen = await currentScreen(page);
+    if (screen === "intro") await page.keyboard.press("Enter");
+    else if (screen === "prompt") await answerPrompt(page);
+    else {
+      await page.keyboard.press("Enter");
+      done++;
+      await expect(page.getByTestId("feedback")).toBeHidden();
+    }
+  }
+  await page.goto("/");
+  await expect(page.getByTestId("summary")).toBeVisible();
 }

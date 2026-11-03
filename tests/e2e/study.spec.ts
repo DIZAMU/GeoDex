@@ -1,9 +1,9 @@
 import { expect, test } from "@playwright/test";
 import { answerPrompt, currentScreen, noHorizontalScroll, setUpLearner } from "./helpers";
 
-test("placement test, then a 10-question session", async ({ page }) => {
+test("setup, then a 10-question session", async ({ page }) => {
   test.setTimeout(120_000);
-  await setUpLearner(page, 6);
+  await setUpLearner(page);
   await noHorizontalScroll(page);
 
   await page.getByTestId("start").click();
@@ -25,7 +25,7 @@ test("placement test, then a 10-question session", async ({ page }) => {
     }
   }
   // The picker's default session holds 10 questions and ends on its own (PLAN.md 11.2).
-  await expect(page.getByTestId("reviewed")).toHaveText("10 reviews");
+  await expect(page.getByTestId("reviewed")).toContainText("10 reviews");
 
   // Events survive a reload and today's counts reflect them.
   await page.goto("/");
@@ -44,7 +44,8 @@ test("placement test, then a 10-question session", async ({ page }) => {
         };
       }),
   );
-  expect(reviews).toBe(16);
+  // No placement test in 2.0: the ten answers are the only events.
+  expect(reviews).toBe(10);
 
   // Every scheduled session review recorded the snippets it showed.
   const withSnippets = await page.evaluate(

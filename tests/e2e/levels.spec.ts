@@ -15,17 +15,13 @@ async function xpOnToday(page: Page): Promise<number> {
 
 test("the overview shows level, next milestone, XP, goal and the path", async ({ page }) => {
   test.setTimeout(240_000);
-  await setUpLearner(page, 4);
+  await setUpLearner(page);
   const overview = page.getByTestId("overview");
   await expect(overview).toBeVisible();
   await expect(page.getByTestId("level")).toHaveText("1");
   await expect(page.getByTestId("next-level")).toHaveText(/more cards? to level 2/);
   await expect(page.getByTestId("xp")).toContainText("Tourist");
-  await expect(page.getByTestId("goal-ring")).toHaveAttribute(
-    "aria-label",
-    /of \d+ minutes studied/,
-  );
-  await expect(overview.getByTestId("level-path")).toBeVisible();
+  await expect(page.getByTestId("goal-ring")).toHaveText(/of \d+ minutes studied/);
 
   // The way to the next level switches between cards and a percentage, and is remembered.
   await page.getByTestId("next-level").click();
@@ -40,7 +36,10 @@ test("the overview shows level, next milestone, XP, goal and the path", async ({
   // Country and continent levels.
   await page.goto("/atlas/NOR");
   await expect(page.getByTestId("entry-level")).toHaveAttribute("aria-label", /Memory level \d+/);
+  // Stats carries the full picture: the path to level 10, XP, and a level per continent.
   await page.goto("/stats");
+  await expect(page.getByTestId("level-path")).toBeVisible();
+  await expect(page.getByTestId("stats-xp")).toContainText("Tourist");
   await expect(page.getByTestId("level-europe")).toBeVisible();
 
   for (const locale of ["en", "nb"]) {
@@ -66,7 +65,7 @@ test("the overview shows level, next milestone, XP, goal and the path", async ({
 
 test("a session that reaches a new rank celebrates it", async ({ page }) => {
   test.setTimeout(180_000);
-  await setUpLearner(page, 2);
+  await setUpLearner(page);
   const start = await xpOnToday(page);
   // Each seeded answer sits alone on its own day: 10 XP for the answer, 10 for the day.
   const k = Math.max(0, Math.floor((299 - start) / 20));

@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { expect, type Page, test } from "@playwright/test";
-import { chooseThemeAndLocale, seed, setUpLearner } from "./helpers";
+import { chooseThemeAndLocale, seed, setUpLearner, turnOn } from "./helpers";
 
 type Outlined = {
   id: string;
@@ -24,7 +24,7 @@ test("every outline shows its snapshot year and an approximate label where it ap
   page,
 }) => {
   test.setTimeout(240_000);
-  await setUpLearner(page, 1);
+  await setUpLearner(page);
   for (const e of OUTLINED) {
     await page.goto(`/atlas?view=time&year=${e.outline.snapshotYear}`);
     const outline = page.locator(`[data-testid="history-outline"][data-history="${e.id}"]`);
@@ -39,8 +39,7 @@ test("every outline shows its snapshot year and an approximate label where it ap
   // The outline cards carry the same caption in a session. The module goes on first: the
   // settings screen writes the whole settings row, which would undo the seeded settings.
   await page.goto("/settings");
-  await page.getByTestId("module-history-on").click();
-  await expect(page.getByTestId("module-history-on")).toHaveAttribute("data-state", "on");
+  await turnOn(page, "module-history-switch");
   await seed(
     page,
     OUTLINED.map((e) => ({
@@ -116,7 +115,7 @@ test("every outline shows its snapshot year and an approximate label where it ap
 
 test("history cards and the timeline in every theme and language", async ({ page }) => {
   test.setTimeout(300_000);
-  await setUpLearner(page, 2);
+  await setUpLearner(page);
   // Each round has its own entities: reviews from one round reschedule its cards.
   const rounds = [
     ["dark", "en", ["Q2277:map_to_empire", "Q503623:former_name_to_country"], 117],
@@ -128,8 +127,7 @@ test("history cards and the timeline in every theme and language", async ({ page
   ] as const;
   for (const [theme, locale, cards, year] of rounds) {
     await chooseThemeAndLocale(page, theme, locale);
-    await page.getByTestId("module-history-on").click();
-    await expect(page.getByTestId("module-history-on")).toHaveAttribute("data-state", "on");
+    await turnOn(page, "module-history-switch");
     await seed(
       page,
       cards.map((cardId) => ({ cardId, daysAgo: 2, rating: 1 })),

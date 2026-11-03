@@ -21,7 +21,7 @@ async function finishSession(page: import("@playwright/test").Page): Promise<num
 
 test("a 5-question session holds exactly 5 and shows its position", async ({ page }) => {
   test.setTimeout(120_000);
-  await setUpLearner(page, 6);
+  await setUpLearner(page);
   await page.getByTestId("length-5").click();
   await expect(page.getByTestId("start")).toHaveText(/Start 5 questions/);
   await page.getByTestId("start").click();
@@ -37,7 +37,7 @@ test("a 5-question session holds exactly 5 and shows its position", async ({ pag
   await expect(page.getByTestId("left")).toHaveText("2 of 5");
 
   expect(await finishSession(page)).toBe(4);
-  await expect(page.getByTestId("reviewed")).toHaveText("5 reviews");
+  await expect(page.getByTestId("reviewed")).toContainText("5 reviews");
 
   // Another round in the same length starts a fresh session.
   await expect(page.getByTestId("again")).toBeVisible();
@@ -51,7 +51,7 @@ test("a 5-question session holds exactly 5 and shows its position", async ({ pag
 
 test("a focused session asks only that skill", async ({ page }) => {
   test.setTimeout(120_000);
-  await setUpLearner(page, 6);
+  await setUpLearner(page);
   const focus = page.getByTestId("focus");
   await focus.selectOption("skill:location");
   await expect(focus).toHaveValue("skill:location");
@@ -77,7 +77,7 @@ test("a focused session asks only that skill", async ({ page }) => {
 
 test("the picker fits and reads well on phone, in both languages", async ({ page }) => {
   test.setTimeout(120_000);
-  await setUpLearner(page, 6);
+  await setUpLearner(page);
   for (const locale of ["en", "nb"]) {
     for (const theme of ["light", "dark"]) {
       await chooseThemeAndLocale(page, theme, locale);

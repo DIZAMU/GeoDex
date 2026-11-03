@@ -25,7 +25,7 @@ async function settled(page: Page) {
 test("every route renders in both languages without errors", async ({ page }) => {
   test.setTimeout(180_000);
   const errors = watchErrors(page);
-  await setUpLearner(page, 4);
+  await setUpLearner(page);
   for (const locale of ["en", "nb"] as const) {
     await chooseThemeAndLocale(page, "dark", locale);
     for (const [url, ready] of [
@@ -56,7 +56,7 @@ test("every route renders in both languages without errors", async ({ page }) =>
 
 test("unknown addresses and unknown countries land somewhere useful", async ({ page }) => {
   const errors = watchErrors(page);
-  await setUpLearner(page, 2);
+  await setUpLearner(page);
   await page.goto("/no/such/page");
   await expect(page).toHaveURL(/\/$/);
   await expect(page.getByTestId("streak")).toBeVisible();
@@ -68,7 +68,7 @@ test("unknown addresses and unknown countries land somewhere useful", async ({ p
 test("Atlas tabs, wheel zoom, spin, resize and theme change keep working", async ({ page }) => {
   test.setTimeout(120_000);
   const errors = watchErrors(page);
-  await setUpLearner(page, 2);
+  await setUpLearner(page);
   await page.goto("/atlas");
   await expect(page.getByTestId("atlas-regions")).toBeVisible();
   await settled(page);
@@ -104,7 +104,7 @@ test("a pair drill from the URL runs with keyboard shortcuts and the help overla
 }) => {
   test.setTimeout(120_000);
   const errors = watchErrors(page);
-  await setUpLearner(page, 2);
+  await setUpLearner(page);
   await page.goto("/drill?a=SVK&b=SVN");
   const screen = await currentScreen(page);
   expect(screen).not.toBe("intro");
@@ -121,7 +121,7 @@ test("a pair drill from the URL runs with keyboard shortcuts and the help overla
 
 test("back and forward between tabs keep each screen intact", async ({ page }) => {
   const errors = watchErrors(page);
-  await setUpLearner(page, 2);
+  await setUpLearner(page);
   await page.getByRole("link", { name: "Atlas" }).click();
   await expect(page.getByTestId("atlas-regions")).toBeVisible();
   await page.getByRole("link", { name: "Stats" }).click();

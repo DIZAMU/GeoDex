@@ -83,6 +83,7 @@ export function AppLayout() {
                 to={to}
                 end={end}
                 viewTransition
+                data-testid={`nav-${to === "/" ? "today" : to.slice(1)}`}
                 className={({ isActive }) =>
                   cn(
                     "flex h-16 flex-col items-center justify-center gap-1 text-xs text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none focus-visible:ring-inset",

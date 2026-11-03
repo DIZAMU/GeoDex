@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { expect, type Page, test } from "@playwright/test";
-import { chooseThemeAndLocale, seed, setUpLearner } from "./helpers";
+import { chooseThemeAndLocale, seed, setUpLearner, turnOn } from "./helpers";
 
 type Feature = { id: string; kind: string; names: { en: string; nb: string } };
 const FEATURES = (JSON.parse(readFileSync("data/physical.json", "utf8")) as { features: Feature[] })
@@ -64,9 +64,9 @@ for (const [name, kinds] of SLICES) {
   test(`every feature renders and is tappable at its default zoom: ${name}`, async ({ page }) => {
     test.setTimeout(600_000);
     const features = FEATURES.filter((f) => (kinds as readonly string[]).includes(f.kind));
-    await setUpLearner(page, 2);
+    await setUpLearner(page);
     await page.goto("/settings");
-    await page.getByTestId("module-physical-on").click();
+    await turnOn(page, "module-physical-switch");
     // Norway known, and every feature card of this slice due again after a miss, so the
     // session shows each one at the zoom of a new card.
     await seed(page, [
@@ -148,7 +148,7 @@ for (const [name, kinds] of SLICES) {
 
 test("physical cards in every theme and language", async ({ page }) => {
   test.setTimeout(300_000);
-  await setUpLearner(page, 2);
+  await setUpLearner(page);
   // Each round has its own river and country: reviews from one round reschedule its cards.
   const rounds = [
     ["dark", "en", "Q3392", "EGY"],
@@ -161,7 +161,7 @@ test("physical cards in every theme and language", async ({ page }) => {
   for (const [theme, locale, featureId, countryId] of rounds) {
     const feature = FEATURES.find((f) => f.id === featureId) as Feature;
     await chooseThemeAndLocale(page, theme, locale);
-    await page.getByTestId("module-physical-on").click();
+    await turnOn(page, "module-physical-switch");
     await seed(
       page,
       [

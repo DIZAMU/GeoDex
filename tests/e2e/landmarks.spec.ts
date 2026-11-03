@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { type BrowserContext, expect, type Page, test } from "@playwright/test";
-import { chooseThemeAndLocale, setUpLearner } from "./helpers";
+import { chooseThemeAndLocale, setUpLearner, turnOn } from "./helpers";
 
 const PHOTO = readFileSync(join(import.meta.dirname, "fixtures", "landmark.jpg"));
 const read = (path: string) => JSON.parse(readFileSync(path, "utf8"));
@@ -95,9 +95,9 @@ for (const [theme, locale] of RUNS) {
     test.setTimeout(300_000);
     const served: string[] = [];
     await servePhotos(context, served);
-    await setUpLearner(page, 2);
+    await setUpLearner(page);
     await chooseThemeAndLocale(page, theme, locale);
-    await page.getByTestId("module-landmarks-on").click();
+    await turnOn(page, "module-landmarks-switch");
     // France known for days: its landmarks (Eiffel Tower, Mont-Saint-Michel...) can start.
     await seedHistory(page, ["FRA:map_to_name", "FRA:name_to_map"], 3);
     await page.goto("/");
