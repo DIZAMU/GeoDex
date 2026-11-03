@@ -1,3 +1,4 @@
+import { CheckIcon } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { Country } from "@/data/types";
@@ -46,7 +47,7 @@ export function CountryPicker({
         data-testid="country-search"
       />
       <ul
-        className="max-h-72 overflow-y-auto rounded-lg border border-border bg-background/40"
+        className="max-h-72 overflow-y-auto rounded-lg border border-border"
         aria-label={t("onboarding.home")}
       >
         {shown.map((c) => (
@@ -57,8 +58,8 @@ export function CountryPicker({
               aria-pressed={value === c.id}
               data-country-option={c.id}
               className={cn(
-                "flex min-h-11 w-full items-center gap-3 px-3 text-left hover:bg-muted focus-visible:bg-muted focus-visible:outline-none",
-                value === c.id && "bg-muted font-name shadow-[inset_3px_0_0_var(--primary)]",
+                "flex min-h-11 w-full items-center gap-3 px-3 text-left outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset",
+                value === c.id && "bg-foreground font-medium text-background hover:bg-foreground",
               )}
             >
               <img
@@ -66,7 +67,8 @@ export function CountryPicker({
                 alt=""
                 className="h-4 w-6 rounded-[2px] border border-border object-cover"
               />
-              <span>{c.names[locale]}</span>
+              <span className="flex-1">{c.names[locale]}</span>
+              {value === c.id ? <CheckIcon aria-hidden className="size-4" /> : null}
             </button>
           </li>
         ))}

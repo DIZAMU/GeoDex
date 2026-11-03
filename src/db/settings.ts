@@ -44,12 +44,6 @@ export async function setTourDone(db: GeoDexDb, at: number | null): Promise<void
   await db.deviceSettings.update(DEVICE_ROW_ID, { tourDoneAt: at });
 }
 
-/** Remembers whether the learner opened or closed the Today info box. */
-export async function setInfoboxOpen(db: GeoDexDb, open: boolean | null): Promise<void> {
-  await ensureDeviceSettings(db);
-  await db.deviceSettings.update(DEVICE_ROW_ID, { infoboxOpen: open });
-}
-
 /** Remembers the session picker's length and focus on this device. */
 export async function setSessionPick(
   db: GeoDexDb,

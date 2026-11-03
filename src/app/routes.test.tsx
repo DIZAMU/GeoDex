@@ -22,13 +22,13 @@ describe("routes", () => {
     expect(
       await screen.findByRole(
         "heading",
-        { level: 1, name: "Learn the world, and keep it." },
+        { level: 1, name: "Every country, capital and flag, learned for good" },
         { timeout: 10_000 },
       ),
     ).toBeInTheDocument();
     expect(router.state.location.pathname).toBe("/welcome");
     expect(screen.getByTestId("welcome-free")).toHaveTextContent(
-      "Free. No ads, no account, no tracking.",
+      "Free, and it works offline. Your progress stays in this browser.",
     );
     expect(screen.getByTestId("setup")).toBeInTheDocument();
   });
@@ -40,8 +40,9 @@ describe("routes", () => {
         <RouterProvider router={router} />
       </LearnerProvider>,
     );
-    expect(screen.getByRole("link", { name: "Today" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Settings" })).toBeInTheDocument();
+    // Header links on wide screens and the bottom bar on phones: both are in the document.
+    expect(screen.getAllByRole("link", { name: "Today" })).toHaveLength(2);
+    expect(screen.getAllByRole("link", { name: "Settings" })).toHaveLength(2);
     expect(await screen.findByTestId("app-map")).toBeInTheDocument();
   });
 

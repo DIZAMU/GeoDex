@@ -235,16 +235,6 @@ export function SettingsScreen() {
           onChange={(vibrationOn) => void setFeedbackPref(db, { vibrationOn })}
           testId="vibration"
         />
-        <Button
-          variant="outline"
-          className="self-start"
-          onClick={async () => {
-            await db.placementProgress.clear();
-            navigate("/placement", { viewTransition: true });
-          }}
-        >
-          {t("settings.rerunPlacement")}
-        </Button>
       </Group>
       <Group title={t("settings.groupGuide")}>
         <div className="flex flex-wrap gap-3">

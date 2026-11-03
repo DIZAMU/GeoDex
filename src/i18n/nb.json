@@ -3,27 +3,20 @@
     "name": "GeoDex"
   },
   "today": {
-    "title": "I dag",
-    "summary": "{{reviews}} og {{newCards}}, omtrent {{minutes}} min",
+    "summary": "{{reviews}} og {{newCards}}, omtrent {{minutes}} minutter",
     "nothingLeft": "Ingenting igjen i dag. Nye kort låses opp når du repeterer.",
     "paused": "Nye kort er satt på pause til etterslepet får plass i dagens tid.",
-    "start": "Start økten",
     "inputMode": "Svar med",
     "nextRegion": "Neste region: {{name}}",
-    "setupTitle": "Sett opp GeoDex",
-    "setupBody": "Velg hjemland og ta en kort plasseringstest. Den finner ut hva du allerede kan.",
-    "setup": "Sett opp",
     "reviews_one": "{{count}} repetisjon",
     "reviews_other": "{{count}} repetisjoner",
     "newCards_one": "{{count}} nytt kort",
     "newCards_other": "{{count}} nye kort",
-    "statReviews": "Repetisjoner",
-    "statNew": "Nye",
-    "statMinutes": "Minutter",
     "mapTitle": "Kartet ditt",
     "mapStarted": "{{count}} av {{total}} land påbegynt",
-    "legendStarted": "Påbegynt",
-    "legendNext": "Neste region"
+    "due_one": "{{formatted}} kort i dag",
+    "due_other": "{{formatted}} kort i dag",
+    "doneTitle": "Ferdig for i dag"
   },
   "settings": {
     "label": "Innstillinger",
@@ -67,7 +60,7 @@
     "sessionsPerDay": "Økter per dag",
     "sessions_one": "{{count}} økt",
     "sessions_other": "{{count}} økter",
-    "goalHelp": "Når du når målet, fylles ringen på I dag, du får XP, og dagen teller med i dager på rad, selv om det er repetisjoner igjen.",
+    "goalHelp": "Når du når målet, får du XP, og dagen teller med i dager på rad, selv om det er repetisjoner igjen.",
     "sessionLength": "Øktlengde",
     "sessionFocus": "Øktfokus",
     "levelProgress": "Veien til neste nivå",
@@ -82,7 +75,8 @@
     "today": "I dag",
     "settings": "Innstillinger",
     "atlas": "Atlas",
-    "stats": "Statistikk"
+    "stats": "Statistikk",
+    "label": "Hovedmeny"
   },
   "common": {
     "loading": "Laster"
@@ -93,16 +87,14 @@
     "typing": "Skriving"
   },
   "onboarding": {
-    "title": "Sett opp GeoDex",
+    "title": "Språk og hjemland",
     "home": "Hjemland",
-    "homeHelp": "Læringen starter med regionen, og forklaringer sammenligner med landet.",
+    "homeHelp": "De første leksjonene starter i regionen, og forklaringene sammenligner steder med landet.",
     "search": "Søk etter land",
     "noMatch": "Ingen land passer. Sjekk stavemåten.",
-    "start": "Start plasseringstesten",
-    "placementTitle": "Kan du allerede noen land?",
-    "placementBody": "En test på 5 minutter finner det du allerede kan, så du hopper over det. Du kan ta den senere fra Innstillinger.",
-    "takeTest": "Ta testen",
-    "fromZero": "Begynn fra null"
+    "start": "Start",
+    "chosen": "Hjemland: {{name}}",
+    "choose": "Velg et hjemland for å starte"
   },
   "placement": {
     "title": "Plasseringstest",
@@ -466,15 +458,11 @@
     "cancel": "Avbryt"
   },
   "welcome": {
-    "eyebrow": "Gratis geografitrener",
-    "title": "Lær verden, og husk den.",
-    "lead": "GeoDex lærer deg alle land, hovedsteder og flagg, og mye mer, i korte økter hver dag. Den merker hva du blander, og tar fram hvert kort rett før du ville glemt det.",
-    "free": "Gratis. Ingen reklame, ingen konto, ingen sporing.",
-    "freeWhy": "Laget for å hjelpe folk å lære geografi. Det er ingenting å kjøpe.",
+    "title": "Alle land, hovedsteder og flagg, lært for godt",
+    "lead": "Noen minutter om dagen. Hvert kort kommer tilbake rett før du ville glemt det, og mellomrommet vokser hver gang du husker.",
     "start": "Begynn å lære",
-    "try": "Prøv 3 spørsmål",
     "language": "Språk",
-    "topicsTitle": "Dette kan du lære",
+    "topicsTitle": "Emner",
     "topics": {
       "countries": {
         "name": "Land",
@@ -513,36 +501,9 @@
         "detail": "{{count}} gamle navn, stater og riker"
       }
     },
-    "optional": "Valgfritt",
-    "getTitle": "Dette får du",
-    "get": {
-      "countries": "Plassere alle {{count}} land på et verdenskart",
-      "capitals": "Kunne alle hovedsteder og kjenne igjen alle flagg",
-      "currency": "Vite valuta og offisielle språk i hvert land",
-      "extras": "Om du vil: {{cities}} byer, {{landmarks}} landemerker, {{physical}} elver, hav og fjellkjeder, og {{history}} biter av historien"
-    },
-    "memoryTitle": "Kunnskap som varer",
-    "memoryBody": "Pugging forsvinner på noen dager. GeoDex bruker repetisjon med mellomrom: hvert kort kommer tilbake rett før du ville glemt det, og mellomrommet vokser hver gang du husker. Om et år kan du det fortsatt.",
-    "timeTitle": "Hvor lang tid det tar",
+    "optional": "Av til du slår det på",
     "timeBody": "Med omtrent {{minutes}} minutter om dagen møter du alle landkortene i løpet av omtrent {{weeks}} uker, og kan alle om omtrent {{months}} måneder.",
     "timeAll": "Med alle emner slått på: omtrent {{months}} måneder.",
-    "howTitle": "Slik fungerer det",
-    "steps": {
-      "home": {
-        "title": "Velg hjemlandet ditt",
-        "body": "Sammenligninger bruker steder du kjenner. En valgfri test på 5 minutter hopper over det du allerede kan."
-      },
-      "daily": {
-        "title": "Øv noen minutter om dagen",
-        "body": "Svar på kartet, ved å velge eller ved å skrive. Spørsmålene blir vanskeligere når du blir bedre."
-      },
-      "fill": {
-        "title": "Se kartet fylles",
-        "body": "Hvert land du lærer farger atlaset ditt, og nivået ditt stiger mot 10."
-      }
-    },
-    "levelsTitle": "Nivåer fra 1 til 10",
-    "levelsBody": "Nivået viser hvor mye du husker, ikke hvor mye du har klikket. Det stiger når kortene sitter lenger, og synker hvis du glemmer.",
     "levels": {
       "1": "Akkurat begynt",
       "3": "Lærer",
@@ -550,26 +511,15 @@
       "8": "Sitter tre uker",
       "10": "Mestret"
     },
-    "demoTitle": "Prøv 3 spørsmål",
-    "demoBody": "Ingenting lagres. Slik føles en økt.",
     "demoProgress": "Spørsmål {{n}} av {{total}}",
     "demoNext": "Neste spørsmål",
     "demoDone": "Det er GeoDex. En ekte økt tilpasser seg deg: det du bommer på, kommer raskere tilbake.",
     "demoAgain": "Prøv igjen",
-    "privacy": "Alt blir på enheten din med mindre du slår på synkronisering.",
-    "madeBy": "Laget av DIZAMU"
-  },
-  "infobox": {
-    "title": "Hva er GeoDex?",
-    "points": {
-      "what": "Korte økter hver dag lærer deg land, hovedsteder, flagg og mer.",
-      "when": "Kortene kommer tilbake rett før du ville glemt dem, så øv så mange dager du kan.",
-      "progress": "Kartet og nivåene viser hvor mye du kan."
-    },
-    "help": "Slik fungerer det",
-    "welcome": "Om GeoDex",
-    "open": "Vis",
-    "close": "Skjul"
+    "madeBy": "Laget av DIZAMU",
+    "facts": "Gratis, og det virker uten nett. Fremgangen lagres i denne nettleseren.",
+    "paceTitle": "{{minutes}} minutter om dagen",
+    "memory": "Feil svar kommer tilbake samme dag. Land du blander, får et eget kort som skiller dem fra hverandre.",
+    "close": "Velg hjemlandet ditt, så starter den første økten. Det er ingenting å registrere seg for."
   },
   "tour": {
     "next": "Neste",
@@ -616,20 +566,16 @@
   "help": {
     "button": "Hjelp",
     "title": "Hjelp",
-    "lead": "Hvor du finner hva, og hvordan GeoDex fungerer.",
-    "mapTitle": "Appen i korte trekk",
+    "lead": "Hvordan GeoDex vurderer, planlegger og teller fremgangen din, og hvor den lagres.",
+    "mapTitle": "Skjermer",
     "nodes": {
       "welcome": {
-        "name": "Velkommen",
-        "body": "Hva GeoDex er, og hva du kan lære."
+        "name": "Første skjerm",
+        "body": "Et prøvespørsmål, hva du kan lære og hvor lang tid det tar."
       },
       "today": {
         "name": "I dag",
-        "body": "Start en økt og se dagens oppgaver og rekken din."
-      },
-      "session": {
-        "name": "Økt",
-        "body": "Svar på spørsmål. Tilbakemeldingen forklarer hvert svar."
+        "body": "Start en økt, og se hva som venter, kartet ditt og nivået ditt."
       },
       "atlas": {
         "name": "Atlas",
@@ -641,24 +587,26 @@
       },
       "settings": {
         "name": "Innstillinger",
-        "body": "Emner, tid per dag, språk, tema, synkronisering og sikkerhetskopi."
+        "body": "Emner, tid per dag, språk, utseende, lyd og sikkerhetskopier."
       }
     },
-    "startsFrom": "starter fra I dag",
-    "gradingTitle": "Slik vurderes svarene",
+    "gradingTitle": "Vurdering",
     "gradingBody": "Du vurderer aldri deg selv. Feil er feil. Et riktig svar teller som bra, som vanskelig etter et hint, en skrivefeil eller et tregt svar, eller som lett når du skriver eller trykker raskt.",
-    "harderTitle": "Hvorfor spørsmålene blir vanskeligere",
+    "harderTitle": "Vanskelighetsgrad",
     "harderBody": "Et nytt kort spør med alternativer på et nært kart. Når du husker det lenger, skriver du svaret, og kartet zoomer ut til kontinentet og så hele verden.",
-    "scheduleTitle": "Hvorfor kortene kommer tilbake",
+    "scheduleTitle": "Planlegging",
     "scheduleBody": "Hvert kort kommer tilbake rett før du ville glemt det. Bommer du, kommer det snart igjen; kan du det, blir mellomrommet lengre.",
     "keysTitle": "Tastatur",
     "keysBody": "I en økt: 1 til 4 velger, Enter sender og går videre, H viser et hint, Esc avslutter. Trykk ? for hele listen.",
     "replayTour": "Se omvisningen igjen",
-    "showWelcome": "Vis velkomstsiden",
+    "showWelcome": "Vis første skjerm",
     "xpTitle": "Nivåer og XP",
-    "xpBody": "Hukommelsesnivået, fra 1 til 10, viser hvor mye du kan akkurat nå, så det synker når du glemmer. XP går bare opp: riktige svar, fullførte økter, øvingsdager, dagsmålet ditt og kort som sitter i en uke, tre uker og to måneder. XP gir deg ranger, fra Turist til Atlasvokter.",
-    "goalTitle": "Dagsmålet ditt",
-    "goalBody": "Nå dagens tid eller fullfør et antall økter; velg i Innstillinger. Når du når målet, fylles ringen på I dag, du får XP, og dagen teller med i dager på rad selv om det er repetisjoner igjen."
+    "xpBody": "XP går bare opp: riktige svar, fullførte økter, øvingsdager, dagsmålet ditt og kort som sitter i en uke, tre uker og to måneder. XP gir deg ranger, fra Turist til Atlasvokter.",
+    "goalTitle": "Dagsmål",
+    "goalBody": "Nå dagens tid eller fullfør et antall økter; velg hva i Innstillinger. Når du når målet, får du XP, og dagen teller med i dager på rad selv om det er repetisjoner igjen.",
+    "levelsBody": "Nivået viser hvor mye du husker akkurat nå. Det stiger når kortene sitter lenger, og synker hvis du glemmer.",
+    "progressTitle": "Fremgangen din",
+    "progressBody": "Fremgangen lagres i denne nettleseren etter hvert svar, og ingen andre steder. Sletter du nettleserdataene, forsvinner den. Last ned en sikkerhetskopi i Innstillinger av og til, og bruk den for å flytte til en annen enhet."
   },
   "picker": {
     "length": "Lengde",

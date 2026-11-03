@@ -37,9 +37,10 @@
   }
 }
 
+/* Countries started: the second mastery step, so the accent stays on what comes next. */
 .world-map .map-filled {
-  fill: var(--primary);
-  fill-opacity: 0.55;
+  fill: var(--mastery-2);
+  fill-opacity: 1;
   stroke: var(--map-border);
   stroke-width: 0.6px;
   vector-effect: non-scaling-stroke;

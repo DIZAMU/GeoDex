@@ -123,7 +123,8 @@ describe("reset progress", () => {
     expect((await loadCardStates(db)).size).toBe(0);
     const settings = await db.settings.get("user");
     expect(settings?.progressResetAt).toBe(T0 + 5000);
-    expect(settings?.placementCompletedAt).toBeNull();
+    // Starting over keeps setup: there is no placement test to take again.
+    expect(settings?.placementCompletedAt).toBe(T0);
 
     await recordReview(db, scheduler, review("NOR:map_to_name", T0 + 9000, 3, "c"));
     expect([...(await loadCardStates(db)).keys()]).toEqual(["NOR:map_to_name"]);

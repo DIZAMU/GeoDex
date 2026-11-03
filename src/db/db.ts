@@ -25,6 +25,7 @@ export type SettingsRow = {
   /** Stage 4 country cards (currency and language). */
   currencyAndLanguage: boolean;
   countdownSeconds: 0 | 10 | 15 | 20;
+  /** When setup (language and home country) was finished. 1.0 set it after the placement test. */
   placementCompletedAt: number | null;
   /**
    * "Reset progress": events at or before this time are kept but no longer replayed.
@@ -113,9 +114,6 @@ export type HookVoteEvent = {
   deviceId: string;
 };
 
-/** Saved progress of an unfinished placement test, on this device only. */
-export type PlacementProgressRow = { id: "current"; state: unknown; updatedAt: number };
-
 export type GeoDexDb = Dexie & {
   settings: EntityTable<SettingsRow, "id">;
   deviceSettings: EntityTable<DeviceSettingsRow, "id">;
@@ -123,7 +121,6 @@ export type GeoDexDb = Dexie & {
   hookVoteEvents: EntityTable<HookVoteEvent, "id">;
   /** Cache only: rebuildable from reviewEvents and settings at any time. */
   cardState: EntityTable<CardState, "cardId">;
-  placementProgress: EntityTable<PlacementProgressRow, "id">;
 };
 
 export function createDb(name = "geodex"): GeoDexDb {
@@ -176,14 +173,15 @@ export function createDb(name = "geodex"): GeoDexDb {
       await tx.table("cardState").clear();
       await tx.table("cardState").bulkPut([...states.values()]);
     });
-  // v4 (2.0): no accounts and no sync, so the sync index and bookkeeping table go, and the
-  // three 1.0 themes become light or dark. Stored answers are untouched; old rows may still
+  // v4 (2.0): no accounts and no sync, so the sync index and bookkeeping table go, the
+  // placement test and its saved progress go, and the three 1.0 themes become light or dark. Stored answers are untouched; old rows may still
   // carry an unused `synced` field.
   db.version(4)
     .stores({
       reviewEvents: "id, cardId, reviewedAt",
       hookVoteEvents: "id, cardId",
       syncMeta: null,
+      placementProgress: null,
     })
     .upgrade(async (tx) => {
       await tx
