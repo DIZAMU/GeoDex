@@ -135,7 +135,6 @@ export async function seed(
               scheduled: true,
               locale: "en",
               deviceId: "seed",
-              synced: 0,
             });
           });
           tx.objectStore("cardState").clear();

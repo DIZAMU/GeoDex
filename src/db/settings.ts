@@ -68,6 +68,12 @@ export async function setLevelProgress(
   await db.deviceSettings.update(DEVICE_ROW_ID, { levelProgress });
 }
 
+/** Remembers when a backup file was last downloaded from this browser. */
+export async function setLastBackup(db: GeoDexDb, at: number): Promise<void> {
+  await ensureDeviceSettings(db);
+  await db.deviceSettings.update(DEVICE_ROW_ID, { lastBackupAt: at });
+}
+
 /** Asks the browser to keep IndexedDB through storage pressure, once per device. */
 export async function requestPersistentStorage(db: GeoDexDb): Promise<void> {
   const device = await ensureDeviceSettings(db);

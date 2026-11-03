@@ -25,7 +25,6 @@ import { CountryPicker } from "../onboarding/CountryPicker";
 import { scopedCountries } from "../study/plan";
 import { type Learner, useLearner } from "../study/useLearner";
 import { BackupSection } from "./BackupSection";
-import { SyncSection } from "./SyncSection";
 
 const MINUTES = [10, 15, 18, 20, 30] as const;
 const COUNTDOWNS = [0, 10, 15, 20] as const;
@@ -221,9 +220,6 @@ export function SettingsScreen() {
       </Group>
       <Group title={t("reset.title")}>
         <ResetProgress learner={learner} />
-      </Group>
-      <Group title={t("sync.title")}>
-        <SyncSection />
       </Group>
       <Group title={t("backup.title")}>
         <BackupSection learner={learner} />

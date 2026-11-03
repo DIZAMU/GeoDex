@@ -23,7 +23,6 @@ import {
 } from "@/engine/session";
 import type { InputSetting, Rating } from "@/engine/types";
 import type { Locale } from "@/i18n/locales";
-import { requestSync } from "@/sync/SyncProvider";
 import { answerMoment, explain } from "../study/explain";
 import { continentLookup, modeStats, planDay } from "../study/plan";
 import {
@@ -138,7 +137,6 @@ export function useDailySession(
     const next = nextItem(session.current, Date.now());
     if (!next) {
       setView({ kind: "done", reviewed: session.current.answered, correct: correct.current });
-      requestSync();
       return;
     }
     session.current = next.state;
@@ -247,7 +245,6 @@ export function useDailySession(
       scheduled,
       locale,
       deviceId: learner.device.deviceId,
-      synced: 0,
     };
     try {
       introSnippets.current.delete(view.item.cardId);
@@ -283,7 +280,6 @@ export function useDailySession(
         hookId: id,
         createdAt: Date.now(),
         deviceId: learner.device.deviceId,
-        synced: 0,
       });
     },
     [view, learner.device.deviceId],
@@ -298,7 +294,6 @@ export function useDailySession(
   const end = useCallback(async () => {
     if (view?.kind === "feedback") await commit();
     setView({ kind: "done", reviewed: session.current.answered, correct: correct.current });
-    requestSync();
   }, [view, commit]);
 
   return {

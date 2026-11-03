@@ -229,36 +229,15 @@
     "alt": "Flagg",
     "of": "Flagget til {{name}}"
   },
-  "sync": {
-    "title": "Synkronisering",
-    "off": "Synkronisering er av i denne versjonen, så alt blir værende på denne enheten. Bruk eksport nedenfor for å ta vare på en kopi.",
-    "intro": "Logg inn for å ha samme fremgang på alle enhetene dine.",
-    "email": "E-post",
-    "sendCode": "Send kode",
-    "codeSent": "En e-post med innlogging er på vei til {{email}}. Lim inn innloggingslenken fra den her, eller skriv koden hvis den har en.",
-    "code": "Innloggingslenke eller kode",
-    "signIn": "Logg inn",
-    "signedIn": "Logget inn som {{email}}",
-    "lastSynced": "Sist synkronisert {{time}}",
-    "never": "Ikke synkronisert ennå på denne enheten",
-    "pending_one": "{{count}} endring venter på synkronisering",
-    "pending_other": "{{count}} endringer venter på synkronisering",
-    "syncNow": "Synkroniser nå",
-    "syncing": "Synkroniserer",
-    "offline": "Frakoblet. Endringer synkroniseres når du er på nett igjen.",
-    "error": "Synkroniseringen feilet: {{message}}. Fremgangen din er trygg på denne enheten; prøv igjen.",
-    "signOut": "Logg ut",
-    "codeError": "Den lenken eller koden virket ikke. Kopier hele lenken fra den nyeste e-posten, eller send en ny.",
-    "sendError": "Koden kunne ikke sendes: {{message}}",
-    "noAccount": "Ingen GeoDex-konto bruker den e-postadressen. Sjekk adressen; kontoer opprettes i Supabase, ikke i appen."
-  },
   "backup": {
     "title": "Sikkerhetskopi",
-    "body": "Eksporter alle repetisjoner og innstillinger til en fil, eller importer en. Import legger til det som mangler og fjerner aldri noe.",
-    "export": "Eksporter data",
-    "import": "Importer data",
-    "imported": "Importerte {{reviews}} repetisjoner og {{votes}} stemmer på huskeregler.",
-    "importError": "Den filen er ikke en eksport fra GeoDex."
+    "body": "Fremgangen lagres i denne nettleseren etter hvert svar. Sletter du nettleserdataene, forsvinner den. En sikkerhetskopi tar vare på en kopi og flytter fremgangen til en annen enhet.",
+    "export": "Last ned sikkerhetskopi",
+    "import": "Gjenopprett sikkerhetskopi",
+    "lastBackup": "Siste sikkerhetskopi: {{date}}",
+    "never": "Ingen sikkerhetskopi laget i denne nettleseren ennå",
+    "imported": "Gjenopprettet {{reviews}} svar og {{votes}} stemmer på huskeregler.",
+    "importError": "Den filen er ikke en sikkerhetskopi fra GeoDex."
   },
   "continent": {
     "africa": "Afrika",
@@ -476,11 +455,11 @@
     "body": "Fakta {{id}} ({{locale}}), vist på kortet {{card}}:\n\n> {{text}}\n\nHva er feil, og en kilde for det riktige:\n"
   },
   "reset": {
-    "title": "Nullstill fremgang",
-    "body": "Begynn på nytt fra plasseringstesten. Fremgang, rekke og statistikk teller bare repetisjoner fra nå av. Tidligere repetisjoner blir værende i eksporter og synkronisert historikk, så ingenting går tapt.",
-    "button": "Nullstill fremgang",
-    "confirm": "Nullstille all fremgang nå? Dette kan ikke angres i appen.",
-    "yes": "Nullstill",
+    "title": "Begynn på nytt",
+    "body": "Nivå, rekke og statistikk teller bare svar fra nå av. Tidligere svar finnes fortsatt i sikkerhetskopier laget før du begynner på nytt.",
+    "button": "Begynn på nytt",
+    "confirm": "Begynne på nytt nå? Dette kan ikke angres.",
+    "yes": "Begynn på nytt",
     "cancel": "Avbryt"
   },
   "welcome": {

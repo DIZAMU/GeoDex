@@ -19,6 +19,46 @@ test("auto follows the system color scheme", async ({ page }) => {
   await expect(page.locator("html")).toHaveAttribute("data-theme", "atlas");
 });
 
+const countEvents = (page: import("@playwright/test").Page) =>
+  page.evaluate(
+    () =>
+      new Promise<number>((resolve) => {
+        const open = indexedDB.open("geodex");
+        open.onsuccess = () => {
+          const names = [...open.result.objectStoreNames];
+          if (!names.includes("reviewEvents")) return resolve(0);
+          const count = open.result.transaction("reviewEvents").objectStore("reviewEvents").count();
+          count.onsuccess = () => resolve(count.result);
+        };
+      }),
+  );
+
+test("a backup file moves progress to a fresh browser, with no account", async ({
+  page,
+  browser,
+}) => {
+  test.setTimeout(120_000);
+  await setUpLearner(page, 4);
+  const before = await countEvents(page);
+  expect(before).toBeGreaterThan(0);
+  await page.goto("/settings");
+  await expect(page.getByTestId("last-backup")).toHaveText("No backup made in this browser yet");
+  const download = page.waitForEvent("download");
+  await page.getByRole("button", { name: "Download backup" }).click();
+  const file = await (await download).path();
+  await expect(page.getByTestId("last-backup")).toHaveText(/^Last backup: /);
+
+  // Another browser starts from a blank slate and gets everything back from the file.
+  const other = await browser.newContext();
+  const fresh = await other.newPage();
+  await fresh.goto("/settings");
+  expect(await countEvents(fresh)).toBe(0);
+  await fresh.getByTestId("import-file").setInputFiles(file);
+  await expect(fresh.getByRole("status")).toContainText(`Restored ${before} answers`);
+  expect(await countEvents(fresh)).toBe(before);
+  await other.close();
+});
+
 test("reset progress starts over but keeps every review in the export", async ({ page }) => {
   await setUpLearner(page, 4);
   const before = await page.evaluate(

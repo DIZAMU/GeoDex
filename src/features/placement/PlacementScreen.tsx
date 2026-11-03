@@ -133,7 +133,6 @@ function Placement({ learner }: { learner: Learner }) {
         scheduled: review.scheduled,
         locale,
         deviceId: learner.device.deviceId,
-        synced: 0,
       };
       await recordReview(db, learner.scheduler, event);
       if (correct) {

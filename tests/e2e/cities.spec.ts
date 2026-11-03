@@ -40,7 +40,6 @@ async function seedHistory(page: Page, cards: { cardId: string; daysAgo: number 
               scheduled: true,
               locale: "en",
               deviceId: "seed",
-              synced: 0,
             });
           });
           tx.objectStore("cardState").clear();

@@ -61,7 +61,7 @@ export const DEFAULT_SETTINGS: SettingsValues = {
   progressResetAt: null,
 };
 
-/** Settings that stay on this device and are never synced. */
+/** Settings that belong to this browser only, never written to a backup. */
 export type DeviceSettingsRow = {
   id: typeof DEVICE_ROW_ID;
   deviceId: string;
@@ -77,12 +77,11 @@ export type DeviceSettingsRow = {
   sessionFocus?: string | null;
   /** The way to the next memory level on Today: cards to go (default) or a percentage. */
   levelProgress?: "cards" | "percent" | null;
+  /** When a backup file was last downloaded from this browser; null or absent means never. */
+  lastBackupAt?: number | null;
 };
 
-/**
- * One answer. Append-only: never updated or deleted, locally or remotely.
- * `synced` is 0 or 1 because IndexedDB cannot index booleans.
- */
+/** One answer. Append-only: never updated or deleted. */
 export type ReviewEvent = {
   id: string;
   cardId: CardId;
@@ -100,7 +99,6 @@ export type ReviewEvent = {
   scheduled: boolean;
   locale: Locale;
   deviceId: string;
-  synced: 0 | 1;
 };
 
 /** A "Not helpful" tap on a hook. Append-only. */
@@ -110,10 +108,7 @@ export type HookVoteEvent = {
   hookId: string;
   createdAt: number;
   deviceId: string;
-  synced: 0 | 1;
 };
-
-export type SyncMetaRow = { table: "reviewEvents" | "hookVoteEvents"; lastPullSeq: number };
 
 /** Saved progress of an unfinished placement test, on this device only. */
 export type PlacementProgressRow = { id: "current"; state: unknown; updatedAt: number };
@@ -125,7 +120,6 @@ export type GeoDexDb = Dexie & {
   hookVoteEvents: EntityTable<HookVoteEvent, "id">;
   /** Cache only: rebuildable from reviewEvents and settings at any time. */
   cardState: EntityTable<CardState, "cardId">;
-  syncMeta: EntityTable<SyncMetaRow, "table">;
   placementProgress: EntityTable<PlacementProgressRow, "id">;
 };
 
@@ -179,6 +173,13 @@ export function createDb(name = "geodex"): GeoDexDb {
       await tx.table("cardState").clear();
       await tx.table("cardState").bulkPut([...states.values()]);
     });
+  // v4 (2.0): no accounts and no sync, so the sync index and bookkeeping table go.
+  // Stored answers are untouched; old rows may still carry an unused `synced` field.
+  db.version(4).stores({
+    reviewEvents: "id, cardId, reviewedAt",
+    hookVoteEvents: "id, cardId",
+    syncMeta: null,
+  });
   return db;
 }
 

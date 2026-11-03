@@ -36,7 +36,6 @@ describe("backup", () => {
         scheduled: true,
         locale: "en",
         deviceId: "a",
-        synced: 1,
       });
     }
     await a.hookVoteEvents.add({
@@ -45,7 +44,6 @@ describe("backup", () => {
       hookId: "NOR.en.1",
       createdAt: T0,
       deviceId: "a",
-      synced: 1,
     });
     const text = JSON.stringify(await exportData(a, T0));
 
@@ -55,8 +53,23 @@ describe("backup", () => {
     expect([...(await loadCardStates(b)).entries()].sort()).toEqual(
       [...(await loadCardStates(a)).entries()].sort(),
     );
-    // Imported events still need to reach the server.
-    expect(await b.reviewEvents.where("synced").equals(0).count()).toBe(6);
+    expect(text).not.toContain("synced");
+  });
+
+  it("leaves the old sync flag out of backups made from rows written before 2.0", async () => {
+    const a = fresh();
+    await a.hookVoteEvents.add({
+      id: "old",
+      cardId: "NOR:map_to_name",
+      hookId: "NOR.en.1",
+      createdAt: T0,
+      deviceId: "a",
+      synced: 1,
+    } as never);
+    const backup = await exportData(a, T0);
+    expect(backup.hookVoteEvents).toEqual([
+      { id: "old", cardId: "NOR:map_to_name", hookId: "NOR.en.1", createdAt: T0, deviceId: "a" },
+    ]);
   });
 
   it("rejects files that are not a GeoDex backup", () => {

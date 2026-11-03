@@ -28,7 +28,7 @@ A spaced-repetition geography trainer that learns what you confuse and explains 
 - **Sessions you size**: 5, 10 or 20 questions, on everything due today or one skill, topic, continent or region. Due reviews come first, and a focused session says what waits outside it.
 - **Levels and XP**: a memory level from 1 to 10 overall and per topic, continent and country, which drops when you forget; XP and ranks (Tourist to Atlas keeper) that only rise; a daily goal in minutes or sessions that keeps your streak.
 - **Progress from your own review history**: a mastery atlas per skill, country pages, stats, streaks with freezes, achievements, and drills that never touch your schedule.
-- **Works offline**, including landmark photos you have seen. Optional sync between devices through your own free Supabase project. Export and import everything as JSON.
+- **Works offline**, including landmark photos you have seen. No account: progress stays in your browser, and a backup file moves it to another device.
 - **Accessible**: every map, pin and tap answer can also be given from a list, by keyboard or screen reader. Lighthouse accessibility 100; axe finds no serious issues in any theme.
 - **Three themes**: Atlas (dark), Minimal (light), Playful.
 
@@ -47,7 +47,7 @@ A spaced-repetition geography trainer that learns what you confuse and explains 
 - **Confusion tracking**: wrong answers are counted per pair over the last 90 days. Two confusions between the same pair add a contrast card, ahead of new cards, with text that tells the two apart. Distractors favour the pairs you confuse.
 - **Hook effectiveness**: each hook shown is followed by your next review of that card. Hook types with better follow-up recall are chosen more often for you (a Laplace-smoothed success rate per type); "Not helpful" counts as a failure and hides the hook.
 - **Placement**: an adaptive test per region seeds what you already know with a real first interval, so day one starts at your level.
-- **Event-sourced**: every answer is an append-only event; card state is a cache rebuilt from events and settings. Sync merges events and can never lose one. "Reset progress" records a time instead of deleting anything.
+- **Event-sourced**: every answer is an append-only event; card state is a cache rebuilt from events and settings. Restoring a backup adds missing events and can never lose one. "Start over" records a time instead of deleting anything.
 
 ```mermaid
 flowchart LR
@@ -65,7 +65,7 @@ flowchart LR
     UI -->|answer| G[Grading] --> E
     UI --> X
   end
-  E <-->|append-only events, settings by last write| SB[(Optional Supabase)]
+  E <-->|download and restore| BF[(Backup file)]
 ```
 
 More in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
@@ -106,38 +106,16 @@ pnpm data:verify         # build twice and check the output is byte-identical
 
 `data/curated/` holds the decisions Wikidata cannot make (capital roles, names, currencies, official languages). Each build writes review reports: `data/name-mismatches.md`, `data/neighbor-mismatches.md`, `data/build-report.md`. Borders follow Natural Earth's de facto view.
 
-## Sync (optional)
-
-Without Supabase settings the app is local-only and fully works. To sync between devices, set up a free Supabase project once:
-
-1. Create a project at supabase.com, in an EU region.
-2. In the SQL editor, run `supabase/migrations/0001_init.sql`. It creates the event tables (insert and read only, never update or delete) and the settings table, all with row-level security.
-3. Under Authentication, Users, add your own user with your email address. The app never creates accounts.
-4. Under Authentication, Sign In / Providers, turn off **Allow new users to sign up**. The publishable key ships in the app by design; row-level security protects your data, and disabled sign-ups stop anyone else from creating an account on your project.
-5. Under Authentication, URL Configuration, set the Site URL to the app's address (for example `https://geodex.dilovanzm.workers.dev`) and add the same address under Redirect URLs.
-6. Under Project Settings, API, copy the project URL and the publishable key. Put them in `.env.local` for development and in the Cloudflare Worker's build variables, never in the repo:
-
-```
-VITE_SUPABASE_URL=https://<project>.supabase.co
-VITE_SUPABASE_PUBLISHABLE_KEY=<publishable key>
-```
-
-Then sign in under Settings, Sync, on each device: enter your email, and Supabase sends a sign-in email. On a laptop, click the link in it. In an app added to an iPhone home screen, long-press the link, copy it, and paste it into the app: home-screen apps keep their storage separate from Safari, so opening the link would sign in the wrong place. (With custom SMTP set up in Supabase you can add `{{ .Token }}` to the Magic Link template and type the code instead.) Sync runs when the app opens, when a session ends, when the tab is hidden, every five minutes, and when the connection returns. Free projects pause after a week without use; the app keeps working locally and syncs again once the project is restored.
-
-Settings, Backup exports everything to a JSON file and imports one, with or without Supabase.
-
 ## Self-hosting
 
-**Without Supabase** (local-only): `pnpm install && pnpm build`, then serve `dist/` from any static host with single-page-app fallback to `index.html`. Nothing else is needed: the app makes no network requests except its own files and, for landmarks, Wikimedia Commons photos. Progress stays in the browser; use Settings, Backup to move it.
-
-**With Supabase**: follow "Sync" above, then set the two `VITE_SUPABASE_*` variables at build time.
+`pnpm install && pnpm build`, then serve `dist/` from any static host with single-page-app fallback to `index.html`. Nothing else is needed: the app makes no network requests except its own files and, for landmarks, Wikimedia Commons photos. Progress stays in the browser; use Settings, Backup to move it.
 
 The author's deployment: a Cloudflare Worker serves the built app as static assets (free tier, no server code). `wrangler.jsonc` points it at `dist/` with single-page-app routing. In the Cloudflare dashboard, under the Worker's Settings, Build:
 
 - Production branch: `main`
 - Build command: `pnpm build`
 - Deploy command: `npx wrangler deploy`
-- Build variables: `NODE_VERSION=24`, `PNPM_VERSION=10.28.0`, and the two `VITE_SUPABASE_*` values if sync is set up
+- Build variables: `NODE_VERSION=24`, `PNPM_VERSION=10.28.0`
 
 Check the config locally with `pnpm build && pnpm exec wrangler deploy --dry-run`.
 

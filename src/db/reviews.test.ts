@@ -37,7 +37,6 @@ function review(
     scheduled,
     locale: "en",
     deviceId: "test",
-    synced: 0,
   };
 }
 
@@ -133,5 +132,32 @@ describe("reset progress", () => {
     const states = await loadCardStates(db);
     expect(states.size).toBe(1);
     expect(states.get("NOR:map_to_name")?.reps).toBe(1);
+  });
+});
+
+describe("schema v4", () => {
+  it("drops the sync index and table and keeps every stored answer", async () => {
+    const name = `v4-${counter}`;
+    const old = new Dexie(name);
+    old.version(3).stores({
+      settings: "id",
+      deviceSettings: "id",
+      reviewEvents: "id, cardId, reviewedAt, synced",
+      hookVoteEvents: "id, cardId, synced",
+      cardState: "cardId, due",
+      syncMeta: "table",
+      placementProgress: "id",
+    });
+    await old.open();
+    await old.table("reviewEvents").add({ ...review("NOR:map_to_name", T0, 3, "x"), synced: 1 });
+    await old.table("syncMeta").add({ table: "reviewEvents", lastPullSeq: 7 });
+    old.close();
+
+    const upgraded = createDb(name);
+    await upgraded.open();
+    expect(upgraded.tables.map((t) => t.name)).not.toContain("syncMeta");
+    expect(upgraded.reviewEvents.schema.indexes.map((i) => i.name)).not.toContain("synced");
+    expect((await upgraded.reviewEvents.get("x"))?.cardId).toBe("NOR:map_to_name");
+    await upgraded.delete();
   });
 });

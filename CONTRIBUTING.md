@@ -8,15 +8,15 @@ GeoDex is a spaced-repetition geography trainer by DIZAMU. The full design is in
 - A phase is done when every acceptance criterion passes.
 - Use conventional commits: `feat:`, `fix:`, `data:`, `content:`, `test:`, `docs:`, `chore:`. Keep commits small and focused, with clear messages.
 - When the plan conflicts with reality (a library lacks a feature, data is missing, a license blocks a dataset), write the problem and the options in `DECISIONS.md`, pick the safer one, and continue.
-- When unsure about a library API (ts-fsrs, Supabase, vite-plugin-pwa, d3-zoom, i18next), read the installed version's types in `node_modules` or its current docs.
+- When unsure about a library API (ts-fsrs, Dexie, vite-plugin-pwa, d3-zoom, i18next), read the installed version's types in `node_modules` or its current docs.
 
 ## Rules
 
-- No dependency or service that costs money or needs an API key. The only external service is optional Supabase.
+- No dependency or service that costs money or needs an API key. No accounts and no backend: the app is static files.
 - No AI or LLM calls from app code or scripts. All content is static and committed.
-- No runtime network requests except Supabase, same-origin assets, and Wikimedia Commons images for landmarks. No font CDNs, flag CDNs or tile servers.
+- No runtime network requests except same-origin assets and Wikimedia Commons images for landmarks. No font CDNs, flag CDNs or tile servers.
 - TypeScript strict. No `any` without a comment explaining why.
-- Pure logic (scheduler, budget, grading, matching, distractors, session, placement, streak, achievements, stats, levels, XP, explanation selection, slots, sync merge) lives in `src/engine/` with no React or Dexie imports, and has unit tests.
+- Pure logic (scheduler, budget, grading, matching, distractors, session, placement, streak, achievements, stats, levels, XP, explanation selection, slots) lives in `src/engine/` with no React or Dexie imports, and has unit tests.
 - Deterministic everywhere: seeded randomness only.
 - No em dashes or en dashes in any committed text: UI strings, content, templates, README, docs. The linter checks `content/`, `src/i18n/` and string literals in `src/`.
 

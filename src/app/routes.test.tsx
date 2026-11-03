@@ -56,7 +56,8 @@ describe("routes", () => {
       await screen.findByRole("group", { name: "Theme" }, { timeout: 10_000 }),
     ).toBeInTheDocument();
     expect(screen.getByRole("group", { name: "Language" })).toBeInTheDocument();
-    // Without Supabase env vars the app is local-only and says so.
-    expect(screen.getByText(/Sync is off in this build/)).toBeInTheDocument();
+    // No accounts: progress moves between browsers only through backup files.
+    expect(screen.getByRole("button", { name: "Download backup" })).toBeInTheDocument();
+    expect(screen.queryByText(/sign in/i)).not.toBeInTheDocument();
   });
 });

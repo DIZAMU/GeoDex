@@ -2,12 +2,14 @@ import { type ChangeEvent, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { exportData, importData, parseBackup } from "@/db/backup";
 import { db } from "@/db/db";
+import { setLastBackup } from "@/db/settings";
 import { Button } from "@/ui/button";
 import type { Learner } from "../study/useLearner";
 
-/** JSON export and import of all local data (PLAN.md 5.6). */
+/** Backup files: the only way progress moves between browsers (PLAN-2.0). */
 export function BackupSection({ learner }: { learner: Learner }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const last = learner.device.lastBackupAt;
   const file = useRef<HTMLInputElement>(null);
   const [message, setMessage] = useState<string | null>(null);
 
@@ -20,6 +22,7 @@ export function BackupSection({ learner }: { learner: Learner }) {
     link.download = `geodex-backup-${new Date(backup.exportedAt).toISOString().slice(0, 10)}.json`;
     link.click();
     URL.revokeObjectURL(url);
+    await setLastBackup(db, backup.exportedAt);
   };
 
   const upload = async (event: ChangeEvent<HTMLInputElement>) => {
@@ -37,6 +40,13 @@ export function BackupSection({ learner }: { learner: Learner }) {
   return (
     <div className="flex flex-col gap-3">
       <p className="text-muted-foreground">{t("backup.body")}</p>
+      <p className="text-sm text-muted-foreground" data-testid="last-backup">
+        {last
+          ? t("backup.lastBackup", {
+              date: new Intl.DateTimeFormat(i18n.language, { dateStyle: "medium" }).format(last),
+            })
+          : t("backup.never")}
+      </p>
       <div className="flex flex-wrap gap-2">
         <Button variant="outline" onClick={() => void download()} data-testid="export">
           {t("backup.export")}
