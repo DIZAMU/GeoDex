@@ -6,10 +6,11 @@ Companion files in this folder:
 
 - `UNSLOP.md`: the GeoDex audit, with file and line for each problem, and the before and after examples.
 - `examples.html`: five screens, five palettes, five type setups, five text treatments and five decisions, drawn with real map data. Open it in a browser.
+- `../PLAN-2.0.md`: the decisions from the owner's Q&A on 3 November 2026 and the build plan for the public 2.0 release.
 
 To start a new chat on this, paste:
 
-> Read docs/design/UNSLOP-PLAYBOOK.md and docs/design/UNSLOP.md first. Follow the playbook's method and rules for every change to UI, copy or docs. Nothing in the GeoDex direction is decided until the Q&A.
+> Read docs/design/UNSLOP-PLAYBOOK.md, docs/PLAN-2.0.md and docs/design/UNSLOP.md first. Follow the playbook's method and rules for every change to UI, copy or docs. The decisions for GeoDex 2.0 are in docs/PLAN-2.0.md.
 
 ## The owner's aim
 
@@ -201,7 +202,7 @@ Replace with:
 
 - Hard: emoji used as icons or bullets.
 - Hard: two icon libraries on one page.
-- The stock AI glyphs: sparkles, brain, magic wand, rocket, lightning, diamond, robot, orb. Flame and trophy count as decoration when they do no work.
+- The stock AI glyphs: sparkles, brain, magic wand, rocket, lightning, diamond, robot, orb. Flame and trophy count as decoration when they do no work. (GeoDex keeps its streak flame by the owner's choice.)
 - An icon in a tinted rounded square above every heading or card.
 - Arrows glued to button and link text ("Get started" followed by an arrow).
 - Icons in many sizes and colours.
@@ -368,9 +369,9 @@ GeoDex is a spaced repetition geography trainer (React, Vite, Tailwind, Dexie, t
 - A site that cannot be taken down.
 - A smoother tour.
 
-None of that is decided in detail. A Q&A happens when the owner says "Ready", and the agreed plan goes into its own .md.
+The Q&A took place on 3 November 2026. Every decision is in `docs/PLAN-2.0.md`, which overrides the proposals below where they differ.
 
-Note for that Q&A: optional cloud sync with email sign-in is switched on in the live build. Removing login means deciding what replaces it.
+Login and Supabase are being removed; progress stays in each browser, with backup files to move it between devices.
 
 ### Direction draft (to confirm in the Q&A)
 
@@ -427,7 +428,7 @@ What is already good and stays:
 - No `transition-all`, no pulse animations and no exclamation marks in the strings.
 - One easing curve.
 
-### Proposals from the research (all pending the Q&A)
+### Proposals from the research (decided in PLAN-2.0.md)
 
 | Decision | Pick | Reason |
 | --- | --- | --- |
@@ -446,16 +447,17 @@ Alternatives that were drawn and judged are in `examples.html`:
 - Palettes: Night chart, Topographic green, Wall map red, Ink only.
 - Fonts: Public Sans with Source Serif, IBM Plex with Mono figures, Atkinson Hyperlegible Next.
 
-### Open questions for the Q&A
+### Changes the owner made to the proposals
 
-- Light or dark by default?
-- One system or the three themes?
-- Keep Newsreader for map water and mountains, or one family only?
-- What should a first-time visitor see first?
-- Bottom bar on phones?
-- XP and ranks: where, and how loud?
-- Keep, tone down or drop the streak flame and the level up celebration?
-- The accent colour: ink blue, a deep green, or something else from a printed atlas?
+The owner accepted every proposal in the table above, and added or changed these:
+
+- The streak flame and the level up celebration stay, cleaned up.
+- The placement test is dropped.
+- Sound and vibration are on by default, using tones generated in the browser.
+- The app never suggests installing itself.
+- The README gets a one minute desktop demo video with upbeat free music and captions.
+
+The full list is in `docs/PLAN-2.0.md`.
 
 ## Done means
 
