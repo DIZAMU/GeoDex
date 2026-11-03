@@ -284,6 +284,18 @@ const { topology, matched } = relabel(worldAtlas, (geometry) => {
   return (id && isoByNumeric.get(id)) || GEOMETRY_NAMES[featureName(geometry)];
 });
 const neighborsFromMap = landNeighbors(topology, matched);
+// Land borders too short for the 50m geometry: Botswana and Zambia meet for about 150 m at
+// Kazungula, on the Zambezi.
+const SHORT_BORDERS: [string, string][] = [["BWA", "ZMB"]];
+for (const [a, b] of SHORT_BORDERS) {
+  for (const [from, to] of [
+    [a, b],
+    [b, a],
+  ] as const) {
+    const list = neighborsFromMap.get(from) ?? [];
+    if (!list.includes(to)) neighborsFromMap.set(from, [...list, to].sort());
+  }
+}
 
 // Wikidata P47 cross-check (it also lists maritime borders, so differences are expected)
 const wikidataBorders = new Map<string, Set<string>>();
