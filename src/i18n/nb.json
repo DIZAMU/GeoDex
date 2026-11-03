@@ -534,44 +534,42 @@
     "close": "Velg hjemlandet ditt, så starter den første økten. Det er ingenting å registrere seg for."
   },
   "tour": {
+    "label": "Omvisning",
     "next": "Neste",
     "back": "Tilbake",
     "skip": "Hopp over",
     "done": "Ferdig",
     "progress": "{{n}} av {{total}}",
-    "label": "Omvisning",
+    "startFirst": "Start den første økten",
+    "start": "Start en økt",
+    "later": "Se deg rundt først",
+    "answers": {
+      "auto": "svar med alternativer først",
+      "mc": "svar med alternativer",
+      "typing": "svar ved å skrive"
+    },
     "steps": {
-      "start": {
-        "title": "Start her",
-        "body": "Velg hvor mange spørsmål og hva du vil øve på, og start. En økt tar noen minutter."
+      "intro": {
+        "title": "Noen minutter om dagen",
+        "body": "Hver dag har en kort økt: kortene som skal repeteres, og noen nye land. Tre ting å vite, så er du klar."
+      },
+      "length": {
+        "title": "Velg øktlengde",
+        "body": "Prøv 5 spørsmål første gang. Du kan endre dette før hver økt."
       },
       "input": {
         "title": "Velg hvordan du svarer",
-        "body": "Auto begynner med alternativer og går over til skriving når du blir bedre. Velg selv om du vil."
+        "body": "Auto begynner med alternativer og går over til skriving når du blir bedre. Du kan også velge selv."
       },
-      "overview": {
-        "title": "Nivået ditt",
-        "body": "Hukommelsesnivå 1 til 10 viser hvor mye du kan akkurat nå, og kan synke hvis du glemmer. XP og rangen din går bare opp. Den lille ringen er dagens mål."
+      "progress": {
+        "title": "Kartet og nivået ditt",
+        "body": "Land du begynner på, fylles inn på kartet, og regionen du lærer neste gang, er markert. Nivået viser hvor mye du husker akkurat nå. Statistikk har hele bildet."
       },
-      "map": {
-        "title": "Kartet ditt",
-        "body": "Land du har begynt på, fylles inn. Den markerte regionen er neste."
-      },
-      "atlas": {
-        "title": "Atlas",
-        "body": "Alle land med nivået ditt i hver ferdighet, landsider og grenser gjennom tiden."
-      },
-      "stats": {
-        "title": "Statistikk",
-        "body": "Hva du husker, hva du blander, og hva som kommer."
-      },
-      "settings": {
-        "title": "Innstillinger",
-        "body": "Emner, tid per dag, språk, tema, synkronisering og sikkerhetskopi."
-      },
-      "help": {
-        "title": "Hjelp er alltid her",
-        "body": "Åpne den for et kart over appen, hvordan svar vurderes, eller for å se denne omvisningen igjen."
+      "ready": {
+        "title": "Klar?",
+        "titleNothing": "Ingenting å repetere nå",
+        "body": "{{questions}}, nye land fra {{region}}, {{answers}}.",
+        "bodyNoRegion": "{{questions}}, {{answers}}."
       }
     }
   },

@@ -246,10 +246,45 @@
   }
 }
 
-/* The tour's spotlight outline around the element it explains. Still, no pulse. */
-.tour-ring {
-  stroke: var(--primary);
-  stroke-width: 2;
+/*
+ * The tour (docs/design/UNSLOP.md). The spotlight is a box whose huge shadow dims the rest of
+ * the screen; it glides between targets. With no target it shrinks to the centre, so the
+ * whole screen dims. The card fades in and rises 8px. Reduced motion: no glide, no rise.
+ */
+.tour-spot {
+  position: fixed;
+  border-radius: 12px;
+  box-shadow: 0 0 0 200vmax rgb(0 0 0 / 0.55);
+  outline: 2px solid var(--primary);
+  outline-offset: 0;
+  pointer-events: none;
+  transition-property: left, top, width, height, outline-color;
+  transition-duration: 350ms;
+  transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+}
+.tour-spot[data-empty] {
+  outline-color: transparent;
+}
+@keyframes tour-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.tour-card {
+  animation: tour-card-in 200ms var(--ease-ui) 120ms both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tour-spot {
+    transition: none;
+  }
+  .tour-card {
+    animation: fade 150ms linear both;
+  }
 }
 
 /* Level-up and rank-up (PLAN.md 11.3): the badge pops and a ring of sparks spreads once. */

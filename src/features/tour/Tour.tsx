@@ -1,65 +1,123 @@
 /**
- * Guided tour (PLAN.md 11.1): a spotlight over the real screen, one element at a time, with
- * a short note. Steps whose element is missing are skipped. Esc or "Skip tour" ends it; the
- * end is remembered on this device and Help can start it again.
+ * The tour (docs/design/UNSLOP.md): five short steps over the real Today screen. A centred
+ * card says what a day looks like, then the spotlight glides to the session length (which can
+ * be picked right in the card), the answer mode, and the map with the level. The last card
+ * asks "Ready?", says what is set up, and starts the first session.
+ *
+ * The page behind is inert and does not scroll; focus stays in the card. Escape skips. A step
+ * whose element is missing is left out. The end is remembered on this device; Help and
+ * Settings can start the tour again.
  */
-import { ArrowLeftIcon, ArrowRightIcon, XIcon } from "lucide-react";
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
+import { db } from "@/db/db";
+import { setSessionPick } from "@/db/settings";
+import { parseLength, SESSION_LENGTHS } from "@/engine/focus";
 import { Button } from "@/ui/button";
+import { ToggleGroup, ToggleGroupItem } from "@/ui/toggle-group";
+import type { Learner } from "../study/useLearner";
 
-export const TOUR_STEPS = [
-  "start",
-  "input",
-  "overview",
-  "map",
-  "atlas",
-  "stats",
-  "settings",
-  "help",
-] as const;
+export const TOUR_STEPS = ["intro", "length", "input", "progress", "ready"] as const;
 type StepId = (typeof TOUR_STEPS)[number];
+
+/** Steps that explain an element on the page, by its data-tour anchor. */
+const ANCHORED: ReadonlySet<StepId> = new Set(["length", "input", "progress"]);
 
 type Box = { x: number; y: number; w: number; h: number };
 const PAD = 8;
-const CARD_W = 340;
+const GAP = 12;
+const EDGE = 16;
+const CARD_W = 360;
+/** Below this width the card spans the screen. */
+const NARROW = 640;
+/** Room kept under the header when a target is scrolled into view. */
+const TOP = 72;
 
-export function Tour({ onDone }: { onDone: () => void }) {
-  const { t } = useTranslation();
-  // Only steps whose anchor is on the page, looked up once it has rendered.
+const anchor = (id: StepId) => document.querySelector<HTMLElement>(`[data-tour="${id}"]`);
+/** The real start button: the tour's last step presses it for the learner. */
+const startButton = () =>
+  document.querySelector<HTMLButtonElement>('[data-tour="start"]:not([disabled])');
+
+export function Tour({
+  learner,
+  region,
+  onDone,
+}: {
+  learner: Learner;
+  /** The region new countries come from next, if any. */
+  region: string | null;
+  onDone: () => void;
+}) {
+  const { t, i18n } = useTranslation();
+  const number = new Intl.NumberFormat(i18n.language);
+  // Only steps whose element is on the page, looked up once Today has rendered.
   const [steps, setSteps] = useState<StepId[]>([]);
+  const [canStart, setCanStart] = useState(false);
   useLayoutEffect(() => {
-    setSteps(TOUR_STEPS.filter((id) => document.querySelector(`[data-tour="${id}"]`)));
+    setSteps(TOUR_STEPS.filter((id) => !ANCHORED.has(id) || anchor(id) !== null));
+    setCanStart(startButton() !== null);
   }, []);
   const [index, setIndex] = useState(0);
-  const [box, setBox] = useState<Box | null>(null);
-  const [viewport, setViewport] = useState({ w: window.innerWidth, h: window.innerHeight });
-  const next = useRef<HTMLButtonElement>(null);
   const step: StepId | undefined = steps[index];
+  const [viewport, setViewport] = useState({ w: window.innerWidth, h: window.innerHeight });
+  const [box, setBox] = useState<Box | null>(null);
+  const card = useRef<HTMLDivElement>(null);
+  const [cardH, setCardH] = useState(220);
+  const primary = useRef<HTMLButtonElement>(null);
+
+  // The page behind cannot be clicked, focused or scrolled while the tour is open.
+  useEffect(() => {
+    const root = document.getElementById("root");
+    const html = document.documentElement;
+    const overflow = html.style.overflow;
+    if (root) root.inert = true;
+    html.style.overflow = "hidden";
+    return () => {
+      if (root) root.inert = false;
+      html.style.overflow = overflow;
+    };
+  }, []);
 
   const measure = useCallback(() => {
     setViewport({ w: window.innerWidth, h: window.innerHeight });
-    const el = step ? document.querySelector<HTMLElement>(`[data-tour="${step}"]`) : null;
+    const el = step && ANCHORED.has(step) ? anchor(step) : null;
     if (!el) return setBox(null);
     const r = el.getBoundingClientRect();
     setBox({ x: r.left - PAD, y: r.top - PAD, w: r.width + PAD * 2, h: r.height + PAD * 2 });
   }, [step]);
 
+  // Bring the target into view with room for the card under it, then measure it.
   useLayoutEffect(() => {
-    const el = step ? document.querySelector<HTMLElement>(`[data-tour="${step}"]`) : null;
-    el?.scrollIntoView({ block: "center", behavior: "instant" as ScrollBehavior });
+    const el = step && ANCHORED.has(step) ? anchor(step) : null;
+    if (el) {
+      const r = el.getBoundingClientRect();
+      const group = r.height + PAD * 2 + GAP + cardH;
+      const top = Math.max(TOP, (window.innerHeight - group) / 2);
+      window.scrollTo({ top: window.scrollY + r.top - PAD - top, behavior: "instant" });
+    }
     measure();
-    next.current?.focus();
-  }, [step, measure]);
+  }, [step, measure, cardH]);
+
+  // Each step moves focus to its main button.
+  // biome-ignore lint/correctness/useExhaustiveDependencies: runs on purpose when the step changes
+  useEffect(() => {
+    primary.current?.focus();
+  }, [step]);
 
   useEffect(() => {
     window.addEventListener("resize", measure);
-    window.addEventListener("scroll", measure, true);
-    return () => {
-      window.removeEventListener("resize", measure);
-      window.removeEventListener("scroll", measure, true);
-    };
+    return () => window.removeEventListener("resize", measure);
   }, [measure]);
+
+  // The card's height decides whether it fits under the target.
+  useLayoutEffect(() => {
+    const el = card.current;
+    if (!el) return;
+    const observer = new ResizeObserver(() => setCardH(el.offsetHeight));
+    observer.observe(el);
+    return () => observer.disconnect();
+  });
 
   // Close at once; the stored "done" follows a moment later.
   const [closed, setClosed] = useState(false);
@@ -75,6 +133,12 @@ export function Tour({ onDone }: { onDone: () => void }) {
     },
     [index, steps.length, finish],
   );
+  const start = () => {
+    finish();
+    // Press the real start button once the page is interactive again, so the session uses
+    // exactly what Today shows.
+    requestAnimationFrame(() => startButton()?.click());
+  };
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
@@ -88,88 +152,134 @@ export function Tour({ onDone }: { onDone: () => void }) {
 
   if (!step || closed) return null;
 
-  // The note sits below the element when there is room, else above; always on screen.
-  const cardW = Math.min(CARD_W, viewport.w - 32);
-  const below = !box || box.y + box.h + 220 < viewport.h;
-  const left = box
-    ? Math.min(Math.max(16, box.x + box.w / 2 - cardW / 2), viewport.w - cardW - 16)
-    : (viewport.w - cardW) / 2;
-  const top = box ? (below ? box.y + box.h + 12 : undefined) : viewport.h / 3;
-  const bottom = box && !below ? viewport.h - box.y + 12 : undefined;
-  const last = index === steps.length - 1;
+  // Where the card goes: under the target if it fits, else above, else docked to the bottom.
+  const narrow = viewport.w < NARROW;
+  const cardW = narrow ? viewport.w - EDGE * 2 : Math.min(CARD_W, viewport.w - EDGE * 2);
+  let left = (viewport.w - cardW) / 2;
+  let top = (viewport.h - cardH) / 2;
+  if (box) {
+    if (!narrow) {
+      left = Math.min(Math.max(EDGE, box.x + box.w / 2 - cardW / 2), viewport.w - cardW - EDGE);
+    }
+    if (box.y + box.h + GAP + cardH <= viewport.h - EDGE) top = box.y + box.h + GAP;
+    else if (box.y - GAP - cardH >= EDGE) top = box.y - GAP - cardH;
+    else top = viewport.h - cardH - EDGE;
+  }
+  // With no target the spotlight shrinks to the centre and the whole screen dims.
+  const spot = box ?? { x: viewport.w / 2, y: viewport.h / 2, w: 0, h: 0 };
 
-  return (
+  const length = parseLength(learner.device.sessionLength);
+  const answers = t(`tour.answers.${learner.device.lastInputMode}`);
+  const questions = t("picker.lengthOption", { count: length });
+  const first = learner.events.length === 0;
+
+  return createPortal(
     <div className="fixed inset-0 z-50" data-testid="tour" data-step={step}>
-      <svg aria-hidden className="absolute inset-0 h-full w-full" onClick={finish}>
-        <defs>
-          <mask id="tour-hole">
-            <rect width="100%" height="100%" fill="white" />
-            {box ? (
-              <rect x={box.x} y={box.y} width={box.w} height={box.h} rx={14} fill="black" />
-            ) : null}
-          </mask>
-        </defs>
-        <rect width="100%" height="100%" fill="rgb(0 0 0 / 0.6)" mask="url(#tour-hole)" />
-        {box ? (
-          <rect
-            className="tour-ring"
-            x={box.x}
-            y={box.y}
-            width={box.w}
-            height={box.h}
-            rx={14}
-            fill="none"
-          />
-        ) : null}
-      </svg>
       <div
+        aria-hidden
+        className="tour-spot"
+        data-empty={box ? undefined : ""}
+        style={{ left: spot.x, top: spot.y, width: spot.w, height: spot.h }}
+      />
+      <div
+        ref={card}
+        key={step}
         role="dialog"
         aria-modal="true"
-        aria-label={t("tour.label")}
+        aria-labelledby="tour-title"
         aria-describedby="tour-body"
-        className="surface enter absolute flex flex-col gap-3 p-5"
-        style={{ left, top, bottom, width: cardW }}
-        key={step}
+        className="tour-card floating absolute flex flex-col gap-3 p-5"
+        style={{ left, top, width: cardW }}
       >
-        <div className="flex items-start justify-between gap-3">
-          <h2 className="text-xl font-medium" id="tour-title">
-            {t(`tour.steps.${step}.title`)}
-          </h2>
-          <button
-            type="button"
-            onClick={finish}
-            aria-label={t("tour.skip")}
-            className="-m-1 rounded-md p-1 text-muted-foreground hover:text-foreground"
-            data-testid="tour-close"
-          >
-            <XIcon aria-hidden className="size-5" />
-          </button>
-        </div>
-        <p id="tour-body" className="text-muted-foreground">
-          {t(`tour.steps.${step}.body`)}
+        <p className="text-sm text-muted-foreground" data-testid="tour-progress">
+          {t("tour.progress", { n: index + 1, total: steps.length })}
         </p>
-        <div className="flex items-center justify-between gap-3 pt-1">
-          <span className="text-sm text-muted-foreground tabular-nums">
-            {t("tour.progress", { n: index + 1, total: steps.length })}
-          </span>
-          <div className="flex gap-2">
-            {index > 0 ? (
-              <Button variant="outline" size="sm" onClick={() => go(-1)}>
-                <ArrowLeftIcon aria-hidden />
-                {t("tour.back")}
-              </Button>
+        <h2 id="tour-title" className="text-xl font-medium text-balance">
+          {step === "ready" && !canStart
+            ? t("tour.steps.ready.titleNothing")
+            : t(`tour.steps.${step}.title`)}
+        </h2>
+        <p id="tour-body" className="text-muted-foreground">
+          {step === "ready"
+            ? canStart
+              ? region
+                ? t("tour.steps.ready.body", { questions, region, answers })
+                : t("tour.steps.ready.bodyNoRegion", { questions, answers })
+              : t("today.nothingLeft")
+            : t(`tour.steps.${step}.body`)}
+        </p>
+
+        {step === "length" ? (
+          <ToggleGroup
+            type="single"
+            variant="outline"
+            spacing={0}
+            value={String(length)}
+            aria-labelledby="tour-title"
+            className="self-start"
+            onValueChange={(value) => {
+              if (value)
+                void setSessionPick(db, {
+                  sessionLength: parseLength(value),
+                  sessionFocus: learner.device.sessionFocus ?? "mixed",
+                });
+            }}
+          >
+            {SESSION_LENGTHS.map((n) => (
+              <ToggleGroupItem
+                key={n}
+                value={String(n)}
+                className="min-w-14"
+                data-testid={`tour-length-${n}`}
+              >
+                {number.format(n)}
+              </ToggleGroupItem>
+            ))}
+          </ToggleGroup>
+        ) : null}
+
+        {step === "ready" ? (
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-2">
+            {canStart ? (
+              <>
+                <Button ref={primary} onClick={start} data-testid="tour-start">
+                  {t(first ? "tour.startFirst" : "tour.start")}
+                </Button>
+                <Button variant="link" className="px-0" onClick={finish} data-testid="tour-later">
+                  {t("tour.later")}
+                </Button>
+              </>
             ) : (
-              <Button variant="ghost" size="sm" onClick={finish} data-testid="tour-skip">
-                {t("tour.skip")}
+              <Button ref={primary} onClick={finish} data-testid="tour-next">
+                {t("tour.done")}
               </Button>
             )}
-            <Button size="sm" ref={next} onClick={() => go(1)} data-testid="tour-next">
-              {last ? t("tour.done") : t("tour.next")}
-              {last ? null : <ArrowRightIcon aria-hidden />}
-            </Button>
           </div>
-        </div>
+        ) : (
+          <div className="flex flex-wrap items-center justify-between gap-2 pt-2">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="-ml-2"
+              onClick={finish}
+              data-testid="tour-skip"
+            >
+              {t("tour.skip")}
+            </Button>
+            <div className="flex gap-2">
+              {index > 0 ? (
+                <Button variant="secondary" onClick={() => go(-1)} data-testid="tour-back">
+                  {t("tour.back")}
+                </Button>
+              ) : null}
+              <Button ref={primary} onClick={() => go(1)} data-testid="tour-next">
+                {t("tour.next")}
+              </Button>
+            </div>
+          </div>
+        )}
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

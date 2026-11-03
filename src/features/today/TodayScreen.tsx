@@ -87,13 +87,17 @@ function Today({ learner }: { learner: Learner }) {
         )}
       </section>
 
-      <div className="flex min-w-0 flex-col gap-8">
+      <div className="flex min-w-0 flex-col gap-8" data-tour="progress">
         <TodayMap learner={learner} nextSubregion={plan.nextSubregion} region={region ?? null} />
         <LevelLine learner={learner} />
       </div>
       {/* The tour runs once, when Today has rendered its anchors. */}
       {learner.device.tourDoneAt == null ? (
-        <Tour onDone={() => void setTourDone(db, Date.now())} />
+        <Tour
+          learner={learner}
+          region={region ?? null}
+          onDone={() => void setTourDone(db, Date.now())}
+        />
       ) : null}
     </div>
   );
@@ -156,7 +160,7 @@ function TodayMap({
   const count = countries.filter((c) => started.has(c.id)).length;
 
   return (
-    <section aria-labelledby="map-title" className="flex flex-col gap-3" data-tour="map">
+    <section aria-labelledby="map-title" className="flex flex-col gap-3">
       <h2 id="map-title" className="sr-only">
         {t("today.mapTitle")}
       </h2>

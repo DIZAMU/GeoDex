@@ -534,44 +534,42 @@
     "close": "Pick your home country and the first session starts. There is nothing to sign up for."
   },
   "tour": {
+    "label": "Guided tour",
     "next": "Next",
     "back": "Back",
     "skip": "Skip tour",
     "done": "Done",
     "progress": "{{n}} of {{total}}",
-    "label": "Guided tour",
+    "startFirst": "Start the first session",
+    "start": "Start a session",
+    "later": "Look around first",
+    "answers": {
+      "auto": "answers as choices at first",
+      "mc": "answers as choices",
+      "typing": "typed answers"
+    },
     "steps": {
-      "start": {
-        "title": "Start here",
-        "body": "Pick how many questions and what to practise, then start. A session takes a few minutes."
+      "intro": {
+        "title": "A few minutes a day",
+        "body": "Each day has a short session: the cards due for review and a few new countries. Three things to know, then you are ready."
+      },
+      "length": {
+        "title": "Pick a session length",
+        "body": "Try 5 questions for a first go. You can change this before every session."
       },
       "input": {
         "title": "Choose how you answer",
-        "body": "Auto starts with choices and moves to typing as you get better. Pick one if you prefer."
+        "body": "Auto starts with choices and moves to typing as you get better. You can also pick one yourself."
       },
-      "overview": {
-        "title": "Your level",
-        "body": "Memory level 1 to 10 shows how much you hold right now and can drop if you forget. XP and your rank only go up. The small ring is today's goal."
+      "progress": {
+        "title": "Your map and level",
+        "body": "Countries you start fill in on the map, and the region you learn next is marked. The level shows how much you remember right now. Stats has the full picture."
       },
-      "map": {
-        "title": "Your map",
-        "body": "Countries you have started fill in. The outlined region is next."
-      },
-      "atlas": {
-        "title": "Atlas",
-        "body": "Every country with your level in each skill, country pages, and borders over time."
-      },
-      "stats": {
-        "title": "Stats",
-        "body": "What you remember, what you mix up, and what is coming up."
-      },
-      "settings": {
-        "title": "Settings",
-        "body": "Topics, daily time, language, theme, sync and backup."
-      },
-      "help": {
-        "title": "Help is always here",
-        "body": "Open it for a map of the app, how grading works, or to replay this tour."
+      "ready": {
+        "title": "Ready?",
+        "titleNothing": "Nothing due right now",
+        "body": "{{questions}}, new countries from {{region}}, {{answers}}.",
+        "bodyNoRegion": "{{questions}}, {{answers}}."
       }
     }
   },

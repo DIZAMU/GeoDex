@@ -34,12 +34,7 @@ export function LevelLine({ learner }: { learner: Learner }) {
       : t("overview.goalSessionsLabel", { done: goalDone, count: goal.target });
 
   return (
-    <section
-      className="flex flex-col gap-2"
-      aria-labelledby="level-title"
-      data-testid="overview"
-      data-tour="overview"
-    >
+    <section className="flex flex-col gap-2" aria-labelledby="level-title" data-testid="overview">
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <h2 id="level-title" className="font-medium">
           {t("overview.level")} <span data-testid="level">{number.format(overall.level)}</span>

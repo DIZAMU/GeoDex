@@ -129,6 +129,7 @@ export function SessionPicker({
           value={String(length)}
           aria-labelledby="picker-length"
           className="self-start"
+          data-tour="length"
           onValueChange={(value) => {
             if (value) pick({ length: parseLength(value) });
           }}
