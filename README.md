@@ -7,47 +7,41 @@
 
 # GeoDex
 
-[![CI](https://github.com/DIZAMU/GeoDex/actions/workflows/ci.yml/badge.svg)](https://github.com/DIZAMU/GeoDex/actions/workflows/ci.yml)
-![Engine coverage: 97% of lines](https://img.shields.io/badge/engine%20coverage-97%25%20lines-2e7d32)
-![Lighthouse accessibility 100](https://img.shields.io/badge/Lighthouse%20accessibility-100-2e7d32)
+GeoDex teaches every country, capital and flag, a few minutes a day. Each card comes back just before you would forget it, and every answer tells you something that helps it stick.
 
-A spaced-repetition geography trainer that learns what you confuse and explains why. Local-first PWA in English and Norwegian.
+It is free, runs in the browser, works offline and needs no account: [geodex.dilovanzm.workers.dev](https://geodex.dilovanzm.workers.dev)
+
+<!-- The demo video goes here. In the GitHub editor, drag docs/media/geodex-demo.mp4 onto this line; GitHub replaces it with a playable link. -->
+
+![A map question answered right: Portugal on the map, with why it sticks](docs/media/session.png)
+
+## What you learn
+
+All 197 countries: where they are, their names, capitals, flags, currencies and official languages. Five more topics can be turned on in Settings: 38 famous cities, 39 groups of countries (the Nordic countries, the Balkans, the EU), 120 landmarks with photos, 91 rivers, seas, lakes, mountain ranges and deserts, and a history layer of 28 former names, 8 dissolved states and 19 empires with a view of borders over time.
+
+Questions are answered on a real map (Equal Earth, so sizes look the way they are), by picking from a few options, or by typing. As a card gets stronger the questions get harder: typing instead of picking, the whole world instead of a close-up map. Every map answer can also be given from a list, by keyboard or with a screen reader.
+
+| Today | Stats |
+|---|---|
+| ![Today: cards due, the session picker and the map of countries started](docs/media/today.png) | ![Stats: level and XP, and the cards due in the next 30 days](docs/media/stats.png) |
+| ![The Atlas in dark mode: a globe coloured by how well each country is known](docs/media/atlas-dark.png) | ![Borders over time: the Ottoman, Spanish and Mughal empires in 1820](docs/media/timeline.png) |
 
 <p align="center">
-  <img src="docs/media/demo.gif" alt="A GeoDex session: map questions with feedback, then the borders-over-time view in the Atlas" width="960">
+  <img src="docs/media/phone-today.png" alt="Today on a phone, in Norwegian" width="260">
+  &nbsp;&nbsp;
+  <img src="docs/media/phone-session-dark.png" alt="A map answer on a phone, in dark mode" width="260">
 </p>
 
-## Features
-
-- **197 countries** (location, name, capital, flag, currency, official languages), **38 cities**, **39 groups** (Scandinavia, the Balkans, the EU, UN subregions), **120 landmarks** with Commons photos, **91 physical features** (oceans, seas, rivers, ranges, deserts, lakes) and a **history layer**: 28 former names, 8 dissolved states and 19 empires, with a borders-over-time view.
-- **FSRS scheduling** graded from correctness and response time, with harder answer modes as a card gets stronger: multiple choice, then typing; a small map, then the continent, then the world.
-- **Equal Earth map**, so sizes look the way they are. Tap countries, drop pins for cities and landmarks, tap rivers and seas.
-- **Explanations chosen per answer** from static, reviewed content: memory hooks (anchors, shapes, name origins, sound-alikes, stories), facts and comparisons with your home country, in both languages.
-- **Learns your confusions**: two wrong answers between the same pair (Slovakia and Slovenia, Niger and Nigeria) earn a contrast card that teaches the difference.
-- **Free, with no account**: a welcome page with a three-question demo, an optional placement test so you never relearn what you already know, a short guided tour, and a Help page with a map of the app.
-- **Sessions you size**: 5, 10 or 20 questions, on everything due today or one skill, topic, continent or region. Due reviews come first, and a focused session says what waits outside it.
-- **Levels and XP**: a memory level from 1 to 10 overall and per topic, continent and country, which drops when you forget; XP and ranks (Tourist to Atlas keeper) that only rise; a daily goal in minutes or sessions that keeps your streak.
-- **Progress from your own review history**: a mastery atlas per skill, country pages, stats, streaks with freezes, achievements, and drills that never touch your schedule.
-- **Works offline**, including landmark photos you have seen. No account: progress stays in your browser, and a backup file moves it to another device.
-- **Accessible**: every map, pin and tap answer can also be given from a list, by keyboard or screen reader. Lighthouse accessibility 100; axe finds no serious issues in any theme.
-- **Three themes**: Atlas (dark), Minimal (light), Playful.
-
-| Atlas | Minimal | Playful |
-|---|---|---|
-| ![Session in the Atlas theme](docs/media/atlas-session.png) | ![Session in the Minimal theme](docs/media/minimal-session.png) | ![Session in the Playful theme](docs/media/playful-session.png) |
-| ![Mastery atlas in the Atlas theme](docs/media/atlas-atlas.png) | ![Mastery atlas in the Minimal theme](docs/media/minimal-atlas.png) | ![Mastery atlas in the Playful theme](docs/media/playful-atlas.png) |
-
-![Borders over time: the outlines of 1279 with their snapshot years](docs/media/timeline.png)
+English and Norwegian, light and dark. The language follows your browser and can be changed on the first screen or in Settings.
 
 ## How the memory engine works
 
-- **FSRS**: every card has a stability (days until recall drops to 90%) and a difficulty, updated by each review with the FSRS-6 model (ts-fsrs). Reviews come back when they are about to be forgotten, not on a fixed ladder.
-- **Automatic grading**: you never press "hard" or "easy". A wrong answer is Again. A right answer is Good, or Hard after a hint, a typo, or an answer more than twice your usual time for that answer mode; or Easy when it is typed or tapped well under your usual time. Multiple choice tests recognition only, so it never earns Easy. Time spent reading feedback never counts.
-- **Recall escalation**: a new card asks with multiple choice on a close map; as stability grows it asks you to type the name, and the map widens to the continent and then the world. Recognising Laos among four names is not the same as knowing where it is.
-- **Confusion tracking**: wrong answers are counted per pair over the last 90 days. Two confusions between the same pair add a contrast card, ahead of new cards, with text that tells the two apart. Distractors favour the pairs you confuse.
-- **Hook effectiveness**: each hook shown is followed by your next review of that card. Hook types with better follow-up recall are chosen more often for you (a Laplace-smoothed success rate per type); "Not helpful" counts as a failure and hides the hook.
-- **Placement**: an adaptive test per region seeds what you already know with a real first interval, so day one starts at your level.
-- **Event-sourced**: every answer is an append-only event; card state is a cache rebuilt from events and settings. Restoring a backup adds missing events and can never lose one. "Start over" records a time instead of deleting anything.
+- **Scheduling.** Every card has a stability (days until recall drops to 90%) and a difficulty, updated after each review with the FSRS-6 model ([ts-fsrs](https://github.com/open-spaced-repetition/ts-fsrs)). Reviews come back when they are about to be forgotten, not on a fixed ladder.
+- **Grading.** You never rate yourself. A wrong answer is Again. A right answer is Good, or Hard after a hint, a typo or a slow answer, or Easy when it is typed or tapped well under your usual time. Picking from options tests recognition only, so it never earns Easy. Time spent reading the explanation never counts.
+- **Harder as you go.** A new card starts with options on a close map. As its stability grows you type the answer, and the map widens to the continent, then the world.
+- **Mix-ups.** Wrong answers are counted per pair over 90 days. Two mix-ups between the same pair (Slovakia and Slovenia, Niger and Nigeria) add a contrast card that teaches the difference, and wrong options favour the pairs you confuse.
+- **Explanations.** Each answer gets a memory hook (a shape, a name's origin, a sound-alike, a story), a fact or a comparison with your home country, chosen from reviewed text in both languages. Hook types that work for you are chosen more often; "Not helpful" hides one.
+- **Nothing is lost.** Every answer is an append-only event; card state is a cache rebuilt from the events. Restoring a backup adds missing events and can never remove one, and "Start over" records a time instead of deleting anything.
 
 ```mermaid
 flowchart LR
@@ -55,7 +49,7 @@ flowchart LR
     WD[Wikidata, Natural Earth, Commons, UN M49] --> DB[data/*.json]
     CT[content/*.json, VOICE.md lint] --> TPL[templates.json]
   end
-  subgraph App["Browser (local-first PWA)"]
+  subgraph App["Browser (static files, offline)"]
     DB --> W[World data]
     TPL --> X[Explanation engine]
     W --> P[Plan: due and new cards]
@@ -68,14 +62,17 @@ flowchart LR
   E <-->|download and restore| BF[(Backup file)]
 ```
 
-More in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+More in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md). Design decisions and their reasons are in [`DECISIONS.md`](DECISIONS.md).
+
+## Your progress
+
+Progress is saved in your browser after every answer and is never sent anywhere, so clearing the browser's data erases it. Settings has a backup file to download and restore; it is also the way to move your progress to another device.
 
 ## Quality
 
-- Unit tests (Vitest) for all pure logic in `src/engine/`, with CI failing below 90% line coverage there (97% now). Data tests check every country, city, landmark, feature and outline.
-- End-to-end tests (Playwright) at 1440x900 and 390x844, in all three themes and both languages, including acceptance tests per phase: every physical feature is tappable at its default zoom, every history outline shows its year.
-- Lighthouse on the production build: desktop performance 89, accessibility 100, best practices 100, SEO 92; mobile (throttled) performance 64. The mobile score is held back by drawing the detailed world map on load.
-- Every hand-written fact that is not yet verified is listed in `content/REVIEW.md` until the author checks it.
+- Unit tests (Vitest) for the logic in `src/engine/`, where CI fails below 90% line coverage (97.7% now). Data tests check every country, city, landmark, feature and outline.
+- End-to-end tests (Playwright) at 1440x900 and 390x844, in both modes and both languages, with axe checking the WCAG 2.2 AA rules on every screen and on the tour.
+- `pnpm content:facts` checks every hook, fact and contrast against the data: capitals, borders, coasts, official languages, currencies, and largest or smallest claims. The report is [`content/FACT-CHECK.md`](content/FACT-CHECK.md).
 
 ## Development
 
@@ -83,14 +80,15 @@ Requires Node 24 (`.nvmrc`) and pnpm 10.
 
 ```
 pnpm install
-pnpm dev          # dev server
-pnpm build        # typecheck and production build
-pnpm test         # unit tests (Vitest)
-pnpm test:e2e     # end-to-end tests (Playwright, 1440x900 and 390x844)
-pnpm lint         # Biome and the no-dash check
-pnpm typecheck
-pnpm content:lint     # VOICE.md rules on all content, both languages
-pnpm content:review   # regenerate content/REVIEW.md (facts waiting for review)
+pnpm dev               # dev server
+pnpm build             # typecheck and production build
+pnpm test              # unit tests
+pnpm test:e2e          # end-to-end tests
+pnpm lint              # Biome and the no-dash check
+pnpm content:lint      # VOICE.md rules on all content, both languages
+pnpm content:facts     # check content against the data (content/FACT-CHECK.md)
+pnpm content:review    # list facts waiting for review (content/REVIEW.md)
+pnpm content:nb        # list new and changed Norwegian strings (docs/NB-REVIEW.md)
 ```
 
 ## Data
@@ -98,19 +96,19 @@ pnpm content:review   # regenerate content/REVIEW.md (facts waiting for review)
 Static data is generated by scripts and committed:
 
 ```
-pnpm data:fetch          # fetch Wikidata, Commons, Språkrådet, UN M49 and World Bank into data/raw (gitignored)
+pnpm data:fetch            # fetch Wikidata, Commons, Språkrådet, UN M49 and World Bank into data/raw (gitignored)
 pnpm data:fetch --refresh  # refetch instead of using the cache
-pnpm data:build          # build data/countries.json, data/geo, public/flags and reports
-pnpm data:verify         # build twice and check the output is byte-identical
+pnpm data:build            # build data/countries.json, data/geo, public/flags and reports
+pnpm data:verify           # build twice and check the output is byte-identical
 ```
 
 `data/curated/` holds the decisions Wikidata cannot make (capital roles, names, currencies, official languages). Each build writes review reports: `data/name-mismatches.md`, `data/neighbor-mismatches.md`, `data/build-report.md`. Borders follow Natural Earth's de facto view.
 
-## Self-hosting
+## Hosting
 
-`pnpm install && pnpm build`, then serve `dist/` from any static host with single-page-app fallback to `index.html`. Nothing else is needed: the app makes no network requests except its own files and, for landmarks, Wikimedia Commons photos. Progress stays in the browser; use Settings, Backup to move it.
+`pnpm install && pnpm build`, then serve `dist/` from any static host with single-page-app fallback to `index.html`. The app makes no network requests except for its own files and, for landmarks, Wikimedia Commons photos.
 
-The author's deployment: a Cloudflare Worker serves the built app as static assets (free tier, no server code). `wrangler.jsonc` points it at `dist/` with single-page-app routing. In the Cloudflare dashboard, under the Worker's Settings, Build:
+The public site is a Cloudflare Worker serving the built app as static assets (free tier, no server code). `wrangler.jsonc` points it at `dist/` with single-page-app routing. In the Cloudflare dashboard, under the Worker's Settings, Build:
 
 - Production branch: `main`
 - Build command: `pnpm build`
@@ -119,8 +117,12 @@ The author's deployment: a Cloudflare Worker serves the built app as static asse
 
 Check the config locally with `pnpm build && pnpm exec wrangler deploy --dry-run`.
 
-## License
+## Issues
+
+Bug reports and wrong facts are welcome as [issues](https://github.com/DIZAMU/GeoDex/issues). Pull requests from others are not accepted; see [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+## Licence
 
 PolyForm Noncommercial 1.0.0. Free for personal and noncommercial use, with credit to DIZAMU. Commercial use is not permitted. This is source-available, not OSI open source. See `LICENSE` and `THIRD_PARTY_NOTICES.md`.
 
-Author: DIZAMU.
+Made by DIZAMU.

@@ -4,6 +4,8 @@ Author: DIZAMU (sole author). Spaced-repetition geography trainer. Local-first w
 
 Read `CONTRIBUTING.md` for working rules. Read `content/VOICE.md` before writing any learner-facing text.
 
+This is the plan GeoDex 1.0 was built from. Version 2.0 removed accounts and sync, the placement test and the three themes, and redesigned every screen; those decisions are in `docs/PLAN-2.0.md` and take precedence where the two differ.
+
 ---
 
 ## 0. Decisions locked with the author

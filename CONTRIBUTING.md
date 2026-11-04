@@ -1,6 +1,16 @@
 # Contributing to GeoDex
 
-GeoDex is a spaced-repetition geography trainer by DIZAMU. The full design is in `PLAN.md`; section 0 lists decisions already made, which are not reopened. The voice for all learner-facing text is in `content/VOICE.md`.
+GeoDex is a spaced-repetition geography trainer by DIZAMU.
+
+## Issues, not pull requests
+
+Bug reports and wrong facts are welcome as [issues](https://github.com/DIZAMU/GeoDex/issues). For a wrong fact, quote the text, say what is wrong, and link a source. Pull requests from others are not accepted and will be closed: the code, the content and the design are kept by one author.
+
+The rest of this file is how that author works.
+
+## Where things are written down
+
+The original design is in `PLAN.md`, and its section 0 lists decisions already made, which are not reopened. Version 2.0 changed several of them; `docs/PLAN-2.0.md` has those decisions and `docs/design/UNSLOP-PLAYBOOK.md` the design rules. The voice for all learner-facing text is in `content/VOICE.md`.
 
 ## How to work
 
@@ -16,7 +26,7 @@ GeoDex is a spaced-repetition geography trainer by DIZAMU. The full design is in
 - No AI or LLM calls from app code or scripts. All content is static and committed.
 - No runtime network requests except same-origin assets and Wikimedia Commons images for landmarks. No font CDNs, flag CDNs or tile servers.
 - TypeScript strict. No `any` without a comment explaining why.
-- Pure logic (scheduler, budget, grading, matching, distractors, session, placement, streak, achievements, stats, levels, XP, explanation selection, slots) lives in `src/engine/` with no React or Dexie imports, and has unit tests.
+- Pure logic (scheduler, budget, grading, matching, distractors, session, streak, achievements, stats, levels, XP, explanation selection, slots) lives in `src/engine/` with no React or Dexie imports, and has unit tests.
 - Deterministic everywhere: seeded randomness only.
 - No em dashes or en dashes in any committed text: UI strings, content, templates, README, docs. The linter checks `content/`, `src/i18n/` and string literals in `src/`.
 
@@ -46,16 +56,18 @@ pnpm test              # vitest
 pnpm test:e2e          # playwright, 1440x900 primary, 390x844 secondary
 pnpm lint              # biome
 pnpm typecheck
-pnpm data:build        # fetch + build static data (deterministic)
+pnpm data:build        # build static data from data/raw (deterministic)
 pnpm content:compile   # templates md -> src/generated/templates.json
 pnpm content:lint      # enforce VOICE.md rules, both locales
+pnpm content:facts     # check content against the data, writes content/FACT-CHECK.md
+pnpm content:nb        # new and changed Norwegian strings, writes docs/NB-REVIEW.md
 ```
 
 ## Definition of done
 
 - Typecheck, lint and unit tests pass.
 - New logic has tests.
-- UI changes: Playwright screenshots at 1440x900 and 390x844, in all three themes and both languages, reviewed against `PLAN.md` section 8.
+- UI changes: Playwright screenshots at 1280, 768 and 390 px wide, in light and dark and both languages, checked against `docs/design/UNSLOP-PLAYBOOK.md`.
 
 ## Content
 
@@ -72,8 +84,8 @@ pnpm content:lint      # enforce VOICE.md rules, both locales
 ## Design
 
 - Laptop first: design and verify at 1440x900, then adapt down.
-- Follow `PLAN.md` section 8. The map answer moment is the one place for visual boldness; keep everything else quiet.
-- Three themes share layout and type; only tokens, radii, weights and one easing differ.
+- Follow `docs/design/UNSLOP-PLAYBOOK.md`. The map answer moment is the one place for visual boldness; keep everything else quiet.
+- One design in light and dark: the same layout, type and easing, with its own tokens for each mode.
 - UI copy: sentence case, active verbs, no praise filler. Errors state what happened and the fix.
 - Color never carries meaning alone. Mastery ramps are luminance-based, never red to green.
 - Keyboard shortcuts work on every session screen and are listed in the `?` overlay.
