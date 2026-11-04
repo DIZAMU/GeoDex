@@ -13,6 +13,8 @@ It is free, runs in the browser, works offline and needs no account: [geodex.dil
 
 <!-- The demo video goes here. In the GitHub editor, drag docs/media/geodex-demo.mp4 onto this line; GitHub replaces it with a playable link. -->
 
+<sub>The music in the demo is an original track made for GeoDex and is in the public domain (CC0); see [`docs/media/CREDITS.md`](docs/media/CREDITS.md).</sub>
+
 ![A map question answered right: Portugal on the map, with why it sticks](docs/media/session.png)
 
 ## What you learn

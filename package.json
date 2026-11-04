@@ -30,7 +30,10 @@
     "content:facts": "node scripts/content/facts.ts",
     "content:nb": "node scripts/content/nb-review.ts",
     "test:coverage": "vitest run --coverage",
-    "demo:screens": "node scripts/demo/screens.ts"
+    "demo:screens": "node scripts/demo/screens.ts",
+    "demo:music": "node scripts/demo/music.ts",
+    "demo:video": "node scripts/demo/video.ts",
+    "demo:edit": "node scripts/demo/edit.ts"
   },
   "dependencies": {
     "@fontsource-variable/newsreader": "5.3.0",
