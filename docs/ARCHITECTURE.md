@@ -1,33 +1,30 @@
 # Architecture
 
-GeoDex is a static, local-first PWA. There is no application server: the browser holds the learner's data, the build holds the world's data, and an optional Supabase project only stores and relays events. This document explains the main design choices and what they cost.
+GeoDex is a static, local-first PWA. There is no server and no account: the browser holds the learner's data and the build holds the world's data. Progress moves between browsers only as a backup file the learner downloads and restores (DECISIONS.md 043). This document explains the main design choices and what they cost.
 
 ## Layers
 
 | Layer | Where | Rules |
 |---|---|---|
-| Pure engine | `src/engine/` | No React, no Dexie, no clock or randomness of its own. Scheduler, grading, budget, card unlocking, distractors, matching, session order, placement, session slices by length and focus, streaks and daily goals, memory levels and XP, achievements, stats, explanation selection, sync merge. Unit tested; CI fails below 90% line coverage. |
+| Pure engine | `src/engine/` | No React, no Dexie, no clock or randomness of its own. Scheduler, grading, budget, card unlocking, distractors, matching, session order, placement, session slices by length and focus, streaks and daily goals, memory levels and XP, achievements, stats, explanation selection. Unit tested; CI fails below 90% line coverage. |
 | Study logic | `src/features/study/` | Turns world data, settings and card state into a day plan (`plan.ts`) and concrete questions (`questions.ts`). Pure functions over data, tested with the real data files. |
-| Storage | `src/db/` | Dexie over IndexedDB: settings, device settings, review events, hook votes, card state cache, sync cursors. |
-| Sync | `src/sync/` | Push and pull of events, settings by last write wins; behind a `SyncBackend` interface with an in-memory fake for tests. |
+| Storage | `src/db/` | Dexie over IndexedDB: settings, device settings, review events, hook votes, card state cache. Backup files export and import all of it (`backup.ts`). |
 | UI | `src/features/*`, `src/map/`, `src/ui/` | React 19, Tailwind, i18next. The map is SVG with d3-geo and d3-zoom. |
 | Data pipeline | `scripts/data/` | Fetch once into `data/raw` (gitignored), build deterministically into committed `data/*.json`. |
 | Content pipeline | `scripts/content/` | Templates compiled from Markdown, content linted against `content/VOICE.md`, `content/REVIEW.md` generated. |
 
 ## Event-sourced, local-first
 
-Every answer is a `ReviewEvent`: card id, time, rating, mode, response time, what was chosen, which snippets were shown. Events are append-only, locally and remotely; no code path updates or deletes one.
+Every answer is a `ReviewEvent`: card id, time, rating, mode, response time, what was chosen, which snippets were shown. Events are append-only; no code path updates or deletes one.
 
-Card state (stability, difficulty, due date) is a cache. `replayAll` folds the events through the FSRS scheduler in time order and gives the same state on every device. The cache is rebuilt when events arrive out of order (sync), when scheduling settings change, and on load if it is missing.
+Card state (stability, difficulty, due date) is a cache. `replayAll` folds the events through the FSRS scheduler in time order and gives the same state on every device. The cache is rebuilt when a restored backup adds events, when scheduling settings change, and on load if it is missing.
 
 Consequences:
 
-- **Sync cannot lose data.** Two devices that reviewed offline both push their events; both pull the other's; both replay. There is nothing to merge but a set union by event id. Only the settings row uses last write wins.
+- **Restoring cannot lose data.** Restoring a backup adds the events this browser does not have, by event id, and replays. Nothing is overwritten except the settings row, by last write wins.
 - **Everything is derivable.** Streaks, daily goals, memory levels, XP, achievements, the mastery atlas, stats, hook effectiveness and confusion pairs are computed from events, never stored.
-- **Reset without deletion.** "Reset progress" stores a time in the synced settings; replays and statistics read only events after it. The log stays intact.
+- **Reset without deletion.** "Start over" stores a time in the settings; replays and statistics read only events after it. The log stays intact.
 - **Cost:** a full replay is linear in the number of events. At a few hundred reviews a day that is fine for years; the cache makes normal use incremental.
-
-The Supabase schema mirrors this: event tables allow insert and select only (row-level security, no update or delete policies), with a server sequence number per row so a device can pull "everything after N" without missing rows that commit late.
 
 ## Determinism
 

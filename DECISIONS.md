@@ -253,3 +253,9 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 
 - **Context:** PLAN.md 11.4 asks for a daily goal in sessions or minutes, used by the time estimate, the goal ring and the streak. The streak (6.10) counts a day when every due card is done or 30 reviews were made.
 - **Decision:** the goal is either the daily time (the default, `dailyMinutes`, unchanged) or 1 to 3 finished sessions (a run of 5 or more answers, filed under the day it started). The daily time keeps setting new cards and the estimate in both cases, since a session count says nothing about how long the learner has. A day also counts for the streak when the goal was met and at least one scheduled review was made, so a learner with a backlog who keeps their goal keeps their streak. Stored as an optional `dailyGoal` in the synced settings row; rows without it read as minutes.
+
+## 043. No accounts and no sync in 2.0
+
+- **Context:** 1.0 had optional sync through a Supabase project with email sign-in. Going public means anyone can open the site, and the owner wants every visitor to start from a blank slate, nothing to sign into, and nothing on a server that could be attacked or cost money (docs/PLAN-2.0.md).
+- **Options:** (a) keep optional sync; (b) a small relay for one-time transfer codes; (c) no backend at all, with backup files to move progress.
+- **Decision:** (c). Progress stays in each browser's IndexedDB and is saved after every answer. Settings offers "Download backup", "Restore backup" (unchanged format, so 1.0 exports still restore), the date of the last download, and "Start over". The `src/sync` code, the Supabase migration and the dependency are gone; schema v4 drops the sync index and table but keeps every stored answer. Cost: clearing browser data erases progress unless a backup exists, which Settings and Help say plainly.

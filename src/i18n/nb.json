@@ -3,36 +3,28 @@
     "name": "GeoDex"
   },
   "today": {
-    "title": "I dag",
-    "summary": "{{reviews}} og {{newCards}}, omtrent {{minutes}} min",
+    "summary": "{{reviews}} og {{newCards}}, omtrent {{minutes}} minutter",
     "nothingLeft": "Ingenting igjen i dag. Nye kort låses opp når du repeterer.",
     "paused": "Nye kort er satt på pause til etterslepet får plass i dagens tid.",
-    "start": "Start økten",
     "inputMode": "Svar med",
     "nextRegion": "Neste region: {{name}}",
-    "setupTitle": "Sett opp GeoDex",
-    "setupBody": "Velg hjemland og ta en kort plasseringstest. Den finner ut hva du allerede kan.",
-    "setup": "Sett opp",
     "reviews_one": "{{count}} repetisjon",
     "reviews_other": "{{count}} repetisjoner",
     "newCards_one": "{{count}} nytt kort",
     "newCards_other": "{{count}} nye kort",
-    "statReviews": "Repetisjoner",
-    "statNew": "Nye",
-    "statMinutes": "Minutter",
     "mapTitle": "Kartet ditt",
     "mapStarted": "{{count}} av {{total}} land påbegynt",
-    "legendStarted": "Påbegynt",
-    "legendNext": "Neste region"
+    "due_one": "{{formatted}} kort i dag",
+    "due_other": "{{formatted}} kort i dag",
+    "doneTitle": "Ferdig for i dag"
   },
   "settings": {
     "label": "Innstillinger",
     "theme": {
-      "label": "Tema",
-      "atlas": "Atlas",
-      "minimal": "Minimal",
-      "playful": "Leken",
-      "auto": "Automatisk"
+      "label": "Utseende",
+      "light": "Lyst",
+      "dark": "Mørkt",
+      "auto": "Som enheten"
     },
     "language": {
       "label": "Språk",
@@ -45,21 +37,11 @@
     "countdown": "Nedtelling",
     "countdownOff": "Av",
     "seconds": "{{count}} s",
-    "cities": "Kjente byer (etter landet sitt)",
-    "currencyLanguage": "Kort for valuta og språk",
-    "on": "På",
-    "off": "Av",
     "homeCountry": "Hjemland",
-    "rerunPlacement": "Ta plasseringstesten på nytt",
-    "groupLook": "Språk og utseende",
+    "groupLook": "Språk, utseende og lyd",
     "groupStudy": "Øving",
-    "groups": "Landgrupper (når halvparten av landene er startet)",
-    "landmarks": "Severdigheter (etter landet sitt)",
-    "physical": "Naturgeografi (etter et land den berører)",
-    "history": "Historie (tidligere navn, oppløste stater, imperier)",
     "welcomeAgain": "Vis velkomstsiden og omvisningen igjen",
-    "groupGoals": "Målene dine",
-    "groupTopics": "Hva du vil lære",
+    "groupTopics": "Emner",
     "groupGuide": "Veiledning",
     "dailyMinutesHelp": "Hvor lenge du øver en vanlig dag. Det styrer hvor mange nye kort du får og tidsanslaget.",
     "goalKind": "Dagsmål",
@@ -68,18 +50,54 @@
     "sessionsPerDay": "Økter per dag",
     "sessions_one": "{{count}} økt",
     "sessions_other": "{{count}} økter",
-    "goalHelp": "Når du når målet, fylles ringen på I dag, du får XP, og dagen teller med i dager på rad, selv om det er repetisjoner igjen.",
+    "goalHelp": "Når du når målet, får du XP, og dagen teller med i dager på rad, selv om det er repetisjoner igjen.",
     "sessionLength": "Øktlengde",
     "sessionFocus": "Øktfokus",
     "levelProgress": "Veien til neste nivå",
     "levelCards": "Kort som gjenstår",
-    "levelPercent": "Prosent"
+    "levelPercent": "Prosent",
+    "sound": "Lyd",
+    "soundHelp": "En kort tone etter hvert svar og når en økt er ferdig",
+    "vibration": "Vibrasjon",
+    "vibrationHelp": "En kort vibrasjon etter hvert svar, på telefoner som støtter det",
+    "topic": {
+      "currencyLanguage": {
+        "label": "Valuta og språk",
+        "detail": "Hvilken valuta og hvilke offisielle språk hvert land bruker"
+      },
+      "cities": {
+        "label": "Kjente byer",
+        "detail": "Store og kjente byer, introdusert etter landet sitt"
+      },
+      "groups": {
+        "label": "Landgrupper",
+        "detail": "For eksempel Norden eller EU, introdusert når halvparten av landene er startet"
+      },
+      "landmarks": {
+        "label": "Severdigheter",
+        "detail": "Kjente severdigheter med bilde, introdusert etter landet sitt"
+      },
+      "physical": {
+        "label": "Naturgeografi",
+        "detail": "Elver, innsjøer, hav, fjell og ørkener, introdusert etter et land de berører"
+      },
+      "history": {
+        "label": "Historie",
+        "detail": "Tidligere navn, oppløste stater og imperier"
+      }
+    },
+    "countdownHelp": "Tid til å svare på hvert spørsmål. Av lar deg tenke så lenge du vil.",
+    "sessionLengthHelp": "Hvor mange spørsmål en økt har når du trykker Start.",
+    "sessionFocusHelp": "Hva en økt henter fra først.",
+    "levelProgressHelp": "Hvordan I dag viser veien til neste nivå.",
+    "homeCountryHelp": "Nye land kommer først fra din egen region, deretter fra regioner lenger unna."
   },
   "nav": {
     "today": "I dag",
     "settings": "Innstillinger",
     "atlas": "Atlas",
-    "stats": "Statistikk"
+    "stats": "Statistikk",
+    "label": "Hovedmeny"
   },
   "common": {
     "loading": "Laster"
@@ -90,33 +108,14 @@
     "typing": "Skriving"
   },
   "onboarding": {
-    "title": "Sett opp GeoDex",
+    "title": "Språk og hjemland",
     "home": "Hjemland",
-    "homeHelp": "Læringen starter med regionen, og forklaringer sammenligner med landet.",
+    "homeHelp": "De første leksjonene starter i regionen, og forklaringene sammenligner steder med landet.",
     "search": "Søk etter land",
     "noMatch": "Ingen land passer. Sjekk stavemåten.",
-    "start": "Start plasseringstesten",
-    "placementTitle": "Kan du allerede noen land?",
-    "placementBody": "En test på 5 minutter finner det du allerede kan, så du hopper over det. Du kan ta den senere fra Innstillinger.",
-    "takeTest": "Ta testen",
-    "fromZero": "Begynn fra null"
-  },
-  "placement": {
-    "title": "Plasseringstest",
-    "intro": "En kort test av det du allerede kan, region for region. Feil svar teller ikke mot deg.",
-    "skip": "Hopp over regionen",
-    "finish": "Avslutt nå",
-    "answered": "{{count}} besvart",
-    "region": "Region: {{name}}",
-    "resultTitle": "Resultat av plasseringstesten",
-    "countries": "Land plassert: {{count}}",
-    "capitals": "Hovedsteder du kan: {{count}}",
-    "flags": "Flagg du kan: {{count}}",
-    "startsWith": "Den daglige læringen starter med {{region}}.",
-    "toToday": "Gå til i dag",
-    "statCountries": "Land",
-    "statCapitals": "Hovedsteder",
-    "statFlags": "Flagg"
+    "start": "Start",
+    "chosen": "Hjemland: {{name}}",
+    "choose": "Velg et hjemland for å starte"
   },
   "q": {
     "city_to_country": "Hvilket land ligger {{city}} i?",
@@ -201,9 +200,7 @@
     "continue": "Test meg"
   },
   "session": {
-    "left": "{{count}} igjen",
     "end": "Avslutt økten",
-    "doneTitle": "Økten er ferdig",
     "reviewed_one": "{{count}} repetisjon",
     "reviewed_other": "{{count}} repetisjoner",
     "backToToday": "Tilbake til i dag",
@@ -219,8 +216,7 @@
     "hint": "Vis et hint",
     "notHelpful": "Merk et minnetriks som lite nyttig",
     "end": "Avslutt økten",
-    "help": "Vis disse snarveiene",
-    "close": "Lukk"
+    "help": "Vis disse snarveiene"
   },
   "map": {
     "label": "Verdenskart"
@@ -229,36 +225,15 @@
     "alt": "Flagg",
     "of": "Flagget til {{name}}"
   },
-  "sync": {
-    "title": "Synkronisering",
-    "off": "Synkronisering er av i denne versjonen, så alt blir værende på denne enheten. Bruk eksport nedenfor for å ta vare på en kopi.",
-    "intro": "Logg inn for å ha samme fremgang på alle enhetene dine.",
-    "email": "E-post",
-    "sendCode": "Send kode",
-    "codeSent": "En e-post med innlogging er på vei til {{email}}. Lim inn innloggingslenken fra den her, eller skriv koden hvis den har en.",
-    "code": "Innloggingslenke eller kode",
-    "signIn": "Logg inn",
-    "signedIn": "Logget inn som {{email}}",
-    "lastSynced": "Sist synkronisert {{time}}",
-    "never": "Ikke synkronisert ennå på denne enheten",
-    "pending_one": "{{count}} endring venter på synkronisering",
-    "pending_other": "{{count}} endringer venter på synkronisering",
-    "syncNow": "Synkroniser nå",
-    "syncing": "Synkroniserer",
-    "offline": "Frakoblet. Endringer synkroniseres når du er på nett igjen.",
-    "error": "Synkroniseringen feilet: {{message}}. Fremgangen din er trygg på denne enheten; prøv igjen.",
-    "signOut": "Logg ut",
-    "codeError": "Den lenken eller koden virket ikke. Kopier hele lenken fra den nyeste e-posten, eller send en ny.",
-    "sendError": "Koden kunne ikke sendes: {{message}}",
-    "noAccount": "Ingen GeoDex-konto bruker den e-postadressen. Sjekk adressen; kontoer opprettes i Supabase, ikke i appen."
-  },
   "backup": {
     "title": "Sikkerhetskopi",
-    "body": "Eksporter alle repetisjoner og innstillinger til en fil, eller importer en. Import legger til det som mangler og fjerner aldri noe.",
-    "export": "Eksporter data",
-    "import": "Importer data",
-    "imported": "Importerte {{reviews}} repetisjoner og {{votes}} stemmer på huskeregler.",
-    "importError": "Den filen er ikke en eksport fra GeoDex."
+    "body": "Fremgangen lagres i denne nettleseren etter hvert svar. Sletter du nettleserdataene, forsvinner den. En sikkerhetskopi tar vare på en kopi og flytter fremgangen til en annen enhet.",
+    "export": "Last ned sikkerhetskopi",
+    "import": "Gjenopprett sikkerhetskopi",
+    "lastBackup": "Siste sikkerhetskopi: {{date}}",
+    "never": "Ingen sikkerhetskopi laget i denne nettleseren ennå",
+    "imported": "Gjenopprettet {{reviews}} svar og {{votes}} stemmer på huskeregler.",
+    "importError": "Den filen er ikke en sikkerhetskopi fra GeoDex."
   },
   "continent": {
     "africa": "Afrika",
@@ -366,7 +341,7 @@
     "forecast": "Til repetisjon de neste 30 dagene",
     "confusions": "Oftest forvekslet",
     "noConfusions": "Ingen forvekslinger ennå.",
-    "leeches": "Igler",
+    "leeches": "Kort som stadig glipper",
     "noLeeches": "Ingen kort har glippet seks ganger.",
     "hooks": "Huskeregler som virker for deg",
     "hookRate": "{{value}} husket neste gang",
@@ -381,14 +356,23 @@
     "landmarks": "Severdigheter",
     "physical": "Naturgeografi",
     "history": "Historie",
-    "levels": "Nivåer",
-    "levelsHelp": "Hukommelsesnivå 1 til 10 per verdensdel og emne. Det synker når kort glemmes."
+    "levels": "Per verdensdel og emne",
+    "levelsHelp": "Hukommelsesnivå 1 til 10 for hver. Det synker når kort glemmes.",
+    "levelTitle": "Nivå og XP",
+    "levelHelp": "XP går bare opp. Hukommelsesnivået følger det du husker nå, så det kan synke.",
+    "forecastWeek_one": "{{formatted}} kort til repetisjon de neste 7 dagene",
+    "forecastWeek_other": "{{formatted}} kort til repetisjon de neste 7 dagene",
+    "confusionsHelp": "Par du har blandet sammen i det siste. Øv på et par for å skille dem.",
+    "pair": "{{a}} og {{b}}",
+    "leechesHelp": "Glemt seks ganger eller mer.",
+    "hooksHelp": "Typer huskeregler, etter hvor ofte du husket kortet neste gang."
   },
   "streak": {
     "days_one": "{{count}} dag på rad",
     "days_other": "{{count}} dager på rad",
     "none": "Ingen dager på rad ennå",
-    "longest": "Lengste {{count}}",
+    "longest_one": "Flest dager på rad: {{count}}",
+    "longest_other": "Flest dager på rad: {{count}}",
     "freezes_one": "{{count}} fridag i reserve",
     "freezes_other": "{{count}} fridager i reserve"
   },
@@ -400,18 +384,20 @@
     "streak": "{{count}} dager på rad"
   },
   "summary": {
-    "retention": "Riktige: {{value}}",
     "tomorrow_one": "{{count}} kort til repetisjon i morgen",
     "tomorrow_other": "{{count}} kort til repetisjon i morgen",
     "newAchievements": "Nye merker",
     "xp": "+{{xp}} XP",
     "levelUp": "Hukommelsesnivå {{level}}",
-    "rankUp": "Ny rang: {{rank}}"
+    "rankUp": "Ny rang: {{rank}}",
+    "right_one": "{{correct}} av {{total}} riktig",
+    "right_other": "{{correct}} av {{total}} riktige",
+    "misses": "Kommer snart igjen",
+    "mixedUp": "forvekslet med {{name}}"
   },
   "drill": {
     "title": "Øv",
     "note": "Bare øving: svarene endrer verken timeplanen eller rekken din.",
-    "region": "Øv: {{name}}",
     "pair": "Øv: {{a}} og {{b}}",
     "empty": "Ingenting å øve på her ennå."
   },
@@ -476,23 +462,19 @@
     "body": "Fakta {{id}} ({{locale}}), vist på kortet {{card}}:\n\n> {{text}}\n\nHva er feil, og en kilde for det riktige:\n"
   },
   "reset": {
-    "title": "Nullstill fremgang",
-    "body": "Begynn på nytt fra plasseringstesten. Fremgang, rekke og statistikk teller bare repetisjoner fra nå av. Tidligere repetisjoner blir værende i eksporter og synkronisert historikk, så ingenting går tapt.",
-    "button": "Nullstill fremgang",
-    "confirm": "Nullstille all fremgang nå? Dette kan ikke angres i appen.",
-    "yes": "Nullstill",
+    "title": "Begynn på nytt",
+    "body": "Nivå, rekke og statistikk teller bare svar fra nå av. Tidligere svar finnes fortsatt i sikkerhetskopier laget før du begynner på nytt.",
+    "button": "Begynn på nytt",
+    "confirm": "Begynne på nytt nå? Dette kan ikke angres.",
+    "yes": "Begynn på nytt",
     "cancel": "Avbryt"
   },
   "welcome": {
-    "eyebrow": "Gratis geografitrener",
-    "title": "Lær verden, og husk den.",
-    "lead": "GeoDex lærer deg alle land, hovedsteder og flagg, og mye mer, i korte økter hver dag. Den merker hva du blander, og tar fram hvert kort rett før du ville glemt det.",
-    "free": "Gratis. Ingen reklame, ingen konto, ingen sporing.",
-    "freeWhy": "Laget for å hjelpe folk å lære geografi. Det er ingenting å kjøpe.",
+    "title": "Alle land, hovedsteder og flagg, lært for godt",
+    "lead": "Noen minutter om dagen. Hvert kort kommer tilbake rett før du ville glemt det, og mellomrommet vokser hver gang du husker.",
     "start": "Begynn å lære",
-    "try": "Prøv 3 spørsmål",
     "language": "Språk",
-    "topicsTitle": "Dette kan du lære",
+    "topicsTitle": "Emner",
     "topics": {
       "countries": {
         "name": "Land",
@@ -531,36 +513,9 @@
         "detail": "{{count}} gamle navn, stater og riker"
       }
     },
-    "optional": "Valgfritt",
-    "getTitle": "Dette får du",
-    "get": {
-      "countries": "Plassere alle {{count}} land på et verdenskart",
-      "capitals": "Kunne alle hovedsteder og kjenne igjen alle flagg",
-      "currency": "Vite valuta og offisielle språk i hvert land",
-      "extras": "Om du vil: {{cities}} byer, {{landmarks}} landemerker, {{physical}} elver, hav og fjellkjeder, og {{history}} biter av historien"
-    },
-    "memoryTitle": "Kunnskap som varer",
-    "memoryBody": "Pugging forsvinner på noen dager. GeoDex bruker repetisjon med mellomrom: hvert kort kommer tilbake rett før du ville glemt det, og mellomrommet vokser hver gang du husker. Om et år kan du det fortsatt.",
-    "timeTitle": "Hvor lang tid det tar",
+    "optional": "Av til du slår det på",
     "timeBody": "Med omtrent {{minutes}} minutter om dagen møter du alle landkortene i løpet av omtrent {{weeks}} uker, og kan alle om omtrent {{months}} måneder.",
     "timeAll": "Med alle emner slått på: omtrent {{months}} måneder.",
-    "howTitle": "Slik fungerer det",
-    "steps": {
-      "home": {
-        "title": "Velg hjemlandet ditt",
-        "body": "Sammenligninger bruker steder du kjenner. En valgfri test på 5 minutter hopper over det du allerede kan."
-      },
-      "daily": {
-        "title": "Øv noen minutter om dagen",
-        "body": "Svar på kartet, ved å velge eller ved å skrive. Spørsmålene blir vanskeligere når du blir bedre."
-      },
-      "fill": {
-        "title": "Se kartet fylles",
-        "body": "Hvert land du lærer farger atlaset ditt, og nivået ditt stiger mot 10."
-      }
-    },
-    "levelsTitle": "Nivåer fra 1 til 10",
-    "levelsBody": "Nivået viser hvor mye du husker, ikke hvor mye du har klikket. Det stiger når kortene sitter lenger, og synker hvis du glemmer.",
     "levels": {
       "1": "Akkurat begynt",
       "3": "Lærer",
@@ -568,86 +523,69 @@
       "8": "Sitter tre uker",
       "10": "Mestret"
     },
-    "demoTitle": "Prøv 3 spørsmål",
-    "demoBody": "Ingenting lagres. Slik føles en økt.",
     "demoProgress": "Spørsmål {{n}} av {{total}}",
     "demoNext": "Neste spørsmål",
     "demoDone": "Det er GeoDex. En ekte økt tilpasser seg deg: det du bommer på, kommer raskere tilbake.",
     "demoAgain": "Prøv igjen",
-    "privacy": "Alt blir på enheten din med mindre du slår på synkronisering.",
-    "madeBy": "Laget av DIZAMU"
-  },
-  "infobox": {
-    "title": "Hva er GeoDex?",
-    "points": {
-      "what": "Korte økter hver dag lærer deg land, hovedsteder, flagg og mer.",
-      "when": "Kortene kommer tilbake rett før du ville glemt dem, så øv så mange dager du kan.",
-      "progress": "Kartet og nivåene viser hvor mye du kan."
-    },
-    "help": "Slik fungerer det",
-    "welcome": "Om GeoDex",
-    "open": "Vis",
-    "close": "Skjul"
+    "madeBy": "Laget av DIZAMU",
+    "facts": "Gratis, og det virker uten nett. Fremgangen lagres i denne nettleseren.",
+    "paceTitle": "{{minutes}} minutter om dagen",
+    "memory": "Feil svar kommer tilbake samme dag. Land du blander, får et eget kort som skiller dem fra hverandre.",
+    "close": "Velg hjemlandet ditt, så starter den første økten. Det er ingenting å registrere seg for."
   },
   "tour": {
+    "label": "Omvisning",
     "next": "Neste",
     "back": "Tilbake",
     "skip": "Hopp over",
     "done": "Ferdig",
     "progress": "{{n}} av {{total}}",
-    "label": "Omvisning",
+    "startFirst": "Start den første økten",
+    "start": "Start en økt",
+    "later": "Se deg rundt først",
+    "answers": {
+      "auto": "svar med alternativer først",
+      "mc": "svar med alternativer",
+      "typing": "svar ved å skrive"
+    },
     "steps": {
-      "start": {
-        "title": "Start her",
-        "body": "Velg hvor mange spørsmål og hva du vil øve på, og start. En økt tar noen minutter."
+      "intro": {
+        "title": "Noen minutter om dagen",
+        "body": "Hver dag har en kort økt: kortene som skal repeteres, og noen nye land. Tre ting å vite, så er du klar."
+      },
+      "length": {
+        "title": "Velg øktlengde",
+        "body": "Prøv 5 spørsmål første gang. Du kan endre dette før hver økt."
       },
       "input": {
         "title": "Velg hvordan du svarer",
-        "body": "Auto begynner med alternativer og går over til skriving når du blir bedre. Velg selv om du vil."
+        "body": "Auto begynner med alternativer og går over til skriving når du blir bedre. Du kan også velge selv."
       },
-      "overview": {
-        "title": "Nivået ditt",
-        "body": "Hukommelsesnivå 1 til 10 viser hvor mye du kan akkurat nå, og kan synke hvis du glemmer. XP og rangen din går bare opp. Den lille ringen er dagens mål."
+      "progress": {
+        "title": "Kartet og nivået ditt",
+        "body": "Land du begynner på, fylles inn på kartet, og regionen du lærer neste gang, er markert. Nivået viser hvor mye du husker akkurat nå. Statistikk har hele bildet."
       },
-      "map": {
-        "title": "Kartet ditt",
-        "body": "Land du har begynt på, fylles inn. Den markerte regionen er neste."
-      },
-      "atlas": {
-        "title": "Atlas",
-        "body": "Alle land med nivået ditt i hver ferdighet, landsider og grenser gjennom tiden."
-      },
-      "stats": {
-        "title": "Statistikk",
-        "body": "Hva du husker, hva du blander, og hva som kommer."
-      },
-      "settings": {
-        "title": "Innstillinger",
-        "body": "Emner, tid per dag, språk, tema, synkronisering og sikkerhetskopi."
-      },
-      "help": {
-        "title": "Hjelp er alltid her",
-        "body": "Åpne den for et kart over appen, hvordan svar vurderes, eller for å se denne omvisningen igjen."
+      "ready": {
+        "title": "Klar?",
+        "titleNothing": "Ingenting å repetere nå",
+        "body": "{{questions}}, nye land fra {{region}}, {{answers}}.",
+        "bodyNoRegion": "{{questions}}, {{answers}}."
       }
     }
   },
   "help": {
     "button": "Hjelp",
     "title": "Hjelp",
-    "lead": "Hvor du finner hva, og hvordan GeoDex fungerer.",
-    "mapTitle": "Appen i korte trekk",
+    "lead": "Hvordan GeoDex vurderer, planlegger og teller fremgangen din, og hvor den lagres.",
+    "mapTitle": "Skjermer",
     "nodes": {
       "welcome": {
-        "name": "Velkommen",
-        "body": "Hva GeoDex er, og hva du kan lære."
+        "name": "Første skjerm",
+        "body": "Et prøvespørsmål, hva du kan lære og hvor lang tid det tar."
       },
       "today": {
         "name": "I dag",
-        "body": "Start en økt og se dagens oppgaver og rekken din."
-      },
-      "session": {
-        "name": "Økt",
-        "body": "Svar på spørsmål. Tilbakemeldingen forklarer hvert svar."
+        "body": "Start en økt, og se hva som venter, kartet ditt og nivået ditt."
       },
       "atlas": {
         "name": "Atlas",
@@ -659,24 +597,26 @@
       },
       "settings": {
         "name": "Innstillinger",
-        "body": "Emner, tid per dag, språk, tema, synkronisering og sikkerhetskopi."
+        "body": "Emner, tid per dag, språk, utseende, lyd og sikkerhetskopier."
       }
     },
-    "startsFrom": "starter fra I dag",
-    "gradingTitle": "Slik vurderes svarene",
+    "gradingTitle": "Vurdering",
     "gradingBody": "Du vurderer aldri deg selv. Feil er feil. Et riktig svar teller som bra, som vanskelig etter et hint, en skrivefeil eller et tregt svar, eller som lett når du skriver eller trykker raskt.",
-    "harderTitle": "Hvorfor spørsmålene blir vanskeligere",
+    "harderTitle": "Vanskelighetsgrad",
     "harderBody": "Et nytt kort spør med alternativer på et nært kart. Når du husker det lenger, skriver du svaret, og kartet zoomer ut til kontinentet og så hele verden.",
-    "scheduleTitle": "Hvorfor kortene kommer tilbake",
+    "scheduleTitle": "Planlegging",
     "scheduleBody": "Hvert kort kommer tilbake rett før du ville glemt det. Bommer du, kommer det snart igjen; kan du det, blir mellomrommet lengre.",
     "keysTitle": "Tastatur",
     "keysBody": "I en økt: 1 til 4 velger, Enter sender og går videre, H viser et hint, Esc avslutter. Trykk ? for hele listen.",
     "replayTour": "Se omvisningen igjen",
-    "showWelcome": "Vis velkomstsiden",
+    "showWelcome": "Vis første skjerm",
     "xpTitle": "Nivåer og XP",
-    "xpBody": "Hukommelsesnivået, fra 1 til 10, viser hvor mye du kan akkurat nå, så det synker når du glemmer. XP går bare opp: riktige svar, fullførte økter, øvingsdager, dagsmålet ditt og kort som sitter i en uke, tre uker og to måneder. XP gir deg ranger, fra Turist til Atlasvokter.",
-    "goalTitle": "Dagsmålet ditt",
-    "goalBody": "Nå dagens tid eller fullfør et antall økter; velg i Innstillinger. Når du når målet, fylles ringen på I dag, du får XP, og dagen teller med i dager på rad selv om det er repetisjoner igjen."
+    "xpBody": "XP går bare opp: riktige svar, fullførte økter, øvingsdager, dagsmålet ditt og kort som sitter i en uke, tre uker og to måneder. XP gir deg ranger, fra Turist til Atlasvokter.",
+    "goalTitle": "Dagsmål",
+    "goalBody": "Nå dagens tid eller fullfør et antall økter; velg hva i Innstillinger. Når du når målet, får du XP, og dagen teller med i dager på rad selv om det er repetisjoner igjen.",
+    "levelsBody": "Nivået viser hvor mye du husker akkurat nå. Det stiger når kortene sitter lenger, og synker hvis du glemmer.",
+    "progressTitle": "Fremgangen din",
+    "progressBody": "Fremgangen lagres i denne nettleseren etter hvert svar, og ingen andre steder. Sletter du nettleserdataene, forsvinner den. Last ned en sikkerhetskopi i Innstillinger av og til, og bruk den for å flytte til en annen enhet."
   },
   "picker": {
     "length": "Lengde",
@@ -707,14 +647,12 @@
     "again_other": "{{count}} spørsmål til"
   },
   "overview": {
-    "title": "Fremgangen din",
     "level": "Nivå",
     "levelLabel": "Hukommelsesnivå {{level}} av 10",
     "memory": "Hukommelse",
     "toNext_one": "{{count}} kort til for nivå {{level}}",
     "toNext_other": "{{count}} kort til for nivå {{level}}",
     "top": "Toppnivå. Fortsett å repetere for å holde det.",
-    "ofMinutes": "av {{goal}} min",
     "xpLevel": "XP-nivå {{level}}",
     "xp": "{{xp}} XP",
     "xpToNext": "{{xp}} XP til neste XP-nivå",
@@ -722,8 +660,6 @@
     "goalMinutesLabel": "{{done}} av {{count}} minutter øvd i dag",
     "goalSessionsLabel_one": "{{done}} av {{count}} økt fullført i dag",
     "goalSessionsLabel_other": "{{done}} av {{count}} økter fullført i dag",
-    "ofSessions_one": "av {{goal}} økt",
-    "ofSessions_other": "av {{goal}} økter",
     "toNextPercent": "{{percent}} av veien til nivå {{level}}",
     "showCards": "Vis kort som gjenstår",
     "showPercent": "Vis som prosent"

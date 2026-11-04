@@ -1,23 +1,30 @@
 import { describe, expect, it } from "vitest";
-import { isThemePreference, resolveTheme } from "./themes";
+import { isThemePreference, normalizeThemePreference, resolveTheme } from "./themes";
 
 describe("resolveTheme", () => {
-  it("maps auto to Atlas on dark systems and Minimal on light systems", () => {
-    expect(resolveTheme("auto", true)).toBe("atlas");
-    expect(resolveTheme("auto", false)).toBe("minimal");
+  it("maps auto to the device's mode", () => {
+    expect(resolveTheme("auto", true)).toBe("dark");
+    expect(resolveTheme("auto", false)).toBe("light");
   });
 
-  it("keeps an explicit choice regardless of the system", () => {
-    expect(resolveTheme("playful", true)).toBe("playful");
-    expect(resolveTheme("minimal", true)).toBe("minimal");
-    expect(resolveTheme("atlas", false)).toBe("atlas");
+  it("keeps an explicit choice regardless of the device", () => {
+    expect(resolveTheme("light", true)).toBe("light");
+    expect(resolveTheme("dark", false)).toBe("dark");
   });
 });
 
-describe("isThemePreference", () => {
+describe("theme preferences", () => {
   it("rejects unknown values", () => {
     expect(isThemePreference("auto")).toBe(true);
-    expect(isThemePreference("dark")).toBe(false);
+    expect(isThemePreference("atlas")).toBe(false);
     expect(isThemePreference(null)).toBe(false);
+  });
+
+  it("moves the three 1.0 themes onto the two modes", () => {
+    expect(normalizeThemePreference("atlas")).toBe("dark");
+    expect(normalizeThemePreference("minimal")).toBe("light");
+    expect(normalizeThemePreference("playful")).toBe("light");
+    expect(normalizeThemePreference("auto")).toBe("auto");
+    expect(normalizeThemePreference(undefined)).toBe("light");
   });
 });

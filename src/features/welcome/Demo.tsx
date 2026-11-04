@@ -2,7 +2,7 @@
  * Three sample questions on the welcome page (PLAN.md 11.1): a map tap, a flag and a
  * capital, with real feedback and a memory hook. Nothing is saved.
  */
-import { ArrowRightIcon, RotateCcwIcon } from "lucide-react";
+import { RotateCcwIcon } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { Locale } from "@/i18n/locales";
@@ -90,9 +90,7 @@ export function Demo({ learner, locale }: { learner: Learner; locale: Locale }) 
       <div className="flex min-h-[22rem] flex-col gap-4 p-5 md:p-7" aria-live="polite">
         {done ? (
           <div className="flex flex-1 flex-col justify-center gap-5" data-testid="demo-done">
-            <p className="font-name text-2xl leading-snug tracking-tight">
-              {t("welcome.demoDone")}
-            </p>
+            <p className="text-xl font-medium leading-snug">{t("welcome.demoDone")}</p>
             <Button variant="outline" className="self-start" onClick={again}>
               <RotateCcwIcon aria-hidden />
               {t("welcome.demoAgain")}
@@ -109,18 +107,22 @@ export function Demo({ learner, locale }: { learner: Learner; locale: Locale }) 
                 <StatusLine correct={picked.correct} />
                 {country ? <CountryCard country={country} locale={locale} /> : null}
                 {hook ? (
-                  <figure className="flex flex-col gap-1 rounded-lg bg-background/40 p-4">
+                  <figure className="flex flex-col gap-1 rounded-lg bg-background p-4">
                     <figcaption className="text-sm text-muted-foreground">
                       {t("feedback.hookLabel")}
                     </figcaption>
-                    <blockquote className="font-serif text-lg leading-snug italic" lang={locale}>
+                    <blockquote className="text-lg leading-snug" lang={locale}>
                       {hook}
                     </blockquote>
                   </figure>
                 ) : null}
-                <Button className="group self-start" onClick={next} data-testid="demo-next">
+                <Button
+                  variant="secondary"
+                  className="self-start"
+                  onClick={next}
+                  data-testid="demo-next"
+                >
                   {t("welcome.demoNext")}
-                  <ArrowRightIcon className="transition-transform duration-200 group-hover:translate-x-0.5" />
                 </Button>
               </div>
             ) : question.answer.kind === "choice" ? (

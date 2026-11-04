@@ -195,13 +195,8 @@ function prefersReducedMotion(): boolean {
   );
 }
 
-/** Playful gets a slightly springy ease; the other themes ease out. */
+/** Map fly-to: one ease-out, the same curve family as the rest of the interface. */
 function themeEase(t: number): number {
-  if (document.documentElement.dataset.theme === "playful") {
-    const s = 1.4;
-    const u = t - 1;
-    return u * u * ((s + 1) * u + s) + 1;
-  }
   return 1 - (1 - t) ** 3;
 }
 
@@ -771,6 +766,7 @@ export function WorldMap({
                       x={x}
                       y={y}
                       className={`map-label map-label-feature${chosen.has(id) ? " map-label-chosen" : ""}`}
+                      data-kind={feature.kind}
                       textAnchor="middle"
                       dominantBaseline="middle"
                     >

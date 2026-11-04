@@ -59,7 +59,7 @@ async function capture(page: Page): Promise<Record<string, string>> {
 
 test("progress screens are identical after the card cache is deleted", async ({ page }) => {
   test.setTimeout(180_000);
-  await setUpLearner(page, 6);
+  await setUpLearner(page);
   await study(page, "/session?input=mc", 8);
   await expect(page.getByTestId("summary-tomorrow")).toBeVisible();
 
@@ -75,7 +75,7 @@ test("progress screens are identical after the card cache is deleted", async ({ 
 
 test("a drill logs unscheduled events and leaves card state alone", async ({ page }) => {
   test.setTimeout(120_000);
-  await setUpLearner(page, 4);
+  await setUpLearner(page);
   const states = await idb<unknown[]>(page, "cardState", "getAll");
 
   await page.goto("/atlas");

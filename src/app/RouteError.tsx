@@ -6,15 +6,11 @@ import { Button } from "@/ui/button";
 export function RouteError() {
   const { t } = useTranslation();
   return (
-    <main className="flex min-h-dvh items-center justify-center px-4 py-16">
-      <div
-        role="alert"
-        className="surface flex w-full max-w-md flex-col gap-4 p-8"
-        data-testid="route-error"
-      >
-        <h1 className="font-name text-3xl tracking-tight">{t("error.title")}</h1>
+    <main className="mx-auto flex min-h-dvh w-full max-w-xl flex-col justify-center px-4 py-16">
+      <div role="alert" className="flex flex-col items-start gap-4" data-testid="route-error">
+        <h1 className="text-3xl font-medium tracking-tight">{t("error.title")}</h1>
         <p className="text-muted-foreground">{t("error.body")}</p>
-        <Button size="lg" className="self-start" onClick={() => window.location.assign("/")}>
+        <Button size="lg" onClick={() => window.location.assign("/")}>
           <RotateCwIcon />
           {t("error.reload")}
         </Button>

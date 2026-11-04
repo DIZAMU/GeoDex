@@ -8,7 +8,7 @@ import {
   setUpLearner,
 } from "./helpers";
 
-const THEMES = ["atlas", "minimal", "playful"] as const;
+const THEMES = ["light", "dark"] as const;
 const LOCALES = ["en", "nb"] as const;
 
 async function shot(page: Page, name: string) {
@@ -30,7 +30,7 @@ for (const theme of THEMES) {
 
       // Onboarding in the chosen language, then English names are not needed for the flow.
       await chooseThemeAndLocale(page, theme, "en");
-      await setUpLearner(page, 2);
+      await setUpLearner(page);
       await chooseThemeAndLocale(page, theme, locale);
       await page.goto("/");
       await expect(page.getByTestId("summary")).toBeVisible();

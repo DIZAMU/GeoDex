@@ -74,15 +74,10 @@ export async function loadCardStates(db: GeoDexDb): Promise<Map<CardId, CardStat
 }
 
 /**
- * Starts over: progress, streak and stats count only reviews from now on, and placement
- * runs again. Nothing is deleted: the events stay in the log and in exports.
+ * Starts over: progress, streak and stats count only reviews from now on. Nothing is
+ * deleted: the events stay in the log and in backups made before.
  */
 export async function resetProgress(db: GeoDexDb, scheduler: FSRS, now = Date.now()) {
-  await db.settings.update(SETTINGS_ROW_ID, {
-    progressResetAt: now,
-    placementCompletedAt: null,
-    updatedAt: now,
-  });
-  await db.placementProgress.clear();
+  await db.settings.update(SETTINGS_ROW_ID, { progressResetAt: now, updatedAt: now });
   await rebuildCardStates(db, scheduler);
 }

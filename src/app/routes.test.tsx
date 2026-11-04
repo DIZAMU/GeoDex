@@ -1,6 +1,6 @@
-import { render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import { createMemoryRouter, RouterProvider } from "react-router";
-import { beforeAll, describe, expect, it } from "vitest";
+import { afterEach, beforeAll, describe, expect, it } from "vitest";
 import { db } from "@/db/db";
 import { ensureDeviceSettings, ensureSettings } from "@/db/settings";
 import { LearnerProvider } from "@/features/study/useLearner";
@@ -10,6 +10,9 @@ beforeAll(async () => {
   await ensureSettings(db, "en");
   await ensureDeviceSettings(db);
 });
+
+// Each test renders a whole app; unmount it so the next one sees only its own screen.
+afterEach(cleanup);
 
 describe("routes", () => {
   it("sends a new learner from Today to the welcome page, which says it is free", async () => {
@@ -22,13 +25,13 @@ describe("routes", () => {
     expect(
       await screen.findByRole(
         "heading",
-        { level: 1, name: "Learn the world, and keep it." },
+        { level: 1, name: "Every country, capital and flag, learned for good" },
         { timeout: 10_000 },
       ),
     ).toBeInTheDocument();
     expect(router.state.location.pathname).toBe("/welcome");
     expect(screen.getByTestId("welcome-free")).toHaveTextContent(
-      "Free. No ads, no account, no tracking.",
+      "Free, and it works offline. Your progress stays in this browser.",
     );
     expect(screen.getByTestId("setup")).toBeInTheDocument();
   });
@@ -40,8 +43,9 @@ describe("routes", () => {
         <RouterProvider router={router} />
       </LearnerProvider>,
     );
-    expect(screen.getByRole("link", { name: "Today" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Settings" })).toBeInTheDocument();
+    // Header links on wide screens and the bottom bar on phones: both are in the document.
+    expect(screen.getAllByRole("link", { name: "Today" })).toHaveLength(2);
+    expect(screen.getAllByRole("link", { name: "Settings" })).toHaveLength(2);
     expect(await screen.findByTestId("app-map")).toBeInTheDocument();
   });
 
@@ -53,10 +57,11 @@ describe("routes", () => {
       </LearnerProvider>,
     );
     expect(
-      await screen.findByRole("group", { name: "Theme" }, { timeout: 10_000 }),
+      await screen.findByRole("radiogroup", { name: "Appearance" }, { timeout: 10_000 }),
     ).toBeInTheDocument();
-    expect(screen.getByRole("group", { name: "Language" })).toBeInTheDocument();
-    // Without Supabase env vars the app is local-only and says so.
-    expect(screen.getByText(/Sync is off in this build/)).toBeInTheDocument();
+    expect(screen.getByRole("radiogroup", { name: "Language" })).toBeInTheDocument();
+    // No accounts: progress moves between browsers only through backup files.
+    expect(screen.getByRole("button", { name: "Download backup" })).toBeInTheDocument();
+    expect(screen.queryByText(/sign in/i)).not.toBeInTheDocument();
   });
 });

@@ -2,7 +2,7 @@ import Dexie, { type EntityTable } from "dexie";
 import { type CardState, createScheduler, replayAll } from "@/engine/scheduler";
 import type { AnswerMode, CardId, InputSetting, Rating } from "@/engine/types";
 import type { Locale } from "@/i18n/locales";
-import type { ThemePreference } from "@/themes/themes";
+import { normalizeThemePreference, type ThemePreference } from "@/themes/themes";
 
 export const SETTINGS_ROW_ID = "user";
 export const DEVICE_ROW_ID = "device";
@@ -25,6 +25,7 @@ export type SettingsRow = {
   /** Stage 4 country cards (currency and language). */
   currencyAndLanguage: boolean;
   countdownSeconds: 0 | 10 | 15 | 20;
+  /** When setup (language and home country) was finished. 1.0 set it after the placement test. */
   placementCompletedAt: number | null;
   /**
    * "Reset progress": events at or before this time are kept but no longer replayed.
@@ -61,7 +62,7 @@ export const DEFAULT_SETTINGS: SettingsValues = {
   progressResetAt: null,
 };
 
-/** Settings that stay on this device and are never synced. */
+/** Settings that belong to this browser only, never written to a backup. */
 export type DeviceSettingsRow = {
   id: typeof DEVICE_ROW_ID;
   deviceId: string;
@@ -77,12 +78,14 @@ export type DeviceSettingsRow = {
   sessionFocus?: string | null;
   /** The way to the next memory level on Today: cards to go (default) or a percentage. */
   levelProgress?: "cards" | "percent" | null;
+  /** When a backup file was last downloaded from this browser; null or absent means never. */
+  lastBackupAt?: number | null;
+  /** Answer tones and vibration; absent means on (docs/PLAN-2.0.md). */
+  soundOn?: boolean | null;
+  vibrationOn?: boolean | null;
 };
 
-/**
- * One answer. Append-only: never updated or deleted, locally or remotely.
- * `synced` is 0 or 1 because IndexedDB cannot index booleans.
- */
+/** One answer. Append-only: never updated or deleted. */
 export type ReviewEvent = {
   id: string;
   cardId: CardId;
@@ -100,7 +103,6 @@ export type ReviewEvent = {
   scheduled: boolean;
   locale: Locale;
   deviceId: string;
-  synced: 0 | 1;
 };
 
 /** A "Not helpful" tap on a hook. Append-only. */
@@ -110,13 +112,7 @@ export type HookVoteEvent = {
   hookId: string;
   createdAt: number;
   deviceId: string;
-  synced: 0 | 1;
 };
-
-export type SyncMetaRow = { table: "reviewEvents" | "hookVoteEvents"; lastPullSeq: number };
-
-/** Saved progress of an unfinished placement test, on this device only. */
-export type PlacementProgressRow = { id: "current"; state: unknown; updatedAt: number };
 
 export type GeoDexDb = Dexie & {
   settings: EntityTable<SettingsRow, "id">;
@@ -125,8 +121,6 @@ export type GeoDexDb = Dexie & {
   hookVoteEvents: EntityTable<HookVoteEvent, "id">;
   /** Cache only: rebuildable from reviewEvents and settings at any time. */
   cardState: EntityTable<CardState, "cardId">;
-  syncMeta: EntityTable<SyncMetaRow, "table">;
-  placementProgress: EntityTable<PlacementProgressRow, "id">;
 };
 
 export function createDb(name = "geodex"): GeoDexDb {
@@ -178,6 +172,24 @@ export function createDb(name = "geodex"): GeoDexDb {
       );
       await tx.table("cardState").clear();
       await tx.table("cardState").bulkPut([...states.values()]);
+    });
+  // v4 (2.0): no accounts and no sync, so the sync index and bookkeeping table go, the
+  // placement test and its saved progress go, and the three 1.0 themes become light or dark. Stored answers are untouched; old rows may still
+  // carry an unused `synced` field.
+  db.version(4)
+    .stores({
+      reviewEvents: "id, cardId, reviewedAt",
+      hookVoteEvents: "id, cardId",
+      syncMeta: null,
+      placementProgress: null,
+    })
+    .upgrade(async (tx) => {
+      await tx
+        .table("deviceSettings")
+        .toCollection()
+        .modify((row: Partial<DeviceSettingsRow>) => {
+          row.theme = normalizeThemePreference(row.theme);
+        });
     });
   return db;
 }

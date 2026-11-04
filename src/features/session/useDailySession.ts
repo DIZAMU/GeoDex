@@ -23,7 +23,7 @@ import {
 } from "@/engine/session";
 import type { InputSetting, Rating } from "@/engine/types";
 import type { Locale } from "@/i18n/locales";
-import { requestSync } from "@/sync/SyncProvider";
+import { feedback } from "@/ui/feedback";
 import { answerMoment, explain } from "../study/explain";
 import { continentLookup, modeStats, planDay } from "../study/plan";
 import {
@@ -138,7 +138,7 @@ export function useDailySession(
     const next = nextItem(session.current, Date.now());
     if (!next) {
       setView({ kind: "done", reviewed: session.current.answered, correct: correct.current });
-      requestSync();
+      feedback("finish", learner.device);
       return;
     }
     session.current = next.state;
@@ -154,7 +154,7 @@ export function useDailySession(
     }
     shownAt.current = performance.now();
     setView({ kind: "prompt", item: next.item, question: q, hint: false });
-  }, [question, explainFor, scheduled]);
+  }, [question, explainFor, scheduled, learner.device]);
 
   useEffect(() => {
     if (view === null && ctx) advance();
@@ -220,8 +220,9 @@ export function useDailySession(
         explanation,
         hidden: [],
       });
+      feedback(result.correct ? "right" : "wrong", learner.device);
     },
-    [view, inputSetting, start.stats, learner.scheduler, explainFor],
+    [view, inputSetting, start.stats, learner.scheduler, learner.device, explainFor],
   );
 
   const writing = useRef(false);
@@ -247,7 +248,6 @@ export function useDailySession(
       scheduled,
       locale,
       deviceId: learner.device.deviceId,
-      synced: 0,
     };
     try {
       introSnippets.current.delete(view.item.cardId);
@@ -283,7 +283,6 @@ export function useDailySession(
         hookId: id,
         createdAt: Date.now(),
         deviceId: learner.device.deviceId,
-        synced: 0,
       });
     },
     [view, learner.device.deviceId],
@@ -298,7 +297,6 @@ export function useDailySession(
   const end = useCallback(async () => {
     if (view?.kind === "feedback") await commit();
     setView({ kind: "done", reviewed: session.current.answered, correct: correct.current });
-    requestSync();
   }, [view, commit]);
 
   return {

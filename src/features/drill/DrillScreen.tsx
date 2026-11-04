@@ -39,11 +39,11 @@ function Drill({ learner, target }: { learner: Learner; target: DrillTarget | nu
   );
   if (queue.length === 0) {
     return (
-      <main className="flex min-h-dvh items-center justify-center px-4 py-16">
-        <div className="surface flex w-full max-w-md flex-col gap-5 p-8" data-testid="drill-empty">
-          <h1 className="font-name text-3xl tracking-tight">{t("drill.title")}</h1>
+      <main className="mx-auto flex min-h-dvh w-full max-w-xl flex-col justify-center px-4 py-16">
+        <div className="flex flex-col items-start gap-4" data-testid="drill-empty">
+          <h1 className="text-3xl font-medium tracking-tight">{t("drill.title")}</h1>
           <p className="text-muted-foreground">{t("drill.empty")}</p>
-          <Button asChild size="lg" className="self-start">
+          <Button asChild size="lg">
             <Link to="/atlas" viewTransition>
               {t("entry.back")}
             </Link>

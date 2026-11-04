@@ -1,0 +1,27 @@
+name: Outside pull requests
+
+# GeoDex takes issues, not pull requests (CONTRIBUTING.md). A pull request from someone
+# without write access is closed with a pointer to the issues. The job never checks out the
+# pull request's code, so running on pull_request_target is safe.
+on:
+  pull_request_target:
+    types: [opened, reopened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  close:
+    if: >-
+      github.event.pull_request.user.type != 'Bot' &&
+      !contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.pull_request.author_association)
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Close with a note
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh pr close "$PR" --repo "$REPO" --comment "Thank you for taking the time. GeoDex does not accept pull requests from others; the code and the content are kept by one author. If you found a bug or a wrong fact, please open an issue: https://github.com/$REPO/issues/new/choose"

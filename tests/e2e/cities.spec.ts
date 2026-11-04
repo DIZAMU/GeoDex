@@ -1,6 +1,6 @@
 import { join } from "node:path";
 import { expect, type Page, test } from "@playwright/test";
-import { setUpLearner } from "./helpers";
+import { setUpLearner, turnOn } from "./helpers";
 
 async function shot(page: Page, name: string) {
   await page.waitForTimeout(700); // the map flies to the answer
@@ -40,7 +40,6 @@ async function seedHistory(page: Page, cards: { cardId: string; daysAgo: number 
               scheduled: true,
               locale: "en",
               deviceId: "seed",
-              synced: 0,
             });
           });
           tx.objectStore("cardState").clear();
@@ -54,9 +53,9 @@ async function seedHistory(page: Page, cards: { cardId: string; daysAgo: number 
 
 test("cities: a city question, a pin answer and the not-the-capital card", async ({ page }) => {
   test.setTimeout(300_000);
-  await setUpLearner(page, 2);
+  await setUpLearner(page);
   await page.goto("/settings");
-  await page.getByTestId("module-cities-on").click();
+  await turnOn(page, "module-cities-switch");
   // Australia known for days and Sydney started yesterday: Melbourne's and Sydney's other
   // cards are new, and Sydney's not-the-capital card is seeded.
   await seedHistory(page, [

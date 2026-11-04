@@ -44,7 +44,7 @@ async function pointIn(
 test("on the flat map, a tap on a country wins over small neighbors' tap targets", async ({
   page,
 }) => {
-  await setUpLearner(page, 2);
+  await setUpLearner(page);
   await page.goto("/atlas?view=flat");
   await expect(page.getByTestId("atlas-regions")).toBeVisible();
   // Measure after the entry animation, or the map moves between measuring and clicking.
@@ -79,7 +79,7 @@ async function globeState(page: Page) {
 }
 
 test("the globe faces the home country and a tap on it opens the country", async ({ page }) => {
-  await setUpLearner(page, 2);
+  await setUpLearner(page);
   await page.goto("/atlas");
   const globe = page.getByTestId("globe");
   await expect(globe).toHaveAttribute("data-lambda", /.+/);
@@ -102,7 +102,7 @@ test("the globe faces the home country and a tap on it opens the country", async
 });
 
 test("dragging turns the globe in both directions and keeps spinning briefly", async ({ page }) => {
-  await setUpLearner(page, 2);
+  await setUpLearner(page);
   await page.goto("/atlas");
   const globe = page.getByTestId("globe");
   await expect(globe).toHaveAttribute("data-lambda", /.+/);
@@ -129,7 +129,7 @@ test("dragging turns the globe in both directions and keeps spinning briefly", a
 });
 
 test("the flat map is one toggle away and remembered in the address", async ({ page }) => {
-  await setUpLearner(page, 2);
+  await setUpLearner(page);
   await page.goto("/atlas");
   await page.getByTestId("view-flat").click();
   await expect(page).toHaveURL(/view=flat/);

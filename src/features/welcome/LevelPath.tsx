@@ -24,10 +24,10 @@ export function LevelPath({ current }: { current?: number }) {
         return (
           <li key={level} className="relative flex flex-col items-center gap-2 text-center">
             <span
-              className={`relative flex size-9 items-center justify-center rounded-full border text-sm font-semibold tabular-nums shadow-[var(--elevation)] ${here ? "ring-3 ring-primary" : ""}`}
+              className={`relative flex size-9 items-center justify-center rounded-full border text-sm font-medium tabular-nums ${here ? "ring-2 ring-foreground ring-offset-2 ring-offset-background" : ""}`}
               style={{
                 background: `var(--mastery-${ramp(level)})`,
-                color: ramp(level) >= 3 ? "var(--background)" : "var(--foreground)",
+                color: `var(--on-mastery-${ramp(level)})`,
                 borderColor: "var(--border)",
               }}
               aria-current={here ? "step" : undefined}

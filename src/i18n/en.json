@@ -3,36 +3,28 @@
     "name": "GeoDex"
   },
   "today": {
-    "title": "Today",
-    "summary": "{{reviews}} and {{newCards}}, about {{minutes}} min",
+    "summary": "{{reviews}} and {{newCards}}, about {{minutes}} minutes",
     "nothingLeft": "Nothing left today. New cards unlock as you review.",
     "paused": "New cards are paused until the backlog fits your daily time.",
-    "start": "Start session",
     "inputMode": "Answer with",
     "nextRegion": "Next region: {{name}}",
-    "setupTitle": "Set up GeoDex",
-    "setupBody": "Choose your home country and take a short placement test. It finds what you already know.",
-    "setup": "Set up",
     "reviews_one": "{{count}} review",
     "reviews_other": "{{count}} reviews",
     "newCards_one": "{{count}} new card",
     "newCards_other": "{{count}} new cards",
-    "statReviews": "Reviews",
-    "statNew": "New",
-    "statMinutes": "Minutes",
     "mapTitle": "Your map",
     "mapStarted": "{{count}} of {{total}} countries started",
-    "legendStarted": "Started",
-    "legendNext": "Next region"
+    "due_one": "{{formatted}} card today",
+    "due_other": "{{formatted}} cards today",
+    "doneTitle": "Done for today"
   },
   "settings": {
     "label": "Settings",
     "theme": {
-      "label": "Theme",
-      "atlas": "Atlas",
-      "minimal": "Minimal",
-      "playful": "Playful",
-      "auto": "Auto"
+      "label": "Appearance",
+      "light": "Light",
+      "dark": "Dark",
+      "auto": "Match device"
     },
     "language": {
       "label": "Language",
@@ -45,22 +37,12 @@
     "countdown": "Countdown",
     "countdownOff": "Off",
     "seconds": "{{count}} s",
-    "cities": "Famous cities (after their country)",
-    "currencyLanguage": "Currency and language cards",
-    "on": "On",
-    "off": "Off",
     "homeCountry": "Home country",
-    "rerunPlacement": "Rerun the placement test",
-    "groupLook": "Language and look",
+    "groupLook": "Language, look and sound",
     "groupStudy": "Study",
-    "groups": "Groups of countries (after half their members)",
-    "landmarks": "Landmarks (after their country)",
-    "physical": "Physical geography (after a country it touches)",
-    "history": "History (former names, dissolved states, empires)",
     "welcomeAgain": "Show the welcome page and tour again",
-    "groupGoals": "Your goals",
-    "groupTopics": "What you want to learn",
-    "groupGuide": "Guidance",
+    "groupTopics": "Topics",
+    "groupGuide": "Guide",
     "dailyMinutesHelp": "How long you study on a normal day. It sets how many new cards you get and the time estimate.",
     "goalKind": "Daily goal",
     "goalMinutes": "Reach my daily time",
@@ -68,18 +50,54 @@
     "sessionsPerDay": "Sessions a day",
     "sessions_one": "{{count}} session",
     "sessions_other": "{{count}} sessions",
-    "goalHelp": "Meeting your goal fills the ring on Today, earns XP and counts the day for your streak, even with reviews left.",
+    "goalHelp": "Meeting your goal earns XP and counts the day for your streak, even with reviews left.",
     "sessionLength": "Session length",
     "sessionFocus": "Session focus",
     "levelProgress": "Way to the next level",
     "levelCards": "Cards to go",
-    "levelPercent": "Percentage"
+    "levelPercent": "Percentage",
+    "sound": "Sound",
+    "soundHelp": "A short tone after each answer and at the end of a session",
+    "vibration": "Vibration",
+    "vibrationHelp": "A short buzz after each answer, on phones that support it",
+    "topic": {
+      "currencyLanguage": {
+        "label": "Currency and language",
+        "detail": "Which currency and official languages each country uses"
+      },
+      "cities": {
+        "label": "Famous cities",
+        "detail": "Big and well known cities, introduced after their country"
+      },
+      "groups": {
+        "label": "Groups of countries",
+        "detail": "Such as the Nordic countries or the EU, introduced after half their members"
+      },
+      "landmarks": {
+        "label": "Landmarks",
+        "detail": "Famous sights with a photo, introduced after their country"
+      },
+      "physical": {
+        "label": "Physical geography",
+        "detail": "Rivers, lakes, seas, mountains and deserts, introduced after a country they touch"
+      },
+      "history": {
+        "label": "History",
+        "detail": "Former names, dissolved states and empires"
+      }
+    },
+    "countdownHelp": "Time to answer each question. Off lets you think as long as you like.",
+    "sessionLengthHelp": "How many questions a session has when you press Start.",
+    "sessionFocusHelp": "What a session draws from first.",
+    "levelProgressHelp": "How Today shows the way to your next level.",
+    "homeCountryHelp": "New countries come from your own region first, then from regions further away."
   },
   "nav": {
     "today": "Today",
     "settings": "Settings",
     "atlas": "Atlas",
-    "stats": "Stats"
+    "stats": "Stats",
+    "label": "Main"
   },
   "common": {
     "loading": "Loading"
@@ -90,33 +108,14 @@
     "typing": "Typing"
   },
   "onboarding": {
-    "title": "Set up GeoDex",
+    "title": "Language and home country",
     "home": "Home country",
-    "homeHelp": "Learning starts with its region, and explanations compare with it.",
+    "homeHelp": "Your first lessons start with its region, and explanations compare places with it.",
     "search": "Search countries",
     "noMatch": "No country matches. Check the spelling.",
-    "start": "Start the placement test",
-    "placementTitle": "Already know some countries?",
-    "placementBody": "A 5-minute test finds what you already know, so you skip it. You can take it later from Settings.",
-    "takeTest": "Take the test",
-    "fromZero": "Start from zero"
-  },
-  "placement": {
-    "title": "Placement test",
-    "intro": "A short test of what you already know, region by region. Wrong answers are not held against you.",
-    "skip": "Skip this region",
-    "finish": "Finish now",
-    "answered": "{{count}} answered",
-    "region": "Region: {{name}}",
-    "resultTitle": "Placement result",
-    "countries": "Countries placed: {{count}}",
-    "capitals": "Capitals known: {{count}}",
-    "flags": "Flags known: {{count}}",
-    "startsWith": "Daily learning starts with {{region}}.",
-    "toToday": "Go to today",
-    "statCountries": "Countries",
-    "statCapitals": "Capitals",
-    "statFlags": "Flags"
+    "start": "Start",
+    "chosen": "Home country: {{name}}",
+    "choose": "Choose a home country to start"
   },
   "q": {
     "city_to_country": "Which country is {{city}} in?",
@@ -201,9 +200,7 @@
     "continue": "Test me"
   },
   "session": {
-    "left": "{{count}} left",
     "end": "End session",
-    "doneTitle": "Session done",
     "reviewed_one": "{{count}} review",
     "reviewed_other": "{{count}} reviews",
     "backToToday": "Back to today",
@@ -219,8 +216,7 @@
     "hint": "Show a hint",
     "notHelpful": "Mark a memory hook not helpful",
     "end": "End the session",
-    "help": "Show these shortcuts",
-    "close": "Close"
+    "help": "Show these shortcuts"
   },
   "map": {
     "label": "World map"
@@ -229,36 +225,15 @@
     "alt": "Flag",
     "of": "Flag of {{name}}"
   },
-  "sync": {
-    "title": "Sync",
-    "off": "Sync is off in this build, so everything stays on this device. Use export below to keep a backup.",
-    "intro": "Sign in to keep your progress the same on all your devices.",
-    "email": "Email",
-    "sendCode": "Send code",
-    "codeSent": "A sign-in email is on its way to {{email}}. Paste the sign-in link from it here, or type the code if it has one.",
-    "code": "Sign-in link or code",
-    "signIn": "Sign in",
-    "signedIn": "Signed in as {{email}}",
-    "lastSynced": "Last synced {{time}}",
-    "never": "Not synced yet on this device",
-    "pending_one": "{{count}} change waiting to sync",
-    "pending_other": "{{count}} changes waiting to sync",
-    "syncNow": "Sync now",
-    "syncing": "Syncing",
-    "offline": "Offline. Changes sync when you reconnect.",
-    "error": "Sync failed: {{message}}. Your progress is safe on this device; try again.",
-    "signOut": "Sign out",
-    "codeError": "That link or code did not work. Copy the whole link from the newest email, or send a new one.",
-    "sendError": "The code could not be sent: {{message}}",
-    "noAccount": "No GeoDex account uses that email. Check the address; accounts are created in Supabase, not in the app."
-  },
   "backup": {
     "title": "Backup",
-    "body": "Export all your reviews and settings to a file, or import one. Importing adds what is missing and never removes anything.",
-    "export": "Export data",
-    "import": "Import data",
-    "imported": "Imported {{reviews}} reviews and {{votes}} hook votes.",
-    "importError": "That file is not a GeoDex export."
+    "body": "Progress is saved in this browser after every answer. Clearing the browser's data erases it. A backup file keeps a copy and moves your progress to another device.",
+    "export": "Download backup",
+    "import": "Restore backup",
+    "lastBackup": "Last backup: {{date}}",
+    "never": "No backup made in this browser yet",
+    "imported": "Restored {{reviews}} answers and {{votes}} hook votes.",
+    "importError": "That file is not a GeoDex backup."
   },
   "continent": {
     "africa": "Africa",
@@ -359,15 +334,15 @@
     "grid": "Skills by continent",
     "cell": "{{mastered}} mastered, {{started}} started, {{total}} cards",
     "gridHelp": "Share of cards mastered (21+ days).",
-    "retention": "Retention, last 30 days",
+    "retention": "Remembered, last 30 days",
     "retentionValue": "{{correct}} of {{total}} reviews correct",
     "target": "target {{value}}",
     "noRetention": "No reviews of known cards in the last 30 days.",
     "forecast": "Due in the next 30 days",
-    "confusions": "Top confusions",
+    "confusions": "Mixed up most",
     "noConfusions": "No confusions yet.",
-    "leeches": "Leeches",
-    "noLeeches": "No card has lapsed six times.",
+    "leeches": "Cards that keep slipping",
+    "noLeeches": "No card has slipped six times.",
     "hooks": "Hooks that work for you",
     "hookRate": "{{value}} remembered next time",
     "noHooks": "Not enough reviews after hooks yet.",
@@ -381,14 +356,23 @@
     "landmarks": "Landmarks",
     "physical": "Physical geography",
     "history": "History",
-    "levels": "Levels",
-    "levelsHelp": "Memory level 1 to 10 per continent and topic. It drops when cards are forgotten."
+    "levels": "By continent and topic",
+    "levelsHelp": "Memory level 1 to 10 for each. It drops when cards are forgotten.",
+    "levelTitle": "Level and XP",
+    "levelHelp": "XP only goes up. The memory level follows what you remember right now, so it can slip.",
+    "forecastWeek_one": "{{formatted}} card due in the next 7 days",
+    "forecastWeek_other": "{{formatted}} cards due in the next 7 days",
+    "confusionsHelp": "Pairs you have confused lately. Drill a pair to tell them apart.",
+    "pair": "{{a}} and {{b}}",
+    "leechesHelp": "Forgotten six times or more.",
+    "hooksHelp": "Kinds of memory hooks, by how often you remembered the card the next time."
   },
   "streak": {
     "days_one": "{{count}}-day streak",
     "days_other": "{{count}}-day streak",
     "none": "No streak yet",
-    "longest": "Longest {{count}}",
+    "longest_one": "Longest streak: {{count}} day",
+    "longest_other": "Longest streak: {{count}} days",
     "freezes_one": "{{count}} freeze in reserve",
     "freezes_other": "{{count}} freezes in reserve"
   },
@@ -400,18 +384,20 @@
     "streak": "{{count}}-day streak"
   },
   "summary": {
-    "retention": "Correct: {{value}}",
     "tomorrow_one": "{{count}} card due tomorrow",
     "tomorrow_other": "{{count}} cards due tomorrow",
     "newAchievements": "New achievements",
     "xp": "+{{xp}} XP",
     "levelUp": "Memory level {{level}}",
-    "rankUp": "New rank: {{rank}}"
+    "rankUp": "New rank: {{rank}}",
+    "right_one": "{{correct}} of {{total}} right",
+    "right_other": "{{correct}} of {{total}} right",
+    "misses": "To see again soon",
+    "mixedUp": "mixed up with {{name}}"
   },
   "drill": {
     "title": "Drill",
     "note": "Practice only: drill answers do not change your schedule or your streak.",
-    "region": "Drill: {{name}}",
     "pair": "Drill: {{a}} and {{b}}",
     "empty": "Nothing to drill here yet."
   },
@@ -476,23 +462,19 @@
     "body": "Fact {{id}} ({{locale}}), shown on card {{card}}:\n\n> {{text}}\n\nWhat is wrong, and a source for the correct claim:\n"
   },
   "reset": {
-    "title": "Reset progress",
-    "body": "Start over from the placement test. Your progress, streak and stats count only reviews from now on. Earlier reviews stay in your exports and synced history, so nothing is lost.",
-    "button": "Reset progress",
-    "confirm": "Reset all progress now? This cannot be undone in the app.",
-    "yes": "Reset",
+    "title": "Start over",
+    "body": "Your level, streak and stats count only answers from now on. Earlier answers stay in backup files made before you start over.",
+    "button": "Start over",
+    "confirm": "Start over now? This cannot be undone.",
+    "yes": "Start over",
     "cancel": "Cancel"
   },
   "welcome": {
-    "eyebrow": "Free geography trainer",
-    "title": "Learn the world, and keep it.",
-    "lead": "GeoDex teaches you every country, capital and flag, and much more, in short daily sessions. It notices what you mix up and brings each card back just before you would forget it.",
-    "free": "Free. No ads, no account, no tracking.",
-    "freeWhy": "Made to help people learn geography. There is nothing to buy.",
+    "title": "Every country, capital and flag, learned for good",
+    "lead": "A few minutes a day. Each card comes back just before you would forget it, and the gap grows every time you remember.",
     "start": "Start learning",
-    "try": "Try 3 questions",
     "language": "Language",
-    "topicsTitle": "What you can learn",
+    "topicsTitle": "Topics",
     "topics": {
       "countries": {
         "name": "Countries",
@@ -531,36 +513,9 @@
         "detail": "{{count}} old names, states and empires"
       }
     },
-    "optional": "Optional",
-    "getTitle": "What you get",
-    "get": {
-      "countries": "Place all {{count}} countries on a world map",
-      "capitals": "Name every capital and recognize every flag",
-      "currency": "Know each country's currency and official languages",
-      "extras": "If you want: {{cities}} cities, {{landmarks}} landmarks, {{physical}} rivers, seas and ranges, and {{history}} pieces of history"
-    },
-    "memoryTitle": "Knowledge that lasts",
-    "memoryBody": "Cramming fades within days. GeoDex uses spaced repetition: each card returns just before you would forget it, and the gap grows every time you remember. A year from now, you still know it.",
-    "timeTitle": "How long it takes",
+    "optional": "Off until you switch it on",
     "timeBody": "At about {{minutes}} minutes a day you meet every country card within about {{weeks}} weeks, and know them all in about {{months}} months.",
     "timeAll": "With every topic switched on: about {{months}} months.",
-    "howTitle": "How it works",
-    "steps": {
-      "home": {
-        "title": "Pick your home country",
-        "body": "Comparisons use places you know. An optional 5-minute test skips what you already know."
-      },
-      "daily": {
-        "title": "Study a few minutes a day",
-        "body": "Answer on the map, by picking or by typing. Questions get harder as you get better."
-      },
-      "fill": {
-        "title": "Watch your map fill in",
-        "body": "Every country you learn colors your atlas, and your level climbs towards 10."
-      }
-    },
-    "levelsTitle": "Levels from 1 to 10",
-    "levelsBody": "Your level shows how much you remember, not how much you clicked. It rises as cards hold for longer, and slips if you forget.",
     "levels": {
       "1": "Just started",
       "3": "Learning",
@@ -568,86 +523,69 @@
       "8": "Holds three weeks",
       "10": "Mastered"
     },
-    "demoTitle": "Try 3 questions",
-    "demoBody": "Nothing is saved. This is what a session feels like.",
     "demoProgress": "Question {{n}} of {{total}}",
     "demoNext": "Next question",
     "demoDone": "That is GeoDex. A real session adapts to you: what you miss comes back sooner.",
     "demoAgain": "Try again",
-    "privacy": "Everything stays on your device unless you turn on sync.",
-    "madeBy": "Made by DIZAMU"
-  },
-  "infobox": {
-    "title": "What is GeoDex?",
-    "points": {
-      "what": "Short daily sessions teach countries, capitals, flags and more.",
-      "when": "Cards come back just before you would forget them, so study on as many days as you can.",
-      "progress": "Your map and levels show how much you hold."
-    },
-    "help": "How it works",
-    "welcome": "About GeoDex",
-    "open": "Show",
-    "close": "Hide"
+    "madeBy": "Made by DIZAMU",
+    "facts": "Free, and it works offline. Your progress stays in this browser.",
+    "paceTitle": "{{minutes}} minutes a day",
+    "memory": "Wrong answers come back the same day. Countries you mix up get a card of their own that tells the two apart.",
+    "close": "Pick your home country and the first session starts. There is nothing to sign up for."
   },
   "tour": {
+    "label": "Guided tour",
     "next": "Next",
     "back": "Back",
     "skip": "Skip tour",
     "done": "Done",
     "progress": "{{n}} of {{total}}",
-    "label": "Guided tour",
+    "startFirst": "Start the first session",
+    "start": "Start a session",
+    "later": "Look around first",
+    "answers": {
+      "auto": "answers as choices at first",
+      "mc": "answers as choices",
+      "typing": "typed answers"
+    },
     "steps": {
-      "start": {
-        "title": "Start here",
-        "body": "Pick how many questions and what to practise, then start. A session takes a few minutes."
+      "intro": {
+        "title": "A few minutes a day",
+        "body": "Each day has a short session: the cards due for review and a few new countries. Three things to know, then you are ready."
+      },
+      "length": {
+        "title": "Pick a session length",
+        "body": "Try 5 questions for a first go. You can change this before every session."
       },
       "input": {
         "title": "Choose how you answer",
-        "body": "Auto starts with choices and moves to typing as you get better. Pick one if you prefer."
+        "body": "Auto starts with choices and moves to typing as you get better. You can also pick one yourself."
       },
-      "overview": {
-        "title": "Your level",
-        "body": "Memory level 1 to 10 shows how much you hold right now and can drop if you forget. XP and your rank only go up. The small ring is today's goal."
+      "progress": {
+        "title": "Your map and level",
+        "body": "Countries you start fill in on the map, and the region you learn next is marked. The level shows how much you remember right now. Stats has the full picture."
       },
-      "map": {
-        "title": "Your map",
-        "body": "Countries you have started fill in. The outlined region is next."
-      },
-      "atlas": {
-        "title": "Atlas",
-        "body": "Every country with your level in each skill, country pages, and borders over time."
-      },
-      "stats": {
-        "title": "Stats",
-        "body": "What you remember, what you mix up, and what is coming up."
-      },
-      "settings": {
-        "title": "Settings",
-        "body": "Topics, daily time, language, theme, sync and backup."
-      },
-      "help": {
-        "title": "Help is always here",
-        "body": "Open it for a map of the app, how grading works, or to replay this tour."
+      "ready": {
+        "title": "Ready?",
+        "titleNothing": "Nothing due right now",
+        "body": "{{questions}}, new countries from {{region}}, {{answers}}.",
+        "bodyNoRegion": "{{questions}}, {{answers}}."
       }
     }
   },
   "help": {
     "button": "Help",
     "title": "Help",
-    "lead": "Where to go for what, and how GeoDex works.",
-    "mapTitle": "The app at a glance",
+    "lead": "How GeoDex grades, schedules and counts your progress, and where it keeps it.",
+    "mapTitle": "Screens",
     "nodes": {
       "welcome": {
-        "name": "Welcome",
-        "body": "What GeoDex is and what you can learn."
+        "name": "First screen",
+        "body": "A sample question, what you can learn and how long it takes."
       },
       "today": {
         "name": "Today",
-        "body": "Start a session and see today's work and your streak."
-      },
-      "session": {
-        "name": "Session",
-        "body": "Answer questions. Feedback explains every answer."
+        "body": "Start a session, and see what is due, your map and your level."
       },
       "atlas": {
         "name": "Atlas",
@@ -659,24 +597,26 @@
       },
       "settings": {
         "name": "Settings",
-        "body": "Topics, daily time, language, theme, sync and backup."
+        "body": "Topics, daily time, language, appearance, sound and backups."
       }
     },
-    "startsFrom": "starts from Today",
-    "gradingTitle": "How answers are graded",
+    "gradingTitle": "Grading",
     "gradingBody": "You never grade yourself. Wrong is wrong. A right answer counts as good, as hard after a hint, a typo or a slow answer, or as easy when you type or tap it fast.",
-    "harderTitle": "Why questions get harder",
+    "harderTitle": "Difficulty",
     "harderBody": "A new card asks with choices on a close map. As you remember it for longer, you type the answer and the map zooms out to the continent, then the world.",
-    "scheduleTitle": "Why cards come back",
+    "scheduleTitle": "Scheduling",
     "scheduleBody": "Each card returns just before you would forget it. Miss one and it comes back soon; know it and the gap grows.",
     "keysTitle": "Keyboard",
     "keysBody": "In a session: 1 to 4 choose, Enter submits and continues, H shows a hint, Esc ends. Press ? for the full list.",
     "replayTour": "Replay the tour",
-    "showWelcome": "Show the welcome page",
+    "showWelcome": "Show the first screen",
     "xpTitle": "Levels and XP",
-    "xpBody": "Your memory level, from 1 to 10, shows how much you hold right now, so it drops when you forget. XP only goes up: correct answers, finished sessions, study days, your daily goal, and cards that hold for a week, three weeks and two months. XP earns ranks, from Tourist to Atlas keeper.",
-    "goalTitle": "Your daily goal",
-    "goalBody": "Reach your daily time or finish a number of sessions; choose in Settings. Meeting it fills the ring on Today, earns XP, and counts the day for your streak even with reviews left."
+    "xpBody": "XP only goes up: correct answers, finished sessions, study days, your daily goal, and cards that hold for a week, three weeks and two months. XP earns ranks, from Tourist to Atlas keeper.",
+    "goalTitle": "Daily goal",
+    "goalBody": "Reach your daily time or finish a number of sessions; choose which in Settings. Meeting it earns XP and counts the day for your streak, even with reviews left.",
+    "levelsBody": "Your level shows how much you remember right now. It rises as cards hold for longer and slips if you forget.",
+    "progressTitle": "Your progress",
+    "progressBody": "Progress is saved in this browser after every answer, and nowhere else. Clearing the browser's data erases it. Download a backup in Settings now and then, and use it to move to another device."
   },
   "picker": {
     "length": "Length",
@@ -707,14 +647,12 @@
     "again_other": "Another {{count}} questions"
   },
   "overview": {
-    "title": "Your progress",
     "level": "Level",
     "levelLabel": "Memory level {{level}} of 10",
     "memory": "Memory level",
     "toNext_one": "{{count}} more card to level {{level}}",
     "toNext_other": "{{count}} more cards to level {{level}}",
     "top": "Top level. Keep reviewing to hold it.",
-    "ofMinutes": "of {{goal}} min",
     "xpLevel": "XP level {{level}}",
     "xp": "{{xp}} XP",
     "xpToNext": "{{xp}} XP to the next XP level",
@@ -722,8 +660,6 @@
     "goalMinutesLabel": "{{done}} of {{count}} minutes studied today",
     "goalSessionsLabel_one": "{{done}} of {{count}} session done today",
     "goalSessionsLabel_other": "{{done}} of {{count}} sessions done today",
-    "ofSessions_one": "of {{goal}} session",
-    "ofSessions_other": "of {{goal}} sessions",
     "toNextPercent": "{{percent}} of the way to level {{level}}",
     "showCards": "Show cards to go",
     "showPercent": "Show as a percentage"

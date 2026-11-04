@@ -1,6 +1,6 @@
 /**
- * JSON export and import of all synced data (PLAN.md 5.6), independent of Supabase.
- * Import merges: events are added by id (never changed), settings by last write wins.
+ * Backup files (PLAN-2.0): the only way progress moves between browsers. Import merges:
+ * events are added by id (never changed), settings by last write wins.
  */
 import type { FSRS } from "ts-fsrs";
 import {
@@ -20,13 +20,17 @@ export type Backup = {
   version: typeof BACKUP_VERSION;
   exportedAt: number;
   settings: Omit<SettingsRow, "id"> | null;
-  reviewEvents: Omit<ReviewEvent, "synced">[];
-  hookVoteEvents: Omit<HookVoteEvent, "synced">[];
+  reviewEvents: ReviewEvent[];
+  hookVoteEvents: HookVoteEvent[];
 };
 
 export async function exportData(db: GeoDexDb, now = Date.now()): Promise<Backup> {
   const settings = await db.settings.get(SETTINGS_ROW_ID);
-  const strip = <T extends { synced: 0 | 1 }>({ synced: _s, ...rest }: T) => rest;
+  // Rows written before 2.0 may still carry the old sync flag; backups leave it out.
+  const strip = <T extends object>(row: T): T => {
+    const { synced: _s, ...rest } = row as T & { synced?: unknown };
+    return rest as T;
+  };
   return {
     format: BACKUP_FORMAT,
     version: BACKUP_VERSION,
@@ -76,12 +80,8 @@ export async function importData(
     async () => {
       const haveReviews = new Set(await db.reviewEvents.toCollection().primaryKeys());
       const haveVotes = new Set(await db.hookVoteEvents.toCollection().primaryKeys());
-      const reviews = backup.reviewEvents
-        .filter((e) => !haveReviews.has(e.id))
-        .map((e) => ({ ...e, synced: 0 as const }));
-      const votes = backup.hookVoteEvents
-        .filter((v) => !haveVotes.has(v.id))
-        .map((v) => ({ ...v, synced: 0 as const }));
+      const reviews = backup.reviewEvents.filter((e) => !haveReviews.has(e.id));
+      const votes = backup.hookVoteEvents.filter((v) => !haveVotes.has(v.id));
       await db.reviewEvents.bulkAdd(reviews);
       await db.hookVoteEvents.bulkAdd(votes);
       const local = await db.settings.get(SETTINGS_ROW_ID);

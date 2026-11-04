@@ -1,138 +1,112 @@
 /*
- * Theme tokens. The three themes share layout and type; only colors, radius, weights and
- * the map easing differ. Contrast pairs are checked in contrast.test.ts.
+ * One design system in two modes (docs/PLAN-2.0.md): paper and sea. Light is the default;
+ * dark is derived from the same roles with the hues held, surfaces lighter as they rise and
+ * no shadows. Contrast pairs are checked in contrast.test.ts. The accent (primary) is ink
+ * blue and belongs to the one main action and the next region on the map.
  */
-
-[data-theme="atlas"] {
-  color-scheme: dark;
-  --background: #0e2433; /* Abyss */
-  --foreground: #e7eef2; /* Ink */
-  --card: #18394c; /* Shelf */
-  --card-foreground: #e7eef2;
-  --popover: #18394c;
-  --popover-foreground: #e7eef2;
-  --primary: #f4b740; /* Buoy */
-  --primary-foreground: #0e2433;
-  --secondary: #18394c;
-  --secondary-foreground: #e7eef2;
-  --muted: #21475e;
-  --muted-foreground: #a3b8c6;
-  --accent: #21475e;
-  --accent-foreground: #e7eef2;
-  --destructive: #ff8a7a;
-  --border: #2b536b;
-  --input: #2b536b;
-  --ring: #f4b740;
-  --map-ocean: #0e2433;
-  --map-land: #1e4359;
-  --map-border: #7fa3b8;
-  --radius: 10px;
-  --weight-ui: 400;
-  --weight-name: 600;
-  --border-width: 1px;
-  --ease-map: cubic-bezier(0.22, 1, 0.36, 1);
-  --glow: rgb(244 183 64 / 0.1);
-  --glow-2: rgb(76 154 196 / 0.16);
-  --elevation: inset 0 1px 0 rgb(255 255 255 / 0.05), 0 18px 40px -20px rgb(0 0 0 / 0.65);
-  --elevation-hover: inset 0 1px 0 rgb(255 255 255 / 0.07), 0 22px 44px -18px rgb(0 0 0 / 0.75);
-  --map-shade: rgb(4 14 22 / 0.55);
-  --map-graticule: rgb(127 163 184 / 0.12);
-  --mastery-0: #1e4359;
-  --mastery-1: #2b5e6e;
-  --mastery-2: #2f7a78;
-  --mastery-3: #3a977d;
-  --mastery-4: #5fb98a;
-}
-
-[data-theme="minimal"] {
+[data-theme="light"] {
   color-scheme: light;
-  --background: #f6f8fa; /* Snow */
-  --foreground: #1e2a35; /* Slate */
-  --card: #e3e9ee; /* Mist */
-  --card-foreground: #1e2a35;
-  --popover: #ffffff;
-  --popover-foreground: #1e2a35;
-  --primary: #2b698e; /* Fjord, darkened from #2F6F95 to pass AA on Mist */
-  --primary-foreground: #ffffff;
-  --secondary: #e3e9ee;
-  --secondary-foreground: #1e2a35;
-  --muted: #d6dfe6;
-  --muted-foreground: #4a5866;
-  --accent: #d6dfe6;
-  --accent-foreground: #1e2a35;
-  --destructive: #b42318;
-  --border: #c5d0d9;
-  --input: #c5d0d9;
-  --ring: #2b698e;
-  --map-ocean: #e8f0f5;
-  --map-land: #ffffff;
-  --map-border: #728595;
-  --radius: 6px;
+  --background: #f7fbfc; /* paper, a hair toward the sea */
+  --foreground: #121c23; /* ink */
+  --card: #eef3f5; /* one tone step up from the paper */
+  --card-foreground: #121c23;
+  --popover: #fbfdfd;
+  --popover-foreground: #121c23;
+  --primary: #006495; /* ink blue */
+  --primary-foreground: #f7fbfc;
+  --secondary: #e4ebee;
+  --secondary-foreground: #121c23;
+  --muted: #e4ebee;
+  --muted-foreground: #5d686f;
+  --accent: #e4ebee;
+  --accent-foreground: #121c23;
+  --destructive: #b33832;
+  --right: #287c42;
+  --border: #d5dee3;
+  --input: #7b8d97;
+  --ring: #006495;
+  --map-ocean: #cae3ed;
+  --map-land: #fcfcf9;
+  --map-border: #6a808c;
+  --map-water-label: #2c6481;
+  --radius: 8px;
   --weight-ui: 400;
   --weight-name: 500;
   --border-width: 1px;
   --ease-map: cubic-bezier(0.22, 1, 0.36, 1);
-  --glow: rgb(43 105 142 / 0.07);
-  --glow-2: rgb(43 105 142 / 0.04);
-  --elevation: 0 1px 2px rgb(16 24 40 / 0.05), 0 10px 28px -16px rgb(16 24 40 / 0.18);
-  --elevation-hover: 0 1px 2px rgb(16 24 40 / 0.06), 0 14px 32px -14px rgb(16 24 40 / 0.24);
-  --map-shade: rgb(114 133 149 / 0.16);
-  --map-graticule: rgb(114 133 149 / 0.16);
-  --mastery-0: #e6ecf1;
-  --mastery-1: #b9cddc;
-  --mastery-2: #7fa6c2;
-  --mastery-3: #4a7ea6;
-  --mastery-4: #1f5680;
+  /* Shadows only on things that float: menus, dialogs, the tour card. */
+  --elevation: 0 1px 2px rgb(18 28 35 / 0.06), 0 8px 24px rgb(18 28 35 / 0.08);
+  --elevation-hover: var(--elevation);
+  --map-shade: transparent;
+  --map-graticule: rgb(18 28 35 / 0.07);
+  /* Mastery: from unseen land to a deep atlas green, by lightness first. */
+  --mastery-0: #eef2f0;
+  --mastery-1: #d4e6d6;
+  --mastery-2: #a8cfae;
+  --mastery-3: #6fae7d;
+  --mastery-4: #2f7a4c;
+  /* Text on each mastery step: ink while it holds 4.5:1, then paper. */
+  --on-mastery-0: #121c23;
+  --on-mastery-1: #121c23;
+  --on-mastery-2: #121c23;
+  --on-mastery-3: #121c23;
+  --on-mastery-4: #f7fbfc;
 }
 
-[data-theme="playful"] {
-  color-scheme: light;
-  --background: #eaf6ff; /* Sky */
-  --foreground: #22223b; /* Night */
-  --card: #ffffff; /* Cloud */
-  --card-foreground: #22223b;
-  --popover: #ffffff;
-  --popover-foreground: #22223b;
-  --primary: #6c4ab6; /* Grape */
-  --primary-foreground: #ffffff;
-  --secondary: #ffc93c; /* Sunflower: fills only, never text on light surfaces */
-  --secondary-foreground: #22223b;
-  --muted: #f1ecfb;
-  --muted-foreground: #4a4a6a;
-  --accent: #f1ecfb;
-  --accent-foreground: #22223b;
-  --destructive: #b42318;
-  --border: #c3d9ee;
-  --input: #c3d9ee;
-  --ring: #6c4ab6;
-  --map-ocean: #cfeaff;
-  --map-land: #ffffff;
-  --map-border: #5a80a6;
-  --radius: 16px;
-  --weight-ui: 600;
-  --weight-name: 700;
-  --border-width: 2px;
-  --ease-map: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --glow: rgb(255 201 60 / 0.28);
-  --glow-2: rgb(108 74 182 / 0.14);
-  --elevation: 0 2px 0 rgb(34 34 59 / 0.05), 0 16px 34px -18px rgb(108 74 182 / 0.45);
-  --elevation-hover: 0 2px 0 rgb(34 34 59 / 0.06), 0 20px 38px -16px rgb(108 74 182 / 0.55);
-  --map-shade: rgb(90 128 166 / 0.18);
-  --map-graticule: rgb(90 128 166 / 0.18);
-  --mastery-0: #ece8f6; /* not started: a neutral tint, viridis begins at level 1 */
-  --mastery-1: #b5de2b;
-  --mastery-2: #35b779;
-  --mastery-3: #26828e;
-  --mastery-4: #3e4989;
+[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #0c1316;
+  --foreground: #e6ecef;
+  --card: #141b1f;
+  --card-foreground: #e6ecef;
+  --popover: #1b2327;
+  --popover-foreground: #e6ecef;
+  --primary: #6eacd7;
+  --primary-foreground: #0c1316;
+  --secondary: #1b2327;
+  --secondary-foreground: #e6ecef;
+  --muted: #1b2327;
+  --muted-foreground: #96a0a6;
+  --accent: #222c31;
+  --accent-foreground: #e6ecef;
+  --destructive: #e47c72;
+  --right: #6fc082;
+  --border: #26323a;
+  --input: #5f6f78;
+  --ring: #6eacd7;
+  --map-ocean: #142730;
+  --map-land: #38352e;
+  --map-border: #71838d;
+  --map-water-label: #9cc7e0;
+  --radius: 8px;
+  --weight-ui: 400;
+  --weight-name: 500;
+  --border-width: 1px;
+  --ease-map: cubic-bezier(0.22, 1, 0.36, 1);
+  /* No shadows in dark: a floating surface is one step lighter with a hairline. */
+  --elevation: inset 0 0 0 1px #26323a;
+  --elevation-hover: var(--elevation);
+  --map-shade: transparent;
+  --map-graticule: rgb(230 236 239 / 0.06);
+  --mastery-0: #232c30;
+  --mastery-1: #24443a;
+  --mastery-2: #2f6a4f;
+  --mastery-3: #4a9466;
+  --mastery-4: #7cc48f;
+  --on-mastery-0: #e6ecef;
+  --on-mastery-1: #e6ecef;
+  --on-mastery-2: #e6ecef;
+  --on-mastery-3: #0c1316;
+  --on-mastery-4: #0c1316;
 }
 
-/* Brand artwork: the Abyss disc on light themes, the Ink disc on Atlas. */
+/* Brand artwork: the dark disc on light paper, the light disc in dark mode. */
 .brand-on-dark {
   display: none;
 }
-[data-theme="atlas"] .brand-on-light {
+[data-theme="dark"] .brand-on-light {
   display: none;
 }
-[data-theme="atlas"] .brand-on-dark {
+[data-theme="dark"] .brand-on-dark {
   display: block;
 }

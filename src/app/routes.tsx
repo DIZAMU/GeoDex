@@ -4,7 +4,6 @@ import { EntryScreen } from "@/features/atlas/EntryScreen";
 import { DrillScreen } from "@/features/drill/DrillScreen";
 import { HelpScreen } from "@/features/help/HelpScreen";
 import { OnboardingScreen } from "@/features/onboarding/OnboardingScreen";
-import { PlacementScreen } from "@/features/placement/PlacementScreen";
 import { SessionScreen } from "@/features/session/SessionScreen";
 import { SettingsScreen } from "@/features/settings/SettingsScreen";
 import { StatsScreen } from "@/features/stats/StatsScreen";
@@ -31,7 +30,8 @@ export const routes: RouteObject[] = [
         ],
       },
       { path: "/welcome", element: <WelcomeScreen /> },
-      { path: "/placement", element: <PlacementScreen /> },
+      // 1.0 had a placement test here; 2.0 starts everyone from the beginning.
+      { path: "/placement", element: <Navigate to="/" replace /> },
       { path: "/session", element: <SessionScreen /> },
       { path: "/drill", element: <DrillScreen /> },
       // Unknown addresses (old bookmarks, typos) go to Today instead of a bare 404.

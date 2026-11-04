@@ -26,28 +26,30 @@ afterEach(() => {
 
 describe("applyTheme", () => {
   it("sets the resolved theme and mirrors the preference", () => {
-    applyTheme("playful");
-    expect(document.documentElement.dataset.theme).toBe("playful");
-    expect(localStorage.getItem(THEME_MIRROR_KEY)).toBe("playful");
-    expect(readThemeMirror()).toBe("playful");
+    applyTheme("dark");
+    expect(document.documentElement.dataset.theme).toBe("dark");
+    expect(localStorage.getItem(THEME_MIRROR_KEY)).toBe("dark");
+    expect(readThemeMirror()).toBe("dark");
   });
 
   it("follows the system when the preference is auto", () => {
     dark = true;
     applyTheme("auto");
-    expect(document.documentElement.dataset.theme).toBe("atlas");
+    expect(document.documentElement.dataset.theme).toBe("dark");
     expect(document.documentElement.dataset.themePreference).toBe("auto");
 
     const stop = watchSystemTheme(() => applyTheme("auto"));
     dark = false;
     for (const listener of listeners) listener();
-    expect(document.documentElement.dataset.theme).toBe("minimal");
+    expect(document.documentElement.dataset.theme).toBe("light");
     stop();
     expect(listeners.size).toBe(0);
   });
 
-  it("falls back to Atlas when the mirror holds an unknown value", () => {
+  it("falls back to light for an unknown value and maps 1.0 themes", () => {
     localStorage.setItem(THEME_MIRROR_KEY, "neon");
-    expect(readThemeMirror()).toBe("atlas");
+    expect(readThemeMirror()).toBe("light");
+    localStorage.setItem(THEME_MIRROR_KEY, "atlas");
+    expect(readThemeMirror()).toBe("dark");
   });
 });

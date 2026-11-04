@@ -2,7 +2,7 @@
  * Session picker (PLAN.md 11.2): how many questions, and on what. The choice is remembered on
  * this device. A focused session shows the reviews it leaves for later.
  */
-import { ArrowRightIcon, ChevronDownIcon } from "lucide-react";
+import { ChevronDownIcon } from "lucide-react";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
@@ -117,7 +117,7 @@ export function SessionPicker({
   };
 
   return (
-    <div className="flex flex-col gap-5 pt-2" data-testid="picker">
+    <div className="flex flex-col gap-5" data-testid="picker">
       <div className="grid gap-4 sm:grid-cols-[auto_minmax(0,1fr)] sm:items-center sm:gap-x-6">
         <span className="text-sm text-muted-foreground" id="picker-length">
           {t("picker.length")}
@@ -129,6 +129,7 @@ export function SessionPicker({
           value={String(length)}
           aria-labelledby="picker-length"
           className="self-start"
+          data-tour="length"
           onValueChange={(value) => {
             if (value) pick({ length: parseLength(value) });
           }}
@@ -155,7 +156,7 @@ export function SessionPicker({
             data-testid="focus"
             value={focusKey(focus)}
             onChange={(e) => pick({ focus: parseFocus(e.target.value) })}
-            className="h-10 w-full appearance-none rounded-lg border border-border bg-card/60 py-2 pr-10 pl-3 text-sm shadow-xs outline-none transition-colors hover:bg-accent focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+            className="h-11 w-full appearance-none rounded-lg border border-input bg-background py-2 pr-10 pl-3 text-sm outline-none transition-colors hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring"
           >
             <option value="mixed">
               {t("picker.option", {
@@ -213,14 +214,13 @@ export function SessionPicker({
       <div className="flex flex-col gap-2">
         <Button
           size="lg"
-          className="group h-14 self-stretch px-8 text-base sm:self-start"
+          className="self-stretch sm:self-start"
           data-testid="start"
           data-tour="start"
           disabled={slice.queue.length === 0}
           onClick={start}
         >
           {t("picker.start", { count: slice.queue.length })}
-          <ArrowRightIcon className="transition-transform duration-200 group-hover:translate-x-0.5" />
         </Button>
         {slice.dueOutside > 0 ? (
           <p className="text-sm text-muted-foreground" data-testid="outside">

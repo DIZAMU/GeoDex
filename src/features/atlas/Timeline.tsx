@@ -60,7 +60,7 @@ export function Timeline({
       <label className="flex flex-col gap-1.5">
         <span className="flex items-baseline justify-between gap-3">
           <span className="text-sm text-muted-foreground">{t("atlas.year")}</span>
-          <span className="font-name text-xl tabular-nums" data-testid="timeline-year">
+          <span className="text-xl font-medium tabular-nums" data-testid="timeline-year">
             {formatYear(year, t)}
           </span>
         </span>
@@ -94,7 +94,7 @@ export function Timeline({
               data-testid="outline-caption"
               data-history={e.id}
             >
-              <span className="font-name">{e.names[locale]}</span>
+              <span className="font-medium">{e.names[locale]}</span>
               <span className="text-sm text-muted-foreground">
                 {formatPeriod(e.period, t)}
                 {", "}

@@ -1,7 +1,7 @@
 {
   "name": "geodex",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "type": "module",
   "description": "Spaced-repetition geography trainer. Local-first PWA, English and Norwegian.",
   "author": "DIZAMU",
@@ -27,13 +27,17 @@
     "content:compile": "node scripts/content/compile-templates.ts",
     "content:lint": "node scripts/content/lint.ts --complete",
     "content:review": "node scripts/content/review.ts",
+    "content:facts": "node scripts/content/facts.ts",
+    "content:nb": "node scripts/content/nb-review.ts",
     "test:coverage": "vitest run --coverage",
-    "docs:demo": "rm -rf test-results/demo && DEMO=1 playwright test tests/e2e/demo.spec.ts --project=desktop && ffmpeg -y -loglevel error -framerate 5 -i test-results/demo/frame%04d.png -vf \"scale=960:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=96[p];[b][p]paletteuse=dither=bayer:bayer_scale=4\" docs/media/demo.gif"
+    "demo:screens": "node scripts/demo/screens.ts",
+    "demo:music": "node scripts/demo/music.ts",
+    "demo:video": "node scripts/demo/video.ts",
+    "demo:edit": "node scripts/demo/edit.ts"
   },
   "dependencies": {
     "@fontsource-variable/newsreader": "5.3.0",
     "@fontsource-variable/schibsted-grotesk": "5.3.0",
-    "@supabase/supabase-js": "2.117.3",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "d3-geo": "3.1.1",

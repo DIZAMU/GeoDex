@@ -24,11 +24,7 @@ export function ExplanationView({
   const { t, i18n } = useTranslation();
   if (explanation.blocks.length === 0) return null;
   return (
-    <div
-      className="stagger flex flex-col gap-4"
-      data-testid="explanation"
-      data-moment={explanation.moment}
-    >
+    <div className="flex flex-col gap-4" data-testid="explanation" data-moment={explanation.moment}>
       {explanation.blocks.map((block) => {
         switch (block.kind) {
           case "template":
@@ -39,7 +35,7 @@ export function ExplanationView({
             );
           case "contrast":
             return (
-              <div key={block.id} className="flex flex-col gap-1 border-l-2 border-primary pl-3">
+              <div key={block.id} className="flex flex-col gap-1 rounded-lg bg-muted p-3">
                 <p className="text-sm text-muted-foreground">{t("feedback.contrastLabel")}</p>
                 <p className="max-w-[60ch]">{block.text}</p>
               </div>
@@ -52,16 +48,13 @@ export function ExplanationView({
             ) : (
               <figure
                 key={block.id}
-                className="flex flex-col gap-2 rounded-lg bg-background/40 p-4"
+                className="flex flex-col gap-2 rounded-lg bg-card p-4"
                 data-hook={block.id}
               >
                 <figcaption className="text-sm text-muted-foreground">
                   {t("feedback.hookLabel")}
                 </figcaption>
-                <blockquote
-                  className="max-w-[60ch] font-serif text-xl leading-snug italic"
-                  lang={block.locale}
-                >
+                <blockquote className="max-w-[60ch] text-lg leading-snug" lang={block.locale}>
                   {block.text}
                 </blockquote>
                 {onNotHelpful ? (

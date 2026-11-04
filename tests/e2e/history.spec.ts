@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { expect, type Page, test } from "@playwright/test";
-import { chooseThemeAndLocale, seed, setUpLearner } from "./helpers";
+import { chooseThemeAndLocale, seed, setUpLearner, turnOn } from "./helpers";
 
 type Outlined = {
   id: string;
@@ -24,7 +24,7 @@ test("every outline shows its snapshot year and an approximate label where it ap
   page,
 }) => {
   test.setTimeout(240_000);
-  await setUpLearner(page, 1);
+  await setUpLearner(page);
   for (const e of OUTLINED) {
     await page.goto(`/atlas?view=time&year=${e.outline.snapshotYear}`);
     const outline = page.locator(`[data-testid="history-outline"][data-history="${e.id}"]`);
@@ -39,8 +39,7 @@ test("every outline shows its snapshot year and an approximate label where it ap
   // The outline cards carry the same caption in a session. The module goes on first: the
   // settings screen writes the whole settings row, which would undo the seeded settings.
   await page.goto("/settings");
-  await page.getByTestId("module-history-on").click();
-  await expect(page.getByTestId("module-history-on")).toHaveAttribute("data-state", "on");
+  await turnOn(page, "module-history-switch");
   await seed(
     page,
     OUTLINED.map((e) => ({
@@ -116,20 +115,19 @@ test("every outline shows its snapshot year and an approximate label where it ap
 
 test("history cards and the timeline in every theme and language", async ({ page }) => {
   test.setTimeout(300_000);
-  await setUpLearner(page, 2);
+  await setUpLearner(page);
   // Each round has its own entities: reviews from one round reschedule its cards.
   const rounds = [
-    ["atlas", "en", ["Q2277:map_to_empire", "Q503623:former_name_to_country"], 117],
-    ["atlas", "nb", ["Q12560:empire_to_era", "Q28513:map_to_dissolved_state"], 1683],
-    ["minimal", "en", ["Q33946:dissolved_state_member", "Q8733:map_to_empire"], 1820],
-    ["minimal", "nb", ["Q28573:map_to_empire", "former-persia:former_name_to_country"], 1525],
-    ["playful", "en", ["Q15180:map_to_dissolved_state", "Q12557:empire_to_era"], 1279],
-    ["playful", "nb", ["Q16957:map_to_dissolved_state", "Q1081620:former_name_to_country"], 1989],
+    ["dark", "en", ["Q2277:map_to_empire", "Q503623:former_name_to_country"], 117],
+    ["dark", "nb", ["Q12560:empire_to_era", "Q28513:map_to_dissolved_state"], 1683],
+    ["light", "en", ["Q33946:dissolved_state_member", "Q8733:map_to_empire"], 1820],
+    ["light", "nb", ["Q28573:map_to_empire", "former-persia:former_name_to_country"], 1525],
+    ["light", "en", ["Q15180:map_to_dissolved_state", "Q12557:empire_to_era"], 1279],
+    ["light", "nb", ["Q16957:map_to_dissolved_state", "Q1081620:former_name_to_country"], 1989],
   ] as const;
   for (const [theme, locale, cards, year] of rounds) {
     await chooseThemeAndLocale(page, theme, locale);
-    await page.getByTestId("module-history-on").click();
-    await expect(page.getByTestId("module-history-on")).toHaveAttribute("data-state", "on");
+    await turnOn(page, "module-history-switch");
     await seed(
       page,
       cards.map((cardId) => ({ cardId, daysAgo: 2, rating: 1 })),

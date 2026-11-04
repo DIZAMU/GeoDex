@@ -134,7 +134,7 @@ export function PromptText({
   return (
     <div className="flex flex-col gap-3 lg:gap-4">
       <h2
-        className="font-name text-xl tracking-tight lg:text-3xl"
+        className="text-xl font-medium lg:text-2xl"
         data-testid="prompt"
         data-card={question.cardId}
       >
@@ -144,11 +144,7 @@ export function PromptText({
         <LandmarkPhoto landmark={landmark} alt={t("photo.altPrompt")} />
       ) : null}
       {question.prompt.kind === "flag" && country ? (
-        <Flag
-          iso2={country.iso2}
-          alt={t("flag.alt")}
-          className="w-56 max-w-full shadow-[var(--elevation)]"
-        />
+        <Flag iso2={country.iso2} alt={t("flag.alt")} className="w-56 max-w-full" />
       ) : null}
     </div>
   );
@@ -165,17 +161,17 @@ export function ChoiceAnswer({
 }) {
   const { t } = useTranslation();
   return (
-    <ol className="stagger flex flex-col gap-2.5" data-testid="choices">
+    <ol className="flex flex-col gap-2" data-testid="choices">
       {options.map((option, index) => (
         <li key={option.id}>
           <button
             type="button"
-            className="group flex min-h-12 w-full items-center gap-3 rounded-lg border border-border bg-background/40 px-3 py-2.5 text-left text-base transition-[background-color,border-color,box-shadow,transform] duration-200 ease-(--ease-ui) outline-none hover:-translate-y-px hover:border-primary/60 hover:bg-background/70 hover:shadow-[var(--elevation-hover)] focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:scale-[0.99] disabled:pointer-events-none disabled:opacity-50 motion-reduce:hover:translate-y-0 motion-reduce:active:scale-100"
+            className="group flex min-h-12 w-full items-center gap-3 rounded-lg border border-input bg-background px-3 py-2.5 text-left text-base transition-[background-color,transform] duration-150 ease-(--ease-ui) outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring active:scale-[0.98] disabled:pointer-events-none disabled:opacity-60 motion-reduce:active:scale-100"
             onClick={() => onPick(option.id)}
             disabled={disabled}
             data-option={option.id}
           >
-            <kbd className="flex size-7 shrink-0 items-center justify-center rounded-md border border-border bg-card text-sm text-muted-foreground transition-colors duration-200 group-hover:border-primary/60 group-hover:text-foreground">
+            <kbd className="flex size-7 shrink-0 items-center justify-center rounded-md border border-border text-sm text-muted-foreground">
               {index + 1}
             </kbd>
             <span>{option.period ? formatPeriod(option.period, t) : option.label}</span>
@@ -197,7 +193,7 @@ export function FlagAnswer({
 }) {
   const { t } = useTranslation();
   return (
-    <ol className="stagger grid grid-cols-2 gap-3" data-testid="flag-choices">
+    <ol className="grid grid-cols-2 gap-3" data-testid="flag-choices">
       {options.map((option, index) => (
         <li key={option.id}>
           <button
@@ -205,10 +201,10 @@ export function FlagAnswer({
             onClick={() => onPick(option.id)}
             disabled={disabled}
             data-option={option.id}
-            className="relative block w-full rounded-lg border border-transparent p-1.5 transition-[background-color,border-color,box-shadow,transform] duration-200 ease-(--ease-ui) outline-none hover:-translate-y-0.5 hover:border-primary/60 hover:bg-background/60 hover:shadow-[var(--elevation-hover)] focus-visible:ring-3 focus-visible:ring-ring/50 active:scale-[0.98] motion-reduce:hover:translate-y-0 motion-reduce:active:scale-100"
+            className="relative block w-full rounded-lg border border-transparent p-1.5 transition-[background-color,transform] duration-150 ease-(--ease-ui) outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring active:scale-[0.98] motion-reduce:active:scale-100"
           >
             <Flag iso2={option.flag ?? ""} alt={t("flag.alt")} className="w-full" />
-            <kbd className="absolute top-3 left-3 flex size-6 items-center justify-center rounded-md bg-background/85 text-sm shadow-sm">
+            <kbd className="absolute top-3 left-3 flex size-6 items-center justify-center rounded-md bg-background text-sm">
               {index + 1}
             </kbd>
           </button>
@@ -280,22 +276,22 @@ export function StatusLine({
   return (
     <p
       className={cn(
-        "flex items-center gap-2.5 self-start rounded-full py-1 pr-4 pl-1 font-name text-lg",
-        correct ? "bg-primary/15" : "bg-destructive/15",
+        "flex items-center gap-2 self-start text-lg font-medium",
+        correct ? "text-correct" : "text-destructive",
       )}
       data-testid="status"
       data-correct={correct}
     >
       <span
         className={cn(
-          "flex size-8 items-center justify-center rounded-full",
-          correct ? "bg-primary text-primary-foreground" : "bg-destructive text-background",
+          "flex size-7 items-center justify-center rounded-full",
+          correct ? "bg-correct text-background" : "bg-destructive text-background",
         )}
       >
         {correct ? (
-          <CheckIcon aria-hidden className="size-5" strokeWidth={2.5} />
+          <CheckIcon aria-hidden className="size-4" strokeWidth={2.5} />
         ) : (
-          <XIcon aria-hidden className="size-5" strokeWidth={2.5} />
+          <XIcon aria-hidden className="size-4" strokeWidth={2.5} />
         )}
       </span>
       <span>{correct ? t("feedback.correct") : t("feedback.wrong")}</span>
@@ -314,10 +310,10 @@ export function CountryCard({ country, locale }: { country: Country; locale: Loc
       <Flag
         iso2={country.iso2}
         alt={t("flag.of", { name: country.names[locale] })}
-        className="w-20 shrink-0 shadow-sm"
+        className="w-20 shrink-0"
       />
       <div className="flex min-w-0 flex-col gap-1">
-        <p className="font-name text-2xl leading-tight tracking-tight" data-testid="answer-name">
+        <p className="text-2xl leading-tight font-medium" data-testid="answer-name">
           {country.names[locale]}
           {country.names[other] !== country.names[locale] ? (
             <span className="ml-2 text-sm font-normal text-muted-foreground" lang={other}>
@@ -363,7 +359,7 @@ export function CityCard({
   });
   return (
     <div className="surface flex flex-col gap-2 p-4" data-testid="city-card">
-      <p className="font-name text-2xl leading-tight tracking-tight" data-testid="answer-name">
+      <p className="text-2xl leading-tight font-medium" data-testid="answer-name">
         {city.names[locale]}
         {city.names[other] !== city.names[locale] ? (
           <span className="ml-2 text-sm font-normal text-muted-foreground" lang={other}>
@@ -378,9 +374,9 @@ export function CityCard({
           inName: inNameOf(country, locale),
         })}
       </p>
-      <p className="text-sm text-muted-foreground tabular-nums">
+      <p className="text-sm text-muted-foreground">
         {t("feedback.population")}: {number.format(city.population)}
-        {city.formerCapital ? ` · ${t("feedback.formerCapital")}` : ""}
+        {city.formerCapital ? `, ${t("feedback.formerCapital")}` : ""}
       </p>
       {distanceKm !== undefined ? (
         <p data-testid="pin-distance">
@@ -413,7 +409,7 @@ export function LandmarkPhoto({
         alt={alt}
         width={image.width}
         height={image.height}
-        className="max-h-[38vh] w-full rounded-lg border border-border bg-muted object-contain shadow-[var(--elevation)] lg:max-h-[42vh]"
+        className="max-h-[38vh] w-full rounded-lg bg-muted object-contain lg:max-h-[42vh]"
         draggable={false}
         referrerPolicy="no-referrer"
       />
@@ -453,7 +449,7 @@ export function LandmarkCard({
   return (
     <div className="surface flex flex-col gap-3 p-4" data-testid="landmark-card">
       <div className="flex flex-col gap-1">
-        <p className="font-name text-2xl leading-tight tracking-tight" data-testid="answer-name">
+        <p className="text-2xl leading-tight font-medium" data-testid="answer-name">
           {landmark.names[locale]}
           {landmark.names[other] !== landmark.names[locale] ? (
             <span className="ml-2 text-sm font-normal text-muted-foreground" lang={other}>
@@ -501,10 +497,7 @@ export function FeatureCard({
     .map((id) => nameOf(world, id, locale));
   return (
     <div className="surface flex flex-col gap-2 p-4" data-testid="feature-card">
-      <p
-        className="font-serif text-2xl leading-tight tracking-tight italic"
-        data-testid="answer-name"
-      >
+      <p className="font-serif text-2xl leading-tight italic" data-testid="answer-name">
         {feature.names[locale]}
         {feature.names[other] !== feature.names[locale] ? (
           <span className="ml-2 text-sm font-normal text-muted-foreground" lang={other}>
@@ -528,7 +521,7 @@ export function OutlineCaption({ entity }: { entity: HistoricalEntity }) {
   if (entity.kind === "former_name") return null;
   return (
     <p
-      className="pointer-events-none absolute bottom-3 left-3 rounded-md bg-card/85 px-2.5 py-1 text-sm shadow-[var(--elevation)] backdrop-blur-sm"
+      className="floating pointer-events-none absolute bottom-3 left-3 px-2.5 py-1 text-sm"
       data-testid="outline-caption"
       data-history={entity.id}
     >
@@ -562,7 +555,7 @@ export function HistoryCard({
     list.format(ids.filter((id) => world.byId.has(id)).map((id) => nameOf(world, id, locale)));
   return (
     <div className="surface flex flex-col gap-2 p-4" data-testid="history-card">
-      <p className="font-name text-2xl leading-tight tracking-tight" data-testid="answer-name">
+      <p className="text-2xl leading-tight font-medium" data-testid="answer-name">
         {entity.names[locale]}
         {entity.names[other] !== entity.names[locale] ? (
           <span className="ml-2 text-sm font-normal text-muted-foreground" lang={other}>
@@ -718,7 +711,7 @@ export function GroupCard({
   const note = group.kind === "un_subregion" ? t("group.unNote") : groupNote(group.id)?.[locale];
   return (
     <div className="surface flex flex-col gap-2 p-4" data-testid="group-card">
-      <p className="font-name text-2xl leading-tight tracking-tight" data-testid="answer-name">
+      <p className="text-2xl leading-tight font-medium" data-testid="answer-name">
         {group.names[locale]}
         {group.names[other] !== group.names[locale] ? (
           <span className="ml-2 text-sm font-normal text-muted-foreground" lang={other}>

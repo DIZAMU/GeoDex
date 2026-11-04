@@ -11,6 +11,7 @@ import { scopedCountries } from "../study/plan";
 import { useLearner } from "../study/useLearner";
 import { CountryPicker, guessHomeCountry } from "./CountryPicker";
 
+/** Two choices before the first session: language and home country (docs/PLAN-2.0.md). */
 export function OnboardingScreen() {
   const { t, i18n } = useTranslation();
   const locale = isLocale(i18n.language) ? i18n.language : "en";
@@ -29,52 +30,37 @@ export function OnboardingScreen() {
 
   if (!learner) return <Loader />;
   const countries = scopedCountries(learner.world, learner.settings);
+  const chosen = home ? learner.world.byId.get(home)?.names[locale] : null;
 
   return (
-    <div className="stagger mx-auto flex w-full max-w-xl flex-col gap-6 px-4 py-8 md:py-14">
-      <h1 className="font-name text-4xl tracking-tight">{t("onboarding.title")}</h1>
-      <div className="surface p-5 md:p-7">
-        <LanguageSwitcher />
-      </div>
-      <section className="surface flex flex-col gap-3 p-5 md:p-7">
-        <h2 className="font-name text-xl">{t("onboarding.home")}</h2>
+    <div className="mx-auto flex w-full max-w-xl flex-col gap-8 px-4 py-8 md:py-14">
+      <h1 className="text-2xl font-medium tracking-tight">{t("onboarding.title")}</h1>
+      <LanguageSwitcher />
+      <section className="flex flex-col gap-3" aria-labelledby="home-title">
+        <h2 id="home-title" className="text-lg font-medium">
+          {t("onboarding.home")}
+        </h2>
         <p className="text-muted-foreground">{t("onboarding.homeHelp")}</p>
         <CountryPicker countries={countries} value={home} onChange={setHome} locale={locale} />
       </section>
-      <section className="surface flex flex-col gap-4 p-5 md:p-7" data-testid="placement-offer">
-        <h2 className="font-name text-xl">{t("onboarding.placementTitle")}</h2>
-        <p className="text-muted-foreground">{t("onboarding.placementBody")}</p>
-        <div className="flex flex-wrap gap-3">
-          <Button
-            size="lg"
-            disabled={!home}
-            data-testid="start-placement"
-            onClick={async () => {
-              if (!home) return;
-              await updateSettings(db, { homeCountry: home });
-              await db.placementProgress.clear();
-              navigate("/placement", { viewTransition: true });
-            }}
-          >
-            {t("onboarding.takeTest")}
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            disabled={!home}
-            data-testid="start-from-zero"
-            onClick={async () => {
-              if (!home) return;
-              // Skipping the test counts as finishing it with nothing known yet.
-              await updateSettings(db, { homeCountry: home, placementCompletedAt: Date.now() });
-              await db.placementProgress.clear();
-              navigate("/", { viewTransition: true });
-            }}
-          >
-            {t("onboarding.fromZero")}
-          </Button>
-        </div>
-      </section>
+      <div className="flex flex-col items-start gap-2">
+        <Button
+          size="lg"
+          disabled={!home}
+          data-testid="start-learning"
+          onClick={async () => {
+            if (!home) return;
+            // placementCompletedAt marks setup as done; there is no placement test in 2.0.
+            await updateSettings(db, { homeCountry: home, placementCompletedAt: Date.now() });
+            navigate("/", { viewTransition: true });
+          }}
+        >
+          {t("onboarding.start")}
+        </Button>
+        <p className="text-sm text-muted-foreground" aria-live="polite">
+          {chosen ? t("onboarding.chosen", { name: chosen }) : t("onboarding.choose")}
+        </p>
+      </div>
     </div>
   );
 }
