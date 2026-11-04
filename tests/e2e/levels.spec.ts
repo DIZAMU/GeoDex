@@ -30,6 +30,8 @@ test("the overview shows level, next milestone, XP, goal and the path", async ({
   await expect(page.getByTestId("next-level")).toHaveAttribute("data-show", "percent");
   await page.goto("/settings");
   await page.getByTestId("level-progress-cards").click();
+  // Saved before the next page load, which would otherwise cut the write.
+  await expect(page.getByTestId("level-progress-cards")).toHaveAttribute("data-state", "on");
   await page.goto("/");
   await expect(page.getByTestId("next-level")).toHaveText(/more cards? to level 2/);
 

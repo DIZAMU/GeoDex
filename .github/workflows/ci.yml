@@ -31,12 +31,20 @@ jobs:
       - run: pnpm build
 
   e2e:
-    name: End-to-end (Playwright)
+    name: End-to-end (${{ matrix.project }} ${{ matrix.shard }}/2)
     # Private repos have a limited free-minutes allowance, so browsers only run on main.
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: check
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # The runner has one test worker, and the whole suite takes longer than one job may run,
+    # so it is split by screen size and then in halves. The slow map tests sort into the first
+    # halves: those take about 13 minutes, the second halves about 5.
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [desktop, phone]
+        shard: [1, 2]
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v5
       - uses: pnpm/action-setup@v4
@@ -46,11 +54,11 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install --with-deps chromium
-      - run: pnpm test:e2e
+      - run: pnpm test:e2e --project=${{ matrix.project }} --shard=${{ matrix.shard }}/2
       - if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report
+          name: playwright-report-${{ matrix.project }}-${{ matrix.shard }}
           path: |
             playwright-report/
             test-results/
