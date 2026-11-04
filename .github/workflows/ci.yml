@@ -37,7 +37,8 @@ jobs:
     needs: check
     runs-on: ubuntu-latest
     # The runner has one test worker, and the whole suite takes longer than one job may run,
-    # so it is split by screen size and then in halves: about ten minutes each.
+    # so it is split by screen size and then in halves. The slow map tests sort into the first
+    # halves: those take about 13 minutes, the second halves about 5.
     strategy:
       fail-fast: false
       matrix:
