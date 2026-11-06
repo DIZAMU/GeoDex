@@ -182,7 +182,7 @@
     "notHelpful": "Not helpful",
     "hookHidden": "Hidden for this card.",
     "contrastLabel": "Tell them apart",
-    "deeperLabel": "Deeper cut",
+    "bonusLabel": "Bonus fact",
     "missed": "Missed: {{names}}.",
     "notInGroup": "Not in the group: {{names}}.",
     "landmarkIn": "Landmark in {{country}}",

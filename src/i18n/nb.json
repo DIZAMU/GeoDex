@@ -182,7 +182,7 @@
     "notHelpful": "Ikke nyttig",
     "hookHidden": "Skjult for dette kortet.",
     "contrastLabel": "Slik skiller du dem",
-    "deeperLabel": "Dypere",
+    "bonusLabel": "Bonusfakta",
     "missed": "Mangler: {{names}}.",
     "notInGroup": "Ikke med i gruppen: {{names}}.",
     "landmarkIn": "Severdighet {{inName}}",
