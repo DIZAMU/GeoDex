@@ -1,4 +1,3 @@
-import { ChevronDownIcon } from "lucide-react";
 import { type ReactNode, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
@@ -27,7 +26,9 @@ import { THEME_PREFERENCES } from "@/themes/themes";
 import { useTheme } from "@/themes/useTheme";
 import { Button } from "@/ui/button";
 import { Loader } from "@/ui/loader";
+import { Select, type SelectGroup } from "@/ui/select";
 import { Switch } from "@/ui/switch";
+import { Toast, useToast } from "@/ui/toast";
 import { ToggleGroup, ToggleGroupItem } from "@/ui/toggle-group";
 import { CountryPicker } from "../onboarding/CountryPicker";
 import { scopedCountries } from "../study/plan";
@@ -166,9 +167,12 @@ export function SettingsScreen() {
   const navigate = useNavigate();
   const { setLocale } = useLocale();
   const { preference, setTheme } = useTheme();
+  const toast = useToast();
   if (!learner) return <Loader />;
   const s = learner.settings;
-  const set = (patch: Partial<SettingsRow>) => void updateSettings(db, patch);
+  // Every change saves at once; the note confirms it once the write is done.
+  const saved = (write: Promise<unknown>) => void write.then(toast.show);
+  const set = (patch: Partial<SettingsRow>) => saved(updateSettings(db, patch));
   const sessionsGoal = s.dailyGoal?.kind === "sessions" ? s.dailyGoal.sessions : null;
 
   return (
@@ -216,7 +220,7 @@ export function SettingsScreen() {
             testId="goal-sessions"
           />
         ) : null}
-        <SessionDefaults learner={learner} />
+        <SessionDefaults learner={learner} saved={saved} />
         <Choice
           label={t("settings.countdown")}
           help={t("settings.countdownHelp")}
@@ -256,7 +260,7 @@ export function SettingsScreen() {
           value={locale}
           options={LOCALES}
           render={(l) => t(`settings.language.${l}`)}
-          onChange={setLocale}
+          onChange={(l) => saved(setLocale(l))}
           testId="locale"
         />
         <Choice
@@ -264,21 +268,21 @@ export function SettingsScreen() {
           value={preference}
           options={THEME_PREFERENCES}
           render={(p) => t(`settings.theme.${p}`)}
-          onChange={setTheme}
+          onChange={(p) => saved(setTheme(p))}
           testId="theme"
         />
         <SwitchRow
           label={t("settings.sound")}
           help={t("settings.soundHelp")}
           checked={learner.device.soundOn !== false}
-          onChange={(soundOn) => void setFeedbackPref(db, { soundOn })}
+          onChange={(soundOn) => saved(setFeedbackPref(db, { soundOn }))}
           testId="sound"
         />
         <SwitchRow
           label={t("settings.vibration")}
           help={t("settings.vibrationHelp")}
           checked={learner.device.vibrationOn !== false}
-          onChange={(vibrationOn) => void setFeedbackPref(db, { vibrationOn })}
+          onChange={(vibrationOn) => saved(setFeedbackPref(db, { vibrationOn }))}
           testId="vibration"
         />
         <Choice
@@ -287,7 +291,7 @@ export function SettingsScreen() {
           value={learner.device.levelProgress === "percent" ? "percent" : "cards"}
           options={["cards", "percent"] as const}
           render={(v) => t(v === "cards" ? "settings.levelCards" : "settings.levelPercent")}
-          onChange={(v) => void setLevelProgress(db, v)}
+          onChange={(v) => saved(setLevelProgress(db, v))}
           testId="level-progress"
         />
       </Group>
@@ -340,6 +344,9 @@ export function SettingsScreen() {
           <ResetProgress learner={learner} />
         </div>
       </Group>
+      <Toast shown={toast.shown} testId="settings-saved">
+        {t("settings.saved")}
+      </Toast>
     </div>
   );
 }
@@ -383,16 +390,43 @@ function ResetProgress({ learner }: { learner: Learner }) {
   );
 }
 
+/**
+ * Today can remember a focus this list does not offer (a subregion, or a topic since turned
+ * off). It is listed too, so the list shows what is saved rather than an empty button.
+ */
+function withCurrent(
+  groups: SelectGroup[],
+  focus: Focus,
+  place: (focus: Focus) => { group: number; label: string } | null,
+): SelectGroup[] {
+  const value = focusKey(focus);
+  if (groups.some((g) => g.options.some((o) => o.value === value))) return groups;
+  const spot = place(focus);
+  if (!spot) return groups;
+  return groups.map((g, i) =>
+    i === spot.group ? { ...g, options: [...g.options, { value, label: spot.label }] } : g,
+  );
+}
+
 /** The session picker's defaults (PLAN.md 11.4): the same values Today remembers. */
-function SessionDefaults({ learner }: { learner: Learner }) {
-  const { t } = useTranslation();
+function SessionDefaults({
+  learner,
+  saved,
+}: {
+  learner: Learner;
+  saved: (write: Promise<unknown>) => void;
+}) {
+  const { t, i18n } = useTranslation();
+  const locale = isLocale(i18n.language) ? i18n.language : "en";
   const length = parseLength(learner.device.sessionLength);
   const focus = parseFocus(learner.device.sessionFocus);
   const save = (next: { length?: number; focus?: Focus }) =>
-    void setSessionPick(db, {
-      sessionLength: next.length ?? length,
-      sessionFocus: focusKey(next.focus ?? focus),
-    });
+    saved(
+      setSessionPick(db, {
+        sessionLength: next.length ?? length,
+        sessionFocus: focusKey(next.focus ?? focus),
+      }),
+    );
   const modules = FOCUS_MODULES.filter(
     (m) => m === "countries" || learner.settings.modules[m] === true,
   );
@@ -412,44 +446,50 @@ function SessionDefaults({ learner }: { learner: Learner }) {
         help={t("settings.sessionFocusHelp")}
         labelId="focus-label"
       >
-        <div className="relative w-full sm:w-72">
-          <select
-            data-testid="default-focus"
-            aria-labelledby="focus-label"
-            value={focusKey(focus)}
-            onChange={(e) => save({ focus: parseFocus(e.target.value) })}
-            className="h-11 w-full appearance-none rounded-lg border border-input bg-background py-2 pr-10 pl-3 outline-none transition-colors hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-          >
-            <option value="mixed">{t("picker.mixed")}</option>
-            <optgroup label={t("picker.skills")}>
-              {SKILLS.map((id) => (
-                <option key={id} value={`skill:${id}`}>
-                  {t(`skill.${id}`)}
-                </option>
-              ))}
-            </optgroup>
-            {modules.length > 1 ? (
-              <optgroup label={t("picker.modules")}>
-                {modules.map((id) => (
-                  <option key={id} value={`module:${id}`}>
-                    {t(`picker.module.${id}`)}
-                  </option>
-                ))}
-              </optgroup>
-            ) : null}
-            <optgroup label={t("picker.regions")}>
-              {CONTINENTS.map((id) => (
-                <option key={id} value={`region:${id}`}>
-                  {t(`continent.${id}`)}
-                </option>
-              ))}
-            </optgroup>
-          </select>
-          <ChevronDownIcon
-            aria-hidden
-            className="pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2 text-muted-foreground"
-          />
-        </div>
+        <Select
+          className="w-full sm:w-72"
+          value={focusKey(focus)}
+          onValueChange={(value) => save({ focus: parseFocus(value) })}
+          labelledBy="focus-label"
+          testId="default-focus"
+          groups={withCurrent(
+            [
+              { options: [{ value: "mixed", label: t("picker.mixed") }] },
+              {
+                label: t("picker.skills"),
+                options: SKILLS.map((id) => ({ value: `skill:${id}`, label: t(`skill.${id}`) })),
+              },
+              {
+                label: t("picker.modules"),
+                options:
+                  modules.length > 1
+                    ? modules.map((id) => ({
+                        value: `module:${id}`,
+                        label: t(`picker.module.${id}`),
+                      }))
+                    : [],
+              },
+              {
+                label: t("picker.regions"),
+                options: CONTINENTS.map((id) => ({
+                  value: `region:${id}`,
+                  label: t(`continent.${id}`),
+                })),
+              },
+            ],
+            focus,
+            (f) =>
+              f.kind === "module"
+                ? { group: 2, label: t(`picker.module.${f.id}`) }
+                : f.kind === "region"
+                  ? {
+                      group: 3,
+                      label:
+                        learner.world.subregions.find((r) => r.id === f.id)?.names[locale] ?? f.id,
+                    }
+                  : null,
+          )}
+        />
       </Row>
     </>
   );

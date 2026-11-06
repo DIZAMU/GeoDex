@@ -20,6 +20,7 @@
   },
   "settings": {
     "label": "Settings",
+    "saved": "Changes saved",
     "theme": {
       "label": "Appearance",
       "light": "Light",

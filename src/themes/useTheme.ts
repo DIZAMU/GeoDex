@@ -20,7 +20,7 @@ export function useTheme() {
 
   const setTheme = useCallback((next: ThemePreference) => {
     applyTheme(next);
-    void setThemePreference(db, next);
+    return setThemePreference(db, next);
   }, []);
 
   return { preference, setTheme };

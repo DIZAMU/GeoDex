@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { chooseThemeAndLocale, setUpLearner, studyAFew } from "./helpers";
+import { choose, chooseThemeAndLocale, setUpLearner, studyAFew } from "./helpers";
 
 test("theme and language survive a reload without a flash", async ({ page }) => {
   await chooseThemeAndLocale(page, "dark", "nb");
@@ -115,12 +115,13 @@ test("goal settings reach Today: sessions goal, session defaults and the tour", 
   // Each choice is saved before the next page load, which would otherwise cut the write.
   await page.getByTestId("goal-sessions").click();
   await expect(page.getByTestId("goal-sessions")).toHaveAttribute("data-state", "on");
+  // Each change says it was saved.
+  await expect(page.getByTestId("settings-saved")).toHaveText("Changes saved");
   await page.getByTestId("goal-sessions-2").click();
   await expect(page.getByTestId("goal-sessions-2")).toHaveAttribute("data-state", "on");
   await page.getByTestId("default-length-20").click();
   await expect(page.getByTestId("default-length-20")).toHaveAttribute("data-state", "on");
-  await page.getByTestId("default-focus").selectOption("region:europe");
-  await expect(page.getByTestId("default-focus")).toHaveValue("region:europe");
+  await choose(page, "default-focus", "region:europe");
   await page.screenshot({
     path: `test-results/screens/settings-goals-${page.viewportSize()?.width}.png`,
     fullPage: true,
@@ -129,7 +130,7 @@ test("goal settings reach Today: sessions goal, session defaults and the tour", 
   await page.goto("/");
   await expect(page.getByTestId("goal-ring")).toHaveText("0 of 2 sessions done today");
   await expect(page.getByTestId("length-20")).toHaveAttribute("data-state", "on");
-  await expect(page.getByTestId("focus")).toHaveValue("region:europe");
+  await expect(page.getByTestId("focus")).toHaveAttribute("data-value", "region:europe");
 
   // Back to minutes: the ring follows the daily time.
   await page.goto("/settings");
