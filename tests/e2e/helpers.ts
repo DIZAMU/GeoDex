@@ -143,6 +143,16 @@ export async function turnOn(page: Page, testId: string) {
   await expect(control).toHaveAttribute("aria-checked", "true");
 }
 
+/** Picks an option in one of the app's dropdowns and waits until it is the saved value. */
+export async function choose(page: Page, testId: string, value: string) {
+  const trigger = page.getByTestId(testId);
+  await trigger.click();
+  const list = page.getByTestId(`${testId}-list`);
+  await list.locator(`[role=option][data-value="${value}"]`).click();
+  await expect(list).toBeHidden();
+  await expect(trigger).toHaveAttribute("data-value", value);
+}
+
 /** Starts a session from Today, answers a few questions, and goes back to Today. */
 export async function studyAFew(page: Page, answers = 3) {
   await page.goto("/");

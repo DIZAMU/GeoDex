@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { answerPrompt, chooseThemeAndLocale, currentScreen, setUpLearner } from "./helpers";
+import { answerPrompt, choose, chooseThemeAndLocale, currentScreen, setUpLearner } from "./helpers";
 
 /** Answers until the summary shows; returns how many questions were answered. */
 async function finishSession(page: import("@playwright/test").Page): Promise<number> {
@@ -52,9 +52,7 @@ test("a 5-question session holds exactly 5 and shows its position", async ({ pag
 test("a focused session asks only that skill", async ({ page }) => {
   test.setTimeout(120_000);
   await setUpLearner(page);
-  const focus = page.getByTestId("focus");
-  await focus.selectOption("skill:location");
-  await expect(focus).toHaveValue("skill:location");
+  await choose(page, "focus", "skill:location");
   await page.getByTestId("start").click();
   await expect(page).toHaveURL(/focus=skill%3Alocation/);
   for (let i = 0; i < 4; i++) {

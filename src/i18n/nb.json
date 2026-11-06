@@ -20,6 +20,7 @@
   },
   "settings": {
     "label": "Innstillinger",
+    "saved": "Endringer lagret",
     "theme": {
       "label": "Utseende",
       "light": "Lyst",

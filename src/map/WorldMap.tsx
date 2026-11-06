@@ -367,9 +367,11 @@ export function WorldMap({
     if (!svg || width === 0) return;
     const behavior = zoom<SVGSVGElement, unknown>()
       .scaleExtent([1, MAX_ZOOM])
+      // The map never slides past its own edges: at full size it cannot be dragged at all,
+      // and zoomed in it moves only within the map.
       .translateExtent([
-        [-width, -height],
-        [width * 2, height * 2],
+        [0, 0],
+        [width, height],
       ])
       .on("zoom", (event: D3ZoomEvent<SVGSVGElement, unknown>) => {
         const { k, x, y } = event.transform;

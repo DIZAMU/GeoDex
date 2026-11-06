@@ -22,7 +22,7 @@ export function useLocale() {
   const setLocale = useCallback(
     (next: Locale) => {
       void i18n.changeLanguage(next);
-      void storeLocale(db, next);
+      return storeLocale(db, next);
     },
     [i18n],
   );

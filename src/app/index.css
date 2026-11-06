@@ -324,3 +324,12 @@
     opacity: 0;
   }
 }
+
+/*
+ * Dropdown lists show a thin scrollbar so a long list reads as one that scrolls. Radix hides
+ * the scrollbar with an unlayered style, so this rule is unlayered too, and more specific.
+ */
+.select-viewport[data-radix-select-viewport] {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--muted-foreground) 45%, transparent) transparent;
+}

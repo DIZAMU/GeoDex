@@ -25,8 +25,8 @@ Questions are answered on a real map (Equal Earth, so sizes look the way they ar
 
 | Today | Stats |
 |---|---|
-| ![Today: cards due, the session picker and the map of countries started](docs/media/today.png) | ![Stats: level and XP, and the cards due in the next 30 days](docs/media/stats.png) |
-| ![The Atlas in dark mode: a globe coloured by how well each country is known](docs/media/atlas-dark.png) | ![Borders over time: the Ottoman, Spanish and Mughal empires in 1820](docs/media/timeline.png) |
+| ![Today: cards due, the session picker and a turning globe of the countries started](docs/media/today.png) | ![Stats: level and XP, and the cards due in the next 30 days](docs/media/stats.png) |
+| ![The Atlas in dark mode: a globe coloured by how well each country is known](docs/media/atlas-dark.png) | ![Borders over time on the globe: the Ottoman, Spanish, Mughal and British empires in 1820](docs/media/timeline.png) |
 
 <p align="center">
   <img src="docs/media/phone-today.png" alt="Today on a phone, in Norwegian" width="260">

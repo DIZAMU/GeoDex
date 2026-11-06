@@ -18,7 +18,10 @@ export function fitTransform(
   const k = Math.min(maxZoom, Math.max(1, (1 - 2 * padding) / Math.max(dx / width, dy / height)));
   const cx = (x0 + x1) / 2;
   const cy = (y0 + y1) / 2;
-  return { k, x: width / 2 - k * cx, y: height / 2 - k * cy };
+  // Centered, but never past the map's own edges: a country at the edge sits at the edge of
+  // the view, so the view matches what dragging allows and the first drag does not jump.
+  const clamp = (value: number, size: number) => Math.min(0, Math.max(size - k * size, value));
+  return { k, x: clamp(width / 2 - k * cx, width), y: clamp(height / 2 - k * cy, height) };
 }
 
 export function unionBounds(list: readonly Bounds[]): Bounds | null {
