@@ -17,6 +17,23 @@ describe("fitTransform", () => {
     expect(t.y + t.k * 125).toBe(250);
   });
 
+  it("keeps the view inside the map for a country at its edge", () => {
+    const t = fitTransform(
+      [
+        [980, 240],
+        [1000, 260],
+      ],
+      1000,
+      500,
+      0,
+    );
+    expect(t.k).toBe(25);
+    // The view's right edge is the map's right edge, and the country stays in view.
+    expect(t.x + t.k * 1000).toBe(1000);
+    expect(t.x + t.k * 980).toBeGreaterThanOrEqual(0);
+    expect(t.y + t.k * 250).toBe(250);
+  });
+
   it("never zooms out past the world view or beyond the maximum", () => {
     expect(
       fitTransform(
