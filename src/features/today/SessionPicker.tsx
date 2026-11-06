@@ -2,7 +2,6 @@
  * Session picker (PLAN.md 11.2): how many questions, and on what. The choice is remembered on
  * this device. A focused session shows the reviews it leaves for later.
  */
-import { ChevronDownIcon } from "lucide-react";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
@@ -24,6 +23,7 @@ import {
 import type { QueueItem } from "@/engine/session";
 import type { InputSetting } from "@/engine/types";
 import { Button } from "@/ui/button";
+import { Select } from "@/ui/select";
 import { ToggleGroup, ToggleGroupItem } from "@/ui/toggle-group";
 import { continentLookup } from "../study/plan";
 import type { Learner } from "../study/useLearner";
@@ -147,45 +147,44 @@ export function SessionPicker({
           ))}
         </ToggleGroup>
 
-        <label className="text-sm text-muted-foreground" htmlFor="picker-focus">
+        <span className="text-sm text-muted-foreground" id="picker-focus">
           {t("picker.focus")}
-        </label>
-        <div className="relative max-w-sm">
-          <select
-            id="picker-focus"
-            data-testid="focus"
-            value={focusKey(focus)}
-            onChange={(e) => pick({ focus: parseFocus(e.target.value) })}
-            className="h-11 w-full appearance-none rounded-lg border border-input bg-background py-2 pr-10 pl-3 text-sm outline-none transition-colors hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring"
-          >
-            <option value="mixed">
-              {t("picker.option", {
-                name: t("picker.mixed"),
-                count: number.format(counts.get("mixed") ?? 0),
-              })}
-            </option>
-            {groups.map((g) =>
-              g.items.length > 0 ? (
-                <optgroup key={g.label} label={g.label}>
-                  {g.items.map(({ focus: f, name }) => {
-                    const count = counts.get(focusKey(f)) ?? 0;
-                    // Empty subregions stay out of the list; empty skills and continents show, disabled.
-                    if (count === 0 && f.kind === "region" && /^\d/.test(f.id)) return null;
-                    return (
-                      <option key={focusKey(f)} value={focusKey(f)} disabled={count === 0}>
-                        {t("picker.option", { name, count: number.format(count) })}
-                      </option>
-                    );
-                  })}
-                </optgroup>
-              ) : null,
-            )}
-          </select>
-          <ChevronDownIcon
-            aria-hidden
-            className="pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2 text-muted-foreground"
-          />
-        </div>
+        </span>
+        <Select
+          className="max-w-sm"
+          value={focusKey(focus)}
+          onValueChange={(value) => pick({ focus: parseFocus(value) })}
+          labelledBy="picker-focus"
+          testId="focus"
+          groups={[
+            {
+              options: [
+                {
+                  value: "mixed",
+                  label: t("picker.option", {
+                    name: t("picker.mixed"),
+                    count: number.format(counts.get("mixed") ?? 0),
+                  }),
+                },
+              ],
+            },
+            ...groups.map((g) => ({
+              label: g.label,
+              options: g.items.flatMap(({ focus: f, name }) => {
+                const count = counts.get(focusKey(f)) ?? 0;
+                // Empty subregions stay out of the list; empty skills and continents show, disabled.
+                if (count === 0 && f.kind === "region" && /^\d/.test(f.id)) return [];
+                return [
+                  {
+                    value: focusKey(f),
+                    label: t("picker.option", { name, count: number.format(count) }),
+                    disabled: count === 0,
+                  },
+                ];
+              }),
+            })),
+          ]}
+        />
 
         <span className="text-sm text-muted-foreground" id="picker-input">
           {t("today.inputMode")}
