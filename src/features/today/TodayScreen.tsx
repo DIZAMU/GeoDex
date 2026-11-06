@@ -122,17 +122,19 @@ function Today({ learner }: { learner: Learner }) {
 
 /**
  * The flame by streak length (flameTier): hollow with no streak, then yellow, orange, red,
- * blue, gold, and a glowing gold from a year on. Filled and outlined in a darker shade so
- * each reads on light and dark backgrounds; the words beside it carry the number.
+ * blue, purple, and gold from a year on. Filled and outlined in a darker shade so each reads
+ * on light and dark backgrounds; the words beside it carry the number. Each tier glows a
+ * little more in its own colour, from barely there to a clear halo; a drop shadow takes no
+ * layout space.
  */
 const FLAME: Record<FlameTier, string> = {
-  none: "text-muted-foreground",
-  yellow: "fill-[#facc15] text-[#a16207]",
-  orange: "fill-[#fb923c] text-[#c2410c]",
-  red: "fill-[#ef4444] text-[#991b1b]",
-  blue: "fill-[#60a5fa] text-[#1d4ed8]",
-  gold: "fill-[#e0b23a] text-[#8a6410]",
-  brightGold: "fill-[#ffd34d] text-[#b8860b] drop-shadow-[0_0_4px_rgb(255_200_60/0.75)]",
+  none: "text-muted-foreground drop-shadow-[0_0_3px_rgb(148_163_184/0.05)]",
+  yellow: "fill-[#facc15] text-[#a16207] drop-shadow-[0_0_3px_rgb(250_204_21/0.10)]",
+  orange: "fill-[#fb923c] text-[#c2410c] drop-shadow-[0_0_3px_rgb(251_146_60/0.20)]",
+  red: "fill-[#ef4444] text-[#991b1b] drop-shadow-[0_0_3px_rgb(239_68_68/0.30)]",
+  blue: "fill-[#60a5fa] text-[#1d4ed8] drop-shadow-[0_0_4px_rgb(96_165_250/0.45)]",
+  purple: "fill-[#a78bfa] text-[#6d28d9] drop-shadow-[0_0_4px_rgb(167_139_250/0.60)]",
+  gold: "fill-[#ffd34d] text-[#b8860b] drop-shadow-[0_0_5px_rgb(255_200_60/0.80)]",
 };
 
 function StreakFlame({

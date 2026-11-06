@@ -130,8 +130,8 @@ export const FLAME_TIERS = [
   { from: 14, tier: "orange" },
   { from: 30, tier: "red" },
   { from: 90, tier: "blue" },
-  { from: 180, tier: "gold" },
-  { from: 365, tier: "brightGold" },
+  { from: 180, tier: "purple" },
+  { from: 365, tier: "gold" },
 ] as const;
 export type FlameTier = (typeof FLAME_TIERS)[number]["tier"];
 
