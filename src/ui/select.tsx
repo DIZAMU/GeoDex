@@ -57,10 +57,9 @@ export function Select({
           className="floating z-50 max-h-[min(24rem,var(--radix-select-content-available-height))] w-[var(--radix-select-trigger-width)] min-w-56 overflow-hidden text-sm data-[state=open]:animate-[fade_120ms_var(--ease-ui)]"
           data-testid={testId ? `${testId}-list` : undefined}
         >
-          <SelectPrimitive.ScrollUpButton className="flex h-6 items-center justify-center text-muted-foreground">
-            <ChevronDownIcon aria-hidden className="size-4 rotate-180" />
-          </SelectPrimitive.ScrollUpButton>
-          <SelectPrimitive.Viewport className="p-1">
+          {/* A plain scrollbar, not scroll arrows: an arrow appearing shifts the list under
+              the pointer and resets its scroll position. */}
+          <SelectPrimitive.Viewport className="select-viewport p-1">
             {groups.map((group, i) =>
               group.options.length === 0 ? null : (
                 <SelectPrimitive.Group key={group.label ?? `group-${i}`}>
@@ -87,9 +86,6 @@ export function Select({
               ),
             )}
           </SelectPrimitive.Viewport>
-          <SelectPrimitive.ScrollDownButton className="flex h-6 items-center justify-center text-muted-foreground">
-            <ChevronDownIcon aria-hidden className="size-4" />
-          </SelectPrimitive.ScrollDownButton>
         </SelectPrimitive.Content>
       </SelectPrimitive.Portal>
     </SelectPrimitive.Root>
