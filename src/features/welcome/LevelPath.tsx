@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 
-const MARKED = [1, 3, 5, 8, 10] as const;
+/** Where every card started, every card holding a week, and every card mastered land. */
+const MARKED = [1, 4, 7, 10] as const;
 
 /**
  * The path from level 1 to 10 (PLAN.md 11.1): ten stops shaded with the theme's mastery

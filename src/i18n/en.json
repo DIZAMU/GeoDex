@@ -520,9 +520,8 @@
     "timeAll": "With every topic switched on: about {{months}} months.",
     "levels": {
       "1": "Just started",
-      "3": "Learning",
-      "5": "Holds a week",
-      "8": "Holds three weeks",
+      "4": "Learning",
+      "7": "Holds a week",
       "10": "Mastered"
     },
     "demoProgress": "Question {{n}} of {{total}}",
@@ -655,9 +654,9 @@
     "toNext_one": "{{count}} more card to level {{level}}",
     "toNext_other": "{{count}} more cards to level {{level}}",
     "top": "Top level. Keep reviewing to hold it.",
-    "xpLevel": "XP level {{level}}",
     "xp": "{{xp}} XP",
-    "xpToNext": "{{xp}} XP to the next XP level",
+    "xpToRank": "{{xp}} XP to {{rank}}",
+    "topRank": "Highest rank",
     "levelShort": "Level {{level}}",
     "goalMinutesLabel": "{{done}} of {{count}} minutes studied today",
     "goalSessionsLabel_one": "{{done}} of {{count}} session done today",

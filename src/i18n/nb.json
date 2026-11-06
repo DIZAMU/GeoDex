@@ -520,9 +520,8 @@
     "timeAll": "Med alle emner slått på: omtrent {{months}} måneder.",
     "levels": {
       "1": "Akkurat begynt",
-      "3": "Lærer",
-      "5": "Sitter en uke",
-      "8": "Sitter tre uker",
+      "4": "Lærer",
+      "7": "Sitter en uke",
       "10": "Mestret"
     },
     "demoProgress": "Spørsmål {{n}} av {{total}}",
@@ -655,9 +654,9 @@
     "toNext_one": "{{count}} kort til for nivå {{level}}",
     "toNext_other": "{{count}} kort til for nivå {{level}}",
     "top": "Toppnivå. Fortsett å repetere for å holde det.",
-    "xpLevel": "XP-nivå {{level}}",
     "xp": "{{xp}} XP",
-    "xpToNext": "{{xp}} XP til neste XP-nivå",
+    "xpToRank": "{{xp}} XP til {{rank}}",
+    "topRank": "Høyeste rang",
     "levelShort": "Nivå {{level}}",
     "goalMinutesLabel": "{{done}} av {{count}} minutter øvd i dag",
     "goalSessionsLabel_one": "{{done}} av {{count}} økt fullført i dag",
