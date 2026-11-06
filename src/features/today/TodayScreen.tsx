@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Navigate, useLocation, useNavigate } from "react-router";
 import { db } from "@/db/db";
 import { setTourDone } from "@/db/settings";
-import { type FlameTier, flameTier, type Streak } from "@/engine/streak";
+import { FLAME_TIERS, type FlameTier, flameTier, type Streak } from "@/engine/streak";
 import { parseCardId } from "@/engine/types";
 import { isLocale } from "@/i18n/locales";
 import { GlobeMap } from "@/map/GlobeMap";
@@ -135,34 +135,84 @@ const FLAME: Record<FlameTier, string> = {
   brightGold: "fill-[#ffd34d] text-[#b8860b] drop-shadow-[0_0_4px_rgb(255_200_60/0.75)]",
 };
 
-function StreakFlame({ days }: { days: number }) {
-  const tier = flameTier(days);
+function StreakFlame({
+  days,
+  preview,
+  sample = false,
+}: {
+  days: number;
+  preview?: FlameTier | null;
+  /** A swatch in the picker, not the streak's own flame. */
+  sample?: boolean;
+}) {
+  const tier = preview ?? flameTier(days);
   return (
     <FlameIcon
       aria-hidden
       className={`size-4 ${FLAME[tier]}`}
       strokeWidth={tier === "none" ? 1.75 : 1.5}
-      data-testid="streak-flame"
+      data-testid={sample ? undefined : "streak-flame"}
       data-tier={tier}
     />
+  );
+}
+
+/**
+ * TEMPORARY, for checking the flame colours: a row of every tier; a tap shows that colour on
+ * the streak flame until a reload. It changes nothing stored and not the day count. Remove
+ * this, FlamePicker, the `preview` state and the today.flamePreview strings once checked.
+ */
+function FlamePicker({
+  preview,
+  onPick,
+}: {
+  preview: FlameTier | null;
+  onPick: (tier: FlameTier | null) => void;
+}) {
+  const { t } = useTranslation();
+  return (
+    <fieldset className="flex w-full flex-wrap items-center gap-1" data-testid="flame-picker">
+      <legend className="sr-only">{t("today.flamePreview")}</legend>
+      <span className="pr-1 text-xs">{t("today.flamePreview")}</span>
+      {FLAME_TIERS.map(({ from, tier }) => (
+        <button
+          key={tier}
+          type="button"
+          title={t("streak.days", { count: from })}
+          aria-label={t("streak.days", { count: from })}
+          aria-pressed={preview === tier}
+          onClick={() => onPick(preview === tier ? null : tier)}
+          className={`flex size-8 items-center justify-center rounded-md hover:bg-muted ${
+            preview === tier ? "bg-muted ring-1 ring-border" : ""
+          }`}
+        >
+          <StreakFlame days={0} preview={tier} sample />
+        </button>
+      ))}
+    </fieldset>
   );
 }
 
 /** The streak in words, with freezes in reserve; the longest run sits in the tooltip. */
 function StreakLine({ streak }: { streak: Streak }) {
   const { t } = useTranslation();
+  // TEMPORARY: flame colour preview (FlamePicker).
+  const [preview, setPreview] = useState<FlameTier | null>(null);
   return (
-    <p
-      className="inline-flex items-center gap-1.5"
-      title={t("streak.longest", { count: streak.longest })}
-      data-testid="streak"
-    >
-      <StreakFlame days={streak.current} />
-      <span className="text-foreground">
-        {streak.current > 0 ? t("streak.days", { count: streak.current }) : t("streak.none")}
-      </span>
-      {streak.freezes > 0 ? <span>{t("streak.freezes", { count: streak.freezes })}</span> : null}
-    </p>
+    <div className="flex flex-col items-end gap-1">
+      <p
+        className="inline-flex items-center gap-1.5"
+        title={t("streak.longest", { count: streak.longest })}
+        data-testid="streak"
+      >
+        <StreakFlame days={streak.current} preview={preview} />
+        <span className="text-foreground">
+          {streak.current > 0 ? t("streak.days", { count: streak.current }) : t("streak.none")}
+        </span>
+        {streak.freezes > 0 ? <span>{t("streak.freezes", { count: streak.freezes })}</span> : null}
+      </p>
+      <FlamePicker preview={preview} onPick={setPreview} />
+    </div>
   );
 }
 

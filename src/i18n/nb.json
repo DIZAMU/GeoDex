@@ -16,6 +16,7 @@
     "mapStarted": "{{count}} av {{total}} land påbegynt",
     "due_one": "{{formatted}} kort i dag",
     "due_other": "{{formatted}} kort i dag",
+    "flamePreview": "Flammefarge (test)",
     "doneTitle": "Ferdig for i dag",
     "keepGoing": "Fortsett: {{count}} nye kort",
     "drill": "Øv på en region",
