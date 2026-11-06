@@ -44,7 +44,8 @@ jobs:
       matrix:
         project: [desktop, phone]
         shard: [1, 2]
-    timeout-minutes: 25
+    # The steps below have their own limits; this one is the safety net around them.
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v5
       - uses: pnpm/action-setup@v4
@@ -53,8 +54,25 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm exec playwright install --with-deps chromium
+      # The browser download is sometimes very slow on a runner (15 minutes instead of 15
+      # seconds), so the browser is cached per Playwright version and only fetched on a miss.
+      # The system libraries it needs still come from apt on every run.
+      - id: playwright
+        run: echo "version=$(pnpm exec playwright --version | awk '{print $2}')" >> "$GITHUB_OUTPUT"
+      - id: browser-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.playwright.outputs.version }}-chromium
+      - if: steps.browser-cache.outputs.cache-hit != 'true'
+        run: pnpm exec playwright install --with-deps chromium
+        timeout-minutes: 10
+      - if: steps.browser-cache.outputs.cache-hit == 'true'
+        run: pnpm exec playwright install-deps chromium
+        timeout-minutes: 10
+      # Setup has its own limit above, so a slow download fails as setup, not as tests.
       - run: pnpm test:e2e --project=${{ matrix.project }} --shard=${{ matrix.shard }}/2
+        timeout-minutes: 20
       - if: always()
         uses: actions/upload-artifact@v4
         with:
