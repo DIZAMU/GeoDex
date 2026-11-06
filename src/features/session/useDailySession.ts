@@ -49,7 +49,13 @@ export type SessionView =
       /** Hooks voted "Not helpful" while this feedback was on screen. */
       hidden: string[];
     }
-  | { kind: "done"; reviewed: number; correct: number };
+  | {
+      kind: "done";
+      reviewed: number;
+      correct: number;
+      /** Each answer in order, right or wrong, for the summary's row of dots. */
+      results: boolean[];
+    };
 
 /**
  * A daily session takes `length` cards in the focus from today's plan (PLAN.md 11.2); a drill
@@ -118,6 +124,7 @@ export function useDailySession(
   const [total] = useState(start.queue.length);
   const [reviewed, setReviewed] = useState(0);
   const correct = useRef(0);
+  const results = useRef<boolean[]>([]);
 
   const question = useCallback(
     (item: QueueItem): Question | null => {
@@ -137,7 +144,12 @@ export function useDailySession(
   const advance = useCallback(() => {
     const next = nextItem(session.current, Date.now());
     if (!next) {
-      setView({ kind: "done", reviewed: session.current.answered, correct: correct.current });
+      setView({
+        kind: "done",
+        reviewed: session.current.answered,
+        correct: correct.current,
+        results: [...results.current],
+      });
       feedback("finish", learner.device);
       return;
     }
@@ -261,6 +273,7 @@ export function useDailySession(
         Date.now(),
       );
       if (event.correct) correct.current++;
+      results.current.push(event.correct);
       setReviewed((n) => n + 1);
       return next;
     } finally {
@@ -296,7 +309,12 @@ export function useDailySession(
 
   const end = useCallback(async () => {
     if (view?.kind === "feedback") await commit();
-    setView({ kind: "done", reviewed: session.current.answered, correct: correct.current });
+    setView({
+      kind: "done",
+      reviewed: session.current.answered,
+      correct: correct.current,
+      results: [...results.current],
+    });
   }, [view, commit]);
 
   return {
@@ -306,6 +324,8 @@ export function useDailySession(
       view?.kind === "done" ? 0 : remaining(session.current) + (view?.kind === "feedback" ? 0 : 1),
     total,
     reviewed,
+    /** The answer on screen is the session's last: its button finishes the session. */
+    last: view?.kind === "feedback" && session.current.answered + 1 >= session.current.limit,
     startPrompt,
     showHint,
     answer,

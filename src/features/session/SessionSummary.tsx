@@ -22,6 +22,7 @@ export function SessionSummary({
   learner,
   reviewed,
   correct,
+  results = [],
   held,
   drill,
   before,
@@ -31,6 +32,8 @@ export function SessionSummary({
   learner: Learner;
   reviewed: number;
   correct: number;
+  /** Each answer in order, right or wrong. */
+  results?: readonly boolean[];
   held: ReadonlySet<string>;
   drill: boolean;
   /** Levels and XP when the session started (PLAN.md 11.3). */
@@ -88,11 +91,12 @@ export function SessionSummary({
 
   return (
     <main className="flex min-h-dvh items-center justify-center px-4 py-16">
-      <div className="flex w-full max-w-md flex-col gap-6" data-testid="session-summary">
+      <div className="enter flex w-full max-w-md flex-col gap-6" data-testid="session-summary">
         {levelUp !== null || rankUp !== null ? (
           <Celebration level={levelUp} rank={rankUp ? t(`rank.${rankUp}`) : null} />
         ) : null}
         <div className="flex flex-col gap-1">
+          {results.length > 0 ? <ResultDots results={results} /> : null}
           <h1 className="text-3xl font-medium tracking-tight" data-testid="summary-correct">
             {t("summary.right", {
               correct: number.format(correct),
@@ -181,6 +185,62 @@ export function SessionSummary({
               {drill ? t("entry.back") : t("session.backToToday")}
             </Link>
           </Button>
+        </div>
+      </div>
+    </main>
+  );
+}
+
+/**
+ * One dot per answer, in order: filled for right, hollow red for wrong, so the shape of the
+ * session shows at a glance. They pop in one after another. The heading says the same in words.
+ */
+function ResultDots({ results }: { results: readonly boolean[] }) {
+  return (
+    <ol aria-hidden className="flex flex-wrap gap-1.5 pb-3" data-testid="summary-dots">
+      {results.map((right, i) => (
+        <li
+          // biome-ignore lint/suspicious/noArrayIndexKey: answers have no id but their order
+          key={i}
+          data-right={right}
+          className={`summary-dot size-3.5 rounded-full ${
+            right ? "bg-correct" : "border-2 border-destructive"
+          }`}
+          // The stagger stops growing after 16 dots so a long session still fills quickly.
+          style={{ animationDelay: `${Math.min(i, 16) * 45}ms` }}
+        />
+      ))}
+    </ol>
+  );
+}
+
+/** Stand-in for the results while the last answer is saved: the summary's shape, shimmering. */
+export function SummarySkeleton() {
+  return (
+    <main className="flex min-h-dvh items-center justify-center px-4 py-16">
+      <div
+        aria-hidden
+        className="flex w-full max-w-md flex-col gap-6"
+        data-testid="summary-loading"
+      >
+        <div className="flex flex-col gap-3">
+          <div className="flex gap-1.5 pb-1">
+            {Array.from({ length: 5 }, (_, i) => (
+              // biome-ignore lint/suspicious/noArrayIndexKey: fixed placeholders
+              <div key={i} className="skeleton size-3.5 rounded-full" />
+            ))}
+          </div>
+          <div className="skeleton h-9 w-56" />
+          <div className="skeleton h-4 w-64" />
+          <div className="skeleton h-4 w-44" />
+        </div>
+        <div className="flex flex-col gap-2">
+          <div className="skeleton h-10 w-full" />
+          <div className="skeleton h-10 w-full" />
+        </div>
+        <div className="flex gap-3">
+          <div className="skeleton h-11 w-40" />
+          <div className="skeleton h-11 w-32" />
         </div>
       </div>
     </main>
