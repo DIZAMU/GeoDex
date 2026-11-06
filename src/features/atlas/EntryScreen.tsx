@@ -187,16 +187,21 @@ function Entry({ learner, country }: { learner: Learner; country: Country }) {
                 const state = learner.states.get(cardId(country.id, type));
                 const level = cardLevel(state);
                 return (
-                  <li key={type} className="flex items-center justify-between gap-4 py-2.5">
+                  // On a phone the status goes under the card's name: side by side, a long
+                  // status squeezes the name to a word per line.
+                  <li
+                    key={type}
+                    className="flex flex-col gap-1 py-2.5 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
+                  >
                     <span className="flex items-center gap-3">
                       <span
                         aria-hidden
-                        className="size-3 rounded-sm border border-border"
+                        className="size-3 shrink-0 rounded-sm border border-border"
                         style={{ background: `var(--mastery-${level})` }}
                       />
                       {t(`cardType.${type}`)}
                     </span>
-                    <span className="text-right text-sm text-muted-foreground">
+                    <span className="pl-6 text-sm text-muted-foreground sm:pl-0 sm:text-right">
                       {t(`level.${level}`)}
                       {state && state.phase !== "new" ? (
                         <>
@@ -369,15 +374,15 @@ function ModuleList({
           );
           return (
             <li key={item.id} className="flex items-center justify-between gap-4 py-2.5">
-              <span className="flex items-center gap-3">
+              <span className="flex min-w-0 items-center gap-3">
                 <span
                   aria-hidden
-                  className="size-3 rounded-sm border border-border"
+                  className="size-3 shrink-0 rounded-sm border border-border"
                   style={{ background: `var(--mastery-${level})` }}
                 />
                 {item.names[locale]}
               </span>
-              <span className="text-sm text-muted-foreground">
+              <span className="shrink-0 text-sm text-muted-foreground">
                 {t(`level.${level as 0 | 1 | 2 | 3 | 4}`)}
               </span>
             </li>
