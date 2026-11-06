@@ -1,10 +1,10 @@
 import { FlameIcon } from "lucide-react";
-import { useCallback, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Navigate, useNavigate } from "react-router";
+import { Navigate, useLocation, useNavigate } from "react-router";
 import { db } from "@/db/db";
 import { setTourDone } from "@/db/settings";
-import type { Streak } from "@/engine/streak";
+import { FLAME_TIERS, type FlameTier, flameTier, type Streak } from "@/engine/streak";
 import { parseCardId } from "@/engine/types";
 import { isLocale } from "@/i18n/locales";
 import { GlobeMap } from "@/map/GlobeMap";
@@ -14,6 +14,7 @@ import { planDay, scopedCountries } from "../study/plan";
 import { useProgress } from "../study/progress";
 import { type Learner, useLearner } from "../study/useLearner";
 import { Tour } from "../tour/Tour";
+import { DoneDialog, KeepGoingCard } from "./KeepGoing";
 import { LevelLine } from "./LevelLine";
 import { SessionPicker } from "./SessionPicker";
 
@@ -44,6 +45,20 @@ function Today({ learner }: { learner: Learner }) {
     month: "long",
   }).format(new Date());
   const minutes = Math.max(1, plan.budget.estimatedMinutes);
+
+  // "Good job!" once, when the session that finished the day hands back to Today. The flag
+  // rides on the navigation, so a reload or a later visit does not bring it back.
+  const location = useLocation();
+  const finished = (location.state as { finished?: boolean } | null)?.finished === true;
+  const done = plan.queue.length === 0;
+  const [dialog, setDialog] = useState(false);
+  useEffect(() => {
+    if (!finished) return;
+    if (done) setDialog(true);
+    // Drop the flag from this history entry without a navigation, which would remount the
+    // screen; React Router keeps its state under `usr`.
+    window.history.replaceState({ ...window.history.state, usr: null }, "");
+  }, [finished, done]);
 
   return (
     <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-6 md:px-10 md:py-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-12">
@@ -83,6 +98,7 @@ function Today({ learner }: { learner: Learner }) {
             <p className="max-w-[60ch] text-muted-foreground" data-testid="summary">
               {t("today.nothingLeft")}
             </p>
+            <KeepGoingCard learner={learner} />
           </div>
         )}
       </section>
@@ -91,6 +107,7 @@ function Today({ learner }: { learner: Learner }) {
         <TodayMap learner={learner} nextSubregion={plan.nextSubregion} region={region ?? null} />
         <LevelLine learner={learner} />
       </div>
+      <DoneDialog learner={learner} open={dialog} onOpenChange={setDialog} />
       {/* The tour runs once, when Today has rendered its anchors. */}
       {learner.device.tourDoneAt == null ? (
         <Tour
@@ -103,21 +120,99 @@ function Today({ learner }: { learner: Learner }) {
   );
 }
 
+/**
+ * The flame by streak length (flameTier): hollow with no streak, then yellow, orange, red,
+ * blue, gold, and a glowing gold from a year on. Filled and outlined in a darker shade so
+ * each reads on light and dark backgrounds; the words beside it carry the number.
+ */
+const FLAME: Record<FlameTier, string> = {
+  none: "text-muted-foreground",
+  yellow: "fill-[#facc15] text-[#a16207]",
+  orange: "fill-[#fb923c] text-[#c2410c]",
+  red: "fill-[#ef4444] text-[#991b1b]",
+  blue: "fill-[#60a5fa] text-[#1d4ed8]",
+  gold: "fill-[#e0b23a] text-[#8a6410]",
+  brightGold: "fill-[#ffd34d] text-[#b8860b] drop-shadow-[0_0_4px_rgb(255_200_60/0.75)]",
+};
+
+function StreakFlame({
+  days,
+  preview,
+  sample = false,
+}: {
+  days: number;
+  preview?: FlameTier | null;
+  /** A swatch in the picker, not the streak's own flame. */
+  sample?: boolean;
+}) {
+  const tier = preview ?? flameTier(days);
+  return (
+    <FlameIcon
+      aria-hidden
+      className={`size-4 ${FLAME[tier]}`}
+      strokeWidth={tier === "none" ? 1.75 : 1.5}
+      data-testid={sample ? undefined : "streak-flame"}
+      data-tier={tier}
+    />
+  );
+}
+
+/**
+ * TEMPORARY, for checking the flame colours: a row of every tier; a tap shows that colour on
+ * the streak flame until a reload. It changes nothing stored and not the day count. Remove
+ * this, FlamePicker, the `preview` state and the today.flamePreview strings once checked.
+ */
+function FlamePicker({
+  preview,
+  onPick,
+}: {
+  preview: FlameTier | null;
+  onPick: (tier: FlameTier | null) => void;
+}) {
+  const { t } = useTranslation();
+  return (
+    <fieldset className="flex w-full flex-wrap items-center gap-1" data-testid="flame-picker">
+      <legend className="sr-only">{t("today.flamePreview")}</legend>
+      <span className="pr-1 text-xs">{t("today.flamePreview")}</span>
+      {FLAME_TIERS.map(({ from, tier }) => (
+        <button
+          key={tier}
+          type="button"
+          title={t("streak.days", { count: from })}
+          aria-label={t("streak.days", { count: from })}
+          aria-pressed={preview === tier}
+          onClick={() => onPick(preview === tier ? null : tier)}
+          className={`flex size-8 items-center justify-center rounded-md hover:bg-muted ${
+            preview === tier ? "bg-muted ring-1 ring-border" : ""
+          }`}
+        >
+          <StreakFlame days={0} preview={tier} sample />
+        </button>
+      ))}
+    </fieldset>
+  );
+}
+
 /** The streak in words, with freezes in reserve; the longest run sits in the tooltip. */
 function StreakLine({ streak }: { streak: Streak }) {
   const { t } = useTranslation();
+  // TEMPORARY: flame colour preview (FlamePicker).
+  const [preview, setPreview] = useState<FlameTier | null>(null);
   return (
-    <p
-      className="inline-flex items-center gap-1.5"
-      title={t("streak.longest", { count: streak.longest })}
-      data-testid="streak"
-    >
-      <FlameIcon aria-hidden className="size-4" strokeWidth={1.75} />
-      <span className="text-foreground">
-        {streak.current > 0 ? t("streak.days", { count: streak.current }) : t("streak.none")}
-      </span>
-      {streak.freezes > 0 ? <span>{t("streak.freezes", { count: streak.freezes })}</span> : null}
-    </p>
+    <div className="flex flex-col items-end gap-1">
+      <p
+        className="inline-flex items-center gap-1.5"
+        title={t("streak.longest", { count: streak.longest })}
+        data-testid="streak"
+      >
+        <StreakFlame days={streak.current} preview={preview} />
+        <span className="text-foreground">
+          {streak.current > 0 ? t("streak.days", { count: streak.current }) : t("streak.none")}
+        </span>
+        {streak.freezes > 0 ? <span>{t("streak.freezes", { count: streak.freezes })}</span> : null}
+      </p>
+      <FlamePicker preview={preview} onPick={setPreview} />
+    </div>
   );
 }
 

@@ -16,11 +16,23 @@
     "mapStarted": "{{count}} av {{total}} land påbegynt",
     "due_one": "{{formatted}} kort i dag",
     "due_other": "{{formatted}} kort i dag",
-    "doneTitle": "Ferdig for i dag"
+    "flamePreview": "Flammefarge (test)",
+    "doneTitle": "Ferdig for i dag",
+    "keepGoing": "Fortsett: {{count}} nye kort",
+    "drill": "Øv på en region",
+    "moreNote": "Ekstra nye kort gir noen flere repetisjoner de neste dagene. Øving endrer ingenting.",
+    "doneDialog": {
+      "title": "Bra jobbet!",
+      "body": "Det var alt for i dag. Vil du fortsette?",
+      "raise": "Øk dagsgrensen til {{count}}",
+      "notNow": "Ikke nå"
+    }
   },
   "settings": {
     "label": "Innstillinger",
     "saved": "Endringer lagret",
+    "newLimit": "Nye kort per dag",
+    "newLimitHelp": "Med 25 må nye kort også få plass i tiden du har satt av, så en dag med mange repetisjoner gir færre. 50 og 100 gir alltid så mange, og dagen tar lengre tid.",
     "theme": {
       "label": "Utseende",
       "light": "Lyst",
@@ -178,11 +190,12 @@
     "currency": "Valuta",
     "languages": "Offisielle språk",
     "continue": "Fortsett",
+    "finish": "Fullfør",
     "hookLabel": "Huskeregel",
     "notHelpful": "Ikke nyttig",
     "hookHidden": "Skjult for dette kortet.",
     "contrastLabel": "Slik skiller du dem",
-    "deeperLabel": "Dypere",
+    "bonusLabel": "Bonusfakta",
     "missed": "Mangler: {{names}}.",
     "notInGroup": "Ikke med i gruppen: {{names}}.",
     "landmarkIn": "Severdighet {{inName}}",
@@ -519,9 +532,8 @@
     "timeAll": "Med alle emner slått på: omtrent {{months}} måneder.",
     "levels": {
       "1": "Akkurat begynt",
-      "3": "Lærer",
-      "5": "Sitter en uke",
-      "8": "Sitter tre uker",
+      "4": "Lærer",
+      "7": "Sitter en uke",
       "10": "Mestret"
     },
     "demoProgress": "Spørsmål {{n}} av {{total}}",
@@ -654,9 +666,9 @@
     "toNext_one": "{{count}} kort til for nivå {{level}}",
     "toNext_other": "{{count}} kort til for nivå {{level}}",
     "top": "Toppnivå. Fortsett å repetere for å holde det.",
-    "xpLevel": "XP-nivå {{level}}",
     "xp": "{{xp}} XP",
-    "xpToNext": "{{xp}} XP til neste XP-nivå",
+    "xpToRank": "{{xp}} XP til {{rank}}",
+    "topRank": "Høyeste rang",
     "levelShort": "Nivå {{level}}",
     "goalMinutesLabel": "{{done}} av {{count}} minutter øvd i dag",
     "goalSessionsLabel_one": "{{done}} av {{count}} økt fullført i dag",

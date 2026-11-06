@@ -5,16 +5,9 @@
 import { useTranslation } from "react-i18next";
 import { db } from "@/db/db";
 import { setLevelProgress } from "@/db/settings";
-import type { MemoryLevel } from "@/engine/levels";
 import { Meter } from "@/ui/meter";
 import { useLevels } from "../study/levels";
 import type { Learner } from "../study/useLearner";
-
-/** Progress through the current level, 0 to 1. */
-export function withinLevel(m: MemoryLevel): number {
-  if (m.level >= 10) return 1;
-  return Math.min(1, Math.max(0, 9 * m.share - (m.level - 1)));
-}
 
 export function LevelLine({ learner }: { learner: Learner }) {
   const { t, i18n } = useTranslation();
@@ -26,7 +19,7 @@ export function LevelLine({ learner }: { learner: Learner }) {
   const { overall, xp, goal } = useLevels(learner);
   // The way to the next level, as cards or as a share; remembered on this device.
   const showPercent = learner.device.levelProgress === "percent";
-  const within = withinLevel(overall);
+  const within = overall.within;
   const goalDone = Math.min(Math.floor(goal.done), goal.target);
   const goalLabel =
     goal.kind === "minutes"

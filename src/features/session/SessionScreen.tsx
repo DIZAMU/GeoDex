@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate, useSearchParams } from "react-router";
 import type { HistoricalEntity } from "@/data/types";
-import { parseFocus, parseLength } from "@/engine/focus";
+import { MIXED, parseFocus, parseLength, parseMore } from "@/engine/focus";
 import type { InputSetting } from "@/engine/types";
 import { isLocale } from "@/i18n/locales";
 import { type MapFocus, type MapHighlight, WorldMap } from "@/map/WorldMap";
@@ -47,7 +47,7 @@ import {
   TypedAnswer,
   useSessionKeys,
 } from "./parts";
-import { SessionSummary } from "./SessionSummary";
+import { SessionSummary, SummarySkeleton } from "./SessionSummary";
 import { ShortcutsDialog } from "./ShortcutsDialog";
 import { CountdownRing, ProgressBar, StudyLayout } from "./StudyLayout";
 import { useCountdown } from "./useCountdown";
@@ -55,6 +55,8 @@ import { type SessionKind, type SessionView, useDailySession } from "./useDailyS
 
 const INPUTS: readonly InputSetting[] = ["auto", "mc", "typing"];
 const EMPTY: ReadonlySet<string> = new Set();
+/** How long the results skeleton shows after the last answer: long enough to read as a step. */
+const SUMMARY_DELAY_MS = 450;
 
 export function SessionScreen() {
   const learner = useLearner();
@@ -65,12 +67,16 @@ export function SessionScreen() {
     ? (requested as InputSetting)
     : (learner?.device.lastInputMode ?? "auto");
   if (!learner) return <Loader />;
-  const kind: SessionKind = {
-    kind: "daily",
-    // The picker always sends a length; a bare /session link runs all of today's plan.
-    length: params.has("length") ? parseLength(params.get("length")) : Number.POSITIVE_INFINITY,
-    focus: parseFocus(params.get("focus")),
-  };
+  // "Keep going" (?more=10) studies that many new cards past today's allowance.
+  const more = parseMore(params.get("more"));
+  const kind: SessionKind = more
+    ? { kind: "daily", length: more, focus: MIXED, extraNew: more }
+    : {
+        kind: "daily",
+        // The picker always sends a length; a bare /session link runs all of today's plan.
+        length: params.has("length") ? parseLength(params.get("length")) : Number.POSITIVE_INFINITY,
+        focus: parseFocus(params.get("focus")),
+      };
   // Keyed by navigation, so "another round" starts a fresh session on the same route.
   return <Session key={key} learner={learner} input={input} kind={kind} />;
 }
@@ -175,13 +181,26 @@ export function Session({
     if (view?.kind === "done" && view.reviewed === 0) navigate("/", { viewTransition: true });
   }, [view, navigate]);
 
+  // After the last answer, a short skeleton of the results before they appear, so the end of
+  // a session reads as a step of its own. Reduced motion skips it.
+  const finished = view?.kind === "done";
+  const [revealed, setRevealed] = useState(false);
+  useEffect(() => {
+    if (!finished) return;
+    const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
+    const id = window.setTimeout(() => setRevealed(true), reduced ? 0 : SUMMARY_DELAY_MS);
+    return () => window.clearTimeout(id);
+  }, [finished]);
+
   if (!view || !s.ctx) return <Loader />;
   if (view.kind === "done") {
+    if (!revealed) return <SummarySkeleton />;
     return (
       <SessionSummary
         learner={learner}
         reviewed={view.reviewed}
         correct={view.correct}
+        results={view.results}
         held={held}
         before={before}
         startedAt={startedAt}
@@ -216,7 +235,9 @@ export function Session({
           <div className="flex items-center gap-2 pr-2">
             <div className="flex-1">
               <ProgressBar
-                done={s.reviewed}
+                // An answer on screen counts as done: it is stored when the learner continues,
+                // but the bar should be full on the last question's feedback, not one short.
+                done={s.reviewed + (view.kind === "feedback" ? 1 : 0)}
                 total={s.total}
                 label={t("session.positionLabel", {
                   n: Math.min(s.total, s.reviewed + 1),
@@ -544,8 +565,9 @@ function Panel({
         onClick={() => void s.proceed()}
         ref={focusOnMount}
         data-testid="continue"
+        data-last={s.last || undefined}
       >
-        {t("feedback.continue")}
+        {s.last ? t("feedback.finish") : t("feedback.continue")}
       </Button>
     </div>
   );
@@ -615,8 +637,9 @@ function GroupFeedback({
         onClick={() => void s.proceed()}
         ref={focusOnMount}
         data-testid="continue"
+        data-last={s.last || undefined}
       >
-        {t("feedback.continue")}
+        {s.last ? t("feedback.finish") : t("feedback.continue")}
       </Button>
     </div>
   );

@@ -71,16 +71,13 @@ export function ExplanationView({
                 ) : null}
               </figure>
             );
-          default:
-            return (
+          default: {
+            const fact = (
               <p
                 key={block.id}
                 className="max-w-[60ch] text-muted-foreground"
                 data-snippet={block.id}
               >
-                {block.tier === 3 ? (
-                  <span className="mr-2 text-sm text-foreground">{t("feedback.deeperLabel")}</span>
-                ) : null}
                 {block.text}
                 {REPO_PUBLIC && cardId ? (
                   <a
@@ -108,6 +105,17 @@ export function ExplanationView({
                 ) : null}
               </p>
             );
+            // A tier 3 fact (the least known kind, content/VOICE.md) gets a heading of its own,
+            // set like the other labelled blocks: small and muted, above the text.
+            return block.tier === 3 ? (
+              <div key={block.id} className="flex flex-col gap-1">
+                <p className="text-sm text-muted-foreground">{t("feedback.bonusLabel")}</p>
+                {fact}
+              </div>
+            ) : (
+              fact
+            );
+          }
         }
       })}
     </div>

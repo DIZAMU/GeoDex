@@ -173,4 +173,23 @@ describe("xpLevel and ranks", () => {
     });
     expect(rankOf(99)).toBe("atlasKeeper");
   });
+
+  it("measures the way to the next rank", () => {
+    // Explorer starts at level 5 (1,000 XP) and Navigator at level 8 (2,800 XP).
+    expect(xpLevel(1024)).toMatchObject({
+      rank: "explorer",
+      nextRank: "navigator",
+      toNextRank: 1776,
+    });
+    expect(xpLevel(1000).rankShare).toBe(0);
+    expect(xpLevel(1900).rankShare).toBeCloseTo(0.5);
+    expect(xpLevel(0)).toMatchObject({ nextRank: "traveller", toNextRank: 300, rankShare: 0 });
+    // The top rank has no next one.
+    expect(xpLevel(xpForLevel(30))).toMatchObject({
+      rank: "atlasKeeper",
+      nextRank: null,
+      toNextRank: null,
+      rankShare: 1,
+    });
+  });
 });

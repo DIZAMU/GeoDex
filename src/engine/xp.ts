@@ -202,16 +202,37 @@ export function rankOf(level: number): Rank {
 
 export type XpLevel = {
   xp: number;
+  /** The XP level behind the rank. Internal: the app shows the rank, not this number. */
   level: number;
   rank: Rank;
   /** XP into this level, and the size of this level. */
   into: number;
   span: number;
+  /** The rank after this one and the XP to reach it; null at the top rank. */
+  nextRank: Rank | null;
+  toNextRank: number | null;
+  /** How far from this rank's start to the next, 0 to 1 (1 at the top rank). */
+  rankShare: number;
 };
 
 export function xpLevel(xp: number): XpLevel {
   let level = 1;
   while (xpForLevel(level + 1) <= xp) level++;
   const floor = xpForLevel(level);
-  return { xp, level, rank: rankOf(level), into: xp - floor, span: xpForLevel(level + 1) - floor };
+  const rank = rankOf(level);
+  const index = RANKS.indexOf(rank);
+  const nextFrom = RANK_FROM[index + 1];
+  const nextRank = RANKS[index + 1] ?? null;
+  const rankStart = xpForLevel(RANK_FROM[index] ?? 1);
+  const rankEnd = nextFrom === undefined ? null : xpForLevel(nextFrom);
+  return {
+    xp,
+    level,
+    rank,
+    into: xp - floor,
+    span: xpForLevel(level + 1) - floor,
+    nextRank: rankEnd === null ? null : nextRank,
+    toNextRank: rankEnd === null ? null : rankEnd - xp,
+    rankShare: rankEnd === null ? 1 : (xp - rankStart) / (rankEnd - rankStart),
+  };
 }

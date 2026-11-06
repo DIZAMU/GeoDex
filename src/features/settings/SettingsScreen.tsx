@@ -33,6 +33,7 @@ import { ToggleGroup, ToggleGroupItem } from "@/ui/toggle-group";
 import { CountryPicker } from "../onboarding/CountryPicker";
 import { scopedCountries } from "../study/plan";
 import { type Learner, useLearner } from "../study/useLearner";
+import { DEFAULT_NEW_LIMIT } from "../today/KeepGoing";
 import { BackupSection } from "./BackupSection";
 
 const MINUTES = [10, 15, 18, 20, 30] as const;
@@ -192,6 +193,22 @@ export function SettingsScreen() {
           render={(m) => t("settings.minutes", { count: m })}
           onChange={(dailyMinutes) => set({ dailyMinutes })}
           testId="minutes"
+        />
+        <Choice
+          label={t("settings.newLimit")}
+          help={t("settings.newLimitHelp")}
+          // 25 is the default: no override, so new cards also fit the daily time.
+          value={
+            s.newPerDayOverride === null || s.newPerDayOverride < 50
+              ? DEFAULT_NEW_LIMIT
+              : s.newPerDayOverride < 100
+                ? 50
+                : 100
+          }
+          options={[DEFAULT_NEW_LIMIT, 50, 100] as const}
+          render={(n) => String(n)}
+          onChange={(n) => set({ newPerDayOverride: n === DEFAULT_NEW_LIMIT ? null : n })}
+          testId="new-limit"
         />
         <Choice
           label={t("settings.goalKind")}

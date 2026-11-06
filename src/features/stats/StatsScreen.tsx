@@ -23,7 +23,6 @@ import { useLevels } from "../study/levels";
 import { confusionScoresFor, historyCardTypes, scopedCountries } from "../study/plan";
 import { useProgress } from "../study/progress";
 import { type Learner, useLearner } from "../study/useLearner";
-import { withinLevel } from "../today/LevelLine";
 import { LevelPath } from "../welcome/LevelPath";
 import { achievementLabel } from "./labels";
 
@@ -431,9 +430,16 @@ function LevelBreakdown({ learner }: { learner: Learner }) {
   });
   const { overall, xp, goal } = useLevels(learner);
   const showPercent = learner.device.levelProgress === "percent";
-  const within = withinLevel(overall);
+  const within = overall.within;
   const goalDone = Math.min(Math.floor(goal.done), goal.target);
-  const xpLeft = number.format(xp.span - xp.into);
+  // XP shows as the way to the next rank; "level" on this screen is only the memory level.
+  const toRank =
+    xp.nextRank === null
+      ? t("overview.topRank")
+      : t("overview.xpToRank", {
+          xp: number.format(xp.toNextRank ?? 0),
+          rank: t(`rank.${xp.nextRank}`),
+        });
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-2">
@@ -461,18 +467,14 @@ function LevelBreakdown({ learner }: { learner: Learner }) {
             <span className="font-medium">{t(`rank.${xp.rank}`)}</span>
             <span className="text-muted-foreground">
               {", "}
-              {t("overview.xpLevel", { level: number.format(xp.level) })}
+              {t("overview.xp", { xp: number.format(xp.xp) })}
             </span>
           </span>
-          <span className="text-sm text-muted-foreground">
-            {t("overview.xp", { xp: number.format(xp.xp) })}
+          <span className="text-sm text-muted-foreground" data-testid="next-rank">
+            {toRank}
           </span>
         </p>
-        <Meter
-          value={xp.span > 0 ? xp.into / xp.span : 0}
-          label={t("overview.xpToNext", { xp: xpLeft })}
-        />
-        <p className="text-sm text-muted-foreground">{t("overview.xpToNext", { xp: xpLeft })}</p>
+        <Meter value={xp.rankShare} label={toRank} />
       </div>
       <p className="text-sm text-muted-foreground">
         {goal.kind === "minutes"

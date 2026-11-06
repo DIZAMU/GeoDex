@@ -9,6 +9,7 @@ import {
   matchesFocus,
   parseFocus,
   parseLength,
+  parseMore,
   sliceSession,
 } from "./focus";
 import type { QueueItem } from "./session";
@@ -80,6 +81,15 @@ describe("focus keys", () => {
     expect(parseLength(20)).toBe(20);
     expect(parseLength("7")).toBe(DEFAULT_SESSION_LENGTH);
     expect(parseLength(null)).toBe(DEFAULT_SESSION_LENGTH);
+  });
+
+  it("accepts a keep-going count from 1 to 50 only", () => {
+    expect(parseMore("10")).toBe(10);
+    expect(parseMore("50")).toBe(50);
+    expect(parseMore("0")).toBeNull();
+    expect(parseMore("51")).toBeNull();
+    expect(parseMore("2.5")).toBeNull();
+    expect(parseMore(null)).toBeNull();
   });
 });
 

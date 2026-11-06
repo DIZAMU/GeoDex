@@ -2,15 +2,31 @@ import { expect, test } from "@playwright/test";
 import { answerPrompt, choose, chooseThemeAndLocale, currentScreen, setUpLearner } from "./helpers";
 
 /** Answers until the summary shows; returns how many questions were answered. */
-async function finishSession(page: import("@playwright/test").Page): Promise<number> {
+async function finishSession(
+  page: import("@playwright/test").Page,
+  /** Checked on each feedback with that question's position. */
+  onFeedback?: (position: string) => Promise<void>,
+): Promise<number> {
   let answered = 0;
   for (let i = 0; i < 80; i++) {
+    // The results come after a short skeleton; wait for a screen rather than poll past it.
+    await expect(
+      page
+        .locator(
+          '[data-testid="session-summary"], [data-testid="intro"], [data-testid="prompt"], [data-testid="feedback"]',
+        )
+        .first(),
+    ).toBeVisible();
     if (await page.getByTestId("session-summary").isVisible()) return answered;
     const screen = await currentScreen(page).catch(() => null);
     if (screen === null) continue;
     if (screen === "intro") await page.keyboard.press("Enter");
     else if (screen === "prompt") await answerPrompt(page);
     else {
+      if (onFeedback) {
+        const left = (await page.getByTestId("left").textContent()) ?? "";
+        await onFeedback(left.split(" ")[0] ?? "");
+      }
       await page.keyboard.press("Enter");
       answered++;
       await expect(page.getByTestId("feedback")).toBeHidden();
@@ -28,16 +44,28 @@ test("a 5-question session holds exactly 5 and shows its position", async ({ pag
   await expect(page.getByTestId("left")).toHaveText("1 of 5");
   await expect(page).toHaveURL(/length=5/);
 
-  // Position moves only when the learner continues past feedback.
+  // Position moves only when the learner continues past feedback; the bar counts the answer
+  // on screen, so it is full on the last question's feedback.
+  const bar = page.getByRole("progressbar");
   if ((await currentScreen(page)) === "intro") await page.keyboard.press("Enter");
   await expect(page.getByTestId("prompt")).toBeVisible();
+  await expect(bar).toHaveAttribute("aria-valuenow", "0");
   await answerPrompt(page);
   await expect(page.getByTestId("left")).toHaveText("1 of 5");
+  await expect(bar).toHaveAttribute("aria-valuenow", "1");
   await page.keyboard.press("Enter");
   await expect(page.getByTestId("left")).toHaveText("2 of 5");
+  await expect(bar).toHaveAttribute("aria-valuenow", "1");
 
-  expect(await finishSession(page)).toBe(4);
+  // The last answer's button finishes the session; a short skeleton leads to the results,
+  // with one dot per answer.
+  const onFeedback = async (n: string) => {
+    await expect(bar).toHaveAttribute("aria-valuenow", n);
+    await expect(page.getByTestId("continue")).toHaveText(n === "5" ? "Finish" : "Continue");
+  };
+  expect(await finishSession(page, onFeedback)).toBe(4);
   await expect(page.getByTestId("reviewed")).toContainText("5 reviews");
+  await expect(page.getByTestId("summary-dots").locator("li")).toHaveCount(5);
 
   // Another round in the same length starts a fresh session.
   await expect(page.getByTestId("again")).toBeVisible();
