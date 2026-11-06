@@ -1,13 +1,15 @@
 /**
  * Borders over time (PLAN.md Phase 9): the history outlines whose period includes the
- * chosen year, each with the year it shows. A view, not a quiz (DECISIONS.md 037).
+ * chosen year, each with the year it shows, on the same globe as the Atlas. The globe turns
+ * toward the largest outline when the year changes. A view, not a quiz (DECISIONS.md 037).
  */
+import { geoArea } from "d3-geo";
 import { useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import type { Country, DissolvedState, Empire } from "@/data/types";
 import type { WorldData } from "@/data/world";
 import type { Locale } from "@/i18n/locales";
-import { WorldMap } from "@/map/WorldMap";
+import { GlobeMap } from "@/map/GlobeMap";
 import { formatPeriod, formatYear, nameOf } from "../session/parts";
 
 type Outlined = DissolvedState | Empire;
@@ -44,15 +46,37 @@ export function Timeline({
   );
   const shown = useMemo(() => outlinesAt(all, year), [all, year]);
   const labelFor = useCallback((id: string) => nameOf(world, id, locale), [world, locale]);
+  const outlines = useMemo(
+    () =>
+      shown.map((e) => ({
+        id: e.id,
+        coordinates: e.outline.geometry.coordinates,
+        clip: e.outline.clip,
+        label: e.outline.label,
+      })),
+    [shown],
+  );
+  // The globe turns toward the largest outline of the year.
+  const turnTo = useMemo(() => {
+    let best: { area: number; label: [number, number] } | null = null;
+    for (const e of shown) {
+      const area = geoArea(e.outline.geometry);
+      if (!best || area > best.area) best = { area, label: e.outline.label };
+    }
+    return best?.label ?? null;
+  }, [shown]);
   return (
     <div className="flex min-h-0 flex-1 flex-col gap-3" data-testid="timeline">
-      <div className="surface relative aspect-[16/10] min-h-0 overflow-hidden lg:aspect-auto lg:min-h-[14rem] lg:flex-1">
-        <WorldMap
+      <div
+        className="surface relative aspect-[16/10] min-h-0 overflow-hidden lg:aspect-auto lg:min-h-[14rem] lg:flex-1"
+        data-testid="timeline-map"
+      >
+        <GlobeMap
           countries={countries}
           topology={world.topology}
-          focus={{ kind: "world" }}
-          history={shown}
-          highlight={{ labels: shown.map((e) => e.id) }}
+          outlines={outlines}
+          outlineLabel={labelFor}
+          turnTo={turnTo}
           labelFor={labelFor}
           ariaLabel={t("atlas.timeline")}
         />

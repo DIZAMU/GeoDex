@@ -27,9 +27,12 @@ test("every outline shows its snapshot year and an approximate label where it ap
   await setUpLearner(page);
   for (const e of OUTLINED) {
     await page.goto(`/atlas?view=time&year=${e.outline.snapshotYear}`);
-    const outline = page.locator(`[data-testid="history-outline"][data-history="${e.id}"]`);
-    await expect(outline).toHaveCount(1);
-    expect((await outline.getAttribute("d"))?.length ?? 0, e.names.en).toBeGreaterThan(20);
+    // The globe draws on a canvas and lists the outlines it drew.
+    const globe = page.getByTestId("timeline-map").getByTestId("globe");
+    await expect(globe, e.names.en).toHaveAttribute(
+      "data-outlines",
+      new RegExp(`(^| )${e.id}( |$)`),
+    );
     const row = page.locator(`[data-testid="timeline-list"] [data-history="${e.id}"]`);
     await expect(row.getByTestId("outline-year")).toHaveText(
       `Borders in ${yearText(e.outline.snapshotYear)}`,

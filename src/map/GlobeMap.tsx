@@ -41,6 +41,22 @@ export type GlobeMapProps = {
   autoRotate?: number;
   /** Illustration only: no small-country dots, no hover, no taps. */
   decorative?: boolean;
+  /** Countries picked out in the accent color, such as the region learning moves to next. */
+  tinted?: ReadonlySet<string>;
+  /** Historical outlines drawn over the countries (the Atlas over time), each with a name. */
+  outlines?: readonly GlobeOutline[];
+  outlineLabel?: (id: string) => string;
+  /** [lon, lat] to turn toward whenever it changes; the first one is the starting view. */
+  turnTo?: readonly [number, number] | null;
+};
+
+/** A historical outline: drawn as `coordinates`, clipped to land or to the listed countries. */
+export type GlobeOutline = {
+  id: string;
+  /** MultiPolygon coordinates, as in HistoryOutline. */
+  coordinates: [number, number][][][];
+  clip: "land" | readonly string[] | null;
+  label: readonly [number, number];
 };
 
 type Shape = {
@@ -69,6 +85,8 @@ function lodFor(r: number, moving: boolean): 0 | 1 | 2 {
   if (moving) return r < 1400 ? 0 : 1;
   return r < 1000 ? 1 : 2;
 }
+/** How long the globe takes to turn toward a new place. */
+const TURN_MS = 800;
 /** Full detail returns this long after the last movement. */
 const SETTLE_MS = 140;
 /** Movement past this many pixels makes a press a drag, not a tap. */
@@ -79,6 +97,15 @@ function ringsOf(geometry: Geometry | null): Position[][] {
   if (geometry.type === "Polygon") return geometry.coordinates;
   if (geometry.type === "MultiPolygon") return geometry.coordinates.flat();
   return [];
+}
+
+/** A shape's rings at the three levels of detail (see LOD_TOLERANCE). */
+function lodsOfRings(rings: Position[][]): [PackedRing[], PackedRing[], PackedRing[]] {
+  return [
+    rings.map((ring) => packRingWithCap(simplifyRing(ring, LOD_TOLERANCE[0]))),
+    rings.map((ring) => packRingWithCap(simplifyRing(ring, LOD_TOLERANCE[1]))),
+    rings.map((ring) => packRingWithCap(ring)),
+  ];
 }
 
 /**
@@ -146,8 +173,10 @@ type Palette = {
   graticule: string;
   shade: string;
   foreground: string;
+  background: string;
   primary: string;
   levels: string[];
+  font: string;
 };
 
 function readPalette(element: Element): Palette {
@@ -161,8 +190,10 @@ function readPalette(element: Element): Palette {
     graticule: v("--map-graticule", "rgb(127 163 184 / 0.12)"),
     shade: v("--map-shade", "rgb(4 14 22 / 0.55)"),
     foreground: v("--foreground", "#ffffff"),
+    background: v("--background", "#000000"),
     primary: v("--primary", "#f4b740"),
     levels: [0, 1, 2, 3, 4].map((n) => v(`--mastery-${n}`, "#888888")),
+    font: style.fontFamily || "sans-serif",
   };
 }
 
@@ -181,11 +212,18 @@ export function GlobeMap({
   initialCenter,
   autoRotate,
   decorative = false,
+  tinted,
+  outlines,
+  outlineLabel,
+  turnTo,
 }: GlobeMapProps) {
   const { ref: containerRef, width, height } = useSize<HTMLDivElement>();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const view = useRef({
-    rotation: initialCenter ? centerOn(initialCenter, FIRST_VIEW_TILT) : { lambda: -10, phi: -25 },
+    rotation:
+      (turnTo ?? initialCenter)
+        ? centerOn((turnTo ?? initialCenter) as readonly [number, number], FIRST_VIEW_TILT)
+        : { lambda: -10, phi: -25 },
     k: 1,
     moving: false,
   });
@@ -197,31 +235,29 @@ export function GlobeMap({
   const settle = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const scoped = useMemo(() => new Map(countries.map((c) => [c.id, c])), [countries]);
-  const { shapes, others, graticule } = useMemo(() => {
+  const { shapes, others, graticule, ringsById } = useMemo(() => {
     const topo = topology as unknown as Topology;
     const all = (
       feature(topo, topo.objects.countries as never) as unknown as { features: Feature<Geometry>[] }
     ).features;
     const list: Shape[] = [];
     const rest: [PackedRing[], PackedRing[], PackedRing[]] = [[], [], []];
-    const lodsOf = (rings: Position[][]): Shape["lods"] => [
-      rings.map((ring) => packRingWithCap(simplifyRing(ring, LOD_TOLERANCE[0]))),
-      rings.map((ring) => packRingWithCap(simplifyRing(ring, LOD_TOLERANCE[1]))),
-      rings.map((ring) => packRingWithCap(ring)),
-    ];
+    // Every country's rings by id, in or out of scope: outlines are clipped to them.
+    const byId = new Map<string, Shape["lods"]>();
     for (const f of all) {
       const id = String(f.id ?? "");
       const country = scoped.get(id);
       const rings = ringsOf(f.geometry);
+      const lods = lodsOfRings(rings);
+      byId.set(id, lods);
       if (!country) {
-        const lods = lodsOf(rings);
         for (const level of [0, 1, 2] as const) rest[level].push(...lods[level]);
         continue;
       }
       list.push({
         id,
         feature: f,
-        lods: lodsOf(rings),
+        lods,
         area: geoArea(f),
         bounds: geoBounds(f) as Shape["bounds"],
         centroid: toVec(country.centroid),
@@ -244,8 +280,40 @@ export function GlobeMap({
       });
     }
     const lines = geoGraticule10().coordinates.map((line) => packRing(line));
-    return { shapes: list, others: rest, graticule: lines };
+    return { shapes: list, others: rest, graticule: lines, ringsById: byId };
   }, [topology, scoped, countries]);
+
+  // Outlines, packed like the countries, with what each is clipped to.
+  const packedOutlines = useMemo(() => {
+    if (!outlines || outlines.length === 0) return [];
+    let land: Shape["lods"] | null = null;
+    const landRings = () => {
+      if (land) return land;
+      const topo = topology as unknown as Topology;
+      const f = feature(topo, topo.objects.land as never) as unknown as
+        | Feature<Geometry>
+        | { features: Feature<Geometry>[] };
+      const rings =
+        "features" in f ? f.features.flatMap((x) => ringsOf(x.geometry)) : ringsOf(f.geometry);
+      land = lodsOfRings(rings);
+      return land;
+    };
+    return outlines.map((o) => ({
+      id: o.id,
+      lods: lodsOfRings(o.coordinates.flat()),
+      clip:
+        o.clip === null
+          ? null
+          : o.clip === "land"
+            ? landRings()
+            : (([0, 1, 2] as const).map((level) =>
+                o.clip === null || o.clip === "land"
+                  ? []
+                  : o.clip.flatMap((id) => ringsById.get(id)?.[level] ?? []),
+              ) as Shape["lods"]),
+      label: toVec(o.label as [number, number]),
+    }));
+  }, [outlines, topology, ringsById]);
 
   const radius = Math.max(10, Math.min(width, height) / 2 - 12);
 
@@ -336,6 +404,44 @@ export function GlobeMap({
     ctx.stroke(borders);
     ctx.globalAlpha = 1;
 
+    // Tinted countries: a light accent fill with an accent edge, as on the flat map.
+    if (tinted && tinted.size > 0) {
+      const fill = new Path2D();
+      const edge = new Path2D();
+      for (const s of shapes) {
+        if (s.area === 0 || !tinted.has(s.id)) continue;
+        for (const ring of s.lods[lod]) addRing(fill, edge, ring, basis, r, cx, cy);
+      }
+      ctx.fillStyle = colors.primary;
+      ctx.globalAlpha = 0.25;
+      ctx.fill(fill, "evenodd");
+      ctx.globalAlpha = 1;
+      ctx.strokeStyle = colors.primary;
+      ctx.lineWidth = 1.2;
+      ctx.stroke(edge);
+    }
+
+    // Historical outlines, shaded and edged as on the flat map, inside land or their countries.
+    for (const o of packedOutlines) {
+      const fill = new Path2D();
+      const edge = new Path2D();
+      for (const ring of o.lods[lod]) addRing(fill, edge, ring, basis, r, cx, cy);
+      ctx.save();
+      if (o.clip) {
+        const area = new Path2D();
+        for (const ring of o.clip[lod]) addRing(area, null, ring, basis, r, cx, cy);
+        ctx.clip(area, "evenodd");
+      }
+      ctx.fillStyle = colors.foreground;
+      ctx.globalAlpha = 0.32;
+      ctx.fill(fill, "evenodd");
+      ctx.strokeStyle = colors.foreground;
+      ctx.globalAlpha = 0.75;
+      ctx.lineWidth = 1.4;
+      ctx.stroke(edge);
+      ctx.restore();
+    }
+
     const hovered = hoverRef.current ? shapes.find((s) => s.id === hoverRef.current) : null;
     if (hovered && hovered.area > 0) {
       const outline = new Path2D();
@@ -376,10 +482,42 @@ export function GlobeMap({
     ctx.arc(cx, cy, r, 0, Math.PI * 2);
     ctx.fill();
 
+    // Outline names, on the near side only, with a halo so they read over any color.
+    if (outlineLabel && packedOutlines.length > 0) {
+      ctx.font = `500 13px ${colors.font}`;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.lineJoin = "round";
+      for (const o of packedOutlines) {
+        projectPacked(new Float64Array(o.label), 0, basis, r, cx, cy, p);
+        if (p.depth < 0.15) continue;
+        const text = outlineLabel(o.id);
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = colors.background;
+        ctx.strokeText(text, p.x, p.y);
+        ctx.fillStyle = colors.foreground;
+        ctx.fillText(text, p.x, p.y);
+      }
+    }
+    container.dataset.outlines = packedOutlines.map((o) => o.id).join(" ");
+
     container.dataset.lambda = rotation.lambda.toFixed(2);
     container.dataset.phi = rotation.phi.toFixed(2);
     container.dataset.zoom = k.toFixed(2);
-  }, [width, height, frameOf, shapes, others, graticule, levels, containerRef, decorative]);
+  }, [
+    width,
+    height,
+    frameOf,
+    shapes,
+    others,
+    graticule,
+    levels,
+    containerRef,
+    decorative,
+    tinted,
+    packedOutlines,
+    outlineLabel,
+  ]);
 
   const schedule = useCallback(() => {
     if (!frame.current) frame.current = requestAnimationFrame(draw);
@@ -496,7 +634,46 @@ export function GlobeMap({
     return () => cancelAnimationFrame(id);
   }, [autoRotate, touch]);
 
+  // Turning toward a new place (the Atlas over time, when the year changes). The first value
+  // is the starting view; a press stops a turn in progress.
+  const turning = useRef(0);
+  const firstTurn = useRef(true);
+  const turnLon = turnTo?.[0];
+  const turnLat = turnTo?.[1];
+  useEffect(() => {
+    if (turnLon === undefined || turnLat === undefined) return;
+    if (firstTurn.current) {
+      firstTurn.current = false;
+      return;
+    }
+    const from = view.current.rotation;
+    const target = centerOn([turnLon, turnLat], FIRST_VIEW_TILT);
+    const dLambda = ((((target.lambda - from.lambda + 180) % 360) + 360) % 360) - 180;
+    const dPhi = target.phi - from.phi;
+    if (prefersReducedMotion()) {
+      view.current.rotation = target;
+      touch();
+      return;
+    }
+    const start = performance.now();
+    const step = (now: number) => {
+      const x = Math.min(1, (now - start) / TURN_MS);
+      const e = x < 0.5 ? 2 * x * x : 1 - (-2 * x + 2) ** 2 / 2;
+      view.current.rotation = normalize({
+        lambda: from.lambda + dLambda * e,
+        phi: from.phi + dPhi * e,
+      });
+      touch();
+      turning.current = x < 1 ? requestAnimationFrame(step) : 0;
+    };
+    cancelAnimationFrame(turning.current);
+    turning.current = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(turning.current);
+  }, [turnLon, turnLat, touch]);
+
   const stopInertia = () => {
+    cancelAnimationFrame(turning.current);
+    turning.current = 0;
     if (inertia.current) cancelAnimationFrame(inertia.current);
     inertia.current = 0;
   };

@@ -1,13 +1,13 @@
 import { FlameIcon } from "lucide-react";
 import { useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { Navigate } from "react-router";
+import { Navigate, useNavigate } from "react-router";
 import { db } from "@/db/db";
 import { setTourDone } from "@/db/settings";
 import type { Streak } from "@/engine/streak";
 import { parseCardId } from "@/engine/types";
 import { isLocale } from "@/i18n/locales";
-import { WorldMap } from "@/map/WorldMap";
+import { GlobeMap } from "@/map/GlobeMap";
 import { Loader } from "@/ui/loader";
 import { nameOf } from "../session/parts";
 import { planDay, scopedCountries } from "../study/plan";
@@ -121,7 +121,10 @@ function StreakLine({ streak }: { streak: Streak }) {
   );
 }
 
-/** The learner's map (PLAN.md 8.3): countries started, and the region learning moves to next. */
+/** Degrees a second the Today globe turns on its own. */
+const SPIN = 6;
+
+/** The learner's globe (PLAN.md 8.3): how well each country is known, and the region next. */
 function TodayMap({
   learner,
   nextSubregion,
@@ -158,26 +161,42 @@ function TodayMap({
     [learner.world, locale],
   );
   const count = countries.filter((c) => started.has(c.id)).length;
+  const navigate = useNavigate();
+  const progress = useProgress(learner);
+  const levels = useMemo(() => progress.levels("location"), [progress]);
+  const selectable = useMemo(() => new Set(countries.map((c) => c.id)), [countries]);
+  const home = learner.settings.homeCountry
+    ? learner.world.byId.get(learner.settings.homeCountry)
+    : undefined;
 
   return (
     <section aria-labelledby="map-title" className="flex flex-col gap-3">
       <h2 id="map-title" className="sr-only">
         {t("today.mapTitle")}
       </h2>
-      <div className="aspect-[2/1] overflow-hidden rounded-lg">
-        <WorldMap
+      {/* The globe turns slowly on its own (not with reduced motion), colored by how well
+          each country is known; a tap opens its page. */}
+      <div className="aspect-[4/3] overflow-hidden rounded-lg" data-testid="today-globe">
+        <GlobeMap
           countries={countries}
           topology={learner.world.topology}
-          focus={{ kind: "world" }}
-          highlight={{ filled: started, tinted: next }}
+          levels={levels}
+          tinted={next}
+          selectable={selectable}
+          onSelect={(id) => navigate(`/atlas/${id}`, { viewTransition: true })}
           labelFor={labelFor}
           ariaLabel={t("map.label")}
-          interactive={false}
+          initialCenter={home?.centroid}
+          autoRotate={SPIN}
         />
       </div>
       <ul className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-muted-foreground">
         <li className="flex items-center gap-2" data-testid="map-started">
-          <span aria-hidden className="size-3 rounded-sm bg-[var(--mastery-2)]" />
+          {/* Started countries take every shade from just started to mastered. */}
+          <span
+            aria-hidden
+            className="h-3 w-6 rounded-sm bg-[linear-gradient(to_right,var(--mastery-1),var(--mastery-4))]"
+          />
           {t("today.mapStarted", { count, total: countries.length })}
         </li>
         {next.size > 0 && region ? (
