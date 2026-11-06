@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { createScheduler } from "./scheduler";
-import { computeStreak, MAX_FREEZES } from "./streak";
+import { computeStreak, flameTier, MAX_FREEZES } from "./streak";
 import type { Rating, ReviewEventCore } from "./types";
 
 const scheduler = createScheduler();
@@ -98,5 +98,21 @@ describe("streak", () => {
     expect(computeStreak(scheduler, placement, BASE, 4).current).toBe(0);
     const week = computeStreak(scheduler, daily([0, 1, 2, 3, 4, 5, 6]), BASE + 7 * DAY, 4);
     expect(week.milestones.map((m) => m.days)).toEqual([7]);
+  });
+});
+
+describe("flameTier", () => {
+  it("changes colour at 1, 14, 30, 90, 180 and 365 days, and stays at the top after", () => {
+    expect(flameTier(0)).toBe("none");
+    expect(flameTier(1)).toBe("yellow");
+    expect(flameTier(13)).toBe("yellow");
+    expect(flameTier(14)).toBe("orange");
+    expect(flameTier(30)).toBe("red");
+    expect(flameTier(89)).toBe("red");
+    expect(flameTier(90)).toBe("blue");
+    expect(flameTier(180)).toBe("gold");
+    expect(flameTier(364)).toBe("gold");
+    expect(flameTier(365)).toBe("brightGold");
+    expect(flameTier(1000)).toBe("brightGold");
   });
 });

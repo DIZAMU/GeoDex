@@ -120,6 +120,15 @@ export function parseFocus(key: string | null | undefined): Focus {
   return MIXED;
 }
 
+/** New cards one "Keep going" adds once the day is done. */
+export const KEEP_GOING = 10;
+
+/** The ?more= count of a keep-going session: a whole number from 1 to 50, else none. */
+export function parseMore(value: string | null | undefined): number | null {
+  const n = Number(value);
+  return Number.isInteger(n) && n > 0 && n <= 50 ? n : null;
+}
+
 export function parseLength(value: string | number | null | undefined): SessionLength {
   const n = Number(value);
   return (SESSION_LENGTHS as readonly number[]).includes(n)

@@ -16,11 +16,22 @@
     "mapStarted": "{{count}} av {{total}} land påbegynt",
     "due_one": "{{formatted}} kort i dag",
     "due_other": "{{formatted}} kort i dag",
-    "doneTitle": "Ferdig for i dag"
+    "doneTitle": "Ferdig for i dag",
+    "keepGoing": "Fortsett: {{count}} nye kort",
+    "drill": "Øv på en region",
+    "moreNote": "Ekstra nye kort gir noen flere repetisjoner de neste dagene. Øving endrer ingenting.",
+    "doneDialog": {
+      "title": "Bra jobbet!",
+      "body": "Det var alt for i dag. Vil du fortsette?",
+      "raise": "Øk dagsgrensen til {{count}}",
+      "notNow": "Ikke nå"
+    }
   },
   "settings": {
     "label": "Innstillinger",
     "saved": "Endringer lagret",
+    "newLimit": "Nye kort per dag",
+    "newLimitHelp": "Med 25 må nye kort også få plass i tiden du har satt av, så en dag med mange repetisjoner gir færre. 50 og 100 gir alltid så mange, og dagen tar lengre tid.",
     "theme": {
       "label": "Utseende",
       "light": "Lyst",

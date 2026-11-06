@@ -16,11 +16,22 @@
     "mapStarted": "{{count}} of {{total}} countries started",
     "due_one": "{{formatted}} card today",
     "due_other": "{{formatted}} cards today",
-    "doneTitle": "Done for today"
+    "doneTitle": "Done for today",
+    "keepGoing": "Keep going: {{count}} new cards",
+    "drill": "Practice a drill",
+    "moreNote": "Extra new cards add a few reviews over the next days. Drills change nothing.",
+    "doneDialog": {
+      "title": "Good job!",
+      "body": "That is everything for today. Want to keep going?",
+      "raise": "Raise the daily limit to {{count}}",
+      "notNow": "Not now"
+    }
   },
   "settings": {
     "label": "Settings",
     "saved": "Changes saved",
+    "newLimit": "New cards a day",
+    "newLimitHelp": "At 25, new cards also fit your daily time, so a day with many reviews brings fewer. 50 and 100 always bring that many, and the day takes longer.",
     "theme": {
       "label": "Appearance",
       "light": "Light",

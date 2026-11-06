@@ -181,7 +181,12 @@ export function SessionSummary({
             </Button>
           ) : null}
           <Button asChild size="lg" variant={next ? "ghost" : "default"}>
-            <Link to={drill ? "/atlas" : "/"} viewTransition>
+            {/* Today opens "Good job!" when this session finished the day. */}
+            <Link
+              to={drill ? "/atlas" : "/"}
+              state={drill ? undefined : { finished: true }}
+              viewTransition
+            >
               {drill ? t("entry.back") : t("session.backToToday")}
             </Link>
           </Button>

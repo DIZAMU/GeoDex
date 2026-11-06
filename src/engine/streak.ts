@@ -119,3 +119,24 @@ export function computeStreak(
   }
   return { current, longest, freezes, days, milestones };
 }
+
+/**
+ * The flame's look by streak length. The streak counts days without limit, so a new tier is
+ * one more row here. Each tier holds from its day count until the next.
+ */
+export const FLAME_TIERS = [
+  { from: 0, tier: "none" },
+  { from: 1, tier: "yellow" },
+  { from: 14, tier: "orange" },
+  { from: 30, tier: "red" },
+  { from: 90, tier: "blue" },
+  { from: 180, tier: "gold" },
+  { from: 365, tier: "brightGold" },
+] as const;
+export type FlameTier = (typeof FLAME_TIERS)[number]["tier"];
+
+export function flameTier(days: number): FlameTier {
+  let tier: FlameTier = "none";
+  for (const t of FLAME_TIERS) if (days >= t.from) tier = t.tier;
+  return tier;
+}

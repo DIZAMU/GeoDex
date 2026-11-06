@@ -158,6 +158,8 @@ export function planDay(input: {
   events: readonly PlanEvent[];
   scheduler: FSRS;
   now: number;
+  /** New cards on top of what is left of today's allowance ("Keep going" on Today). */
+  extraNew?: number;
   /** Written content. Contrast cards exist only for pairs with contrast text. */
   content?: {
     confusion: (a: string, b: string) => unknown;
@@ -290,7 +292,7 @@ export function planDay(input: {
     secondsPerReview: secondsPerReview(events, now),
     newPerDayOverride: settings.newPerDayOverride,
   });
-  const newAllowance = Math.max(0, budget.newToday - startedToday);
+  const newAllowance = Math.max(0, budget.newToday - startedToday) + (input.extraNew ?? 0);
 
   const order = subregionOrder(settings.homeCountry ?? "", countries);
   const candidates = countries.flatMap((c) => {

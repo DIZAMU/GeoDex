@@ -62,7 +62,13 @@ export type SessionView =
  * works through a fixed queue.
  */
 export type SessionKind =
-  | { kind: "daily"; length: number; focus: Focus }
+  | {
+      kind: "daily";
+      length: number;
+      focus: Focus;
+      /** New cards past today's allowance: "Keep going" once the day is done. */
+      extraNew?: number;
+    }
   | { kind: "drill"; queue: QueueItem[] };
 
 const DAILY: SessionKind = { kind: "daily", length: DEFAULT_SESSION_LENGTH, focus: MIXED };
@@ -80,7 +86,7 @@ export function useDailySession(
       kind.kind === "drill"
         ? kind.queue
         : sliceSession(
-            planDay({ ...learner, now: Date.now() }).queue,
+            planDay({ ...learner, now: Date.now(), extraNew: kind.extraNew }).queue,
             kind.focus,
             kind.length,
             continentLookup(learner.world),

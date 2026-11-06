@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate, useSearchParams } from "react-router";
 import type { HistoricalEntity } from "@/data/types";
-import { parseFocus, parseLength } from "@/engine/focus";
+import { MIXED, parseFocus, parseLength, parseMore } from "@/engine/focus";
 import type { InputSetting } from "@/engine/types";
 import { isLocale } from "@/i18n/locales";
 import { type MapFocus, type MapHighlight, WorldMap } from "@/map/WorldMap";
@@ -67,12 +67,16 @@ export function SessionScreen() {
     ? (requested as InputSetting)
     : (learner?.device.lastInputMode ?? "auto");
   if (!learner) return <Loader />;
-  const kind: SessionKind = {
-    kind: "daily",
-    // The picker always sends a length; a bare /session link runs all of today's plan.
-    length: params.has("length") ? parseLength(params.get("length")) : Number.POSITIVE_INFINITY,
-    focus: parseFocus(params.get("focus")),
-  };
+  // "Keep going" (?more=10) studies that many new cards past today's allowance.
+  const more = parseMore(params.get("more"));
+  const kind: SessionKind = more
+    ? { kind: "daily", length: more, focus: MIXED, extraNew: more }
+    : {
+        kind: "daily",
+        // The picker always sends a length; a bare /session link runs all of today's plan.
+        length: params.has("length") ? parseLength(params.get("length")) : Number.POSITIVE_INFINITY,
+        focus: parseFocus(params.get("focus")),
+      };
   // Keyed by navigation, so "another round" starts a fresh session on the same route.
   return <Session key={key} learner={learner} input={input} kind={kind} />;
 }
