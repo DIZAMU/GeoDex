@@ -16,7 +16,6 @@
     "mapStarted": "{{count}} of {{total}} countries started",
     "due_one": "{{formatted}} card today",
     "due_other": "{{formatted}} cards today",
-    "flamePreview": "Flame colour (test)",
     "doneTitle": "Done for today",
     "keepGoing": "Keep going: {{count}} new cards",
     "drill": "Practice a drill",

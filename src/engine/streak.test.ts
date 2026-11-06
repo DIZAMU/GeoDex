@@ -110,9 +110,9 @@ describe("flameTier", () => {
     expect(flameTier(30)).toBe("red");
     expect(flameTier(89)).toBe("red");
     expect(flameTier(90)).toBe("blue");
-    expect(flameTier(180)).toBe("gold");
-    expect(flameTier(364)).toBe("gold");
-    expect(flameTier(365)).toBe("brightGold");
-    expect(flameTier(1000)).toBe("brightGold");
+    expect(flameTier(180)).toBe("purple");
+    expect(flameTier(364)).toBe("purple");
+    expect(flameTier(365)).toBe("gold");
+    expect(flameTier(1000)).toBe("gold");
   });
 });
