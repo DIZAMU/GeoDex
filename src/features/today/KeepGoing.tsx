@@ -71,6 +71,12 @@ export function KeepGoingCard({ learner }: { learner: Learner }) {
   );
 }
 
+/**
+ * The dialog's other choices: a faint fill of the text colour and a clearer edge, so they read
+ * as buttons on the dialog's surface rather than as holes in it, and a stronger fill on hover.
+ */
+const ON_DIALOG = "border-foreground/15 bg-foreground/5 hover:bg-foreground/12";
+
 /** "Good job!": shown once the session that finished the day ends. */
 export function DoneDialog({
   learner,
@@ -102,6 +108,7 @@ export function DoneDialog({
             <Button
               size="lg"
               variant="outline"
+              className={ON_DIALOG}
               data-testid="dialog-raise"
               onClick={async () => {
                 // More new cards from now on; Today fills with them as soon as this is saved.
@@ -112,7 +119,13 @@ export function DoneDialog({
               {t("today.doneDialog.raise", { count: raiseTo })}
             </Button>
           ) : null}
-          <Button size="lg" variant="outline" onClick={drill} data-testid="dialog-drill">
+          <Button
+            size="lg"
+            variant="outline"
+            className={ON_DIALOG}
+            onClick={drill}
+            data-testid="dialog-drill"
+          >
             <DumbbellIcon aria-hidden />
             {t("today.drill")}
           </Button>
