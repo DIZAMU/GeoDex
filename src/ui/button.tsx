@@ -11,11 +11,13 @@ const buttonVariants = cva(
         // The accent: one main action per screen.
         default:
           "bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_14%)]",
+        // Hover is a wash of the text colour, so it shows on any surface: on a dialog the
+        // muted tone is the dialog's own colour and would change nothing.
         outline:
-          "border-border bg-transparent text-foreground hover:bg-muted aria-expanded:bg-muted",
+          "border-border bg-transparent text-foreground hover:bg-foreground/8 aria-expanded:bg-foreground/8",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-secondary",
-        ghost: "hover:bg-muted hover:text-foreground aria-expanded:bg-muted",
+        ghost: "hover:bg-foreground/8 hover:text-foreground aria-expanded:bg-foreground/8",
         destructive:
           "border-destructive/50 bg-transparent text-destructive hover:bg-destructive/10",
         link: "text-primary underline decoration-1 underline-offset-4 hover:decoration-2",
