@@ -56,6 +56,16 @@ import { type SessionKind, type SessionView, useDailySession } from "./useDailyS
 
 const INPUTS: readonly InputSetting[] = ["auto", "mc", "typing"];
 const EMPTY: ReadonlySet<string> = new Set();
+/** True when a map view marks nothing: no target, selection, label, shading or point. */
+function nothingMarked(h: MapHighlight): boolean {
+  return Object.values(h).every(
+    (v) =>
+      v === undefined ||
+      v === null ||
+      (typeof v === "string" ? v === "" : "size" in v ? v.size === 0 : v.length === 0),
+  );
+}
+
 /** Degrees a second the globe turns behind a question that does not use the map. */
 const PROMPT_SPIN = 8;
 /** How long the results skeleton shows after the last answer: long enough to read as a step. */
@@ -269,11 +279,13 @@ export function Session({
           </div>
         }
         map={
-          // A question that shows the whole world and is answered in the panel has nothing to
-          // point at on the map: a slowly turning globe stands in for the zoomed-out flat map.
+          // A question that shows the whole world, marks nothing on it and is answered in the
+          // panel has nothing to point at on the map: a slowly turning globe stands in for the
+          // zoomed-out flat map. "Which ocean is this?" marks the ocean, so it keeps the map.
           // The answer brings the flat map back, zoomed to the place.
           view.kind === "prompt" &&
           focus.kind === "world" &&
+          nothingMarked(highlight) &&
           !mapSelectable &&
           view.question.answer.kind !== "pin" &&
           view.question.answer.kind !== "feature" &&
