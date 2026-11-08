@@ -139,6 +139,11 @@ export async function seed(
 /** Turns a Settings switch on; a click on one already on would turn it off. */
 export async function turnOn(page: Page, testId: string) {
   const control = page.getByTestId(testId);
+  // Topic switches live on the Topics tab; another tab may be open (the theme helper leaves
+  // Appearance open).
+  if (testId.startsWith("module-") && !(await control.isVisible())) {
+    await page.goto("/settings?tab=topics");
+  }
   if ((await control.getAttribute("aria-checked")) !== "true") await control.click();
   await expect(control).toHaveAttribute("aria-checked", "true");
 }
