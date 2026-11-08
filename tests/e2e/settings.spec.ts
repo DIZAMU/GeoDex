@@ -12,7 +12,7 @@ test("theme and language survive a reload without a flash", async ({ page }) => 
 
 test("light is the default and Match device follows the system", async ({ page }) => {
   await page.emulateMedia({ colorScheme: "dark" });
-  await page.goto("/settings");
+  await page.goto("/settings?tab=appearance");
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
   await page.getByTestId("theme-auto").click();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
@@ -50,7 +50,7 @@ test("a backup file moves progress to a fresh browser, with no account", async (
   await studyAFew(page);
   const before = await countEvents(page);
   expect(before).toBeGreaterThan(0);
-  await page.goto("/settings");
+  await page.goto("/settings?tab=backup");
   await expect(page.getByTestId("last-backup")).toHaveText("No backup made in this browser yet");
   const download = page.waitForEvent("download");
   await page.getByRole("button", { name: "Download backup" }).click();
@@ -60,7 +60,7 @@ test("a backup file moves progress to a fresh browser, with no account", async (
   // Another browser starts from a blank slate and gets everything back from the file.
   const other = await browser.newContext();
   const fresh = await other.newPage();
-  await fresh.goto("/settings");
+  await fresh.goto("/settings?tab=backup");
   expect(await countEvents(fresh)).toBe(0);
   await fresh.getByTestId("import-file").setInputFiles(file);
   await expect(fresh.getByRole("status")).toContainText(`Restored ${before} answers`);
@@ -83,7 +83,7 @@ test("reset progress starts over but keeps every review in the export", async ({
       }),
   );
   expect(before).toBeGreaterThan(0);
-  await page.goto("/settings");
+  await page.goto("/settings?tab=backup");
   await page.getByTestId("reset-start").click();
   await page.getByTestId("reset-cancel").click();
   await expect(page.getByTestId("reset-confirm")).toHaveCount(0);

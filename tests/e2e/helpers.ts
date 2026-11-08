@@ -1,7 +1,7 @@
 import { expect, type Page } from "@playwright/test";
 
 export async function chooseThemeAndLocale(page: Page, theme: string, locale: string) {
-  await page.goto("/settings");
+  await page.goto("/settings?tab=appearance");
   await page.getByTestId(`theme-${theme}`).click();
   await page.getByTestId(`locale-${locale}`).click();
   await expect(page.locator("html")).toHaveAttribute("data-theme", theme);

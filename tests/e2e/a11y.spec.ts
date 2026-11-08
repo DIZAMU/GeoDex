@@ -15,7 +15,10 @@ const SCREENS = [
   ["/atlas?view=time&year=1820", "timeline-list"],
   ["/atlas/NOR", "entry-cards"],
   ["/stats", "stats-grid"],
-  ["/settings", "theme-light"],
+  ["/settings", "default-length-10"],
+  ["/settings?tab=topics", "module-cities-switch"],
+  ["/settings?tab=appearance", "theme-light"],
+  ["/settings?tab=backup", "reset-start"],
   ["/help", "app-map"],
   ["/session?input=mc", "left"],
 ] as const;

@@ -29,6 +29,12 @@
   },
   "settings": {
     "label": "Innstillinger",
+    "tabs": {
+      "study": "Øving",
+      "topics": "Emner",
+      "appearance": "Utseende",
+      "backup": "Sikkerhetskopi"
+    },
     "saved": "Endringer lagret",
     "newLimit": "Nye kort per dag",
     "newLimitHelp": "Med 25 må nye kort også få plass i tiden du har satt av, så en dag med mange repetisjoner gir færre. 50 og 100 gir alltid så mange, og dagen tar lengre tid.",
@@ -50,10 +56,7 @@
     "countdownOff": "Av",
     "seconds": "{{count}} s",
     "homeCountry": "Hjemland",
-    "groupLook": "Språk, utseende og lyd",
-    "groupStudy": "Øving",
     "welcomeAgain": "Vis velkomstsiden og omvisningen igjen",
-    "groupTopics": "Emner",
     "groupGuide": "Veiledning",
     "dailyMinutesHelp": "Hvor lenge du øver en vanlig dag. Det styrer hvor mange nye kort du får og tidsanslaget.",
     "goalKind": "Dagsmål",

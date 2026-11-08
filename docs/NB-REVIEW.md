@@ -88,8 +88,6 @@ sentence case, the same plain register as the English, and numbers that read wel
 | `today.summary` | {{reviews}} og {{newCards}}, omtrent {{minutes}} minutter | {{reviews}} og {{newCards}}, omtrent {{minutes}} min | {{reviews}} and {{newCards}}, about {{minutes}} minutes |
 | `settings.theme.label` | Utseende | Tema | Appearance |
 | `settings.theme.auto` | Som enheten | Automatisk | Match device |
-| `settings.groupLook` | Språk, utseende og lyd | Språk og utseende | Language, look and sound |
-| `settings.groupTopics` | Emner | Hva du vil lære | Topics |
 | `settings.goalHelp` | Når du når målet, får du XP, og dagen teller med i dager på rad, selv om det er repetisjoner igjen. | Når du når målet, fylles ringen på I dag, du får XP, og dagen teller med i dager på rad, selv om det er repetisjoner igjen. | Meeting your goal earns XP and counts the day for your streak, even with reviews left. |
 | `onboarding.title` | Språk og hjemland | Sett opp GeoDex | Language and home country |
 | `onboarding.homeHelp` | De første leksjonene starter i regionen, og forklaringene sammenligner steder med landet. | Læringen starter med regionen, og forklaringer sammenligner med landet. | Your first lessons start with its region, and explanations compare places with it. |

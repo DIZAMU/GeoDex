@@ -41,7 +41,7 @@ test("every outline shows its snapshot year and an approximate label where it ap
   }
   // The outline cards carry the same caption in a session. The module goes on first: the
   // settings screen writes the whole settings row, which would undo the seeded settings.
-  await page.goto("/settings");
+  await page.goto("/settings?tab=topics");
   await turnOn(page, "module-history-switch");
   await seed(
     page,

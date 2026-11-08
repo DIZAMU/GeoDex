@@ -254,7 +254,7 @@ const demo = (page: Page, call: string) => page.evaluate(`window.demo.${call}`);
 async function stage(theme: "light" | "dark", withHistory: boolean) {
   const s = await open({ width: WIDTH, height: HEIGHT, scale: 4 / 3, theme });
   await s.page.addInitScript(overlay, lockup);
-  await s.page.goto(`${BASE}/settings`, { waitUntil: "networkidle" });
+  await s.page.goto(`${BASE}/settings?tab=appearance`, { waitUntil: "networkidle" });
   await s.page.getByTestId(`theme-${theme}`).click();
   if (withHistory) {
     await s.page.goto(`${BASE}/welcome`, { waitUntil: "networkidle" });
@@ -512,6 +512,8 @@ async function takeB() {
   await until(t, 8);
   await demo(page, "reset(0)");
   await glideClick(page, page.getByRole("link", { name: "Settings" }).first(), 500);
+  // Language and look sit on the Appearance tab.
+  await glideClick(page, page.getByTestId("tab-appearance"), 400);
   await page.getByTestId("settings-look").waitFor();
   await page.getByTestId("settings-look").evaluate((el) => el.scrollIntoView({ block: "center" }));
   await demo(page, `focus('[data-testid="settings-look"]', 1.3, 0)`);

@@ -1,6 +1,7 @@
+import { Tabs } from "radix-ui";
 import { type ReactNode, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router";
+import { useNavigate, useSearchParams } from "react-router";
 import { CONTINENTS } from "@/data/types";
 import { db, type SettingsRow } from "@/db/db";
 import { resetProgress } from "@/db/reviews";
@@ -146,18 +147,47 @@ function SwitchRow({
   );
 }
 
-function Group({ title, id, children }: { title: string; id: string; children: ReactNode }) {
+/**
+ * A block of rows. The first block of a tab has no heading: the tab names it. Later blocks in
+ * the same tab (Home country, Guide, Start over) keep theirs.
+ */
+function Group({ title, id, children }: { title?: string; id: string; children: ReactNode }) {
   return (
     <section
-      aria-labelledby={`${id}-title`}
+      aria-labelledby={title ? `${id}-title` : undefined}
       className="flex flex-col gap-1"
       data-testid={`settings-${id}`}
     >
-      <h2 id={`${id}-title`} className="text-lg font-medium">
-        {title}
-      </h2>
-      <div className="flex flex-col divide-y divide-border border-y border-border">{children}</div>
+      {title ? (
+        <h2 id={`${id}-title`} className="pt-4 text-lg font-medium">
+          {title}
+        </h2>
+      ) : null}
+      {/* Under the tab row the first block needs no top rule: the tabs already draw one. */}
+      <div
+        className={`flex flex-col divide-y divide-border border-border ${title ? "border-y" : "border-b"}`}
+      >
+        {children}
+      </div>
     </section>
+  );
+}
+
+/** The tabs, in order; the open one is kept in the address (?tab=). */
+const TABS = ["study", "topics", "appearance", "backup"] as const;
+type Tab = (typeof TABS)[number];
+const isTab = (value: string | null): value is Tab => TABS.includes(value as Tab);
+
+/** One tab's panel: the tab names it, so screen readers hear the tab, then the rows. */
+function Panel({ value, children }: { value: Tab; children: ReactNode }) {
+  return (
+    <Tabs.Content
+      value={value}
+      className="flex flex-col gap-6 outline-none data-[state=active]:animate-[fade_150ms_var(--ease-ui)]"
+      data-testid={`settings-tab-${value}`}
+    >
+      {children}
+    </Tabs.Content>
   );
 }
 
@@ -169,198 +199,228 @@ export function SettingsScreen() {
   const { setLocale } = useLocale();
   const { preference, setTheme } = useTheme();
   const toast = useToast();
+  const [params, setParams] = useSearchParams();
   if (!learner) return <Loader />;
   const s = learner.settings;
   // Every change saves at once; the note confirms it once the write is done.
   const saved = (write: Promise<unknown>) => void write.then(toast.show);
   const set = (patch: Partial<SettingsRow>) => saved(updateSettings(db, patch));
   const sessionsGoal = s.dailyGoal?.kind === "sessions" ? s.dailyGoal.sessions : null;
+  const requested = params.get("tab");
+  const tab: Tab = isTab(requested) ? requested : "study";
 
   return (
-    <div className="mx-auto flex w-full max-w-3xl flex-col gap-10 px-4 py-6 md:px-10 lg:py-8">
+    <div className="mx-auto flex w-full max-w-3xl flex-col gap-6 px-4 py-6 md:px-10 lg:py-8">
       <h1 className="enter text-3xl font-medium tracking-tight">{t("settings.title")}</h1>
+      <Tabs.Root
+        value={tab}
+        onValueChange={(next) => setParams({ tab: next }, { replace: true })}
+        className="flex flex-col gap-6"
+      >
+        {/* Underlined tabs, like the header; on a narrow phone the row scrolls sideways. */}
+        <Tabs.List
+          aria-label={t("settings.title")}
+          className="-mx-4 flex gap-1 overflow-x-auto border-b border-border px-4 [scrollbar-width:none] md:mx-0 md:px-0"
+        >
+          {TABS.map((id) => (
+            <Tabs.Trigger
+              key={id}
+              value={id}
+              data-testid={`tab-${id}`}
+              className="-mb-px flex h-11 shrink-0 items-center border-b-2 border-transparent px-3 text-muted-foreground transition-colors duration-150 outline-none hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset data-[state=active]:border-foreground data-[state=active]:font-medium data-[state=active]:text-foreground"
+            >
+              {t(`settings.tabs.${id}`)}
+            </Tabs.Trigger>
+          ))}
+        </Tabs.List>
+        <Panel value="study">
+          <Group id="study">
+            <Choice
+              label={t("settings.dailyMinutes")}
+              help={t("settings.dailyMinutesHelp")}
+              value={
+                MINUTES.includes(s.dailyMinutes as (typeof MINUTES)[number])
+                  ? (s.dailyMinutes as (typeof MINUTES)[number])
+                  : 18
+              }
+              options={MINUTES}
+              render={(m) => t("settings.minutes", { count: m })}
+              onChange={(dailyMinutes) => set({ dailyMinutes })}
+              testId="minutes"
+            />
+            <Choice
+              label={t("settings.newLimit")}
+              help={t("settings.newLimitHelp")}
+              // 25 is the default: no override, so new cards also fit the daily time.
+              value={
+                s.newPerDayOverride === null || s.newPerDayOverride < 50
+                  ? DEFAULT_NEW_LIMIT
+                  : s.newPerDayOverride < 100
+                    ? 50
+                    : 100
+              }
+              options={[DEFAULT_NEW_LIMIT, 50, 100] as const}
+              render={(n) => String(n)}
+              onChange={(n) => set({ newPerDayOverride: n === DEFAULT_NEW_LIMIT ? null : n })}
+              testId="new-limit"
+            />
+            <Choice
+              label={t("settings.goalKind")}
+              help={t("settings.goalHelp")}
+              value={sessionsGoal === null ? "minutes" : "sessions"}
+              options={["minutes", "sessions"] as const}
+              render={(v) => t(v === "minutes" ? "settings.goalMinutes" : "settings.goalSessions")}
+              onChange={(v) =>
+                set({
+                  dailyGoal:
+                    v === "minutes" ? { kind: "minutes" } : { kind: "sessions", sessions: 1 },
+                })
+              }
+              testId="goal"
+            />
+            {sessionsGoal !== null ? (
+              <Choice
+                label={t("settings.sessionsPerDay")}
+                value={
+                  GOAL_SESSIONS.includes(sessionsGoal as (typeof GOAL_SESSIONS)[number])
+                    ? (sessionsGoal as (typeof GOAL_SESSIONS)[number])
+                    : 1
+                }
+                options={GOAL_SESSIONS}
+                render={(n) => t("settings.sessions", { count: n })}
+                onChange={(sessions) => set({ dailyGoal: { kind: "sessions", sessions } })}
+                testId="goal-sessions"
+              />
+            ) : null}
+            <SessionDefaults learner={learner} saved={saved} />
+            <Choice
+              label={t("settings.countdown")}
+              help={t("settings.countdownHelp")}
+              value={s.countdownSeconds}
+              options={COUNTDOWNS}
+              render={(n) =>
+                n === 0 ? t("settings.countdownOff") : t("settings.seconds", { count: n })
+              }
+              onChange={(countdownSeconds) => set({ countdownSeconds })}
+              testId="countdown"
+            />
+          </Group>
 
-      <Group title={t("settings.groupStudy")} id="study">
-        <Choice
-          label={t("settings.dailyMinutes")}
-          help={t("settings.dailyMinutesHelp")}
-          value={
-            MINUTES.includes(s.dailyMinutes as (typeof MINUTES)[number])
-              ? (s.dailyMinutes as (typeof MINUTES)[number])
-              : 18
-          }
-          options={MINUTES}
-          render={(m) => t("settings.minutes", { count: m })}
-          onChange={(dailyMinutes) => set({ dailyMinutes })}
-          testId="minutes"
-        />
-        <Choice
-          label={t("settings.newLimit")}
-          help={t("settings.newLimitHelp")}
-          // 25 is the default: no override, so new cards also fit the daily time.
-          value={
-            s.newPerDayOverride === null || s.newPerDayOverride < 50
-              ? DEFAULT_NEW_LIMIT
-              : s.newPerDayOverride < 100
-                ? 50
-                : 100
-          }
-          options={[DEFAULT_NEW_LIMIT, 50, 100] as const}
-          render={(n) => String(n)}
-          onChange={(n) => set({ newPerDayOverride: n === DEFAULT_NEW_LIMIT ? null : n })}
-          testId="new-limit"
-        />
-        <Choice
-          label={t("settings.goalKind")}
-          help={t("settings.goalHelp")}
-          value={sessionsGoal === null ? "minutes" : "sessions"}
-          options={["minutes", "sessions"] as const}
-          render={(v) => t(v === "minutes" ? "settings.goalMinutes" : "settings.goalSessions")}
-          onChange={(v) =>
-            set({
-              dailyGoal: v === "minutes" ? { kind: "minutes" } : { kind: "sessions", sessions: 1 },
-            })
-          }
-          testId="goal"
-        />
-        {sessionsGoal !== null ? (
-          <Choice
-            label={t("settings.sessionsPerDay")}
-            value={
-              GOAL_SESSIONS.includes(sessionsGoal as (typeof GOAL_SESSIONS)[number])
-                ? (sessionsGoal as (typeof GOAL_SESSIONS)[number])
-                : 1
-            }
-            options={GOAL_SESSIONS}
-            render={(n) => t("settings.sessions", { count: n })}
-            onChange={(sessions) => set({ dailyGoal: { kind: "sessions", sessions } })}
-            testId="goal-sessions"
-          />
-        ) : null}
-        <SessionDefaults learner={learner} saved={saved} />
-        <Choice
-          label={t("settings.countdown")}
-          help={t("settings.countdownHelp")}
-          value={s.countdownSeconds}
-          options={COUNTDOWNS}
-          render={(n) =>
-            n === 0 ? t("settings.countdownOff") : t("settings.seconds", { count: n })
-          }
-          onChange={(countdownSeconds) => set({ countdownSeconds })}
-          testId="countdown"
-        />
-      </Group>
+          <Group title={t("settings.homeCountry")} id="home">
+            <div className="flex flex-col gap-3 py-4">
+              <p className="text-sm text-muted-foreground">{t("settings.homeCountryHelp")}</p>
+              <CountryPicker
+                countries={scopedCountries(learner.world, s)}
+                value={s.homeCountry}
+                onChange={(homeCountry) => set({ homeCountry })}
+                locale={locale}
+              />
+            </div>
+          </Group>
 
-      <Group title={t("settings.groupTopics")} id="topics">
-        <SwitchRow
-          label={t("settings.topic.currencyLanguage.label")}
-          help={t("settings.topic.currencyLanguage.detail")}
-          checked={s.currencyAndLanguage}
-          onChange={(currencyAndLanguage) => set({ currencyAndLanguage })}
-          testId="stage4"
-        />
-        {MODULE_TOGGLES.map((m) => (
-          <SwitchRow
-            key={m}
-            label={t(`settings.topic.${m}.label`)}
-            help={t(`settings.topic.${m}.detail`)}
-            checked={s.modules[m] === true}
-            onChange={(on) => set({ modules: { ...s.modules, [m]: on } })}
-            testId={`module-${m}`}
-          />
-        ))}
-      </Group>
+          <Group title={t("settings.groupGuide")} id="guide">
+            <div className="flex flex-wrap gap-3 py-4">
+              <Button
+                variant="secondary"
+                data-testid="tour-again"
+                onClick={async () => {
+                  await setTourDone(db, null);
+                  navigate("/", { viewTransition: true });
+                }}
+              >
+                {t("help.replayTour")}
+              </Button>
+              <Button
+                variant="ghost"
+                data-testid="welcome-again"
+                onClick={async () => {
+                  await setTourDone(db, null);
+                  navigate("/welcome", { viewTransition: true });
+                }}
+              >
+                {t("settings.welcomeAgain")}
+              </Button>
+            </div>
+          </Group>
+        </Panel>
+        <Panel value="topics">
+          <Group id="topics">
+            <SwitchRow
+              label={t("settings.topic.currencyLanguage.label")}
+              help={t("settings.topic.currencyLanguage.detail")}
+              checked={s.currencyAndLanguage}
+              onChange={(currencyAndLanguage) => set({ currencyAndLanguage })}
+              testId="stage4"
+            />
+            {MODULE_TOGGLES.map((m) => (
+              <SwitchRow
+                key={m}
+                label={t(`settings.topic.${m}.label`)}
+                help={t(`settings.topic.${m}.detail`)}
+                checked={s.modules[m] === true}
+                onChange={(on) => set({ modules: { ...s.modules, [m]: on } })}
+                testId={`module-${m}`}
+              />
+            ))}
+          </Group>
+        </Panel>
+        <Panel value="appearance">
+          <Group id="look">
+            <Choice
+              label={t("settings.language.label")}
+              value={locale}
+              options={LOCALES}
+              render={(l) => t(`settings.language.${l}`)}
+              onChange={(l) => saved(setLocale(l))}
+              testId="locale"
+            />
+            <Choice
+              label={t("settings.theme.label")}
+              value={preference}
+              options={THEME_PREFERENCES}
+              render={(p) => t(`settings.theme.${p}`)}
+              onChange={(p) => saved(setTheme(p))}
+              testId="theme"
+            />
+            <SwitchRow
+              label={t("settings.sound")}
+              help={t("settings.soundHelp")}
+              checked={learner.device.soundOn !== false}
+              onChange={(soundOn) => saved(setFeedbackPref(db, { soundOn }))}
+              testId="sound"
+            />
+            <SwitchRow
+              label={t("settings.vibration")}
+              help={t("settings.vibrationHelp")}
+              checked={learner.device.vibrationOn !== false}
+              onChange={(vibrationOn) => saved(setFeedbackPref(db, { vibrationOn }))}
+              testId="vibration"
+            />
+            <Choice
+              label={t("settings.levelProgress")}
+              help={t("settings.levelProgressHelp")}
+              value={learner.device.levelProgress === "percent" ? "percent" : "cards"}
+              options={["cards", "percent"] as const}
+              render={(v) => t(v === "cards" ? "settings.levelCards" : "settings.levelPercent")}
+              onChange={(v) => saved(setLevelProgress(db, v))}
+              testId="level-progress"
+            />
+          </Group>
+        </Panel>
+        <Panel value="backup">
+          <Group id="backup">
+            <div className="py-4">
+              <BackupSection learner={learner} />
+            </div>
+          </Group>
 
-      <Group title={t("settings.groupLook")} id="look">
-        <Choice
-          label={t("settings.language.label")}
-          value={locale}
-          options={LOCALES}
-          render={(l) => t(`settings.language.${l}`)}
-          onChange={(l) => saved(setLocale(l))}
-          testId="locale"
-        />
-        <Choice
-          label={t("settings.theme.label")}
-          value={preference}
-          options={THEME_PREFERENCES}
-          render={(p) => t(`settings.theme.${p}`)}
-          onChange={(p) => saved(setTheme(p))}
-          testId="theme"
-        />
-        <SwitchRow
-          label={t("settings.sound")}
-          help={t("settings.soundHelp")}
-          checked={learner.device.soundOn !== false}
-          onChange={(soundOn) => saved(setFeedbackPref(db, { soundOn }))}
-          testId="sound"
-        />
-        <SwitchRow
-          label={t("settings.vibration")}
-          help={t("settings.vibrationHelp")}
-          checked={learner.device.vibrationOn !== false}
-          onChange={(vibrationOn) => saved(setFeedbackPref(db, { vibrationOn }))}
-          testId="vibration"
-        />
-        <Choice
-          label={t("settings.levelProgress")}
-          help={t("settings.levelProgressHelp")}
-          value={learner.device.levelProgress === "percent" ? "percent" : "cards"}
-          options={["cards", "percent"] as const}
-          render={(v) => t(v === "cards" ? "settings.levelCards" : "settings.levelPercent")}
-          onChange={(v) => saved(setLevelProgress(db, v))}
-          testId="level-progress"
-        />
-      </Group>
-
-      <Group title={t("settings.homeCountry")} id="home">
-        <div className="flex flex-col gap-3 py-4">
-          <p className="text-sm text-muted-foreground">{t("settings.homeCountryHelp")}</p>
-          <CountryPicker
-            countries={scopedCountries(learner.world, s)}
-            value={s.homeCountry}
-            onChange={(homeCountry) => set({ homeCountry })}
-            locale={locale}
-          />
-        </div>
-      </Group>
-
-      <Group title={t("backup.title")} id="backup">
-        <div className="py-4">
-          <BackupSection learner={learner} />
-        </div>
-      </Group>
-
-      <Group title={t("settings.groupGuide")} id="guide">
-        <div className="flex flex-wrap gap-3 py-4">
-          <Button
-            variant="secondary"
-            data-testid="tour-again"
-            onClick={async () => {
-              await setTourDone(db, null);
-              navigate("/", { viewTransition: true });
-            }}
-          >
-            {t("help.replayTour")}
-          </Button>
-          <Button
-            variant="ghost"
-            data-testid="welcome-again"
-            onClick={async () => {
-              await setTourDone(db, null);
-              navigate("/welcome", { viewTransition: true });
-            }}
-          >
-            {t("settings.welcomeAgain")}
-          </Button>
-        </div>
-      </Group>
-
-      <Group title={t("reset.title")} id="reset">
-        <div className="py-4">
-          <ResetProgress learner={learner} />
-        </div>
-      </Group>
+          <Group title={t("reset.title")} id="reset">
+            <div className="py-4">
+              <ResetProgress learner={learner} />
+            </div>
+          </Group>
+        </Panel>
+      </Tabs.Root>
       <Toast shown={toast.shown} testId="settings-saved">
         {t("settings.saved")}
       </Toast>

@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { createMemoryRouter, RouterProvider } from "react-router";
 import { afterEach, beforeAll, describe, expect, it } from "vitest";
 import { db } from "@/db/db";
@@ -50,7 +50,7 @@ describe("routes", () => {
   });
 
   it("renders Settings with theme and language controls", async () => {
-    const router = createMemoryRouter(routes, { initialEntries: ["/settings"] });
+    const router = createMemoryRouter(routes, { initialEntries: ["/settings?tab=appearance"] });
     render(
       <LearnerProvider>
         <RouterProvider router={router} />
@@ -60,8 +60,15 @@ describe("routes", () => {
       await screen.findByRole("radiogroup", { name: "Appearance" }, { timeout: 10_000 }),
     ).toBeInTheDocument();
     expect(screen.getByRole("radiogroup", { name: "Language" })).toBeInTheDocument();
-    // No accounts: progress moves between browsers only through backup files.
-    expect(screen.getByRole("button", { name: "Download backup" })).toBeInTheDocument();
+    // Settings is in tabs; the Backup tab holds the backup file, the only way progress moves
+    // between browsers (no accounts).
+    expect(screen.getByRole("tab", { name: "Appearance" })).toHaveAttribute(
+      "aria-selected",
+      "true",
+    );
+    fireEvent.mouseDown(screen.getByRole("tab", { name: "Backup" }), { button: 0 });
+    expect(await screen.findByRole("button", { name: "Download backup" })).toBeInTheDocument();
+    expect(router.state.location.search).toBe("?tab=backup");
     expect(screen.queryByText(/sign in/i)).not.toBeInTheDocument();
   });
 });

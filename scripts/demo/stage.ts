@@ -141,7 +141,7 @@ export async function learner(page: Page, options: { history?: boolean; locale?:
 }
 
 export async function theme(page: Page, value: "light" | "dark") {
-  await page.goto(`${BASE}/settings`, { waitUntil: "networkidle" });
+  await page.goto(`${BASE}/settings?tab=appearance`, { waitUntil: "networkidle" });
   await page.getByTestId(`theme-${value}`).click();
   await page.waitForTimeout(300);
 }

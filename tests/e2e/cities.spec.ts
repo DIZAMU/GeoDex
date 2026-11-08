@@ -54,7 +54,7 @@ async function seedHistory(page: Page, cards: { cardId: string; daysAgo: number 
 test("cities: a city question, a pin answer and the not-the-capital card", async ({ page }) => {
   test.setTimeout(300_000);
   await setUpLearner(page);
-  await page.goto("/settings");
+  await page.goto("/settings?tab=topics");
   await turnOn(page, "module-cities-switch");
   // Australia known for days and Sydney started yesterday: Melbourne's and Sydney's other
   // cards are new, and Sydney's not-the-capital card is seeded.

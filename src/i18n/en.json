@@ -29,6 +29,12 @@
   },
   "settings": {
     "label": "Settings",
+    "tabs": {
+      "study": "Study",
+      "topics": "Topics",
+      "appearance": "Appearance",
+      "backup": "Backup"
+    },
     "saved": "Changes saved",
     "newLimit": "New cards a day",
     "newLimitHelp": "At 25, new cards also fit your daily time, so a day with many reviews brings fewer. 50 and 100 always bring that many, and the day takes longer.",
@@ -50,10 +56,7 @@
     "countdownOff": "Off",
     "seconds": "{{count}} s",
     "homeCountry": "Home country",
-    "groupLook": "Language, look and sound",
-    "groupStudy": "Study",
     "welcomeAgain": "Show the welcome page and tour again",
-    "groupTopics": "Topics",
     "groupGuide": "Guide",
     "dailyMinutesHelp": "How long you study on a normal day. It sets how many new cards you get and the time estimate.",
     "goalKind": "Daily goal",
