@@ -29,6 +29,12 @@
   },
   "settings": {
     "label": "Innstillinger",
+    "tabs": {
+      "study": "Øving",
+      "topics": "Emner",
+      "appearance": "Utseende",
+      "backup": "Sikkerhetskopi"
+    },
     "saved": "Endringer lagret",
     "newLimit": "Nye kort per dag",
     "newLimitHelp": "Med 25 må nye kort også få plass i tiden du har satt av, så en dag med mange repetisjoner gir færre. 50 og 100 gir alltid så mange, og dagen tar lengre tid.",
@@ -50,10 +56,7 @@
     "countdownOff": "Av",
     "seconds": "{{count}} s",
     "homeCountry": "Hjemland",
-    "groupLook": "Språk, utseende og lyd",
-    "groupStudy": "Øving",
     "welcomeAgain": "Vis velkomstsiden og omvisningen igjen",
-    "groupTopics": "Emner",
     "groupGuide": "Veiledning",
     "dailyMinutesHelp": "Hvor lenge du øver en vanlig dag. Det styrer hvor mange nye kort du får og tidsanslaget.",
     "goalKind": "Dagsmål",
@@ -586,48 +589,30 @@
     }
   },
   "help": {
+    "faqTitle": "Spørsmål",
+    "faq": {
+      "grading": "Hvordan blir svarene mine vurdert?",
+      "harder": "Hvorfor blir spørsmålene vanskeligere?",
+      "schedule": "Når kommer et kort tilbake?",
+      "newCards": "Hvor mange nye kort får jeg?",
+      "goal": "Hvordan fungerer dagsmålet?",
+      "progress": "Hvor lagres fremgangen min?",
+      "keys": "Finnes det hurtigtaster?"
+    },
+    "newCardsBody": "Opptil 25 om dagen som standard, og færre på en dag med mange repetisjoner, så dagen får plass i tiden du har satt av. Øk grensen til 50 eller 100 i Innstillinger, eller trykk Fortsett når du er ferdig for dagen.",
     "button": "Hjelp",
     "title": "Hjelp",
     "lead": "Hvordan GeoDex vurderer, planlegger og teller fremgangen din, og hvor den lagres.",
-    "mapTitle": "Skjermer",
-    "nodes": {
-      "welcome": {
-        "name": "Første skjerm",
-        "body": "Et prøvespørsmål, hva du kan lære og hvor lang tid det tar."
-      },
-      "today": {
-        "name": "I dag",
-        "body": "Start en økt, og se hva som venter, kartet ditt og nivået ditt."
-      },
-      "atlas": {
-        "name": "Atlas",
-        "body": "Kartet ditt per ferdighet, landsider og grenser gjennom tiden."
-      },
-      "stats": {
-        "name": "Statistikk",
-        "body": "Hukommelse, prognose, forvekslinger og prestasjoner."
-      },
-      "settings": {
-        "name": "Innstillinger",
-        "body": "Emner, tid per dag, språk, utseende, lyd og sikkerhetskopier."
-      }
-    },
-    "gradingTitle": "Vurdering",
     "gradingBody": "Du vurderer aldri deg selv. Feil er feil. Et riktig svar teller som bra, som vanskelig etter et hint, en skrivefeil eller et tregt svar, eller som lett når du skriver eller trykker raskt.",
-    "harderTitle": "Vanskelighetsgrad",
     "harderBody": "Et nytt kort spør med alternativer på et nært kart. Når du husker det lenger, skriver du svaret, og kartet zoomer ut til kontinentet og så hele verden.",
-    "scheduleTitle": "Planlegging",
     "scheduleBody": "Hvert kort kommer tilbake rett før du ville glemt det. Bommer du, kommer det snart igjen; kan du det, blir mellomrommet lengre.",
-    "keysTitle": "Tastatur",
     "keysBody": "I en økt: 1 til 4 velger, Enter sender og går videre, H viser et hint, Esc avslutter. Trykk ? for hele listen.",
     "replayTour": "Se omvisningen igjen",
     "showWelcome": "Vis første skjerm",
     "xpTitle": "Nivåer og XP",
     "xpBody": "XP går bare opp: riktige svar, fullførte økter, øvingsdager, dagsmålet ditt og kort som sitter i en uke, tre uker og to måneder. XP gir deg ranger, fra Turist til Atlasvokter.",
-    "goalTitle": "Dagsmål",
     "goalBody": "Nå dagens tid eller fullfør et antall økter; velg hva i Innstillinger. Når du når målet, får du XP, og dagen teller med i dager på rad selv om det er repetisjoner igjen.",
     "levelsBody": "Nivået viser hvor mye du husker akkurat nå. Det stiger når kortene sitter lenger, og synker hvis du glemmer.",
-    "progressTitle": "Fremgangen din",
     "progressBody": "Fremgangen lagres i denne nettleseren etter hvert svar, og ingen andre steder. Sletter du nettleserdataene, forsvinner den. Last ned en sikkerhetskopi i Innstillinger av og til, og bruk den for å flytte til en annen enhet."
   },
   "picker": {

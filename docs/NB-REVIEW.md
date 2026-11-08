@@ -78,7 +78,6 @@ sentence case, the same plain register as the English, and numbers that read wel
 | `tour.steps.ready.body` | {{questions}}, nye land fra {{region}}, {{answers}}. | {{questions}}, new countries from {{region}}, {{answers}}. |
 | `tour.steps.ready.bodyNoRegion` | {{questions}}, {{answers}}. | {{questions}}, {{answers}}. |
 | `help.levelsBody` | Nivået viser hvor mye du husker akkurat nå. Det stiger når kortene sitter lenger, og synker hvis du glemmer. | Your level shows how much you remember right now. It rises as cards hold for longer and slips if you forget. |
-| `help.progressTitle` | Fremgangen din | Your progress |
 | `help.progressBody` | Fremgangen lagres i denne nettleseren etter hvert svar, og ingen andre steder. Sletter du nettleserdataene, forsvinner den. Last ned en sikkerhetskopi i Innstillinger av og til, og bruk den for å flytte til en annen enhet. | Progress is saved in this browser after every answer, and nowhere else. Clearing the browser's data erases it. Download a backup in Settings now and then, and use it to move to another device. |
 
 ## Changed (40)
@@ -88,8 +87,6 @@ sentence case, the same plain register as the English, and numbers that read wel
 | `today.summary` | {{reviews}} og {{newCards}}, omtrent {{minutes}} minutter | {{reviews}} og {{newCards}}, omtrent {{minutes}} min | {{reviews}} and {{newCards}}, about {{minutes}} minutes |
 | `settings.theme.label` | Utseende | Tema | Appearance |
 | `settings.theme.auto` | Som enheten | Automatisk | Match device |
-| `settings.groupLook` | Språk, utseende og lyd | Språk og utseende | Language, look and sound |
-| `settings.groupTopics` | Emner | Hva du vil lære | Topics |
 | `settings.goalHelp` | Når du når målet, får du XP, og dagen teller med i dager på rad, selv om det er repetisjoner igjen. | Når du når målet, fylles ringen på I dag, du får XP, og dagen teller med i dager på rad, selv om det er repetisjoner igjen. | Meeting your goal earns XP and counts the day for your streak, even with reviews left. |
 | `onboarding.title` | Språk og hjemland | Sett opp GeoDex | Language and home country |
 | `onboarding.homeHelp` | De første leksjonene starter i regionen, og forklaringene sammenligner steder med landet. | Læringen starter med regionen, og forklaringer sammenligner med landet. | Your first lessons start with its region, and explanations compare places with it. |
@@ -113,17 +110,8 @@ sentence case, the same plain register as the English, and numbers that read wel
 | `welcome.optional` | Av til du slår det på | Valgfritt | Off until you switch it on |
 | `tour.steps.input.body` | Auto begynner med alternativer og går over til skriving når du blir bedre. Du kan også velge selv. | Auto begynner med alternativer og går over til skriving når du blir bedre. Velg selv om du vil. | Auto starts with choices and moves to typing as you get better. You can also pick one yourself. |
 | `help.lead` | Hvordan GeoDex vurderer, planlegger og teller fremgangen din, og hvor den lagres. | Hvor du finner hva, og hvordan GeoDex fungerer. | How GeoDex grades, schedules and counts your progress, and where it keeps it. |
-| `help.mapTitle` | Skjermer | Appen i korte trekk | Screens |
-| `help.nodes.welcome.name` | Første skjerm | Velkommen | First screen |
-| `help.nodes.welcome.body` | Et prøvespørsmål, hva du kan lære og hvor lang tid det tar. | Hva GeoDex er, og hva du kan lære. | A sample question, what you can learn and how long it takes. |
-| `help.nodes.today.body` | Start en økt, og se hva som venter, kartet ditt og nivået ditt. | Start en økt og se dagens oppgaver og rekken din. | Start a session, and see what is due, your map and your level. |
-| `help.nodes.settings.body` | Emner, tid per dag, språk, utseende, lyd og sikkerhetskopier. | Emner, tid per dag, språk, tema, synkronisering og sikkerhetskopi. | Topics, daily time, language, appearance, sound and backups. |
-| `help.gradingTitle` | Vurdering | Slik vurderes svarene | Grading |
-| `help.harderTitle` | Vanskelighetsgrad | Hvorfor spørsmålene blir vanskeligere | Difficulty |
-| `help.scheduleTitle` | Planlegging | Hvorfor kortene kommer tilbake | Scheduling |
 | `help.showWelcome` | Vis første skjerm | Vis velkomstsiden | Show the first screen |
 | `help.xpBody` | XP går bare opp: riktige svar, fullførte økter, øvingsdager, dagsmålet ditt og kort som sitter i en uke, tre uker og to måneder. XP gir deg ranger, fra Turist til Atlasvokter. | Hukommelsesnivået, fra 1 til 10, viser hvor mye du kan akkurat nå, så det synker når du glemmer. XP går bare opp: riktige svar, fullførte økter, øvingsdager, dagsmålet ditt og kort som sitter i en uke, tre uker og to måneder. XP gir deg ranger, fra Turist til Atlasvokter. | XP only goes up: correct answers, finished sessions, study days, your daily goal, and cards that hold for a week, three weeks and two months. XP earns ranks, from Tourist to Atlas keeper. |
-| `help.goalTitle` | Dagsmål | Dagsmålet ditt | Daily goal |
 | `help.goalBody` | Nå dagens tid eller fullfør et antall økter; velg hva i Innstillinger. Når du når målet, får du XP, og dagen teller med i dager på rad selv om det er repetisjoner igjen. | Nå dagens tid eller fullfør et antall økter; velg i Innstillinger. Når du når målet, fylles ringen på I dag, du får XP, og dagen teller med i dager på rad selv om det er repetisjoner igjen. | Reach your daily time or finish a number of sessions; choose which in Settings. Meeting it earns XP and counts the day for your streak, even with reviews left. |
 
 ## Removed (122)

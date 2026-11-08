@@ -65,7 +65,7 @@ for (const [name, kinds] of SLICES) {
     test.setTimeout(600_000);
     const features = FEATURES.filter((f) => (kinds as readonly string[]).includes(f.kind));
     await setUpLearner(page);
-    await page.goto("/settings");
+    await page.goto("/settings?tab=topics");
     await turnOn(page, "module-physical-switch");
     // Norway known, and every feature card of this slice due again after a miss, so the
     // session shows each one at the zoom of a new card.
