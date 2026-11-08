@@ -6,6 +6,7 @@ import type { HistoricalEntity } from "@/data/types";
 import { MIXED, parseFocus, parseLength, parseMore } from "@/engine/focus";
 import type { InputSetting } from "@/engine/types";
 import { isLocale } from "@/i18n/locales";
+import { GlobeMap } from "@/map/GlobeMap";
 import { type MapFocus, type MapHighlight, WorldMap } from "@/map/WorldMap";
 import { Button } from "@/ui/button";
 import { useFocusOnMount } from "@/ui/focus";
@@ -55,6 +56,18 @@ import { type SessionKind, type SessionView, useDailySession } from "./useDailyS
 
 const INPUTS: readonly InputSetting[] = ["auto", "mc", "typing"];
 const EMPTY: ReadonlySet<string> = new Set();
+/** True when a map view marks nothing: no target, selection, label, shading or point. */
+function nothingMarked(h: MapHighlight): boolean {
+  return Object.values(h).every(
+    (v) =>
+      v === undefined ||
+      v === null ||
+      (typeof v === "string" ? v === "" : "size" in v ? v.size === 0 : v.length === 0),
+  );
+}
+
+/** Degrees a second the globe turns behind a question that does not use the map. */
+const PROMPT_SPIN = 8;
 /** How long the results skeleton shows after the last answer: long enough to read as a step. */
 const SUMMARY_DELAY_MS = 450;
 
@@ -215,6 +228,9 @@ export function Session({
   }
 
   const { focus, highlight, animate, padding } = mapState(view, learner, locale, s.ctx, picked);
+  const home = learner.settings.homeCountry
+    ? learner.world.byId.get(learner.settings.homeCountry)
+    : undefined;
   const outlines = historyOutlines(view, learner);
   const past = view.question.historyId
     ? learner.world.historyById.get(view.question.historyId)
@@ -263,39 +279,63 @@ export function Session({
           </div>
         }
         map={
-          <WorldMap
-            countries={scoped}
-            topology={learner.world.topology}
-            focus={focus}
-            highlight={highlight}
-            selectable={mapSelectable}
-            onSelect={(id) =>
-              tapQuestion
-                ? toggleTap(id)
-                : view.kind === "prompt" && s.answer(checkChoice(view.question, id))
-            }
-            onPin={
-              view.kind === "prompt" && view.question.answer.kind === "pin"
-                ? (at) => s.answer(checkPin(view.question, at))
-                : undefined
-            }
-            labelFor={labelFor}
-            physical={view.question.featureId ? learner.world.physical : undefined}
-            selectableFeatures={
-              view.kind === "prompt" && view.question.answer.kind === "feature"
-                ? allFeatures
-                : undefined
-            }
-            history={outlines}
-            caption={
-              past && outlines?.some((e) => e.id === past.id) ? (
-                <OutlineCaption entity={past} />
-              ) : undefined
-            }
-            ariaLabel={t("map.label")}
-            animate={animate}
-            padding={padding}
-          />
+          // A question that shows the whole world, marks nothing on it and is answered in the
+          // panel has nothing to point at on the map: a slowly turning globe stands in for the
+          // zoomed-out flat map. "Which ocean is this?" marks the ocean, so it keeps the map.
+          // The answer brings the flat map back, zoomed to the place.
+          view.kind === "prompt" &&
+          focus.kind === "world" &&
+          nothingMarked(highlight) &&
+          !mapSelectable &&
+          view.question.answer.kind !== "pin" &&
+          view.question.answer.kind !== "feature" &&
+          !outlines?.length ? (
+            <div className="h-full w-full bg-background" data-testid="prompt-globe">
+              <GlobeMap
+                countries={scoped}
+                topology={learner.world.topology}
+                labelFor={labelFor}
+                ariaLabel={t("map.label")}
+                initialCenter={home?.centroid}
+                autoRotate={PROMPT_SPIN}
+                decorative
+              />
+            </div>
+          ) : (
+            <WorldMap
+              countries={scoped}
+              topology={learner.world.topology}
+              focus={focus}
+              highlight={highlight}
+              selectable={mapSelectable}
+              onSelect={(id) =>
+                tapQuestion
+                  ? toggleTap(id)
+                  : view.kind === "prompt" && s.answer(checkChoice(view.question, id))
+              }
+              onPin={
+                view.kind === "prompt" && view.question.answer.kind === "pin"
+                  ? (at) => s.answer(checkPin(view.question, at))
+                  : undefined
+              }
+              labelFor={labelFor}
+              physical={view.question.featureId ? learner.world.physical : undefined}
+              selectableFeatures={
+                view.kind === "prompt" && view.question.answer.kind === "feature"
+                  ? allFeatures
+                  : undefined
+              }
+              history={outlines}
+              caption={
+                past && outlines?.some((e) => e.id === past.id) ? (
+                  <OutlineCaption entity={past} />
+                ) : undefined
+              }
+              ariaLabel={t("map.label")}
+              animate={animate}
+              padding={padding}
+            />
+          )
         }
         panel={
           // Each new step rises in; the key restarts the entrance.
