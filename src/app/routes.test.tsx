@@ -46,7 +46,7 @@ describe("routes", () => {
     // Header links on wide screens and the bottom bar on phones: both are in the document.
     expect(screen.getAllByRole("link", { name: "Today" })).toHaveLength(2);
     expect(screen.getAllByRole("link", { name: "Settings" })).toHaveLength(2);
-    expect(await screen.findByTestId("app-map")).toBeInTheDocument();
+    expect(await screen.findByTestId("help-faq")).toBeInTheDocument();
   });
 
   it("renders Settings with theme and language controls", async () => {

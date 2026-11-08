@@ -19,7 +19,7 @@ const SCREENS = [
   ["/settings?tab=topics", "module-cities-switch"],
   ["/settings?tab=appearance", "theme-light"],
   ["/settings?tab=backup", "reset-start"],
-  ["/help", "app-map"],
+  ["/help", "help-faq"],
   ["/session?input=mc", "left"],
 ] as const;
 

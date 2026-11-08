@@ -589,48 +589,30 @@
     }
   },
   "help": {
+    "faqTitle": "Questions",
+    "faq": {
+      "grading": "How are my answers graded?",
+      "harder": "Why do the questions get harder?",
+      "schedule": "When does a card come back?",
+      "newCards": "How many new cards do I get?",
+      "goal": "How does the daily goal work?",
+      "progress": "Where is my progress saved?",
+      "keys": "Are there keyboard shortcuts?"
+    },
+    "newCardsBody": "Up to 25 a day by default, and fewer on a day with many reviews, so the day fits your daily time. Raise the limit to 50 or 100 in Settings, or press Keep going when you are done for the day.",
     "button": "Help",
     "title": "Help",
     "lead": "How GeoDex grades, schedules and counts your progress, and where it keeps it.",
-    "mapTitle": "Screens",
-    "nodes": {
-      "welcome": {
-        "name": "First screen",
-        "body": "A sample question, what you can learn and how long it takes."
-      },
-      "today": {
-        "name": "Today",
-        "body": "Start a session, and see what is due, your map and your level."
-      },
-      "atlas": {
-        "name": "Atlas",
-        "body": "Your map per skill, country pages, borders over time."
-      },
-      "stats": {
-        "name": "Stats",
-        "body": "Retention, forecast, confusions and achievements."
-      },
-      "settings": {
-        "name": "Settings",
-        "body": "Topics, daily time, language, appearance, sound and backups."
-      }
-    },
-    "gradingTitle": "Grading",
     "gradingBody": "You never grade yourself. Wrong is wrong. A right answer counts as good, as hard after a hint, a typo or a slow answer, or as easy when you type or tap it fast.",
-    "harderTitle": "Difficulty",
     "harderBody": "A new card asks with choices on a close map. As you remember it for longer, you type the answer and the map zooms out to the continent, then the world.",
-    "scheduleTitle": "Scheduling",
     "scheduleBody": "Each card returns just before you would forget it. Miss one and it comes back soon; know it and the gap grows.",
-    "keysTitle": "Keyboard",
     "keysBody": "In a session: 1 to 4 choose, Enter submits and continues, H shows a hint, Esc ends. Press ? for the full list.",
     "replayTour": "Replay the tour",
     "showWelcome": "Show the first screen",
     "xpTitle": "Levels and XP",
     "xpBody": "XP only goes up: correct answers, finished sessions, study days, your daily goal, and cards that hold for a week, three weeks and two months. XP earns ranks, from Tourist to Atlas keeper.",
-    "goalTitle": "Daily goal",
     "goalBody": "Reach your daily time or finish a number of sessions; choose which in Settings. Meeting it earns XP and counts the day for your streak, even with reviews left.",
     "levelsBody": "Your level shows how much you remember right now. It rises as cards hold for longer and slips if you forget.",
-    "progressTitle": "Your progress",
     "progressBody": "Progress is saved in this browser after every answer, and nowhere else. Clearing the browser's data erases it. Download a backup in Settings now and then, and use it to move to another device."
   },
   "picker": {

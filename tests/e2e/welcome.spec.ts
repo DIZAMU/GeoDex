@@ -81,9 +81,12 @@ for (const locale of ["en", "nb"] as const) {
       await expect(help).toBeVisible();
     }
     await help.click();
-    await expect(page.getByTestId("app-map")).toBeVisible();
-    for (const id of ["welcome", "today", "atlas", "stats", "settings"])
-      await expect(page.getByTestId(`appmap-${id}`)).toBeVisible();
+    // Help is a list of questions; each opens its answer.
+    await expect(page.getByTestId("help-faq")).toBeVisible();
+    const grading = page.getByTestId("faq-grading");
+    await expect(grading.locator("p")).toBeHidden();
+    await grading.locator("summary").click();
+    await expect(grading.locator("p")).toContainText("You never grade yourself");
     // The tour can be replayed, and Escape ends it.
     await page.getByTestId("replay-tour").click();
     await expect(page.getByTestId("tour")).toBeVisible();
@@ -110,7 +113,7 @@ test("welcome, Today with the tour, and Help in every theme and language", async
       await page.waitForTimeout(800);
       await shot(`${theme}-${locale}-welcome`);
       await page.goto("/help");
-      await expect(page.getByTestId("app-map")).toBeVisible();
+      await expect(page.getByTestId("help-faq")).toBeVisible();
       await page.waitForTimeout(400);
       await shot(`${theme}-${locale}-help`);
     }
