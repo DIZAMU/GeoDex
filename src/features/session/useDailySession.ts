@@ -11,7 +11,7 @@ import { db, type ReviewEvent } from "@/db/db";
 import { recordReview } from "@/db/reviews";
 import type { Explanation } from "@/engine/explain/select";
 import { DEFAULT_SESSION_LENGTH, type Focus, MIXED, sliceSession } from "@/engine/focus";
-import { grade } from "@/engine/grading";
+import { grade, ratingForPhase } from "@/engine/grading";
 import type { CardState } from "@/engine/scheduler";
 import {
   afterAnswer,
@@ -203,19 +203,22 @@ export function useDailySession(
       // Pins are graded by distance (PLAN.md 5.3); giving up or timing out is still Again.
       const pinRating =
         result.rating !== undefined && !outcome.gaveUp && !outcome.timedOut ? result.rating : null;
-      const rating =
+      // A right answer always moves a card out of a short learning step (ratingForPhase).
+      const rating = ratingForPhase(
         pinRating ??
-        grade({
-          correct: result.correct,
-          gaveUp: outcome.gaveUp || outcome.timedOut,
-          usedHint: outcome.usedHint,
-          typo: result.typo,
-          responseMs,
-          mode: view.question.mode,
-          inputSetting,
-          medianMs: stats?.median ?? null,
-          reviewsInMode: stats?.count ?? 0,
-        });
+          grade({
+            correct: result.correct,
+            gaveUp: outcome.gaveUp || outcome.timedOut,
+            usedHint: outcome.usedHint,
+            typo: result.typo,
+            responseMs,
+            mode: view.question.mode,
+            inputSetting,
+            medianMs: stats?.median ?? null,
+            reviewsInMode: stats?.count ?? 0,
+          }),
+        states.current.get(view.item.cardId)?.phase,
+      );
       const moment = answerMoment({
         scheduler: learner.scheduler,
         before: states.current.get(view.item.cardId),

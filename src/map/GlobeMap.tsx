@@ -3,7 +3,7 @@
  * inertia, wheel and pinch zoom, a tap opens a country. While it moves it draws a lighter
  * geometry; at rest it redraws in full detail. Colors come from the theme's CSS tokens.
  */
-import { geoArea, geoBounds, geoContains, geoGraticule10 } from "d3-geo";
+import { geoArea, geoBounds, geoCentroid, geoContains, geoDistance, geoGraticule10 } from "d3-geo";
 import type { Feature, Geometry, Position } from "geojson";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { feature } from "topojson-client";
@@ -46,8 +46,19 @@ export type GlobeMapProps = {
   /** Historical outlines drawn over the countries (the Atlas over time), each with a name. */
   outlines?: readonly GlobeOutline[];
   outlineLabel?: (id: string) => string;
-  /** [lon, lat] to turn toward whenever it changes; the first one is the starting view. */
+  /** [lon, lat] to turn toward whenever it changes; one given at mount is the starting view. */
   turnTo?: readonly [number, number] | null;
+  /**
+   * Countries to turn to and zoom in on, smoothly, the shorter way round: a session answer.
+   * Unlike turnTo, the first value is animated too.
+   */
+  focusIds?: readonly string[] | null;
+  /** The answer in a session: filled with the accent and named. */
+  answer?: ReadonlySet<string>;
+  /** A wrong pick in a session: filled with the warning colour and named. */
+  wrong?: ReadonlySet<string>;
+  /** Points such as a city, drawn as dots with their names. */
+  points?: readonly { at: readonly [number, number]; kind: "target" | "pin"; label?: string }[];
 };
 
 /** A historical outline: drawn as `coordinates`, clipped to land or to the listed countries. */
@@ -87,6 +98,10 @@ function lodFor(r: number, moving: boolean): 0 | 1 | 2 {
 }
 /** How long the globe takes to turn toward a new place. */
 const TURN_MS = 800;
+/** Turning to a session answer and zooming in on it takes a little longer. */
+const FOCUS_MS = 1100;
+/** The closest a session answer zooms in. */
+const FOCUS_MAX_ZOOM = 8;
 /** Full detail returns this long after the last movement. */
 const SETTLE_MS = 140;
 /** Movement past this many pixels makes a press a drag, not a tap. */
@@ -97,6 +112,26 @@ function ringsOf(geometry: Geometry | null): Position[][] {
   if (geometry.type === "Polygon") return geometry.coordinates;
   if (geometry.type === "MultiPolygon") return geometry.coordinates.flat();
   return [];
+}
+
+/** A country's largest polygon by area: the mainland of one with overseas parts. */
+function mainPolygon(f: Feature<Geometry>): Feature<Geometry> {
+  if (f.geometry?.type !== "MultiPolygon") return f;
+  let best: Feature<Geometry> = f;
+  let bestArea = -1;
+  for (const coordinates of f.geometry.coordinates) {
+    const part: Feature<Geometry> = {
+      type: "Feature",
+      properties: {},
+      geometry: { type: "Polygon", coordinates },
+    };
+    const area = geoArea(part);
+    if (area > bestArea) {
+      bestArea = area;
+      best = part;
+    }
+  }
+  return best;
 }
 
 /** A shape's rings at the three levels of detail (see LOD_TOLERANCE). */
@@ -175,6 +210,7 @@ type Palette = {
   foreground: string;
   background: string;
   primary: string;
+  destructive: string;
   levels: string[];
   font: string;
 };
@@ -192,6 +228,7 @@ function readPalette(element: Element): Palette {
     foreground: v("--foreground", "#ffffff"),
     background: v("--background", "#000000"),
     primary: v("--primary", "#f4b740"),
+    destructive: v("--destructive", "#e47c72"),
     levels: [0, 1, 2, 3, 4].map((n) => v(`--mastery-${n}`, "#888888")),
     font: style.fontFamily || "sans-serif",
   };
@@ -216,6 +253,10 @@ export function GlobeMap({
   outlines,
   outlineLabel,
   turnTo,
+  focusIds,
+  answer,
+  wrong,
+  points,
 }: GlobeMapProps) {
   const { ref: containerRef, width, height } = useSize<HTMLDivElement>();
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -421,6 +462,26 @@ export function GlobeMap({
       ctx.stroke(edge);
     }
 
+    // A session answer: the right country in the accent, a wrong pick in the warning colour.
+    const fillCountries = (ids: ReadonlySet<string> | undefined, color: string, alpha: number) => {
+      if (!ids || ids.size === 0) return;
+      const fill = new Path2D();
+      const edge = new Path2D();
+      for (const s of shapes) {
+        if (s.area === 0 || !ids.has(s.id)) continue;
+        for (const ring of s.lods[lod]) addRing(fill, edge, ring, basis, r, cx, cy);
+      }
+      ctx.fillStyle = color;
+      ctx.globalAlpha = alpha;
+      ctx.fill(fill, "evenodd");
+      ctx.globalAlpha = 1;
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 1.4;
+      ctx.stroke(edge);
+    };
+    fillCountries(answer, colors.primary, 0.85);
+    fillCountries(wrong, colors.destructive, 0.6);
+
     // Historical outlines, shaded and edged as on the flat map, inside land or their countries.
     for (const o of packedOutlines) {
       const fill = new Path2D();
@@ -501,6 +562,41 @@ export function GlobeMap({
     }
     container.dataset.outlines = packedOutlines.map((o) => o.id).join(" ");
 
+    // Names of the answer and a wrong pick, and points such as a city, on the near side.
+    const named = [...(answer ?? []), ...(wrong ?? [])];
+    if (named.length > 0 || (points && points.length > 0)) {
+      ctx.font = `500 13px ${colors.font}`;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.lineJoin = "round";
+      const write = (text: string, x: number, y: number) => {
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = colors.background;
+        ctx.strokeText(text, x, y);
+        ctx.fillStyle = colors.foreground;
+        ctx.fillText(text, x, y);
+      };
+      for (const id of named) {
+        const shape = shapes.find((s) => s.id === id);
+        if (!shape) continue;
+        projectPacked(new Float64Array(shape.centroid), 0, basis, r, cx, cy, p);
+        if (p.depth < 0.15) continue;
+        write(labelFor(id), p.x, p.y);
+      }
+      for (const m of points ?? []) {
+        projectPacked(new Float64Array(toVec(m.at)), 0, basis, r, cx, cy, p);
+        if (p.depth < 0.05) continue;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 5, 0, Math.PI * 2);
+        ctx.fillStyle = m.kind === "target" ? colors.primary : colors.destructive;
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = colors.background;
+        ctx.stroke();
+        if (m.label) write(m.label, p.x, p.y - 14);
+      }
+    }
+
     container.dataset.lambda = rotation.lambda.toFixed(2);
     container.dataset.phi = rotation.phi.toFixed(2);
     container.dataset.zoom = k.toFixed(2);
@@ -517,6 +613,10 @@ export function GlobeMap({
     tinted,
     packedOutlines,
     outlineLabel,
+    answer,
+    wrong,
+    points,
+    labelFor,
   ]);
 
   const schedule = useCallback(() => {
@@ -634,12 +734,43 @@ export function GlobeMap({
     return () => cancelAnimationFrame(id);
   }, [autoRotate, touch]);
 
-  // Turning toward a new place (the Atlas over time, when the year changes). The first value
-  // is the starting view; a press stops a turn in progress.
+  // A session answer: turn to the countries and zoom until they fill about half the globe.
+  const focusKey = focusIds?.join(",") ?? "";
+  const focusTarget = useMemo(() => {
+    if (!focusKey) return null;
+    const ids = new Set(focusKey.split(","));
+    // Each country's largest piece of land, as on the flat map, so French Guiana or the
+    // Caribbean Netherlands do not pull the view across an ocean.
+    const mains = shapes.filter((s) => ids.has(s.id)).map((s) => mainPolygon(s.feature));
+    if (mains.length === 0) return null;
+    const center = geoCentroid({ type: "FeatureCollection", features: mains } as never) as [
+      number,
+      number,
+    ];
+    // The angular radius: the farthest corner of any of the countries' boxes from the centre.
+    let reach = 0;
+    for (const main of mains) {
+      const [[w, so], [e, n]] = geoBounds(main as never);
+      for (const corner of [
+        [w, so],
+        [w, n],
+        [e, so],
+        [e, n],
+      ] as [number, number][])
+        reach = Math.max(reach, geoDistance(center, corner));
+    }
+    // A region of angular radius a fills sin(a) of the globe's radius at zoom 1.
+    const k = Math.min(FOCUS_MAX_ZOOM, Math.max(1, 0.55 / Math.max(Math.sin(reach), 0.02)));
+    return { center, k };
+  }, [focusKey, shapes]);
+
+  // Turning toward a new place: the Atlas over time when the year changes, or a session
+  // answer. A turnTo given at mount is the starting view; a press stops a turn in progress.
   const turning = useRef(0);
-  const firstTurn = useRef(true);
-  const turnLon = turnTo?.[0];
-  const turnLat = turnTo?.[1];
+  const firstTurn = useRef(turnTo != null);
+  const turnLon = focusTarget?.center[0] ?? turnTo?.[0];
+  const turnLat = focusTarget?.center[1] ?? turnTo?.[1];
+  const zoomTo = focusTarget?.k;
   useEffect(() => {
     if (turnLon === undefined || turnLat === undefined) return;
     if (firstTurn.current) {
@@ -647,29 +778,39 @@ export function GlobeMap({
       return;
     }
     const from = view.current.rotation;
-    const target = centerOn([turnLon, turnLat], FIRST_VIEW_TILT);
+    const fromK = view.current.k;
+    // The opening view tilts at most FIRST_VIEW_TILT, so a far-north place sits above the
+    // middle. A zoomed-in answer must sit in the middle, so it may tilt as far as needed.
+    const target =
+      zoomTo !== undefined
+        ? centerOn([turnLon, turnLat])
+        : centerOn([turnLon, turnLat], FIRST_VIEW_TILT);
     const dLambda = ((((target.lambda - from.lambda + 180) % 360) + 360) % 360) - 180;
     const dPhi = target.phi - from.phi;
     if (prefersReducedMotion()) {
       view.current.rotation = target;
+      if (zoomTo !== undefined) view.current.k = zoomTo;
       touch();
       return;
     }
     const start = performance.now();
+    const duration = zoomTo !== undefined ? FOCUS_MS : TURN_MS;
     const step = (now: number) => {
-      const x = Math.min(1, (now - start) / TURN_MS);
+      const x = Math.min(1, (now - start) / duration);
       const e = x < 0.5 ? 2 * x * x : 1 - (-2 * x + 2) ** 2 / 2;
       view.current.rotation = normalize({
         lambda: from.lambda + dLambda * e,
         phi: from.phi + dPhi * e,
       });
+      // Zoom follows the turn, a little behind it, so the globe turns first and then closes in.
+      if (zoomTo !== undefined) view.current.k = fromK + (zoomTo - fromK) * e ** 1.6;
       touch();
       turning.current = x < 1 ? requestAnimationFrame(step) : 0;
     };
     cancelAnimationFrame(turning.current);
     turning.current = requestAnimationFrame(step);
     return () => cancelAnimationFrame(turning.current);
-  }, [turnLon, turnLat, touch]);
+  }, [turnLon, turnLat, zoomTo, touch]);
 
   const stopInertia = () => {
     cancelAnimationFrame(turning.current);

@@ -56,6 +56,24 @@ import { type SessionKind, type SessionView, useDailySession } from "./useDailyS
 
 const INPUTS: readonly InputSetting[] = ["auto", "mc", "typing"];
 const EMPTY: ReadonlySet<string> = new Set();
+/** The ids in a highlight field, which may be one id, a list or nothing. */
+function idList(ids: string | readonly string[] | null | undefined): string[] {
+  if (!ids) return [];
+  return typeof ids === "string" ? [ids] : [...ids];
+}
+
+/**
+ * A card for the turning globe: its question shows the whole world, marks nothing on it and
+ * is answered in the panel (not on the map, with a pin, a feature or taps), and is not a
+ * history card with outlines.
+ */
+function usesGlobe(q: Question, prompt: { focus: MapFocus; highlight: MapHighlight }): boolean {
+  const kind = q.answer.kind;
+  if (kind === "map" || kind === "pin" || kind === "feature" || kind === "taps") return false;
+  if (q.historyId) return false;
+  return prompt.focus.kind === "world" && nothingMarked(prompt.highlight);
+}
+
 /** True when a map view marks nothing: no target, selection, label, shading or point. */
 function nothingMarked(h: MapHighlight): boolean {
   return Object.values(h).every(
@@ -231,6 +249,33 @@ export function Session({
   const home = learner.settings.homeCountry
     ? learner.world.byId.get(learner.settings.homeCountry)
     : undefined;
+  // Whether this card shows the turning globe, decided from its question as it is asked, so
+  // the globe stays on screen for the answer instead of giving way to the flat map.
+  const onGlobe =
+    (view.kind === "prompt" || view.kind === "feedback") &&
+    usesGlobe(
+      view.question,
+      mapState(
+        { kind: "prompt", item: view.item, question: view.question, hint: false },
+        learner,
+        locale,
+        s.ctx,
+        EMPTY,
+      ),
+    );
+  // On the answer, the globe turns to what the flat map would have shown.
+  const answerGlobe =
+    onGlobe && view.kind === "feedback"
+      ? (() => {
+          const target = idList(highlight.target);
+          return {
+            focus: target.length > 0 ? target : [view.question.countryId],
+            answer: new Set(target.length > 0 ? target : [view.question.countryId]),
+            wrong: new Set(idList(highlight.chosen)),
+            points: highlight.points,
+          };
+        })()
+      : null;
   const outlines = historyOutlines(view, learner);
   const past = view.question.historyId
     ? learner.world.historyById.get(view.question.historyId)
@@ -282,22 +327,26 @@ export function Session({
           // A question that shows the whole world, marks nothing on it and is answered in the
           // panel has nothing to point at on the map: a slowly turning globe stands in for the
           // zoomed-out flat map. "Which ocean is this?" marks the ocean, so it keeps the map.
-          // The answer brings the flat map back, zoomed to the place.
-          view.kind === "prompt" &&
-          focus.kind === "world" &&
-          nothingMarked(highlight) &&
-          !mapSelectable &&
-          view.question.answer.kind !== "pin" &&
-          view.question.answer.kind !== "feature" &&
-          !outlines?.length ? (
-            <div className="h-full w-full bg-background" data-testid="prompt-globe">
+          // The same globe stays for the answer: it turns the shorter way to the place and
+          // zooms in, with the answer filled and a wrong pick marked.
+          onGlobe && (view.kind === "prompt" || view.kind === "feedback") ? (
+            <div
+              key={view.item.cardId}
+              className="h-full w-full bg-background"
+              data-testid="session-globe"
+              data-phase={view.kind}
+            >
               <GlobeMap
                 countries={scoped}
                 topology={learner.world.topology}
                 labelFor={labelFor}
                 ariaLabel={t("map.label")}
                 initialCenter={home?.centroid}
-                autoRotate={PROMPT_SPIN}
+                autoRotate={view.kind === "prompt" ? PROMPT_SPIN : undefined}
+                focusIds={answerGlobe?.focus}
+                answer={answerGlobe?.answer}
+                wrong={answerGlobe?.wrong}
+                points={answerGlobe?.points}
                 decorative
               />
             </div>
