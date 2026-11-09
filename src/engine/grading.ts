@@ -1,3 +1,4 @@
+import type { CardPhase } from "./scheduler";
 import type { AnswerMode, InputSetting, Rating } from "./types";
 
 /** Responses over this count as Hard, not wrong (PLAN.md 6.2). */
@@ -60,6 +61,17 @@ export function rollingMedian(values: readonly number[], window = 200): number |
   return sorted.length % 2
     ? (sorted[mid] as number)
     : ((sorted[mid - 1] as number) + (sorted[mid] as number)) / 2;
+}
+
+/**
+ * The rating a card's phase can use. In a learning or relearning step the scheduler repeats
+ * the step on Hard, so a card answered right but slowly, or with a pin 100 to 300 km off,
+ * came back every 15 minutes for as long as that went on. While a card is in those short
+ * steps a right answer moves it on, so Hard counts as Good there. Review cards keep Hard,
+ * which shortens their next gap.
+ */
+export function ratingForPhase(rating: Rating, phase: CardPhase | undefined): Rating {
+  return rating === 2 && (phase === "learning" || phase === "relearning") ? 3 : rating;
 }
 
 /** Pin grading (PLAN.md 5.3): distance in km to the rating. Cities 100/300 km. */

@@ -1,5 +1,14 @@
 import { describe, expect, it } from "vitest";
-import { type GradeInput, grade, gradePin, LANDMARK_PIN, rollingMedian } from "./grading";
+import {
+  type GradeInput,
+  grade,
+  gradePin,
+  LANDMARK_PIN,
+  ratingForPhase,
+  rollingMedian,
+} from "./grading";
+import { applyReview, type CardState, createScheduler } from "./scheduler";
+import type { Rating } from "./types";
 
 const base: GradeInput = {
   correct: true,
@@ -67,5 +76,45 @@ describe("gradePin", () => {
     expect(gradePin(151, LANDMARK_PIN)).toEqual({ rating: 2, correct: true });
     expect(gradePin(500, LANDMARK_PIN)).toEqual({ rating: 2, correct: true });
     expect(gradePin(501, LANDMARK_PIN)).toEqual({ rating: 1, correct: false });
+  });
+});
+
+describe("ratingForPhase", () => {
+  it("counts Hard as Good in learning and relearning steps only", () => {
+    expect(ratingForPhase(2, "learning")).toBe(3);
+    expect(ratingForPhase(2, "relearning")).toBe(3);
+    expect(ratingForPhase(2, "review")).toBe(2);
+    expect(ratingForPhase(2, "new")).toBe(2);
+    expect(ratingForPhase(2, undefined)).toBe(2);
+    expect(ratingForPhase(1, "relearning")).toBe(1);
+    expect(ratingForPhase(4, "learning")).toBe(4);
+  });
+
+  it("lets a missed card leave relearning on the next right answer, even a Hard one", () => {
+    // Marrakesh: known, missed once, then pinned 100 to 300 km off (Hard) again and again.
+    const scheduler = createScheduler();
+    const review = (state: CardState | null, rating: Rating, at: number) =>
+      applyReview(scheduler, state, {
+        cardId: "MAR-marrakesh:city_to_map",
+        reviewedAt: at,
+        rating: ratingForPhase(rating, state?.phase),
+        scheduled: true,
+        mode: "pin",
+      });
+    let now = Date.UTC(2026, 10, 9, 10);
+    let state = review(null, 3, now);
+    for (const rating of [3, 3] as const) {
+      now = Math.max(now + 60_000, state?.due ?? now);
+      state = review(state, rating, now);
+    }
+    expect(state?.phase).toBe("review");
+    now = state?.due ?? now;
+    state = review(state, 1, now);
+    expect(state?.phase).toBe("relearning");
+    now = state?.due ?? now;
+    state = review(state, 2, now);
+    // Out of the short step: the card waits a day or more, not 15 minutes.
+    expect(state?.phase).toBe("review");
+    expect((state?.due ?? 0) - now).toBeGreaterThan(12 * 60 * 60_000);
   });
 });
