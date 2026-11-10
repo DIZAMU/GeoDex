@@ -48,7 +48,7 @@ function Welcome({ learner }: { learner: Learner }) {
   const number = new Intl.NumberFormat(locale);
 
   return (
-    <div className="min-h-dvh">
+    <div className="flex min-h-dvh flex-col">
       <header className="border-b border-border">
         <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between gap-4 px-4 md:px-10">
           <Link to="/welcome" className="flex h-11 items-center rounded-lg">
@@ -59,7 +59,7 @@ function Welcome({ learner }: { learner: Learner }) {
         </div>
       </header>
 
-      <main>
+      <main className="flex-1">
         {/*
          * On a phone the question comes right after the title, and the way in follows it.
          * On a desktop the text and the way in sit to the left of the question.

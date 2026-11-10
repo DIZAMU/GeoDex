@@ -37,7 +37,7 @@ const ITEMS: Item[] = [
 export function AppLayout() {
   const { t } = useTranslation();
   return (
-    <div className="min-h-dvh">
+    <div className="flex min-h-dvh flex-col">
       <header className="sticky top-0 z-20 [view-transition-name:site-header] border-b border-border bg-background">
         <div className="mx-auto flex h-12 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:h-14 md:px-10">
           {/* The wordmark is artwork, never live text (assets/brand/BRAND.md). */}
@@ -70,9 +70,10 @@ export function AppLayout() {
           </nav>
         </div>
       </header>
-      {/* On a phone the bottom bar covers the last 4rem, so the page leaves room for it. */}
-      <div className="pb-[calc(4rem+env(safe-area-inset-bottom))] sm:pb-0">
-        <main>
+      {/* On a phone the bottom bar covers the last 4rem, so the page leaves room for it. The main
+          area takes the spare height, so a short page still has the footer at the bottom. */}
+      <div className="flex flex-1 flex-col pb-[calc(4rem+env(safe-area-inset-bottom))] sm:pb-0">
+        <main className="flex-1">
           <Outlet />
         </main>
         <SiteFooter />
