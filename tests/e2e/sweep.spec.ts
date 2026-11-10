@@ -142,3 +142,14 @@ test("back and forward between tabs keep each screen intact", async ({ page }) =
   await expect(page.getByTestId("atlas-regions")).toBeVisible();
   expect(errors).toEqual([]);
 });
+
+test("on a short page the footer sits at the bottom of the window", async ({ page }) => {
+  await setUpLearner(page);
+  await page.setViewportSize({ width: 1600, height: 1600 });
+  for (const url of ["/", "/settings?tab=topics"]) {
+    await page.goto(url);
+    await expect(page.getByTestId("site-footer")).toBeVisible();
+    const box = await page.getByTestId("site-footer").boundingBox();
+    expect(Math.round((box?.y ?? 0) + (box?.height ?? 0))).toBe(1600);
+  }
+});
