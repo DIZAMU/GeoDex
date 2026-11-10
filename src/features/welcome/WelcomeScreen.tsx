@@ -6,9 +6,11 @@
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router";
+import { SiteFooter } from "@/app/SiteFooter";
 import { masteryEstimate } from "@/engine/estimate";
 import { isLocale, LOCALES } from "@/i18n/locales";
 import { useLocale } from "@/i18n/useLocale";
+import { BackToTop } from "@/ui/back-to-top";
 import { Button } from "@/ui/button";
 import { Loader } from "@/ui/loader";
 import { ToggleGroup, ToggleGroupItem } from "@/ui/toggle-group";
@@ -131,9 +133,10 @@ function Welcome({ learner }: { learner: Learner }) {
           <Button variant="secondary" size="lg" onClick={start} data-testid="setup-end">
             {t("welcome.start")}
           </Button>
-          <p className="pt-6 text-sm text-muted-foreground">{t("welcome.madeBy")}</p>
         </section>
       </main>
+      <SiteFooter />
+      <BackToTop />
     </div>
   );
 }

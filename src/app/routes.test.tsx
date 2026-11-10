@@ -43,9 +43,10 @@ describe("routes", () => {
         <RouterProvider router={router} />
       </LearnerProvider>,
     );
-    // Header links on wide screens and the bottom bar on phones: both are in the document.
-    expect(screen.getAllByRole("link", { name: "Today" })).toHaveLength(2);
-    expect(screen.getAllByRole("link", { name: "Settings" })).toHaveLength(2);
+    // Header links on wide screens, the bottom bar on phones, and the footer.
+    expect(screen.getAllByRole("link", { name: "Today" })).toHaveLength(3);
+    expect(screen.getAllByRole("link", { name: "Settings" })).toHaveLength(3);
+    expect(screen.getByTestId("footer-credit")).toHaveTextContent("Developed in 2026 by DIZAMU");
     expect(await screen.findByTestId("help-faq")).toBeInTheDocument();
   });
 

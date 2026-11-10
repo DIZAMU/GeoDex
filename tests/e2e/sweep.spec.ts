@@ -126,9 +126,11 @@ test("a pair drill from the URL runs with keyboard shortcuts and the help overla
 test("back and forward between tabs keep each screen intact", async ({ page }) => {
   const errors = watchErrors(page);
   await setUpLearner(page);
-  await page.getByRole("link", { name: "Atlas" }).click();
+  // The menu, not the footer: the header on a wide screen, the bottom bar on a phone.
+  const menu = page.getByRole("navigation", { name: "Main" });
+  await menu.getByRole("link", { name: "Atlas" }).click();
   await expect(page.getByTestId("atlas-regions")).toBeVisible();
-  await page.getByRole("link", { name: "Stats" }).click();
+  await menu.getByRole("link", { name: "Stats" }).click();
   await expect(page.getByTestId("stats-grid")).toBeVisible();
   await page.goBack();
   await expect(page.getByTestId("atlas-regions")).toBeVisible();

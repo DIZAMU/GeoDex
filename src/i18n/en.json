@@ -542,7 +542,6 @@
     "demoNext": "Next question",
     "demoDone": "That is GeoDex. A real session adapts to you: what you miss comes back sooner.",
     "demoAgain": "Try again",
-    "madeBy": "Made by DIZAMU",
     "facts": "Free, and it works offline. Your progress stays in this browser.",
     "paceTitle": "{{minutes}} minutes a day",
     "memory": "Wrong answers come back the same day. Countries you mix up get a card of their own that tells the two apart.",
@@ -669,5 +668,20 @@
     "cartographer": "Cartographer",
     "geographer": "Geographer",
     "atlasKeeper": "Atlas keeper"
+  },
+  "footer": {
+    "tagline": "Spaced-repetition geography. Free, offline, no account.",
+    "learn": "Learn",
+    "help": "Help",
+    "about": "About",
+    "questions": "Questions",
+    "backup": "Backup and restore",
+    "tour": "Replay the tour",
+    "welcome": "About GeoDex",
+    "github": "GitHub",
+    "version": "Version {{version}}",
+    "credit": "Developed in 2026 by",
+    "privacy": "Your progress stays in this browser.",
+    "toTop": "Back to top"
   }
 }
