@@ -542,7 +542,6 @@
     "demoNext": "Neste spørsmål",
     "demoDone": "Det er GeoDex. En ekte økt tilpasser seg deg: det du bommer på, kommer raskere tilbake.",
     "demoAgain": "Prøv igjen",
-    "madeBy": "Laget av DIZAMU",
     "facts": "Gratis, og det virker uten nett. Fremgangen lagres i denne nettleseren.",
     "paceTitle": "{{minutes}} minutter om dagen",
     "memory": "Feil svar kommer tilbake samme dag. Land du blander, får et eget kort som skiller dem fra hverandre.",
@@ -669,5 +668,20 @@
     "cartographer": "Kartograf",
     "geographer": "Geograf",
     "atlasKeeper": "Atlasvokter"
+  },
+  "footer": {
+    "tagline": "Geografi med repetisjon over tid. Gratis, uten nett, uten konto.",
+    "learn": "Lær",
+    "help": "Hjelp",
+    "about": "Om",
+    "questions": "Spørsmål",
+    "backup": "Sikkerhetskopi",
+    "tour": "Se omvisningen igjen",
+    "welcome": "Om GeoDex",
+    "github": "GitHub",
+    "version": "Versjon {{version}}",
+    "credit": "Utviklet i 2026 av",
+    "privacy": "Fremgangen din blir i denne nettleseren.",
+    "toTop": "Til toppen"
   }
 }

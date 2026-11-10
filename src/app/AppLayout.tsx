@@ -8,9 +8,11 @@ import {
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link, NavLink, Outlet } from "react-router";
+import { BackToTop } from "@/ui/back-to-top";
 import { cn } from "@/ui/utils";
 import lockup from "../../assets/brand/svg/geodex-lockup.svg";
 import lockupOnDark from "../../assets/brand/svg/geodex-lockup-on-dark.svg";
+import { SiteFooter } from "./SiteFooter";
 
 type Item = {
   to: string;
@@ -68,9 +70,14 @@ export function AppLayout() {
           </nav>
         </div>
       </header>
-      <main className="pb-[calc(4rem+env(safe-area-inset-bottom))] sm:pb-0">
-        <Outlet />
-      </main>
+      {/* On a phone the bottom bar covers the last 4rem, so the page leaves room for it. */}
+      <div className="pb-[calc(4rem+env(safe-area-inset-bottom))] sm:pb-0">
+        <main>
+          <Outlet />
+        </main>
+        <SiteFooter />
+      </div>
+      <BackToTop />
       <nav
         aria-label={t("nav.label")}
         className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-background pb-[env(safe-area-inset-bottom)] sm:hidden"
