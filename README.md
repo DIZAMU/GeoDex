@@ -11,7 +11,7 @@ Learn every country, capital and flag, a few minutes a day.
 
 GeoDex is a spaced-repetition geography trainer. Each card comes back just before you would forget it, you answer on a real map, and every answer tells you something that helps it stick. It is free, runs in the browser, works offline and needs no account: [geodex.dilovanzm.workers.dev](https://geodex.dilovanzm.workers.dev)
 
-[![Watch the 90-second demo](docs/media/demo-poster.jpg)](docs/media/geodex-demo.mp4)
+[![Watch the 90-second demo](docs/media/demo-poster.jpg)](https://geodex.dilovanzm.workers.dev/geodex-demo.mp4)
 
 <sub>The music in the demo is an original track made for GeoDex and is in the public domain (CC0); see [`docs/media/CREDITS.md`](docs/media/CREDITS.md).</sub>
 

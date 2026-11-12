@@ -45,6 +45,8 @@ export default defineConfig({
         globIgnores: ["og-image.png"],
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
         navigateFallback: "/index.html",
+        // The demo video is a file to open, not a page of the app.
+        navigateFallbackDenylist: [/\.mp4$/],
         cleanupOutdatedCaches: true,
         // Take over the open page at once, so the first visit is already offline-ready.
         clientsClaim: true,
