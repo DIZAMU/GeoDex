@@ -6,4 +6,4 @@ The music in `geodex-demo.mp4` is an original track made for GeoDex by `scripts/
 
 ## Screenshots and footage
 
-The screenshots in this folder and the footage in the video are of GeoDex itself, recorded with `scripts/demo/screens.ts` and `scripts/demo/video.ts`. Map outlines come from Natural Earth (public domain); see `THIRD_PARTY_NOTICES.md` for the data sources the app uses.
+The screenshots in this folder and the footage in the video are of GeoDex itself, recorded with `scripts/demo/screens.ts` and `scripts/demo/video.ts`; the video's opening and closing animations are drawn by `scripts/demo/intro.ts`. Map outlines come from Natural Earth (public domain); see `THIRD_PARTY_NOTICES.md` for the data sources the app uses.

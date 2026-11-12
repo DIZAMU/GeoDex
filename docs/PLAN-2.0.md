@@ -65,7 +65,7 @@ Agreed with the owner in a Q&A on 3 November 2026. This is the build plan for th
 | Licence | PolyForm Noncommercial, as today |
 | Community | Issues open for bugs and wrong facts. Pull requests from others are not accepted |
 | README | Plain rewrite: what GeoDex is in two lines, the link, screenshots, how to run it, licence. No badge wall, no marketing tone |
-| Demo video | About one minute, desktop 16:9, English. See the demo section below |
+| Demo video | About ninety seconds, desktop 16:9, English, dark mode. See the demo section below |
 
 ### Quality
 
@@ -77,13 +77,13 @@ Agreed with the owner in a Q&A on 3 November 2026. This is the build plan for th
 
 ## Demo video
 
-- **Length and format:** about one minute, 16:9 desktop, English, MP4.
-- **Feel:** cinematic, smooth and animated, like a professional studio edit. Smooth zooms and pans into the part of the screen that matters. Fast cuts in rhythm with the music. Captions as titles that name each step.
-- **Footage:** the real app being used, from the first screen to a finished session and the map filling in. Staging is fine: seeded progress, a tidy browser frame, timing stretched to fit the music.
-- **Music:** an upbeat track with a free licence (CC0 or equivalent), with its source and licence recorded in the repo.
-- **How it is made:** recorded with Playwright in the browser and edited with ffmpeg, both free. If the result needs more polish, the owner may connect extra tools later.
+- **Length and format:** about ninety seconds, 16:9 desktop, 60 frames a second, English, MP4.
+- **Feel:** cinematic and smooth, never rushed. An animated opening (a globe that becomes the logo) and ending (the world rising under the logo), flat colours, no glow. Soft fades between chapters, and a numbered caption for each chapter in plain text at the bottom left.
+- **Footage:** the real app in dark mode, in story order: the landing page, setup, the guide, three questions, the results, then a learner six weeks in on Today, the Atlas, Stats (with the button back to the top) and Settings. Staging is fine: seeded progress, a tidy browser frame.
+- **Music:** a warm, unhurried original track that suits a film about the world (marimba, hand drums, a soft pad), made from code and dedicated to the public domain (CC0), fading in and out.
+- **How it is made:** the animations are drawn frame by frame; the app is recorded with Playwright in slow motion and played back at full speed, so no frame is dropped; ffmpeg cuts it all to the music. All of it is free.
 - **Publishing:** the owner uploads the MP4 once through the GitHub README editor, which gives it a playable link. The README text is prepared beforehand.
-- **Reference:** the demo in the owner's RootCause repo, for its spirit and not its exact look. That video could not be downloaded in this session, so its details come from the owner's description.
+- **Reference:** the demo in the owner's RootCause repo: one unbroken walk through the app, chapter by chapter, at a pace that shows everything without lingering.
 
 ## Work order
 
