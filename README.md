@@ -84,7 +84,7 @@ Progress is saved in your browser after every answer and is never sent anywhere,
 | Workflow | Does |
 |---|---|
 | `ci.yml` | Lint (Biome and a check for en and em dashes), typecheck, unit tests with coverage and the production build on every pull request, plus the commit message check. On `main`, the end-to-end suite on desktop and phone |
-| `release.yml` | When a release notes file in `releases/` reaches `main`, tags the version and publishes the GitHub release |
+| `release.yml` | When the notes for a new version reach `main`, tags it and publishes the GitHub release. Keeps only the milestone releases (each major version and the latest) and deletes merged branches |
 | `outside-prs.yml` | Closes pull requests from outside with a pointer to the issues |
 
 ## Development
