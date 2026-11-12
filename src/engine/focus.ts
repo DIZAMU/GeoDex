@@ -1,5 +1,5 @@
 /**
- * Session picker (PLAN.md 11.2): a session of a chosen length, on everything due today or on
+ * Session picker: a session of a chosen length, on everything due today or on
  * one skill, module or continent. The slice comes from today's plan, so a focused session
  * never adds work the plan did not schedule.
  */

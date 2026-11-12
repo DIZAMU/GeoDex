@@ -1,4 +1,4 @@
-/** Confusion tracking (PLAN.md 6.7). Derived from review events; nothing is stored. */
+/** Confusion tracking. Derived from review events; nothing is stored. */
 import { type CardId, DAY_MS, type ReviewEventCore } from "./types";
 
 export const CONFUSION_WINDOW_DAYS = 90;

@@ -10,14 +10,15 @@ The rest of this file is how that author works.
 
 ## Where things are written down
 
-The original design is in `PLAN.md`, and its section 0 lists decisions already made, which are not reopened. Version 2.0 changed several of them; `docs/PLAN-2.0.md` has those decisions and `docs/design/UNSLOP-PLAYBOOK.md` the design rules. The voice for all learner-facing text is in `content/VOICE.md`.
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md): how the app is built and why.
+- [`docs/DECISIONS.md`](docs/DECISIONS.md): every design decision, numbered, with its reasons and costs.
+- [`content/VOICE.md`](content/VOICE.md): the voice for all learner-facing text.
 
 ## How to work
 
-- Build in `PLAN.md` order. Before starting a phase, restate its tasks and acceptance criteria in one short list.
-- A phase is done when every acceptance criterion passes.
-- Use conventional commits: `feat:`, `fix:`, `data:`, `content:`, `test:`, `docs:`, `chore:`. Keep commits small and focused, with clear messages.
-- When the plan conflicts with reality (a library lacks a feature, data is missing, a license blocks a dataset), write the problem and the options in `DECISIONS.md`, pick the safer one, and continue.
+- Use conventional commits: `feat:`, `fix:`, `data:`, `content:`, `test:`, `docs:`, `chore:`. Keep commits small and focused, with clear messages. Run `git config core.hooksPath .githooks` once after cloning; the hook rejects tool attribution lines, and CI checks the same.
+- Work on a branch and merge to `main` through a pull request once CI passes. `main` is what the live site runs.
+- When reality conflicts with a decision (a library lacks a feature, data is missing, a license blocks a dataset), write the problem and the options in `docs/DECISIONS.md`, pick the safer one, and continue.
 - When unsure about a library API (ts-fsrs, Dexie, vite-plugin-pwa, d3-zoom, i18next), read the installed version's types in `node_modules` or its current docs.
 
 ## Rules
@@ -40,7 +41,7 @@ The original design is in `PLAN.md`, and its section 0 lists decisions already m
 
 ## Invariants
 
-1. Event tables (review events, hook votes) are append-only. Never update or delete an event, locally or remotely.
+1. Event tables (review events, hook votes) are append-only. Never update or delete an event.
 2. `cardState` is a cache, fully rebuildable from events plus settings.
 3. Card ids are `${entityId}:${cardType}` and never change once shipped.
 4. Entity ids: ISO 3166-1 alpha-3 for countries (Kosovo `XKX`); Wikidata QIDs for cities, landmarks, physical features and history entities where they exist.
@@ -60,14 +61,14 @@ pnpm data:build        # build static data from data/raw (deterministic)
 pnpm content:compile   # templates md -> src/generated/templates.json
 pnpm content:lint      # enforce VOICE.md rules, both locales
 pnpm content:facts     # check content against the data, writes content/FACT-CHECK.md
-pnpm content:nb        # new and changed Norwegian strings, writes docs/NB-REVIEW.md
+pnpm content:nb        # new and changed Norwegian strings, writes NB-REVIEW.md (not committed)
 ```
 
 ## Definition of done
 
 - Typecheck, lint and unit tests pass.
 - New logic has tests.
-- UI changes: Playwright screenshots at 1280, 768 and 390 px wide, in light and dark and both languages, checked against `docs/design/UNSLOP-PLAYBOOK.md`.
+- UI changes: Playwright screenshots at 1280, 768 and 390 px wide, in light and dark and both languages, checked by eye.
 
 ## Content
 
@@ -84,7 +85,7 @@ pnpm content:nb        # new and changed Norwegian strings, writes docs/NB-REVIE
 ## Design
 
 - Laptop first: design and verify at 1440x900, then adapt down.
-- Follow `docs/design/UNSLOP-PLAYBOOK.md`. The map answer moment is the one place for visual boldness; keep everything else quiet.
+- The map answer moment is the one place for visual boldness; keep everything else quiet. No generic dashboard look: no gradients, glows or decorative cards.
 - One design in light and dark: the same layout, type and easing, with its own tokens for each mode.
 - UI copy: sentence case, active verbs, no praise filler. Errors state what happened and the fix.
 - Color never carries meaning alone. Mastery ramps are luminance-based, never red to green.

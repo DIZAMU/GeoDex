@@ -1,5 +1,5 @@
 /**
- * Levels and XP for the screens (PLAN.md 11.3): the cards in the learner's course, grouped by
+ * Levels and XP for the screens: the cards in the learner's course, grouped by
  * topic, continent and country, each with its memory level; and XP from events.
  */
 import { useMemo } from "react";

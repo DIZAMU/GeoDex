@@ -13,9 +13,9 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    // Installable and offline after the first load (PLAN.md 8.4): the app shell, data,
+    // Installable and offline after the first load: the app shell, data,
     // geometry, content, flags and fonts are all precached. Landmark photos from Commons are
-    // cached at runtime after their first view, never precached (PLAN.md Phase 7).
+    // cached at runtime after their first view, never precached.
     VitePWA({
       registerType: "autoUpdate",
       injectRegister: "script-defer",

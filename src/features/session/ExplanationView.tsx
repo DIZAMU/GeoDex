@@ -6,7 +6,7 @@ import { reportIssueUrl } from "@/engine/report";
 import { Button } from "@/ui/button";
 
 /**
- * Moment content (PLAN.md 7.1): the template line, contrast text, a memory hook in
+ * Moment content: the template line, contrast text, a memory hook in
  * Newsreader Italic (the cartographic type for memory cues), and a fact.
  */
 export function ExplanationView({

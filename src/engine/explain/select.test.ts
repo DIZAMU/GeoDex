@@ -184,7 +184,7 @@ describe("selection", () => {
 });
 
 describe("moments", () => {
-  it("maps answers to PLAN.md 7.2 moments", () => {
+  it("maps answers to moments", () => {
     const base = {
       rating: 3 as const,
       phaseBefore: "learning" as const,

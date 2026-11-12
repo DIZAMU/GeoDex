@@ -1,5 +1,5 @@
 {
-  "_comment": "History layer (PLAN.md Phase 9). QIDs resolved from English Wikipedia titles; former-* ids are names of states that still exist under another name, with no item of their own. Outlines: a union of modern countries, or a hand-simplified envelope clipped to land or to the listed countries. Every outline is approximate unless marked otherwise. See DECISIONS.md 037.",
+  "_comment": "History layer. QIDs resolved from English Wikipedia titles; former-* ids are names of states that still exist under another name, with no item of their own. Outlines: a union of modern countries, or a hand-simplified envelope clipped to land or to the listed countries. Every outline is approximate unless marked otherwise. See docs/DECISIONS.md 037.",
   "entities": [
     {
       "id": "Q6500954",

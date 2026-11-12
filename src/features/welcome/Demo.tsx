@@ -1,5 +1,5 @@
 /**
- * Three sample questions on the welcome page (PLAN.md 11.1): a map tap, a flag and a
+ * Three sample questions on the welcome page: a map tap, a flag and a
  * capital, with real feedback and a memory hook. Nothing is saved.
  */
 import { RotateCcwIcon } from "lucide-react";

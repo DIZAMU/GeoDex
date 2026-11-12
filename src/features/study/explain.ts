@@ -1,5 +1,5 @@
 /**
- * Builds the explanation for one answer from the learner's history (PLAN.md 7). Glue
+ * Builds the explanation for one answer from the learner's history. Glue
  * between the app's data and the pure engine in src/engine/explain.
  */
 

@@ -1,6 +1,6 @@
 /**
  * Turns a card into a concrete question: what to show, how to answer, and how to check it
- * (PLAN.md 5.3, 5.4). Pure: same inputs, same question.
+ *. Pure: same inputs, same question.
  */
 import type { Country, HistoricalEntity, PhysicalFeature } from "@/data/types";
 import type { WorldData } from "@/data/world";
@@ -198,7 +198,7 @@ const TEXT_ANSWER: Partial<Record<CountryCardType, AnswerKind>> = {
   country_to_language: "language",
 };
 
-/** Stability band for answer escalation (PLAN.md 5.4). */
+/** Stability band for answer escalation. */
 export function band(state: CardState | undefined): "new" | "middle" | "strong" {
   if (!state || state.phase === "new" || state.stability < 2) return "new";
   return state.stability <= 14 ? "middle" : "strong";
@@ -458,7 +458,7 @@ function contrastQuestion(ctx: StudyContext, cardId: string, pair: string, seed:
 
 /**
  * "Which is the capital of Australia?": the capital and the city mistaken for it, side by
- * side (PLAN.md 5.2, not_capital confusions).
+ * side (not_capital confusions).
  */
 function notCapitalQuestion(
   ctx: StudyContext,
@@ -576,7 +576,7 @@ function cityQuestion(
 }
 
 /**
- * Landmark cards (PLAN.md 5.3): name it from its photo, say which country it is in, or pin
+ * Landmark cards: name it from its photo, say which country it is in, or pin
  * it on the map (graded 150/500 km).
  */
 function landmarkQuestion(
@@ -761,7 +761,7 @@ export function featureView(
   };
 }
 
-/** Physical cards (PLAN.md 5.3): tap the feature, or name the highlighted one. */
+/** Physical cards: tap the feature, or name the highlighted one. */
 function physicalQuestion(
   ctx: StudyContext,
   cardId: string,
@@ -874,7 +874,7 @@ export function periodsApart(a: readonly [number, number], b: readonly [number, 
 }
 
 /**
- * History cards (PLAN.md 5.3): today's name for a former name, the name of an outline, a
+ * History cards: today's name for a former name, the name of an outline, a
  * member of a dissolved state, and when an empire existed.
  */
 function historyQuestion(
@@ -1057,7 +1057,7 @@ export function groupArea(ctx: Pick<StudyContext, "world" | "scope">, members: s
 }
 
 /**
- * Group cards (DECISIONS.md 034): tap every member, name the highlighted group, or pick the
+ * Group cards (docs/DECISIONS.md 034): tap every member, name the highlighted group, or pick the
  * member among countries outside it.
  */
 function groupQuestion(
@@ -1226,7 +1226,7 @@ export function checkChoice(question: Question, chosenId: string): CheckResult {
   return { correct: question.correctIds.includes(chosenId), typo: false, chosenId };
 }
 
-/** Checks a pin against the target: graded by distance (PLAN.md 5.3). */
+/** Checks a pin against the target: graded by distance. */
 export function checkPin(question: Question, at: [number, number]): CheckResult {
   if (question.answer.kind !== "pin") throw new Error("Not a pin question");
   const [lon, lat] = question.answer.target;

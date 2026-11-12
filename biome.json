@@ -20,8 +20,7 @@
       "!**/data/flags-meta.json",
       "!**/public/flags",
       "!**/assets/brand",
-      "!**/public/favicon.svg",
-      "!**/docs/design"
+      "!**/public/favicon.svg"
     ]
   },
   "formatter": {

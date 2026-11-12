@@ -577,7 +577,7 @@ function Panel({
     );
   }
 
-  // Feedback (PLAN.md 7.1). Moment content arrives with the explanation engine in Phase 3.
+  // Feedback: the answer, then the explanation for its moment.
   const o = view.outcome;
   if (group)
     return <GroupFeedback view={view} ctx={ctx} session={s} learner={learner} locale={locale} />;

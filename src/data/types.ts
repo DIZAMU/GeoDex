@@ -1,6 +1,6 @@
 /**
  * Static data types, shared by the build scripts (scripts/data) and the app.
- * See PLAN.md 5.1. Generated files in data/ conform to these types.
+ * Generated files in data/ conform to these types.
  */
 
 export type Locale = "en" | "nb";
@@ -80,7 +80,7 @@ export type CountriesFile = {
   countries: Country[];
 };
 
-/** A city outside the capitals (PLAN.md 5.1). Built by scripts/data/build-cities.ts. */
+/** A city outside the capitals. Built by scripts/data/build-cities.ts. */
 export type City = {
   id: string; // Wikidata QID
   names: L10n;
@@ -125,7 +125,7 @@ export type CountryGroup = GroupBase & {
   m49: string | null;
 };
 
-/** A Commons photo with what its license requires us to show (PLAN.md 3). */
+/** A Commons photo with what its license requires us to show. */
 export type LandmarkImage = {
   /** Commons file name, without "File:". */
   file: string;
@@ -154,7 +154,7 @@ export type Landmark = {
 
 export type LandmarksFile = { landmarks: Landmark[] };
 
-/** Physical geography (PLAN.md Phase 8). */
+/** Physical geography. */
 export type PhysicalKind = "ocean" | "sea" | "river" | "mountain_range" | "desert" | "lake";
 
 export type PhysicalFeature = {

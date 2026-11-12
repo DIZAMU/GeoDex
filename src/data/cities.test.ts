@@ -12,7 +12,7 @@ const byId = new Map(cities.map((c) => [c.id, c]));
 const countryById = new Map(countries.map((c) => [c.id, c]));
 
 describe("cities", () => {
-  it("stay a short list of world-famous cities (DECISIONS.md 033)", () => {
+  it("stay a short list of world-famous cities (docs/DECISIONS.md 033)", () => {
     expect(cities.length).toBeGreaterThanOrEqual(30);
     expect(cities.length).toBeLessThanOrEqual(50);
   });

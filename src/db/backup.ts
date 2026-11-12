@@ -1,5 +1,5 @@
 /**
- * Backup files (PLAN-2.0): the only way progress moves between browsers. Import merges:
+ * Backup files: the only way progress moves between browsers. Import merges:
  * events are added by id (never changed), settings by last write wins.
  */
 import type { FSRS } from "ts-fsrs";

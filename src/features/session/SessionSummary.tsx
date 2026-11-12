@@ -15,7 +15,7 @@ import type { Learner } from "../study/useLearner";
 import { nameOf } from "./parts";
 
 /**
- * End of a session (docs/PLAN-2.0.md): how many were right, then what slipped and what it was
+ * End of a session: how many were right, then what slipped and what it was
  * mixed up with, XP, achievements and tomorrow. A drill has no tomorrow: it changed nothing.
  */
 export function SessionSummary({
@@ -36,11 +36,11 @@ export function SessionSummary({
   results?: readonly boolean[];
   held: ReadonlySet<string>;
   drill: boolean;
-  /** Levels and XP when the session started (PLAN.md 11.3). */
+  /** Levels and XP when the session started. */
   before?: { level: number; xp: number; xpLevel: number; rank: Rank };
   /** When the session started; the answers since then are this session's. */
   startedAt?: number;
-  /** Another daily round in the same length and focus (PLAN.md 11.2). */
+  /** Another daily round in the same length and focus. */
   again?: { length: number; focus: Focus } | null;
 }) {
   const { t, i18n } = useTranslation();

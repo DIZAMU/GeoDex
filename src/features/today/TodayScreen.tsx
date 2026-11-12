@@ -21,13 +21,13 @@ import { SessionPicker } from "./SessionPicker";
 export function TodayScreen() {
   const learner = useLearner();
   if (!learner) return <Loader />;
-  // A first-time visitor starts on the first screen (docs/PLAN-2.0.md).
+  // A first-time visitor starts on the first screen.
   if (!learner.settings.homeCountry) return <Navigate to="/welcome" replace />;
   return <Today learner={learner} />;
 }
 
 /**
- * Today answers one question: what do I do now (docs/PLAN-2.0.md). The cards waiting and the
+ * Today answers one question: what do I do now. The cards waiting and the
  * way to start come first; the map and the level follow.
  */
 function Today({ learner }: { learner: Learner }) {
@@ -171,7 +171,7 @@ function StreakLine({ streak }: { streak: Streak }) {
 /** Degrees a second the Today globe turns on its own. */
 const SPIN = 6;
 
-/** The learner's globe (PLAN.md 8.3): how well each country is known, and the region next. */
+/** The learner's globe: how well each country is known, and the region next. */
 function TodayMap({
   learner,
   nextSubregion,

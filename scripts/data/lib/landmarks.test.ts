@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { allowedLicense, landmarkImages, plainText } from "./landmarks.ts";
 
 describe("landmark image rules", () => {
-  it("allows public domain, CC0, CC BY and CC BY-SA only (PLAN.md 3)", () => {
+  it("allows public domain, CC0, CC BY and CC BY-SA only", () => {
     for (const ok of [
       "Public domain",
       "PD-US",

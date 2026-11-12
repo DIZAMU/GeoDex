@@ -1,4 +1,4 @@
-/** Daily time budget (PLAN.md 6.3): how many new cards fit today. */
+/** Daily time budget: how many new cards fit today. */
 
 export const DEFAULT_SECONDS_PER_REVIEW = 10;
 export const MAX_NEW_PER_DAY = 25;

@@ -9,7 +9,7 @@ export default mergeConfig(
       environment: "jsdom",
       include: ["src/**/*.test.{ts,tsx}", "scripts/**/*.test.ts"],
       setupFiles: ["./src/test/setup.ts"],
-      // The engine is the tested core (PLAN.md 10): CI fails below 90% of its lines.
+      // The engine is the tested core: CI fails below 90% of its lines.
       coverage: {
         provider: "v8",
         include: ["src/engine/**/*.ts"],

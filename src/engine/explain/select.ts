@@ -1,5 +1,5 @@
 /**
- * Explanation selection (PLAN.md 7.2, 7.4, 6.8). Pure and seeded: the same card at the same
+ * Explanation selection. Pure and seeded: the same card at the same
  * review count shows the same explanation on every device.
  */
 import { createRng, type Rng, weightedPick } from "../random.ts";
@@ -37,7 +37,7 @@ export const snippetId = {
   contrast: (id: string) => `c:${id}`,
 };
 
-/** PLAN.md 7.2. `phaseBefore` is the card's phase before this answer. */
+/** The moment an answer falls in. `phaseBefore` is the card's phase before this answer. */
 export function momentFor(input: {
   correct: boolean;
   rating: Rating;
@@ -271,7 +271,7 @@ export function selectExplanation(input: SelectInput): Explanation {
       break;
     }
     case "leech":
-      // Every remaining hook (PLAN.md 6.9), so the word cap does not apply.
+      // Every remaining hook, so the word cap does not apply.
       push(template);
       if (input.contrast) push({ kind: "contrast", ...input.contrast });
       for (const c of hooksFor(input.content, input.cardType, input.locale)) {

@@ -1,10 +1,10 @@
 # Decisions
 
-Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest last.
+Design decisions in ADR style, numbered, newest last. Each one says what was asked, what was chosen and what it costs. Early records refer to the original build plan, which was retired when the repository went public; where a record names a plan section, the decision itself says what that section asked for.
 
 ## 001. Node 24 LTS, pinned
 
-- **Context:** the development container ships Node 22. `PLAN.md` requires Node 24.
+- **Context:** the development container ships Node 22. The plan requires Node 24.
 - **Options:** (a) relax to Node 22, (b) install Node 24 through nvm and pin it.
 - **Decision:** (b). `.nvmrc` holds `24`, `package.json` has `engines.node >=24`, CI reads `.nvmrc`, Cloudflare uses `NODE_VERSION=24`. Node 24 also runs the TypeScript scripts in `scripts/` directly through type stripping, without a loader dependency.
 
@@ -31,7 +31,7 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 
 ## 006. Default 44 px targets on shadcn controls
 
-- **Context:** generated shadcn buttons and toggles default to 32 px, below the 44 px floor in `PLAN.md` 8.4.
+- **Context:** generated shadcn buttons and toggles default to 32 px, below the 44 px floor in the plan (section 8.4).
 - **Decision:** default and large sizes raised to 44 px and 48 px. Selected toggles carry an underline and a heavier weight, so selection is not shown by color alone.
 
 ## 007. Dash check before the content linter exists
@@ -57,7 +57,7 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 
 ## 011. Entity scope beyond the 195
 
-- **Context:** `PLAN.md` asks for scope toggles for partially recognized states and territories.
+- **Context:** the plan asks for scope toggles for partially recognized states and territories.
 - **Decision:** Phase 1 builds the 195 plus Kosovo (`XKX`) and Taiwan (`TWN`) as `partially_recognized`, off by default. Territories (Greenland, Puerto Rico and others) are deferred; they draw on the map as land but are never asked. Western Sahara, Somaliland and Northern Cyprus draw as land too.
 
 ## 012. Primary capitals
@@ -113,12 +113,12 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 
 ## 021. Placement with one probe right
 
-- **Context:** `PLAN.md` 6.4 covers both probes right and both wrong, not one of each.
+- **Context:** Plan section 6.4 covers both probes right and both wrong, not one of each.
 - **Decision:** one right probe tests the whole subregion like two right ones, since that is where knowledge is mixed. The subregion is reported as "partial".
 
 ## 022. When grading judges speed
 
-- **Decision:** Easy needs 50 reviews in a mode (`PLAN.md` 6.2); Slow (Hard) needs 10, so the first answers are not judged against a median of two or three values.
+- **Decision:** Easy needs 50 reviews in a mode (plan section 6.2); Slow (Hard) needs 10, so the first answers are not judged against a median of two or three values.
 
 ## 023. Review events are written on continue
 
@@ -143,38 +143,38 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 
 ## 027. Placement seeds a review interval of days
 
-- **Context:** the scheduler runs with short-term learning steps, so a correct placement answer (rating Good on a new card) came back due in 10 minutes. After placement, the first daily session was all re-checks of countries the learner had just placed, and no new cards fit the budget. PLAN.md 6.4 asks for a check "within days".
+- **Context:** the scheduler runs with short-term learning steps, so a correct placement answer (rating Good on a new card) came back due in 10 minutes. After placement, the first daily session was all re-checks of countries the learner had just placed, and no new cards fit the budget. Plan section 6.4 asks for a check "within days".
 - **Options:** (a) seed placement answers with a scheduler that skips short-term steps, so they enter review with the FSRS first interval for Good (3 days at 0.9 retention); (b) keep learning steps and exclude placement cards from today's due list.
 - **Decision:** (a). It is a pure function of the event, so replay stays deterministic, and it does not need special cases in the day plan. Only the first scheduled review of a new card in `placement` mode is affected. Schema v3 rebuilds the card state cache once so existing placements pick it up.
 
 ## 028. Motion beyond the answer moment
 
-- **Context:** after the first real session the author found the UI plain and asked for a smoother, more modern feel. PLAN.md 8.2 keeps visual boldness for the answer moment and everything else quiet.
+- **Context:** after the first real session the author found the UI plain and asked for a smoother, more modern feel. Plan section 8.2 keeps visual boldness for the answer moment and everything else quiet.
 - **Decision:** add quiet motion only: panels fade and rise in (about 400 ms), the map glides between prompts with the same fly-to as answers, progress eases, buttons press. One UI easing for every theme; the map easing stays the only per-theme difference. Reduced motion turns all of it off. The answer moment stays the boldest thing on screen: the target fills in, the wrong pick's outline draws itself, labels fade in as the map settles.
 
 ## 029. Explanation content details
 
 - **Fact verification:** a fact is `verified: true` only when it restates committed data (neighbors, coast, official languages). Every other fact starts as `verified: false` and is listed in `content/REVIEW.md` until the author confirms it. Facts avoid hand-written numbers and dates; the linter rejects digits without a `sourceUrl`.
-- **Leech moment:** shows every remaining hook (PLAN.md 6.9), so it is exempt from the 60-word cap in 7.4.
+- **Leech moment:** shows every remaining hook, so it is exempt from the 60-word cap in 7.4.
 - **Hook ids:** `<ISO3>.<locale>.<n>` for hooks and `<ISO3>.cap.<locale>.<n>` for capital hooks; ids never change once shipped, because "Not helpful" votes and snippet ids refer to them.
 - **Flag notes** count as tier 1 facts on flag cards. `flag_decode` hooks are never shown on map cards.
 - **Snippets shown on the intro panel** are stored with that card's first review event, so they count as seen.
 
 ## 030. Sync details
 
-- **`duration_ms` column:** the review event schema in PLAN.md 5.6 has no column for `durationMs` (DECISIONS.md 023), so the migration adds `duration_ms integer`. Without it, a synced device would lose the time-budget input for events from other devices.
+- **`duration_ms` column:** the review event schema in plan section 5.6 has no column for `durationMs` (decision 023), so the migration adds `duration_ms integer`. Without it, a synced device would lose the time-budget input for events from other devices.
 - **Fresh settings:** a new device writes default settings with `updatedAt: 0`, so on its first sync the settings from an existing device win by last write wins instead of being overwritten by defaults.
 - **Accounts:** the app asks for an email code with `shouldCreateUser: false`, so it can never create an account. The author creates the account in the Supabase dashboard, then disables sign-ups (README).
 
 ## 031. Sign in with a pasted link
 
-- **Context:** PLAN.md 5.6 asks for an email code typed into the app. Supabase now lets the Magic Link email template be edited only with custom SMTP, which would add another service, and the default email contains a link, not a code.
+- **Context:** Plan section 5.6 asks for an email code typed into the app. Supabase now lets the Magic Link email template be edited only with custom SMTP, which would add another service, and the default email contains a link, not a code.
 - **Options:** (a) require custom SMTP so the email can show `{{ .Token }}`; (b) accept the link itself: the learner pastes it into the app, which reads its token hash and calls `verifyOtp` with it.
 - **Decision:** (b), and typed codes still work if a template shows one. Pasting keeps the iOS benefit of codes (sign-in happens inside the home-screen app's own storage) with no extra service. On a laptop, clicking the link signs in directly, since the client picks the session up from the URL.
 
 ## 032. Phase 5 progress details
 
-- **Playful mastery ramp:** PLAN.md 8.1 asks for viridis. Viridis starts at saturated yellow, which made every country not yet started the loudest thing on the Atlas and Stats screens. Options: (a) plain viridis for levels 0 to 4; (b) a neutral tint for level 0 (not started is the absence of mastery, not a step on the scale) and viridis for levels 1 to 4. Chose (b); the ramp stays luminance-monotonic and is covered by the contrast test.
+- **Playful mastery ramp:** Plan section 8.1 asks for viridis. Viridis starts at saturated yellow, which made every country not yet started the loudest thing on the Atlas and Stats screens. Options: (a) plain viridis for levels 0 to 4; (b) a neutral tint for level 0 (not started is the absence of mastery, not a step on the scale) and viridis for levels 1 to 4. Chose (b); the ramp stays luminance-monotonic and is covered by the contrast test.
 - **Card cache self-heal:** the empty-cache check runs once per load. Checking on every update misread the moment between the first review event and its card state (two live queries update one after the other) as a missing cache, and remounted the running session.
 - **Region drills:** studied cards first, then location cards for every country in the region fill the drill to 20, so a region with one studied card still gives a real drill.
 - **Mastery level of a country for a skill** is the lower level of the skill's two cards, so both directions must be known before a country reads as mastered. A country with either card started is at least "learning": with the plain minimum, placement (which seeds one direction) left every skill map blank.
@@ -183,13 +183,13 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 
 ## 033. Cities: a short list of world-famous cities
 
-- **Context:** PLAN.md 5.1 asks for about 200 cities (the largest non-capital city per country plus globally known ones). The author narrowed this: only really famous cities.
+- **Context:** Plan section 5.1 asks for about 200 cities (the largest non-capital city per country plus globally known ones). The author narrowed this: only really famous cities.
 - **Options:** (a) an automatic rule (Natural Earth's world-city rank), which lets in Ürümqi and Denver and misses Barcelona and Venice; (b) a short hand-picked list in `data/curated/cities.json`, with Wikidata supplying names, coordinates and population.
 - **Decision:** (b). 38 cities: world-famous non-capitals plus every city commonly mistaken for its country's capital (Sydney, Istanbul, Toronto...), which the Phase 6 acceptance needs. Aliases are curated too (Bombay, Saigon, Rangoon); Wikidata's alternative labels are mostly nicknames. The data test caps the list at 50.
 
 ## 034. Groups of countries
 
-- **Context:** the author asked for questions and map placement about groups of countries such as Scandinavia and the Caribbean, "all you can find". PLAN.md has no such module.
+- **Context:** the author asked for questions and map placement about groups of countries such as Scandinavia and the Caribbean, "all you can find". The plan has no such module.
 - **Options:** (a) pull every grouping Wikidata knows (hundreds, mostly obscure, membership often wrong or out of date: it lists Australia as an ASEAN member); (b) a hand-picked list in `data/curated/groups.json`, cross-checked against Wikidata once.
 - **Decision:** (b), 39 groups: 21 commonly named regions and organizations (Scandinavia, Nordic countries, Baltic states, Benelux, Balkans, Middle East, Horn of Africa, EU, NATO, G7...) and 18 UN subregions with their M49 members. South America, Northern America and Australia and New Zealand are left out: a continent or two countries is not a group worth a card. ASEAN is left out because since Timor-Leste joined it has exactly the members of South-eastern Asia, so a map of it has two right names.
 - **Fuzzy groups:** where definitions disagree (Balkans, Middle East, Levant), `members` holds the countries every common definition includes and `sometimes` the rest. A `sometimes` country is never asked and never a wrong answer, and tapping it is neither right nor wrong.
@@ -197,7 +197,7 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 
 ## 035. Landmarks: one country each, photos checked by hand
 
-- **Context:** PLAN.md Phase 7 asks for about 120 landmarks with one Commons photo each under an allowed license.
+- **Context:** The plan's phase 7 asks for about 120 landmarks with one Commons photo each under an allowed license.
 - **Choices:**
   - A "which country" card needs one answer, so sites on a border (Victoria Falls, Iguazu, Niagara, Everest, the Matterhorn, Lake Titicaca) and the Jerusalem sites are left out. Perito Moreno is kept with Argentina, where the glacier lies; Wikidata lists Chile too because the ice field behind it is shared.
   - Wikidata's photo is replaced in `content/landmarks.seed.json` where its license is not allowed (the only Charles Bridge photo is Free Art License, so the Rialto Bridge took its place) or where it does not show the landmark (a satellite view of the Galápagos, a map of the Atacama). Two landmarks never share a photo (Banff used the Moraine Lake photo, so the Gateway Arch took its place). The moai item has no coordinates, so Easter Island stands in with the Ahu Tongariki photo.
@@ -206,7 +206,7 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 
 ## 036. Physical features: Natural Earth 1:50m, rivers by segment name
 
-- **Context:** PLAN.md Phase 8 asks for about 85 oceans, seas, rivers, ranges, deserts and lakes from Natural Earth.
+- **Context:** The plan's phase 8 asks for about 85 oceans, seas, rivers, ranges, deserts and lakes from Natural Earth.
 - **Choices:**
   - 91 features in `data/curated/physical.json` by Wikidata QID: 5 oceans, 20 seas (gulfs and bays included), 25 rivers, 17 mountain ranges, 12 deserts, 12 lakes. The Atacama is left out because it is already a landmark (one QID, one entity).
   - Marine polygons, lakes and geography regions carry a Wikidata id in Natural Earth, so they are matched by it; the north and south halves of the Atlantic and Pacific merge into one ocean each. Natural Earth's rivers have no Wikidata id and are split into segments named locally (Amazonas, Donau, Chang Jiang), so each river lists the segment names that make it up.
@@ -216,7 +216,7 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 
 ## 037. History outlines: drawn from modern borders and by hand, all dated
 
-- **Context:** PLAN.md Phase 9 names CShapes 2.0 and community historical basemaps as candidate sources for dissolved states and empires, with the instruction that share-alike or GPL data stays out of the main files.
+- **Context:** The plan's phase 9 names CShapes 2.0 and community historical basemaps as candidate sources for dissolved states and empires, with the instruction that share-alike or GPL data stays out of the main files.
 - **Checked:** CShapes 2.0 is CC BY-NC-SA 4.0 (its site, icr.ethz.ch/data/cshapes). The historical-basemaps repository (aourednik) is GPL-3.0 (its LICENSE file). Both would bind the app's data to their terms, and CShapes forbids commercial use.
 - **Options:** (a) ship one of them in a separately licensed file; (b) use neither: draw dissolved states as the union of their successors' Natural Earth shapes (public domain), and empires as hand-simplified outlines clipped to land on the map.
 - **Decision:** (b). The Soviet Union, Yugoslavia, Czechoslovakia and the United Arab Republic match their successors' borders closely and are not marked approximate. East and West Germany are drawn by hand along the inner German border and clipped to Germany. Austria-Hungary, Gran Colombia and every empire are marked approximate, and each outline shows the year it represents (the empire near its greatest extent, a dissolved state just before it ended). The British, Spanish and Russian empires are unions of the modern countries they mostly held, so they leave out territories they held only in part (the Aden colony, Spanish Louisiana) and include whole countries they held only in part (Poland in the Russian Empire).
@@ -232,7 +232,7 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 
 ## 039. No in-browser FSRS parameter optimization in v1
 
-- **Context:** PLAN.md Phase 10 asks for FSRS parameter optimization "only if feasible in the browser". ts-fsrs has a scheduler but no optimizer.
+- **Context:** The plan's phase 10 asks for FSRS parameter optimization "only if feasible in the browser". ts-fsrs has a scheduler but no optimizer.
 - **Checked:** `fsrs-browser` 6.6.0 (BSD-3-Clause) runs the fsrs-rs optimizer as WebAssembly. Its trainer uses a WebAssembly thread pool (`initThreadPool`), which needs `SharedArrayBuffer`, which browsers only allow on cross-origin isolated pages (COOP and COEP headers). COEP `require-corp` blocks the Wikimedia Commons landmark photos, which are served without a Cross-Origin-Resource-Policy header, and Safari does not support the `credentialless` mode that would let them through.
 - **Options:** (a) cross-origin isolate the app and proxy or drop the landmark photos; (b) keep the default FSRS-6 parameters, which ts-fsrs ships trained on a large review corpus, and keep the `fsrsParams` setting so parameters trained elsewhere can be set later.
 - **Decision:** (b). A single learner reaches the review count an optimizer needs (about a thousand reviews) only after weeks, and the default parameters already adapt each card through its own stability and difficulty. Revisit if Safari ships COEP `credentialless`.
@@ -244,19 +244,19 @@ Deviations from `PLAN.md` and choices the plan left open, in ADR style. Newest l
 
 ## 041. Memory levels, XP and ranks
 
-- **Context:** PLAN.md 11.3 asks for a memory level 1 to 10 that can fall, and XP that only rises and includes memory level-ups. XP is derived from events, never stored.
+- **Context:** Plan section 11.3 asks for a memory level 1 to 10 that can fall, and XP that only rises and includes memory level-ups. XP is derived from events, never stored.
 - **Levels:** a card counts 0 not started, 0.2 started, 0.5 once its stability reaches 7 days, 0.8 at 21 days, and 1.0 at 62 days, the "mastered" point of the welcome page's time estimate (`MASTERED_AFTER_DAYS`). The Atlas and achievements keep their own 21-day "mastered", which marks a country's colour on the map, not its level. Contrast cards are left out: they appear and retire with confusions, so counting them would move a level for reasons the learner cannot see.
 - **Options for level-up XP:** (a) replay card states day by day to find each level first reached, which costs a full replay per render; (b) pay for card memory milestones instead: the first correct answer after a card held 7, 21 and 62 days.
 - **Decision:** (b). It is monotone, cheap, and rewards the same thing a level-up does. Other XP: 10 per correct multiple choice answer, 15 typed, map or pin, 5 placement; 2 per answer for a session of 5 or more (a run with no gap over 15 minutes); 10 per study day; 40 per day the daily time is met. XP levels need 50 x n x (n - 1) XP. Ranks: Tourist (1), Traveller (3), Explorer (5), Navigator (8), Cartographer (12), Geographer (17), Atlas keeper (23).
 
 ## 042. A daily goal in sessions, and goals that count for the streak
 
-- **Context:** PLAN.md 11.4 asks for a daily goal in sessions or minutes, used by the time estimate, the goal ring and the streak. The streak (6.10) counts a day when every due card is done or 30 reviews were made.
+- **Context:** Plan section 11.4 asks for a daily goal in sessions or minutes, used by the time estimate, the goal ring and the streak. The streak (6.10) counts a day when every due card is done or 30 reviews were made.
 - **Decision:** the goal is either the daily time (the default, `dailyMinutes`, unchanged) or 1 to 3 finished sessions (a run of 5 or more answers, filed under the day it started). The daily time keeps setting new cards and the estimate in both cases, since a session count says nothing about how long the learner has. A day also counts for the streak when the goal was met and at least one scheduled review was made, so a learner with a backlog who keeps their goal keeps their streak. Stored as an optional `dailyGoal` in the synced settings row; rows without it read as minutes.
 
 ## 043. No accounts and no sync in 2.0
 
-- **Context:** 1.0 had optional sync through a Supabase project with email sign-in. Going public means anyone can open the site, and the owner wants every visitor to start from a blank slate, nothing to sign into, and nothing on a server that could be attacked or cost money (docs/PLAN-2.0.md).
+- **Context:** 1.0 had optional sync through a Supabase project with email sign-in. Going public means anyone can open the site, and the owner wants every visitor to start from a blank slate, nothing to sign into, and nothing on a server that could be attacked or cost money.
 - **Options:** (a) keep optional sync; (b) a small relay for one-time transfer codes; (c) no backend at all, with backup files to move progress.
 - **Decision:** (c). Progress stays in each browser's IndexedDB and is saved after every answer. Settings offers "Download backup", "Restore backup" (unchanged format, so 1.0 exports still restore), the date of the last download, and "Start over". The `src/sync` code, the Supabase migration and the dependency are gone; schema v4 drops the sync index and table but keeps every stored answer. Cost: clearing browser data erases progress unless a backup exists, which Settings and Help say plainly.
 

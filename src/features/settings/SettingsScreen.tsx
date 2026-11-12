@@ -485,7 +485,7 @@ function withCurrent(
   );
 }
 
-/** The session picker's defaults (PLAN.md 11.4): the same values Today remembers. */
+/** The session picker's defaults: the same values Today remembers. */
 function SessionDefaults({
   learner,
   saved,

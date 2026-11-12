@@ -18,7 +18,7 @@ const OUTLINED = (
 
 const yearText = (year: number) => (year < 0 ? `${-year} BCE` : String(year));
 
-// Acceptance (PLAN.md Phase 9): every outline shows its snapshot year, and "approximate"
+// Acceptance: every outline shows its snapshot year, and "approximate"
 // where it applies.
 test("every outline shows its snapshot year and an approximate label where it applies", async ({
   page,

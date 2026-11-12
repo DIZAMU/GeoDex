@@ -11,7 +11,7 @@ The Geodex mark is a disc with a G cut out of it. The G's bar is the equator and
 | Buoy | `#F4B740` | The dot. The only accent. Never recolor it |
 | Snow | `#F6F8FA` | Light backgrounds |
 
-These match the Atlas and Minimal theme tokens in `PLAN.md` section 8.
+These match the app's dark and light theme tokens in `src/themes/themes.css`.
 
 ## Which file to use
 

@@ -1,5 +1,5 @@
 /**
- * The first visit (docs/PLAN-2.0.md): a live question, what GeoDex costs and covers, setup,
+ * The first visit: a live question, what GeoDex costs and covers, setup,
  * then a five step tour that ends by starting a session. Help is one tap away everywhere.
  */
 import { join } from "node:path";

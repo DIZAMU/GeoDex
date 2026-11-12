@@ -1,5 +1,5 @@
 /**
- * Answer feedback by sound and vibration (docs/PLAN-2.0.md). Both are on by default and each
+ * Answer feedback by sound and vibration. Both are on by default and each
  * has its own switch in Settings. Tones are generated in the browser with the Web Audio API,
  * so there are no audio files and nothing to license. Browsers only allow sound after a tap,
  * and an answer is always one, so the audio context starts on the first answer.

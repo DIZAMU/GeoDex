@@ -19,7 +19,7 @@ export async function setUpLearner(page: Page) {
   await skipTour(page);
 }
 
-/** Closes the guided tour that opens once after setup (PLAN.md 11.1). */
+/** Closes the guided tour that opens once after setup. */
 export async function skipTour(page: Page) {
   const tour = page.getByTestId("tour");
   await tour.waitFor({ state: "visible", timeout: 10_000 }).catch(() => undefined);

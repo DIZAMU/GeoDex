@@ -1,5 +1,5 @@
 /**
- * The first screen (docs/PLAN-2.0.md): a live question on the map, one line on what GeoDex
+ * The first screen: a live question on the map, one line on what GeoDex
  * is, and the way in. Below it, the topics as a plain list and what a few minutes a day gets
  * you, from the data. New visitors land here; returning learners reach it through Help.
  */

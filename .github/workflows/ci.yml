@@ -30,6 +30,22 @@ jobs:
       - run: pnpm test:coverage
       - run: pnpm build
 
+  commits:
+    name: Commit messages
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - run: .github/scripts/test-commit-message.sh
+      - name: No tool attribution in this pull request's commits
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: .github/scripts/check-commit-messages.sh "$BASE" "$HEAD"
+
   e2e:
     name: End-to-end (${{ matrix.project }} ${{ matrix.shard }}/2)
     # Private repos have a limited free-minutes allowance, so browsers only run on main.

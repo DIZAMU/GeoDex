@@ -1,5 +1,5 @@
 /**
- * The tour (docs/design/UNSLOP.md): five short steps over the real Today screen. A centred
+ * The tour: five short steps over the real Today screen. A centred
  * card says what a day looks like, then the spotlight glides to the session length (which can
  * be picked right in the card), the answer mode, and the map with the level. The last card
  * asks "Ready?", says what is set up, and starts the first session.

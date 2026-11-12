@@ -1,5 +1,5 @@
 /**
- * Typed answer matching (PLAN.md 6.6). Accepts names and aliases in both languages,
+ * Typed answer matching. Accepts names and aliases in both languages,
  * tolerates small typos, and rejects answers that are closer to a different entity.
  */
 

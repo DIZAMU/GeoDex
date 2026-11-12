@@ -6,7 +6,7 @@ import { setLastBackup } from "@/db/settings";
 import { Button } from "@/ui/button";
 import type { Learner } from "../study/useLearner";
 
-/** Backup files: the only way progress moves between browsers (PLAN-2.0). */
+/** Backup files: the only way progress moves between browsers. */
 export function BackupSection({ learner }: { learner: Learner }) {
   const { t, i18n } = useTranslation();
   const last = learner.device.lastBackupAt;

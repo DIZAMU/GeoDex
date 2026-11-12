@@ -1,5 +1,5 @@
 {
-  "_comment": "The cities module (PLAN.md 5.1, scope narrowed by the author in DECISIONS.md 033): only world-famous cities that are not national capitals, plus every city commonly mistaken for its country's capital (content/confusions.json, dimension not_capital). Wikidata QIDs. names overrides Wikidata labels; aliases are other names a learner may know (Wikidata's alternative labels are too noisy to use); formerCapital lists former national capitals Wikidata does not mark.",
+  "_comment": "The cities module (scope in docs/DECISIONS.md 033): only world-famous cities that are not national capitals, plus every city commonly mistaken for its country's capital (content/confusions.json, dimension not_capital). Wikidata QIDs. names overrides Wikidata labels; aliases are other names a learner may know (Wikidata's alternative labels are too noisy to use); formerCapital lists former national capitals Wikidata does not mark.",
   "cities": [
     "Q60",
     "Q65",

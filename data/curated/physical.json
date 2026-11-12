@@ -1,5 +1,5 @@
 {
-  "_comment": "The physical module (PLAN.md Phase 8): oceans, seas, rivers, mountain ranges, deserts and lakes, by Wikidata QID. Geometry comes from Natural Earth 1:50m: marine polygons, lakes and geography regions are matched by their wikidataid; rivers have no wikidataid there, so segments lists the Natural Earth river names that make up each river (local and upstream names included). region groups content and orders cards. names overrides Wikidata labels.",
+  "_comment": "The physical module: oceans, seas, rivers, mountain ranges, deserts and lakes, by Wikidata QID. Geometry comes from Natural Earth 1:50m: marine polygons, lakes and geography regions are matched by their wikidataid; rivers have no wikidataid there, so segments lists the Natural Earth river names that make up each river (local and upstream names included). region groups content and orders cards. names overrides Wikidata labels.",
   "features": [
     {
       "id": "Q97",

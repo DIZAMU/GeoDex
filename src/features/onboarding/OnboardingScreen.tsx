@@ -11,7 +11,7 @@ import { scopedCountries } from "../study/plan";
 import { useLearner } from "../study/useLearner";
 import { CountryPicker, guessHomeCountry } from "./CountryPicker";
 
-/** Two choices before the first session: language and home country (docs/PLAN-2.0.md). */
+/** Two choices before the first session: language and home country. */
 export function OnboardingScreen() {
   const { t, i18n } = useTranslation();
   const locale = isLocale(i18n.language) ? i18n.language : "en";

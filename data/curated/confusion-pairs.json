@@ -1,5 +1,5 @@
 {
-  "_comment": "Commonly confused countries, seeded from PLAN.md 5.2. Used to prefer look-alikes as distractors from the first review. Contrast text for each pair is content and arrives with content/confusions.json in Phase 3. Not-the-capital pairs (cities) arrive with the cities module in Phase 6.",
+  "_comment": "Commonly confused countries. Used to prefer look-alikes as distractors from the first review. Contrast text for each pair is content and arrives with content/confusions.json in Phase 3. Not-the-capital pairs (cities) arrive with the cities module in Phase 6.",
   "pairs": [
     { "a": "SVK", "b": "SVN", "dimension": "name" },
     { "a": "NER", "b": "NGA", "dimension": "name" },

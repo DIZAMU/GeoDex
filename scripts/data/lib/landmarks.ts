@@ -26,7 +26,7 @@ export function landmarkImages(
   return out;
 }
 
-/** Licenses PLAN.md 3 allows: public domain, CC0, CC BY and CC BY-SA (any version). */
+/** Licenses allowed for landmark photos: public domain, CC0, CC BY and CC BY-SA (any version). */
 export function allowedLicense(short: string): boolean {
   const s = short.trim().toLowerCase();
   if (s.startsWith("public domain") || /^pd\b/.test(s) || s === "pd") return true;

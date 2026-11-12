@@ -1,6 +1,6 @@
 /**
  * Compiles content/templates/<locale>/<moment>.md into src/generated/templates.json
- * (PLAN.md 7.3). Fails on syntax errors, unknown slots, a moment that does not match its
+ *. Fails on syntax errors, unknown slots, a moment that does not match its
  * file, duplicate ids, or an id present in one locale but not the other.
  */
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";

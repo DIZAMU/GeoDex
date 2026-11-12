@@ -1,5 +1,5 @@
 /**
- * Written content (PLAN.md 5.2): entity hooks and facts, confusions with contrast text, and
+ * Written content: entity hooks and facts, confusions with contrast text, and
  * the compiled templates. Loaded as separate chunks, like the world data.
  */
 import { pairKey } from "@/engine/confusions";

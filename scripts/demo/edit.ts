@@ -1,5 +1,5 @@
 /**
- * Cuts the demo video (docs/PLAN-2.0.md, "Demo video") from the opening and closing animations
+ * Cuts the demo video from the opening and closing animations
  * (scripts/demo/intro.ts), the takes that scripts/demo/video.ts recorded, and the track from
  * scripts/demo/music.ts. The takes were recorded in slow motion; each one says how slow, and
  * the cut plays it back at full speed. The track has its own fade in and fade out.

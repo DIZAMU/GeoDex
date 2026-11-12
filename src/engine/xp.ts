@@ -1,5 +1,5 @@
 /**
- * XP (PLAN.md 11.3): only goes up, and like everything else is derived from review events,
+ * XP: only goes up, and like everything else is derived from review events,
  * never stored. Memory levels can fall, so XP for memory growth comes from card milestones:
  * the first correct answer after a card held for a week, three weeks and two months.
  */
@@ -41,7 +41,7 @@ export type XpBreakdown = {
   total: number;
 };
 
-/** The daily goal (PLAN.md 11.4): minutes of study, or finished sessions. */
+/** The daily goal: minutes of study, or finished sessions. */
 export type DailyGoal =
   | { kind: "minutes"; minutes: number }
   | { kind: "sessions"; sessions: number };

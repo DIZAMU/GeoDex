@@ -1,5 +1,5 @@
 /**
- * Content and template types for the explanation engine (PLAN.md 5.2, 7). Plain data.
+ * Content and template types for the explanation engine. Plain data.
  * Files in this folder import each other with explicit `.ts` extensions so the content
  * scripts can run them directly under Node.
  */

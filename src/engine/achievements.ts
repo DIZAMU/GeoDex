@@ -1,5 +1,5 @@
 /**
- * Achievements (PLAN.md 6.11), derived by replaying events in order: `earnedAt` is the
+ * Achievements, derived by replaying events in order: `earnedAt` is the
  * moment the condition first held. Never revoked, even if cards later lapse.
  */
 import type { FSRS } from "ts-fsrs";
