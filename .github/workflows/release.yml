@@ -3,8 +3,8 @@ name: Release
 # Merging releases/<tag>.md for the version in package.json into main publishes that
 # release: the workflow creates the tag on the merge commit and the GitHub Release with the
 # file's notes. Then it tidies up. Only the milestones stay as releases, every major version
-# (v1.0.0, v2.0.0) and the latest one, and every branch already merged into main is
-# deleted. The notes of every version stay in releases/. Re-runs are safe.
+# (v1.0.0, v2.0.0) and the latest one. The notes of every version stay in releases/.
+# Re-runs are safe.
 on:
   push:
     branches: [main]
@@ -20,7 +20,7 @@ concurrency:
 
 jobs:
   release:
-    name: Publish the release and tidy up
+    name: Publish the release and keep the milestones
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -61,15 +61,5 @@ jobs:
             if ! keep "$tag"; then
               git push origin ":refs/tags/$tag"
               echo "removed tag $tag"
-            fi
-          done
-      - name: Delete branches merged into main
-        run: |
-          git fetch --prune origin
-          for ref in $(git for-each-ref --format='%(refname:strip=3)' refs/remotes/origin); do
-            case "$ref" in main | HEAD) continue ;; esac
-            if git merge-base --is-ancestor "origin/$ref" origin/main; then
-              git push origin --delete "$ref"
-              echo "deleted merged branch $ref"
             fi
           done

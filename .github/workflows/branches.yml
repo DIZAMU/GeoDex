@@ -1,0 +1,30 @@
+name: Branches
+
+# main is the only long-lived branch. After every push to main, each branch already merged
+# into it is deleted.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  tidy:
+    name: Delete merged branches
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - run: |
+          git fetch --prune origin
+          for ref in $(git for-each-ref --format='%(refname:strip=3)' refs/remotes/origin); do
+            case "$ref" in main | HEAD) continue ;; esac
+            if git merge-base --is-ancestor "origin/$ref" origin/main; then
+              git push origin --delete "$ref"
+              echo "deleted merged branch $ref"
+            fi
+          done
