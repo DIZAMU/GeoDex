@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * Visible countdown (PLAN.md 6.2). Returns whole seconds left, or null when off.
+ * Visible countdown. Returns whole seconds left, or null when off.
  * Restarts whenever `key` changes; calls onExpire once when it reaches zero.
  */
 export function useCountdown(

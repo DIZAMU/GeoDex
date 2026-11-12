@@ -121,7 +121,7 @@ export function resolveGroups(file: GroupsFile, countries: readonly Country[]): 
 let pending: Promise<WorldData> | null = null;
 
 // The data ships as JSON files, not JavaScript modules: browsers parse JSON several times
-// faster than the same data as an object literal, which matters on phones (PLAN.md 10).
+// faster than the same data as an object literal, which matters on phones.
 import citiesUrl from "../../data/cities.json?url";
 import countriesUrl from "../../data/countries.json?url";
 import pairsUrl from "../../data/curated/confusion-pairs.json?url";

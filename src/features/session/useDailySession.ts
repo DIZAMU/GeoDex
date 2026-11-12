@@ -4,7 +4,7 @@
  * response time (prompt to answer) and the total time (prompt to continue).
  *
  * A drill runs the same loop on a given queue and logs `scheduled: false` events, so it
- * never changes card state, the schedule or the streak (PLAN.md 6.12).
+ * never changes card state, the schedule or the streak.
  */
 import { useCallback, useEffect, useRef, useState } from "react";
 import { db, type ReviewEvent } from "@/db/db";
@@ -58,7 +58,7 @@ export type SessionView =
     };
 
 /**
- * A daily session takes `length` cards in the focus from today's plan (PLAN.md 11.2); a drill
+ * A daily session takes `length` cards in the focus from today's plan; a drill
  * works through a fixed queue.
  */
 export type SessionKind =
@@ -200,7 +200,7 @@ export function useDailySession(
         usedHint: view.hint,
       };
       const stats = start.stats.get(view.question.mode);
-      // Pins are graded by distance (PLAN.md 5.3); giving up or timing out is still Again.
+      // Pins are graded by distance; giving up or timing out is still Again.
       const pinRating =
         result.rating !== undefined && !outcome.gaveUp && !outcome.timedOut ? result.rating : null;
       // A right answer always moves a card out of a short learning step (ratingForPhase).
@@ -290,7 +290,7 @@ export function useDailySession(
     }
   }, [view, inputSetting, locale, learner.device.deviceId, learner.scheduler, scheduled]);
 
-  /** "Not helpful" (PLAN.md 6.8): hides the hook for this card for good. Append-only. */
+  /** "Not helpful": hides the hook for this card for good. Append-only. */
   const notHelpful = useCallback(
     async (hookId?: string) => {
       if (view?.kind !== "feedback") return;

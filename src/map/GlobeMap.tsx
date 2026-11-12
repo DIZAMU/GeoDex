@@ -1,5 +1,5 @@
 /**
- * Orthographic globe on a canvas (PLAN.md 8.3 Atlas). Drag turns it in any direction with
+ * Orthographic globe on a canvas. Drag turns it in any direction with
  * inertia, wheel and pinch zoom, a tap opens a country. While it moves it draws a lighter
  * geometry; at rest it redraws in full detail. Colors come from the theme's CSS tokens.
  */

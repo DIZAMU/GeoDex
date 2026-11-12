@@ -1,5 +1,5 @@
 /**
- * "How long until I know everything?" for the welcome page (PLAN.md 11.1). A rough,
+ * "How long until I know everything?" for the welcome page. A rough,
  * deterministic simulation under the real daily budget: each new card comes back after
  * intervals that roughly follow FSRS for a learner who mostly answers right, until it holds
  * for two months. The answer is shown as "about", never as a promise.

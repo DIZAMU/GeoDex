@@ -1,5 +1,5 @@
 /**
- * Fact check (docs/PLAN-2.0.md, stage 5). Reads every hook, capital hook, flag note, fact and
+ * Fact check. Reads every hook, capital hook, flag note, fact and
  * contrast, in both languages, finds claims the data can settle, and checks them against
  * data/countries.json:
  *

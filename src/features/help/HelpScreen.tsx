@@ -1,5 +1,5 @@
 /**
- * Help (docs/PLAN-2.0.md): common questions on grading, difficulty, scheduling and the rest,
+ * Help: common questions on grading, difficulty, scheduling and the rest,
  * each opened on its own; then levels and XP with the path; then a way back to the tour and
  * the first screen. One column, plain.
  */

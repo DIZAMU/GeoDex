@@ -1,6 +1,6 @@
 # Architecture
 
-GeoDex is a static, local-first PWA. There is no server and no account: the browser holds the learner's data and the build holds the world's data. Progress moves between browsers only as a backup file the learner downloads and restores (DECISIONS.md 043). This document explains the main design choices and what they cost.
+GeoDex is a static, local-first PWA. There is no server and no account: the browser holds the learner's data and the build holds the world's data. Progress moves between browsers only as a backup file the learner downloads and restores ([decision 043](DECISIONS.md)). This document explains the main design choices and what they cost.
 
 ## Layers
 
@@ -46,6 +46,75 @@ Ids never change once shipped: ISO 3166-1 alpha-3 for countries, Wikidata QIDs f
 
 At runtime the data is fetched as JSON files and precached by the service worker, so the app works offline after the first load.
 
+## Cards
+
+A card is one fact asked one way. Its id is `${entityId}:${cardType}`, and ids never change once shipped.
+
+Each country unlocks in four stages. A stage opens when both cards of the stage before it have a stability of at least 4 days:
+
+| Stage | Cards |
+|---|---|
+| 1 | `map_to_name`, `name_to_map` |
+| 2 | `country_to_capital`, `capital_to_country` |
+| 3 | `flag_to_name`, `name_to_flag` |
+| 4 | `country_to_currency`, `country_to_language` |
+
+Stage 4 asks one way only on purpose: "which country uses the euro" or "where is Spanish official" has many right answers.
+
+The optional topics add their own cards: cities and landmarks on a pin (`city_to_map`, `landmark_to_map`) and by country, landmark photos, rivers, seas and ranges on the map, groups of countries, and the history layer (former names, dissolved states, empires and their eras). A topic's cards start after the countries they belong to: a river after a country it crosses, a dissolved state after half its successors.
+
+## How an answer becomes a rating
+
+The learner never rates themselves. Grading turns what happened into an FSRS rating:
+
+| What happened | Rating |
+|---|---|
+| Wrong, gave up, or the countdown ran out | Again |
+| Right after a hint, with an accepted typo, or slowly | Hard |
+| Right | Good |
+| Right and fast, typed or on the map | Easy |
+
+- Slow means more than twice the learner's median time for that kind of answer, once there are 10 answers to measure. Fast means under 0.6 times it, once there are 50. Over 60 seconds counts as Hard, never wrong.
+- Picking from options tests recognition only, so it never earns Easy.
+- Time runs from the question appearing to the answer. Reading the explanation never counts.
+- Pins are graded by distance: within 100 km Good, within 300 km Hard (150 and 500 km for landmarks, which are often large).
+- Typed answers accept names and aliases in both languages, ignore case, accents and punctuation, treat æ, ø, å as ae, o, aa, and allow 1 typo from 5 letters and 2 from 9. A typo that lands on another country's name (Niger, Nigeria) is wrong.
+
+## The day plan
+
+The day is planned from a time budget, not a fixed count. With the daily minutes from Settings and the learner's median time per answer over the last 14 days:
+
+```
+newToday = clamp(floor((minutes * 60 - due * secondsPerAnswer) / (3 * secondsPerAnswer)), 0, 25)
+```
+
+A new card costs about three answers (its introduction and the learning steps). The learner can raise the daily limit to 50 or 100. When the due cards alone would take more than one and a half times the budget, new cards pause until the backlog is down.
+
+Due cards come first, least likely remembered first, at most 200 a day. New cards come in batches of five from one region, starting from the home country's region and moving outward. The same country never comes twice in a row, and at most two reviews in a row come from one region.
+
+## Mix-ups, hooks and leeches
+
+- **Mix-ups.** Every wrong answer stores what was chosen. Two mix-ups between the same pair within 90 days add a contrast card that shows both side by side. Wrong options favour the learner's own mix-ups first, then known look-alikes, then countries from the same region.
+- **Hooks that work.** After a memory hook is shown, the next review of that card counts as a success or a failure for its hook type (shape, name, sound-alike, story). Hook types are then chosen by their success rate for this learner. "Not helpful" hides a hook for that card and counts as a failure.
+- **Leeches.** A card forgotten six times shows every hook it has, its contrast card if there is one, and a drill for its region.
+- **Drills** practise a region or a mix-up pair without touching the schedule or the streak.
+
+## Progress
+
+Everything here is computed from the events on replay:
+
+- **Streak.** A day counts when the due cards reach zero, or after 30 reviews on a heavy day. A day starts at 04:00 by default. Every 7 counted days earn a freeze, at most 2, used automatically.
+- **Memory level.** Each card counts by how long it is remembered (a week, three weeks, mastered), and the share of all cards maps onto levels 1 to 10 on a curve that makes early levels come quickly.
+- **XP and ranks.** XP comes from sessions and days studied and never goes down. Ranks name stretches of XP.
+- **Achievements.** A skill learned in a region, a continent or the world, a contrast card untangled, streak milestones. Never revoked.
+
+## The interface
+
+- **The map is the answer.** Questions are answered on an Equal Earth map, or on a globe for questions about the whole world. On an answer the map flies to the country, fills it, and labels its neighbours; a wrong pick is outlined too, so both are visible.
+- **Two languages.** English and Norwegian are written separately, not translated, and every string exists in both. A test fails if a key is missing in one.
+- **Accessible.** Every map answer can also be given from a list, by keyboard or with a screen reader. Touch targets are at least 44 px, contrast meets WCAG 2.2 AA in light and dark, and axe checks every screen in the end-to-end tests. Reduced motion turns the map's flights into cuts.
+- **Offline.** A service worker precaches the app, the data and the fonts. Landmark photos are cached after their first view.
+
 ## Explanation engine
 
 Feedback is chosen per answer from static content, never generated at runtime:
@@ -61,8 +130,8 @@ Content is written per language, not translated, and linted for the voice rules 
 
 - **Static content over generation.** Explanations cannot adapt beyond what was written, but they are free, offline, reviewable and identical across devices.
 - **Equal Earth over Mercator.** Honest areas; the cost is that small countries are tiny at world zoom, handled with tap markers and a zoom that frames the question.
-- **No in-browser FSRS optimization.** The available optimizer needs cross-origin isolation, which would block the landmark photos in Safari (DECISIONS.md 039). Default FSRS-6 parameters apply.
-- **Hand-drawn history outlines.** No permissively licensed dataset of empire extents exists; outlines are approximate and say so (DECISIONS.md 037).
+- **No in-browser FSRS optimization.** The available optimizer needs cross-origin isolation, which would block the landmark photos in Safari ([decision 039](DECISIONS.md)). Default FSRS-6 parameters apply.
+- **Hand-drawn history outlines.** No permissively licensed dataset of empire extents exists; outlines are approximate and say so ([decision 037](DECISIONS.md)).
 - **Detailed map on phones.** The 1:50m world map keeps small countries recognisable but costs about half a second of drawing on a throttled phone, the main reason mobile Lighthouse performance is 64.
 
-Every decision that deviates from or fills a gap in the plan is recorded in `DECISIONS.md`.
+The reasons behind each choice, numbered, are in [DECISIONS.md](DECISIONS.md).

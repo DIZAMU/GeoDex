@@ -1,5 +1,5 @@
 /**
- * Drill mode (PLAN.md 6.12): free practice on a region or a confused pair. The answers are
+ * Drill mode: free practice on a region or a confused pair. The answers are
  * logged with `scheduled: false`, so drill never touches scheduling or the streak.
  */
 import { createRng, shuffle } from "./random";

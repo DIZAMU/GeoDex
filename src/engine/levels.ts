@@ -1,7 +1,7 @@
 /**
- * Memory level 1 to 10 (PLAN.md 11.3): how much of a set of cards you hold right now.
+ * Memory level 1 to 10: how much of a set of cards you hold right now.
  * Each card counts by how long its memory holds, and the weighted share of cards remembered
- * sets the level on a curve: level = 1 + 9 x share^LEVEL_CURVE (DECISIONS.md 044). The
+ * sets the level on a curve: level = 1 + 9 x share^LEVEL_CURVE (docs/DECISIONS.md 044). The
  * first levels come within a few sessions; level 10 still needs every card mastered. It
  * falls when cards are forgotten; XP (xp.ts) is what only goes up.
  */

@@ -1,5 +1,5 @@
 /**
- * Template syntax (PLAN.md 7.3): parsing, the `when` grammar and rendering. Hand-written,
+ * Template syntax: parsing, the `when` grammar and rendering. Hand-written,
  * no eval. Used by the compiler at build time and by the renderer at runtime.
  */
 import { type CardType, COUNTRY_CARD_TYPES } from "../types.ts";

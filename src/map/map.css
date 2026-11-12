@@ -156,7 +156,7 @@
 }
 
 /*
- * The answer moment (PLAN.md 8.2): the target fills in while the map flies, the wrong pick's
+ * The answer moment: the target fills in while the map flies, the wrong pick's
  * dashed outline draws itself, and labels fade in once the map has nearly settled.
  */
 @keyframes map-fill-in {
@@ -232,7 +232,7 @@
 }
 
 /*
- * Physical features (PLAN.md Phase 8). Water reads as a deeper ocean tone, land features as
+ * Physical features. Water reads as a deeper ocean tone, land features as
  * a tint over the countries; rivers are lines. The accent stays reserved for answers.
  */
 .world-map .map-feature {

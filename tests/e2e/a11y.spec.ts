@@ -1,5 +1,5 @@
 /**
- * Accessibility pass (PLAN.md Phase 10, docs/PLAN-2.0.md): axe with the WCAG 2.2 AA rules on
+ * Accessibility pass: axe with the WCAG 2.2 AA rules on
  * every screen in both themes, the tour included, and the list alternative to map answers
  * driven by keyboard alone.
  */

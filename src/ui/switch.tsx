@@ -2,7 +2,7 @@ import type * as React from "react";
 import { cn } from "@/ui/utils";
 
 /**
- * An on/off switch (docs/PLAN-2.0.md): a real switch instead of On and Off pills. The track
+ * An on/off switch: a real switch instead of On and Off pills. The track
  * is ink when on, never the accent, so the accent keeps its one job. The whole row label is
  * the hit target when the switch sits in a `<label>`; on its own it keeps a 44 px target.
  */

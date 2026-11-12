@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 /**
- * Session layout (PLAN.md 8.3): desktop has the map on the left two thirds and the panel
+ * Session layout: desktop has the map on the left two thirds and the panel
  * on the right; phone has the map in the top 55% and the panel below.
  */
 export function StudyLayout({
@@ -61,7 +61,7 @@ export function ProgressBar({
   );
 }
 
-/** Countdown ring (PLAN.md 8.3). The number carries the meaning; the ring only shows it. */
+/** Countdown ring. The number carries the meaning; the ring only shows it. */
 export function CountdownRing({
   left,
   total,

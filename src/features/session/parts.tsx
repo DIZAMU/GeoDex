@@ -300,7 +300,7 @@ export function StatusLine({
   );
 }
 
-/** Name, other-language name, flag and capitals with roles (PLAN.md 7.1). */
+/** Name, other-language name, flag and capitals with roles. */
 export function CountryCard({ country, locale }: { country: Country; locale: Locale }) {
   const { t } = useTranslation();
   const other: Locale = locale === "en" ? "nb" : "en";
@@ -389,7 +389,7 @@ export function CityCard({
 
 /**
  * A landmark's Commons photo with its credit (author, license, link to the file page), as
- * the license requires (PLAN.md 3). The browser caches it at runtime for offline use.
+ * the license requires. The browser caches it at runtime for offline use.
  */
 export function LandmarkPhoto({
   landmark,
@@ -594,7 +594,7 @@ export function HistoryCard({
 
 /**
  * The list alternative to map, pin and tap answers, for screen readers and keyboards
- * (PLAN.md Phase 10): filter the names, then pick one, or toggle several for tap answers.
+ *: filter the names, then pick one, or toggle several for tap answers.
  */
 export function ListAnswer({
   options,
@@ -733,7 +733,7 @@ export function GroupCard({
   );
 }
 
-/** Keyboard shortcuts for session screens (PLAN.md 8.3). */
+/** Keyboard shortcuts for session screens. */
 export function useSessionKeys(handlers: {
   choose?: (index: number) => void;
   proceed?: () => void;

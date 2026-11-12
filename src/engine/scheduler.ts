@@ -1,5 +1,5 @@
 /**
- * FSRS scheduling (PLAN.md 6.1) on top of ts-fsrs. Card state is a pure function of the
+ * FSRS scheduling on top of ts-fsrs. Card state is a pure function of the
  * card's scheduled review events, replayed in order, so every device computes the same state.
  */
 import { type Card, createEmptyCard, type FSRS, fsrs, type Grade, State } from "ts-fsrs";
@@ -92,7 +92,7 @@ const longTerm = new WeakMap<FSRS, FSRS>();
 
 /**
  * The same scheduler without short-term learning steps. A correct placement answer goes
- * straight to review with a first interval of a few days (PLAN.md 6.4), instead of the
+ * straight to review with a first interval of a few days, instead of the
  * 10 minute learning step that would bring it back on the same day.
  */
 function longTermOf(scheduler: FSRS): FSRS {

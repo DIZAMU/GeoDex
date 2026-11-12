@@ -16,7 +16,7 @@ test("setup, then a 10-question session", async ({ page }) => {
       await noHorizontalScroll(page);
       await answerPrompt(page);
     } else {
-      // Every answer shows moment content (PLAN.md Phase 3 acceptance).
+      // Every answer shows moment content.
       await expect(page.getByTestId("explanation")).toBeVisible();
       await page.keyboard.press("Enter");
       answered++;
@@ -24,7 +24,7 @@ test("setup, then a 10-question session", async ({ page }) => {
       await expect(page.getByTestId("feedback")).toBeHidden();
     }
   }
-  // The picker's default session holds 10 questions and ends on its own (PLAN.md 11.2).
+  // The picker's default session holds 10 questions and ends on its own.
   await expect(page.getByTestId("reviewed")).toContainText("10 reviews");
 
   // Events survive a reload and today's counts reflect them.

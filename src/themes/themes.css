@@ -1,5 +1,5 @@
 /*
- * One design system in two modes (docs/PLAN-2.0.md): paper and sea. Light is the default;
+ * One design system in two modes: paper and sea. Light is the default;
  * dark is derived from the same roles with the hues held, surfaces lighter as they rise and
  * no shadows. Contrast pairs are checked in contrast.test.ts. The accent (primary) is ink
  * blue and belongs to the one main action and the next region on the map.

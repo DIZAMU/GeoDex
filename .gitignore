@@ -8,3 +8,6 @@ playwright-report/
 test-results/
 .DS_Store
 coverage/
+
+# Norwegian strings to review before a release (pnpm content:nb)
+NB-REVIEW.md

@@ -1,5 +1,5 @@
 /**
- * Module allocation (PLAN.md 6.3, step 4): splits the day's new-card allowance across the
+ * Module allocation: splits the day's new-card allowance across the
  * enabled modules by weight. A module with fewer candidates than its share passes the rest
  * on, so the allowance is never wasted while any module has cards left.
  */

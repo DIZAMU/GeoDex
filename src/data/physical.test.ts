@@ -10,7 +10,7 @@ const { features } = read("data/physical.json") as PhysicalFile;
 const { countries } = read("data/countries.json") as CountriesFile;
 const countryIds = new Set(countries.map((c) => c.id));
 
-describe("physical features (PLAN.md Phase 8)", () => {
+describe("physical features", () => {
   it("cover each kind in the planned numbers", () => {
     const count = (kind: string) => features.filter((f) => f.kind === kind).length;
     expect(count("ocean")).toBe(5);

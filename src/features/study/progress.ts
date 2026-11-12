@@ -1,6 +1,6 @@
 /**
  * Progress derived from events and card states: streak, achievements and mastery levels.
- * Pure, so a rebuilt card cache gives the same screens (PLAN.md Phase 5 acceptance).
+ * Pure, so a rebuilt card cache gives the same screens.
  */
 import { useMemo } from "react";
 import { type Achievement, computeAchievements, SKILLS, type Skill } from "@/engine/achievements";

@@ -1,7 +1,7 @@
 import type { CardPhase } from "./scheduler";
 import type { AnswerMode, InputSetting, Rating } from "./types";
 
-/** Responses over this count as Hard, not wrong (PLAN.md 6.2). */
+/** Responses over this count as Hard, not wrong. */
 export const RESPONSE_CAP_MS = 60_000;
 /** Easy is not given until a mode has this many reviews, so "fast" means something. */
 export const MIN_REVIEWS_FOR_EASY = 50;
@@ -74,7 +74,7 @@ export function ratingForPhase(rating: Rating, phase: CardPhase | undefined): Ra
   return rating === 2 && (phase === "learning" || phase === "relearning") ? 3 : rating;
 }
 
-/** Pin grading (PLAN.md 5.3): distance in km to the rating. Cities 100/300 km. */
+/** Pin grading: distance in km to the rating. Cities 100/300 km. */
 export const PIN_GOOD_KM = 100;
 export const PIN_HARD_KM = 300;
 export type PinLimits = { goodKm: number; hardKm: number };

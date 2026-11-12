@@ -1,5 +1,5 @@
 /**
- * Equal Earth world map (PLAN.md 2, 8.2). SVG paths are projected once; zoom and fly-to
+ * Equal Earth world map. SVG paths are projected once; zoom and fly-to
  * move a single transform. Labels and markers are drawn in screen space so they keep
  * their size at every zoom level.
  */
@@ -116,7 +116,7 @@ type FeatureShape = {
   thickness: number;
 };
 
-/** Shapes thinner than this on screen get a tap dot, like small countries (PLAN.md 8.4). */
+/** Shapes thinner than this on screen get a tap dot, like small countries. */
 const FEATURE_DOT_BELOW_PX = 12;
 
 const Features = memo(function Features({
@@ -152,7 +152,7 @@ const Features = memo(function Features({
               data-testid={state ? `feature${state.replace(" map-feature", "")}` : undefined}
             />
             {f.kind === "river" && pick ? (
-              // Rivers are thin: a wide invisible stroke is their tap target (PLAN.md Phase 8).
+              // Rivers are thin: a wide invisible stroke is their tap target.
               <path d={f.d} className="map-feature-hit" data-feature={f.id} />
             ) : null}
           </g>

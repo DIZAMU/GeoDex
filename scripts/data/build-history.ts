@@ -3,7 +3,7 @@
  * Deterministic and offline. Outlines are either a union of modern countries (merged from
  * the 1:50m topology) or a hand-simplified envelope that the map clips to land or to the
  * listed countries. Each outline gets a label point on land, inside it, and the list of
- * modern countries it covers, which decides when its cards start (DECISIONS.md 037).
+ * modern countries it covers, which decides when its cards start (docs/DECISIONS.md 037).
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { geoArea, geoBounds, geoCentroid, geoContains, geoDistance } from "d3-geo";

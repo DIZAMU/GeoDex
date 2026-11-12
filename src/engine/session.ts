@@ -1,4 +1,4 @@
-/** Session composition and order (PLAN.md 6.3). */
+/** Session composition and order. */
 import { haversineKm, sphericalMean } from "./geo";
 import type { CardState } from "./scheduler";
 import type { CardId } from "./types";

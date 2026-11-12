@@ -11,27 +11,27 @@ export const COUNTRY_CARD_TYPES = [
   "country_to_language",
 ] as const;
 export type CountryCardType = (typeof COUNTRY_CARD_TYPES)[number];
-/** Cities (PLAN.md 5.3): which country a city is in, and where it is (pin on the map). */
+/** Cities: which country a city is in, and where it is (pin on the map). */
 export const CITY_CARD_TYPES = ["city_to_country", "city_to_map"] as const;
 export type CityCardType = (typeof CITY_CARD_TYPES)[number];
 /**
- * Groups of countries (DECISIONS.md 034): tap every member, name the highlighted group, and
+ * Groups of countries (docs/DECISIONS.md 034): tap every member, name the highlighted group, and
  * pick the member among non-members.
  */
 export const GROUP_CARD_TYPES = ["group_to_map", "map_to_group", "group_member"] as const;
 export type GroupCardType = (typeof GROUP_CARD_TYPES)[number];
-/** Landmarks (PLAN.md 5.3): name from the photo, which country, and where (pin). */
+/** Landmarks: name from the photo, which country, and where (pin). */
 export const LANDMARK_CARD_TYPES = [
   "photo_to_name",
   "landmark_to_country",
   "landmark_to_map",
 ] as const;
 export type LandmarkCardType = (typeof LANDMARK_CARD_TYPES)[number];
-/** Physical geography (PLAN.md 5.3): tap the feature, and name the highlighted feature. */
+/** Physical geography: tap the feature, and name the highlighted feature. */
 export const PHYSICAL_CARD_TYPES = ["feature_to_map", "map_to_feature"] as const;
 export type PhysicalCardType = (typeof PHYSICAL_CARD_TYPES)[number];
 /**
- * History (PLAN.md 5.3): a former name to today's country, name a dissolved state's or an
+ * History: a former name to today's country, name a dissolved state's or an
  * empire's outline, a member of a dissolved state, and when an empire existed.
  */
 export const HISTORY_CARD_TYPES = [

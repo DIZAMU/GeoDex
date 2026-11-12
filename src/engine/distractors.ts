@@ -1,4 +1,4 @@
-/** Multiple choice distractors (PLAN.md 6.5). */
+/** Multiple choice distractors. */
 import { type Rng, shuffle } from "./random";
 
 /** What the engine needs to know about a country to pick look-alikes. */

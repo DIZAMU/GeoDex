@@ -1,4 +1,4 @@
-/** Country card generation and stage unlocking (PLAN.md 5.3). */
+/** Country card generation and stage unlocking. */
 import { type CardState, stabilityAtLeast } from "./scheduler";
 import { type CardId, type CountryCardType, cardId } from "./types";
 

@@ -56,7 +56,7 @@ const state = (stability: number, reps = 3): CardState => ({
   lastReview: 0,
 });
 
-describe("answer escalation (PLAN.md 5.4)", () => {
+describe("answer escalation", () => {
   it("uses multiple choice and the subregion while new, typing and wider views later", () => {
     expect(band(undefined)).toBe("new");
     expect(band(state(1.9))).toBe("new");
@@ -173,7 +173,7 @@ describe("contrast cards", () => {
   });
 });
 
-describe("cities (PLAN.md Phase 6)", () => {
+describe("cities", () => {
   const confusions = read("content/confusions.json").confusions as {
     a: string;
     b: string;
@@ -226,7 +226,7 @@ describe("cities (PLAN.md Phase 6)", () => {
   });
 });
 
-describe("group questions (DECISIONS.md 034)", () => {
+describe("group questions (docs/DECISIONS.md 034)", () => {
   const scoped = {
     ...ctx,
     scope: new Set(
@@ -300,7 +300,7 @@ describe("group questions (DECISIONS.md 034)", () => {
   });
 });
 
-describe("landmark questions (PLAN.md 5.3)", () => {
+describe("landmark questions", () => {
   const EIFFEL = "Q243";
 
   it("names a landmark from its photo, with other landmarks of the region as wrong names", () => {
@@ -346,7 +346,7 @@ describe("landmark questions (PLAN.md 5.3)", () => {
   });
 });
 
-describe("physical questions (PLAN.md 5.3)", () => {
+describe("physical questions", () => {
   const NILE = "Q3392";
 
   it("asks to tap the feature, framed on the feature itself while new", () => {
@@ -399,7 +399,7 @@ describe("physical questions (PLAN.md 5.3)", () => {
   });
 });
 
-describe("history questions (PLAN.md 5.3)", () => {
+describe("history questions", () => {
   it("asks today's name for a former name, never offering an excluded country", () => {
     const q = buildQuestion(ctx, "Q503623:former_name_to_country", undefined, "auto", "g");
     expect(q.correctIds).toEqual(["GHA"]);

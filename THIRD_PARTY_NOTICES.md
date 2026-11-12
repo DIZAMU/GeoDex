@@ -74,6 +74,6 @@ limitations under the License.
 
 ## Data (added in later phases)
 
-- Historical border datasets: license to be verified before use (see `DECISIONS.md`).
+- Historical border datasets: license to be verified before use (see `docs/DECISIONS.md`).
 
 GeoDex does not use mledoze/countries or datasets derived from it (ODbL share-alike).

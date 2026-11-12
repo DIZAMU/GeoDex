@@ -1,5 +1,5 @@
 /**
- * Computed slots for templates (PLAN.md 7.3). Every value is locale-aware text or a raw
+ * Computed slots for templates. Every value is locale-aware text or a raw
  * number/boolean for `when` clauses. Numbers in learner-facing text come only from here.
  */
 import { haversineKm } from "../geo.ts";
@@ -132,7 +132,7 @@ function percent(ratio: number, locale: Locale): string {
   );
 }
 
-/** PLAN.md 7.3 ratio bands, for area. */
+/** Ratio bands for area: about the same, N times, N percent, under 1 percent. */
 export function sizeVsHome(target: SlotCountry, home: SlotCountry, locale: Locale): string {
   const r = target.areaKm2 / home.areaKm2;
   const h = home.names[locale];

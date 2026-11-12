@@ -38,7 +38,7 @@ export function screenArea(projectedArea: number, k: number): number {
   return projectedArea * k * k;
 }
 
-/** Countries smaller than this on screen get a tappable marker (PLAN.md 8.4). */
+/** Countries smaller than this on screen get a tappable marker. */
 export const MARKER_AREA_PX = 30;
 
 /** Screen radius of a marker dot, and of its larger tap target. */

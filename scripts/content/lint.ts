@@ -1,5 +1,5 @@
 /**
- * Content linter (PLAN.md Phase 3). Enforces the machine-checkable rules at the end of
+ * Content linter. Enforces the machine-checkable rules at the end of
  * content/VOICE.md, read from its YAML block, on entity content, confusions and templates,
  * in both locales. `--complete` also requires content for every country in scope.
  */
@@ -304,7 +304,7 @@ export function lintContent(
     }
   }
 
-  // Group notes (DECISIONS.md 034): one fact-sized line per group, both locales, no digits.
+  // Group notes (docs/DECISIONS.md 034): one fact-sized line per group, both locales, no digits.
   const groupsPath = `${root}/groups.json`;
   if (existsSync(groupsPath)) {
     const { notes } = JSON.parse(readFileSync(groupsPath, "utf8")) as {

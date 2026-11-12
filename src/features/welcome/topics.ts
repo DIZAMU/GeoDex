@@ -1,4 +1,4 @@
-/** What GeoDex teaches, with counts from the data, for the welcome page (PLAN.md 11.1). */
+/** What GeoDex teaches, with counts from the data, for the welcome page. */
 import type { WorldData } from "@/data/world";
 import { groupCardTypes } from "@/engine/groups";
 import {

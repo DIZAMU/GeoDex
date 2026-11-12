@@ -30,7 +30,7 @@ const ITEMS: Item[] = [
 ];
 
 /**
- * Shell for the quiet screens (docs/PLAN-2.0.md). On a phone the five destinations sit in a
+ * Shell for the quiet screens. On a phone the five destinations sit in a
  * bar at the bottom, in thumb reach; from 640 px they move into the header as text links.
  * Session screens use the full viewport and no shell.
  */

@@ -11,7 +11,7 @@ const { countries } = read("data/countries.json") as CountriesFile;
 const countryIds = new Set(countries.map((c) => c.id));
 const withOutline = entities.flatMap((e) => (e.kind === "former_name" ? [] : [e]));
 
-describe("history layer (PLAN.md Phase 9)", () => {
+describe("history layer", () => {
   it("covers each kind in the planned numbers", () => {
     const count = (kind: string) => entities.filter((e) => e.kind === kind).length;
     expect(count("former_name")).toBeGreaterThanOrEqual(25);

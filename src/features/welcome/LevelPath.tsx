@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 const MARKED = [1, 4, 7, 10] as const;
 
 /**
- * The path from level 1 to 10 (PLAN.md 11.1): ten stops shaded with the theme's mastery
+ * The path from level 1 to 10: ten stops shaded with the theme's mastery
  * ramp, the marked ones labelled. Luminance carries the meaning, never hue alone.
  */
 export function LevelPath({ current }: { current?: number }) {

@@ -1,5 +1,5 @@
 /**
- * "Report a wrong fact" (PLAN.md Phase 10): a prefilled GitHub issue, no backend. The
+ * "Report a wrong fact": a prefilled GitHub issue, no backend. The
  * learner's browser opens the link; nothing is sent from the app.
  */
 export type FactReport = {

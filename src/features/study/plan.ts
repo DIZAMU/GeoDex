@@ -1,5 +1,5 @@
 /**
- * Plans the learning day from settings, card states and events (PLAN.md 6.3).
+ * Plans the learning day from settings, card states and events.
  * Pure: the Today screen and the session compute the same plan from the same data.
  */
 
@@ -40,7 +40,7 @@ export type PlanSettings = {
   dayStartHour: number;
   currencyAndLanguage: boolean;
   scope: { partiallyRecognized: boolean };
-  /** Enabled modules and their share of new cards (PLAN.md 6.3). Countries are always on. */
+  /** Enabled modules and their share of new cards. Countries are always on. */
   modules?: Partial<Record<string, boolean>>;
   moduleWeights?: Partial<Record<string, number>>;
 };
@@ -308,7 +308,7 @@ export function planDay(input: {
       stage: stageOf(parseCardId(cardId).type as CountryCardType),
     }));
   });
-  // Cities start once their country is introduced, both cards together (PLAN.md 5.3).
+  // Cities start once their country is introduced, both cards together.
   const cityCandidates = citiesOn
     ? world.cities.flatMap((city) => {
         const country = inScope.get(city.countryId);
@@ -438,7 +438,7 @@ export function planDay(input: {
     },
   ]);
 
-  // Contrast cards ahead of new cards (PLAN.md 6.7): pairs the learner keeps confusing, and
+  // Contrast cards ahead of new cards: pairs the learner keeps confusing, and
   // each "not the capital" pair once its city has been studied (seeded from confusions.json).
   const earned = contrastCards(confusionScoresFor(world, events, now));
   const seeded = (input.content?.confusions ?? [])
@@ -504,7 +504,7 @@ export function confusionScoresFor(world: WorldData, events: readonly PlanEvent[
   });
 }
 
-/** Continent of a subregion, for focusing a session on a continent (PLAN.md 11.2). */
+/** Continent of a subregion, for focusing a session on a continent. */
 export function continentLookup(world: WorldData): (subregion: string) => string | undefined {
   const map = new Map(world.subregions.map((s) => [s.id, s.continent as string]));
   return (subregion) => map.get(subregion);

@@ -36,7 +36,7 @@
 }
 
 /*
- * Type (docs/PLAN-2.0.md). Schibsted Grotesk for everything. Newsreader Italic only for water
+ * Type. Schibsted Grotesk for everything. Newsreader Italic only for water
  * and mountain names, following the cartographic convention. A fixed scale of about 1.2:
  * 12, 14, 16, 20, 24, 32, with 40 and 48 kept for the rare display figure.
  */
@@ -96,7 +96,7 @@
 }
 
 /*
- * Motion (docs/design/UNSLOP-PLAYBOOK.md). One easing curve. Frequent things are near
+ * Motion. One easing curve. Frequent things are near
  * instant; only rare moments (the tour, a level up) take longer. Reduced motion keeps the
  * state change and drops the movement.
  */
@@ -247,7 +247,7 @@
 }
 
 /*
- * The tour (docs/design/UNSLOP.md). The spotlight is a box whose huge shadow dims the rest of
+ * The tour. The spotlight is a box whose huge shadow dims the rest of
  * the screen; it glides between targets. With no target it shrinks to the centre, so the
  * whole screen dims. The card fades in and rises 8px. Reduced motion: no glide, no rise.
  */
@@ -287,7 +287,7 @@
   }
 }
 
-/* Level-up and rank-up (PLAN.md 11.3): the badge pops and a ring of sparks spreads once. */
+/* Level-up and rank-up: the badge pops and a ring of sparks spreads once. */
 @keyframes pop {
   from {
     opacity: 0;

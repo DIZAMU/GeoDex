@@ -1,5 +1,5 @@
 /**
- * Groups of countries (DECISIONS.md 034): which cards a group has, when it starts, how a
+ * Groups of countries (docs/DECISIONS.md 034): which cards a group has, when it starts, how a
  * set of taps is graded, and wrong answers for its questions. Pure.
  */
 import { createRng, type Rng, shuffle } from "./random";

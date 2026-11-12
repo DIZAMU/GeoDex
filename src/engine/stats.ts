@@ -1,4 +1,4 @@
-/** Numbers for the Stats screen (PLAN.md 8.3). Pure functions of events and card states. */
+/** Numbers for the Stats screen. Pure functions of events and card states. */
 import { isMastered, SKILL_IDS, SKILLS, type Skill } from "./achievements";
 import { learningDay } from "./day";
 import { LEECH_LAPSES } from "./explain/select";

@@ -2,7 +2,7 @@
  * Builds data/landmarks.json from the landmark seed (content/landmarks.seed.json), Wikidata
  * facts and Commons image metadata in data/raw. Deterministic: same inputs, same bytes.
  * Fails on a landmark without exactly one current country in scope, coordinates or an image,
- * and on an image whose license PLAN.md 3 does not allow.
+ * and on an image whose license is not allowed (scripts/data/lib/landmarks.ts).
  */
 import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import type { CountriesFile, Landmark, LandmarksFile } from "../../src/data/types.ts";

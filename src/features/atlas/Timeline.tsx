@@ -1,7 +1,7 @@
 /**
- * Borders over time (PLAN.md Phase 9): the history outlines whose period includes the
+ * Borders over time: the history outlines whose period includes the
  * chosen year, each with the year it shows, on the same globe as the Atlas. The globe turns
- * toward the largest outline when the year changes. A view, not a quiz (DECISIONS.md 037).
+ * toward the largest outline when the year changes. A view, not a quiz (docs/DECISIONS.md 037).
  */
 import { geoArea } from "d3-geo";
 import { useCallback, useMemo } from "react";

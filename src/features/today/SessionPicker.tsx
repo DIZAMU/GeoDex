@@ -1,5 +1,5 @@
 /**
- * Session picker (PLAN.md 11.2): how many questions, and on what. The choice is remembered on
+ * Session picker: how many questions, and on what. The choice is remembered on
  * this device. A focused session shows the reviews it leaves for later.
  */
 import { useMemo } from "react";
@@ -69,7 +69,7 @@ export function SessionPicker({
               }))
             : [],
       },
-      // Each continent, then its subregions (PLAN.md 11.2).
+      // Each continent, then its subregions.
       ...CONTINENTS.map((continent) => ({
         label: t(`continent.${continent}`),
         items: [

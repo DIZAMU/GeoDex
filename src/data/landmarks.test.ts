@@ -33,7 +33,7 @@ function kmOutside(shape: Feature<Geometry>, point: [number, number]): number {
   return best * 6371;
 }
 
-describe("landmarks (PLAN.md Phase 7)", () => {
+describe("landmarks", () => {
   it("are about 120, with at least 10 per inhabited continent", () => {
     expect(landmarks.length).toBeGreaterThanOrEqual(110);
     expect(landmarks.length).toBeLessThanOrEqual(130);

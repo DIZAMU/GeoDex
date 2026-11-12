@@ -9,7 +9,7 @@ export const DEVICE_ROW_ID = "device";
 
 export type ModuleId = "countries" | "cities" | "groups" | "landmarks" | "physical" | "history";
 
-/** Synced settings. One row per user; last write wins by updatedAt (PLAN.md 5.5). */
+/** Synced settings. One row per user; last write wins by updatedAt. */
 export type SettingsRow = {
   id: typeof SETTINGS_ROW_ID;
   locale: Locale;
@@ -32,7 +32,7 @@ export type SettingsRow = {
    * Absent on rows written before the reset existed.
    */
   progressResetAt?: number | null;
-  /** The daily goal kind (PLAN.md 11.4). Absent means minutes, using `dailyMinutes`. */
+  /** The daily goal kind. Absent means minutes, using `dailyMinutes`. */
   dailyGoal?: { kind: "minutes" } | { kind: "sessions"; sessions: number };
   updatedAt: number;
 };
@@ -73,14 +73,14 @@ export type DeviceSettingsRow = {
   tourDoneAt?: number | null;
   /** The Today info box: open or closed by the learner; null follows the first-week default. */
   infoboxOpen?: boolean | null;
-  /** The session picker's last length and focus (PLAN.md 11.2); null uses the defaults. */
+  /** The session picker's last length and focus; null uses the defaults. */
   sessionLength?: number | null;
   sessionFocus?: string | null;
   /** The way to the next memory level on Today: cards to go (default) or a percentage. */
   levelProgress?: "cards" | "percent" | null;
   /** When a backup file was last downloaded from this browser; null or absent means never. */
   lastBackupAt?: number | null;
-  /** Answer tones and vibration; absent means on (docs/PLAN-2.0.md). */
+  /** Answer tones and vibration; absent means on. */
   soundOn?: boolean | null;
   vibrationOn?: boolean | null;
 };
@@ -154,7 +154,7 @@ export function createDb(name = "geodex"): GeoDexDb {
           row.persistRequested ??= false;
         });
     });
-  // v3: correct placement answers now seed a review interval of days (DECISIONS.md 027).
+  // v3: correct placement answers now seed a review interval of days (docs/DECISIONS.md 027).
   // The card state cache is rebuilt from events so existing placements pick that up.
   db.version(3)
     .stores({})

@@ -1,5 +1,5 @@
 /**
- * The level on Today (docs/PLAN-2.0.md): one bar for the memory level, one line for rank and
+ * The level on Today: one bar for the memory level, one line for rank and
  * XP, one for the daily goal. The full breakdown lives in Stats.
  */
 import { useTranslation } from "react-i18next";

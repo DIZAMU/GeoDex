@@ -7,21 +7,26 @@
 
 # GeoDex
 
-GeoDex teaches every country, capital and flag, a few minutes a day. Each card comes back just before you would forget it, and every answer tells you something that helps it stick.
+Learn every country, capital and flag, a few minutes a day.
 
-It is free, runs in the browser, works offline and needs no account: [geodex.dilovanzm.workers.dev](https://geodex.dilovanzm.workers.dev)
+GeoDex is a spaced-repetition geography trainer. Each card comes back just before you would forget it, you answer on a real map, and every answer tells you something that helps it stick. It is free, runs in the browser, works offline and needs no account: [geodex.dilovanzm.workers.dev](https://geodex.dilovanzm.workers.dev)
 
-<!-- The demo video goes here. In the GitHub editor, drag docs/media/geodex-demo.mp4 onto this line; GitHub replaces it with a playable link. -->
+[![Watch the 90-second demo](docs/media/demo-poster.jpg)](docs/media/geodex-demo.mp4)
 
 <sub>The music in the demo is an original track made for GeoDex and is in the public domain (CC0); see [`docs/media/CREDITS.md`](docs/media/CREDITS.md).</sub>
 
+## What it does
+
+- **All 197 countries.** Where they are, their names, capitals, flags, currencies and official languages, including Kosovo, Palestine, Taiwan and the Vatican.
+- **Five more topics to turn on.** 38 famous cities, 39 groups of countries (the Nordic countries, the Balkans, the EU), 120 landmarks with photos, 91 rivers, seas, lakes, ranges and deserts, and a history layer of former names, dissolved states and empires, with borders over time on the globe.
+- **Answers on a real map.** Equal Earth for close-ups, so sizes look the way they are, and a globe for the whole world. Every map answer can also be given from a list, by keyboard or with a screen reader.
+- **A memory engine, not a quiz.** FSRS-6 schedules every card. You never rate yourself: the app grades from what you did, and questions get harder as a card gets stronger.
+- **Answers that explain themselves.** A memory hook, a fact or a comparison with your home country after every answer, from reviewed text in both languages. Two mix-ups between the same pair (Slovakia and Slovenia, Niger and Nigeria) add a card that teaches the difference.
+- **Progress you can see.** Today plans the day from the minutes you have. The Atlas colours the world by how well you know it, and Stats shows levels, ranks, streaks and what is coming up.
+- **English and Norwegian, light and dark.** Each language is written separately, not translated.
+- **Yours alone.** Progress stays in your browser and is never sent anywhere. A backup file moves it to another device.
+
 ![A map question answered right: Portugal on the map, with why it sticks](docs/media/session.png)
-
-## What you learn
-
-All 197 countries: where they are, their names, capitals, flags, currencies and official languages. Five more topics can be turned on in Settings: 38 famous cities, 39 groups of countries (the Nordic countries, the Balkans, the EU), 120 landmarks with photos, 91 rivers, seas, lakes, mountain ranges and deserts, and a history layer of 28 former names, 8 dissolved states and 19 empires with a view of borders over time.
-
-Questions are answered on a real map (Equal Earth, so sizes look the way they are), by picking from a few options, or by typing. As a card gets stronger the questions get harder: typing instead of picking, the whole world instead of a close-up map. Every map answer can also be given from a list, by keyboard or with a screen reader.
 
 | Today | Stats |
 |---|---|
@@ -34,9 +39,7 @@ Questions are answered on a real map (Equal Earth, so sizes look the way they ar
   <img src="docs/media/phone-session-dark.png" alt="A map answer on a phone, in dark mode" width="260">
 </p>
 
-English and Norwegian, light and dark. The language follows your browser and can be changed on the first screen or in Settings.
-
-## How the memory engine works
+## How it works
 
 - **Scheduling.** Every card has a stability (days until recall drops to 90%) and a difficulty, updated after each review with the FSRS-6 model ([ts-fsrs](https://github.com/open-spaced-repetition/ts-fsrs)). Reviews come back when they are about to be forgotten, not on a fixed ladder.
 - **Grading.** You never rate yourself. A wrong answer is Again. A right answer is Good, or Hard after a hint, a typo or a slow answer, or Easy when it is typed or tapped well under your usual time. Picking from options tests recognition only, so it never earns Easy. Time spent reading the explanation never counts.
@@ -64,17 +67,25 @@ flowchart LR
   E <-->|download and restore| BF[(Backup file)]
 ```
 
-More in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md). Design decisions and their reasons are in [`DECISIONS.md`](DECISIONS.md).
+More in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md). Design decisions and their reasons are in [`docs/DECISIONS.md`](docs/DECISIONS.md).
 
 ## Your progress
 
 Progress is saved in your browser after every answer and is never sent anywhere, so clearing the browser's data erases it. Settings has a backup file to download and restore; it is also the way to move your progress to another device.
 
-## Quality
+## Tests
 
-- Unit tests (Vitest) for the logic in `src/engine/`, where CI fails below 90% line coverage (97.7% now). Data tests check every country, city, landmark, feature and outline.
-- End-to-end tests (Playwright) at 1440x900 and 390x844, in both modes and both languages, with axe checking the WCAG 2.2 AA rules on every screen and on the tour.
-- `pnpm content:facts` checks every hook, fact and contrast against the data: capitals, borders, coasts, official languages, currencies, and largest or smallest claims. The report is [`content/FACT-CHECK.md`](content/FACT-CHECK.md).
+- **Unit tests** (Vitest) cover the engine in `src/engine/`, and CI fails below 90% line coverage. Data tests check every country, city, landmark, feature and outline.
+- **End-to-end tests** (Playwright) run at 1440x900 and 390x844, in light and dark and both languages, with axe checking the WCAG 2.2 AA rules on every screen.
+- **Content checks.** `pnpm content:lint` holds all text to the voice rules in [`content/VOICE.md`](content/VOICE.md), and `pnpm content:facts` checks every hook, fact and contrast against the data: capitals, borders, coasts, languages, currencies, and largest or smallest claims ([report](content/FACT-CHECK.md)).
+
+## CI
+
+| Workflow | Does |
+|---|---|
+| `ci.yml` | Lint (Biome and a check for en and em dashes), typecheck, unit tests with coverage and the production build on every pull request, plus the commit message check. On `main`, the end-to-end suite on desktop and phone |
+| `release.yml` | When a release notes file in `releases/` reaches `main`, tags the version and publishes the GitHub release |
+| `outside-prs.yml` | Closes pull requests from outside with a pointer to the issues |
 
 ## Development
 
@@ -82,6 +93,7 @@ Requires Node 24 (`.nvmrc`) and pnpm 10.
 
 ```
 pnpm install
+git config core.hooksPath .githooks   # once: the commit message check
 pnpm dev               # dev server
 pnpm build             # typecheck and production build
 pnpm test              # unit tests
@@ -90,7 +102,7 @@ pnpm lint              # Biome and the no-dash check
 pnpm content:lint      # VOICE.md rules on all content, both languages
 pnpm content:facts     # check content against the data (content/FACT-CHECK.md)
 pnpm content:review    # list facts waiting for review (content/REVIEW.md)
-pnpm content:nb        # list new and changed Norwegian strings (docs/NB-REVIEW.md)
+pnpm content:nb        # list new and changed Norwegian strings (NB-REVIEW.md, not committed)
 ```
 
 ## Data
@@ -121,10 +133,10 @@ Check the config locally with `pnpm build && pnpm exec wrangler deploy --dry-run
 
 ## Issues
 
-Bug reports and wrong facts are welcome as [issues](https://github.com/DIZAMU/GeoDex/issues). Pull requests from others are not accepted; see [`CONTRIBUTING.md`](CONTRIBUTING.md).
+Bug reports and wrong facts are welcome as [issues](https://github.com/DIZAMU/GeoDex/issues). Pull requests from others are not accepted; see [`CONTRIBUTING.md`](CONTRIBUTING.md). To report a vulnerability, see [`SECURITY.md`](SECURITY.md).
 
-## Licence
+## License
 
-PolyForm Noncommercial 1.0.0. Free for personal and noncommercial use, with credit to DIZAMU. Commercial use is not permitted. This is source-available, not OSI open source. See `LICENSE` and `THIRD_PARTY_NOTICES.md`.
+[PolyForm Noncommercial 1.0.0](LICENSE). Free for personal and noncommercial use, with credit to DIZAMU. Commercial use is not permitted. This is source-available, not OSI open source. Data and font licenses are in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
 
 Made by DIZAMU.

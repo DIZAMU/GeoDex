@@ -1,5 +1,5 @@
 /**
- * Records the demo video's footage (docs/PLAN-2.0.md, "Demo video"). Needs the preview build
+ * Records the demo video's footage. Needs the preview build
  * on port 4173, and scripts/demo/intro.ts run first. Writes JPEG frames with their times and
  * the cut markers to test-results/demo/takes; scripts/demo/edit.ts cuts them to the music.
  *
