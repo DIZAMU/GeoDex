@@ -140,6 +140,8 @@ Bug reports and wrong facts are welcome as [issues](https://github.com/DIZAMU/Ge
 
 GeoDex was my first actual project. I built it before [RootCause](https://github.com/DIZAMU/RootCause), but I held off on publishing it until it felt finished.
 
+It was never about money. I wanted to see what I could create, and to cover something I felt I was lacking: geography. The result is something I am very satisfied with, and I still use it every day to keep my knowledge fresh.
+
 I would love to hear what you think. If something breaks, a fact is wrong or something could be better, please [open an issue](https://github.com/DIZAMU/GeoDex/issues).
 
 ## License
