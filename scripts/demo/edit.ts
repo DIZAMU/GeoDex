@@ -4,8 +4,9 @@
  * scripts/demo/music.ts. The takes were recorded in slow motion; each one says how slow, and
  * the cut plays it back at full speed. The track has its own fade in and fade out.
  *
- * Writes docs/media/geodex-demo.mp4: 1920x1080, 60 frames a second, H.264 and AAC, kept
- * under 10 MB so it can be uploaded through the GitHub README editor.
+ * Writes public/geodex-demo.mp4, which the site serves and the README links to: 1920x1080,
+ * 60 frames a second, H.264 and AAC, kept under 10 MB so it can also be uploaded through the
+ * GitHub README editor.
  *
  * Usage: node scripts/demo/edit.ts
  */
@@ -14,7 +15,7 @@ import { readFileSync, statSync, writeFileSync } from "node:fs";
 
 const TAKES = "test-results/demo/takes";
 const MUSIC = "test-results/demo/music.wav";
-const OUT = "docs/media/geodex-demo.mp4";
+const OUT = "public/geodex-demo.mp4";
 const FPS = 60;
 
 /** The edit: take, marker, and length in seconds. 90 seconds in all. */
