@@ -93,4 +93,4 @@ pnpm content:nb        # new and changed Norwegian strings, writes NB-REVIEW.md 
 
 ## Releases
 
-Each release has a notes file `releases/<tag>.md` for the version in `package.json`. Merging it into `main` publishes the GitHub release (`.github/workflows/release.yml`). Only the milestones stay as releases (every major version and the latest one); the notes of every version stay in `releases/`. The same workflow deletes branches once they are merged, so `main` is the only long-lived branch: work happens on a short branch per change.
+Each release has a notes file `releases/<tag>.md` for the version in `package.json`. Merging it into `main` publishes the GitHub release (`.github/workflows/release.yml`). Only the milestones stay as releases (every major version and the latest one); the notes of every version stay in `releases/`. A second workflow (`.github/workflows/branches.yml`) deletes branches once they are merged, so `main` is the only long-lived branch: work happens on a short branch per change.
