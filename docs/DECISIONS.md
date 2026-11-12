@@ -4,7 +4,7 @@ Design decisions in ADR style, numbered, newest last. Each one says what was ask
 
 ## 001. Node 24 LTS, pinned
 
-- **Context:** the development container ships Node 22. The plan requires Node 24.
+- **Context:** the development machine ships Node 22. The plan requires Node 24.
 - **Options:** (a) relax to Node 22, (b) install Node 24 through nvm and pin it.
 - **Decision:** (b). `.nvmrc` holds `24`, `package.json` has `engines.node >=24`, CI reads `.nvmrc`, Cloudflare uses `NODE_VERSION=24`. Node 24 also runs the TypeScript scripts in `scripts/` directly through type stripping, without a loader dependency.
 
@@ -46,12 +46,12 @@ Design decisions in ADR style, numbered, newest last. Each one says what was ask
 
 ## 009. Playwright browser override
 
-- **Context:** the development container has a preinstalled Chromium that does not match Playwright's pinned revision, and browser downloads are disabled there.
+- **Context:** the development machine has a preinstalled Chromium that does not match Playwright's pinned revision, and browser downloads are blocked there.
 - **Decision:** `playwright.config.ts` reads an optional `PW_CHROMIUM_PATH`. CI installs Playwright's own Chromium and leaves it unset.
 
 ## 010. Phase tags are created by the author
 
-- **Context:** the development environment could push branches but not tags.
+- **Context:** tags were created by hand, apart from the branch pushes.
 - **Decision:** phases are recorded here with their completing commit on `main`, and the author created the `phase-N` tags. Superseded by 040: releases now carry `v0.N.M` tags created by the release workflow.
 - **Record:** phase-0 is `d4c7a46`.
 

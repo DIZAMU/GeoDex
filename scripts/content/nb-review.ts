@@ -1,7 +1,7 @@
 /**
  * Norwegian read-through list. Compares src/i18n/nb.json with
  * the same file at a release tag and writes every new and changed Norwegian string, with the
- * English next to it, to NB-REVIEW.md (not committed). The owner reads the list before a release.
+ * English next to it, to NB-REVIEW.md (not committed). The author reads the list before a release.
  *
  * Usage: node scripts/content/nb-review.ts [tag]   (default v1.0.0)
  */

@@ -135,8 +135,12 @@ Check the config locally with `pnpm build && pnpm exec wrangler deploy --dry-run
 
 Bug reports and wrong facts are welcome as [issues](https://github.com/DIZAMU/GeoDex/issues). Pull requests from others are not accepted; see [`CONTRIBUTING.md`](CONTRIBUTING.md). To report a vulnerability, see [`SECURITY.md`](SECURITY.md).
 
+## About
+
+GeoDex was my first actual project. I built it before [RootCause](https://github.com/DIZAMU/RootCause), but I held off on publishing it until it felt finished.
+
+I would love to hear what you think. If something breaks, a fact is wrong or something could be better, please [open an issue](https://github.com/DIZAMU/GeoDex/issues).
+
 ## License
 
 [PolyForm Noncommercial 1.0.0](LICENSE). Free for personal and noncommercial use, with credit to DIZAMU. Commercial use is not permitted. This is source-available, not OSI open source. Data and font licenses are in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
-
-Made by DIZAMU.

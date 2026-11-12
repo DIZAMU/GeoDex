@@ -40,7 +40,7 @@ jobs:
         with:
           fetch-depth: 0
       - run: .github/scripts/test-commit-message.sh
-      - name: No tool attribution in this pull request's commits
+      - name: No attribution lines in this pull request's commits
         env:
           BASE: ${{ github.event.pull_request.base.sha }}
           HEAD: ${{ github.event.pull_request.head.sha }}
