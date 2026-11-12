@@ -1,20 +1,26 @@
 name: Release
 
-# Merging releases/<tag>.md into main publishes that release: the workflow creates the tag
-# on the merge commit and the GitHub Release with the file's notes. Releases that already
-# exist are left alone, so re-runs are safe.
+# Merging releases/<tag>.md for the version in package.json into main publishes that
+# release: the workflow creates the tag on the merge commit and the GitHub Release with the
+# file's notes. Then it tidies up. Only the milestones stay as releases, every major version
+# (v1.0.0, v2.0.0) and the latest one, and every branch already merged into main is
+# deleted. The notes of every version stay in releases/. Re-runs are safe.
 on:
   push:
     branches: [main]
-    paths: ["releases/v*.md", ".github/workflows/release.yml"]
+    paths: ["releases/v*.md", ".github/workflows/release.yml", "package.json"]
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: release
+  cancel-in-progress: false
+
 jobs:
   release:
-    name: Publish releases
+    name: Publish the release and tidy up
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -22,18 +28,48 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
-      - name: Create missing releases
+      - name: Publish this version
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          for notes in releases/v*.md; do
-            tag="$(basename "$notes" .md)"
-            if gh release view "$tag" >/dev/null 2>&1; then
-              echo "$tag exists"
-              continue
-            fi
+          tag="v$(node -p 'require("./package.json").version')"
+          notes="releases/$tag.md"
+          if [ ! -f "$notes" ]; then
+            echo "No notes for $tag; nothing to publish"
+          elif gh release view "$tag" >/dev/null 2>&1; then
+            echo "$tag exists"
+          else
             title="$(head -n 1 "$notes" | sed 's/^# //')"
             tail -n +3 "$notes" > body.md
-            gh release create "$tag" --target "$GITHUB_SHA" --title "$title" --notes-file body.md
+            gh release create "$tag" --target "$GITHUB_SHA" --title "$title" --notes-file body.md --latest
             echo "published $tag"
+          fi
+      - name: Keep only the milestone releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          latest="v$(node -p 'require("./package.json").version')"
+          keep() { [ "$1" = "$latest" ] || [[ "$1" =~ ^v[1-9][0-9]*\.0\.0$ ]]; }
+          for tag in $(gh release list --limit 500 --json tagName --jq '.[].tagName'); do
+            if ! keep "$tag"; then
+              gh release delete "$tag" --yes --cleanup-tag
+              echo "removed release $tag"
+            fi
+          done
+          git fetch --prune --prune-tags --tags origin
+          for tag in $(git tag -l 'v*'); do
+            if ! keep "$tag"; then
+              git push origin ":refs/tags/$tag"
+              echo "removed tag $tag"
+            fi
+          done
+      - name: Delete branches merged into main
+        run: |
+          git fetch --prune origin
+          for ref in $(git for-each-ref --format='%(refname:strip=3)' refs/remotes/origin); do
+            case "$ref" in main | HEAD) continue ;; esac
+            if git merge-base --is-ancestor "origin/$ref" origin/main; then
+              git push origin --delete "$ref"
+              echo "deleted merged branch $ref"
+            fi
           done
