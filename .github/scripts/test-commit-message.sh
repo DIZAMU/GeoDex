@@ -22,8 +22,8 @@ expect reject $'feat: x\n\nCo-Authored-By: Someone <someone@example.com>'
 expect reject $'feat: x\n\n  co-authored-by: someone'
 expect reject $'feat: x\n\nGenerated with a tool'
 expect reject $'feat: x\n\n\xf0\x9f\xa4\x96 Generated with a tool'
-expect reject $'feat: x\n\nClaude-Session: https://example.com/abc'
-expect reject $'feat: x\n\nhttps://claude.ai/code/session_123'
+expect reject $'feat: x\n\nTool-Session: https://example.com/abc'
+expect reject $'feat: x\n\nhttps://example.com/code/session_123'
 if [ "$failures" -gt 0 ]; then
   echo "$failures commit message check(s) failed" >&2
   exit 1

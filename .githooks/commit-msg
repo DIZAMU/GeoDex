@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# commit-msg hook: keeps tool attribution out of commit messages. Turn it on once per clone
+# commit-msg hook: keeps attribution lines out of commit messages. Turn it on once per clone
 # with `git config core.hooksPath .githooks`. CI runs the same check on every pull request.
 set -euo pipefail
 exec "$(git rev-parse --show-toplevel)/.github/scripts/check-commit-message.sh" "$1"

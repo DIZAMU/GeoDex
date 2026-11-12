@@ -16,7 +16,7 @@ The rest of this file is how that author works.
 
 ## How to work
 
-- Use conventional commits: `feat:`, `fix:`, `data:`, `content:`, `test:`, `docs:`, `chore:`. Keep commits small and focused, with clear messages. Run `git config core.hooksPath .githooks` once after cloning; the hook rejects tool attribution lines, and CI checks the same.
+- Use conventional commits: `feat:`, `fix:`, `data:`, `content:`, `test:`, `docs:`, `chore:`. Keep commits small and focused, with clear messages. Run `git config core.hooksPath .githooks` once after cloning; the hook rejects attribution lines such as Co-authored-by trailers, and CI checks the same.
 - Work on a branch and merge to `main` through a pull request once CI passes. `main` is what the live site runs.
 - When reality conflicts with a decision (a library lacks a feature, data is missing, a license blocks a dataset), write the problem and the options in `docs/DECISIONS.md`, pick the safer one, and continue.
 - When unsure about a library API (ts-fsrs, Dexie, vite-plugin-pwa, d3-zoom, i18next), read the installed version's types in `node_modules` or its current docs.
@@ -24,7 +24,7 @@ The rest of this file is how that author works.
 ## Rules
 
 - No dependency or service that costs money or needs an API key. No accounts and no backend: the app is static files.
-- No AI or LLM calls from app code or scripts. All content is static and committed.
+- All content is static and committed. Nothing is generated at runtime.
 - No runtime network requests except same-origin assets and Wikimedia Commons images for landmarks. No font CDNs, flag CDNs or tile servers.
 - TypeScript strict. No `any` without a comment explaining why.
 - Pure logic (scheduler, budget, grading, matching, distractors, session, streak, achievements, stats, levels, XP, explanation selection, slots) lives in `src/engine/` with no React or Dexie imports, and has unit tests.
