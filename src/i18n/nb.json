@@ -390,7 +390,20 @@
     "longest_one": "Flest dager på rad: {{count}}",
     "longest_other": "Flest dager på rad: {{count}}",
     "freezes_one": "{{count}} fridag i reserve",
-    "freezes_other": "{{count}} fridager i reserve"
+    "freezes_other": "{{count}} fridager i reserve",
+    "freeze": {
+      "usedTitle": "En fridag reddet rekken din",
+      "usedBody_one": "Du hoppet over en dag, så en fridag ble brukt og rekken din fortsatte.",
+      "usedBody_other": "Du hoppet over {{count}} dager, så {{count}} fridager ble brukt og rekken din fortsatte.",
+      "left_one": "Du har {{count}} fridag igjen.",
+      "left_other": "Du har {{count}} fridager igjen.",
+      "next_one": "Den neste får du etter 1 dag til med øving.",
+      "next_other": "Den neste får du etter {{count}} dager til med øving.",
+      "firstTitle": "Du har fått en fridag",
+      "firstBody": "Sju dager på rad gir en fridag. Hopper du over en dag, brukes den av seg selv, og rekken din står. Du kan ha to.",
+      "ok": "Skjønner",
+      "leftNone": "Du har ingen fridager igjen."
+    }
   },
   "achievement": {
     "region": "{{skill}}: {{name}}",

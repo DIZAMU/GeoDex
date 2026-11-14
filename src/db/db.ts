@@ -83,6 +83,10 @@ export type DeviceSettingsRow = {
   /** Answer tones and vibration; absent means on. */
   soundOn?: boolean | null;
   vibrationOn?: boolean | null;
+  /** The last used freeze (its day start) the learner was told about; null or absent: none. */
+  freezeUsedNoticeThrough?: number | null;
+  /** Whether the first freeze earned has been announced on this device. */
+  firstFreezeSeen?: boolean | null;
 };
 
 /** One answer. Append-only: never updated or deleted. */

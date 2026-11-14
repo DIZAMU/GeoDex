@@ -390,7 +390,20 @@
     "longest_one": "Longest streak: {{count}} day",
     "longest_other": "Longest streak: {{count}} days",
     "freezes_one": "{{count}} freeze in reserve",
-    "freezes_other": "{{count}} freezes in reserve"
+    "freezes_other": "{{count}} freezes in reserve",
+    "freeze": {
+      "usedTitle": "A freeze saved your streak",
+      "usedBody_one": "You missed a day, so a freeze was used and your streak kept going.",
+      "usedBody_other": "You missed {{count}} days, so {{count}} freezes were used and your streak kept going.",
+      "left_one": "You have {{count}} freeze left.",
+      "left_other": "You have {{count}} freezes left.",
+      "next_one": "The next one comes after 1 more day of practice.",
+      "next_other": "The next one comes after {{count}} more days of practice.",
+      "firstTitle": "You earned a streak freeze",
+      "firstBody": "Seven days in a row earn a freeze. If you miss a day, it is used by itself and your streak stays. You can hold two.",
+      "ok": "Got it",
+      "leftNone": "You have no freezes left."
+    }
   },
   "achievement": {
     "region": "{{skill}}: {{name}}",

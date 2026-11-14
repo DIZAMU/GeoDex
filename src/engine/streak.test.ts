@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { createScheduler } from "./scheduler";
-import { computeStreak, flameTier, MAX_FREEZES } from "./streak";
+import { computeStreak, FREEZE_EVERY, flameTier, freezeNotice, MAX_FREEZES } from "./streak";
 import type { Rating, ReviewEventCore } from "./types";
 
 const scheduler = createScheduler();
@@ -114,5 +114,58 @@ describe("flameTier", () => {
     expect(flameTier(364)).toBe("purple");
     expect(flameTier(365)).toBe("gold");
     expect(flameTier(1000)).toBe("gold");
+  });
+});
+
+describe("freeze notices", () => {
+  // A week in a row earns a freeze; day 7 is missed and uses it; days 8 and 9 count.
+  const week = [0, 1, 2, 3, 4, 5, 6, 8, 9];
+  const now = BASE + 9 * DAY;
+  const s = computeStreak(scheduler, daily(week), now, 4);
+  const earnedDay = s.days[6]?.start;
+  const usedDay = s.days[7]?.start;
+
+  it("records when each freeze was earned and used, and how far the next one is", () => {
+    expect(s.freezeEvents).toEqual([
+      { kind: "earned", day: earnedDay },
+      { kind: "used", day: usedDay },
+    ]);
+    // Nine counted days in the run (the frozen day keeps it): the next freeze is at 14.
+    expect(s.current).toBe(9);
+    expect(s.nextFreezeIn).toBe(2 * FREEZE_EVERY - 9);
+  });
+
+  it("tells the learner a freeze was used, once", () => {
+    const notice = freezeNotice(s, { usedThrough: null, firstSeen: false }, now);
+    expect(notice).toEqual({ kind: "used", days: 1, left: 0, nextIn: 5, through: usedDay });
+    expect(freezeNotice(s, { usedThrough: usedDay ?? null, firstSeen: true }, now)).toBeNull();
+  });
+
+  it("announces the first freeze earned, once, while it is news", () => {
+    const fresh = computeStreak(scheduler, daily([0, 1, 2, 3, 4, 5, 6]), BASE + 7 * DAY, 4);
+    expect(freezeNotice(fresh, { usedThrough: null, firstSeen: false }, BASE + 7 * DAY)).toEqual({
+      kind: "first",
+      nextIn: FREEZE_EVERY,
+    });
+    expect(freezeNotice(fresh, { usedThrough: null, firstSeen: true }, BASE + 7 * DAY)).toBeNull();
+    // A month later the first freeze is history, not news.
+    expect(
+      freezeNotice(fresh, { usedThrough: null, firstSeen: false }, BASE + 37 * DAY),
+    ).toBeNull();
+  });
+
+  it("stays quiet about freezes used more than a week ago", () => {
+    expect(freezeNotice(s, { usedThrough: null, firstSeen: true }, now + 10 * DAY)).toBeNull();
+  });
+
+  it("has no next freeze to promise at the cap", () => {
+    const full = computeStreak(
+      scheduler,
+      daily(Array.from({ length: 21 }, (_, i) => i)),
+      BASE + 20 * DAY,
+      4,
+    );
+    expect(full.freezes).toBe(MAX_FREEZES);
+    expect(full.nextFreezeIn).toBeNull();
   });
 });
