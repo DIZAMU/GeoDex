@@ -14,6 +14,7 @@ import { planDay, scopedCountries } from "../study/plan";
 import { useProgress } from "../study/progress";
 import { type Learner, useLearner } from "../study/useLearner";
 import { Tour } from "../tour/Tour";
+import { FreezeNotice } from "./FreezeNotice";
 import { DoneDialog, KeepGoingCard } from "./KeepGoing";
 import { LevelLine } from "./LevelLine";
 import { SessionPicker } from "./SessionPicker";
@@ -108,6 +109,12 @@ function Today({ learner }: { learner: Learner }) {
         <LevelLine learner={learner} />
       </div>
       <DoneDialog learner={learner} open={dialog} onOpenChange={setDialog} />
+      {/* Freeze news waits while "Good job!" or the tour is up. */}
+      <FreezeNotice
+        learner={learner}
+        streak={streak}
+        blocked={dialog || finished || learner.device.tourDoneAt == null}
+      />
       {/* The tour runs once, when Today has rendered its anchors. */}
       {learner.device.tourDoneAt == null ? (
         <Tour

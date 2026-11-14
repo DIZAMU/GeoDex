@@ -68,6 +68,15 @@ export async function setLastBackup(db: GeoDexDb, at: number): Promise<void> {
   await db.deviceSettings.update(DEVICE_ROW_ID, { lastBackupAt: at });
 }
 
+/** Remembers which freeze notices this device has shown. */
+export async function setFreezeNoticesSeen(
+  db: GeoDexDb,
+  seen: { freezeUsedNoticeThrough?: number; firstFreezeSeen?: boolean },
+): Promise<void> {
+  await ensureDeviceSettings(db);
+  await db.deviceSettings.update(DEVICE_ROW_ID, seen);
+}
+
 /** Turns answer tones or vibration on or off, on this device. */
 export async function setFeedbackPref(
   db: GeoDexDb,
