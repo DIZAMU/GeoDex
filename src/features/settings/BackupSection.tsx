@@ -1,6 +1,6 @@
 import { type ChangeEvent, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { exportData, importData, parseBackup } from "@/db/backup";
+import { exportData, importData, readBackupFile } from "@/db/backup";
 import { db } from "@/db/db";
 import { setLastBackup } from "@/db/settings";
 import { Button } from "@/ui/button";
@@ -30,7 +30,7 @@ export function BackupSection({ learner }: { learner: Learner }) {
     event.target.value = "";
     if (!chosen) return;
     try {
-      const result = await importData(db, parseBackup(await chosen.text()), learner.scheduler);
+      const result = await importData(db, await readBackupFile(chosen), learner.scheduler);
       setMessage(t("backup.imported", result));
     } catch {
       setMessage(t("backup.importError"));

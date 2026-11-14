@@ -13,20 +13,20 @@ GeoDex is a spaced-repetition geography trainer. Each card comes back just befor
 
 https://github.com/user-attachments/assets/22f138da-36ce-4adc-8e9b-b36fe594b7f5
 
-<sub>The music in the demo is an original track made for GeoDex and is in the public domain (CC0); see [`docs/media/CREDITS.md`](docs/media/CREDITS.md).</sub>
+<sub>The music in the demo is an original track made for GeoDex and is in the public domain (CC0). See [`docs/media/CREDITS.md`](docs/media/CREDITS.md).</sub>
+
+![A map question answered right: Portugal on the map, with why it sticks](docs/media/session.png)
 
 ## What it does
 
 - **All 197 countries.** Where they are, their names, capitals, flags, currencies and official languages, including Kosovo, Palestine, Taiwan and the Vatican.
 - **Five more topics to turn on.** 38 famous cities, 39 groups of countries (the Nordic countries, the Balkans, the EU), 120 landmarks with photos, 91 rivers, seas, lakes, ranges and deserts, and a history layer of former names, dissolved states and empires, with borders over time on the globe.
 - **Answers on a real map.** Equal Earth for close-ups, so sizes look the way they are, and a globe for the whole world. Every map answer can also be given from a list, by keyboard or with a screen reader.
-- **A memory engine, not a quiz.** FSRS-6 schedules every card. You never rate yourself: the app grades from what you did, and questions get harder as a card gets stronger.
+- **A memory engine, not a quiz.** FSRS-6 schedules every card. You never rate yourself. The app grades from what you did, and questions get harder as a card gets stronger.
 - **Answers that explain themselves.** A memory hook, a fact or a comparison with your home country after every answer, from reviewed text in both languages. Two mix-ups between the same pair (Slovakia and Slovenia, Niger and Nigeria) add a card that teaches the difference.
 - **Progress you can see.** Today plans the day from the minutes you have. The Atlas colours the world by how well you know it, and Stats shows levels, ranks, streaks and what is coming up.
 - **English and Norwegian, light and dark.** Each language is written separately, not translated.
 - **Yours alone.** Progress stays in your browser and is never sent anywhere. A backup file moves it to another device.
-
-![A map question answered right: Portugal on the map, with why it sticks](docs/media/session.png)
 
 | Today | Stats |
 |---|---|
@@ -39,14 +39,28 @@ https://github.com/user-attachments/assets/22f138da-36ce-4adc-8e9b-b36fe594b7f5
   <img src="docs/media/phone-session-dark.png" alt="A map answer on a phone, in dark mode" width="260">
 </p>
 
+## Quick start
+
+Use it at [geodex.dilovanzm.workers.dev](https://geodex.dilovanzm.workers.dev). Pick your language and home country, and the first question is right there. Nothing to sign up for, and it keeps working offline.
+
+To run it yourself, with Node 24 and pnpm 10:
+
+```
+git clone https://github.com/DIZAMU/GeoDex.git && cd GeoDex
+pnpm install
+pnpm dev
+```
+
+Then open http://localhost:5173. The full list of commands is under [Development](#development).
+
 ## How it works
 
 - **Scheduling.** Every card has a stability (days until recall drops to 90%) and a difficulty, updated after each review with the FSRS-6 model ([ts-fsrs](https://github.com/open-spaced-repetition/ts-fsrs)). Reviews come back when they are about to be forgotten, not on a fixed ladder.
 - **Grading.** You never rate yourself. A wrong answer is Again. A right answer is Good, or Hard after a hint, a typo or a slow answer, or Easy when it is typed or tapped well under your usual time. Picking from options tests recognition only, so it never earns Easy. Time spent reading the explanation never counts.
 - **Harder as you go.** A new card starts with options on a close map. As its stability grows you type the answer, and the map widens to the continent, then the world.
 - **Mix-ups.** Wrong answers are counted per pair over 90 days. Two mix-ups between the same pair (Slovakia and Slovenia, Niger and Nigeria) add a contrast card that teaches the difference, and wrong options favour the pairs you confuse.
-- **Explanations.** Each answer gets a memory hook (a shape, a name's origin, a sound-alike, a story), a fact or a comparison with your home country, chosen from reviewed text in both languages. Hook types that work for you are chosen more often; "Not helpful" hides one.
-- **Nothing is lost.** Every answer is an append-only event; card state is a cache rebuilt from the events. Restoring a backup adds missing events and can never remove one, and "Start over" records a time instead of deleting anything.
+- **Explanations.** Each answer gets a memory hook (a shape, a name's origin, a sound-alike, a story), a fact or a comparison with your home country, chosen from reviewed text in both languages. Hook types that work for you are chosen more often, and "Not helpful" hides one.
+- **Nothing is lost.** Every answer is an append-only event, and card state is a cache rebuilt from the events. Restoring a backup adds missing events and can never remove one, and "Start over" records a time instead of deleting anything.
 
 ```mermaid
 flowchart LR
@@ -71,7 +85,7 @@ More in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md). Design decisions and the
 
 ## Your progress
 
-Progress is saved in your browser after every answer and is never sent anywhere, so clearing the browser's data erases it. Settings has a backup file to download and restore; it is also the way to move your progress to another device.
+Progress is saved in your browser after every answer and is never sent anywhere, so clearing the browser's data erases it. Settings has a backup file to download and restore. It is also the way to move your progress to another device.
 
 ## Tests
 
@@ -134,7 +148,7 @@ Check the config locally with `pnpm build && pnpm exec wrangler deploy --dry-run
 
 ## Issues
 
-Bug reports and wrong facts are welcome as [issues](https://github.com/DIZAMU/GeoDex/issues). Pull requests from others are not accepted; see [`CONTRIBUTING.md`](CONTRIBUTING.md). To report a vulnerability, see [`SECURITY.md`](SECURITY.md).
+Bug reports and wrong facts are welcome as [issues](https://github.com/DIZAMU/GeoDex/issues). Pull requests from others are not accepted (see [`CONTRIBUTING.md`])(CONTRIBUTING.md). To report a vulnerability, see [`SECURITY.md`](SECURITY.md).
 
 ## About
 

@@ -16,19 +16,19 @@ The rest of this file is how that author works.
 
 ## How to work
 
-- Use conventional commits: `feat:`, `fix:`, `data:`, `content:`, `test:`, `docs:`, `chore:`. Keep commits small and focused, with clear messages. Run `git config core.hooksPath .githooks` once after cloning; the hook rejects attribution lines such as Co-authored-by trailers, and CI checks the same.
+- Use conventional commits: `feat:`, `fix:`, `data:`, `content:`, `test:`, `docs:`, `chore:`. Keep commits small and focused, with clear messages. Run `git config core.hooksPath .githooks` once after cloning. The hook rejects attribution lines such as Co-authored-by trailers, and CI checks the same.
 - Work on a branch and merge to `main` through a pull request once CI passes. `main` is what the live site runs.
 - When reality conflicts with a decision (a library lacks a feature, data is missing, a license blocks a dataset), write the problem and the options in `docs/DECISIONS.md`, pick the safer one, and continue.
 - When unsure about a library API (ts-fsrs, Dexie, vite-plugin-pwa, d3-zoom, i18next), read the installed version's types in `node_modules` or its current docs.
 
 ## Rules
 
-- No dependency or service that costs money or needs an API key. No accounts and no backend: the app is static files.
+- No dependency or service that costs money or needs an API key. No accounts and no backend. The app is static files.
 - All content is static and committed. Nothing is generated at runtime.
 - No runtime network requests except same-origin assets and Wikimedia Commons images for landmarks. No font CDNs, flag CDNs or tile servers.
 - TypeScript strict. No `any` without a comment explaining why.
 - Pure logic (scheduler, budget, grading, matching, distractors, session, streak, achievements, stats, levels, XP, explanation selection, slots) lives in `src/engine/` with no React or Dexie imports, and has unit tests.
-- Deterministic everywhere: seeded randomness only.
+- Deterministic everywhere, with seeded randomness only.
 - No em dashes or en dashes in any committed text: UI strings, content, templates, README, docs. The linter checks `content/`, `src/i18n/` and string literals in `src/`.
 
 ## Languages
@@ -44,7 +44,7 @@ The rest of this file is how that author works.
 1. Event tables (review events, hook votes) are append-only. Never update or delete an event.
 2. `cardState` is a cache, fully rebuildable from events plus settings.
 3. Card ids are `${entityId}:${cardType}` and never change once shipped.
-4. Entity ids: ISO 3166-1 alpha-3 for countries (Kosovo `XKX`); Wikidata QIDs for cities, landmarks, physical features and history entities where they exist.
+4. Entity ids: ISO 3166-1 alpha-3 for countries (Kosovo `XKX`), and Wikidata QIDs for cities, landmarks, physical features and history entities where they exist.
 5. If an entity disappears from static data, skip its cards and keep its events.
 6. Response time measures prompt to answer only. Time spent reading feedback never affects grading.
 
@@ -74,7 +74,7 @@ pnpm content:nb        # new and changed Norwegian strings, writes NB-REVIEW.md 
 
 1. Read `content/VOICE.md` in full before every batch.
 2. One group per batch (subregion for countries, continent for other modules), one commit per batch. Write both languages in the same batch.
-3. Hooks: write natively in each language. Do not translate English sound-alike or wordplay hooks into Norwegian; invent Norwegian ones that work in Norwegian.
+3. Hooks: write natively in each language. Do not translate English sound-alike or wordplay hooks into Norwegian. Invent Norwegian ones that work in Norwegian.
 4. Facts: one claim, rendered faithfully in both languages.
 5. Numbers and dates come from `data/` via slots. A fact that must contain a hand-written number or date needs a `sourceUrl` that was actually checked, and `verified: false` until the author confirms it.
 6. Never invent a source URL. If a fact cannot be verified, set `verified: false` or drop it.
@@ -85,7 +85,7 @@ pnpm content:nb        # new and changed Norwegian strings, writes NB-REVIEW.md 
 ## Design
 
 - Laptop first: design and verify at 1440x900, then adapt down.
-- The map answer moment is the one place for visual boldness; keep everything else quiet. No generic dashboard look: no gradients, glows or decorative cards.
+- The map answer moment is the one place for visual boldness, and everything else stays quiet. No generic dashboard look, so no gradients, glows or decorative cards.
 - One design in light and dark: the same layout, type and easing, with its own tokens for each mode.
 - UI copy: sentence case, active verbs, no praise filler. Errors state what happened and the fix.
 - Color never carries meaning alone. Mastery ramps are luminance-based, never red to green.
@@ -93,4 +93,4 @@ pnpm content:nb        # new and changed Norwegian strings, writes NB-REVIEW.md 
 
 ## Releases
 
-Each release has a notes file `releases/<tag>.md` for the version in `package.json`. Merging it into `main` publishes the GitHub release (`.github/workflows/release.yml`). Only the milestones stay as releases (every major version and the latest one); the notes of every version stay in `releases/`. A second workflow (`.github/workflows/branches.yml`) deletes branches once they are merged, so `main` is the only long-lived branch: work happens on a short branch per change.
+Each release has a notes file `releases/<tag>.md` for the version in `package.json`. Merging it into `main` publishes the GitHub release (`.github/workflows/release.yml`). Only the milestones stay as releases (every major version and the latest one), and the notes of every version stay in `releases/`. A second workflow (`.github/workflows/branches.yml`) deletes branches once they are merged, so `main` is the only long-lived branch and work happens on a short branch per change.
