@@ -1,6 +1,6 @@
 # Security
 
-GeoDex is static files. There is no server, no account and no database outside the browser: progress lives in the browser's IndexedDB and leaves it only as a backup file the learner downloads. The design is described in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+GeoDex is static files. There is no server, no account and no database outside the browser. Progress lives in the browser's IndexedDB and leaves it only as a backup file the learner downloads. The design is described in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Reporting a vulnerability
 

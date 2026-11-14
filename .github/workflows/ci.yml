@@ -25,6 +25,9 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      # Known vulnerabilities in dependencies. The one open advisory is low (deepmerge inside
+      # the service worker build, merging our own build options) and has no fixed version.
+      - run: pnpm audit --audit-level moderate
       - run: pnpm lint
       - run: pnpm typecheck
       - run: pnpm test:coverage

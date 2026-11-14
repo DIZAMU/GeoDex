@@ -7,6 +7,26 @@ import { VitePWA } from "vite-plugin-pwa";
 
 const { version } = JSON.parse(readFileSync(new URL("./package.json", import.meta.url), "utf8"));
 
+/**
+ * The headers in public/_headers that apply to every path. `vite preview` sends them too, so the
+ * end-to-end tests run under the same content security policy as the live site.
+ */
+function siteHeaders(): Record<string, string> {
+  const text = readFileSync(new URL("./public/_headers", import.meta.url), "utf8");
+  const headers: Record<string, string> = {};
+  let inAll = false;
+  for (const line of text.split("\n")) {
+    if (line.trim() === "" || line.startsWith("#")) continue;
+    if (!/^\s/.test(line)) {
+      inAll = line.trim() === "/*";
+      continue;
+    }
+    const at = line.indexOf(":");
+    if (inAll && at > 0) headers[line.slice(0, at).trim()] = line.slice(at + 1).trim();
+  }
+  return headers;
+}
+
 export default defineConfig({
   // The release shown in the footer.
   define: { __APP_VERSION__: JSON.stringify(version) },
@@ -66,6 +86,12 @@ export default defineConfig({
       },
     }),
   ],
+  preview: { headers: siteHeaders() },
+  build: {
+    // Keep data files as real files. Inlined they become data: URLs, which the
+    // content security policy in public/_headers refuses to fetch.
+    assetsInlineLimit: (file) => (file.endsWith(".json") ? false : undefined),
+  },
   resolve: {
     alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) },
   },

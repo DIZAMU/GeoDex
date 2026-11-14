@@ -7,8 +7,8 @@ import {
 } from "./themes";
 
 /**
- * Mirror of the stored preference, read synchronously by the inline script in index.html so
- * the first paint uses the right theme. Dexie stays the source of truth.
+ * Mirror of the stored preference, read synchronously by public/theme-boot.js (loaded from
+ * index.html) so the first paint uses the right theme. Dexie stays the source of truth.
  */
 export const THEME_MIRROR_KEY = "geodex.theme";
 

@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it } from "vitest";
-import { exportData, importData, parseBackup } from "./backup";
-import { createDb, type GeoDexDb } from "./db";
+import { exportData, importData, MAX_BACKUP_BYTES, parseBackup, readBackupFile } from "./backup";
+import { createDb, DEFAULT_SETTINGS, type GeoDexDb } from "./db";
 import { loadCardStates, recordReview, schedulerFor } from "./reviews";
 
 const scheduler = schedulerFor({ requestRetention: 0.9, fsrsParams: null });
@@ -85,5 +85,37 @@ describe("backup", () => {
         }),
       ),
     ).toThrow();
+  });
+
+  it("refuses a crafted file: impossible ratings, odd settings, oversized files", async () => {
+    const event = {
+      id: "e1",
+      cardId: "NOR:map_to_name",
+      reviewedAt: T0,
+      rating: 3,
+      mode: "mc",
+      responseMs: 2000,
+    };
+    const settings = { ...DEFAULT_SETTINGS, locale: "en", updatedAt: T0 };
+    const file = (patch: object) =>
+      JSON.stringify({
+        format: "geodex-backup",
+        version: 1,
+        exportedAt: T0,
+        settings,
+        reviewEvents: [event],
+        hookVoteEvents: [],
+        ...patch,
+      });
+    expect(parseBackup(file({})).reviewEvents).toHaveLength(1);
+    expect(() => parseBackup(file({ reviewEvents: [{ ...event, rating: 7 }] }))).toThrow();
+    expect(() => parseBackup(file({ reviewEvents: [{ ...event, reviewedAt: "now" }] }))).toThrow();
+    expect(() => parseBackup(file({ hookVoteEvents: [{ id: "v" }] }))).toThrow();
+    expect(() => parseBackup(file({ settings: { ...settings, dailyMinutes: -5 } }))).toThrow();
+    expect(() => parseBackup(file({ settings: { ...settings, locale: "xx" } }))).toThrow();
+    expect(() => parseBackup(file({ settings: { ...settings, dayStartHour: 30 } }))).toThrow();
+    expect(parseBackup(file({ settings: null })).settings).toBeNull();
+    const huge = { size: MAX_BACKUP_BYTES + 1, text: async () => file({}) } as unknown as Blob;
+    await expect(readBackupFile(huge)).rejects.toThrow("too large");
   });
 });

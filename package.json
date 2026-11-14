@@ -1,7 +1,7 @@
 {
   "name": "geodex",
   "private": true,
-  "version": "2.0.16",
+  "version": "2.0.17",
   "type": "module",
   "description": "Spaced-repetition geography trainer. Local-first PWA, English and Norwegian.",
   "author": "DIZAMU",
@@ -83,14 +83,14 @@
     "@vitest/coverage-v8": "5.0.4",
     "fake-indexeddb": "6.2.5",
     "flag-icons": "7.5.0",
-    "jsdom": "30.1.2",
+    "jsdom": "31.0.1",
     "tailwindcss": "4.3.3",
     "typescript": "7.0.2",
     "vite": "8.3.4",
-    "vite-plugin-pwa": "1.3.0",
+    "vite-plugin-pwa": "2.0.0",
     "vitest": "5.0.4",
     "world-atlas": "2.0.2",
-    "wrangler": "4.149.0",
-    "yaml": "2.8.1"
+    "wrangler": "4.162.0",
+    "yaml": "2.9.1"
   }
 }
