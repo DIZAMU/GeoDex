@@ -8,6 +8,7 @@ test("setup, then a 10-question session", async ({ page }) => {
 
   await page.getByTestId("start").click();
   let answered = 0;
+  let reportHref: string | null = null;
   while (answered < 10) {
     const screen = await currentScreen(page);
     if (screen === "intro") {
@@ -18,12 +19,19 @@ test("setup, then a 10-question session", async ({ page }) => {
     } else {
       // Every answer shows moment content.
       await expect(page.getByTestId("explanation")).toBeVisible();
+      const report = page.getByTestId("report-fact");
+      if (reportHref === null && (await report.count()) > 0) {
+        reportHref = await report.first().getAttribute("href");
+      }
       await page.keyboard.press("Enter");
       answered++;
       // Continue moves on; wait until the feedback panel is gone or replaced.
       await expect(page.getByTestId("feedback")).toBeHidden();
     }
   }
+  // Facts carry a link that opens a prefilled issue on GitHub.
+  expect(reportHref).toMatch(/^https:\/\/github\.com\/DIZAMU\/GeoDex\/issues\/new\?title=/);
+
   // The picker's default session holds 10 questions and ends on its own.
   await expect(page.getByTestId("reviewed")).toContainText("10 reviews");
 

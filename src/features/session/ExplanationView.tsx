@@ -1,6 +1,6 @@
 import { FlagIcon, ThumbsDownIcon } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { REPO_PUBLIC, REPO_URL } from "@/config";
+import { REPO_URL } from "@/config";
 import type { Explanation } from "@/engine/explain/select";
 import { reportIssueUrl } from "@/engine/report";
 import { Button } from "@/ui/button";
@@ -79,7 +79,7 @@ export function ExplanationView({
                 data-snippet={block.id}
               >
                 {block.text}
-                {REPO_PUBLIC && cardId ? (
+                {cardId ? (
                   <a
                     className="ml-2 inline-flex items-center gap-1 text-sm underline-offset-4 hover:underline"
                     href={reportIssueUrl(REPO_URL, {

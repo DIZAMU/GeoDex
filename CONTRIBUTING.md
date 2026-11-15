@@ -4,7 +4,7 @@ GeoDex is a spaced-repetition geography trainer by DIZAMU.
 
 ## Issues, not pull requests
 
-Bug reports and wrong facts are welcome as [issues](https://github.com/DIZAMU/GeoDex/issues). For a wrong fact, quote the text, say what is wrong, and link a source. Pull requests from others are not accepted and will be closed: the code, the content and the design are kept by one author.
+Bug reports and wrong facts are welcome as [issues](https://github.com/DIZAMU/GeoDex/issues). For a wrong fact, quote the text, say what is wrong, and link a source. Pull requests from others are not accepted and will be closed. The code, the content and the design are kept by one author.
 
 The rest of this file is how that author works.
 

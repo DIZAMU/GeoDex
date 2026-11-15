@@ -9,7 +9,7 @@
 
 Learn every country, capital and flag, a few minutes a day.
 
-GeoDex is a spaced-repetition geography trainer. Each card comes back just before you would forget it, you answer on a real map, and every answer tells you something that helps it stick. It is free, runs in the browser, works offline and needs no account: [geodex.dilovanzm.workers.dev](https://geodex.dilovanzm.workers.dev)
+GeoDex is a spaced-repetition geography trainer. Each card comes back just before you would forget it, you answer on a real map, and every answer tells you something that helps it stick. It is free, runs in the browser, works offline and needs no account: [geodex.dizamu.workers.dev](https://geodex.dizamu.workers.dev)
 
 https://github.com/user-attachments/assets/22f138da-36ce-4adc-8e9b-b36fe594b7f5
 
@@ -41,7 +41,7 @@ https://github.com/user-attachments/assets/22f138da-36ce-4adc-8e9b-b36fe594b7f5
 
 ## Quick start
 
-Use it at [geodex.dilovanzm.workers.dev](https://geodex.dilovanzm.workers.dev). Pick your language and home country, and the first question is right there. Nothing to sign up for, and it keeps working offline.
+Use it at [geodex.dizamu.workers.dev](https://geodex.dizamu.workers.dev). Pick your language and home country, and the first question is right there. Nothing to sign up for, and it keeps working offline.
 
 To run it yourself, with Node 24 and pnpm 10:
 
@@ -97,7 +97,7 @@ Progress is saved in your browser after every answer and is never sent anywhere,
 
 | Workflow | Does |
 |---|---|
-| `ci.yml` | Lint (Biome and a check for en and em dashes), typecheck, unit tests with coverage and the production build on every pull request, plus the commit message check. On `main`, the end-to-end suite on desktop and phone |
+| `ci.yml` | Lint (Biome and a check for en and em dashes), typecheck, unit tests with coverage and the production build on every pull request, plus the commit message check. The end-to-end suite on desktop and phone runs on every pull request and on `main` |
 | `release.yml` | When the notes for a new version reach `main`, tags it and publishes the GitHub release. Keeps only the milestone releases (each major version and the latest) |
 | `branches.yml` | After every merge, deletes the branches already merged into `main` |
 | `outside-prs.yml` | Closes pull requests from outside with a pointer to the issues |
