@@ -2,7 +2,7 @@
 
 ## Demo video music
 
-The music in the demo video (`public/geodex-demo.mp4`, served at [geodex.dilovanzm.workers.dev/geodex-demo.mp4](https://geodex.dilovanzm.workers.dev/geodex-demo.mp4)) is an original track made for GeoDex by `scripts/demo/music.ts`. It is synthesized from code, uses no samples or third-party recordings, and is dedicated to the public domain under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Anyone may use it for anything, without credit.
+The music in the demo video (`public/geodex-demo.mp4`, served at [geodex.dizamu.workers.dev/geodex-demo.mp4](https://geodex.dizamu.workers.dev/geodex-demo.mp4)) is an original track made for GeoDex by `scripts/demo/music.ts`. It is synthesized from code, uses no samples or third-party recordings, and is dedicated to the public domain under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Anyone may use it for anything, without credit.
 
 ## Screenshots and footage
 
