@@ -69,18 +69,19 @@ test("a session that reaches a new rank celebrates it", async ({ page }) => {
   test.setTimeout(180_000);
   await setUpLearner(page);
   const start = await xpOnToday(page);
-  // Each seeded answer sits alone on its own day: 10 XP for the answer, 10 for the day.
-  const k = Math.max(0, Math.floor((299 - start) / 20));
-  const ids = ["BRA", "ARG", "CHL", "PER", "COL", "MEX", "CAN", "USA", "AUS", "NZL", "JPN"];
+  // Traveller starts at 50,000 XP. Each seeded answer sits alone on its own day, two days
+  // after the last one on the same card: 10 XP for the answer and 10 for the day, too soon for
+  // a memory milestone.
+  const k = Math.max(0, Math.floor((49_999 - start) / 20));
   const cards = Array.from({ length: k }, (_, i) => ({
-    cardId: `${ids[i % ids.length]}:${i < ids.length ? "map_to_name" : "name_to_map"}`,
+    cardId: "BRA:map_to_name",
     daysAgo: 400 + i * 2,
     rating: 3,
   }));
   await seed(page, cards);
   const before = await xpOnToday(page);
-  expect(before).toBeGreaterThanOrEqual(280);
-  expect(before).toBeLessThan(300);
+  expect(before).toBeGreaterThanOrEqual(49_980);
+  expect(before).toBeLessThan(50_000);
 
   // A 5-question session earns at least the day and the session bonus: 20 XP.
   await page.getByTestId("length-5").click();

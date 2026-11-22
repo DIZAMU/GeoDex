@@ -4,7 +4,7 @@
  * intervals that roughly follow FSRS for a learner who mostly answers right, until it holds
  * for two months. The answer is shown as "about", never as a promise.
  */
-import { computeBudget, DEFAULT_SECONDS_PER_REVIEW } from "./budget";
+import { computeBudget, DEFAULT_REVIEW_LIMIT, DEFAULT_SECONDS_PER_REVIEW } from "./budget";
 
 /** Days after its first review on which a typical card is reviewed again. */
 export const TYPICAL_REVIEW_DAYS = [1, 4, 11, 27, 62] as const;
@@ -39,6 +39,7 @@ export function masteryEstimate(input: {
       dueToday,
       secondsPerReview: seconds,
       newPerDayOverride: null,
+      reviewLimit: DEFAULT_REVIEW_LIMIT,
     });
     const fresh = Math.min(newToday, input.totalCards - introduced);
     introduced += fresh;

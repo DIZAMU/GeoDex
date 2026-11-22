@@ -68,6 +68,8 @@ export type SessionKind =
       focus: Focus;
       /** New cards past today's allowance: "Keep going" once the day is done. */
       extraNew?: number;
+      /** Due reviews past today's review limit: "+10 reviews" once the day is done. */
+      extraReviews?: number;
     }
   | { kind: "drill"; queue: QueueItem[] };
 
@@ -86,7 +88,12 @@ export function useDailySession(
       kind.kind === "drill"
         ? kind.queue
         : sliceSession(
-            planDay({ ...learner, now: Date.now(), extraNew: kind.extraNew }).queue,
+            planDay({
+              ...learner,
+              now: Date.now(),
+              extraNew: kind.extraNew,
+              extraReviews: kind.extraReviews,
+            }).queue,
             kind.focus,
             kind.length,
             continentLookup(learner.world),

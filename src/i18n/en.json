@@ -5,7 +5,7 @@
   "today": {
     "summary": "{{reviews}} and {{newCards}}, about {{minutes}} minutes",
     "nothingLeft": "Nothing left today. New cards unlock as you review.",
-    "paused": "New cards are paused until the backlog fits your daily time.",
+    "paused": "New cards are paused while reviews fill the day.",
     "inputMode": "Answer with",
     "nextRegion": "Next region: {{name}}",
     "reviews_one": "{{count}} review",
@@ -25,7 +25,11 @@
       "body": "That is everything for today. Want to keep going?",
       "raise": "Raise the daily limit to {{count}}",
       "notNow": "Not now"
-    }
+    },
+    "moreReviews_one": "Keep going: {{count}} review",
+    "moreReviews_other": "Keep going: {{count}} reviews",
+    "limitReached_one": "Your daily review limit is reached. {{formatted}} more review is waiting.",
+    "limitReached_other": "Your daily review limit is reached. {{formatted}} more reviews are waiting."
   },
   "settings": {
     "label": "Settings",
@@ -105,7 +109,10 @@
     "sessionLengthHelp": "How many questions a session has when you press Start.",
     "sessionFocusHelp": "What a session draws from first.",
     "levelProgressHelp": "How Today shows the way to your next level.",
-    "homeCountryHelp": "New countries come from your own region first, then from regions further away."
+    "homeCountryHelp": "New countries come from your own region first, then from regions further away.",
+    "reviewLimit": "Reviews a day",
+    "reviewLimitHelp": "The most reviews a day holds. New cards fill the rest, so a day with many reviews brings fewer new cards and nothing piles up. Reviews past the limit wait for the next day, or for Keep going.",
+    "noLimit": "No limit"
   },
   "nav": {
     "today": "Today",
@@ -622,7 +629,7 @@
     "replayTour": "Replay the tour",
     "showWelcome": "Show the first screen",
     "xpTitle": "Levels and XP",
-    "xpBody": "XP only goes up: correct answers, finished sessions, study days, your daily goal, and cards that hold for a week, three weeks and two months. XP earns ranks, from Tourist to Atlas keeper.",
+    "xpBody": "XP only goes up: correct answers, finished sessions, study days, your daily goal, and cards that hold for a week, three weeks and two months. XP earns a new rank every 50,000, from Tourist to Atlas keeper at 500,000.",
     "goalBody": "Reach your daily time or finish a number of sessions; choose which in Settings. Meeting it earns XP and counts the day for your streak, even with reviews left.",
     "levelsBody": "Your level shows how much you remember right now. It rises as cards hold for longer and slips if you forget.",
     "progressBody": "Progress is saved in this browser after every answer, and nowhere else. Clearing the browser's data erases it. Download a backup in Settings now and then, and use it to move to another device."
@@ -676,10 +683,14 @@
   "rank": {
     "tourist": "Tourist",
     "traveller": "Traveller",
+    "wayfarer": "Wayfarer",
     "explorer": "Explorer",
+    "pathfinder": "Pathfinder",
     "navigator": "Navigator",
+    "surveyor": "Surveyor",
     "cartographer": "Cartographer",
     "geographer": "Geographer",
+    "worldScholar": "World scholar",
     "atlasKeeper": "Atlas keeper"
   },
   "footer": {

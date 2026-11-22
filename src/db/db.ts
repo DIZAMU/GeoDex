@@ -16,6 +16,11 @@ export type SettingsRow = {
   homeCountry: string | null; // ISO3; null until onboarding
   dailyMinutes: number;
   newPerDayOverride: number | null;
+  /**
+   * Most reviews a day holds. Absent means the default (75); null means no limit.
+   * Rows written before the limit existed have none, so they get the default.
+   */
+  reviewsPerDay?: number | null;
   requestRetention: number;
   fsrsParams: number[] | null;
   dayStartHour: number;

@@ -97,9 +97,14 @@ function Today({ learner }: { learner: Learner }) {
               {t("today.doneTitle")}
             </h1>
             <p className="max-w-[60ch] text-muted-foreground" data-testid="summary">
-              {t("today.nothingLeft")}
+              {plan.reviewsHeldBack > 0
+                ? t("today.limitReached", {
+                    count: plan.reviewsHeldBack,
+                    formatted: number.format(plan.reviewsHeldBack),
+                  })
+                : t("today.nothingLeft")}
             </p>
-            <KeepGoingCard learner={learner} />
+            <KeepGoingCard learner={learner} heldBack={plan.reviewsHeldBack} />
           </div>
         )}
       </section>
@@ -108,7 +113,12 @@ function Today({ learner }: { learner: Learner }) {
         <TodayMap learner={learner} nextSubregion={plan.nextSubregion} region={region ?? null} />
         <LevelLine learner={learner} />
       </div>
-      <DoneDialog learner={learner} open={dialog} onOpenChange={setDialog} />
+      <DoneDialog
+        learner={learner}
+        heldBack={plan.reviewsHeldBack}
+        open={dialog}
+        onOpenChange={setDialog}
+      />
       {/* Freeze news waits while "Good job!" or the tour is up. */}
       <FreezeNotice
         learner={learner}

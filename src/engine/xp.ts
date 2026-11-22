@@ -182,27 +182,33 @@ export function xpForLevel(level: number): number {
 export const RANKS = [
   "tourist",
   "traveller",
+  "wayfarer",
   "explorer",
+  "pathfinder",
   "navigator",
+  "surveyor",
   "cartographer",
   "geographer",
+  "worldScholar",
   "atlasKeeper",
 ] as const;
 export type Rank = (typeof RANKS)[number];
-/** The XP level each rank starts at. */
-export const RANK_FROM = [1, 3, 5, 8, 12, 17, 23] as const;
+/** XP between one rank and the next. */
+export const RANK_STEP_XP = 50_000;
+/** The XP each rank starts at: 0, 50,000, 100,000 and so on up to 500,000 for the top rank. */
+export const RANK_XP: readonly number[] = RANKS.map((_, i) => i * RANK_STEP_XP);
 
-export function rankOf(level: number): Rank {
+export function rankOf(xp: number): Rank {
   let rank: Rank = RANKS[0];
-  RANK_FROM.forEach((from, i) => {
-    if (level >= from) rank = RANKS[i] ?? rank;
+  RANK_XP.forEach((from, i) => {
+    if (xp >= from) rank = RANKS[i] ?? rank;
   });
   return rank;
 }
 
 export type XpLevel = {
   xp: number;
-  /** The XP level behind the rank. Internal: the app shows the rank, not this number. */
+  /** An internal XP level, not shown. The rank follows XP directly. */
   level: number;
   rank: Rank;
   /** XP into this level, and the size of this level. */
@@ -219,12 +225,11 @@ export function xpLevel(xp: number): XpLevel {
   let level = 1;
   while (xpForLevel(level + 1) <= xp) level++;
   const floor = xpForLevel(level);
-  const rank = rankOf(level);
+  const rank = rankOf(xp);
   const index = RANKS.indexOf(rank);
-  const nextFrom = RANK_FROM[index + 1];
   const nextRank = RANKS[index + 1] ?? null;
-  const rankStart = xpForLevel(RANK_FROM[index] ?? 1);
-  const rankEnd = nextFrom === undefined ? null : xpForLevel(nextFrom);
+  const rankStart = RANK_XP[index] ?? 0;
+  const rankEnd = RANK_XP[index + 1] ?? null;
   return {
     xp,
     level,

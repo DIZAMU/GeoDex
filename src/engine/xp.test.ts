@@ -6,7 +6,8 @@ import {
   goalDays,
   goalToday,
   MILESTONES,
-  RANK_FROM,
+  RANK_STEP_XP,
+  RANK_XP,
   RANKS,
   rankOf,
   type XpEvent,
@@ -163,29 +164,40 @@ describe("xpLevel and ranks", () => {
     expect(xpLevel(0)).toMatchObject({ level: 1, into: 0, span: 100, rank: "tourist" });
     expect(xpLevel(99).level).toBe(1);
     expect(xpLevel(100)).toMatchObject({ level: 2, into: 0, span: 200 });
-    expect(xpLevel(1050)).toMatchObject({ level: 5, into: 50, rank: "explorer" });
+    expect(xpLevel(1050)).toMatchObject({ level: 5, into: 50, rank: "tourist" });
   });
 
-  it("names a rank for every level, in order", () => {
-    expect(RANK_FROM).toHaveLength(RANKS.length);
+  it("names a rank every 50,000 XP, up to Atlas keeper at 500,000", () => {
+    expect(RANK_STEP_XP).toBe(50_000);
+    expect(RANKS).toHaveLength(11);
+    expect(RANK_XP).toEqual(RANKS.map((_, i) => i * 50_000));
     RANKS.forEach((rank, i) => {
-      expect(rankOf(RANK_FROM[i] ?? 1)).toBe(rank);
+      expect(rankOf(i * 50_000)).toBe(rank);
+      if (i > 0) expect(rankOf(i * 50_000 - 1)).toBe(RANKS[i - 1]);
     });
-    expect(rankOf(99)).toBe("atlasKeeper");
+    expect(rankOf(0)).toBe("tourist");
+    expect(rankOf(32_308)).toBe("tourist");
+    expect(rankOf(500_000)).toBe("atlasKeeper");
+    expect(rankOf(2_000_000)).toBe("atlasKeeper");
   });
 
   it("measures the way to the next rank", () => {
-    // Explorer starts at level 5 (1,000 XP) and Navigator at level 8 (2,800 XP).
-    expect(xpLevel(1024)).toMatchObject({
-      rank: "explorer",
-      nextRank: "navigator",
-      toNextRank: 1776,
+    expect(xpLevel(0)).toMatchObject({
+      rank: "tourist",
+      nextRank: "traveller",
+      toNextRank: 50_000,
+      rankShare: 0,
     });
-    expect(xpLevel(1000).rankShare).toBe(0);
-    expect(xpLevel(1900).rankShare).toBeCloseTo(0.5);
-    expect(xpLevel(0)).toMatchObject({ nextRank: "traveller", toNextRank: 300, rankShare: 0 });
+    expect(xpLevel(32_308)).toMatchObject({ rank: "tourist", toNextRank: 17_692 });
+    expect(xpLevel(175_000)).toMatchObject({
+      rank: "explorer",
+      nextRank: "pathfinder",
+      toNextRank: 25_000,
+    });
+    expect(xpLevel(175_000).rankShare).toBeCloseTo(0.5);
+    expect(xpLevel(150_000).rankShare).toBe(0);
     // The top rank has no next one.
-    expect(xpLevel(xpForLevel(30))).toMatchObject({
+    expect(xpLevel(500_000)).toMatchObject({
       rank: "atlasKeeper",
       nextRank: null,
       toNextRank: null,

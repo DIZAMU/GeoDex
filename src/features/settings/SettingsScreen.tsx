@@ -12,6 +12,7 @@ import {
   setTourDone,
   updateSettings,
 } from "@/db/settings";
+import { DEFAULT_REVIEW_LIMIT, REVIEW_LIMITS } from "@/engine/budget";
 import {
   FOCUS_MODULES,
   type Focus,
@@ -35,6 +36,16 @@ import { CountryPicker } from "../onboarding/CountryPicker";
 import { scopedCountries } from "../study/plan";
 import { type Learner, useLearner } from "../study/useLearner";
 import { DEFAULT_NEW_LIMIT } from "../today/KeepGoing";
+
+type ReviewLimitChoice = (typeof REVIEW_LIMITS)[number] | "none";
+
+/** The stored review limit as a choice: absent is the default, null is no limit. */
+function reviewLimitChoice(stored: number | null | undefined): ReviewLimitChoice {
+  if (stored === null) return "none";
+  const known = REVIEW_LIMITS.find((n) => n === stored);
+  return known ?? DEFAULT_REVIEW_LIMIT;
+}
+
 import { BackupSection } from "./BackupSection";
 
 const MINUTES = [10, 15, 18, 20, 30] as const;
@@ -247,6 +258,15 @@ export function SettingsScreen() {
               render={(m) => t("settings.minutes", { count: m })}
               onChange={(dailyMinutes) => set({ dailyMinutes })}
               testId="minutes"
+            />
+            <Choice
+              label={t("settings.reviewLimit")}
+              help={t("settings.reviewLimitHelp")}
+              value={reviewLimitChoice(s.reviewsPerDay)}
+              options={[...REVIEW_LIMITS, "none"] as const}
+              render={(n) => (n === "none" ? t("settings.noLimit") : String(n))}
+              onChange={(n) => set({ reviewsPerDay: n === "none" ? null : n })}
+              testId="review-limit"
             />
             <Choice
               label={t("settings.newLimit")}

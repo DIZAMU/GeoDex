@@ -51,3 +51,54 @@ test("finishing the day offers more: Good job, keep going, a drill or a higher l
   await page.goto("/");
   await expect(page.getByTestId("start")).toBeVisible();
 });
+
+test("the daily review limit holds reviews back, and Keep going takes more", async ({ page }) => {
+  test.setTimeout(120_000);
+  await setUpLearner(page);
+  // Three reviews due, one of them already made today, no new cards, and a limit of one
+  // review a day: the day is done with two reviews held back.
+  await seed(
+    page,
+    [
+      { cardId: "NOR:flag_to_name", daysAgo: 10, rating: 3 },
+      { cardId: "SWE:flag_to_name", daysAgo: 10, rating: 3 },
+      { cardId: "FIN:flag_to_name", daysAgo: 10, rating: 3 },
+      { cardId: "NOR:flag_to_name", daysAgo: 0.001, rating: 3 },
+    ],
+    true,
+  );
+  await page.evaluate(
+    () =>
+      new Promise<void>((resolve, reject) => {
+        const open = indexedDB.open("geodex");
+        open.onerror = () => reject(open.error);
+        open.onsuccess = () => {
+          const tx = open.result.transaction("settings", "readwrite");
+          const settings = tx.objectStore("settings");
+          const get = settings.get("user");
+          get.onsuccess = () => settings.put({ ...get.result, reviewsPerDay: 1 });
+          tx.oncomplete = () => resolve();
+          tx.onerror = () => reject(tx.error);
+        };
+      }),
+  );
+  await page.goto("/");
+  await expect(page.getByTestId("summary")).toHaveText(
+    "Your daily review limit is reached. 2 more reviews are waiting.",
+  );
+  // Held-back reviews come first, above new cards.
+  const more = page.getByTestId("more-reviews");
+  await expect(more).toHaveText("Keep going: 2 reviews");
+  const above = await more.boundingBox();
+  const below = await page.getByTestId("keep-going").boundingBox();
+  expect(above && below && above.y < below.y).toBe(true);
+  await more.click();
+  await expect(page).toHaveURL(/reviews=2/);
+  await expect(page.getByTestId("left")).toHaveText("1 of 2");
+
+  // The limit lives in Settings, above the new-card limit.
+  await page.goto("/settings");
+  await page.getByTestId("review-limit-none").click();
+  await expect(page.getByTestId("review-limit-none")).toHaveAttribute("data-state", "on");
+  await expect(page.getByTestId("settings-saved")).toBeVisible();
+});

@@ -65,6 +65,10 @@ for (const [name, kinds] of SLICES) {
     test.setTimeout(600_000);
     const features = FEATURES.filter((f) => (kinds as readonly string[]).includes(f.kind));
     await setUpLearner(page);
+    // Every card of the slice comes due at once, more than a day's review limit holds.
+    await page.goto("/settings");
+    await page.getByTestId("review-limit-none").click();
+    await expect(page.getByTestId("review-limit-none")).toHaveAttribute("data-state", "on");
     await page.goto("/settings?tab=topics");
     await turnOn(page, "module-physical-switch");
     // Norway known, and every feature card of this slice due again after a miss, so the

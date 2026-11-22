@@ -6,7 +6,14 @@
 import type { FSRS } from "ts-fsrs";
 import type { Country, HistoricalEntity } from "@/data/types";
 import type { WorldData } from "@/data/world";
-import { type Budget, computeBudget, MAX_DUE_PER_DAY, secondsPerReview } from "@/engine/budget";
+import {
+  type Budget,
+  computeBudget,
+  DEFAULT_REVIEW_LIMIT,
+  MAX_DUE_PER_DAY,
+  NEW_CARD_COST_FACTOR,
+  secondsPerReview,
+} from "@/engine/budget";
 import { isIntroduced, stageOf, unlockedNewCards } from "@/engine/cards";
 import { confusionScores, contrastCardId, contrastCards } from "@/engine/confusions";
 import { learningDay } from "@/engine/day";
@@ -37,6 +44,8 @@ export type PlanSettings = {
   homeCountry: string | null;
   dailyMinutes: number;
   newPerDayOverride: number | null;
+  /** Most reviews a day: absent for the default, null for no limit. */
+  reviewsPerDay?: number | null;
   dayStartHour: number;
   currencyAndLanguage: boolean;
   scope: { partiallyRecognized: boolean };
@@ -132,6 +141,8 @@ export type DayPlan = {
   queue: QueueItem[];
   dueCount: number;
   newCount: number;
+  /** Due reviews left out by the daily review limit: what "+10 reviews" can take. */
+  reviewsHeldBack: number;
   nextSubregion: string | null;
   order: string[];
 };
@@ -160,6 +171,8 @@ export function planDay(input: {
   now: number;
   /** New cards on top of what is left of today's allowance ("Keep going" on Today). */
   extraNew?: number;
+  /** Due reviews past today's review limit ("+10 reviews" on Today). */
+  extraReviews?: number;
   /** Written content. Contrast cards exist only for pairs with contrast text. */
   content?: {
     confusion: (a: string, b: string) => unknown;
@@ -286,13 +299,28 @@ export function planDay(input: {
     (t) => t >= day.start && t < day.end,
   ).length;
 
-  const budget = computeBudget({
+  // Cards answered today. Their learning steps always come back, outside the review limit;
+  // those started before today are today's reviews so far.
+  const touchedToday = new Set<CardId>();
+  const reviewedToday = new Set<CardId>();
+  for (const e of events) {
+    if (!e.scheduled || e.reviewedAt < day.start || e.reviewedAt >= day.end) continue;
+    touchedToday.add(e.cardId);
+    if ((firstReview.get(e.cardId) ?? e.reviewedAt) < day.start) reviewedToday.add(e.cardId);
+  }
+  const reviewLimit =
+    settings.reviewsPerDay === undefined ? DEFAULT_REVIEW_LIMIT : settings.reviewsPerDay;
+  // The day's reviews as they stood when it began, so the new-card room stays put all day.
+  const waiting = due.filter((d) => !touchedToday.has(d.cardId));
+  const seconds = secondsPerReview(events, now);
+  const dayBudget = computeBudget({
     dailyMinutes: settings.dailyMinutes,
-    dueToday: due.length,
-    secondsPerReview: secondsPerReview(events, now),
+    dueToday: waiting.length + reviewedToday.size,
+    secondsPerReview: seconds,
     newPerDayOverride: settings.newPerDayOverride,
+    reviewLimit,
   });
-  const newAllowance = Math.max(0, budget.newToday - startedToday) + (input.extraNew ?? 0);
+  const newAllowance = Math.max(0, dayBudget.newToday - startedToday) + (input.extraNew ?? 0);
 
   const order = subregionOrder(settings.homeCountry ?? "", countries);
   const candidates = countries.flatMap((c) => {
@@ -461,16 +489,39 @@ export function planDay(input: {
     ...pickNewCards(physicalCandidates, order, shares.get("physical") ?? 0),
     ...pickNewCards(historyCandidates, order, shares.get("history") ?? 0),
   ];
-  const capped = [...due]
-    .sort((a, b) => a.retrievability - b.retrievability)
-    .slice(0, MAX_DUE_PER_DAY);
+  // The weakest waiting reviews first, up to what is left of the limit.
+  const room = Math.max(0, (reviewLimit ?? MAX_DUE_PER_DAY) - reviewedToday.size);
+  const taken = new Set(
+    [...waiting]
+      .sort((a, b) => a.retrievability - b.retrievability)
+      .slice(0, room + (input.extraReviews ?? 0))
+      .map((d) => d.cardId),
+  );
+  const capped = due
+    .filter((d) => touchedToday.has(d.cardId) || taken.has(d.cardId))
+    .sort((a, b) => a.retrievability - b.retrievability);
   const queue = buildQueue(capped, fresh);
+  const budget: Budget = {
+    ...dayBudget,
+    dueToday: capped.length,
+    estimatedMinutes: Math.round(
+      (capped.length * seconds + fresh.length * NEW_CARD_COST_FACTOR * seconds) / 60,
+    ),
+  };
 
   const nextSubregion =
     order.find((id) => countries.some((c) => c.subregion === id && !isIntroduced(c.id, states))) ??
     null;
 
-  return { budget, queue, dueCount: capped.length, newCount: fresh.length, nextSubregion, order };
+  return {
+    budget,
+    queue,
+    dueCount: capped.length,
+    newCount: fresh.length,
+    reviewsHeldBack: waiting.length - taken.size,
+    nextSubregion,
+    order,
+  };
 }
 
 /** Rolling median response time and review count per answer mode, for grading. */

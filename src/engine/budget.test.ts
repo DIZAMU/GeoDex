@@ -66,6 +66,33 @@ describe("computeBudget", () => {
   });
 });
 
+describe("the review limit", () => {
+  const base = { dailyMinutes: 60, secondsPerReview: 10, newPerDayOverride: null };
+  it("caps reviews at the limit and gives new cards only the room left under limit plus 25", () => {
+    expect(computeBudget({ ...base, dueToday: 120, reviewLimit: 75 })).toMatchObject({
+      dueToday: 75,
+      newToday: 0,
+      paused: true,
+    });
+    expect(computeBudget({ ...base, dueToday: 90, reviewLimit: 75 }).newToday).toBe(10);
+    expect(computeBudget({ ...base, dueToday: 30, reviewLimit: 75 }).newToday).toBe(25);
+  });
+
+  it("lets a raised new-card limit raise the day's total", () => {
+    expect(
+      computeBudget({ ...base, newPerDayOverride: 50, dueToday: 90, reviewLimit: 75 }).newToday,
+    ).toBe(35);
+  });
+
+  it("keeps the old behaviour with no limit", () => {
+    expect(computeBudget({ ...base, dueToday: 120, reviewLimit: null })).toMatchObject({
+      dueToday: 120,
+      newToday: 25,
+      paused: false,
+    });
+  });
+});
+
 describe("secondsPerReview", () => {
   const now = Date.UTC(2026, 5, 1);
   it("defaults to 10 s with too little history", () => {

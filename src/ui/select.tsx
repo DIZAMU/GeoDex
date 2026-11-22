@@ -1,5 +1,6 @@
 import { CheckIcon, ChevronDownIcon } from "lucide-react";
 import { Select as SelectPrimitive } from "radix-ui";
+import { useRef } from "react";
 import { cn } from "@/ui/utils";
 
 export type SelectOption = { value: string; label: string; disabled?: boolean };
@@ -9,8 +10,12 @@ export type SelectGroup = { label?: string; options: SelectOption[] };
  * A list of choices that opens below its button, as wide as the button, and scrolls inside
  * the room left on screen. A native select decides that itself: with a long list near the
  * middle of the screen it opens upward over the page. Groups keep their headings; an option
- * with nothing in it shows but cannot be picked.
+ * with nothing in it shows but cannot be picked. A button near the bottom of the window first
+ * scrolls up, so the list has room to show.
  */
+/** Room below the button, in pixels, a list needs before it opens: about six options. */
+const LIST_ROOM = 280;
+
 export function Select({
   value,
   onValueChange,
@@ -27,9 +32,17 @@ export function Select({
   testId?: string;
   className?: string;
 }) {
+  const trigger = useRef<HTMLButtonElement>(null);
+  const makeRoom = (open: boolean) => {
+    const button = trigger.current;
+    if (!open || !button) return;
+    const below = window.innerHeight - button.getBoundingClientRect().bottom;
+    if (below < LIST_ROOM) window.scrollBy({ top: LIST_ROOM - below, behavior: "instant" });
+  };
   return (
-    <SelectPrimitive.Root value={value} onValueChange={onValueChange}>
+    <SelectPrimitive.Root value={value} onValueChange={onValueChange} onOpenChange={makeRoom}>
       <SelectPrimitive.Trigger
+        ref={trigger}
         aria-labelledby={labelledBy}
         data-testid={testId}
         data-value={value}
