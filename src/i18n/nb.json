@@ -622,7 +622,7 @@
     "replayTour": "Se omvisningen igjen",
     "showWelcome": "Vis første skjerm",
     "xpTitle": "Nivåer og XP",
-    "xpBody": "XP går bare opp: riktige svar, fullførte økter, øvingsdager, dagsmålet ditt og kort som sitter i en uke, tre uker og to måneder. XP gir deg ranger, fra Turist til Atlasvokter.",
+    "xpBody": "XP går bare opp: riktige svar, fullførte økter, øvingsdager, dagsmålet ditt og kort som sitter i en uke, tre uker og to måneder. XP gir deg en ny rang for hver 50 000, fra Turist til Atlasvokter på 500 000.",
     "goalBody": "Nå dagens tid eller fullfør et antall økter; velg hva i Innstillinger. Når du når målet, får du XP, og dagen teller med i dager på rad selv om det er repetisjoner igjen.",
     "levelsBody": "Nivået viser hvor mye du husker akkurat nå. Det stiger når kortene sitter lenger, og synker hvis du glemmer.",
     "progressBody": "Fremgangen lagres i denne nettleseren etter hvert svar, og ingen andre steder. Sletter du nettleserdataene, forsvinner den. Last ned en sikkerhetskopi i Innstillinger av og til, og bruk den for å flytte til en annen enhet."
@@ -676,10 +676,14 @@
   "rank": {
     "tourist": "Turist",
     "traveller": "Reisende",
+    "wayfarer": "Vandrer",
     "explorer": "Oppdager",
+    "pathfinder": "Stifinner",
     "navigator": "Navigatør",
+    "surveyor": "Landmåler",
     "cartographer": "Kartograf",
     "geographer": "Geograf",
+    "worldScholar": "Verdenskjenner",
     "atlasKeeper": "Atlasvokter"
   },
   "footer": {

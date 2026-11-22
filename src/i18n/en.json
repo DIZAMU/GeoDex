@@ -622,7 +622,7 @@
     "replayTour": "Replay the tour",
     "showWelcome": "Show the first screen",
     "xpTitle": "Levels and XP",
-    "xpBody": "XP only goes up: correct answers, finished sessions, study days, your daily goal, and cards that hold for a week, three weeks and two months. XP earns ranks, from Tourist to Atlas keeper.",
+    "xpBody": "XP only goes up: correct answers, finished sessions, study days, your daily goal, and cards that hold for a week, three weeks and two months. XP earns a new rank every 50,000, from Tourist to Atlas keeper at 500,000.",
     "goalBody": "Reach your daily time or finish a number of sessions; choose which in Settings. Meeting it earns XP and counts the day for your streak, even with reviews left.",
     "levelsBody": "Your level shows how much you remember right now. It rises as cards hold for longer and slips if you forget.",
     "progressBody": "Progress is saved in this browser after every answer, and nowhere else. Clearing the browser's data erases it. Download a backup in Settings now and then, and use it to move to another device."
@@ -676,10 +676,14 @@
   "rank": {
     "tourist": "Tourist",
     "traveller": "Traveller",
+    "wayfarer": "Wayfarer",
     "explorer": "Explorer",
+    "pathfinder": "Pathfinder",
     "navigator": "Navigator",
+    "surveyor": "Surveyor",
     "cartographer": "Cartographer",
     "geographer": "Geographer",
+    "worldScholar": "World scholar",
     "atlasKeeper": "Atlas keeper"
   },
   "footer": {
