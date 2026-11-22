@@ -90,7 +90,9 @@ newToday = clamp(floor((minutes * 60 - due * secondsPerAnswer) / (3 * secondsPer
 
 A new card costs about three answers (its introduction and the learning steps). The learner can raise the daily limit to 50 or 100. When the due cards alone would take more than one and a half times the budget, new cards pause until the backlog is down.
 
-Due cards come first, least likely remembered first, at most 200 a day. New cards come in batches of five from one region, starting from the home country's region and moving outward. The same country never comes twice in a row, and at most two reviews in a row come from one region.
+A day also holds at most 75 reviews (50, 100, 150 or no limit in Settings). The day's total is that limit plus the new-card limit, reviews first, so new cards only get the room due reviews leave: 90 due reviews leave room for 10 new cards, and 100 or more for none. Reviews already made today count against the limit, and the room is measured against the reviews the day began with, so it stays put while the learner works. Reviews past the limit wait for the next day, or for "Keep going" on Today, which takes ten more.
+
+Due cards come first, least likely remembered first, at most 200 a day without a review limit. New cards come in batches of five from one region, starting from the home country's region and moving outward. The same country never comes twice in a row, and at most two reviews in a row come from one region.
 
 ## Mix-ups, hooks and leeches
 

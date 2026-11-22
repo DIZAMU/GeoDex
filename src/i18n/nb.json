@@ -5,7 +5,7 @@
   "today": {
     "summary": "{{reviews}} og {{newCards}}, omtrent {{minutes}} minutter",
     "nothingLeft": "Ingenting igjen i dag. Nye kort låses opp når du repeterer.",
-    "paused": "Nye kort er satt på pause til etterslepet får plass i dagens tid.",
+    "paused": "Nye kort er satt på pause mens repetisjonene fyller dagen.",
     "inputMode": "Svar med",
     "nextRegion": "Neste region: {{name}}",
     "reviews_one": "{{count}} repetisjon",
@@ -25,7 +25,11 @@
       "body": "Det var alt for i dag. Vil du fortsette?",
       "raise": "Øk dagsgrensen til {{count}}",
       "notNow": "Ikke nå"
-    }
+    },
+    "moreReviews_one": "Fortsett: {{count}} repetisjon",
+    "moreReviews_other": "Fortsett: {{count}} repetisjoner",
+    "limitReached_one": "Du har nådd dagens grense for repetisjoner. {{formatted}} repetisjon til venter.",
+    "limitReached_other": "Du har nådd dagens grense for repetisjoner. {{formatted}} repetisjoner til venter."
   },
   "settings": {
     "label": "Innstillinger",
@@ -105,7 +109,10 @@
     "sessionLengthHelp": "Hvor mange spørsmål en økt har når du trykker Start.",
     "sessionFocusHelp": "Hva en økt henter fra først.",
     "levelProgressHelp": "Hvordan I dag viser veien til neste nivå.",
-    "homeCountryHelp": "Nye land kommer først fra din egen region, deretter fra regioner lenger unna."
+    "homeCountryHelp": "Nye land kommer først fra din egen region, deretter fra regioner lenger unna.",
+    "reviewLimit": "Repetisjoner per dag",
+    "reviewLimitHelp": "Det meste en dag kan ha av repetisjoner. Nye kort fyller resten, så en dag med mange repetisjoner gir færre nye kort, og ingenting hoper seg opp. Repetisjoner over grensen venter til neste dag, eller til du velger Fortsett.",
+    "noLimit": "Ingen grense"
   },
   "nav": {
     "today": "I dag",

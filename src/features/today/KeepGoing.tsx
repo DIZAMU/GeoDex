@@ -45,19 +45,48 @@ function useActions(learner: Learner) {
       });
       navigate(`/session?${params}`, { viewTransition: true });
     },
+    moreReviews: (count: number) => {
+      const params = new URLSearchParams({
+        input: learner.device.lastInputMode,
+        reviews: String(count),
+      });
+      navigate(`/session?${params}`, { viewTransition: true });
+    },
     drill: () =>
       navigate(subregion ? `/drill?region=${subregion}` : "/atlas", { viewTransition: true }),
   };
 }
 
-/** The actions under "Done for today". */
-export function KeepGoingCard({ learner }: { learner: Learner }) {
+/** Reviews one "+10 reviews" takes: ten, or fewer when fewer are held back. */
+export function moreReviewsCount(heldBack: number): number {
+  return Math.min(KEEP_GOING, Math.max(0, heldBack));
+}
+
+/** The actions under "Done for today". Held-back reviews come first, above new cards. */
+export function KeepGoingCard({ learner, heldBack }: { learner: Learner; heldBack: number }) {
   const { t } = useTranslation();
-  const { keepGoing, drill } = useActions(learner);
+  const { keepGoing, moreReviews, drill } = useActions(learner);
+  const reviews = moreReviewsCount(heldBack);
   return (
     <div className="flex flex-col gap-3 pt-2" data-testid="keep-going-card">
+      {reviews > 0 ? (
+        <Button
+          size="lg"
+          className="self-start"
+          onClick={() => moreReviews(reviews)}
+          data-testid="more-reviews"
+        >
+          <PlusIcon aria-hidden />
+          {t("today.moreReviews", { count: reviews })}
+        </Button>
+      ) : null}
       <div className="flex flex-wrap gap-3">
-        <Button size="lg" onClick={keepGoing} data-testid="keep-going">
+        <Button
+          size="lg"
+          variant={reviews > 0 ? "outline" : "default"}
+          onClick={keepGoing}
+          data-testid="keep-going"
+        >
           <PlusIcon aria-hidden />
           {t("today.keepGoing", { count: KEEP_GOING })}
         </Button>
@@ -80,15 +109,18 @@ const ON_DIALOG = "border-foreground/15 bg-foreground/5 hover:bg-foreground/12";
 /** "Good job!": shown once the session that finished the day ends. */
 export function DoneDialog({
   learner,
+  heldBack,
   open,
   onOpenChange,
 }: {
   learner: Learner;
+  heldBack: number;
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }) {
   const { t } = useTranslation();
-  const { keepGoing, drill } = useActions(learner);
+  const { keepGoing, moreReviews, drill } = useActions(learner);
+  const reviews = moreReviewsCount(heldBack);
   const raiseTo = nextLimit(learner.settings.newPerDayOverride);
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -100,7 +132,23 @@ export function DoneDialog({
           <DialogDescription className="text-base">{t("today.doneDialog.body")}</DialogDescription>
         </DialogHeader>
         <div className="flex flex-col gap-2">
-          <Button size="lg" onClick={keepGoing} data-testid="dialog-keep-going">
+          {reviews > 0 ? (
+            <Button
+              size="lg"
+              onClick={() => moreReviews(reviews)}
+              data-testid="dialog-more-reviews"
+            >
+              <PlusIcon aria-hidden />
+              {t("today.moreReviews", { count: reviews })}
+            </Button>
+          ) : null}
+          <Button
+            size="lg"
+            variant={reviews > 0 ? "outline" : "default"}
+            className={reviews > 0 ? ON_DIALOG : undefined}
+            onClick={keepGoing}
+            data-testid="dialog-keep-going"
+          >
             <PlusIcon aria-hidden />
             {t("today.keepGoing", { count: KEEP_GOING })}
           </Button>

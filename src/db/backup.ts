@@ -64,6 +64,11 @@ function validSettings(s: unknown): boolean {
     v.dailyMinutes > 0 &&
     v.dailyMinutes <= 600 &&
     (v.newPerDayOverride === null || (isNumber(v.newPerDayOverride) && v.newPerDayOverride >= 0)) &&
+    (v.reviewsPerDay === undefined ||
+      v.reviewsPerDay === null ||
+      (Number.isInteger(v.reviewsPerDay) &&
+        (v.reviewsPerDay as number) > 0 &&
+        (v.reviewsPerDay as number) <= 1000)) &&
     isNumber(v.requestRetention) &&
     v.requestRetention > 0.5 &&
     v.requestRetention < 1 &&

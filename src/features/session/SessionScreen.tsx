@@ -98,16 +98,22 @@ export function SessionScreen() {
     ? (requested as InputSetting)
     : (learner?.device.lastInputMode ?? "auto");
   if (!learner) return <Loader />;
-  // "Keep going" (?more=10) studies that many new cards past today's allowance.
+  // "Keep going" (?more=10) studies that many new cards past today's allowance, and
+  // ?reviews=10 that many due reviews past today's review limit.
   const more = parseMore(params.get("more"));
-  const kind: SessionKind = more
-    ? { kind: "daily", length: more, focus: MIXED, extraNew: more }
-    : {
-        kind: "daily",
-        // The picker always sends a length; a bare /session link runs all of today's plan.
-        length: params.has("length") ? parseLength(params.get("length")) : Number.POSITIVE_INFINITY,
-        focus: parseFocus(params.get("focus")),
-      };
+  const reviews = parseMore(params.get("reviews"));
+  const kind: SessionKind = reviews
+    ? { kind: "daily", length: reviews, focus: MIXED, extraReviews: reviews }
+    : more
+      ? { kind: "daily", length: more, focus: MIXED, extraNew: more }
+      : {
+          kind: "daily",
+          // The picker always sends a length; a bare /session link runs all of today's plan.
+          length: params.has("length")
+            ? parseLength(params.get("length"))
+            : Number.POSITIVE_INFINITY,
+          focus: parseFocus(params.get("focus")),
+        };
   // Keyed by navigation, so "another round" starts a fresh session on the same route.
   return <Session key={key} learner={learner} input={input} kind={kind} />;
 }

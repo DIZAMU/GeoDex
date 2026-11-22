@@ -349,3 +349,53 @@ describe("history in the plan", () => {
     expect(has(more, "Q28573:empire_to_era")).toBe(true);
   });
 });
+
+describe("the daily review limit", () => {
+  const roomy: PlanSettings = { ...settings, dailyMinutes: 60 };
+  const cardsDue = (n: number) =>
+    world.countries
+      .flatMap((c) => [`${c.id}:map_to_name`, `${c.id}:name_to_map`])
+      .slice(0, n)
+      .map((cardId, i) => ev(cardId, now - 40 * 86_400_000, `old${i}`));
+  const plan = (n: number, extra: Partial<Parameters<typeof planDay>[0]> = {}, today = 0) => {
+    const old = cardsDue(n);
+    const done = old.slice(0, today).map((e, i) => ev(e.cardId, now - 3_600_000, `today${i}`));
+    const events = [...old, ...done];
+    const states = replayAll(scheduler, events);
+    return planDay({ world, settings: roomy, states, events, scheduler, now, ...extra });
+  };
+
+  it("holds 75 reviews by default and leaves no room for new cards past 100 in all", () => {
+    const p = plan(120);
+    expect(p.dueCount).toBe(75);
+    expect(p.reviewsHeldBack).toBe(45);
+    expect(p.newCount).toBe(0);
+    expect(p.budget.paused).toBe(true);
+  });
+
+  it("fills the day up to 100 with new cards", () => {
+    const p = plan(90);
+    expect(p.dueCount).toBe(75);
+    expect(p.newCount).toBe(10);
+    expect(plan(40).newCount).toBe(25);
+  });
+
+  it("takes reviews past the limit on request, and none with no limit", () => {
+    const more = plan(120, { extraReviews: 10 });
+    expect(more.dueCount).toBe(85);
+    expect(more.reviewsHeldBack).toBe(35);
+    const free = plan(120, { settings: { ...roomy, reviewsPerDay: null } });
+    expect(free.dueCount).toBe(120);
+    expect(free.reviewsHeldBack).toBe(0);
+    const higher = plan(120, { settings: { ...roomy, reviewsPerDay: 100 } });
+    expect(higher.dueCount).toBe(100);
+  });
+
+  it("counts reviews already made today against the limit", () => {
+    const p = plan(120, {}, 75);
+    expect(p.dueCount).toBe(0);
+    expect(p.reviewsHeldBack).toBe(45);
+    // The day began with 120 reviews, so it still has no room for new cards.
+    expect(p.newCount).toBe(0);
+  });
+});
