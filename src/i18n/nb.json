@@ -258,6 +258,18 @@
     "imported": "Gjenopprettet {{reviews}} svar og {{votes}} stemmer på huskeregler.",
     "importError": "Den filen er ikke en sikkerhetskopi fra GeoDex."
   },
+  "streakCode": {
+    "title": "Kode for dager på rad",
+    "body": "Har du en kode? Med den kan du sette antall dager på rad på nytt, for eksempel etter at en dag gikk tapt.",
+    "label": "Kode",
+    "redeem": "Løs inn",
+    "invalid": "Den koden er ikke gyldig.",
+    "days": "Dager på rad",
+    "save": "Lagre",
+    "badDays": "Skriv et helt tall fra 0 til {{max}}.",
+    "done_one": "Du har nå {{count}} dag på rad.",
+    "done_other": "Du har nå {{count}} dager på rad."
+  },
   "continent": {
     "africa": "Afrika",
     "asia": "Asia",

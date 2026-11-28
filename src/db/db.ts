@@ -37,6 +37,8 @@ export type SettingsRow = {
    * Absent on rows written before the reset existed.
    */
   progressResetAt?: number | null;
+  /** A streak set with the redeem code in Settings: the run on one learning day. */
+  streakRestore?: { day: number; days: number } | null;
   /** The daily goal kind. Absent means minutes, using `dailyMinutes`. */
   dailyGoal?: { kind: "minutes" } | { kind: "sessions"; sessions: number };
   updatedAt: number;
