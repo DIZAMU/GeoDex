@@ -1,7 +1,7 @@
 {
   "name": "geodex",
   "private": true,
-  "version": "2.1.0",
+  "version": "2.1.1",
   "type": "module",
   "description": "Spaced-repetition geography trainer. Local-first PWA, English and Norwegian.",
   "author": "DIZAMU",

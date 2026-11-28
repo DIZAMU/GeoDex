@@ -53,6 +53,7 @@ export function computeProgress(learner: Learner, now: number): Progress {
       dayStartHour: learner.settings.dayStartHour,
       goal: goalOf(learner.settings),
     }),
+    learner.settings.streakRestore ?? null,
   );
   const achievements = computeAchievements({
     scheduler: learner.scheduler,

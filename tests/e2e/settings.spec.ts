@@ -146,3 +146,12 @@ test("goal settings reach Today: sessions goal, session defaults and the tour", 
   await page.getByTestId("tour-again").click();
   await expect(page.getByTestId("tour")).toBeVisible();
 });
+
+test("a wrong streak code is refused", async ({ page }) => {
+  await setUpLearner(page);
+  await page.goto("/settings?tab=backup");
+  await page.getByTestId("streak-code").fill("GDX-NOT-THE-CODE");
+  await page.getByTestId("streak-redeem").click();
+  await expect(page.getByTestId("streak-code-message")).toHaveText("That code is not valid.");
+  await expect(page.getByTestId("streak-days")).toHaveCount(0);
+});

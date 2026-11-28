@@ -258,6 +258,18 @@
     "imported": "Restored {{reviews}} answers and {{votes}} hook votes.",
     "importError": "That file is not a GeoDex backup."
   },
+  "streakCode": {
+    "title": "Streak code",
+    "body": "Have a code? It lets you set your streak again, for example after a day was lost.",
+    "label": "Code",
+    "redeem": "Redeem",
+    "invalid": "That code is not valid.",
+    "days": "Streak in days",
+    "save": "Set streak",
+    "badDays": "Enter a whole number from 0 to {{max}}.",
+    "done_one": "Your streak is now {{count}} day.",
+    "done_other": "Your streak is now {{count}} days."
+  },
   "continent": {
     "africa": "Africa",
     "asia": "Asia",

@@ -3,6 +3,7 @@
  * scheduled review and either reviewed every card that was due at the start of the day, or
  * did 30+ scheduled reviews because the backlog was larger, or met the daily goal. Freezes:
  * one per 7 counted days in a row, at most 2 held, used automatically on a missed day.
+ * A restore (redeemed in Settings) sets the run to a number of days on one learning day.
  */
 import type { FSRS } from "ts-fsrs";
 import { learningDay } from "./day";
@@ -40,6 +41,9 @@ export type Streak = {
 
 export type FreezeEvent = { kind: "earned" | "used"; day: number };
 
+/** A streak set by hand: on the learning day starting at `day`, the run becomes `days`. */
+export type StreakRestore = { day: number; days: number };
+
 function countsForStreak(e: ReviewEventCore): boolean {
   return e.scheduled && e.mode !== "placement";
 }
@@ -56,6 +60,7 @@ export function computeStreak(
   dayStartHour: number,
   /** Learning days (by start) on which the daily goal was met. */
   goalMetDays: ReadonlySet<number> = new Set(),
+  restore: StreakRestore | null = null,
 ): Streak {
   const sorted = [...events].sort(compareEvents);
   const first = sorted.find(countsForStreak);
@@ -111,7 +116,10 @@ export function computeStreak(
       reviews > 0 && (allDueDone || reviews >= STREAK_BACKLOG_REVIEWS || goalMetDays.has(start));
     const isToday = start === today.start;
     let frozen = false;
-    if (counted) {
+    if (restore && start === learningDay(restore.day, dayStartHour).start) {
+      // The restored run holds this day whether or not it was studied; the next day adds one.
+      run = restore.days;
+    } else if (counted) {
       run++;
       if (run % FREEZE_EVERY === 0 && freezes < MAX_FREEZES) {
         freezes++;

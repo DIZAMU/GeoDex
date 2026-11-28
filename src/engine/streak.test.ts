@@ -169,3 +169,31 @@ describe("freeze notices", () => {
     expect(full.nextFreezeIn).toBeNull();
   });
 });
+
+describe("a restored streak", () => {
+  it("sets the run on its day, and the next studied day adds one", () => {
+    // Studied days 0 to 2, missed 3 to 5 (streak lost), set to 19 on day 6.
+    const events = daily([0, 1, 2, 6]);
+    const lost = computeStreak(scheduler, events, BASE + 6 * DAY, 4);
+    expect(lost.current).toBe(1);
+    const restore = { day: BASE + 6 * DAY, days: 19 };
+    const today = computeStreak(scheduler, events, BASE + 6 * DAY, 4, new Set(), restore);
+    expect(today.current).toBe(19);
+    expect(today.longest).toBe(19);
+    const next = computeStreak(
+      scheduler,
+      daily([0, 1, 2, 6, 7]),
+      BASE + 7 * DAY,
+      4,
+      new Set(),
+      restore,
+    );
+    expect(next.current).toBe(20);
+  });
+
+  it("holds even when set before studying that day", () => {
+    const restore = { day: BASE + 6 * DAY, days: 19 };
+    const s = computeStreak(scheduler, daily([0, 1, 2]), BASE + 6 * DAY, 4, new Set(), restore);
+    expect(s.current).toBe(19);
+  });
+});

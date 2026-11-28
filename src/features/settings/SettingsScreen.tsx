@@ -47,6 +47,7 @@ function reviewLimitChoice(stored: number | null | undefined): ReviewLimitChoice
 }
 
 import { BackupSection } from "./BackupSection";
+import { StreakCode } from "./StreakCode";
 
 const MINUTES = [10, 15, 18, 20, 30] as const;
 const COUNTDOWNS = [0, 10, 15, 20] as const;
@@ -431,6 +432,12 @@ export function SettingsScreen() {
           <Group id="backup">
             <div className="py-4">
               <BackupSection learner={learner} />
+            </div>
+          </Group>
+
+          <Group title={t("streakCode.title")} id="streak-code">
+            <div className="py-4">
+              <StreakCode learner={learner} />
             </div>
           </Group>
 

@@ -52,6 +52,19 @@ const isNumber = (v: unknown): v is number => typeof v === "number" && Number.is
 const isOptionalNumber = (v: unknown) => v === undefined || v === null || isNumber(v);
 
 /** Checks each field the app reads from a restored settings row. */
+/** A streak restore: absent, null, or a day and a whole number of days up to ten years. */
+function validRestore(r: unknown): boolean {
+  if (r === undefined || r === null) return true;
+  if (typeof r !== "object") return false;
+  const v = r as Record<string, unknown>;
+  return (
+    isNumber(v.day) &&
+    Number.isInteger(v.days) &&
+    (v.days as number) >= 0 &&
+    (v.days as number) <= 3650
+  );
+}
+
 function validSettings(s: unknown): boolean {
   if (s === null) return true;
   if (typeof s !== "object") return false;
@@ -79,6 +92,7 @@ function validSettings(s: unknown): boolean {
     modules !== null &&
     Object.values(modules).every((m) => typeof m === "boolean") &&
     isOptionalNumber(v.progressResetAt) &&
+    validRestore(v.streakRestore) &&
     isNumber(v.updatedAt)
   );
 }
